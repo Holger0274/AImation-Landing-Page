@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 110" width="480" height="110">
+  <defs>
+    <linearGradient id="magentaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f90093"/>
+      <stop offset="100%" style="stop-color:#ff4ecd"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- NODE TRIANGLE Symbol with Glow -->
+  <g transform="translate(12, 12)" filter="url(#glow)">
+    <line x1="42" y1="8" x2="8" y2="75" stroke="url(#magentaGrad)" stroke-width="4"/>
+    <line x1="42" y1="8" x2="76" y2="75" stroke="url(#magentaGrad)" stroke-width="4"/>
+    <line x1="18" y1="52" x2="66" y2="52" stroke="url(#magentaGrad)" stroke-width="4"/>
+    <circle cx="42" cy="8" r="11" fill="#f90093"/>
+    <circle cx="8" cy="75" r="9" fill="#ff4ecd"/>
+    <circle cx="76" cy="75" r="9" fill="#ff4ecd"/>
+    <circle cx="18" cy="52" r="6" fill="#f90093"/>
+    <circle cx="66" cy="52" r="6" fill="#f90093"/>
+  </g>
+  
+  <!-- Wordmark -->
+  <text x="110" y="75" font-family="Space Grotesk, system-ui, sans-serif" font-size="54" font-weight="700" fill="url(#magentaGrad)" letter-spacing="-0.02em" filter="url(#glow)">AI</text>
+  <circle cx="182" cy="64" r="5" fill="#f90093" filter="url(#glow)"/>
+  <text x="198" y="75" font-family="Space Grotesk, system-ui, sans-serif" font-size="54" font-weight="700" fill="#ffffff" letter-spacing="-0.02em">mation</text>
+</svg>

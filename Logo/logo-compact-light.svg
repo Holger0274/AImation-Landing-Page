@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" width="180" height="50">
+  <defs>
+    <linearGradient id="magentaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f90093"/>
+      <stop offset="100%" style="stop-color:#ff4ecd"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- NODE TRIANGLE Symbol - compact -->
+  <g transform="translate(5, 5)">
+    <line x1="20" y1="4" x2="4" y2="36" stroke="url(#magentaGrad)" stroke-width="2.5"/>
+    <line x1="20" y1="4" x2="36" y2="36" stroke="url(#magentaGrad)" stroke-width="2.5"/>
+    <line x1="9" y1="24" x2="31" y2="24" stroke="url(#magentaGrad)" stroke-width="2.5"/>
+    <circle cx="20" cy="4" r="5" fill="#f90093"/>
+    <circle cx="4" cy="36" r="4" fill="#ff4ecd"/>
+    <circle cx="36" cy="36" r="4" fill="#ff4ecd"/>
+    <circle cx="9" cy="24" r="3" fill="#f90093"/>
+    <circle cx="31" cy="24" r="3" fill="#f90093"/>
+  </g>
+  
+  <!-- Wordmark - compact -->
+  <text x="52" y="35" font-family="Space Grotesk, system-ui, sans-serif" font-size="26" font-weight="700" fill="url(#magentaGrad)" letter-spacing="-0.02em">AI</text>
+  <circle cx="86" cy="30" r="2.5" fill="#f90093"/>
+  <text x="95" y="35" font-family="Space Grotesk, system-ui, sans-serif" font-size="26" font-weight="700" fill="#071013" letter-spacing="-0.02em">mation</text>
+</svg>
