@@ -1,37 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
-
-function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, {
-    damping: 60,
-    stiffness: 100,
-  });
-  const isInView = useInView(ref, { once: true, margin: '0px' });
-  const [displayValue, setDisplayValue] = useState(0);
-
-  useEffect(() => {
-    if (isInView) {
-      motionValue.set(target);
-    }
-  }, [motionValue, isInView, target]);
-
-  useEffect(() => {
-    springValue.on('change', (latest) => {
-      setDisplayValue(Math.floor(latest));
-    });
-  }, [springValue]);
-
-  return (
-    <div ref={ref} className="text-5xl md:text-6xl font-heading font-bold gradient-text">
-      {displayValue.toLocaleString('de-DE')}
-      {suffix}
-    </div>
-  );
-}
+import { motion } from 'framer-motion';
+import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 
 const stats = [
   {
@@ -89,7 +59,16 @@ export default function SocialProof() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="text-center"
             >
-              <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+              {/* Neue AnimatedCounter Komponente mit mehr Features */}
+              <div className="text-5xl md:text-6xl font-heading font-bold gradient-text">
+                <AnimatedCounter
+                  target={stat.value}
+                  suffix={stat.suffix}
+                  duration={2.5}
+                  separator={true}
+                  delay={index * 0.1}
+                />
+              </div>
               <p className="text-gray-600 mt-4">{stat.label}</p>
             </motion.div>
           ))}
