@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
+import { ClaudeAIIcon } from '@/components/icons/ClaudeAIIcon';
 
 const stats = [
   {
@@ -22,14 +23,23 @@ const stats = [
 ];
 
 const tools = [
-  'ChatGPT',
-  'Claude AI',
-  'n8n',
-  'Make.com',
-  'Microsoft 365',
-  'Google Workspace',
-  'Notion',
-  'Airtable',
+  { name: 'ChatGPT', category: 'AI', hasIcon: false },
+  { name: 'Claude AI', category: 'AI', hasIcon: true, icon: ClaudeAIIcon },
+  { name: 'Gemini', category: 'AI', hasIcon: false },
+  { name: 'DeepSeek', category: 'AI', hasIcon: false },
+  { name: 'Perplexity AI', category: 'AI', hasIcon: false },
+  { name: 'n8n', category: 'Automation', hasIcon: false },
+  { name: 'Make.com', category: 'Automation', hasIcon: false },
+  { name: 'Microsoft 365', category: 'Enterprise', hasIcon: false },
+  { name: 'Copilot', category: 'AI', hasIcon: false },
+  { name: 'Google Workspace', category: 'Enterprise', hasIcon: false },
+  { name: 'Notion', category: 'Knowledge', hasIcon: false },
+  { name: 'Obsidian', category: 'Knowledge', hasIcon: false },
+  { name: 'Airtable', category: 'Database', hasIcon: false },
+  { name: 'Supabase', category: 'Database', hasIcon: false },
+  { name: 'Pinecone', category: 'AI', hasIcon: false },
+  { name: 'Claude Code', category: 'Development', hasIcon: false },
+  { name: 'Lovable', category: 'Development', hasIcon: false },
 ];
 
 export default function SocialProof() {
@@ -86,10 +96,16 @@ export default function SocialProof() {
           </h3>
         </motion.div>
 
-        {/* Logo Carousel */}
-        <div className="relative overflow-hidden bg-white rounded-2xl border border-gray-200 p-8">
+        {/* Logo Carousel - Enhanced */}
+        <div className="relative overflow-hidden bg-gradient-to-br from-white to-gray-50 rounded-2xl border border-gray-200 p-8 shadow-lg">
+          {/* Gradient Fade Left */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
+
+          {/* Gradient Fade Right */}
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
+
           <motion.div
-            className="flex gap-12 items-center"
+            className="flex gap-6 items-center"
             animate={{
               x: ['0%', '-50%'],
             }}
@@ -97,7 +113,7 @@ export default function SocialProof() {
               x: {
                 repeat: Infinity,
                 repeatType: 'loop',
-                duration: 20,
+                duration: 30,
                 ease: 'linear',
               },
             }}
@@ -105,9 +121,21 @@ export default function SocialProof() {
             {[...tools, ...tools].map((tool, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 px-6 py-4 bg-gray-100 rounded-lg font-heading font-semibold text-gray-700 whitespace-nowrap"
+                className="flex-shrink-0 group"
               >
-                {tool}
+                <div className="px-6 py-4 bg-white rounded-xl border border-gray-200 hover:border-magenta/30 hover:shadow-md transition-all duration-300">
+                  <div className="flex flex-col items-center gap-2">
+                    {tool.hasIcon && tool.icon ? (
+                      <tool.icon className="w-12 h-12" />
+                    ) : null}
+                    <span className={`font-heading font-bold text-gray-800 whitespace-nowrap ${tool.hasIcon ? 'text-xs' : 'text-sm'}`}>
+                      {tool.name}
+                    </span>
+                    <span className="text-xs text-gray-500 font-body">
+                      {tool.category}
+                    </span>
+                  </div>
+                </div>
               </div>
             ))}
           </motion.div>

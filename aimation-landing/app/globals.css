@@ -11,6 +11,28 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
+
+  /* Professional Focus States (Design System Compliant) */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [role="button"]:focus-visible {
+    outline: 2px solid #f90093;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(249, 0, 147, 0.1);
+    transition: outline 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  /* Remove default focus styles */
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+  }
 }
 
 @layer utilities {

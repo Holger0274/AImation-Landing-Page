@@ -2,6 +2,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import PainPoints from '@/components/sections/PainPoints';
+import BeforeAfter from '@/components/sections/BeforeAfter';
 import Solution from '@/components/sections/Solution';
 import Services from '@/components/sections/Services';
 import Process from '@/components/sections/Process';
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <Hero />
         <PainPoints />
+        <BeforeAfter />
         <Solution />
         <Services />
         <Process />

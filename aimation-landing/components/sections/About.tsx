@@ -47,29 +47,29 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">Über mich</h2>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">Über uns</h2>
 
             <blockquote className="text-xl font-medium text-black italic mb-6 pl-4 border-l-4 border-magenta">
-              "KI ist nicht mein Job – es ist das Thema, das mein Feuer entfacht."
+              "KI ist nicht unser Job – es ist das Thema, das uns antreibt."
             </blockquote>
 
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Nach 20 Jahren im Engineering habe ich gesehen, wie viel Potenzial in deutschen
-              Unternehmen brachliegt. Mein Ziel: KI zugänglich machen – ohne Buzzwords, ohne
+              Mit 20 Jahren Engineering-Erfahrung haben wir gesehen, wie viel Potenzial in deutschen
+              Unternehmen brachliegt. Unser Ziel: KI zugänglich machen – ohne Buzzwords, ohne
               Konzernpreise, mit echtem Verständnis für eure Prozesse.
             </p>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Mit AI.mation bringe ich beides zusammen: Tiefes technisches Verständnis und die
-              Fähigkeit, komplexe Themen verständlich zu machen. Mein Versprechen: Keine leeren
+              Mit AI.mation bringen wir beides zusammen: Tiefes technisches Verständnis und die
+              Fähigkeit, komplexe Themen verständlich zu machen. Unser Versprechen: Keine leeren
               Buzzwords, sondern ehrliche Einschätzungen und praktische Lösungen, die
               funktionieren.
             </p>
 
             <div className="space-y-3">
-              <p className="font-heading font-bold mb-4">Was mich auszeichnet:</p>
+              <p className="font-heading font-bold mb-4">Was uns auszeichnet:</p>
               {[
-                '20 Jahre Engineering-Erfahrung – ich spreche eure Sprache',
+                '20 Jahre Engineering-Erfahrung – wir sprechen eure Sprache',
                 'Aktiv in internationalem KI-Expertennetzwerk',
                 'Zugang zu neuesten Methoden und Tools',
                 'Ehrliche Einschätzung – auch wenn die Antwort Nein lautet',

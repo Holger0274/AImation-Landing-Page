@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { cn } from '@/lib/utils';
 import { Check, Users, Award, TrendingUp } from 'lucide-react';
 
@@ -34,7 +36,7 @@ const imageVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: 'easeOut',
+      ease: 'easeOut' as const,
     },
   },
 };
@@ -45,7 +47,7 @@ const floatingVariants = {
     transition: {
       duration: 3,
       repeat: Infinity,
-      ease: 'easeInOut',
+      ease: 'easeInOut' as const,
     },
   },
 };
@@ -58,11 +60,28 @@ export default function Hero() {
 
   const subtitle = 'Ob KI dafür die Lösung ist? Das sagen wir Ihnen ehrlich. Auch wenn die Antwort Nein lautet.';
 
-  // Trust Elements (replacing stats)
+  // Trust Elements with animated counters
   const trustElements = [
-    { icon: <Users className="h-5 w-5 text-magenta" />, value: '18.000+', label: 'LinkedIn-Follower' },
-    { icon: <Award className="h-5 w-5 text-magenta" />, value: '20 Jahre', label: 'Engineering-Erfahrung' },
-    { icon: <TrendingUp className="h-5 w-5 text-magenta" />, value: '10-1000', label: 'Mitarbeiter (KMUs)' },
+    {
+      icon: <Users className="h-5 w-5 text-magenta" />,
+      target: 18000,
+      suffix: '+',
+      label: 'LinkedIn-Follower',
+      hasCounter: true,
+    },
+    {
+      icon: <Award className="h-5 w-5 text-magenta" />,
+      target: 20,
+      suffix: '+',
+      label: 'Jahre Engineering',
+      hasCounter: true,
+    },
+    {
+      icon: <TrendingUp className="h-5 w-5 text-magenta" />,
+      value: '10-1000',
+      label: 'Mitarbeiter (KMUs)',
+      hasCounter: false,
+    },
   ];
 
   // Placeholder images - replace with real images later
@@ -134,7 +153,7 @@ export default function Hero() {
             </Button>
           </motion.div>
 
-          {/* Trust Elements (Stats replacement) */}
+          {/* Trust Elements (Stats replacement) with Animated Counters */}
           <motion.div
             className="mt-12 flex flex-wrap justify-center gap-8 lg:justify-start"
             variants={itemVariants}
@@ -145,7 +164,19 @@ export default function Hero() {
                   {item.icon}
                 </div>
                 <div>
-                  <p className="text-xl font-bold text-black font-heading">{item.value}</p>
+                  <p className="text-xl font-bold text-black font-heading">
+                    {item.hasCounter ? (
+                      <AnimatedCounter
+                        target={item.target!}
+                        suffix={item.suffix}
+                        duration={2.5}
+                        separator={true}
+                        delay={0.5 + index * 0.2}
+                      />
+                    ) : (
+                      item.value
+                    )}
+                  </p>
                   <p className="text-sm text-gray-600 font-body">{item.label}</p>
                 </div>
               </div>
@@ -185,40 +216,49 @@ export default function Hero() {
             style={{ transformOrigin: 'bottom center' }}
             variants={imageVariants}
           >
-            <img
-              src={images[0]}
-              alt="KI-Automatisierung für Teams"
-              className="h-full w-full rounded-xl object-cover"
-            />
+            <div className="relative h-full w-full rounded-xl overflow-hidden">
+              <Image
+                src={images[0]}
+                alt="KI-Automatisierung für Teams"
+                fill
+                sizes="(max-width: 640px) 192px, 256px"
+                className="object-cover"
+                priority
+              />
+            </div>
           </motion.div>
           <motion.div
             className="absolute right-0 top-1/3 h-40 w-40 rounded-2xl bg-white p-2 shadow-lg sm:h-56 sm:w-56 border border-gray-100"
             style={{ transformOrigin: 'left center' }}
             variants={imageVariants}
           >
-            <img
-              src={images[1]}
-              alt="Beratung und Schulung"
-              className="h-full w-full rounded-xl object-cover"
-            />
+            <div className="relative h-full w-full rounded-xl overflow-hidden">
+              <Image
+                src={images[1]}
+                alt="Beratung und Schulung"
+                fill
+                sizes="(max-width: 640px) 160px, 224px"
+                className="object-cover"
+                priority
+              />
+            </div>
           </motion.div>
           <motion.div
             className="absolute bottom-0 left-0 h-32 w-32 rounded-2xl bg-white p-2 shadow-lg sm:h-48 sm:w-48 border border-gray-100"
             style={{ transformOrigin: 'top right' }}
             variants={imageVariants}
           >
-            <img
-              src={images[2]}
-              alt="Prozess-Automatisierung"
-              className="h-full w-full rounded-xl object-cover"
-            />
+            <div className="relative h-full w-full rounded-xl overflow-hidden">
+              <Image
+                src={images[2]}
+                alt="Prozess-Automatisierung"
+                fill
+                sizes="(max-width: 640px) 128px, 192px"
+                className="object-cover"
+                priority
+              />
+            </div>
           </motion.div>
-
-          {/* Subtle Magenta Glow behind images */}
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-magenta/5 blur-3xl rounded-full -z-10"
-            aria-hidden="true"
-          />
         </motion.div>
       </div>
     </section>
