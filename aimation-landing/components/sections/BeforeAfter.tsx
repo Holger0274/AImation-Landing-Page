@@ -114,10 +114,10 @@ function BeforeCard({ data, type }: { data: any; type: 'before' | 'after' }) {
           {isBefore ? <X className="w-3 h-3" /> : <Check className="w-3 h-3" />}
           {isBefore ? 'Problem' : 'Lösung'}
         </div>
-        <h4 className="text-2xl font-heading font-bold text-white mb-2">
+        <h4 className="text-2xl md:text-3xl font-heading font-bold text-white mb-2">
           {data.title}
         </h4>
-        <p className={`text-lg font-heading font-semibold
+        <p className={`text-xl md:text-2xl font-heading font-semibold
           ${isBefore ? 'text-red-400' : 'text-[#f90093]'}
         `}
           style={isBefore ? {} : { textShadow: '0 0 20px rgba(249, 0, 147, 0.5)' }}
@@ -147,7 +147,7 @@ function BeforeCard({ data, type }: { data: any; type: 'before' | 'after' }) {
                 <Check className="w-3 h-3 text-[#f90093]" />
               )}
             </div>
-            <span className={`text-sm ${isBefore ? 'text-gray-300' : 'text-gray-200'}`}>
+            <span className={`text-base md:text-lg ${isBefore ? 'text-gray-300' : 'text-gray-200'}`}>
               {item}
             </span>
           </motion.li>
@@ -158,7 +158,7 @@ function BeforeCard({ data, type }: { data: any; type: 'before' | 'after' }) {
       {!isBefore && data.roi && (
         <div className="mt-auto pt-4 border-t border-white/10">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#f90093]/20 rounded-lg">
-            <span className="text-sm font-heading font-bold text-[#f90093]">
+            <span className="text-base md:text-lg font-heading font-bold text-[#f90093]">
               {data.roi}
             </span>
           </div>
@@ -195,7 +195,7 @@ export default function BeforeAfter() {
             Von <span className="text-gray-600">Chaos</span> zu{' '}
             <span className="gradient-text">Kontrolle</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl font-semibold text-gray-600 max-w-2xl mx-auto">
             So sieht Transformation in der Praxis aus
           </p>
         </motion.div>

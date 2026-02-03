@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { FileSpreadsheet, Brain, Clock, TrendingDown, AlertTriangle, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const painPoints = [
   {
@@ -14,6 +15,7 @@ const painPoints = [
     stat: '40%',
     statLabel: 'Zeitverschwendung',
     mockupType: 'time-waste',
+    imagePath: '/images/time-waste.webp',
   },
   {
     id: 'cost',
@@ -24,6 +26,7 @@ const painPoints = [
     stat: '100k€',
     statLabel: 'Verschwendung/Jahr',
     mockupType: 'cost-waste',
+    imagePath: '/images/cost-waste.webp',
   },
   {
     id: 'quality',
@@ -34,6 +37,7 @@ const painPoints = [
     stat: '30%',
     statLabel: 'mehr Fehler',
     mockupType: 'quality-issues',
+    imagePath: '/images/quality-issues.webp',
   },
   {
     id: 'knowledge',
@@ -44,6 +48,7 @@ const painPoints = [
     stat: '60%',
     statLabel: 'Wissensverlust',
     mockupType: 'knowledge-loss',
+    imagePath: '/images/knowledge-loss.webp',
   },
   {
     id: 'chaos',
@@ -54,6 +59,7 @@ const painPoints = [
     stat: '15+',
     statLabel: 'Excel-Listen',
     mockupType: 'excel-chaos',
+    imagePath: '/images/excel-chaos.webp',
   },
   {
     id: 'competition',
@@ -64,11 +70,12 @@ const painPoints = [
     stat: '67%',
     statLabel: 'nutzen bereits KI',
     mockupType: 'competition',
+    imagePath: '/images/competition.webp',
   },
 ];
 
 // Placeholder Mockup Component
-function MockupPlaceholder({ type, stat, statLabel }: { type: string; stat: string; statLabel: string }) {
+function MockupPlaceholder({ type, stat, statLabel, imagePath }: { type: string; stat: string; statLabel: string; imagePath?: string }) {
   const mockupConfig = {
     'time-waste': {
       title: 'Zeit-Verschwendung',
@@ -121,10 +128,27 @@ function MockupPlaceholder({ type, stat, statLabel }: { type: string; stat: stri
     <div
       className={`w-full h-full rounded-2xl bg-gradient-to-br ${config.bgGradient} border border-white/10 flex flex-col items-center justify-center p-8 relative overflow-hidden`}
     >
-      {/* Background Icon Pattern */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-5">
-        <VisualIcon className="w-64 h-64" />
-      </div>
+      {/* Image Background (if provided) */}
+      {imagePath && (
+        <div className="absolute inset-0 rounded-2xl overflow-hidden">
+          <Image
+            src={imagePath}
+            alt={config.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          {/* Dark Overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+        </div>
+      )}
+
+      {/* Background Icon Pattern (only if no image) */}
+      {!imagePath && (
+        <div className="absolute inset-0 flex items-center justify-center opacity-5">
+          <VisualIcon className="w-64 h-64" />
+        </div>
+      )}
 
       {/* Content */}
       <div className="relative text-center space-y-6">
@@ -157,13 +181,15 @@ function MockupPlaceholder({ type, stat, statLabel }: { type: string; stat: stri
         </div>
       </div>
 
-      {/* Decorative Grid Pattern */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '30px 30px'
-        }}
-      />
+      {/* Decorative Grid Pattern (only if no image) */}
+      {!imagePath && (
+        <div className="absolute inset-0 opacity-10 pointer-events-none"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '30px 30px'
+          }}
+        />
+      )}
     </div>
   );
 }
@@ -227,6 +253,7 @@ export default function PainPoints() {
                       type={painPoints[activePainPoint].mockupType}
                       stat={painPoints[activePainPoint].stat}
                       statLabel={painPoints[activePainPoint].statLabel}
+                      imagePath={painPoints[activePainPoint].imagePath}
                     />
                   </motion.div>
                 </AnimatePresence>

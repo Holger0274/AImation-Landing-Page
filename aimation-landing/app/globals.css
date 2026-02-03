@@ -109,6 +109,16 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-magenta;
   }
+
+  /* Hide Scrollbar (for horizontal carousels) */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Smooth Scroll */

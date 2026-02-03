@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
-import { ClaudeAIIcon } from '@/components/icons/ClaudeAIIcon';
+import { AI_TOOLS } from '@/lib/tools-config';
 
 const stats = [
   {
@@ -22,29 +22,9 @@ const stats = [
   },
 ];
 
-const tools = [
-  { name: 'ChatGPT', category: 'AI', hasIcon: false },
-  { name: 'Claude AI', category: 'AI', hasIcon: true, icon: ClaudeAIIcon },
-  { name: 'Gemini', category: 'AI', hasIcon: false },
-  { name: 'DeepSeek', category: 'AI', hasIcon: false },
-  { name: 'Perplexity AI', category: 'AI', hasIcon: false },
-  { name: 'n8n', category: 'Automation', hasIcon: false },
-  { name: 'Make.com', category: 'Automation', hasIcon: false },
-  { name: 'Microsoft 365', category: 'Enterprise', hasIcon: false },
-  { name: 'Copilot', category: 'AI', hasIcon: false },
-  { name: 'Google Workspace', category: 'Enterprise', hasIcon: false },
-  { name: 'Notion', category: 'Knowledge', hasIcon: false },
-  { name: 'Obsidian', category: 'Knowledge', hasIcon: false },
-  { name: 'Airtable', category: 'Database', hasIcon: false },
-  { name: 'Supabase', category: 'Database', hasIcon: false },
-  { name: 'Pinecone', category: 'AI', hasIcon: false },
-  { name: 'Claude Code', category: 'Development', hasIcon: false },
-  { name: 'Lovable', category: 'Development', hasIcon: false },
-];
-
 export default function SocialProof() {
   return (
-    <section className="py-20 md:py-32 bg-gray-50">
+    <section className="py-20 md:py-32 bg-warm-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -91,21 +71,25 @@ export default function SocialProof() {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
-          <h3 className="text-2xl font-heading font-bold mb-8">
-            Wir arbeiten mit den besten Tools
+          <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">
+            Wir arbeiten mit den <span className="gradient-text">besten Tools</span>
           </h3>
+          <p className="text-gray-600 text-sm md:text-base">
+            Herstellerunabhängig – ich kenne alle relevanten KI-Tools und finde die richtige
+            Lösung für Ihren Use Case
+          </p>
         </motion.div>
 
-        {/* Logo Carousel - Enhanced */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-white to-gray-50 rounded-2xl border border-gray-200 p-8 shadow-lg">
+        {/* Logo Carousel - Infinite Scroll with lobe-icons */}
+        <div className="relative overflow-hidden bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
           {/* Gradient Fade Left */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
 
           {/* Gradient Fade Right */}
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
           <motion.div
-            className="flex gap-6 items-center"
+            className="flex gap-8 md:gap-12 items-center"
             animate={{
               x: ['0%', '-50%'],
             }}
@@ -113,43 +97,38 @@ export default function SocialProof() {
               x: {
                 repeat: Infinity,
                 repeatType: 'loop',
-                duration: 30,
+                duration: 40,
                 ease: 'linear',
               },
             }}
+            style={{
+              willChange: 'transform',
+            }}
           >
-            {[...tools, ...tools].map((tool, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 group"
-              >
-                <div className="px-6 py-4 bg-white rounded-xl border border-gray-200 hover:border-magenta/30 hover:shadow-md transition-all duration-300">
-                  <div className="flex flex-col items-center gap-2">
-                    {tool.hasIcon && tool.icon ? (
-                      <tool.icon className="w-12 h-12" />
-                    ) : null}
-                    <span className={`font-heading font-bold text-gray-800 whitespace-nowrap ${tool.hasIcon ? 'text-xs' : 'text-sm'}`}>
+            {/* Double the array for seamless loop */}
+            {[...AI_TOOLS, ...AI_TOOLS].map((tool, index) => {
+              const IconComponent = (tool.icon as any).Color || tool.icon;
+              return (
+                <div
+                  key={`${tool.name}-${index}`}
+                  className="flex-shrink-0 group cursor-pointer"
+                  title={tool.description || tool.name}
+                >
+                  <div className="flex flex-col items-center gap-3 px-4">
+                    {/* Icon with hover effect */}
+                    <div className="transition-transform duration-300 group-hover:scale-110">
+                      <IconComponent size={56} className="md:w-14 md:h-14 w-10 h-10" />
+                    </div>
+                    {/* Tool name - visible on hover/large screens */}
+                    <span className="text-xs font-heading font-medium text-gray-700 whitespace-nowrap opacity-0 group-hover:opacity-100 md:opacity-70 md:group-hover:opacity-100 transition-opacity duration-300">
                       {tool.name}
-                    </span>
-                    <span className="text-xs text-gray-500 font-body">
-                      {tool.category}
                     </span>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </motion.div>
         </div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center text-gray-600 text-sm mt-6"
-        >
-          Herstellerunabhängig – ich kenne alle relevanten KI-Tools und finde die richtige
-          Lösung für Ihren Use Case
-        </motion.p>
       </div>
     </section>
   );

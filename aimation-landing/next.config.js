@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // ESM package support for @lobehub/icons
+  transpilePackages: ['@lobehub/icons'],
   images: {
     remotePatterns: [
       {
