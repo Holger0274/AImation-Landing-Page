@@ -222,7 +222,8 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
         duration: reducedMotion ? 0 : 0.6,
         delay: reducedMotion ? 0 : index * 0.2,
       }}
-      className="h-[500px] perspective-1000"
+      className="perspective-1000"
+      style={{ height: 'clamp(450px, 60vw, 500px)', minHeight: '450px' }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onHoverStart={() => !isMobile && setIsFlipped(true)}
@@ -281,12 +282,13 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
               />
             </div>
 
-            <h3 className="text-2xl font-heading font-bold mb-2 text-[#071013]">
+            <h3 className="font-heading font-bold mb-2 text-[#071013]" style={{ fontSize: 'clamp(1.25rem, 3vw, 1.5rem)' }}>
               {service.title}
             </h3>
             <p
               className="font-heading font-semibold mb-4"
               style={{
+                fontSize: 'clamp(0.875rem, 2.5vw, 1rem)',
                 background: `linear-gradient(135deg, ${service.gradientFrom}, ${service.gradientTo})`,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -295,9 +297,9 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
             >
               {service.subtitle}
             </p>
-            <p className="text-gray-600 mb-6 flex-grow">{service.description}</p>
+            <p className="text-gray-600 mb-6 flex-grow" style={{ fontSize: 'clamp(0.875rem, 2.2vw, 1rem)' }}>{service.description}</p>
 
-            <div className="text-sm text-gray-500 italic mb-4">{service.detail}</div>
+            <div className="text-gray-500 italic mb-4" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>{service.detail}</div>
 
             <div
               className="font-heading font-semibold flex items-center gap-2 group/link cursor-pointer"
@@ -364,8 +366,9 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
             </div>
 
             <h3
-              className="text-2xl font-heading font-bold mb-4"
+              className="font-heading font-bold mb-4"
               style={{
+                fontSize: 'clamp(1.25rem, 3vw, 1.5rem)',
                 background: `linear-gradient(135deg, ${service.gradientFrom}, ${service.gradientTo})`,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -398,7 +401,7 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
                       boxShadow: `0 0 6px ${service.gradientFrom}`,
                     }}
                   />
-                  <span className="text-sm text-gray-300">{feature}</span>
+                  <span className="text-gray-300" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>{feature}</span>
                 </motion.li>
               ))}
             </ul>
@@ -458,10 +461,10 @@ export default function Services() {
           transition={{ duration: reducedMotion ? 0 : 0.6 }}
           className="text-center mb-16 md:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+          <h2 className="font-heading font-bold mb-4" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
             Die 3 <span className="gradient-text">Säulen</span> unserer Arbeit
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}>
             Alle Bausteine sind frei kombinierbar – je nach Ihrem Bedarf
           </p>
         </motion.div>
@@ -496,10 +499,10 @@ export default function Services() {
                 {/* Header */}
                 <div className="flex items-center justify-between mb-8">
                   <div>
-                    <p className="text-sm text-magenta font-heading font-bold mb-2">
+                    <p className="text-magenta font-heading font-bold mb-2" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>
                       PRAXIS-BEISPIELE
                     </p>
-                    <h3 className="text-3xl md:text-4xl font-heading font-bold text-white">
+                    <h3 className="font-heading font-bold text-white" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}>
                       {services[selectedService].title} in der Praxis
                     </h3>
                   </div>
@@ -528,10 +531,10 @@ export default function Services() {
 
                       {/* Details */}
                       <div className="space-y-3">
-                        <h4 className="text-xl font-heading font-bold text-white">
+                        <h4 className="font-heading font-bold text-white" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                           {useCase.title}
                         </h4>
-                        <p className="text-gray-300 text-sm leading-relaxed">
+                        <p className="text-gray-300 leading-relaxed" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                           {useCase.description}
                         </p>
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-magenta/20 rounded-lg border border-magenta/30">

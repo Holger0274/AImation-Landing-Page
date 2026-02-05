@@ -108,19 +108,24 @@ function BeforeCard({ data, type }: { data: any; type: 'before' | 'after' }) {
     >
       {/* Header */}
       <div className="mb-6">
-        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-heading font-bold mb-3
+        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full font-heading font-bold mb-3
           ${isBefore ? 'bg-red-500/20 text-red-400' : 'bg-[#f90093]/20 text-[#f90093]'}
-        `}>
+        `}
+          style={{ fontSize: 'clamp(0.7rem, 2vw, 0.75rem)' }}
+        >
           {isBefore ? <X className="w-3 h-3" /> : <Check className="w-3 h-3" />}
           {isBefore ? 'Problem' : 'Lösung'}
         </div>
-        <h4 className="text-2xl md:text-3xl font-heading font-bold text-white mb-2">
+        <h4 className="font-heading font-bold text-white mb-2" style={{ fontSize: 'clamp(1.25rem, 4vw, 1.875rem)' }}>
           {data.title}
         </h4>
-        <p className={`text-xl md:text-2xl font-heading font-semibold
+        <p className={`font-heading font-semibold
           ${isBefore ? 'text-red-400' : 'text-[#f90093]'}
         `}
-          style={isBefore ? {} : { textShadow: '0 0 20px rgba(249, 0, 147, 0.5)' }}
+          style={{
+            fontSize: 'clamp(1rem, 3vw, 1.5rem)',
+            ...(isBefore ? {} : { textShadow: '0 0 20px rgba(249, 0, 147, 0.5)' })
+          }}
         >
           {data.pain || data.gain}
         </p>
@@ -147,7 +152,7 @@ function BeforeCard({ data, type }: { data: any; type: 'before' | 'after' }) {
                 <Check className="w-3 h-3 text-[#f90093]" />
               )}
             </div>
-            <span className={`text-base md:text-lg ${isBefore ? 'text-gray-300' : 'text-gray-200'}`}>
+            <span className={`${isBefore ? 'text-gray-300' : 'text-gray-200'}`} style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1.125rem)' }}>
               {item}
             </span>
           </motion.li>
@@ -158,8 +163,8 @@ function BeforeCard({ data, type }: { data: any; type: 'before' | 'after' }) {
       {!isBefore && data.roi && (
         <div className="mt-auto pt-4 border-t border-white/10">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#f90093]/20 rounded-lg">
-            <span className="text-base md:text-lg font-heading font-bold text-[#f90093]">
-              {data.roi}
+            <span className="font-heading font-bold text-[#f90093]" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1.125rem)' }}>
+              ✓ {data.roi}
             </span>
           </div>
         </div>
@@ -191,11 +196,11 @@ export default function BeforeAfter() {
           viewport={{ once: true }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+          <h2 className="font-heading font-bold mb-4" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
             Von <span className="text-gray-600">Chaos</span> zu{' '}
             <span className="gradient-text">Kontrolle</span>
           </h2>
-          <p className="text-xl md:text-2xl font-semibold text-gray-600 max-w-2xl mx-auto">
+          <p className="font-semibold text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.5rem)' }}>
             So sieht Transformation in der Praxis aus
           </p>
         </motion.div>
@@ -232,7 +237,7 @@ export default function BeforeAfter() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="h-[500px]"
+            style={{ minHeight: 'clamp(400px, 50vw, 500px)' }}
           >
             <BeforeCard
               data={transformations[activeTransformation].before}
@@ -262,7 +267,7 @@ export default function BeforeAfter() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="h-[500px]"
+            style={{ minHeight: 'clamp(400px, 50vw, 500px)' }}
           >
             <BeforeCard
               data={transformations[activeTransformation].after}

@@ -151,10 +151,10 @@ export default function Process() {
           viewport={{ once: true }}
           className="text-center mb-16 md:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+          <h2 className="font-heading font-bold mb-4" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
             So <span className="gradient-text">einfach</span> starten wir
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}>
             Vom ersten Gespräch bis zur Umsetzung – transparent und strukturiert
           </p>
         </motion.div>
@@ -227,13 +227,13 @@ export default function Process() {
                       }
                     `}
                   >
-                    <h3 className="text-xl font-heading font-bold mb-2 text-gray-900">
+                    <h3 className="font-heading font-bold mb-2 text-gray-900" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                       {step.title}
                     </h3>
-                    <p className="text-sm text-magenta font-heading font-semibold mb-3">
+                    <p className="text-magenta font-heading font-semibold mb-3" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                       {step.subtitle}
                     </p>
-                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                    <p className="text-gray-600 mb-4 leading-relaxed" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                       {step.description}
                     </p>
 
@@ -313,11 +313,11 @@ export default function Process() {
 
                 {/* Content */}
                 <div className="flex-1 bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="text-lg font-heading font-bold mb-1">{step.title}</h3>
-                  <p className="text-sm text-magenta font-heading font-semibold mb-3">
+                  <h3 className="font-heading font-bold mb-1" style={{ fontSize: 'clamp(1rem, 3vw, 1.125rem)' }}>{step.title}</h3>
+                  <p className="text-magenta font-heading font-semibold mb-3" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                     {step.subtitle}
                   </p>
-                  <p className="text-sm text-gray-600 mb-4">{step.description}</p>
+                  <p className="text-gray-600 mb-4" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>{step.description}</p>
 
                   <StepMockup type={step.mockupType} />
 

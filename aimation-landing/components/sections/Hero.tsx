@@ -92,8 +92,8 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-warm-white py-12 sm:py-24 min-h-screen flex items-center">
-      <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+    <section className="w-full overflow-hidden bg-warm-white py-12 sm:py-24 min-h-screen flex items-center max-w-full">
+      <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 max-w-7xl">
         {/* Left Column: Text Content */}
         <motion.div
           className="flex flex-col items-center text-center lg:items-start lg:text-left"
@@ -113,7 +113,8 @@ export default function Hero() {
 
           {/* Headline with Magenta Highlight */}
           <motion.h1
-            className="text-4xl font-bold tracking-tight font-heading text-black sm:text-5xl lg:text-6xl leading-tight"
+            className="font-bold tracking-tight font-heading text-black leading-tight"
+            style={{ fontSize: 'clamp(1.75rem, 5vw, 3.75rem)' }}
             variants={itemVariants}
           >
             {headlineStart}
@@ -125,7 +126,8 @@ export default function Hero() {
 
           {/* Subtitle */}
           <motion.p
-            className="mt-6 max-w-md text-lg text-gray-600 font-body leading-relaxed"
+            className="mt-6 max-w-md text-gray-600 font-body leading-relaxed"
+            style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}
             variants={itemVariants}
           >
             {subtitle}
@@ -155,16 +157,16 @@ export default function Hero() {
 
           {/* Trust Elements (Stats replacement) with Animated Counters */}
           <motion.div
-            className="mt-12 flex flex-wrap justify-center gap-8 lg:justify-start"
+            className="mt-12 flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 lg:justify-start"
             variants={itemVariants}
           >
             {trustElements.map((item, index) => (
-              <div key={index} className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-magenta/10">
+              <div key={index} className="flex items-center gap-2 sm:gap-3">
+                <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-magenta/10 flex-shrink-0">
                   {item.icon}
                 </div>
-                <div>
-                  <p className="text-xl font-bold text-black font-heading">
+                <div className="min-w-0">
+                  <p className="font-bold text-black font-heading" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                     {item.hasCounter ? (
                       <AnimatedCounter
                         target={item.target!}
@@ -177,7 +179,7 @@ export default function Hero() {
                       item.value
                     )}
                   </p>
-                  <p className="text-sm text-gray-600 font-body">{item.label}</p>
+                  <p className="text-xs sm:text-sm text-gray-600 font-body truncate">{item.label}</p>
                 </div>
               </div>
             ))}
@@ -186,7 +188,8 @@ export default function Hero() {
 
         {/* Right Column: Image Collage */}
         <motion.div
-          className="relative h-[400px] w-full sm:h-[500px] lg:h-[600px]"
+          className="relative w-full max-w-full"
+          style={{ height: 'clamp(300px, 60vw, 600px)' }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"

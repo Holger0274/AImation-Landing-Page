@@ -159,12 +159,15 @@ function MockupPlaceholder({ type, stat, statLabel, imagePath }: { type: string;
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="space-y-2"
         >
-          <div className={`text-7xl md:text-8xl font-heading font-bold ${config.iconColor}`}
-            style={{ textShadow: `0 0 40px ${config.iconColor.replace('text-', 'rgba(').replace('-400', ', 0.6)')}` }}
+          <div className={`font-heading font-bold ${config.iconColor}`}
+            style={{
+              fontSize: 'clamp(3rem, 12vw, 6rem)',
+              textShadow: `0 0 40px ${config.iconColor.replace('text-', 'rgba(').replace('-400', ', 0.6)')}`
+            }}
           >
             {stat}
           </div>
-          <div className="text-lg text-white/70 font-heading font-semibold">
+          <div className="text-white/70 font-heading font-semibold" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1.125rem)' }}>
             {statLabel}
           </div>
         </motion.div>
@@ -176,8 +179,8 @@ function MockupPlaceholder({ type, stat, statLabel, imagePath }: { type: string;
 
         {/* Title */}
         <div className="space-y-1">
-          <p className="text-xl font-bold text-white/90 font-heading">{config.title}</p>
-          <p className="text-sm text-white/50">{config.subtitle}</p>
+          <p className="font-bold text-white/90 font-heading" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>{config.title}</p>
+          <p className="text-white/50" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>{config.subtitle}</p>
         </div>
       </div>
 
@@ -213,10 +216,10 @@ export default function PainPoints() {
           viewport={{ once: true }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+          <h2 className="font-heading font-bold mb-4" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
             Kommt Ihnen das <span className="text-[#f90093]" style={{ textShadow: '0 0 40px rgba(249, 0, 147, 0.5)' }}>bekannt</span> vor?
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}>
             Die 6 größten Herausforderungen, die wir bei KMUs sehen
           </p>
         </motion.div>
@@ -304,21 +307,25 @@ export default function PainPoints() {
                       />
                     </div>
 
-                    <div className="flex-1">
-                      <div className="flex items-baseline justify-between mb-2">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-baseline justify-between mb-2 gap-2">
                         <h3
                           className={`
-                            text-xl font-heading font-bold
+                            font-heading font-bold flex-1 min-w-0
                             ${isActive ? 'text-white' : 'text-white/90'}
                           `}
+                          style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}
                         >
                           {point.title}
                         </h3>
                         <span className={`
-                          text-2xl font-heading font-bold ml-4
+                          font-heading font-bold flex-shrink-0
                           ${isActive ? 'text-[#f90093]' : 'text-white/40'}
                         `}
-                          style={isActive ? { textShadow: '0 0 20px rgba(249, 0, 147, 0.5)' } : {}}
+                          style={{
+                            fontSize: 'clamp(1.125rem, 3.5vw, 1.5rem)',
+                            ...(isActive ? { textShadow: '0 0 20px rgba(249, 0, 147, 0.5)' } : {})
+                          }}
                         >
                           {point.stat}
                         </span>

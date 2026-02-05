@@ -13,7 +13,8 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative h-96 rounded-2xl overflow-hidden"
+            className="relative rounded-2xl overflow-hidden"
+            style={{ height: 'clamp(250px, 40vw, 384px)' }}
           >
             {/* Animated Geometric Shapes */}
             <div className="absolute inset-0 bg-gradient-to-br from-magenta/10 to-lightblue/10">
@@ -47,19 +48,19 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">Über uns</h2>
+            <h2 className="font-heading font-bold mb-6" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>Über uns</h2>
 
-            <blockquote className="text-xl font-medium text-black italic mb-6 pl-4 border-l-4 border-magenta">
+            <blockquote className="font-medium text-black italic mb-6 pl-4 border-l-4 border-magenta" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
               "KI ist nicht unser Job – es ist das Thema, das uns antreibt."
             </blockquote>
 
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-gray-600 mb-4 leading-relaxed" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1rem)' }}>
               Mit 20 Jahren Engineering-Erfahrung haben wir gesehen, wie viel Potenzial in deutschen
               Unternehmen brachliegt. Unser Ziel: KI zugänglich machen – ohne Buzzwords, ohne
               Konzernpreise, mit echtem Verständnis für eure Prozesse.
             </p>
 
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-gray-600 mb-6 leading-relaxed" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1rem)' }}>
               Mit AI.mation bringen wir beides zusammen: Tiefes technisches Verständnis und die
               Fähigkeit, komplexe Themen verständlich zu machen. Unser Versprechen: Keine leeren
               Buzzwords, sondern ehrliche Einschätzungen und praktische Lösungen, die
@@ -75,8 +76,8 @@ export default function About() {
                 'Ehrliche Einschätzung – auch wenn die Antwort Nein lautet',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-magenta flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-600">{item}</span>
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-magenta flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-600" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1rem)' }}>{item}</span>
                 </div>
               ))}
             </div>

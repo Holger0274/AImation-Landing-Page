@@ -45,7 +45,8 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl md:text-3xl font-heading font-bold hover:opacity-80 transition-opacity"
+            className="font-heading font-bold hover:opacity-80 transition-opacity"
+            style={{ fontSize: 'clamp(1.25rem, 4vw, 1.875rem)' }}
           >
             AI<span className="text-magenta">.</span>mation
           </Link>

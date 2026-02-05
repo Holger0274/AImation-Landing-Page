@@ -38,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <body className="antialiased">{children}</body>
+    <html lang="de" className={`${spaceGrotesk.variable} ${inter.variable}`} style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
+      <body className="antialiased" style={{ overflowX: 'hidden', maxWidth: '100vw' }}>{children}</body>
     </html>
   );
 }

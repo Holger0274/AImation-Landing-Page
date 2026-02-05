@@ -33,10 +33,10 @@ export default function Solution() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+          <h2 className="font-heading font-bold mb-6" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
             Die Lösung: <span className="gradient-text">Systematische</span> KI-Integration
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-16">
+          <p className="text-gray-600 max-w-3xl mx-auto mb-16" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}>
             Wir helfen Ihnen, KI dort einzusetzen, wo sie echten Mehrwert bringt – ohne
             Buzzwords, ohne Konzernpreise.
           </p>
@@ -54,8 +54,8 @@ export default function Solution() {
               <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-lightblue/10 flex items-center justify-center">
                 <solution.icon className="w-8 h-8 text-lightblue" />
               </div>
-              <h3 className="text-2xl font-heading font-bold mb-4">{solution.title}</h3>
-              <p className="text-gray-600">{solution.description}</p>
+              <h3 className="font-heading font-bold mb-4" style={{ fontSize: 'clamp(1.25rem, 3vw, 1.5rem)' }}>{solution.title}</h3>
+              <p className="text-gray-600" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1rem)' }}>{solution.description}</p>
             </motion.div>
           ))}
         </div>
