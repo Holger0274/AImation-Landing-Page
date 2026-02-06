@@ -138,8 +138,8 @@ function MockupPlaceholder({ type, stat, statLabel, imagePath }: { type: string;
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-          {/* Dark Overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+          {/* Dark Overlay for text readability - Enhanced */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/65 to-black/45" />
         </div>
       )}
 
@@ -162,7 +162,8 @@ function MockupPlaceholder({ type, stat, statLabel, imagePath }: { type: string;
           <div className={`font-heading font-bold ${config.iconColor}`}
             style={{
               fontSize: 'clamp(3rem, 12vw, 6rem)',
-              textShadow: `0 0 40px ${config.iconColor.replace('text-', 'rgba(').replace('-400', ', 0.6)')}`
+              textShadow: `0 0 40px ${config.iconColor.replace('text-', 'rgba(').replace('-400', ', 0.6)')}, 0 0 20px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.5)`,
+              WebkitTextStroke: '1px rgba(0, 0, 0, 0.3)'
             }}
           >
             {stat}
@@ -177,10 +178,14 @@ function MockupPlaceholder({ type, stat, statLabel, imagePath }: { type: string;
           <VisualIcon className="w-10 h-10" />
         </div>
 
-        {/* Title */}
-        <div className="space-y-1">
-          <p className="font-bold text-white/90 font-heading" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>{config.title}</p>
-          <p className="text-white/50" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>{config.subtitle}</p>
+        {/* Title - Enhanced with background box */}
+        <div className="space-y-2">
+          <div className="inline-block bg-black/60 backdrop-blur-sm px-3 py-1 rounded-lg">
+            <p className="font-bold text-white/90 font-heading" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>{config.title}</p>
+          </div>
+          <div className="inline-block bg-black/60 backdrop-blur-sm px-3 py-1 rounded-lg">
+            <p className="text-white/50" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>{config.subtitle}</p>
+          </div>
         </div>
       </div>
 
@@ -236,13 +241,13 @@ export default function PainPoints() {
             className="order-2 lg:order-1"
           >
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-              {/* Glow Border Effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#f90093]/20 to-transparent p-[2px]">
+              {/* Glow Border Effect - Enhanced */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#f90093]/35 to-transparent p-[3px]">
                 <div className="w-full h-full bg-[#071013] rounded-2xl" />
               </div>
 
               {/* Mockup Content with AnimatePresence */}
-              <div className="absolute inset-0 p-[2px]">
+              <div className="absolute inset-0 p-[3px]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activePainPoint}
@@ -262,10 +267,10 @@ export default function PainPoints() {
                 </AnimatePresence>
               </div>
 
-              {/* Outer Glow */}
+              {/* Outer Glow - Enhanced */}
               <div
                 className="absolute inset-0 rounded-2xl opacity-40 pointer-events-none"
-                style={{ boxShadow: '0 0 60px rgba(249, 0, 147, 0.3)' }}
+                style={{ boxShadow: '0 0 80px rgba(249, 0, 147, 0.4)' }}
               />
             </div>
           </motion.div>

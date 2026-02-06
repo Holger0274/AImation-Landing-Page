@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { Calendar, FileText, Rocket, Headphones, CheckCircle, Clock, Euro } from 'lucide-react';
+import { Calendar, FileText, Rocket, Headphones, CheckCircle, Clock, Euro, Search } from 'lucide-react';
 import { useRef, useState } from 'react';
 
 const steps = [
@@ -23,14 +23,32 @@ const steps = [
   },
   {
     number: '2',
+    icon: Search,
+    title: 'Analyse',
+    subtitle: 'Potenziale erkennen',
+    description:
+      'Tiefenanalyse Ihrer Prozesse, Daten und Anforderungen. Wir identifizieren konkrete KI-Potenziale und bewerten deren Machbarkeit.',
+    details: [
+      'Ist-Prozesse dokumentieren',
+      'Schmerzpunkte identifizieren',
+      'KI-Potenziale bewerten',
+      'Quick Wins vs. strategische Projekte',
+    ],
+    duration: '2-4 Wochen',
+    cost: 'Nach Aufwand',
+    mockupType: 'analysis',
+  },
+  {
+    number: '3',
     icon: FileText,
     title: 'Konzept',
     subtitle: 'Transparenter Vorschlag',
     description:
-      'Maßgeschneidertes Konzept mit klarem Aufwand, Nutzen und ROI-Berechnung.',
+      'Basierend auf der Analyse entwickeln wir ein maßgeschneidertes Konzept mit klarem Aufwand, Nutzen und ROI-Berechnung.',
     details: [
-      'Detaillierte Analyse',
-      'Lösungsvorschlag',
+      'Lösungsarchitektur',
+      'Konkreter Umsetzungsplan',
+      'Timeline & Meilensteine',
       'ROI-Kalkulation',
     ],
     duration: '3-5 Tage',
@@ -38,7 +56,7 @@ const steps = [
     mockupType: 'proposal',
   },
   {
-    number: '3',
+    number: '4',
     icon: Rocket,
     title: 'Umsetzung',
     subtitle: 'Gemeinsam umsetzen',
@@ -54,7 +72,7 @@ const steps = [
     mockupType: 'implementation',
   },
   {
-    number: '4',
+    number: '5',
     icon: Headphones,
     title: 'Begleitung',
     subtitle: 'Langfristige Partnerschaft',
@@ -73,26 +91,36 @@ const steps = [
 
 // Process Step Mockup Component
 function StepMockup({ type }: { type: string }) {
-  const mockups: Record<string, { icon: any; color: string; elements: string[] }> = {
+  const mockups: Record<string, { icon: any; color: string; imageUrl: string; imageAlt: string }> = {
     'video-call': {
       icon: Calendar,
       color: '#60AFFF',
-      elements: ['Video', 'Notizen', 'Screen Share', 'Kalender'],
+      imageUrl: '/images/process-step-1-erstgespraech.png',
+      imageAlt: 'Erstgespräch - Professionelles Video-Call Setup',
+    },
+    'analysis': {
+      icon: Search,
+      color: '#60AFFF',
+      imageUrl: '/images/process-step-2-analyse.png',
+      imageAlt: 'Analyse - Business Analytics Dashboard',
     },
     'proposal': {
       icon: FileText,
       color: '#f90093',
-      elements: ['Analyse', 'Lösungen', 'Timeline', 'Budget'],
+      imageUrl: '/images/process-step-3-konzept.png',
+      imageAlt: 'Konzept - Strategisches Proposal Dokument',
     },
     'implementation': {
       icon: Rocket,
       color: '#ff4ecd',
-      elements: ['Sprint 1', 'Sprint 2', 'Testing', 'Go-Live'],
+      imageUrl: '/images/process-step-4-umsetzung.png',
+      imageAlt: 'Umsetzung - Agile Development Workspace',
     },
     'support': {
       icon: Headphones,
       color: '#60AFFF',
-      elements: ['Tickets', 'Updates', 'Monitoring', 'Optimization'],
+      imageUrl: '/images/process-step-5-begleitung.png',
+      imageAlt: 'Begleitung - Langfristige Partnerschaft',
     },
   };
 
@@ -100,27 +128,19 @@ function StepMockup({ type }: { type: string }) {
   const Icon = mockup.icon;
 
   return (
-    <div className="relative w-full h-32 bg-white rounded-xl border border-gray-200 p-4 overflow-hidden group hover:border-magenta/30 transition-all">
-      {/* Background Icon */}
+    <div className="relative w-full h-32 bg-white rounded-xl border border-gray-200 p-2 overflow-hidden group hover:border-magenta/30 transition-all">
+      {/* Background Icon - subtle */}
       <div className="absolute top-1/2 right-4 -translate-y-1/2 opacity-5 group-hover:opacity-10 transition-opacity">
         <Icon className="w-24 h-24" style={{ color: mockup.color }} />
       </div>
 
-      {/* Elements Grid */}
-      <div className="relative grid grid-cols-2 gap-2">
-        {mockup.elements.map((element, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="flex items-center gap-2 bg-gray-50 rounded px-2 py-1"
-          >
-            <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: mockup.color }} />
-            <span className="text-xs text-gray-600 font-heading">{element}</span>
-          </motion.div>
-        ))}
+      {/* Professional Image */}
+      <div className="relative flex items-center justify-center h-full">
+        <img
+          src={mockup.imageUrl}
+          alt={mockup.imageAlt}
+          className="w-full h-full object-cover rounded-lg opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+        />
       </div>
     </div>
   );
@@ -172,7 +192,7 @@ export default function Process() {
           </div>
 
           {/* Steps */}
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid grid-cols-5 gap-6">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isActive = activeStep === index;
@@ -220,6 +240,7 @@ export default function Process() {
                   {/* Content Card */}
                   <div
                     className={`
+                      min-h-[520px] flex flex-col
                       bg-white rounded-2xl p-6 border-2 transition-all duration-300
                       ${isActive
                         ? 'border-magenta shadow-lg scale-105'
