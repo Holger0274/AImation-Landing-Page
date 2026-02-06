@@ -32,7 +32,6 @@ const steps = [
       'Ist-Prozesse dokumentieren',
       'Schmerzpunkte identifizieren',
       'KI-Potenziale bewerten',
-      'Quick Wins vs. strategische Projekte',
     ],
     duration: '2-4 Wochen',
     cost: 'Nach Aufwand',
@@ -46,8 +45,7 @@ const steps = [
     description:
       'Basierend auf der Analyse entwickeln wir ein maßgeschneidertes Konzept mit klarem Aufwand, Nutzen und ROI-Berechnung.',
     details: [
-      'Lösungsarchitektur',
-      'Konkreter Umsetzungsplan',
+      'Lösungsarchitektur & Umsetzungsplan',
       'Timeline & Meilensteine',
       'ROI-Kalkulation',
     ],
@@ -128,13 +126,13 @@ function StepMockup({ type }: { type: string }) {
   const Icon = mockup.icon;
 
   return (
-    <div className="relative w-full h-32 bg-white rounded-xl border border-gray-200 p-2 overflow-hidden group hover:border-magenta/30 transition-all">
+    <div className="relative w-full h-36 bg-white rounded-xl border border-gray-200 p-2 overflow-hidden group hover:border-magenta/30 transition-all">
       {/* Background Icon - subtle */}
       <div className="absolute top-1/2 right-4 -translate-y-1/2 opacity-5 group-hover:opacity-10 transition-opacity">
         <Icon className="w-24 h-24" style={{ color: mockup.color }} />
       </div>
 
-      {/* Professional Image */}
+      {/* Professional Image - Fixed Height for Alignment */}
       <div className="relative flex items-center justify-center h-full">
         <img
           src={mockup.imageUrl}
@@ -261,10 +259,11 @@ export default function Process() {
                     {/* Mockup */}
                     <StepMockup type={step.mockupType} />
 
-                    {/* Details (show on hover) */}
+                    {/* Details (show on hover) - Fixed Height for Consistent Expansion */}
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
-                      animate={isActive ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+                      animate={isActive ? { height: 176, opacity: 1 } : { height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
                       className="overflow-hidden mt-4"
                     >
                       <div className="border-t border-gray-200 pt-4 space-y-2">
@@ -340,8 +339,10 @@ export default function Process() {
                   </p>
                   <p className="text-gray-600 mb-4" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>{step.description}</p>
 
+                  {/* Image with consistent height */}
                   <StepMockup type={step.mockupType} />
 
+                  {/* Details - always visible on mobile, consistent 3 items */}
                   <div className="mt-4 space-y-2">
                     {step.details.map((detail, i) => (
                       <div key={i} className="flex items-center gap-2 text-xs text-gray-600">
@@ -351,6 +352,7 @@ export default function Process() {
                     ))}
                   </div>
 
+                  {/* Meta Info */}
                   <div className="flex items-center gap-4 mt-4 pt-4 border-t border-gray-200">
                     <div className="flex items-center gap-2 text-xs text-gray-500">
                       <Clock className="w-3 h-3" />
