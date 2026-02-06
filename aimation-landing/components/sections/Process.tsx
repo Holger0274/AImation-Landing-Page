@@ -238,7 +238,7 @@ export default function Process() {
                   {/* Content Card */}
                   <div
                     className={`
-                      min-h-[520px] flex flex-col
+                      flex flex-col
                       bg-white rounded-2xl p-6 border-2 transition-all duration-300
                       ${isActive
                         ? 'border-magenta shadow-lg scale-105'
@@ -246,25 +246,30 @@ export default function Process() {
                       }
                     `}
                   >
-                    <h3 className="font-heading font-bold mb-2 text-gray-900" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
-                      {step.title}
-                    </h3>
-                    <p className="text-magenta font-heading font-semibold mb-3" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
-                      {step.subtitle}
-                    </p>
-                    <p className="text-gray-600 mb-4 leading-relaxed" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
-                      {step.description}
-                    </p>
+                    {/* Text Content - Flexible Height */}
+                    <div className="flex-1">
+                      <h3 className="font-heading font-bold mb-2 text-gray-900" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
+                        {step.title}
+                      </h3>
+                      <p className="text-magenta font-heading font-semibold mb-3" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
+                        {step.subtitle}
+                      </p>
+                      <p className="text-gray-600 mb-4 leading-relaxed" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
+                        {step.description}
+                      </p>
+                    </div>
 
-                    {/* Mockup */}
-                    <StepMockup type={step.mockupType} />
+                    {/* Mockup - Fixed at Bottom */}
+                    <div className="mt-auto">
+                      <StepMockup type={step.mockupType} />
+                    </div>
 
-                    {/* Details (show on hover) - Fixed Height for Consistent Expansion */}
+                    {/* Details (show on hover) - Smooth Expansion */}
                     <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={isActive ? { height: 176, opacity: 1 } : { height: 0, opacity: 0 }}
+                      initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                      animate={isActive ? { height: 'auto', opacity: 1, marginTop: 16 } : { height: 0, opacity: 0, marginTop: 0 }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="overflow-hidden mt-4"
+                      className="overflow-hidden"
                     >
                       <div className="border-t border-gray-200 pt-4 space-y-2">
                         {step.details.map((detail, i) => (
