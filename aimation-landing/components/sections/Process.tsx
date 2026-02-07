@@ -235,10 +235,10 @@ export default function Process() {
                     </div>
                   </div>
 
-                  {/* Content Card */}
+                  {/* Content Card - Fixed Height for Consistent Alignment */}
                   <div
                     className={`
-                      flex flex-col
+                      flex flex-col h-[520px]
                       bg-white rounded-2xl p-6 border-2 transition-all duration-300
                       ${isActive
                         ? 'border-magenta shadow-lg scale-105'
@@ -247,20 +247,20 @@ export default function Process() {
                     `}
                   >
                     {/* Text Content - Fixed Height for Image Alignment */}
-                    <div className="flex-1 min-h-[200px] flex flex-col">
+                    <div className="h-[240px] flex flex-col">
                       <h3 className="font-heading font-bold mb-2 text-gray-900" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                         {step.title}
                       </h3>
                       <p className="text-magenta font-heading font-semibold mb-3" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                         {step.subtitle}
                       </p>
-                      <p className="text-gray-600 mb-4 leading-relaxed flex-1" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
+                      <p className="text-gray-600 mb-4 leading-relaxed overflow-hidden" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                         {step.description}
                       </p>
                     </div>
 
-                    {/* Mockup - Fixed at Bottom */}
-                    <div className="mt-auto">
+                    {/* Mockup - Fixed at Same Position for All Cards */}
+                    <div className="mb-4">
                       <StepMockup type={step.mockupType} />
                     </div>
 

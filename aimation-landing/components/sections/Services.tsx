@@ -27,15 +27,15 @@ const services = [
     patternOpacity: 0.08,
     useCases: [
       {
-        title: 'Workshop: Prompt Engineering für Marketing',
-        description: '1-Tages-Workshop für Marketing-Teams. Von Basics bis zu fortgeschrittenen Prompt-Techniken.',
-        result: '80% der Teilnehmer nutzen ChatGPT täglich',
+        title: 'Workshop: Prompt Engineering für Marketing-Teams',
+        description: '1-Tages-Workshop für Marketing-Teams: Von den Grundlagen bis zu fortgeschrittenen Prompt-Techniken. Teilnehmer lernen, ChatGPT, Claude und andere KI-Tools effektiv für Content-Erstellung, Recherche und Kampagnen einzusetzen.',
+        result: '80% der Teilnehmer nutzen KI-Tools täglich im Arbeitsalltag',
         mockupType: 'training-workshop',
       },
       {
-        title: 'Vibe Coding: Landing Page in 2 Stunden',
-        description: 'Praktischer Workshop: Teilnehmer bauen mit Claude Code eine funktionierende Landing Page.',
-        result: '100% der Teilnehmer verlassen Workshop mit eigener Page',
+        title: 'Vibe Coding Workshop: Landing Page in 2 Stunden bauen',
+        description: 'Praktischer Workshop für Product Owner und Innovation Labs: Teilnehmer erstellen mit Claude Code und Lovable eine funktionierende Landing Page – ohne klassische Programmierkenntnisse. Von der Idee zum Live-Deployment.',
+        result: '100% der Teilnehmer verlassen den Workshop mit eigener Live-Seite',
         mockupType: 'vibe-coding',
       },
     ],
@@ -59,15 +59,15 @@ const services = [
     patternOpacity: 0.06,
     useCases: [
       {
-        title: 'AI Readiness Assessment: Mittelständischer Maschinenbauer',
-        description: '2-Tages-Workshop: IST-Analyse, Potenzialidentifikation, konkrete Roadmap mit Priorisierung.',
+        title: 'AI Readiness Assessment für mittelständischen Maschinenbauer',
+        description: '2-Tages-Workshop mit Geschäftsführung und Führungskräften: IST-Analyse der Technik, Prozesse, Daten und Menschen. Potenzialidentifikation über alle Abteilungen. Entwicklung einer konkreten Roadmap mit priorisierten Quick Wins.',
         result: '12 Use Cases identifiziert, 3 Quick Wins in Q1 umgesetzt',
         mockupType: 'readiness-assessment',
       },
       {
-        title: 'Use Case Workshop: Produktionsoptimierung',
-        description: 'Gemeinsam mit dem Team konkrete Automatisierungs-Potenziale identifizieren und bewerten.',
-        result: 'ROI-Kalkulation: 150k€ Ersparnis im ersten Jahr',
+        title: 'Use Case Workshop: Produktionsoptimierung für Zulieferer',
+        description: 'Workshop mit Produktions- und Prozessverantwortlichen: Gemeinsam konkrete Automatisierungs-Potenziale identifizieren, nach Impact und Aufwand bewerten. ROI-Kalkulation für Top-Use-Cases. Priorisierung und Nächste-Schritte-Plan.',
+        result: 'ROI-Kalkulation zeigt 150k€ Ersparnis im ersten Jahr',
         mockupType: 'use-case-workshop',
       },
     ],
@@ -91,59 +91,75 @@ const services = [
     patternOpacity: 0.07,
     useCases: [
       {
-        title: 'RAG-Chatbot für technische Dokumentation',
-        description: '5000+ PDF-Seiten in durchsuchbare Knowledge Base. Chatbot beantwortet technische Fragen in Sekunden.',
-        result: '70% weniger Support-Anfragen, 95% Genauigkeit',
+        title: 'RAG-Chatbot für technische Dokumentation (Maschinenbau)',
+        description: 'Umsetzung eines RAG-Systems für 5000+ PDF-Seiten technischer Dokumentation: Vektorisierung mit Pinecone, LLM-Integration für semantische Suche, Chat-Interface für Service-Techniker. Antworten mit Quellenangaben für Nachvollziehbarkeit.',
+        result: '70% weniger Support-Anfragen an Experten, 95% Antwort-Genauigkeit',
         mockupType: 'rag-chatbot',
       },
       {
-        title: 'E-Mail-Automatisierung mit n8n',
-        description: 'Intelligenter E-Mail-Agent: Sortiert, kategorisiert, extrahiert Daten, erstellt Tickets automatisch.',
-        result: '2 Stunden/Tag gespart, 0 vergessene E-Mails',
+        title: 'E-Mail-Automatisierung mit n8n für Vertriebsteam',
+        description: 'Intelligenter E-Mail-Workflow mit n8n: Eingehende E-Mails werden automatisch analysiert, kategorisiert (Anfrage, Beschwerde, Bestellung), mit CRM-Daten angereichert und an zuständige Mitarbeiter geroutet. Tickets werden automatisch erstellt.',
+        result: '2 Stunden pro Tag gespart, keine E-Mail geht mehr verloren',
         mockupType: 'email-automation',
       },
     ],
   },
 ];
 
-// Use Case Mockup Component
+// Use Case Mockup Component - PROFESSIONAL DASHBOARD DESIGN
 function UseCaseMockup({ type }: { type: string }) {
-  const mockupConfig: Record<string, { icon: any; bgGradient: string; iconColor: string; elements: string[] }> = {
+  const mockupConfig: Record<string, {
+    icon: any;
+    iconColor: string;
+    sections: { title: string; items: string[] }[]
+  }> = {
     'training-workshop': {
       icon: Users,
-      bgGradient: 'from-purple-900/30 to-pink-900/20',
-      iconColor: 'text-purple-400',
-      elements: ['Präsentation', 'Live-Demo', 'Hands-On', 'Q&A'],
+      iconColor: '#f90093',
+      sections: [
+        { title: 'Agenda', items: ['Grundlagen & Konzepte', 'Tool-Einführung', 'Hands-On Übungen'] },
+        { title: 'Methoden', items: ['Chain-of-Thought', 'Few-Shot Learning', 'Prompt-Templates'] },
+      ],
     },
     'vibe-coding': {
       icon: Code,
-      bgGradient: 'from-blue-900/30 to-cyan-900/20',
-      iconColor: 'text-blue-400',
-      elements: ['Claude Code', 'Live Coding', 'Landing Page', 'Deployment'],
+      iconColor: '#60AFFF',
+      sections: [
+        { title: 'Technologie', items: ['Claude Code', 'Next.js', 'Tailwind CSS'] },
+        { title: 'Ergebnis', items: ['Landing Page (live)', 'Deployment (Vercel)', 'Source Code'] },
+      ],
     },
     'readiness-assessment': {
       icon: TrendingUp,
-      bgGradient: 'from-green-900/30 to-teal-900/20',
-      iconColor: 'text-green-400',
-      elements: ['IST-Analyse', 'Potenziale', 'Roadmap', 'Priorisierung'],
+      iconColor: '#f90093',
+      sections: [
+        { title: 'Phase 1: Analyse', items: ['IST-Zustand erfassen', 'Potenziale identifizieren', 'Quick Wins finden'] },
+        { title: 'Phase 2: Roadmap', items: ['Use Cases priorisieren', 'Timeline entwickeln', 'Ressourcen planen'] },
+      ],
     },
     'use-case-workshop': {
       icon: Lightbulb,
-      bgGradient: 'from-yellow-900/30 to-orange-900/20',
-      iconColor: 'text-yellow-400',
-      elements: ['Brainstorming', 'Bewertung', 'ROI-Kalkulation', 'Priorisierung'],
+      iconColor: '#60AFFF',
+      sections: [
+        { title: 'Workshop-Ablauf', items: ['Problem-Analyse', 'Lösungs-Brainstorming', 'Machbarkeits-Check'] },
+        { title: 'Output', items: ['Priorisierte Use Cases', 'ROI-Schätzung', 'Nächste Schritte'] },
+      ],
     },
     'rag-chatbot': {
       icon: Database,
-      bgGradient: 'from-indigo-900/30 to-purple-900/20',
-      iconColor: 'text-indigo-400',
-      elements: ['PDF Upload', 'Vektorisierung', 'Chat Interface', 'Knowledge Base'],
+      iconColor: '#7209B7',
+      sections: [
+        { title: 'Technologie', items: ['Vektordatenbank (Pinecone)', 'LLM Integration', 'Chat Interface'] },
+        { title: 'Funktionen', items: ['Dokumenten-Upload', 'Semantische Suche', 'Quellenangaben'] },
+      ],
     },
     'email-automation': {
       icon: Mail,
-      bgGradient: 'from-pink-900/30 to-red-900/20',
-      iconColor: 'text-pink-400',
-      elements: ['E-Mail Inbox', 'KI-Filter', 'Auto-Routing', 'Ticket-Erstellung'],
+      iconColor: '#0077B6',
+      sections: [
+        { title: 'Workflow', items: ['E-Mail Empfang', 'KI-Analyse', 'Auto-Kategorisierung'] },
+        { title: 'Actions', items: ['Smart Routing', 'Ticket erstellen', 'Auto-Antwort'] },
+      ],
     },
   };
 
@@ -151,43 +167,77 @@ function UseCaseMockup({ type }: { type: string }) {
   const Icon = config.icon;
 
   return (
-    <div className={`relative w-full h-full rounded-xl bg-gradient-to-br ${config.bgGradient} border border-white/10 p-6 overflow-hidden`}>
-      {/* Background Icon */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-5">
-        <Icon className="w-48 h-48" />
-      </div>
+    <div className="relative w-full h-full rounded-2xl bg-white border-2 border-gray-100 p-6 overflow-hidden shadow-lg">
+      {/* Subtle gradient overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          background: `radial-gradient(circle at top right, ${config.iconColor}, transparent 70%)`
+        }}
+      />
 
       {/* Content */}
-      <div className="relative z-10">
-        {/* Icon Badge */}
-        <div className={`inline-flex p-3 rounded-lg bg-white/10 mb-4 ${config.iconColor}`}>
-          <Icon className="w-6 h-6" />
+      <div className="relative z-10 space-y-6">
+        {/* Icon Header */}
+        <div className="flex items-center gap-4 pb-4 border-b-2 border-gray-100">
+          <div
+            className="p-3 rounded-xl"
+            style={{
+              backgroundColor: `${config.iconColor}15`,
+            }}
+          >
+            <Icon className="w-7 h-7" style={{ color: config.iconColor }} />
+          </div>
+          <div className="flex-1">
+            <div className="flex gap-2">
+              <div className="h-2.5 bg-gray-200 rounded-full w-32" />
+              <div className="h-2.5 bg-gray-100 rounded-full w-20" />
+            </div>
+          </div>
         </div>
 
-        {/* Mockup Elements Grid */}
-        <div className="grid grid-cols-2 gap-3">
-          {config.elements.map((element, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10"
-            >
-              <div className="w-full h-2 bg-white/20 rounded mb-2" />
-              <p className="text-xs text-white/70 font-heading font-semibold">{element}</p>
-            </motion.div>
-          ))}
-        </div>
+        {/* Sections */}
+        {config.sections.map((section, sectionIndex) => (
+          <motion.div
+            key={sectionIndex}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: sectionIndex * 0.15 }}
+            className="space-y-3"
+          >
+            {/* Section Title */}
+            <div className="flex items-center gap-2">
+              <div
+                className="w-1.5 h-1.5 rounded-full"
+                style={{ backgroundColor: config.iconColor }}
+              />
+              <h4 className="font-heading font-bold text-[#071013] text-sm">
+                {section.title}
+              </h4>
+            </div>
+
+            {/* Section Items */}
+            <div className="space-y-2 pl-3.5">
+              {section.items.map((item, itemIndex) => (
+                <div
+                  key={itemIndex}
+                  className="flex items-start gap-3 text-gray-700"
+                >
+                  <div className="w-5 h-5 rounded border-2 border-gray-200 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-2 h-2 rounded-sm bg-gray-300" />
+                  </div>
+                  <span className="text-sm leading-relaxed">{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
 
-      {/* Grid Pattern */}
+      {/* Subtle corner accent */}
       <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '20px 20px',
-        }}
+        className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full opacity-5"
+        style={{ backgroundColor: config.iconColor }}
       />
     </div>
   );

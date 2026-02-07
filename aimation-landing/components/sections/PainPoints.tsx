@@ -313,10 +313,10 @@ export default function PainPoints() {
   return (
     <section className="relative overflow-hidden">
       {/* Hybrid Split Container - SYNCHRONIZED HEIGHTS */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-screen">
 
         {/* LEFT SIDE - LIGHT (Warm White Background) */}
-        <div className="relative bg-[#faf9f7] py-12 md:py-16 px-6 md:px-12 flex items-center justify-center order-1">
+        <div className="relative bg-[#faf9f7] py-16 md:py-20 px-6 md:px-12 flex items-center justify-center order-1">
           {/* Content */}
           <div className="relative z-10 max-w-xl mx-auto lg:mx-0 w-full">
             <motion.div
@@ -380,16 +380,16 @@ export default function PainPoints() {
         </div>
 
         {/* RIGHT SIDE - DARK (Soft Black Background with Cards) */}
-        <div className="relative bg-[#071013] py-12 md:py-16 px-6 md:px-12 flex items-center justify-center order-2">
+        <div className="relative bg-[#071013] py-16 md:py-20 px-6 md:px-12 flex items-center justify-center order-2">
           {/* Glow Background */}
           <div className="absolute inset-0 mesh-gradient opacity-30" />
 
           {/* Radial Glow */}
-          <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f90093]/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f90093]/10 rounded-full blur-[120px] pointer-events-none" />
 
           {/* Interactive Pain Points Cards */}
           <div className="relative z-10 w-full max-w-xl mx-auto lg:mx-0">
-            <div className="space-y-3">
+            <div className="space-y-4">
               {painPoints.map((point, index) => {
                 const Icon = point.icon;
                 const isActive = activePainPoint === index;
@@ -407,7 +407,7 @@ export default function PainPoints() {
                     }}
                     onMouseEnter={() => setActivePainPoint(index)}
                     className={`
-                      relative p-4 rounded-xl cursor-pointer transition-all duration-300
+                      relative p-5 rounded-xl cursor-pointer transition-all duration-300
                       ${isActive
                         ? 'bg-[#f90093]/10 border-2 border-[#f90093]'
                         : 'bg-white/5 border-2 border-white/10 hover:border-white/20'
