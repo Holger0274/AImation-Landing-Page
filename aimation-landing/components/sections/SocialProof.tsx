@@ -81,12 +81,12 @@ export default function SocialProof() {
         </motion.div>
 
         {/* Logo Carousel - Infinite Scroll with lobe-icons */}
-        <div className="relative overflow-hidden bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+        <div className="relative overflow-hidden bg-warm-white rounded-2xl border border-gray-200 p-8 shadow-sm">
           {/* Gradient Fade Left */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-warm-white to-transparent z-10 pointer-events-none" />
 
           {/* Gradient Fade Right */}
-          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-warm-white to-transparent z-10 pointer-events-none" />
 
           <motion.div
             className="flex gap-8 md:gap-12 items-center"
@@ -97,7 +97,7 @@ export default function SocialProof() {
               x: {
                 repeat: Infinity,
                 repeatType: 'loop',
-                duration: 40,
+                duration: 25,
                 ease: 'linear',
               },
             }}

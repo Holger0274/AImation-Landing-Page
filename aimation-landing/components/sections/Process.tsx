@@ -246,15 +246,15 @@ export default function Process() {
                       }
                     `}
                   >
-                    {/* Text Content - Flexible Height */}
-                    <div className="flex-1">
+                    {/* Text Content - Fixed Height for Image Alignment */}
+                    <div className="flex-1 min-h-[200px] flex flex-col">
                       <h3 className="font-heading font-bold mb-2 text-gray-900" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                         {step.title}
                       </h3>
                       <p className="text-magenta font-heading font-semibold mb-3" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                         {step.subtitle}
                       </p>
-                      <p className="text-gray-600 mb-4 leading-relaxed" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
+                      <p className="text-gray-600 mb-4 leading-relaxed flex-1" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                         {step.description}
                       </p>
                     </div>

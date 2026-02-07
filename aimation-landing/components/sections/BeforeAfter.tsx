@@ -96,7 +96,7 @@ function BeforeCard({ data, type }: { data: any; type: 'before' | 'after' }) {
       className={`
         relative h-full rounded-2xl p-8
         ${isBefore
-          ? 'bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-red-500/30'
+          ? 'bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-[#f90093]/30'
           : 'bg-gradient-to-br from-[#071013] to-[#0a1419] border-2 border-[#f90093]/50'
         }
       `}
@@ -108,23 +108,21 @@ function BeforeCard({ data, type }: { data: any; type: 'before' | 'after' }) {
     >
       {/* Header */}
       <div className="mb-6">
-        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full font-heading font-bold mb-3
-          ${isBefore ? 'bg-red-500/20 text-red-400' : 'bg-[#f90093]/20 text-[#f90093]'}
+        <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-heading font-bold mb-3
+          ${isBefore ? 'bg-[#f90093]/20 text-[#f90093]' : 'bg-[#f90093]/20 text-[#f90093]'}
         `}
-          style={{ fontSize: 'clamp(0.7rem, 2vw, 0.75rem)' }}
+          style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}
         >
-          {isBefore ? <X className="w-3 h-3" /> : <Check className="w-3 h-3" />}
+          {isBefore ? <X className="w-4 h-4" /> : <Check className="w-4 h-4" />}
           {isBefore ? 'Problem' : 'Lösung'}
         </div>
         <h4 className="font-heading font-bold text-white mb-2" style={{ fontSize: 'clamp(1.25rem, 4vw, 1.875rem)' }}>
           {data.title}
         </h4>
-        <p className={`font-heading font-semibold
-          ${isBefore ? 'text-red-400' : 'text-[#f90093]'}
-        `}
+        <p className={`font-heading font-semibold text-[#f90093]`}
           style={{
             fontSize: 'clamp(1rem, 3vw, 1.5rem)',
-            ...(isBefore ? {} : { textShadow: '0 0 20px rgba(249, 0, 147, 0.5)' })
+            textShadow: '0 0 20px rgba(249, 0, 147, 0.5)'
           }}
         >
           {data.pain || data.gain}
@@ -142,12 +140,9 @@ function BeforeCard({ data, type }: { data: any; type: 'before' | 'after' }) {
             transition={{ delay: index * 0.1 }}
             className="flex items-start gap-3"
           >
-            <div className={`
-              flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5
-              ${isBefore ? 'bg-red-500/20' : 'bg-[#f90093]/20'}
-            `}>
+            <div className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 bg-[#f90093]/20">
               {isBefore ? (
-                <X className="w-3 h-3 text-red-400" />
+                <X className="w-3 h-3 text-[#f90093]" />
               ) : (
                 <Check className="w-3 h-3 text-[#f90093]" />
               )}
@@ -230,7 +225,7 @@ export default function BeforeAfter() {
         </div>
 
         {/* Before/After Split View */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* BEFORE - Left Side */}
           <motion.div
             key={`before-${activeTransformation}`}
@@ -246,11 +241,11 @@ export default function BeforeAfter() {
           </motion.div>
 
           {/* Arrow Divider */}
-          <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-r from-magenta to-magenta-light flex items-center justify-center shadow-lg"
-              style={{ boxShadow: '0 0 40px rgba(249, 0, 147, 0.5)' }}
+          <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-r from-magenta to-magenta-light flex items-center justify-center shadow-lg"
+              style={{ boxShadow: '0 0 40px rgba(249, 0, 147, 0.6)' }}
             >
-              <ArrowRight className="w-8 h-8 text-white" />
+              <ArrowRight className="w-10 h-10 text-white" />
             </div>
           </div>
 
