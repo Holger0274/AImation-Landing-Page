@@ -1,9 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Calculator } from 'lucide-react';
+import ROICalculator from '@/components/ROICalculator/ROICalculator';
 
 export default function FinalCTA() {
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
+
   return (
     <section id="kontakt" className="relative py-20 md:py-32 bg-black text-white overflow-hidden">
       {/* Animated Glow Background */}
@@ -38,14 +42,14 @@ export default function FinalCTA() {
           </h2>
 
           <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
-            Lassen Sie uns in einem kostenlosen Erstgespräch herausfinden, wie KI Ihr
-            Unternehmen voranbringen kann.
+            Sprechen Sie mit uns – oder rechnen Sie selbst nach.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            {/* Primary CTA - Magenta Button (Erstgespräch) */}
             <motion.a
               href="#calendly"
-              className="group px-8 py-4 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-lg glow-magenta-strong"
+              className="group px-8 py-4 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-lg glow-magenta-strong w-full sm:w-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -55,24 +59,36 @@ export default function FinalCTA() {
               </span>
             </motion.a>
 
-            <motion.a
-              href="#download"
-              className="px-8 py-4 border-2 border-white/20 text-white font-heading font-semibold rounded-lg hover:bg-white hover:text-black transition-all backdrop-blur-sm"
+            {/* Secondary CTA - Ghost Button (ROI Calculator) */}
+            <motion.button
+              onClick={() => setIsCalculatorOpen(true)}
+              data-roi-calculator-trigger
+              className="group px-8 py-4 border-2 border-white/20 hover:border-white/40 text-white font-heading font-semibold rounded-lg backdrop-blur-sm transition-all w-full sm:w-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <span className="flex items-center justify-center gap-2">
-                <Download className="w-5 h-5" />
-                KI-Potenzial-Check herunterladen
+                <Calculator className="w-5 h-5" />
+                ROI selbst berechnen
               </span>
-            </motion.a>
+            </motion.button>
           </div>
 
-          <p className="text-sm text-gray-500">
-            30 Minuten, unverbindlich, per Video-Call oder vor Ort
-          </p>
+          {/* Microcopy below CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-500">
+            <p>30 Minuten • Unverbindlich • Sofort verfügbar</p>
+            <p className="hidden sm:block">|</p>
+            <p>2 Minuten • Keine Vorkenntnisse nötig</p>
+          </div>
         </motion.div>
       </div>
+
+      {/* ROI Calculator Modal */}
+      <ROICalculator
+        isOpen={isCalculatorOpen}
+        onClose={() => setIsCalculatorOpen(false)}
+        calendlyUrl="https://calendly.com" // TODO: Replace with actual Calendly URL
+      />
     </section>
   );
 }

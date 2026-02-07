@@ -66,6 +66,16 @@ const painPoints = [
     statLabel: 'nutzen bereits KI',
     imagePath: '/images/competition.webp',
   },
+  {
+    id: 'waiting',
+    icon: AlertTriangle,
+    title: 'Während Sie warten, automatisiert Ihr Wettbewerb',
+    description:
+      'Jeder Tag ohne Automatisierung vergrößert den Rückstand. Die Konkurrenz wird schneller, effizienter und zieht davon.',
+    stat: '365',
+    statLabel: 'Tage Vorsprung/Jahr',
+    imagePath: '/images/waiting-competition.webp',
+  },
 ];
 
 // Light Blue Illustration Component (Abstract, Friendly)
@@ -488,6 +498,37 @@ export default function PainPoints() {
                 );
               })}
             </div>
+
+            {/* ROI Calculator Teaser */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="mt-8 text-center"
+            >
+              <p className="text-gray-400 font-body text-sm mb-2">
+                Wie viel kosten Sie diese Probleme pro Jahr?
+              </p>
+              <a
+                href="#kontakt"
+                className="inline-flex items-center gap-2 text-magenta font-heading font-semibold hover:text-[#ff4ecd] transition-colors underline decoration-magenta/50 hover:decoration-magenta underline-offset-4"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const kontaktSection = document.getElementById('kontakt');
+                  if (kontaktSection) {
+                    kontaktSection.scrollIntoView({ behavior: 'smooth' });
+                    // Trigger ROI calculator after scroll (with delay)
+                    setTimeout(() => {
+                      const roiButton = document.querySelector('[data-roi-calculator-trigger]') as HTMLButtonElement;
+                      if (roiButton) roiButton.click();
+                    }, 800);
+                  }
+                }}
+              >
+                ROI-Rechner starten →
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>

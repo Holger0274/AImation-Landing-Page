@@ -19,7 +19,7 @@ const services = [
       'Microsoft Copilot & Tools',
       'Prompt Engineering',
       'Multi-Agent-Systeme',
-      'Vibe Coding',
+      'Automatisierung & KI',
     ],
     detail: '3 Ebenen: Einstieg, Anwendung, Fortgeschritten',
     gradientFrom: '#f90093',
@@ -27,16 +27,16 @@ const services = [
     patternOpacity: 0.08,
     useCases: [
       {
-        title: 'Workshop: Prompt Engineering für Marketing-Teams',
-        description: '1-Tages-Workshop für Marketing-Teams: Von den Grundlagen bis zu fortgeschrittenen Prompt-Techniken. Teilnehmer lernen, ChatGPT, Claude und andere KI-Tools effektiv für Content-Erstellung, Recherche und Kampagnen einzusetzen.',
+        title: '2-Tages-Workshop: Prompt Engineering für Engineering-Teams',
+        description: '2-Tages-Workshop für Engineering-Teams und angrenzende Bereiche: Teilnehmer lernen den Umgang mit LLMs wie ChatGPT, Claude, Microsoft Copilot und Perplexity AI. Von den Grundlagen bis zu fortgeschrittenen Prompt-Techniken, um sofort Ergebnisse zu erzielen. Inklusive konkreter Use Cases aus dem Engineering-Alltag.',
         result: '80% der Teilnehmer nutzen KI-Tools täglich im Arbeitsalltag',
         mockupType: 'training-workshop',
       },
       {
-        title: 'Vibe Coding Workshop: Landing Page in 2 Stunden bauen',
-        description: 'Praktischer Workshop für Product Owner und Innovation Labs: Teilnehmer erstellen mit Claude Code und Lovable eine funktionierende Landing Page – ohne klassische Programmierkenntnisse. Von der Idee zum Live-Deployment.',
-        result: '100% der Teilnehmer verlassen den Workshop mit eigener Live-Seite',
-        mockupType: 'vibe-coding',
+        title: 'Workshop: Automatisierung und KI-Automatisierung',
+        description: 'Praktischer Workshop für Prozessverantwortliche und Teams: Was sind Automatisierungen? Wie unterscheiden sich klassische Workflows von KI-gestützten Automatisierungen? Teilnehmer lernen, Automatisierungspotenziale zu erkennen und KI gezielt einzubringen – von einfachen Workflows bis zu intelligenten Multi-Agent-Systemen.',
+        result: '85% der Teilnehmer identifizieren mindestens 3 Automatisierungs-Use-Cases',
+        mockupType: 'automation-workshop',
       },
     ],
   },
@@ -59,16 +59,16 @@ const services = [
     patternOpacity: 0.06,
     useCases: [
       {
-        title: 'AI Readiness Assessment für mittelständischen Maschinenbauer',
-        description: '2-Tages-Workshop mit Geschäftsführung und Führungskräften: IST-Analyse der Technik, Prozesse, Daten und Menschen. Potenzialidentifikation über alle Abteilungen. Entwicklung einer konkreten Roadmap mit priorisierten Quick Wins.',
-        result: '12 Use Cases identifiziert, 3 Quick Wins in Q1 umgesetzt',
-        mockupType: 'readiness-assessment',
+        title: 'AI-Tool-Audit für Steuerberatung: Schatten-KI aufdecken & Kosten senken',
+        description: 'Systematisches Audit aller KI-Tools in der Kanzlei: Welche Tools nutzen Mitarbeiter (ChatGPT, Copilot, andere)? DSGVO-Risiken identifiziert, Lizenzkosten analysiert, Tool-Wildwuchs gestoppt. Konsolidierung auf 3 freigegebene Enterprise-Lösungen mit zentraler Verwaltung.',
+        result: '12 Tools auf 3 reduziert, 3.200€/Monat gespart, DSGVO-konforme Lösung',
+        mockupType: 'ai-audit',
       },
       {
-        title: 'Use Case Workshop: Produktionsoptimierung für Zulieferer',
-        description: 'Workshop mit Produktions- und Prozessverantwortlichen: Gemeinsam konkrete Automatisierungs-Potenziale identifizieren, nach Impact und Aufwand bewerten. ROI-Kalkulation für Top-Use-Cases. Priorisierung und Nächste-Schritte-Plan.',
-        result: 'ROI-Kalkulation zeigt 150k€ Ersparnis im ersten Jahr',
-        mockupType: 'use-case-workshop',
+        title: 'Tool-Auswahl Workshop: Die richtige KI-Plattform für Online-Händler',
+        description: '2-Tages-Workshop zur Entscheidungsfindung: Microsoft Copilot, Google Workspace AI oder eigenständige Lösung? Requirements definiert, 5 Anbieter verglichen (Kosten, Datenschutz, Integration), klare Empfehlung mit Begründung. Vertragsverhandlung begleitet.',
+        result: 'Entscheidung in 2 Tagen statt 3 Monaten – 40% Kosten gespart',
+        mockupType: 'tool-selection',
       },
     ],
   },
@@ -121,28 +121,28 @@ function UseCaseMockup({ type }: { type: string }) {
         { title: 'Methoden', items: ['Chain-of-Thought', 'Few-Shot Learning', 'Prompt-Templates'] },
       ],
     },
-    'vibe-coding': {
-      icon: Code,
+    'automation-workshop': {
+      icon: Zap,
       iconColor: '#60AFFF',
       sections: [
-        { title: 'Technologie', items: ['Claude Code', 'Next.js', 'Tailwind CSS'] },
-        { title: 'Ergebnis', items: ['Landing Page (live)', 'Deployment (Vercel)', 'Source Code'] },
+        { title: 'Klassische Automatisierung', items: ['Regelbasierte Workflows', 'If-Then-Logik', 'API-Integrationen'] },
+        { title: 'KI-Automatisierung', items: ['Intelligente Entscheidungen', 'Natürliche Sprache', 'Multi-Agent-Systeme'] },
       ],
     },
-    'readiness-assessment': {
-      icon: TrendingUp,
+    'ai-audit': {
+      icon: FileText,
       iconColor: '#f90093',
       sections: [
-        { title: 'Phase 1: Analyse', items: ['IST-Zustand erfassen', 'Potenziale identifizieren', 'Quick Wins finden'] },
-        { title: 'Phase 2: Roadmap', items: ['Use Cases priorisieren', 'Timeline entwickeln', 'Ressourcen planen'] },
+        { title: 'Ist-Aufnahme', items: ['12 Tools im Einsatz erfasst', '8 Teams befragt', 'Schatten-KI aufgedeckt'] },
+        { title: 'Risikobewertung', items: ['DSGVO-Verstöße identifiziert', 'Lizenzkosten analysiert', 'Konsolidierung geplant'] },
       ],
     },
-    'use-case-workshop': {
-      icon: Lightbulb,
+    'tool-selection': {
+      icon: TrendingUp,
       iconColor: '#60AFFF',
       sections: [
-        { title: 'Workshop-Ablauf', items: ['Problem-Analyse', 'Lösungs-Brainstorming', 'Machbarkeits-Check'] },
-        { title: 'Output', items: ['Priorisierte Use Cases', 'ROI-Schätzung', 'Nächste Schritte'] },
+        { title: 'Requirements', items: ['CRM-Integration erforderlich', 'DSGVO-konform', 'Budget max. 5k€/Monat'] },
+        { title: 'Anbieter-Vergleich', items: ['Microsoft Copilot (8/10)', 'Google Workspace AI (7/10)', 'OpenAI API (6/10)'] },
       ],
     },
     'rag-chatbot': {
@@ -188,11 +188,12 @@ function UseCaseMockup({ type }: { type: string }) {
           >
             <Icon className="w-7 h-7" style={{ color: config.iconColor }} />
           </div>
-          <div className="flex-1">
+          <div className="flex-1 space-y-2">
             <div className="flex gap-2">
-              <div className="h-2.5 bg-gray-200 rounded-full w-32" />
-              <div className="h-2.5 bg-gray-100 rounded-full w-20" />
+              <div className="h-3 bg-gray-200 rounded-full w-40" />
+              <div className="h-3 bg-gray-100 rounded-full w-24" />
             </div>
+            <div className="h-2 bg-gray-100 rounded-full w-32" />
           </div>
         </div>
 
