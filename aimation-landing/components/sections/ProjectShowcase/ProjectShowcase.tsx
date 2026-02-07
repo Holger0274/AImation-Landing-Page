@@ -15,8 +15,8 @@ const PROJECTS: Project[] = [
     tags: ['Perplexity', 'Claude', 'Patent-APIs'],
     metrics: '80% schnellere Recherche',
     image: {
-      type: 'placeholder',
-      placeholderType: 'excalidraw',
+      type: 'image',
+      src: '/images/use-cases/patent-research.png',
       alt: 'Patent-Recherche Workflow'
     }
   },
@@ -29,9 +29,23 @@ const PROJECTS: Project[] = [
     tags: ['RSS', 'Claude', 'Notion'],
     metrics: 'Wöchentlicher Tech-Radar',
     image: {
-      type: 'placeholder',
-      placeholderType: 'n8n',
+      type: 'image',
+      src: '/images/use-cases/tech-scouting.png',
       alt: 'Tech-Scouting Automatisierung'
+    }
+  },
+  {
+    id: 'knowledge-graph-management',
+    title: 'Knowledge Graph Management',
+    description: 'Wissen gezielt miteinander verknüpfen und ein zweites Brain bauen. Vernetzte Informationsarchitektur mit intelligenter Verknüpfung und semantischer Suche.',
+    solutionWorld: 'KNOW',
+    status: 'completed',
+    tags: ['Obsidian', 'Claude Code', 'Knowledge Graph'],
+    metrics: 'Vernetztes Wissensmanagement',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/knowledge-graph.png',
+      alt: 'Knowledge Graph Struktur'
     }
   },
   {
@@ -43,9 +57,23 @@ const PROJECTS: Project[] = [
     tags: ['OpenAI', 'n8n', 'Outlook'],
     metrics: '60% weniger Sortieraufwand',
     image: {
-      type: 'placeholder',
-      placeholderType: 'n8n',
+      type: 'image',
+      src: '/images/use-cases/email-classification.png',
       alt: 'E-Mail Klassifizierungs-Flow'
+    }
+  },
+  {
+    id: 'meeting-transcript-analysis',
+    title: 'Meeting-Transkript-Analyse',
+    description: 'Transkripte aus Meetings automatisch in To-Dos, Ideen, Probleme, Wissen und Lösungen kategorisieren. Speicherung in Vektordatenbanken für semantische Suche. Coming soon: Audit-Dokumente, automatisierte Kategorisierung.',
+    solutionWorld: 'WORK',
+    status: 'in-progress',
+    tags: ['Transkription', 'Vektordatenbank', 'Kategorisierung'],
+    metrics: 'PoC in Entwicklung',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/meeting-transcript.png',
+      alt: 'Transkript-Analyse Pipeline'
     }
   },
   {
@@ -56,9 +84,37 @@ const PROJECTS: Project[] = [
     status: 'coming-soon',
     tags: ['Web Scraping', 'Claude', 'Airtable'],
     image: {
-      type: 'placeholder',
-      placeholderType: 'diagram',
+      type: 'image',
+      src: '/images/use-cases/competitor-benchmark.png',
       alt: 'Benchmark-Prozess'
+    }
+  },
+  {
+    id: 'multi-agent-debate',
+    title: 'Multi-Agenten-Debattier-System',
+    description: 'KI-Agenten debattieren Ideen aus verschiedenen Perspektiven. Drei Agenten (positiv, neutral, negativ) analysieren Konzepte systematisch. Erweiterbar mit der 6-Hüte-Innovationsmethode für umfassende Ideenvalidierung.',
+    solutionWorld: 'THINK',
+    status: 'in-progress',
+    tags: ['Claude', 'Multi-Agent', '6-Hüte-Methode'],
+    metrics: 'PoC in Entwicklung',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/multi-agent-debate.png',
+      alt: 'Multi-Agenten-Debattier-System'
+    }
+  },
+  {
+    id: 'audit-documentation',
+    title: 'Audit & Dokumentenanalyse',
+    description: 'Intelligente Analyse und Kategorisierung von Audit-Dokumenten. Automatisches Extrahieren von Compliance-Anforderungen, Risiken und Handlungsempfehlungen aus Prüfberichten und Dokumentationen.',
+    solutionWorld: 'KNOW',
+    status: 'coming-soon',
+    tags: ['Claude', 'Dokumentenanalyse', 'OCR'],
+    metrics: 'Compliance-Ready',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/audit-documentation.png',
+      alt: 'Audit-Dokumentenanalyse Dashboard'
     }
   }
 ];
