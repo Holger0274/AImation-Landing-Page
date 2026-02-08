@@ -1,9 +1,11 @@
 // ROI Calculator - Business Logic
 
 export type UseCaseType = 'research' | 'documentation' | 'meetings' | 'custom';
+export type PackageType = 'starter' | 'professional' | 'enterprise';
 
 export interface CalculatorInput {
   useCase: UseCaseType;
+  package?: PackageType;
   numEmployees: number;
   hourlyWage: number;
   weeklyHours: number;
@@ -24,14 +26,32 @@ export interface ROIResults {
 }
 
 /**
- * Use case presets for quick calculations
+ * Package presets for cost estimation
+ */
+export const PACKAGE_PRESETS: Record<PackageType, { setupCost: number; monthlyCost: number }> = {
+  starter: {
+    setupCost: 6500,
+    monthlyCost: 200,
+  },
+  professional: {
+    setupCost: 9500,
+    monthlyCost: 400,
+  },
+  enterprise: {
+    setupCost: 18000,
+    monthlyCost: 600,
+  },
+};
+
+/**
+ * Use case presets for quick calculations (using Professional package as default)
  */
 export const USE_CASE_PRESETS: Record<UseCaseType, Omit<CalculatorInput, 'useCase'>> = {
   research: {
     weeklyHours: 3,
     hourlyWage: 50,
     numEmployees: 5,
-    setupCost: 10000,
+    setupCost: 9500,
     monthlyCost: 400,
     timeframMonths: 12,
     rampUpMonths: 1,
@@ -40,7 +60,7 @@ export const USE_CASE_PRESETS: Record<UseCaseType, Omit<CalculatorInput, 'useCas
     weeklyHours: 4,
     hourlyWage: 35,
     numEmployees: 5,
-    setupCost: 12000,
+    setupCost: 9500,
     monthlyCost: 400,
     timeframMonths: 12,
     rampUpMonths: 2,
@@ -49,8 +69,8 @@ export const USE_CASE_PRESETS: Record<UseCaseType, Omit<CalculatorInput, 'useCas
     weeklyHours: 2,
     hourlyWage: 45,
     numEmployees: 10,
-    setupCost: 8000,
-    monthlyCost: 300,
+    setupCost: 9500,
+    monthlyCost: 400,
     timeframMonths: 12,
     rampUpMonths: 1,
   },
@@ -58,8 +78,8 @@ export const USE_CASE_PRESETS: Record<UseCaseType, Omit<CalculatorInput, 'useCas
     weeklyHours: 2,
     hourlyWage: 35,
     numEmployees: 10,
-    setupCost: 15000,
-    monthlyCost: 500,
+    setupCost: 9500,
+    monthlyCost: 400,
     timeframMonths: 12,
     rampUpMonths: 2,
   },
@@ -139,6 +159,42 @@ export function getUseCaseDescription(useCase: UseCaseType): string {
     custom: 'Individuelle Konfiguration für Ihren spezifischen Use Case',
   };
   return descriptions[useCase] || '';
+}
+
+/**
+ * Get package label in German
+ */
+export function getPackageLabel(pkg: PackageType): string {
+  const labels: Record<PackageType, string> = {
+    starter: 'Starter-Lösung',
+    professional: 'Professional-Lösung',
+    enterprise: 'Enterprise-Lösung',
+  };
+  return labels[pkg] || pkg;
+}
+
+/**
+ * Get package description in German
+ */
+export function getPackageDescription(pkg: PackageType): string {
+  const descriptions: Record<PackageType, string> = {
+    starter: 'Einfache Automatisierung, 1-2 Workflows, Basis-Integration',
+    professional: 'Mehrere Automatisierungen, RAG-System, erweiterte Integration',
+    enterprise: 'Multi-Agent-System, komplexe Prozesse, Full-Service',
+  };
+  return descriptions[pkg] || '';
+}
+
+/**
+ * Get package target audience in German
+ */
+export function getPackageAudience(pkg: PackageType): string {
+  const audiences: Record<PackageType, string> = {
+    starter: 'Kleine Teams, erste KI-Schritte',
+    professional: 'Mittelstand, ernsthafte Automatisierung',
+    enterprise: 'Größere Unternehmen, umfassende Transformation',
+  };
+  return audiences[pkg] || '';
 }
 
 /**

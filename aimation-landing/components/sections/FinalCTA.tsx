@@ -75,7 +75,7 @@ export default function FinalCTA() {
           </div>
 
           {/* Microcopy below CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-500">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-300">
             <p>30 Minuten • Unverbindlich • Sofort verfügbar</p>
             <p className="hidden sm:block">|</p>
             <p>2 Minuten • Keine Vorkenntnisse nötig</p>

@@ -106,7 +106,7 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lightblue/10 backdrop-blur-sm border border-lightblue/20">
               <div className="w-2 h-2 rounded-full bg-magenta animate-pulse" />
               <span className="text-sm font-heading font-semibold text-black">
-                KI-Automatisierung für KMUs
+                Erkennen • Automatisieren • Wachsen
               </span>
             </div>
           </motion.div>

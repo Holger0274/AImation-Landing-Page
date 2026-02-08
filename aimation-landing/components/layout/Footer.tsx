@@ -13,10 +13,10 @@ export default function Footer() {
             <div className="text-2xl md:text-3xl font-heading font-bold mb-4">
               AI<span className="text-magenta text-glow-magenta">.</span>mation
             </div>
-            <p className="text-gray-400 mb-4 max-w-sm">
+            <p className="text-gray-300 mb-4 max-w-sm">
               Automatisierung mit Intelligenz
             </p>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-400 text-sm">
               20 Jahre Engineering-Erfahrung für Ihren KI-Erfolg
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-400 text-sm">
             © {currentYear} AI.mation – Alle Rechte vorbehalten
           </p>
           <div className="flex gap-6">

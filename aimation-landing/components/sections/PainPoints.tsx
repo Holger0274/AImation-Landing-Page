@@ -14,6 +14,7 @@ const painPoints = [
       'Manuelle, repetitive Aufgaben die niemand vermissen würde. Zeit für Wertschöpfung fehlt.',
     stat: '40%',
     statLabel: 'Zeitverschwendung',
+    source: 'McKinsey Global Survey 2024',
     imagePath: '/images/time-waste.webp',
   },
   {
@@ -21,9 +22,10 @@ const painPoints = [
     icon: TrendingDown,
     title: 'Verschwendete Zeit kostet bares Geld',
     description:
-      'Bei 10 Mitarbeitern sind das über 100.000€ pro Jahr für Aufgaben ohne Mehrwert.',
-    stat: '100k€',
+      'Bei 10 Mitarbeitern sind das über 200.000€ pro Jahr für Aufgaben ohne Mehrwert.',
+    stat: '200k€',
     statLabel: 'Verschwendung/Jahr',
+    source: 'Berechnung: McKinsey-Studie 2024',
     imagePath: '/images/cost-waste.webp',
   },
   {
@@ -32,8 +34,9 @@ const painPoints = [
     title: 'Fehlerquote durch manuelle Arbeit',
     description:
       'Jede manuelle Eingabe birgt Fehlerrisiko. Nacharbeit kostet Zeit und Reputation.',
-    stat: '30%',
-    statLabel: 'mehr Fehler',
+    stat: '1-4%',
+    statLabel: 'Fehlerrate',
+    source: 'Gartner 2023 & Ernst & Young 2025',
     imagePath: '/images/quality-issues.webp',
   },
   {
@@ -42,28 +45,31 @@ const painPoints = [
     title: 'Wissen verschwindet mit Mitarbeitern',
     description:
       'Wenn erfahrene Mitarbeiter gehen, geht das Wissen mit. Fachkräftemangel verschärft das Problem.',
-    stat: '60%',
-    statLabel: 'Wissensverlust',
+    stat: '71%',
+    statLabel: 'der IT-Führungskräfte sehen Wissensverlust',
+    source: 'Sinequa-Studie 2022',
     imagePath: '/images/knowledge-loss.webp',
   },
   {
     id: 'chaos',
     icon: FileSpreadsheet,
-    title: 'Daten in Excel-Silos gefangen',
+    title: 'Rechnungen werden manuell erfasst',
     description:
-      'Prozesse sind historisch gewachsen. Niemand blickt mehr durch. Zusammenführung unmöglich.',
-    stat: '15+',
-    statLabel: 'Excel-Listen',
+      'Trotz digitaler Möglichkeiten erfassen 86% der KMUs Rechnungsdaten manuell – fehleranfällig und zeitraubend.',
+    stat: '86%',
+    statLabel: 'erfassen Rechnungen manuell',
+    source: 'KfW Digitalisierungsbericht 2024',
     imagePath: '/images/excel-chaos.webp',
   },
   {
     id: 'competition',
     icon: TrendingUp,
-    title: 'Konkurrenz nutzt bereits KI',
+    title: 'KI ist die wichtigste Zukunftstechnologie',
     description:
-      'Wettbewerber werden schneller, effizienter, innovativer. Der Abstand wächst täglich.',
-    stat: '67%',
-    statLabel: 'nutzen bereits KI',
+      'Deutsche Unternehmen sind überzeugt: Ohne KI keine Wettbewerbsfähigkeit. Der Abstand zu Vorreitern wächst täglich.',
+    stat: '81%',
+    statLabel: 'sehen KI als wichtigste Zukunftstechnologie',
+    source: 'Bitkom-Studie September 2025',
     imagePath: '/images/competition.webp',
   },
   {
@@ -71,9 +77,10 @@ const painPoints = [
     icon: AlertTriangle,
     title: 'Während Sie warten, automatisiert Ihr Wettbewerb',
     description:
-      'Jeder Tag ohne Automatisierung vergrößert den Rückstand. Die Konkurrenz wird schneller, effizienter und zieht davon.',
-    stat: '365',
-    statLabel: 'Tage Vorsprung/Jahr',
+      'Jeder Tag ohne Automatisierung vergrößert den Rückstand. KI-Nutzung verdoppelte sich im letzten Jahr.',
+    stat: '2x',
+    statLabel: 'KI-Wachstum in 12 Monaten',
+    source: 'Bitkom September 2025',
     imagePath: '/images/waiting-competition.webp',
   },
 ];
@@ -305,8 +312,11 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof painPoints[0]; o
               transition={{ delay: 0.4 }}
               className="max-w-2xl bg-black/60 backdrop-blur-sm px-6 py-3 rounded-lg"
             >
-              <p className="text-gray-300 text-lg">
+              <p className="text-gray-300 text-lg mb-2">
                 {painPoint.description}
+              </p>
+              <p className="text-gray-400 text-sm italic">
+                Quelle: {painPoint.source}
               </p>
             </motion.div>
           </div>
@@ -477,6 +487,18 @@ export default function PainPoints() {
                           {point.description}
                         </motion.p>
 
+                        {/* Source citation when active */}
+                        {isActive && (
+                          <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                            className="text-xs text-gray-500 mt-2 italic"
+                          >
+                            Quelle: {point.source}
+                          </motion.p>
+                        )}
+
                         {/* Collapsed hint */}
                         {!isActive && (
                           <p className="text-xs text-gray-500 mt-1">
@@ -507,12 +529,13 @@ export default function PainPoints() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mt-8 text-center"
             >
-              <p className="text-gray-400 font-body text-sm mb-2">
+              <p className="text-white/90 font-body text-base md:text-lg font-medium mb-3">
                 Wie viel kosten Sie diese Probleme pro Jahr?
               </p>
               <a
                 href="#kontakt"
-                className="inline-flex items-center gap-2 text-magenta font-heading font-semibold hover:text-[#ff4ecd] transition-colors underline decoration-magenta/50 hover:decoration-magenta underline-offset-4"
+                className="inline-flex items-center gap-2 text-magenta font-heading font-bold text-lg hover:text-[#ff4ecd] transition-colors underline decoration-magenta/50 hover:decoration-magenta underline-offset-4"
+                style={{ textShadow: '0 0 20px rgba(249, 0, 147, 0.4)' }}
                 onClick={(e) => {
                   e.preventDefault();
                   const kontaktSection = document.getElementById('kontakt');
