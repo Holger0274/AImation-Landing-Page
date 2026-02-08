@@ -25,10 +25,22 @@ export default function ROICalculator({
 }: ROICalculatorProps) {
   const [results, setResults] = useState<ROIResults | null>(null);
   const [inputData, setInputData] = useState<CalculatorInput | null>(null);
-  const [emailData, setEmailData] = useState<{ email: string; name?: string } | null>(null);
+  const [emailData, setEmailData] = useState<{
+    email: string;
+    name?: string;
+    company?: string;
+    position?: string;
+    industry?: string;
+  } | null>(null);
 
-  const handleComplete = async (data: CalculatorInput & { email: string; name?: string }) => {
-    const { email, name, ...calculatorInput } = data;
+  const handleComplete = async (data: CalculatorInput & {
+    email: string;
+    name?: string;
+    company?: string;
+    position?: string;
+    industry?: string;
+  }) => {
+    const { email, name, company, position, industry, ...calculatorInput } = data;
 
     // Calculate ROI
     const calculatedResults = calculateROI(calculatorInput);
@@ -36,7 +48,7 @@ export default function ROICalculator({
     // Store data
     setResults(calculatedResults);
     setInputData(calculatorInput);
-    setEmailData({ email, name });
+    setEmailData({ email, name, company, position, industry });
 
     // Send results via API
     try {
@@ -48,6 +60,9 @@ export default function ROICalculator({
         body: JSON.stringify({
           email,
           name,
+          company,
+          position,
+          industry,
           input: calculatorInput,
           results: calculatedResults,
         }),
@@ -95,8 +110,9 @@ export default function ROICalculator({
           <ResultsDisplay
             results={results}
             inputData={{
+              useCase: inputData!.useCase,
               numEmployees: inputData!.numEmployees,
-              priority: inputData!.priority,
+              timeframMonths: inputData!.timeframMonths,
             }}
             onBookCall={handleBookCall}
           />

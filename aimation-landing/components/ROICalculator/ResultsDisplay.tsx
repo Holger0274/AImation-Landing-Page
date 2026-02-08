@@ -2,17 +2,18 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { TrendingUp, Clock, Euro, Target, Calendar, ExternalLink } from "lucide-react";
+import { TrendingUp, Clock, Euro, Target, Calendar, Percent, ExternalLink, TrendingDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
-import { ROIResults, formatCurrency, formatNumber, getPriorityLabel } from "./calculations";
+import { ROIResults, formatCurrency, formatNumber, getUseCaseLabel, UseCaseType } from "./calculations";
 
 interface ResultsDisplayProps {
   results: ROIResults;
   inputData: {
+    useCase: UseCaseType;
     numEmployees: number;
-    priority: string;
+    timeframMonths: number;
   };
   onBookCall: () => void;
 }
@@ -53,14 +54,14 @@ export default function ResultsDisplay({ results, inputData, onBookCall }: Resul
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            Wir berechnen Ihr Potenzial...
+            Wir berechnen Ihr ROI...
           </motion.h3>
 
           <div className="space-y-2 text-gray-400 font-body">
             {[
-              "Branchendaten analysieren...",
-              "Automatisierungspotenzial ermitteln...",
-              "Einsparpotenzial berechnen...",
+              "Use Case analysieren...",
+              "Kostenstruktur berechnen...",
+              "ROI ermitteln...",
             ].map((text, index) => (
               <motion.p
                 key={index}
@@ -77,6 +78,8 @@ export default function ResultsDisplay({ results, inputData, onBookCall }: Resul
     );
   }
 
+  const isPositiveROI = results.netBenefit > 0;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -86,100 +89,154 @@ export default function ResultsDisplay({ results, inputData, onBookCall }: Resul
     >
       {/* Main Result */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-6">
-          Ihr <span className="text-magenta">Einsparpotenzial</span> mit KI
+        <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4">
+          Ihre <span className="text-magenta">ROI-Berechnung</span>
         </h2>
 
-        <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-magenta/30 mb-6">
+        {/* DISCLAIMER - Sehr prominent platziert */}
+        <div className="mb-6 px-6 py-4 bg-yellow-900/20 border-2 border-yellow-700/40 rounded-lg">
+          <p className="text-base text-yellow-100 font-body leading-relaxed">
+            <strong className="text-yellow-50">⚠️ Wichtiger Hinweis:</strong> Dies ist eine <strong className="text-yellow-50">grobe Überschlagsrechnung</strong>, keine verbindliche ROI-Analyse.
+            Eine detaillierte Berechnung erfolgt im persönlichen Gespräch unter Berücksichtigung Ihrer spezifischen Prozesse, Rahmenbedingungen,
+            Implementierungskosten, Change-Management-Aufwände und individuellen Use Cases.
+          </p>
+        </div>
+
+        {/* Primary Metric: Net Benefit */}
+        <Card className={`bg-gradient-to-br from-gray-900 to-gray-800 ${isPositiveROI ? 'border-green-500/30' : 'border-red-500/30'} mb-6`}>
           <CardContent className="pt-12 pb-12">
             <div className="flex items-center justify-center gap-3 mb-3">
-              <Target className="w-8 h-8 text-magenta" />
+              {isPositiveROI ? (
+                <TrendingUp className="w-8 h-8 text-green-400" />
+              ) : (
+                <TrendingDown className="w-8 h-8 text-red-400" />
+              )}
               <span className="text-lg font-heading text-gray-300 uppercase tracking-wide">
-                Jährliche Ersparnis
+                Netto-Nutzen ({inputData.timeframMonths} Monate)
               </span>
             </div>
-            <div className="text-6xl md:text-7xl font-bold font-heading text-transparent bg-clip-text bg-gradient-to-r from-magenta to-[#ff4ecd] text-glow-magenta mb-2">
+            <div className={`text-6xl md:text-7xl font-bold font-heading ${isPositiveROI ? 'text-green-400' : 'text-red-400'} mb-2`}>
               <AnimatedCounter
-                target={results.annualSavings}
+                target={results.netBenefit}
                 duration={2}
-                prefix="€"
+                prefix={results.netBenefit >= 0 ? "+" : ""}
+                suffix=" €"
                 separator={false}
               />
             </div>
             <p className="text-gray-400 font-body">
-              pro Jahr durch KI-Automatisierung
+              {isPositiveROI ? 'Gewinn nach Abzug aller Kosten' : 'Verlust im Betrachtungszeitraum'}
             </p>
           </CardContent>
         </Card>
       </div>
 
-      {/* Breakdown */}
-      <div className="grid md:grid-cols-3 gap-4 mb-8">
+      {/* Key Metrics Grid */}
+      <div className="grid md:grid-cols-2 gap-4 mb-8">
+        {/* ROI Percentage */}
         <Card className="bg-gray-900/50 border-gray-800">
           <CardContent className="pt-6 pb-6 text-center">
-            <Clock className="w-10 h-10 text-magenta mx-auto mb-3" />
-            <div className="text-3xl font-bold font-heading text-white mb-1">
-              {formatNumber(results.hoursSaved)}
+            <Percent className="w-10 h-10 text-magenta mx-auto mb-3" />
+            <div className={`text-3xl font-bold font-heading mb-1 ${results.roiPercent >= 0 ? 'text-white' : 'text-red-400'}`}>
+              {results.roiPercent >= 0 ? '+' : ''}{results.roiPercent}%
             </div>
-            <div className="text-sm text-gray-400 font-body">Stunden/Jahr</div>
+            <div className="text-sm text-gray-400 font-body">Return on Investment</div>
             <div className="text-xs text-gray-500 font-body mt-1">
-              ≈ {Math.round(results.weeklyHoursSaved)} Std./Woche
+              {results.roiPercent >= 100 ? 'Exzellent' : results.roiPercent >= 50 ? 'Sehr gut' : results.roiPercent >= 0 ? 'Positiv' : 'Negativ'}
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-gray-900/50 border-gray-800">
-          <CardContent className="pt-6 pb-6 text-center">
-            <Euro className="w-10 h-10 text-magenta mx-auto mb-3" />
-            <div className="text-3xl font-bold font-heading text-white mb-1">
-              {results.costReduction}%
-            </div>
-            <div className="text-sm text-gray-400 font-body">Kostenreduktion</div>
-            <div className="text-xs text-gray-500 font-body mt-1">
-              der Prozesskosten
-            </div>
-          </CardContent>
-        </Card>
-
+        {/* Amortization */}
         <Card className="bg-gray-900/50 border-gray-800">
           <CardContent className="pt-6 pb-6 text-center">
             <Calendar className="w-10 h-10 text-magenta mx-auto mb-3" />
             <div className="text-3xl font-bold font-heading text-white mb-1">
-              {results.roiMonths}
+              {results.amortizationMonths < 999 ? results.amortizationMonths : '∞'}
             </div>
-            <div className="text-sm text-gray-400 font-body">Monate</div>
+            <div className="text-sm text-gray-400 font-body">Monate bis Amortisation</div>
             <div className="text-xs text-gray-500 font-body mt-1">
-              bis ROI erreicht
+              {results.amortizationMonths < 6 ? 'Sehr schnell' : results.amortizationMonths < 12 ? 'Schnell' : results.amortizationMonths < 24 ? 'Moderat' : 'Langfristig'}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Weekly Savings */}
+        <Card className="bg-gray-900/50 border-gray-800">
+          <CardContent className="pt-6 pb-6 text-center">
+            <Clock className="w-10 h-10 text-magenta mx-auto mb-3" />
+            <div className="text-3xl font-bold font-heading text-white mb-1">
+              {formatCurrency(results.weeklySavings)}
+            </div>
+            <div className="text-sm text-gray-400 font-body">Einsparung/Woche</div>
+            <div className="text-xs text-gray-500 font-body mt-1">
+              = {formatCurrency(results.weeklySavings * 4.333)}/Monat
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Total Investment */}
+        <Card className="bg-gray-900/50 border-gray-800">
+          <CardContent className="pt-6 pb-6 text-center">
+            <Euro className="w-10 h-10 text-magenta mx-auto mb-3" />
+            <div className="text-3xl font-bold font-heading text-white mb-1">
+              {formatCurrency(results.totalInvestment)}
+            </div>
+            <div className="text-sm text-gray-400 font-body">Gesamtinvestition</div>
+            <div className="text-xs text-gray-500 font-body mt-1">
+              Setup + laufende Kosten
             </div>
           </CardContent>
         </Card>
       </div>
 
-      {/* Personalization Echo */}
+      {/* Breakdown Summary */}
       <Card className="bg-gray-900/30 border-gray-800 mb-8">
         <CardContent className="pt-6 pb-6">
-          <p className="text-gray-300 font-body mb-4">
-            <strong className="text-white">Basierend auf Ihren Angaben:</strong>
-          </p>
-          <ul className="space-y-2 text-gray-400 font-body text-sm">
-            <li className="flex items-start gap-2">
-              <span className="text-magenta">•</span>
-              <span>{inputData.numEmployees} Mitarbeiter im Unternehmen</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-magenta">•</span>
-              <span>Schwerpunkt: {getPriorityLabel(inputData.priority)}</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-magenta">•</span>
-              <span>Hohes Automatisierungspotenzial in diesem Bereich</span>
-            </li>
-          </ul>
+          <h4 className="text-xl font-bold font-heading text-white mb-4">Zusammenfassung</h4>
+          <div className="space-y-3 text-gray-300 font-body text-sm">
+            <div className="flex justify-between items-center pb-3 border-b border-gray-800">
+              <span>Use Case:</span>
+              <span className="text-white font-medium">{getUseCaseLabel(inputData.useCase)}</span>
+            </div>
+            <div className="flex justify-between items-center pb-3 border-b border-gray-800">
+              <span>Betroffene Mitarbeiter:</span>
+              <span className="text-white font-medium">{inputData.numEmployees}</span>
+            </div>
+            <div className="flex justify-between items-center pb-3 border-b border-gray-800">
+              <span>Betrachtungszeitraum:</span>
+              <span className="text-white font-medium">{inputData.timeframMonths} Monate</span>
+            </div>
+            <div className="flex justify-between items-center pb-3 border-b border-gray-800">
+              <span>Produktive Wochen:</span>
+              <span className="text-white font-medium">{results.productiveWeeks}</span>
+            </div>
+            <div className="flex justify-between items-center pb-3 border-b border-gray-800">
+              <span className="text-green-400">✓ Gesamteinsparung:</span>
+              <span className="text-green-400 font-medium">{formatCurrency(results.totalSavings)}</span>
+            </div>
+            <div className="flex justify-between items-center pb-3 border-b border-gray-800">
+              <span className="text-red-400">− Gesamtinvestition:</span>
+              <span className="text-red-400 font-medium">{formatCurrency(results.totalInvestment)}</span>
+            </div>
+            <div className="flex justify-between items-center pt-2">
+              <span className="text-lg font-bold">= Netto-Nutzen:</span>
+              <span className={`text-lg font-bold ${isPositiveROI ? 'text-green-400' : 'text-red-400'}`}>
+                {results.netBenefit >= 0 ? '+' : ''}{formatCurrency(results.netBenefit)}
+              </span>
+            </div>
+          </div>
         </CardContent>
       </Card>
 
       {/* Call to Action */}
       <div className="space-y-4">
+        <div className="p-4 bg-gray-800/30 border border-gray-700 rounded-lg mb-4">
+          <p className="text-sm text-gray-300 font-body text-center">
+            <strong className="text-white">Nächster Schritt:</strong> Im Erstgespräch erstellen wir eine <strong className="text-white">detaillierte, use-case-spezifische ROI-Berechnung</strong> basierend auf Ihren tatsächlichen Prozessen und Rahmenbedingungen.
+          </p>
+        </div>
+
         <Button
           onClick={onBookCall}
           size="lg"
@@ -194,9 +251,8 @@ export default function ResultsDisplay({ results, inputData, onBookCall }: Resul
         </p>
 
         <div className="pt-4 border-t border-gray-800 text-center">
-          <p className="text-xs text-gray-500 font-body">
-            💡 <strong className="text-gray-400">Hinweis:</strong> Diese Berechnung basiert auf Durchschnittswerten aus realen KMU-Projekten.
-            Im Erstgespräch können wir Ihr individuelles Potenzial noch genauer ermitteln.
+          <p className="text-xs text-gray-500 font-body italic">
+            Diese Überschlagsrechnung dient der ersten Orientierung. Verbindliche ROI-Werte können erst nach einer detaillierten Analyse Ihrer individuellen Situation ermittelt werden.
           </p>
         </div>
       </div>

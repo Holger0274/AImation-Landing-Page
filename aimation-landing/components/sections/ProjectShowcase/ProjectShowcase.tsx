@@ -116,6 +116,48 @@ const PROJECTS: Project[] = [
       src: '/images/use-cases/audit-documentation.png',
       alt: 'Audit-Dokumentenanalyse Dashboard'
     }
+  },
+  {
+    id: 'document-tagging-ai',
+    title: 'Intelligentes Dokument-Tagging',
+    description: 'Automatische Kategorisierung und intelligente Verlinkung von Dokumenten. Erstellt semantische Verbindungen zwischen Berichten, Anforderungen und Reviews. Nie mehr Wissen verlieren oder lange suchen.',
+    solutionWorld: 'KNOW',
+    status: 'coming-soon',
+    tags: ['Claude', 'Vektordatenbank', 'Semantic Search'],
+    metrics: 'Intelligente Vernetzung',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/document-tagging.png',
+      alt: 'Intelligentes Dokument-Tagging System'
+    }
+  },
+  {
+    id: 'customer-meeting-prep',
+    title: 'Automatisierte Kundenvorbereitung',
+    description: 'Automatisches Sammeln und Aufbereiten von Kundeninformationen für optimale Meeting-Vorbereitung. Analysiert LinkedIn, News, Geschäftsberichte und erstellt kompakte Briefings.',
+    solutionWorld: 'WORK',
+    status: 'coming-soon',
+    tags: ['Perplexity', 'n8n', 'LinkedIn API'],
+    metrics: '70% schnellere Vorbereitung',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/customer-preparation.png',
+      alt: 'Kundenvorbereitung Dashboard'
+    }
+  },
+  {
+    id: 'innovation-assessment-dashboard',
+    title: 'Innovations-Assessment Dashboard',
+    description: 'Systematische Bewertung von Technologien und Innovationsideen. Analysiert technische Machbarkeit, Herstellbarkeit und Wirtschaftlichkeit. Datenbasierte Entscheidungsgrundlage für Ihr Innovations-Portfolio.',
+    solutionWorld: 'THINK',
+    status: 'coming-soon',
+    tags: ['Claude', 'Scoring-Algorithmen', 'Analytics'],
+    metrics: 'Objektive Innovation-Scores',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/innovation-dashboard.png',
+      alt: 'Innovations-Assessment Dashboard'
+    }
   }
 ];
 
