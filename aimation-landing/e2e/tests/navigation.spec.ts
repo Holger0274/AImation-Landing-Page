@@ -49,7 +49,7 @@ test.describe('Header Navigation', () => {
 
     // Should have scrolled to services section
     const servicesSection = page.locator('#leistungen, section').filter({
-      hasText: /Schulungen.*Beratung/s,
+      hasText: /Schulungen[\s\S]*Beratung/,
     }).first();
 
     await expect(servicesSection).toBeInViewport();
@@ -88,7 +88,15 @@ test.describe('Header Navigation', () => {
 
     const modalVisible = await modal.isVisible().catch(() => false);
     const contactInViewport = await contactSection
-      .isInViewport()
+      .evaluate((el) => {
+        const rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= window.innerHeight &&
+          rect.right <= window.innerWidth
+        );
+      })
       .catch(() => false);
 
     expect(modalVisible || contactInViewport).toBe(true);

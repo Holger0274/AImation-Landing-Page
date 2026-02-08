@@ -381,7 +381,6 @@ function HeroHighlightCard({ stat, onClick }: { stat: typeof heroStat; onClick: 
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: 0.7 }}
       animate={{
         boxShadow: [
           '0 0 30px rgba(249, 0, 147, 0.3)',
@@ -390,6 +389,8 @@ function HeroHighlightCard({ stat, onClick }: { stat: typeof heroStat; onClick: 
         ],
       }}
       transition={{
+        duration: 0.6,
+        delay: 0.7,
         boxShadow: {
           duration: 3,
           repeat: Infinity,

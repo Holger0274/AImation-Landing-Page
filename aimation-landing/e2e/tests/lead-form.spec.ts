@@ -93,7 +93,7 @@ test.describe('Lead Form Validation', () => {
   });
 
   test('validates email format', async () => {
-    await leadFormPage.emailValidation();
+    await leadFormPage.expectEmailValidation();
   });
 
   test('validates company size selection is required', async () => {
@@ -143,8 +143,7 @@ test.describe('Lead Form Validation', () => {
 
   test('phone number is optional', async () => {
     // Fill form without phone number
-    const dataWithoutPhone = { ...validLeadFormData };
-    delete dataWithoutPhone.telefon;
+    const { telefon, ...dataWithoutPhone } = validLeadFormData;
 
     await leadFormPage.fillForm(dataWithoutPhone);
 
