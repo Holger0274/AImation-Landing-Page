@@ -2,44 +2,28 @@
 
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import Image from 'next/image';
 
 export default function About() {
   return (
     <section id="ueber-mich" className="py-20 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Abstract Illustration */}
+          {/* Professional Photo */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative rounded-2xl overflow-hidden"
-            style={{ height: 'clamp(250px, 40vw, 384px)' }}
+            className="relative rounded-2xl overflow-hidden shadow-lg"
           >
-            {/* Animated Geometric Shapes */}
-            <div className="absolute inset-0 bg-gradient-to-br from-magenta/10 to-lightblue/10">
-              {[...Array(5)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute rounded-full bg-gradient-to-br from-magenta/20 to-lightblue/20"
-                  style={{
-                    width: `${100 + i * 50}px`,
-                    height: `${100 + i * 50}px`,
-                    left: `${20 + i * 15}%`,
-                    top: `${10 + i * 15}%`,
-                  }}
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    rotate: [0, 180, 360],
-                  }}
-                  transition={{
-                    duration: 8 + i * 2,
-                    repeat: Infinity,
-                    ease: 'linear',
-                  }}
-                />
-              ))}
-            </div>
+            <Image
+              src="/images/holger-consulting.png"
+              alt="Holger im Beratungsgespräch - zeigt einem Mitarbeiter AI-Automatisierung"
+              width={2400}
+              height={1792}
+              className="w-full h-auto object-cover"
+              priority={false}
+            />
           </motion.div>
 
           {/* Text Content */}
