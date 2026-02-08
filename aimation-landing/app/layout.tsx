@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk, Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 
 const spaceGrotesk = Space_Grotesk({
@@ -39,7 +40,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className={`${spaceGrotesk.variable} ${inter.variable}`} style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
-      <body className="antialiased" style={{ overflowX: 'hidden', maxWidth: '100vw' }}>{children}</body>
+      <body className="antialiased" style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
+        {/* Calendly Popup Widget Script */}
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.css"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
+        {children}
+      </body>
     </html>
   );
 }

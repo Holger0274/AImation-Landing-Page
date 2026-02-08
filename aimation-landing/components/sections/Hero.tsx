@@ -1,11 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { cn } from '@/lib/utils';
 import { Check, Users, Award, TrendingUp } from 'lucide-react';
+import LeadFormModal from '@/components/LeadFormModal';
 
 // Animation variants for Framer Motion
 const containerVariants = {
@@ -53,6 +55,9 @@ const floatingVariants = {
 };
 
 export default function Hero() {
+  // State for Lead Form Modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   // Final approved content from AI-mation_Hero-Headline.md
   const headlineStart = '40% der Arbeitszeit Ihrer Mitarbeiter geht für Aufgaben drauf, die ';
   const headlineHighlight = 'niemand vermissen würde';
@@ -139,7 +144,7 @@ export default function Hero() {
             variants={itemVariants}
           >
             <Button
-              onClick={() => (window.location.href = '#kontakt')}
+              onClick={() => setIsModalOpen(true)}
               size="lg"
               className="bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold hover:shadow-[0_0_30px_rgba(249,0,147,0.4)] transition-all duration-300"
             >
@@ -264,6 +269,9 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Lead Form Modal */}
+      <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

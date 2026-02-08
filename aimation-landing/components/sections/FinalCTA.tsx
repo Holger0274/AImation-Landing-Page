@@ -4,9 +4,11 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calculator } from 'lucide-react';
 import ROICalculator from '@/components/ROICalculator/ROICalculator';
+import LeadFormModal from '@/components/LeadFormModal';
 
 export default function FinalCTA() {
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
+  const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
 
   return (
     <section id="kontakt" className="relative py-20 md:py-32 bg-black text-white overflow-hidden">
@@ -47,8 +49,8 @@ export default function FinalCTA() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             {/* Primary CTA - Magenta Button (Erstgespräch) */}
-            <motion.a
-              href="#calendly"
+            <motion.button
+              onClick={() => setIsLeadFormOpen(true)}
               className="group px-8 py-4 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-lg glow-magenta-strong w-full sm:w-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -57,7 +59,7 @@ export default function FinalCTA() {
                 Kostenloses Erstgespräch buchen
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
-            </motion.a>
+            </motion.button>
 
             {/* Secondary CTA - Ghost Button (ROI Calculator) */}
             <motion.button
@@ -89,6 +91,9 @@ export default function FinalCTA() {
         onClose={() => setIsCalculatorOpen(false)}
         calendlyUrl="https://calendly.com" // TODO: Replace with actual Calendly URL
       />
+
+      {/* Lead Form Modal */}
+      <LeadFormModal isOpen={isLeadFormOpen} onClose={() => setIsLeadFormOpen(false)} />
     </section>
   );
 }
