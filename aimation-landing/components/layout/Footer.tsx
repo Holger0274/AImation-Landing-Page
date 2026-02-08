@@ -3,6 +3,11 @@ import { Linkedin, Mail } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const lastUpdated = new Date('2026-02-08'); // Update dieses Datum bei Content-Änderungen
+  const formattedDate = lastUpdated.toLocaleDateString('de-DE', {
+    year: 'numeric',
+    month: 'long',
+  });
 
   return (
     <footer className="bg-black text-white">
@@ -110,7 +115,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com/in/..."
+                  href="https://www.linkedin.com/in/holgerpeschke/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"
@@ -124,23 +129,30 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">
-            © {currentYear} AI.mation – Alle Rechte vorbehalten
+        <div className="mt-12 pt-8 border-t border-gray-800">
+          {/* Last Updated Signal (SEO Content Freshness) */}
+          <p className="text-gray-500 text-xs mb-3 text-center md:text-left">
+            Zuletzt aktualisiert: {formattedDate}
           </p>
-          <div className="flex gap-6">
-            <Link
-              href="/impressum"
-              className="text-gray-400 hover:text-white transition-colors text-sm"
-            >
-              Impressum
-            </Link>
-            <Link
-              href="/datenschutz"
-              className="text-gray-400 hover:text-white transition-colors text-sm"
-            >
-              Datenschutz
-            </Link>
+
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm">
+              © {currentYear} AI.mation – Alle Rechte vorbehalten
+            </p>
+            <div className="flex gap-6">
+              <Link
+                href="/impressum"
+                className="text-gray-400 hover:text-white transition-colors text-sm"
+              >
+                Impressum
+              </Link>
+              <Link
+                href="/datenschutz"
+                className="text-gray-400 hover:text-white transition-colors text-sm"
+              >
+                Datenschutz
+              </Link>
+            </div>
           </div>
         </div>
       </div>

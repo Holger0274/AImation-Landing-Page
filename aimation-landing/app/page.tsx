@@ -12,6 +12,16 @@ import About from '@/components/sections/About';
 import FAQ from '@/components/sections/FAQ';
 import FinalCTA from '@/components/sections/FinalCTA';
 
+/**
+ * Static Site Generation (SSG) aktivieren für SEO & AI-Crawler
+ *
+ * KRITISCH: AI-Crawler wie GPTBot, ClaudeBot, PerplexityBot können
+ * KEIN JavaScript ausführen! Ohne SSG/SSR sehen sie nur leere HTML-Shells.
+ *
+ * 'force-static' = Seite wird beim Build gerendert
+ */
+export const dynamic = 'force-static';
+
 export default function Home() {
   return (
     <>

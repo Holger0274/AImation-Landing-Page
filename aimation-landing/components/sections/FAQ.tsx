@@ -3,8 +3,10 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import { FAQPageSchema } from '@/components/StructuredData';
 
-const faqs = [
+// FAQ-Daten exportieren für Schema.org Markup
+export const faqs = [
   {
     question: 'Was kostet das?',
     answer:
@@ -52,7 +54,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-6 py-5 flex justify-between items-center text-left hover:bg-gray-50 transition-colors"
       >
-        <span className="font-heading font-semibold text-lg pr-4">{faq.question}</span>
+        <h3 className="font-heading font-semibold text-lg pr-4">{faq.question}</h3>
         <ChevronDown
           className={`w-5 h-5 text-magenta flex-shrink-0 transition-transform ${
             isOpen ? 'rotate-180' : ''
@@ -78,6 +80,9 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
 export default function FAQ() {
   return (
     <section id="faq" className="py-20 md:py-32 bg-gray-50">
+      {/* FAQPage Schema.org Structured Data (KRITISCH für AI-Citations!) */}
+      <FAQPageSchema faqs={faqs} />
+
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -74,9 +74,9 @@ export const roiCalculatorSteps = {
 
 // Expected ROI calculation results (based on above inputs)
 export const expectedROIResults = {
-  zeitersparnisPro Woche: 7, // hours (10 * 0.7)
+  zeitersparnisProWoche: 7, // hours (10 * 0.7)
   zeitersparnisProJahr: 364, // hours (7 * 52)
-  kostenersparnisPro Jahr: 12740, // EUR (364 * 35)
+  kostenersparnisProJahr: 12740, // EUR (364 * 35)
   roi: 1174, // % (assuming 1000 EUR implementation cost)
 };
 

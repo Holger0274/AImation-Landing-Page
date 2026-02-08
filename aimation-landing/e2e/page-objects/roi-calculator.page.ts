@@ -259,18 +259,18 @@ export class ROICalculatorPage {
    * Assert calculated results match expected values
    */
   async expectCalculatedResults(expected: {
-    zeitersparnisPro Woche?: number;
-    kostenersparnisPro Jahr?: number;
+    zeitersparnisProWoche?: number;
+    kostenersparnisProJahr?: number;
     roi?: number;
   }) {
-    if (expected.zeitersparnisPro Woche !== undefined) {
+    if (expected.zeitersparnisProWoche !== undefined) {
       const zeitText = await this.zeitersparnisDisplay.textContent();
-      expect(zeitText).toContain(expected.zeitersparnisPro Woche.toString());
+      expect(zeitText).toContain(expected.zeitersparnisProWoche.toString());
     }
 
-    if (expected.kostenersparnisPro Jahr !== undefined) {
+    if (expected.kostenersparnisProJahr !== undefined) {
       const kostenText = await this.kostenersparnisDisplay.textContent();
-      expect(kostenText).toContain(expected.kostenersparnisPro Jahr.toString());
+      expect(kostenText).toContain(expected.kostenersparnisProJahr.toString());
     }
 
     if (expected.roi !== undefined) {

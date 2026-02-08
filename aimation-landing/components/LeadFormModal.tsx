@@ -12,9 +12,7 @@ const leadFormSchema = z.object({
   nachname: z.string().min(2, 'Nachname ist erforderlich'),
   email: z.string().email('Bitte geben Sie eine gültige E-Mail-Adresse ein'),
   firma: z.string().min(2, 'Firmenname ist erforderlich'),
-  unternehmensgroesse: z.enum(['10-50', '50-250', '250-1000', '1000+'], {
-    errorMap: () => ({ message: 'Bitte wählen Sie die Unternehmensgröße' }),
-  }),
+  unternehmensgroesse: z.enum(['10-50', '50-250', '250-1000', '1000+']),
   telefon: z.string().optional(),
   herausforderung: z
     .string()

@@ -2,7 +2,11 @@ import React from 'react';
 
 export const metadata = {
   title: 'Impressum | AI.mation',
-  description: 'Rechtliche Angaben gemäß § 5 DDG',
+  description: 'Impressum und rechtliche Angaben von AI.mation - Holger Peschke, KI-Beratung und Automatisierung für den Mittelstand. Kontakt, Anbieterinformationen gemäß § 5 DDG.',
+  robots: {
+    index: false, // Impressum sollte nicht indexiert werden
+    follow: true,
+  },
 };
 
 export default function ImpressumPage() {

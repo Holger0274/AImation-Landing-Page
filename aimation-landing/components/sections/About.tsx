@@ -3,10 +3,16 @@
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import Image from 'next/image';
+import { PersonSchema } from '@/components/StructuredData';
 
 export default function About() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aimation.de';
+
   return (
     <section id="ueber-mich" className="py-20 md:py-32">
+      {/* Person Schema.org for Holger Peschke */}
+      <PersonSchema siteUrl={siteUrl} />
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Professional Photo */}

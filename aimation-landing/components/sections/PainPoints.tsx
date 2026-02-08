@@ -1,91 +1,95 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileSpreadsheet, Brain, Clock, TrendingDown, AlertTriangle, TrendingUp, X } from 'lucide-react';
+import { FileSpreadsheet, Brain, Clock, TrendingDown, AlertTriangle, TrendingUp, X, Calculator } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
 
-const painPoints = [
+// Compact Stats (6 main pain points for grid display) - WITH MODAL DATA
+const compactStats = [
   {
     id: 'time',
     icon: Clock,
-    title: '40% der Arbeitszeit ist Zeitverschwendung',
-    description:
-      'Manuelle, repetitive Aufgaben die niemand vermissen würde. Zeit für Wertschöpfung fehlt.',
     stat: '40%',
+    title: 'der Arbeitszeit verpufft für Aufgaben, die niemand vermissen würde',
+    description: 'Ihre Mitarbeiter tippen Zahlen ab, die längst digital vorliegen. Kopieren Daten von Excel in SAP. Erstellen manuell Berichte, die automatisiert werden könnten. Während die Konkurrenz automatisiert, verschwenden Sie Potenzial.',
     statLabel: 'Zeitverschwendung',
     source: 'McKinsey Global Survey 2024',
     imagePath: '/images/time-waste.webp',
+    imageAlt: 'Gestresster Büroangestellter verschwendet Zeit mit manuellen repetitiven Aufgaben statt Wertschöpfung',
   },
   {
     id: 'cost',
     icon: TrendingDown,
-    title: 'Verschwendete Zeit kostet bares Geld',
-    description:
-      'Bei 10 Mitarbeitern sind das über 200.000€ pro Jahr für Aufgaben ohne Mehrwert.',
     stat: '200k€',
+    title: 'Das sind 200.000€ aus dem Fenster geworfen – jedes Jahr',
+    description: 'Bei nur 10 Mitarbeitern verbrennen Sie über 200.000€ pro Jahr für Tätigkeiten ohne Mehrwert. Das ist ein Mittelklasse-Auto. Jedes Jahr. Einfach weg. Für Aufgaben, die längst automatisierbar wären.',
     statLabel: 'Verschwendung/Jahr',
     source: 'Berechnung: McKinsey-Studie 2024',
     imagePath: '/images/cost-waste.webp',
+    imageAlt: 'Finanzgrafik zeigt Kostenverschwendung durch ineffiziente manuelle Prozesse im KMU',
   },
   {
     id: 'quality',
     icon: AlertTriangle,
-    title: 'Fehlerquote durch manuelle Arbeit',
-    description:
-      'Jede manuelle Eingabe birgt Fehlerrisiko. Nacharbeit kostet Zeit und Reputation.',
     stat: '1-4%',
+    title: 'Jeder Fehler kostet Geld – und Ihr Image',
+    description: 'Bei jeder manuellen Dateneingabe passieren Fehler. Kunden beschweren sich. Rechnungen stimmen nicht. Liefertermine werden verpasst. Und während Ihr Team Fehler korrigiert, bleibt die eigentliche Arbeit liegen. Frustrierend? Absolut. Vermeidbar? Ja.',
     statLabel: 'Fehlerrate',
     source: 'Gartner 2023 & Ernst & Young 2025',
     imagePath: '/images/quality-issues.webp',
+    imageAlt: 'Qualitätsprobleme und Fehler durch manuelle Dateneingabe in Unternehmensprozessen',
   },
   {
     id: 'knowledge',
     icon: Brain,
-    title: 'Wissen verschwindet mit Mitarbeitern',
-    description:
-      'Wenn erfahrene Mitarbeiter gehen, geht das Wissen mit. Fachkräftemangel verschärft das Problem.',
     stat: '71%',
+    title: 'Wenn Petra in Rente geht, geht 30 Jahre Erfahrung mit',
+    description: 'Nur sie weiß, wie dieser eine Prozess funktioniert. Nur sie kennt alle Sonderfälle. Und wenn sie geht? Chaos. Fehler. Verzögerungen. Neue Mitarbeiter brauchen Monate, um aufzuholen – wenn Sie überhaupt jemanden finden.',
     statLabel: 'der IT-Führungskräfte sehen Wissensverlust',
     source: 'Sinequa-Studie 2022',
     imagePath: '/images/knowledge-loss.webp',
+    imageAlt: 'Wissensverlust durch Mitarbeiter-Fluktuation - Fachkräftemangel im deutschen Mittelstand',
   },
   {
     id: 'chaos',
     icon: FileSpreadsheet,
-    title: 'Rechnungen werden manuell erfasst',
-    description:
-      'Trotz digitaler Möglichkeiten erfassen 86% der KMUs Rechnungsdaten manuell – fehleranfällig und zeitraubend.',
     stat: '86%',
+    title: '86% tippen Rechnungen ab – als gäbe es kein Internet',
+    description: 'PDF kommt per E-Mail. Ihre Mitarbeiter öffnen es, lesen die Zahlen, tippen sie ins ERP. Fehler inklusive. Es gibt OCR-Software seit 20 Jahren. Trotzdem tippen 86% der KMUs wie 1995. Absurd? Ja. Änderbar? Sofort.',
     statLabel: 'erfassen Rechnungen manuell',
     source: 'KfW Digitalisierungsbericht 2024',
     imagePath: '/images/excel-chaos.webp',
+    imageAlt: 'Excel-Chaos und manuelle Rechnungserfassung in KMU - ineffiziente Buchhaltungsprozesse',
   },
   {
     id: 'competition',
     icon: TrendingUp,
-    title: 'KI ist die wichtigste Zukunftstechnologie',
-    description:
-      'Deutsche Unternehmen sind überzeugt: Ohne KI keine Wettbewerbsfähigkeit. Der Abstand zu Vorreitern wächst täglich.',
     stat: '81%',
+    title: '81% wissen: Ohne KI verlieren wir den Anschluss',
+    description: 'Ihre Konkurrenz nutzt bereits KI. Ihre Branche verändert sich. Schneller, effizienter, günstiger – ohne Sie. Während Sie noch überlegen, ob KI etwas für Sie ist, ziehen andere davon. Der Abstand wächst. Jeden Tag.',
     statLabel: 'sehen KI als wichtigste Zukunftstechnologie',
     source: 'Bitkom-Studie September 2025',
     imagePath: '/images/competition.webp',
-  },
-  {
-    id: 'waiting',
-    icon: AlertTriangle,
-    title: 'Während Sie warten, automatisiert Ihr Wettbewerb',
-    description:
-      'Jeder Tag ohne Automatisierung vergrößert den Rückstand. KI-Nutzung verdoppelte sich im letzten Jahr.',
-    stat: '2x',
-    statLabel: 'KI-Wachstum in 12 Monaten',
-    source: 'Bitkom September 2025',
-    imagePath: '/images/waiting-competition.webp',
+    imageAlt: 'Wettbewerbsvorteil durch KI-Automatisierung - deutsche Unternehmen im digitalen Wettlauf',
   },
 ];
 
-// Light Blue Illustration Component (Abstract, Friendly)
+// Hero Highlight (most important pain point) - WITH MODAL DATA
+const heroStat = {
+  id: 'waiting',
+  icon: AlertTriangle,
+  stat: '2x',
+  title: 'Während Sie noch planen, hat Ihr Wettbewerber schon automatisiert',
+  subtitle: 'Die KI-Nutzung in deutschen Unternehmen hat sich im letzten Jahr verdoppelt. Nicht in 10 Jahren. In 12 Monaten. Wer jetzt wartet, holt diesen Vorsprung nicht mehr auf. Die Frage ist nicht OB, sondern WANN Sie starten.',
+  description: 'Die KI-Nutzung in deutschen Unternehmen hat sich im letzten Jahr verdoppelt. Nicht in 10 Jahren. In 12 Monaten. Wer jetzt wartet, holt diesen Vorsprung nicht mehr auf. Die Frage ist nicht OB, sondern WANN Sie starten.',
+  statLabel: 'KI-Wachstum in 12 Monaten',
+  source: 'Bitkom September 2025',
+  imagePath: '/images/waiting-competition.webp',
+  imageAlt: 'Rückstand im KI-Wettbewerb - Konkurrenz automatisiert während andere warten',
+};
+
+// Light Blue Illustration Component (kept from original)
 function PainPointIllustrations() {
   return (
     <div className="relative w-full h-full min-h-[300px] max-h-[400px] flex items-center justify-center">
@@ -232,7 +236,7 @@ function PainPointIllustrations() {
 }
 
 // Image Modal Component
-function ImageModal({ painPoint, onClose }: { painPoint: typeof painPoints[0]; onClose: () => void }) {
+function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0]; onClose: () => void }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -262,7 +266,7 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof painPoints[0]; o
         <div className="relative aspect-[4/3]">
           <Image
             src={painPoint.imagePath}
-            alt={painPoint.title}
+            alt={painPoint.imageAlt}
             fill
             className="object-cover"
             sizes="(max-width: 1200px) 100vw, 1200px"
@@ -326,9 +330,122 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof painPoints[0]; o
   );
 }
 
+// Compact Stat Card Component (NOW CLICKABLE)
+function CompactStatCard({ stat, index, onClick }: { stat: typeof compactStats[0]; index: number; onClick: () => void }) {
+  const Icon = stat.icon;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ scale: 1.02, borderColor: 'rgba(249, 0, 147, 0.3)' }}
+      onClick={onClick}
+      className="relative p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#f90093]/30 transition-all duration-300 group cursor-pointer"
+    >
+      {/* Icon */}
+      <div className="mb-4">
+        <Icon className="w-8 h-8 text-[#60AFFF]" />
+      </div>
+
+      {/* Stat */}
+      <div className="mb-2">
+        <div
+          className="font-heading font-bold text-[#f90093] leading-none"
+          style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}
+        >
+          {stat.stat}
+        </div>
+      </div>
+
+      {/* Title */}
+      <h3 className="font-heading font-semibold text-[#faf9f7] text-sm md:text-base leading-tight mb-2">
+        {stat.title}
+      </h3>
+
+      {/* Click hint */}
+      <p className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
+        Klicken für Bild & Details →
+      </p>
+    </motion.div>
+  );
+}
+
+// Hero Highlight Card Component (NOW CLICKABLE)
+function HeroHighlightCard({ stat, onClick }: { stat: typeof heroStat; onClick: () => void }) {
+  const Icon = stat.icon;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.7 }}
+      animate={{
+        boxShadow: [
+          '0 0 30px rgba(249, 0, 147, 0.3)',
+          '0 0 40px rgba(249, 0, 147, 0.5)',
+          '0 0 30px rgba(249, 0, 147, 0.3)',
+        ],
+      }}
+      transition={{
+        boxShadow: {
+          duration: 3,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        },
+      }}
+      onClick={onClick}
+      className="relative p-8 rounded-2xl border-2 border-[#f90093] overflow-hidden cursor-pointer group hover:scale-[1.01] transition-transform duration-300"
+      style={{
+        background: 'linear-gradient(135deg, rgba(249, 0, 147, 0.1), rgba(96, 175, 255, 0.05))',
+      }}
+    >
+      {/* Content */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-6">
+        {/* Icon + Stat */}
+        <div className="flex items-center gap-4">
+          <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-[#f90093]/20 flex items-center justify-center">
+            <Icon className="w-8 h-8 text-[#f90093]" />
+          </div>
+          <div
+            className="font-heading font-bold text-[#f90093]"
+            style={{
+              fontSize: 'clamp(3rem, 8vw, 4rem)',
+              textShadow: '0 0 30px rgba(249, 0, 147, 0.5)',
+            }}
+          >
+            {stat.stat}
+          </div>
+        </div>
+
+        {/* Text Content */}
+        <div className="flex-1 text-center md:text-left">
+          <h3
+            className="font-heading font-bold text-[#faf9f7] mb-2"
+            style={{ fontSize: 'clamp(1.25rem, 3vw, 1.75rem)' }}
+          >
+            {stat.title}
+          </h3>
+          <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-2">
+            {stat.subtitle}
+          </p>
+          {/* Click hint */}
+          <p className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
+            Klicken für Bild & Details →
+          </p>
+        </div>
+      </div>
+
+      {/* Background glow accent */}
+      <div className="absolute top-0 right-0 w-48 h-48 bg-[#f90093]/20 rounded-full blur-3xl pointer-events-none opacity-50" />
+    </motion.div>
+  );
+}
+
 export default function PainPoints() {
-  const [activePainPoint, setActivePainPoint] = useState(0);
-  const [modalPainPoint, setModalPainPoint] = useState<number | null>(null);
+  const [modalPainPoint, setModalPainPoint] = useState<typeof compactStats[0] | null>(null);
 
   return (
     <section className="relative overflow-hidden">
@@ -349,7 +466,7 @@ export default function PainPoints() {
               <div className="inline-block mb-6">
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#60AFFF]/10 border border-[#60AFFF]/20">
                   <span className="text-sm font-medium text-[#071013]">
-                    Die häufigsten Herausforderungen
+                    Kennen Sie das auch?
                   </span>
                 </span>
               </div>
@@ -370,14 +487,6 @@ export default function PainPoints() {
                   Die gute Nachricht: Für jedes dieser Probleme gibt es bewährte Lösungen.
                 </p>
               </div>
-
-              {/* Small CTA/Hint */}
-              <div className="flex items-center gap-2 text-sm text-[#071013]/60 mb-8">
-                <svg className="w-5 h-5 text-[#60AFFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-                <span>Klicken Sie auf die Karten für Details & Bilder</span>
-              </div>
             </motion.div>
 
             {/* Illustration */}
@@ -388,6 +497,74 @@ export default function PainPoints() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <PainPointIllustrations />
+            </motion.div>
+
+            {/* ROI Calculator Teaser - ON LEFT SIDE */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-10 relative p-8 md:p-10 rounded-2xl border-2 border-[#f90093]/30 bg-white overflow-hidden"
+              style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)' }}
+            >
+              {/* Content */}
+              <div className="relative z-10 text-center">
+                {/* Icon */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.6, type: 'spring' }}
+                  className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#f90093]/10 mb-6"
+                >
+                  <Calculator className="w-8 h-8 md:w-10 md:h-10 text-[#f90093]" />
+                </motion.div>
+
+                {/* Headline */}
+                <h3
+                  className="font-heading font-bold text-[#071013] mb-4"
+                  style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}
+                >
+                  Wie viel kosten Sie diese Probleme <span className="text-[#f90093]">pro Jahr</span>?
+                </h3>
+
+                {/* Description */}
+                <p className="text-[#071013]/70 font-body text-base md:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+                  Berechnen Sie mit unserem ROI-Rechner, wie viel Zeit und Geld Sie durch Automatisierung einsparen können.
+                </p>
+
+                {/* CTA Button */}
+                <motion.button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const kontaktSection = document.getElementById('kontakt');
+                    if (kontaktSection) {
+                      kontaktSection.scrollIntoView({ behavior: 'smooth' });
+                      // Trigger ROI calculator after scroll (with delay)
+                      setTimeout(() => {
+                        const roiButton = document.querySelector('[data-roi-calculator-trigger]') as HTMLButtonElement;
+                        if (roiButton) roiButton.click();
+                      }, 800);
+                    }
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-heading font-bold text-lg text-white transition-all duration-300"
+                  style={{
+                    background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
+                    boxShadow: '0 4px 20px rgba(249, 0, 147, 0.3)',
+                  }}
+                >
+                  <Calculator className="w-5 h-5" />
+                  ROI-Rechner jetzt starten
+                </motion.button>
+
+                {/* Hint Text */}
+                <p className="text-[#071013]/60 text-sm mt-4 font-body">
+                  ⏱ Dauert nur 2 Minuten • 💡 Sofortiges Ergebnis
+                </p>
+              </div>
             </motion.div>
           </div>
 
@@ -407,160 +584,34 @@ export default function PainPoints() {
           {/* Radial Glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f90093]/10 rounded-full blur-[120px] pointer-events-none" />
 
-          {/* Interactive Pain Points Cards */}
-          <div className="relative z-10 w-full max-w-xl mx-auto lg:mx-0">
-            <div className="space-y-4">
-              {painPoints.map((point, index) => {
-                const Icon = point.icon;
-                const isActive = activePainPoint === index;
-
-                return (
-                  <motion.div
-                    key={point.id}
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.08 }}
-                    onClick={() => {
-                      setActivePainPoint(index);
-                      setModalPainPoint(index);
-                    }}
-                    onMouseEnter={() => setActivePainPoint(index)}
-                    className={`
-                      relative p-5 rounded-xl cursor-pointer transition-all duration-300
-                      ${isActive
-                        ? 'bg-[#f90093]/10 border-2 border-[#f90093]'
-                        : 'bg-white/5 border-2 border-white/10 hover:border-white/20'
-                      }
-                    `}
-                    style={isActive ? { boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)' } : {}}
-                  >
-                    {/* Icon and Content */}
-                    <div className="flex items-start gap-3">
-                      <div
-                        className={`
-                          flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center
-                          ${isActive ? 'bg-[#f90093]/20' : 'bg-white/10'}
-                        `}
-                      >
-                        <Icon
-                          className={`w-5 h-5 ${isActive ? 'text-[#f90093]' : 'text-white/70'}`}
-                        />
-                      </div>
-
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-baseline justify-between mb-1 gap-2">
-                          <h3
-                            className={`
-                              font-heading font-bold flex-1 min-w-0
-                              ${isActive ? 'text-white' : 'text-white/90'}
-                            `}
-                            style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1.05rem)' }}
-                          >
-                            {point.title}
-                          </h3>
-                          <span className={`
-                            font-heading font-bold flex-shrink-0
-                            ${isActive ? 'text-[#f90093]' : 'text-white/40'}
-                          `}
-                            style={{
-                              fontSize: 'clamp(1rem, 3vw, 1.35rem)',
-                              ...(isActive ? { textShadow: '0 0 20px rgba(249, 0, 147, 0.5)' } : {})
-                            }}
-                          >
-                            {point.stat}
-                          </span>
-                        </div>
-
-                        <motion.p
-                          initial={false}
-                          animate={{
-                            height: isActive ? 'auto' : 0,
-                            opacity: isActive ? 1 : 0
-                          }}
-                          transition={{ duration: 0.3 }}
-                          className={`
-                            overflow-hidden text-xs
-                            ${isActive ? 'text-gray-300' : 'text-gray-500'}
-                          `}
-                        >
-                          {point.description}
-                        </motion.p>
-
-                        {/* Source citation when active */}
-                        {isActive && (
-                          <motion.p
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.2 }}
-                            className="text-xs text-gray-500 mt-2 italic"
-                          >
-                            Quelle: {point.source}
-                          </motion.p>
-                        )}
-
-                        {/* Collapsed hint */}
-                        {!isActive && (
-                          <p className="text-xs text-gray-500 mt-1">
-                            Klicken für Bild & Details →
-                          </p>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Active Indicator */}
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeIndicator"
-                        className="absolute left-0 top-0 bottom-0 w-1 bg-[#f90093] rounded-r"
-                        style={{ boxShadow: '0 0 10px #f90093' }}
-                      />
-                    )}
-                  </motion.div>
-                );
-              })}
+          {/* Grid of Compact Stats + Hero Card */}
+          <div className="relative z-10 w-full max-w-3xl mx-auto lg:mx-0">
+            {/* 3-Column Grid for 6 Compact Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+              {compactStats.map((stat, index) => (
+                <CompactStatCard
+                  key={stat.id}
+                  stat={stat}
+                  index={index}
+                  onClick={() => setModalPainPoint(stat)}
+                />
+              ))}
             </div>
 
-            {/* ROI Calculator Teaser */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-8 text-center"
-            >
-              <p className="text-white/90 font-body text-base md:text-lg font-medium mb-3">
-                Wie viel kosten Sie diese Probleme pro Jahr?
-              </p>
-              <a
-                href="#kontakt"
-                className="inline-flex items-center gap-2 text-magenta font-heading font-bold text-lg hover:text-[#ff4ecd] transition-colors underline decoration-magenta/50 hover:decoration-magenta underline-offset-4"
-                style={{ textShadow: '0 0 20px rgba(249, 0, 147, 0.4)' }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  const kontaktSection = document.getElementById('kontakt');
-                  if (kontaktSection) {
-                    kontaktSection.scrollIntoView({ behavior: 'smooth' });
-                    // Trigger ROI calculator after scroll (with delay)
-                    setTimeout(() => {
-                      const roiButton = document.querySelector('[data-roi-calculator-trigger]') as HTMLButtonElement;
-                      if (roiButton) roiButton.click();
-                    }, 800);
-                  }
-                }}
-              >
-                ROI-Rechner starten →
-              </a>
-            </motion.div>
+            {/* Hero Highlight Card (Full Width) */}
+            <HeroHighlightCard
+              stat={heroStat}
+              onClick={() => setModalPainPoint(heroStat as typeof compactStats[0])}
+            />
           </div>
         </div>
       </div>
 
       {/* Image Modal */}
       <AnimatePresence>
-        {modalPainPoint !== null && (
+        {modalPainPoint && (
           <ImageModal
-            painPoint={painPoints[modalPainPoint]}
+            painPoint={modalPainPoint}
             onClose={() => setModalPainPoint(null)}
           />
         )}

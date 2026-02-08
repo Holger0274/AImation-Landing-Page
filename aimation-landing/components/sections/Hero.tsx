@@ -89,11 +89,11 @@ export default function Hero() {
     },
   ];
 
-  // Placeholder images - replace with real images later
+  // Custom generated images with AI.mation brand colors
   const images = [
-    'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop&q=60', // Team collaboration
-    'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop&q=60', // Professional meeting
-    'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop&q=60', // Office work
+    '/images/hero-team-collaboration.png', // Team collaboration
+    '/images/hero-professional-meeting.png', // Professional meeting
+    '/images/hero-office-work.png', // Office work
   ];
 
   return (
@@ -138,7 +138,7 @@ export default function Hero() {
             {subtitle}
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <motion.div
             className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start"
             variants={itemVariants}
@@ -149,14 +149,6 @@ export default function Hero() {
               className="bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold hover:shadow-[0_0_30px_rgba(249,0,147,0.4)] transition-all duration-300"
             >
               Kostenloses Erstgespräch vereinbaren
-            </Button>
-            <Button
-              onClick={() => (window.location.href = '#leistungen')}
-              variant="outline"
-              size="lg"
-              className="border-2 border-gray-200 text-black font-heading font-semibold hover:border-black hover:bg-black hover:text-white transition-all"
-            >
-              Mehr erfahren
             </Button>
           </motion.div>
 
@@ -218,16 +210,32 @@ export default function Hero() {
             style={{ transitionDelay: '1s' }}
           />
 
-          {/* Images */}
+          {/* Images - Slightly larger for better visual impact */}
           <motion.div
-            className="absolute left-1/2 top-0 h-48 w-48 -translate-x-1/2 rounded-2xl bg-white p-2 shadow-lg sm:h-64 sm:w-64 border border-gray-100"
+            className="absolute left-1/2 top-0 h-56 w-56 -translate-x-1/2 rounded-2xl bg-white p-2 shadow-lg sm:h-72 sm:w-72 border border-gray-100"
             style={{ transformOrigin: 'bottom center' }}
             variants={imageVariants}
           >
             <div className="relative h-full w-full rounded-xl overflow-hidden">
               <Image
                 src={images[0]}
-                alt="KI-Automatisierung für Teams"
+                alt="Deutsches KMU-Team arbeitet gemeinsam an KI-gestützter Prozessautomatisierung und Workflow-Optimierung"
+                fill
+                sizes="(max-width: 640px) 224px, 288px"
+                className="object-cover"
+                priority
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            className="absolute right-0 top-1/3 h-48 w-48 rounded-2xl bg-white p-2 shadow-lg sm:h-64 sm:w-64 border border-gray-100"
+            style={{ transformOrigin: 'left center' }}
+            variants={imageVariants}
+          >
+            <div className="relative h-full w-full rounded-xl overflow-hidden">
+              <Image
+                src={images[1]}
+                alt="KI-Beratung und Training für Mittelstand - Holger erklärt AI-Readiness und Use Case Identifikation"
                 fill
                 sizes="(max-width: 640px) 192px, 256px"
                 className="object-cover"
@@ -236,32 +244,16 @@ export default function Hero() {
             </div>
           </motion.div>
           <motion.div
-            className="absolute right-0 top-1/3 h-40 w-40 rounded-2xl bg-white p-2 shadow-lg sm:h-56 sm:w-56 border border-gray-100"
-            style={{ transformOrigin: 'left center' }}
-            variants={imageVariants}
-          >
-            <div className="relative h-full w-full rounded-xl overflow-hidden">
-              <Image
-                src={images[1]}
-                alt="Beratung und Schulung"
-                fill
-                sizes="(max-width: 640px) 160px, 224px"
-                className="object-cover"
-                priority
-              />
-            </div>
-          </motion.div>
-          <motion.div
-            className="absolute bottom-0 left-0 h-32 w-32 rounded-2xl bg-white p-2 shadow-lg sm:h-48 sm:w-48 border border-gray-100"
+            className="absolute bottom-0 left-0 h-40 w-40 rounded-2xl bg-white p-2 shadow-lg sm:h-56 sm:w-56 border border-gray-100"
             style={{ transformOrigin: 'top right' }}
             variants={imageVariants}
           >
             <div className="relative h-full w-full rounded-xl overflow-hidden">
               <Image
                 src={images[2]}
-                alt="Prozess-Automatisierung"
+                alt="Automatisierte Workflows und intelligente Agents - KI-Umsetzung für produzierende Unternehmen"
                 fill
-                sizes="(max-width: 640px) 128px, 192px"
+                sizes="(max-width: 640px) 160px, 224px"
                 className="object-cover"
                 priority
               />

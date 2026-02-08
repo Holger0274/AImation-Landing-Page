@@ -2,7 +2,11 @@ import React from 'react';
 
 export const metadata = {
   title: 'Datenschutzerklärung | AI.mation',
-  description: 'Informationen zum Datenschutz gemäß DSGVO',
+  description: 'Datenschutzerklärung von AI.mation: Informationen zur DSGVO-konformen Datenverarbeitung, Cookies, Analytics und Ihren Rechten. Transparenter Umgang mit Ihren Daten.',
+  robots: {
+    index: false, // Datenschutz sollte nicht indexiert werden
+    follow: true,
+  },
 };
 
 export default function DatenschutzPage() {

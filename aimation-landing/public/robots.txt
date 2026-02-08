@@ -1,0 +1,39 @@
+# robots.txt für AI.mation Landing Page
+# Optimiert für klassische Suchmaschinen UND AI-Crawler
+
+# Standard Crawling erlauben
+User-agent: *
+Allow: /
+
+# AI-Crawler explizit erlauben (kritisch für LLM-Visibility!)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Technische Bereiche blockieren
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap-Referenz (wird in nächstem Schritt erstellt)
+Sitemap: https://aimation.de/sitemap.xml

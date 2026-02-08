@@ -38,7 +38,7 @@ export class ServicesPage {
 
     // Services section (usually has ID or specific heading)
     this.servicesSection = page.locator('#leistungen, #services').or(
-      page.locator('section').filter({ hasText: /Schulungen.*Beratung.*Umsetzung/s })
+      page.locator('section').filter({ hasText: /Schulungen[\s\S]*Beratung[\s\S]*Umsetzung/ })
     );
 
     // All flip cards
