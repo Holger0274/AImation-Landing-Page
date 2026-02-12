@@ -57,7 +57,7 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-heading font-medium text-gray-600 hover:text-black transition-colors"
+                className="text-sm font-heading font-medium text-gray-600 hover:text-[#071013] transition-colors"
               >
                 {item.label}
               </a>
@@ -73,7 +73,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-gray-600 hover:text-black"
+            className="md:hidden p-2 text-gray-600 hover:text-[#071013]"
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -95,7 +95,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-base font-heading font-medium text-gray-600 hover:text-black transition-colors py-2"
+                className="text-base font-heading font-medium text-gray-600 hover:text-[#071013] transition-colors py-2"
               >
                 {item.label}
               </a>

@@ -3,7 +3,6 @@ import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import PainPoints from '@/components/sections/PainPoints';
 import BeforeAfter from '@/components/sections/BeforeAfter';
-import Solution from '@/components/sections/Solution';
 import Services from '@/components/sections/Services';
 import ProjectShowcase from '@/components/sections/ProjectShowcase/ProjectShowcase';
 import Process from '@/components/sections/Process';
@@ -26,11 +25,10 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <PainPoints />
         <BeforeAfter />
-        <Solution />
         <Services />
         <ProjectShowcase />
         <Process />

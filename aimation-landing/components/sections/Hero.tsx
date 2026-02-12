@@ -109,7 +109,7 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="mb-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lightblue/10 backdrop-blur-sm border border-lightblue/20">
               <div className="w-2 h-2 rounded-full bg-magenta animate-pulse" />
-              <span className="text-sm font-heading font-semibold text-black">
+              <span className="text-sm font-heading font-semibold text-[#071013]">
                 Erkennen • Automatisieren • Wachsen
               </span>
             </div>
@@ -117,7 +117,7 @@ export default function Hero() {
 
           {/* Headline with Magenta Highlight */}
           <motion.h1
-            className="font-bold tracking-tight font-heading text-black leading-tight"
+            className="font-bold tracking-tight font-heading text-[#071013] leading-tight"
             style={{ fontSize: 'clamp(1.75rem, 5vw, 4.5rem)' }}
             variants={itemVariants}
           >
@@ -162,7 +162,7 @@ export default function Hero() {
                   {item.icon}
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="font-bold text-black font-heading" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
+                  <p className="font-bold text-[#071013] font-heading" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                     {item.hasCounter ? (
                       <AnimatedCounter
                         target={item.target!}

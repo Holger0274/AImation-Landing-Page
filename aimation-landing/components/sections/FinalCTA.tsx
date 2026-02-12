@@ -11,7 +11,7 @@ export default function FinalCTA() {
   const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
 
   return (
-    <section id="kontakt" className="relative py-20 md:py-32 bg-black text-white overflow-hidden">
+    <section id="kontakt" className="relative py-20 md:py-32 bg-[#071013] text-white overflow-hidden">
       {/* Animated Glow Background - Responsive */}
       <div className="absolute inset-0">
         <motion.div

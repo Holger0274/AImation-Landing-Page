@@ -23,7 +23,7 @@ const compactStats = [
     icon: TrendingDown,
     stat: '200k€',
     title: 'Das sind 200.000€ aus dem Fenster geworfen – jedes Jahr',
-    description: 'Bei nur 10 Mitarbeitern verbrennen Sie über 200.000€ pro Jahr für Tätigkeiten ohne Mehrwert. Das ist ein Mittelklasse-Auto. Jedes Jahr. Einfach weg. Für Aufgaben, die längst automatisierbar wären.',
+    description: 'Bei nur 10 Mitarbeitern verbrennen Sie über 200.000€ pro Jahr für Tätigkeiten ohne Mehrwert. Das sind die Jahresgehälter von 3 qualifizierten Fachkräften. Jedes Jahr. Einfach weg. Für Aufgaben, die längst automatisierbar wären.',
     statLabel: 'Verschwendung/Jahr',
     source: 'Berechnung: McKinsey-Studie 2024',
     imagePath: '/images/cost-waste.webp',
@@ -96,7 +96,7 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#071013]/80 backdrop-blur-sm overflow-y-auto"
       onClick={onClose}
     >
       <motion.div
@@ -190,7 +190,7 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
             sizes="(max-width: 1200px) 100vw, 1200px"
           />
           {/* Dark Overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/30" />
 
           {/* Content Overlay */}
           <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center overflow-y-auto">
@@ -220,9 +220,9 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="bg-black/60 backdrop-blur-sm px-6 py-3 rounded-lg mb-4"
+              className="bg-[#071013]/90 backdrop-blur-md px-6 py-3 rounded-lg mb-4 border border-white/10"
             >
-              <h3 className="font-heading font-bold text-white text-2xl md:text-3xl">
+              <h3 className="font-heading font-bold text-white text-2xl md:text-3xl drop-shadow-lg">
                 {painPoint.title}
               </h3>
             </motion.div>
@@ -232,12 +232,12 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="max-w-2xl bg-black/60 backdrop-blur-sm px-6 py-3 rounded-lg"
+              className="max-w-2xl bg-[#071013]/90 backdrop-blur-md px-6 py-4 rounded-lg border border-white/10"
             >
-              <p className="text-gray-300 text-lg mb-2">
+              <p className="text-white text-lg mb-2 leading-relaxed drop-shadow-md">
                 {painPoint.description}
               </p>
-              <p className="text-gray-400 text-sm italic">
+              <p className="text-gray-300 text-sm italic">
                 Quelle: {painPoint.source}
               </p>
             </motion.div>
@@ -385,7 +385,7 @@ export default function PainPoints() {
               <div className="inline-block mb-6">
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#60AFFF]/10 border border-[#60AFFF]/20">
                   <span className="text-sm font-medium text-[#071013]">
-                    Das sagen unsere Kunden bevor sie zu uns kommen
+                    Diese Probleme kennen wir von jedem dritten KMU
                   </span>
                 </span>
               </div>
