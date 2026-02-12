@@ -96,7 +96,7 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto"
       onClick={onClose}
     >
       <motion.div
@@ -104,7 +104,7 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
         transition={{ type: 'spring', duration: 0.5 }}
-        className="relative max-w-4xl w-full bg-[#071013] rounded-2xl overflow-hidden border-2 border-[#f90093]/50"
+        className="relative max-w-4xl w-full bg-[#071013] rounded-2xl overflow-hidden border-2 border-[#f90093]/50 my-8"
         style={{ boxShadow: '0 0 60px rgba(249, 0, 147, 0.4)' }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -116,8 +116,72 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
           <X className="w-6 h-6 text-white" />
         </button>
 
-        {/* Image */}
-        <div className="relative aspect-[4/3]">
+        {/* Mobile: Stacked Layout | Desktop: Image with Overlay */}
+        <div className="block md:hidden">
+          {/* MOBILE: Stacked Layout */}
+          {/* Image */}
+          <div className="relative aspect-[4/3]">
+            <Image
+              src={painPoint.imagePath}
+              alt={painPoint.imageAlt}
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+
+          {/* Content Below Image */}
+          <div className="p-6 space-y-4">
+            {/* Stat */}
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-center"
+            >
+              <div
+                className="font-heading font-bold text-[#f90093]"
+                style={{
+                  fontSize: 'clamp(2.5rem, 10vw, 4rem)',
+                  textShadow: '0 0 40px rgba(249, 0, 147, 0.6)'
+                }}
+              >
+                {painPoint.stat}
+              </div>
+              <div className="text-white/70 font-heading font-semibold text-base">
+                {painPoint.statLabel}
+              </div>
+            </motion.div>
+
+            {/* Title */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <h3 className="font-heading font-bold text-white text-xl">
+                {painPoint.title}
+              </h3>
+            </motion.div>
+
+            {/* Description */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              <p className="text-gray-300 text-base leading-relaxed mb-2">
+                {painPoint.description}
+              </p>
+              <p className="text-gray-400 text-sm italic">
+                Quelle: {painPoint.source}
+              </p>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* DESKTOP: Image with Text Overlay */}
+        <div className="hidden md:block relative aspect-[4/3]">
           <Image
             src={painPoint.imagePath}
             alt={painPoint.imageAlt}
@@ -129,7 +193,7 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
 
           {/* Content Overlay */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center overflow-y-auto">
             {/* Stat */}
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}

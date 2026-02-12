@@ -274,7 +274,10 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
         delay: reducedMotion ? 0 : index * 0.2,
       }}
       className="perspective-1000"
-      style={{ height: 'clamp(450px, 60vw, 500px)', minHeight: '450px' }}
+      style={{
+        height: 'clamp(360px, 50vw, 500px)',
+        minHeight: 'clamp(340px, 45vw, 450px)',
+      }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onHoverStart={() => !isMobile && setIsFlipped(true)}
@@ -600,13 +603,13 @@ export default function Services() {
 
                 {/* CTA */}
                 <div className="mt-12 text-center">
-                  <button
-                    onClick={() => (window.location.href = '#kontakt')}
-                    className="px-8 py-4 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
+                  <a
+                    href="#kontakt"
+                    className="inline-block px-8 py-4 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
                     style={{ boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)' }}
                   >
                     Ähnliches Projekt besprechen
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>

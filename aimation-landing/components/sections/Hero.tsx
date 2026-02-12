@@ -55,7 +55,6 @@ const floatingVariants = {
 };
 
 export default function Hero() {
-  // State for Lead Form Modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Final approved content from AI-mation_Hero-Headline.md
@@ -119,7 +118,7 @@ export default function Hero() {
           {/* Headline with Magenta Highlight */}
           <motion.h1
             className="font-bold tracking-tight font-heading text-black leading-tight"
-            style={{ fontSize: 'clamp(1.75rem, 5vw, 3.75rem)' }}
+            style={{ fontSize: 'clamp(1.75rem, 5vw, 4.5rem)' }}
             variants={itemVariants}
           >
             {headlineStart}
@@ -154,15 +153,15 @@ export default function Hero() {
 
           {/* Trust Elements (Stats replacement) with Animated Counters */}
           <motion.div
-            className="mt-12 flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 lg:justify-start"
+            className="mt-12 flex flex-wrap justify-center gap-3 sm:gap-6 lg:gap-8 lg:justify-start max-w-2xl"
             variants={itemVariants}
           >
             {trustElements.map((item, index) => (
-              <div key={index} className="flex items-center gap-2 sm:gap-3">
+              <div key={index} className="flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-0">
                 <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-magenta/10 flex-shrink-0">
                   {item.icon}
                 </div>
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <p className="font-bold text-black font-heading" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                     {item.hasCounter ? (
                       <AnimatedCounter
@@ -176,7 +175,7 @@ export default function Hero() {
                       item.value
                     )}
                   </p>
-                  <p className="text-xs sm:text-sm text-gray-600 font-body truncate">{item.label}</p>
+                  <p className="text-xs sm:text-sm text-gray-600 font-body break-words leading-tight">{item.label}</p>
                 </div>
               </div>
             ))}
@@ -186,34 +185,42 @@ export default function Hero() {
         {/* Right Column: Image Collage */}
         <motion.div
           className="relative w-full max-w-full"
-          style={{ height: 'clamp(300px, 60vw, 600px)' }}
+          style={{
+            height: 'clamp(260px, 55vw, 600px)',
+            minHeight: '260px'
+          }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Decorative Shapes with AI.mation colors */}
+          {/* Decorative Shapes with AI.mation colors - Hide on very small mobile */}
           <motion.div
-            className="absolute -top-4 left-1/4 h-16 w-16 rounded-full bg-magenta/20"
+            className="hidden sm:block absolute -top-4 left-1/4 h-16 w-16 rounded-full bg-magenta/20"
             variants={floatingVariants}
             animate="animate"
           />
           <motion.div
-            className="absolute bottom-0 right-1/4 h-12 w-12 rounded-lg bg-lightblue/30"
+            className="hidden sm:block absolute bottom-0 right-1/4 h-12 w-12 rounded-lg bg-lightblue/30"
             variants={floatingVariants}
             animate="animate"
             style={{ transitionDelay: '0.5s' }}
           />
           <motion.div
-            className="absolute bottom-1/4 left-4 h-6 w-6 rounded-full bg-magenta/30"
+            className="hidden sm:block absolute bottom-1/4 left-4 h-6 w-6 rounded-full bg-magenta/30"
             variants={floatingVariants}
             animate="animate"
             style={{ transitionDelay: '1s' }}
           />
 
-          {/* Images - Slightly larger for better visual impact */}
+          {/* Images - Optimized for all screen sizes including < 375px */}
+          {/* Top Center Image */}
           <motion.div
-            className="absolute left-1/2 top-0 h-56 w-56 -translate-x-1/2 rounded-2xl bg-white p-2 shadow-lg sm:h-72 sm:w-72 border border-gray-100"
-            style={{ transformOrigin: 'bottom center' }}
+            className="absolute left-1/2 top-0 -translate-x-1/2 rounded-2xl bg-white p-1.5 sm:p-2 shadow-lg border border-gray-100"
+            style={{
+              transformOrigin: 'bottom center',
+              width: 'clamp(160px, 42vw, 288px)',
+              height: 'clamp(160px, 42vw, 288px)',
+            }}
             variants={imageVariants}
           >
             <div className="relative h-full w-full rounded-xl overflow-hidden">
@@ -221,15 +228,22 @@ export default function Hero() {
                 src={images[0]}
                 alt="Deutsches KMU-Team arbeitet gemeinsam an KI-gestützter Prozessautomatisierung und Workflow-Optimierung"
                 fill
-                sizes="(max-width: 640px) 224px, 288px"
+                sizes="(max-width: 640px) 180px, 288px"
                 className="object-cover"
                 priority
               />
             </div>
           </motion.div>
+
+          {/* Right Image - Optimized for small screens */}
           <motion.div
-            className="absolute right-0 top-1/3 h-48 w-48 rounded-2xl bg-white p-2 shadow-lg sm:h-64 sm:w-64 border border-gray-100"
-            style={{ transformOrigin: 'left center' }}
+            className="absolute top-1/3 rounded-2xl bg-white p-1.5 sm:p-2 shadow-lg border border-gray-100"
+            style={{
+              transformOrigin: 'left center',
+              right: 'clamp(0px, 3vw, 16px)',
+              width: 'clamp(135px, 36vw, 256px)',
+              height: 'clamp(135px, 36vw, 256px)',
+            }}
             variants={imageVariants}
           >
             <div className="relative h-full w-full rounded-xl overflow-hidden">
@@ -237,15 +251,22 @@ export default function Hero() {
                 src={images[1]}
                 alt="KI-Beratung und Training für Mittelstand - Holger erklärt AI-Readiness und Use Case Identifikation"
                 fill
-                sizes="(max-width: 640px) 192px, 256px"
+                sizes="(max-width: 640px) 150px, 256px"
                 className="object-cover"
                 priority
               />
             </div>
           </motion.div>
+
+          {/* Left Bottom Image - Optimized for small screens */}
           <motion.div
-            className="absolute bottom-0 left-0 h-40 w-40 rounded-2xl bg-white p-2 shadow-lg sm:h-56 sm:w-56 border border-gray-100"
-            style={{ transformOrigin: 'top right' }}
+            className="absolute bottom-0 rounded-2xl bg-white p-1.5 sm:p-2 shadow-lg border border-gray-100"
+            style={{
+              transformOrigin: 'top right',
+              left: 'clamp(0px, 3vw, 16px)',
+              width: 'clamp(120px, 30vw, 224px)',
+              height: 'clamp(120px, 30vw, 224px)',
+            }}
             variants={imageVariants}
           >
             <div className="relative h-full w-full rounded-xl overflow-hidden">
@@ -253,7 +274,7 @@ export default function Hero() {
                 src={images[2]}
                 alt="Automatisierte Workflows und intelligente Agents - KI-Umsetzung für produzierende Unternehmen"
                 fill
-                sizes="(max-width: 640px) 160px, 224px"
+                sizes="(max-width: 640px) 130px, 224px"
                 className="object-cover"
                 priority
               />

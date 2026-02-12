@@ -367,7 +367,7 @@ export default function ProjectShowcase() {
             Haben Sie einen ähnlichen Anwendungsfall im Kopf?
           </p>
           <a
-            href="#contact"
+            href="#kontakt"
             className="
               inline-flex items-center gap-2 px-6 py-3
               bg-gradient-to-br from-[#f90093] to-[#ff4ecd]

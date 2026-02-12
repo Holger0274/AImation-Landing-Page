@@ -12,11 +12,13 @@ export default function FinalCTA() {
 
   return (
     <section id="kontakt" className="relative py-20 md:py-32 bg-black text-white overflow-hidden">
-      {/* Animated Glow Background */}
+      {/* Animated Glow Background - Responsive */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
+            width: 'clamp(300px, 80vw, 800px)',
+            height: 'clamp(200px, 50vh, 500px)',
             background: 'radial-gradient(ellipse, rgba(249, 0, 147, 0.2) 0%, transparent 70%)',
             filter: 'blur(80px)',
           }}
@@ -38,12 +40,12 @@ export default function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
+          <h2 className="font-heading font-bold mb-6" style={{ fontSize: 'clamp(2rem, 7vw, 3.75rem)' }}>
             Lust auf ein{' '}
             <span className="text-magenta text-glow-magenta">Gespräch?</span>
           </h2>
 
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
+          <p className="text-gray-400 max-w-2xl mx-auto mb-12" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
             Reden wir – oder rechnen Sie erstmal selbst nach.
           </p>
 
@@ -89,7 +91,7 @@ export default function FinalCTA() {
       <ROICalculator
         isOpen={isCalculatorOpen}
         onClose={() => setIsCalculatorOpen(false)}
-        calendlyUrl="https://calendly.com" // TODO: Replace with actual Calendly URL
+        calendlyUrl="https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai"
       />
 
       {/* Lead Form Modal */}

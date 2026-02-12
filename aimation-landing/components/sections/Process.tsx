@@ -235,26 +235,27 @@ export default function Process() {
                     </div>
                   </div>
 
-                  {/* Content Card - Fixed Height for Consistent Alignment */}
+                  {/* Content Card - Responsive Height */}
                   <div
                     className={`
-                      flex flex-col h-[520px]
+                      flex flex-col
                       bg-white rounded-2xl p-6 border-2 transition-all duration-300
                       ${isActive
                         ? 'border-magenta shadow-lg scale-105'
                         : 'border-gray-200 hover:border-gray-300'
                       }
                     `}
+                    style={{ minHeight: 'clamp(400px, 55vh, 480px)' }}
                   >
-                    {/* Text Content - Fixed Height for Image Alignment */}
-                    <div className="h-[240px] flex flex-col">
+                    {/* Text Content - Responsive Height */}
+                    <div className="flex flex-col mb-4" style={{ minHeight: 'clamp(180px, 25vh, 220px)' }}>
                       <h3 className="font-heading font-bold mb-2 text-gray-900" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                         {step.title}
                       </h3>
                       <p className="text-magenta font-heading font-semibold mb-3" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                         {step.subtitle}
                       </p>
-                      <p className="text-gray-600 mb-4 leading-relaxed overflow-hidden" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
+                      <p className="text-gray-600 mb-4 leading-relaxed" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                         {step.description}
                       </p>
                     </div>
@@ -384,13 +385,13 @@ export default function Process() {
           <p className="text-gray-600 mb-6">
             Bereit für den ersten Schritt?
           </p>
-          <button
-            onClick={() => (window.location.href = '#kontakt')}
-            className="px-8 py-4 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
+          <a
+            href="#kontakt"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
             style={{ boxShadow: '0 0 30px rgba(249, 0, 147, 0.2)' }}
           >
             Kostenloses Erstgespräch vereinbaren
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

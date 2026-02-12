@@ -34,7 +34,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#schulungen"
+                  href="#leistungen"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   Schulungen
@@ -42,7 +42,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#beratung"
+                  href="#leistungen"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   Beratung
@@ -50,7 +50,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#umsetzung"
+                  href="#leistungen"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   Umsetzung
