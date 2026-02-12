@@ -11,11 +11,11 @@ const steps = [
     title: 'Erstgespräch',
     subtitle: '30 Minuten, kostenlos',
     description:
-      'Wir lernen uns kennen. Ich verstehe Ihre Situation, Herausforderungen und Ziele.',
+      'Wir lernen uns kennen. Sie erzählen uns, wo der Schuh drückt. Wir sagen Ihnen ehrlich, ob wir helfen können.',
     details: [
-      'Ihre aktuelle Situation',
-      'Konkrete Herausforderungen',
-      'Erste Potenziale',
+      'Was nervt am meisten?',
+      'Wo verbrennen Sie Zeit?',
+      'Gibt\'s Quick Wins?',
     ],
     duration: '30 Min',
     cost: 'Kostenlos',
@@ -27,11 +27,11 @@ const steps = [
     title: 'Analyse',
     subtitle: 'Potenziale erkennen',
     description:
-      'Tiefenanalyse Ihrer Prozesse, Daten und Anforderungen. Wir identifizieren konkrete KI-Potenziale und bewerten deren Machbarkeit.',
+      'Wir schauen uns an, wie Sie heute arbeiten. Wo hakt\'s? Wo geht Zeit verloren? Und wo könnte KI wirklich helfen?',
     details: [
-      'Ist-Prozesse dokumentieren',
-      'Schmerzpunkte identifizieren',
-      'KI-Potenziale bewerten',
+      'AI Readiness Assessment durchführen',
+      'AI Audit bestehender Tools & Prozesse',
+      'AI ROI-Potenziale kalkulieren',
     ],
     duration: '2-4 Wochen',
     cost: 'Nach Aufwand',
@@ -43,7 +43,7 @@ const steps = [
     title: 'Konzept',
     subtitle: 'Transparenter Vorschlag',
     description:
-      'Basierend auf der Analyse entwickeln wir ein maßgeschneidertes Konzept mit klarem Aufwand, Nutzen und ROI-Berechnung.',
+      'Sie bekommen ein konkretes Angebot: Was bauen wir? Was kostet das? Was bringt es? Schwarz auf weiß.',
     details: [
       'Lösungsarchitektur & Umsetzungsplan',
       'Timeline & Meilensteine',

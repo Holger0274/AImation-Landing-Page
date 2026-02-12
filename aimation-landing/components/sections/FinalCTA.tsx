@@ -39,12 +39,12 @@ export default function FinalCTA() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
-            Bereit für den{' '}
-            <span className="text-magenta text-glow-magenta">nächsten Schritt?</span>
+            Lust auf ein{' '}
+            <span className="text-magenta text-glow-magenta">Gespräch?</span>
           </h2>
 
           <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
-            Sprechen Sie mit uns – oder rechnen Sie selbst nach.
+            Reden wir – oder rechnen Sie erstmal selbst nach.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">

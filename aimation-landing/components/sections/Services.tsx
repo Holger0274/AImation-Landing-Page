@@ -11,7 +11,7 @@ const services = [
   {
     icon: GraduationCap,
     title: 'Schulungen',
-    subtitle: 'Wissen vermitteln',
+    subtitle: 'Ihr Team lernt\'s',
     description:
       'Von KI-Grundlagen bis zu fortgeschrittenen Techniken. Ihr Team lernt, KI-Tools souverän einzusetzen.',
     features: [
@@ -43,7 +43,7 @@ const services = [
   {
     icon: Lightbulb,
     title: 'Beratung',
-    subtitle: 'Denken, planen, entscheiden',
+    subtitle: 'Wir finden\'s raus',
     description:
       'Wo stehen Sie? Wo wollen Sie hin? Wir entwickeln gemeinsam die Strategie für Ihre KI-Reise.',
     features: [
@@ -75,7 +75,7 @@ const services = [
   {
     icon: Zap,
     title: 'Umsetzung',
-    subtitle: 'Bauen, implementieren, betreiben',
+    subtitle: 'Wir bauen\'s',
     description:
       'Von Workflows über Wissenssysteme bis zu intelligenten Assistenten – wir setzen Lösungen um, die funktionieren.',
     features: [
@@ -91,9 +91,9 @@ const services = [
     patternOpacity: 0.07,
     useCases: [
       {
-        title: 'RAG-Chatbot für technische Dokumentation (Maschinenbau)',
-        description: 'Umsetzung eines RAG-Systems für 5000+ PDF-Seiten technischer Dokumentation: Vektorisierung mit Pinecone, LLM-Integration für semantische Suche, Chat-Interface für Service-Techniker. Antworten mit Quellenangaben für Nachvollziehbarkeit.',
-        result: '70% weniger Support-Anfragen an Experten, 95% Antwort-Genauigkeit',
+        title: 'Chatbot für technische Dokumentation (Maschinenbau)',
+        description: 'Chatbot durchsucht 5000 Seiten technische Dokumentation und antwortet in 3 Sekunden – mit Quellenangabe. Service-Techniker finden Antworten, ohne Experten zu fragen.',
+        result: '70% weniger Support-Anfragen, 95% korrekte Antworten',
         mockupType: 'rag-chatbot',
       },
       {

@@ -45,25 +45,24 @@ export default function About() {
             </blockquote>
 
             <p className="text-gray-600 mb-4 leading-relaxed" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1rem)' }}>
-              Mit 20 Jahren Engineering-Erfahrung haben wir gesehen, wie viel Potenzial in deutschen
+              Holger bringt 20 Jahre Engineering-Erfahrung mit und hat gesehen, wie viel Potenzial in deutschen
               Unternehmen brachliegt. Unser Ziel: KI zugänglich machen – ohne Buzzwords, ohne
               Konzernpreise, mit echtem Verständnis für eure Prozesse.
             </p>
 
             <p className="text-gray-600 mb-6 leading-relaxed" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1rem)' }}>
-              Mit AI.mation bringen wir beides zusammen: Tiefes technisches Verständnis und die
-              Fähigkeit, komplexe Themen verständlich zu machen. Unser Versprechen: Keine leeren
-              Buzzwords, sondern ehrliche Einschätzungen und praktische Lösungen, die
-              funktionieren.
+              Wir verstehen, wie Ihre Maschinen funktionieren UND wie ChatGPT funktioniert. Beides brauchen Sie.
+              Unser Versprechen: Keine leeren Buzzwords, sondern ehrliche Einschätzungen und praktische Lösungen,
+              die funktionieren.
             </p>
 
             <div className="space-y-3">
-              <p className="font-heading font-bold mb-4">Was uns auszeichnet:</p>
+              <p className="font-heading font-bold mb-4">Warum Kunden mit uns arbeiten:</p>
               {[
-                '20 Jahre Engineering-Erfahrung – wir sprechen eure Sprache',
+                '20 Jahre Engineering – wir sprechen eure Sprache',
                 'Aktiv in internationalem KI-Expertennetzwerk',
                 'Zugang zu neuesten Methoden und Tools',
-                'Ehrliche Einschätzung – auch wenn die Antwort Nein lautet',
+                'Ehrlich – auch wenn die Antwort Nein lautet',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <Check className="w-4 h-4 sm:w-5 sm:h-5 text-magenta flex-shrink-0 mt-0.5" />

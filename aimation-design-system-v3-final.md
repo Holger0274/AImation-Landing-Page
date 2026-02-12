@@ -946,7 +946,7 @@ Hellblau (#60AFFF) ist ein **sehr dezenter** Akzent. Maximum 5% der Seite.
       </div>
       <h1>Mehr Zeit für das <span class="highlight">Wesentliche</span></h1>
       <p class="hero-subline">
-        Ich helfe Unternehmen, repetitive Aufgaben zu automatisieren – 
+        Wir helfen Unternehmen, repetitive Aufgaben zu automatisieren –
         mit KI-Lösungen, die wirklich funktionieren.
       </p>
       <div class="cta-group">

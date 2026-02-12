@@ -89,152 +89,6 @@ const heroStat = {
   imageAlt: 'Rückstand im KI-Wettbewerb - Konkurrenz automatisiert während andere warten',
 };
 
-// Light Blue Illustration Component (kept from original)
-function PainPointIllustrations() {
-  return (
-    <div className="relative w-full h-full min-h-[300px] max-h-[400px] flex items-center justify-center">
-      {/* Abstract Grid Pattern with Connected Dots */}
-      <svg
-        className="w-full h-full max-w-md mx-auto"
-        viewBox="0 0 400 400"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Background subtle grid */}
-        <defs>
-          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <circle cx="20" cy="20" r="1" fill="#60AFFF" opacity="0.2" />
-          </pattern>
-        </defs>
-        <rect width="400" height="400" fill="url(#grid)" />
-
-        {/* Connection lines (Light Blue, subtle) */}
-        <g stroke="#60AFFF" strokeWidth="2" opacity="0.3" fill="none">
-          <motion.path
-            d="M 80 100 Q 150 150 220 100"
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: 0.3 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-          />
-          <motion.path
-            d="M 220 100 L 300 180"
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: 0.3 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 0.4 }}
-          />
-          <motion.path
-            d="M 80 100 L 100 250"
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: 0.3 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 0.6 }}
-          />
-          <motion.path
-            d="M 100 250 Q 200 280 280 260"
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: 0.3 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 0.8 }}
-          />
-          <motion.path
-            d="M 300 180 L 280 260"
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: 0.3 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 1.0 }}
-          />
-          <motion.path
-            d="M 220 100 L 200 320"
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: 0.3 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 1.2 }}
-          />
-        </g>
-
-        {/* Nodes (circles) */}
-        <g>
-          {[
-            { x: 80, y: 100, delay: 0.2 },
-            { x: 220, y: 100, delay: 0.4 },
-            { x: 300, y: 180, delay: 0.6 },
-            { x: 100, y: 250, delay: 0.8 },
-            { x: 280, y: 260, delay: 1.0 },
-            { x: 200, y: 320, delay: 1.2 },
-          ].map((node, i) => (
-            <motion.g key={i}>
-              {/* Outer glow ring */}
-              <motion.circle
-                cx={node.x}
-                cy={node.y}
-                r="20"
-                fill="#60AFFF"
-                opacity="0.15"
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 0.15 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: node.delay }}
-              />
-              {/* Inner node */}
-              <motion.circle
-                cx={node.x}
-                cy={node.y}
-                r="8"
-                fill="#60AFFF"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: node.delay }}
-              />
-              {/* Center dot */}
-              <circle cx={node.x} cy={node.y} r="3" fill="#ffffff" />
-            </motion.g>
-          ))}
-        </g>
-
-        {/* Abstract problem icons (simplified, Light Blue) */}
-        {/* Clock (Time) */}
-        <motion.g
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 0.4, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-        >
-          <circle cx="80" cy="100" r="25" fill="none" stroke="#60AFFF" strokeWidth="2" opacity="0.3" />
-          <line x1="80" y1="100" x2="80" y2="85" stroke="#60AFFF" strokeWidth="2" opacity="0.3" />
-          <line x1="80" y1="100" x2="92" y2="100" stroke="#60AFFF" strokeWidth="2" opacity="0.3" />
-        </motion.g>
-
-        {/* Document/Excel (Chaos) */}
-        <motion.g
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 0.4, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.7 }}
-        >
-          <rect x="190" y="305" width="20" height="30" fill="none" stroke="#60AFFF" strokeWidth="2" opacity="0.3" rx="2" />
-          <line x1="193" y1="312" x2="207" y2="312" stroke="#60AFFF" strokeWidth="1" opacity="0.3" />
-          <line x1="193" y1="318" x2="207" y2="318" stroke="#60AFFF" strokeWidth="1" opacity="0.3" />
-          <line x1="193" y1="324" x2="207" y2="324" stroke="#60AFFF" strokeWidth="1" opacity="0.3" />
-        </motion.g>
-
-        {/* Brain (Knowledge) */}
-        <motion.g
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 0.4, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.9 }}
-        >
-          <ellipse cx="300" cy="180" rx="22" ry="18" fill="none" stroke="#60AFFF" strokeWidth="2" opacity="0.3" />
-          <path d="M 285 175 Q 290 170 295 175" fill="none" stroke="#60AFFF" strokeWidth="1.5" opacity="0.3" />
-          <path d="M 305 175 Q 310 170 315 175" fill="none" stroke="#60AFFF" strokeWidth="1.5" opacity="0.3" />
-        </motion.g>
-      </svg>
-    </div>
-  );
-}
-
 // Image Modal Component
 function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0]; onClose: () => void }) {
   return (
@@ -467,7 +321,7 @@ export default function PainPoints() {
               <div className="inline-block mb-6">
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#60AFFF]/10 border border-[#60AFFF]/20">
                   <span className="text-sm font-medium text-[#071013]">
-                    Kennen Sie das auch?
+                    Das sagen unsere Kunden bevor sie zu uns kommen
                   </span>
                 </span>
               </div>
@@ -482,22 +336,12 @@ export default function PainPoints() {
               {/* Supporting Text */}
               <div className="space-y-4 text-[#071013]/80 mb-8 break-words" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
                 <p className="leading-relaxed break-words">
-                  Diese Probleme kennen wir von vielen KMUs im deutschen Mittelstand. Sie kosten täglich Zeit, Geld und Nerven.
+                  Diese 6 Probleme hören wir fast wörtlich in jedem Erstgespräch. Manchmal sind es alle 6 gleichzeitig.
                 </p>
                 <p className="leading-relaxed font-medium text-[#071013] break-words">
-                  Die gute Nachricht: Für jedes dieser Probleme gibt es bewährte Lösungen.
+                  Das Positive: Keines dieser Probleme muss 2026 noch existieren. Die Lösungen sind da – Sie kennen sie nur noch nicht.
                 </p>
               </div>
-            </motion.div>
-
-            {/* Illustration */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <PainPointIllustrations />
             </motion.div>
 
             {/* ROI Calculator Teaser - ON LEFT SIDE */}
@@ -527,7 +371,7 @@ export default function PainPoints() {
                   className="font-heading font-bold text-[#071013] mb-4"
                   style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}
                 >
-                  Wie viel kosten Sie diese Probleme <span className="text-[#f90093]">pro Jahr</span>?
+                  Was kostet Sie das eigentlich? <span className="text-[#f90093]">Pro Jahr?</span>
                 </h3>
 
                 {/* Description */}

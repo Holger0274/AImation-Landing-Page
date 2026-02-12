@@ -15,14 +15,14 @@
 > Bei Schulungen sofort – Ihr Team kann das Gelernte am nächsten Tag anwenden. Bei Automatisierungsprojekten rechnen wir mit 2-6 Wochen bis zum ersten funktionierenden Prototyp, je nach Komplexität.
 
 **„Brauche ich dafür eine IT-Abteilung?"**
-> Nein. Ich arbeite mit dem, was da ist. Viele meiner Kunden haben keine dedizierte IT – genau dafür bin ich da. Von der Strategie bis zur Umsetzung aus einer Hand.
+> Nein. Wir arbeiten mit dem, was da ist. Viele unserer Kunden haben keine dedizierte IT – genau dafür sind wir da. Von der Strategie bis zur Umsetzung aus einer Hand.
 
 ---
 
 ### Für den Umsetzer (Abteilungsleiter/IT)
 
 **„Funktioniert das mit unseren bestehenden Systemen?"**
-> In der Regel ja. Ich arbeite tool-agnostisch und finde Lösungen, die sich in Ihre bestehende Infrastruktur integrieren – ob Microsoft 365, Google Workspace, SAP oder branchenspezifische Software.
+> In der Regel ja. Wir arbeiten tool-agnostisch und finden Lösungen, die sich in Ihre bestehende Infrastruktur integrieren – ob Microsoft 365, Google Workspace, SAP oder branchenspezifische Software.
 
 **„Müssen meine Mitarbeiter programmieren können?"**
 > Nein. Die Schulungen sind für Anwender konzipiert, nicht für Entwickler. Ziel ist, dass Ihr Team KI-Tools souverän einsetzen kann – ohne eine Zeile Code.
@@ -35,14 +35,14 @@
 > Vor jedem Projekt definieren wir gemeinsam messbare Ziele: Zeitersparnis in Stunden, reduzierte Fehlerquoten, eingesparte Kosten. Nach der Umsetzung messen wir gegen diese Baseline.
 
 **„Was passiert mit unseren Daten?"**
-> Datenschutz ist nicht verhandelbar. Ich arbeite DSGVO-konform, bevorzuge europäische oder lokale Lösungen wo möglich, und sensible Daten verlassen Ihr Unternehmen nur, wenn Sie es explizit freigeben.
+> Datenschutz ist nicht verhandelbar. Wir arbeiten DSGVO-konform, bevorzugen europäische oder lokale Lösungen wo möglich, und sensible Daten verlassen Ihr Unternehmen nur, wenn Sie es explizit freigeben.
 
 ---
 
 ### Bonus-FAQ (allgemein)
 
-**„Warum sollte ich mit dir arbeiten statt mit einer großen Beratung?"**
-> Große Beratungen schicken Junior-Consultants und rechnen nach Tagessätzen ab. Bei mir bekommen Sie 20 Jahre Engineering-Erfahrung direkt – ohne Overhead, ohne PowerPoint-Schlachten. Ich setze um, nicht nur beraten.
+**„Warum sollten wir mit Ihnen arbeiten statt mit einer großen Beratung?"**
+> Große Beratungen schicken Junior-Consultants und rechnen nach Tagessätzen ab. Bei uns bekommen Sie 20 Jahre Engineering-Erfahrung direkt – ohne Overhead, ohne PowerPoint-Schlachten. Wir setzen um, nicht nur beraten.
 
 ---
 

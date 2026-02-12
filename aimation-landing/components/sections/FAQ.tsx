@@ -15,17 +15,17 @@ export const faqs = [
   {
     question: 'Wie schnell sehe ich Ergebnisse?',
     answer:
-      'Bei Schulungen sofort – Ihr Team kann das Gelernte am nächsten Tag anwenden. Bei Automatisierungsprojekten rechnen wir mit 2-6 Wochen bis zum ersten funktionierenden Prototyp, je nach Komplexität.',
+      'Bei Schulungen sofort – erste Erfolge sehen Sie bereits während des Workshops. Bei Automatisierungsprojekten rechnen wir mit 2-6 Wochen bis zum ersten funktionierenden Prototyp, je nach Komplexität.',
   },
   {
     question: 'Brauche ich dafür eine IT-Abteilung?',
     answer:
-      'Nein. Ich arbeite mit dem, was da ist. Viele meiner Kunden haben keine dedizierte IT – genau dafür bin ich da. Von der Strategie bis zur Umsetzung aus einer Hand.',
+      'Nein. Wir arbeiten mit dem, was da ist. Viele unserer Kunden haben keine dedizierte IT – genau dafür sind wir da. Von der Strategie bis zur Umsetzung aus einer Hand.',
   },
   {
     question: 'Funktioniert das mit unseren bestehenden Systemen?',
     answer:
-      'In der Regel ja. Ich arbeite tool-agnostisch und finde Lösungen, die sich in Ihre bestehende Infrastruktur integrieren – ob Microsoft 365, Google Workspace, SAP oder branchenspezifische Software.',
+      'Meistens ja. Wir arbeiten mit dem, was Sie haben und finden Lösungen, die sich integrieren lassen – ob Microsoft 365, Google Workspace, SAP oder branchenspezifische Software.',
   },
   {
     question: 'Wie messen wir den ROI?',
@@ -35,7 +35,7 @@ export const faqs = [
   {
     question: 'Was passiert mit unseren Daten?',
     answer:
-      'Datenschutz ist nicht verhandelbar. Ich arbeite DSGVO-konform, bevorzuge europäische oder lokale Lösungen wo möglich, und sensible Daten verlassen Ihr Unternehmen nur, wenn Sie es explizit freigeben.',
+      'Ihre Daten bleiben Ihre Daten. DSGVO-konform, bevorzugt europäische Server. Sensible Daten verlassen Ihr Unternehmen nur mit Ihrer Freigabe.',
   },
 ];
 

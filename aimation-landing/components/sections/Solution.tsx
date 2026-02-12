@@ -1,64 +1,71 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Target, Wrench, Factory } from 'lucide-react';
+import { Award, Users, Factory } from 'lucide-react';
 
-const solutions = [
+const trustBadges = [
   {
-    icon: Target,
-    title: 'Ehrlich',
-    description:
-      'Keine Marketing-Versprechen. Wir sagen auch Nein, wenn KI nicht die richtige Lösung ist.',
+    icon: Award,
+    text: '20+ Jahre Engineering-Erfahrung',
   },
   {
-    icon: Wrench,
-    title: 'Praxisnah',
-    description:
-      'Keine Theorie-Vorträge. Lösungen die am nächsten Tag funktionieren.',
+    icon: Users,
+    text: '18.000+ LinkedIn-Follower',
   },
   {
     icon: Factory,
-    title: 'KMU-fokussiert',
-    description:
-      'Maßgeschneidert für den Mittelstand. Keine Konzern-Beratung, keine Konzern-Preise.',
+    text: 'Spezialisiert auf KMU (10-1000 MA)',
   },
 ];
 
 export default function Solution() {
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-12 md:py-16 bg-warm-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Headline */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading font-bold mb-6" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
-            Die Lösung: <span className="gradient-text">Systematische</span> KI-Integration
+          <h2 className="font-heading font-semibold text-gray-700 mb-4" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.25rem)' }}>
+            Warum <span className="gradient-text">AI.mation</span>?
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto mb-16" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}>
-            Wir helfen Ihnen, KI dort einzusetzen, wo sie echten Mehrwert bringt – ohne
-            Buzzwords, ohne Konzernpreise.
+          <p className="text-gray-600 max-w-2xl mx-auto mb-10" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.05rem)' }}>
+            20 Jahre Engineering-Erfahrung trifft auf KI-Know-how – für Lösungen, die funktionieren statt nur gut klingen.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {solutions.map((solution, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-lightblue/10 flex items-center justify-center">
-                <solution.icon className="w-8 h-8 text-lightblue" />
-              </div>
-              <h3 className="font-heading font-bold mb-4" style={{ fontSize: 'clamp(1.25rem, 3vw, 1.5rem)' }}>{solution.title}</h3>
-              <p className="text-gray-600" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1rem)' }}>{solution.description}</p>
-            </motion.div>
-          ))}
-        </div>
+        {/* Trust Badges - Horizontal Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12"
+        >
+          {trustBadges.map((badge, index) => {
+            const Icon = badge.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                className="flex items-center gap-3"
+              >
+                <div className="w-10 h-10 rounded-lg bg-lightblue/10 flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-5 h-5 text-lightblue" />
+                </div>
+                <span className="font-body text-gray-700 font-medium text-sm md:text-base">
+                  {badge.text}
+                </span>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );
