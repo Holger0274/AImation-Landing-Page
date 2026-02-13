@@ -70,7 +70,7 @@ export default function Footer() {
                   href="#ueber-mich"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  Über mich
+                  Über uns
                 </a>
               </li>
               <li>

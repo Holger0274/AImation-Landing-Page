@@ -28,7 +28,7 @@ export default function Header() {
   const navItems = [
     { href: '#leistungen', label: 'Leistungen' },
     { href: '#prozess', label: 'Prozess' },
-    { href: '#ueber-mich', label: 'Über mich' },
+    { href: '#ueber-mich', label: 'Über uns' },
     { href: '#faq', label: 'FAQ' },
   ];
 

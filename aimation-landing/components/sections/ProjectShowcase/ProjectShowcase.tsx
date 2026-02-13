@@ -158,6 +158,48 @@ const PROJECTS: Project[] = [
       src: '/images/use-cases/innovation-dashboard.png',
       alt: 'Innovations-Assessment Dashboard'
     }
+  },
+  {
+    id: 'project-review-dashboard',
+    title: 'Projekt Review Dashboard',
+    description: 'Automatisierte Analyse des Projektreifegrads mit Ampelsystem. Identifiziert Schwachstellen, bewertet Freigabekriterien und gibt datenbasierte Empfehlungen für die nächsten Entwicklungsschritte. Dashboard zeigt auf einen Blick den Status aller Qualitätsparameter.',
+    solutionWorld: 'THINK',
+    status: 'coming-soon',
+    tags: ['Claude', 'Analytics', 'Dashboard'],
+    metrics: 'Strukturierte Freigabe-Prozesse',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/project-review-dashboard.png',
+      alt: 'Projekt Review Dashboard mit Reifegradanalyse'
+    }
+  },
+  {
+    id: 'analysis-tools-framework',
+    title: 'KI-gestützte Analyse-Tools',
+    description: 'Systematische Kundenbedarfsanalyse mit Jobs-to-be-Done Framework, Business Model Canvas und Customer Journey Mapping. KI unterstützt bei der Identifikation von Customer Pain Points, Optimierung der Value Proposition und Entwicklung kundenorientierter Produktstrategien.',
+    solutionWorld: 'THINK',
+    status: 'coming-soon',
+    tags: ['Business Canvas', 'Jobs-to-be-Done', 'Customer Journey'],
+    metrics: 'Datenbasierte Produktstrategie',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/analysis-tools.png',
+      alt: 'Business Analyse Tools Workshop'
+    }
+  },
+  {
+    id: 'tiktok-trend-analysis',
+    title: 'TikTok Trend-Erkennung',
+    description: 'Automatisches Monitoring von TikTok-Trends zur Identifikation von Produkterweiterungs- und Optimierungsmöglichkeiten. KI analysiert virale Inhalte, Engagement-Patterns und User-Feedback, um relevante Insights für Produktentwicklung und Marketing zu extrahieren.',
+    solutionWorld: 'THINK',
+    status: 'coming-soon',
+    tags: ['TikTok', 'Trend Analysis', 'Product Development'],
+    metrics: 'Trend-basierte Innovation',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/tiktok-trend-analysis.png',
+      alt: 'TikTok Trend Analytics Dashboard'
+    }
   }
 ];
 

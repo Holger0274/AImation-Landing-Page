@@ -63,7 +63,7 @@ test.describe('Header Navigation', () => {
     await expect(processSection).toBeInViewport();
   });
 
-  test('Über mich link scrolls to about section', async ({ page }) => {
+  test('Über uns link scrolls to about section', async ({ page }) => {
     await headerPage.clickUeberMich();
     await page.waitForTimeout(800);
 
@@ -157,7 +157,7 @@ test.describe('Mobile Navigation', () => {
   });
 
   test('all mobile menu links work correctly', async ({ page }) => {
-    const links = ['Leistungen', 'Prozess', 'Über mich', 'FAQ'];
+    const links = ['Leistungen', 'Prozess', 'Über uns', 'FAQ'];
 
     for (const linkText of links) {
       // Go back to top

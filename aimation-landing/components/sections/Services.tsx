@@ -11,7 +11,7 @@ const services = [
   {
     icon: GraduationCap,
     title: 'Schulungen',
-    subtitle: 'Ihr Team lernt\'s',
+    subtitle: 'Wissen vermitteln',
     description:
       'Von KI-Grundlagen bis zu fortgeschrittenen Techniken. Ihr Team lernt, KI-Tools souverän einzusetzen.',
     features: [
@@ -43,7 +43,7 @@ const services = [
   {
     icon: Lightbulb,
     title: 'Beratung',
-    subtitle: 'Wir finden\'s raus',
+    subtitle: 'Denken, planen, entscheiden',
     description:
       'Wo stehen Sie? Wo wollen Sie hin? Wir entwickeln gemeinsam die Strategie für Ihre KI-Reise.',
     features: [
@@ -75,7 +75,7 @@ const services = [
   {
     icon: Zap,
     title: 'Umsetzung',
-    subtitle: 'Wir bauen\'s',
+    subtitle: 'Bauen, implementieren, betreiben',
     description:
       'Von Workflows über Wissenssysteme bis zu intelligenten Assistenten – wir setzen Lösungen um, die funktionieren.',
     features: [
@@ -460,16 +460,19 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
               ))}
             </ul>
 
-            <button
+            <div
               onClick={onSelect}
-              className="w-full py-3 rounded-lg font-heading font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all"
+              className="w-full text-center py-3 font-heading font-semibold cursor-pointer transition-all"
               style={{
-                background: `linear-gradient(135deg, ${service.gradientFrom}, ${service.gradientTo})`,
-                boxShadow: `0 0 30px ${service.gradientFrom}40`,
+                color: service.gradientFrom,
+                textDecoration: 'underline',
+                textUnderlineOffset: '4px',
               }}
+              onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'none'}
+              onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'underline'}
             >
               Use Cases ansehen →
-            </button>
+            </div>
           </div>
         </div>
       </motion.div>

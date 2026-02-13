@@ -1,0 +1,263 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { CheckCircle2, XCircle, Target, Zap, Heart, TrendingUp } from 'lucide-react';
+import { useRef } from 'react';
+
+const differentiators = [
+  {
+    icon: Target,
+    title: '20 Jahre Engineering-Erfahrung',
+    description: 'Vom Shopfloor bis zur Führungsebene – ich spreche Ihre Sprache und verstehe Ihre Prozesse wirklich.',
+    highlight: 'Keine Theorie-Consultants'
+  },
+  {
+    icon: Heart,
+    title: 'Ehrlichkeit vor Umsatz',
+    description: 'AI Readiness Check, AI Audit, ROI-Kalkulation – wir sagen auch Nein, wenn KI nicht die Lösung ist.',
+    highlight: 'Kein Marketing-Blabla'
+  },
+  {
+    icon: Zap,
+    title: 'Für KMUs gemacht',
+    description: 'Keine Konzernpreise, keine 6-Monats-Projekte. Lösungen die funktionieren, nicht in 2 Jahren, sondern morgen.',
+    highlight: 'Schnell & bezahlbar'
+  },
+  {
+    icon: TrendingUp,
+    title: 'Alles aus einer Hand',
+    description: 'Beratung + Schulung + Umsetzung. Sie brauchen nicht 3 verschiedene Anbieter zu koordinieren.',
+    highlight: '3 Säulen, 1 Partner'
+  }
+];
+
+const comparisonPoints = [
+  {
+    competitor: 'Große Beratungen',
+    them: 'Wochenlange Workshops, 200-Seiten-PDFs',
+    us: 'AI Readiness Check in 2 Tagen, klare Handlungsempfehlungen'
+  },
+  {
+    competitor: 'Marketing-Agenturen',
+    them: 'Buzzword-Bingo ohne technisches Verständnis',
+    us: '20 Jahre Engineering + AI-Expertise'
+  },
+  {
+    competitor: 'Freelancer',
+    them: 'Spezialisiert auf 1 Tool oder 1 Anwendungsfall',
+    us: 'Beratung → Schulung → Umsetzung – alles aus einer Hand'
+  },
+  {
+    competitor: 'Software-Hersteller',
+    them: 'Verkaufen Ihnen ihre Lösung, egal ob sie passt',
+    us: 'Herstellerunabhängig – Sie bekommen die beste Lösung für Ihren Use Case'
+  }
+];
+
+export default function WhyAImation() {
+  const sectionRef = useRef(null);
+
+  return (
+    <section
+      id="warum-aimation"
+      ref={sectionRef}
+      className="relative py-20 md:py-32 bg-[#071013] overflow-hidden"
+    >
+      {/* Background Glow Effect */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#f90093] rounded-full blur-[120px] opacity-10 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          {/* Badge */}
+          <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#071013] border border-[#f90093]/30 rounded-full mb-6"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="w-2 h-2 bg-[#f90093] rounded-full shadow-[0_0_10px_#f90093]" />
+            <span className="text-sm font-medium text-white">Warum AI.mation?</span>
+          </motion.div>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
+            Nicht noch eine{' '}
+            <span className="text-[#f90093] drop-shadow-[0_0_40px_rgba(249,0,147,0.5)]">
+              KI-Beratung
+            </span>
+          </h2>
+
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-inter">
+            Die meisten Berater reden über KI. Wir bauen sie. Und sagen Ihnen ehrlich,
+            ob Sie sie überhaupt brauchen.
+          </p>
+        </motion.div>
+
+        {/* Differentiators Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+          {differentiators.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-[#f90093]/50 transition-all duration-300"
+              >
+                {/* Glow on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#f90093]/0 to-[#f90093]/0 group-hover:from-[#f90093]/10 group-hover:to-transparent rounded-2xl transition-all duration-300" />
+
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className="w-14 h-14 mb-6 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#f90093] to-[#ff4ecd] shadow-[0_0_30px_rgba(249,0,147,0.3)]">
+                    <Icon className="w-7 h-7 text-white" />
+                  </div>
+
+                  {/* Badge */}
+                  <div className="inline-block px-3 py-1 mb-4 text-xs font-semibold text-[#f90093] bg-[#f90093]/10 rounded-full border border-[#f90093]/20">
+                    {item.highlight}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-white mb-3 font-space-grotesk">
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-300 leading-relaxed font-inter">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Comparison Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h3 className="text-3xl md:text-4xl font-bold text-white text-center mb-4 font-space-grotesk">
+            Der <span className="text-[#f90093]">Unterschied</span> auf einen Blick
+          </h3>
+          <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
+            Sie haben die Wahl zwischen vielen Anbietern. Hier sehen Sie, warum AI.mation anders ist.
+          </p>
+
+          <div className="space-y-4">
+            {comparisonPoints.map((point, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-[#f90093]/30 transition-all duration-300"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                  {/* Competitor Label */}
+                  <div className="md:col-span-3">
+                    <span className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
+                      {point.competitor}
+                    </span>
+                  </div>
+
+                  {/* Them */}
+                  <div className="md:col-span-4 flex items-start gap-3">
+                    <XCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-300 text-sm">{point.them}</p>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="md:col-span-1 hidden md:flex justify-center">
+                    <div className="w-px h-12 bg-gradient-to-b from-transparent via-[#f90093]/30 to-transparent" />
+                  </div>
+
+                  {/* Us */}
+                  <div className="md:col-span-4 flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-[#f90093] flex-shrink-0 mt-0.5" />
+                    <p className="text-white font-medium text-sm">{point.us}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* AI Services Highlight */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <div className="inline-block bg-gradient-to-br from-[#f90093]/10 to-[#ff4ecd]/10 border border-[#f90093]/30 rounded-2xl p-8 md:p-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-space-grotesk">
+              Starten Sie mit einem{' '}
+              <span className="text-[#f90093] drop-shadow-[0_0_20px_rgba(249,0,147,0.4)]">
+                AI Readiness Check
+              </span>
+            </h3>
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+              In 2 Tagen wissen Sie, wo Sie stehen: <strong className="text-white">AI Audit</strong> Ihrer aktuellen Prozesse,
+              klare <strong className="text-white">AI Readiness</strong> Bewertung und eine ehrliche <strong className="text-white">AI ROI</strong> Einschätzung –
+              ohne Buzzwords, ohne Verkaufsdruck.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              <div className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg">
+                <span className="text-white font-semibold">✓ AI Readiness Assessment</span>
+              </div>
+              <div className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg">
+                <span className="text-white font-semibold">✓ AI Audit & Potenzialanalyse</span>
+              </div>
+              <div className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg">
+                <span className="text-white font-semibold">✓ AI ROI Kalkulation</span>
+              </div>
+            </div>
+
+            <a
+              href="#kontakt"
+              className="
+                inline-flex items-center gap-2 px-8 py-4
+                bg-gradient-to-br from-[#f90093] to-[#ff4ecd]
+                text-white font-bold text-lg rounded-xl
+                shadow-[0_0_30px_rgba(249,0,147,0.4)]
+                transition-all duration-300
+                hover:shadow-[0_0_40px_rgba(249,0,147,0.6)]
+                hover:-translate-y-1
+                hover:scale-105
+              "
+            >
+              Jetzt AI Readiness Check anfragen
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

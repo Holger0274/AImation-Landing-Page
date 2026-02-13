@@ -41,7 +41,7 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Über <span className="gradient-text">mich</span>
+            Über <span className="gradient-text">uns</span>
           </h2>
         </motion.div>
 
@@ -85,21 +85,21 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-3xl md:text-4xl font-heading font-bold text-soft-black mb-6">
-              KI ist nicht mein Job – <span className="gradient-text">es ist das Thema, das mich antreibt</span>
+              KI ist nicht unser Job – <span className="gradient-text">es ist das Thema, das uns antreibt</span>
             </h3>
 
             <div className="prose prose-lg max-w-none text-gray-600 space-y-4 mb-8">
               <p>
-                Nach 20 Jahren im Engineering habe ich gesehen, wie viel Potenzial in deutschen Unternehmen brachliegt. Mein Ziel: KI zugänglich machen – ohne Buzzwords, ohne Konzernpreise, mit echtem Verständnis für eure Prozesse.
+                Nach 20 Jahren im Engineering haben wir gesehen, wie viel Potenzial in deutschen Unternehmen brachliegt. Von der Produktentwicklung über Prozessoptimierung bis zur Schnittstellenkoordination – wir kennen die Herausforderungen aus erster Hand. Unser Ziel: KI zugänglich machen, ohne Buzzwords, ohne Konzernpreise, mit echtem Verständnis für eure Prozesse.
               </p>
               <p>
-                Mit 20 Jahren Erfahrung im Engineering kenne ich die Herausforderungen in produzierenden Unternehmen aus erster Hand. Ich weiß, wie frustrierend es ist, wenn Potenzial brachliegt, weil die richtigen Tools oder das Know-how fehlen.
+                Mit 20 Jahren Erfahrung im Engineering kennen wir die Pain Points in produzierenden Unternehmen genau. Wir wissen, wo Potenzial verschenkt wird, welche Prozesse wirklich Zeitfresser sind und wo man mit KI und Automatisierung schnell messbare Verbesserungen erzielt. Nicht in Monaten – sondern oft schon nach Tagen.
               </p>
               <p>
-                <strong className="text-soft-black">Was mich unterscheidet:</strong> Ich spreche eure Sprache – vom Shopfloor bis zur Führungsebene. Ich kenne nicht nur Engineering, sondern verstehe auch, wie Vertrieb, Marketing, HR und alle anderen Abteilungen funktionieren. Dieses ganzheitliche Verständnis ist entscheidend für erfolgreiche KI-Implementierungen.
+                <strong className="text-soft-black">Was uns unterscheidet:</strong> Wir sprechen eure Sprache – vom Shopfloor bis zur Führungsebene. Wir kennen nicht nur Engineering, sondern verstehen auch, wie Vertrieb, Marketing, HR, IT und alle anderen Bereiche funktionieren und zusammenspielen. Dieses ganzheitliche Verständnis ist entscheidend für erfolgreiche KI-Implementierungen, die wirklich etwas verändern.
               </p>
               <p className="text-soft-black font-medium">
-                Mein Versprechen: Keine leeren Buzzwords, sondern ehrliche Einschätzungen und praktische Lösungen, die funktionieren.
+                Unser Versprechen: Keine leeren Buzzwords, sondern ehrliche Einschätzungen und praktische Lösungen, die funktionieren. Die Kombination aus Engineering-Know-how, Prozessverständnis und KI-Expertise macht den Unterschied – von der Strategie über die Schulung bis zur fertigen Lösung.
               </p>
             </div>
           </motion.div>

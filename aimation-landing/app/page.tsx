@@ -8,6 +8,7 @@ import ProjectShowcase from '@/components/sections/ProjectShowcase/ProjectShowca
 import Process from '@/components/sections/Process';
 import SocialProof from '@/components/sections/SocialProof';
 import About from '@/components/sections/About';
+import WhyAImation from '@/components/sections/WhyAImation';
 import FAQ from '@/components/sections/FAQ';
 import FinalCTA from '@/components/sections/FinalCTA';
 
@@ -34,6 +35,7 @@ export default function Home() {
         <Process />
         <SocialProof />
         <About />
+        <WhyAImation />
         <FAQ />
         <FinalCTA />
       </main>

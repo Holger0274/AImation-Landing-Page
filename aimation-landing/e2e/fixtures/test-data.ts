@@ -101,7 +101,7 @@ export const navigationLinks = {
   header: [
     { text: 'Leistungen', href: '#leistungen' },
     { text: 'Prozess', href: '#prozess' },
-    { text: 'Über mich', href: '#ueber-mich' },
+    { text: 'Über uns', href: '#ueber-mich' },
     { text: 'FAQ', href: '#faq' },
   ],
   footer: {
@@ -111,7 +111,7 @@ export const navigationLinks = {
       { text: 'Umsetzung', href: '#umsetzung' },
     ],
     company: [
-      { text: 'Über mich', href: '#ueber-mich' },
+      { text: 'Über uns', href: '#ueber-mich' },
       { text: 'Prozess', href: '#prozess' },
       { text: 'FAQ', href: '#faq' },
     ],
