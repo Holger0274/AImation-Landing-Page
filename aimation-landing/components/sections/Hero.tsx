@@ -96,7 +96,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-warm-white py-12 sm:py-24 min-h-screen flex items-center max-w-full">
+    <section className="w-full overflow-hidden bg-warm-white pt-24 pb-12 sm:py-24 min-h-screen flex items-center max-w-full">
       <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 max-w-7xl">
         {/* Left Column: Text Content */}
         <motion.div
@@ -106,7 +106,7 @@ export default function Hero() {
           animate="visible"
         >
           {/* Overline Badge */}
-          <motion.div variants={itemVariants} className="mb-6">
+          <motion.div variants={itemVariants} className="mb-6 mt-4 sm:mt-0">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lightblue/10 backdrop-blur-sm border border-lightblue/20">
               <div className="w-2 h-2 rounded-full bg-magenta animate-pulse" />
               <span className="text-sm font-heading font-semibold text-[#071013]">

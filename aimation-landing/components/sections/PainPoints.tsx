@@ -108,12 +108,17 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
         style={{ boxShadow: '0 0 60px rgba(249, 0, 147, 0.4)' }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
+        {/* Close Button - Fixed position with safe-area support */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-colors"
+          className="fixed top-6 right-6 sm:absolute sm:top-4 sm:right-4 z-[60] w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/30 transition-colors shadow-lg"
+          style={{
+            // Respect safe-area insets on mobile devices (notches, etc.)
+            top: 'max(1.5rem, env(safe-area-inset-top, 1.5rem))',
+          }}
+          aria-label="Modal schließen"
         >
-          <X className="w-6 h-6 text-white" />
+          <X className="w-6 h-6 text-white" strokeWidth={2.5} />
         </button>
 
         {/* Mobile: Stacked Layout | Desktop: Image with Overlay */}

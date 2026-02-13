@@ -579,23 +579,23 @@ export default function Services() {
                       initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.2 + index * 0.1 }}
-                      className="space-y-4"
+                      className="space-y-6 md:space-y-4"
                     >
                       {/* Mockup */}
-                      <div className="h-64 rounded-xl overflow-hidden">
+                      <div className="h-64 rounded-xl overflow-hidden mb-6 md:mb-0">
                         <UseCaseMockup type={useCase.mockupType} />
                       </div>
 
                       {/* Details */}
-                      <div className="space-y-3">
+                      <div className="space-y-4 md:space-y-3">
                         <h4 className="font-heading font-bold text-white" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                           {useCase.title}
                         </h4>
                         <p className="text-gray-300 leading-relaxed" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                           {useCase.description}
                         </p>
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-magenta/20 rounded-lg border border-magenta/30">
-                          <span className="text-sm font-heading font-bold text-magenta">
+                        <div className="inline-flex items-center gap-2 px-4 py-3 bg-magenta/20 rounded-lg border border-magenta/30">
+                          <span className="font-heading font-bold text-magenta" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
                             ✓ {useCase.result}
                           </span>
                         </div>

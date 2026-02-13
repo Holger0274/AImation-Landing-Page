@@ -56,7 +56,7 @@ const transformations = [
         'KI beantwortet 80% der Fragen sofort',
       ],
       visual: 'connected',
-      roi: '70% schnellere Einarbeitung',
+      roi: '>85% Zeitersparnis',
     },
   },
   {
@@ -83,7 +83,7 @@ const transformations = [
         'Zentrale Knowledge Base',
       ],
       visual: 'organized',
-      roi: '95% Zeitersparnis',
+      roi: '>90% Zeitersparnis',
     },
   },
 ];

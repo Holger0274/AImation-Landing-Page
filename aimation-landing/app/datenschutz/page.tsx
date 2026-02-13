@@ -12,12 +12,12 @@ export const metadata = {
 export default function DatenschutzPage() {
   return (
     <div className="min-h-screen bg-warm-white py-20">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <h1 className="text-4xl font-bold text-soft-black mb-8">
+      <div className="container mx-auto px-4 max-w-4xl" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}>
+        <h1 className="text-3xl sm:text-4xl font-bold text-soft-black mb-8 break-words hyphens-auto leading-tight">
           Datenschutzerklärung
         </h1>
 
-        <div className="prose prose-lg max-w-none">
+        <div className="prose prose-lg max-w-none break-words">
           <p className="text-sm text-gray-600 mb-8">
             Stand: {new Date().toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>

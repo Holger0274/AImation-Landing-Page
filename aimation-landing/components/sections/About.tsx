@@ -8,7 +8,7 @@ import { PersonSchema } from '@/components/StructuredData';
 const highlights = [
   {
     icon: Award,
-    text: '20 Jahre Engineering-Führungserfahrung',
+    text: '20 Jahre Engineering-Erfahrung',
   },
   {
     icon: Target,
@@ -56,22 +56,13 @@ export default function About() {
             className="relative"
           >
             <div className="aspect-[4/5] relative rounded-2xl overflow-hidden bg-gray-100 border border-gray-200">
-              {/* Placeholder - Replace with actual image */}
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
-                <div className="text-center p-8">
-                  <Award className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                  <p className="text-gray-400 text-sm">Professionelles Foto<br />folgt in Kürze</p>
-                </div>
-              </div>
-              {/* Uncomment when image is available:
               <Image
-                src="/images/holger-peschke.jpg"
-                alt="Holger Peschke - AI.mation Gründer"
+                src="/about-holger.png"
+                alt="AI.mation Beratung - Professionelle KI-Beratung und Schulung für den Mittelstand"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              */}
             </div>
             {/* Accent Border */}
             <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-magenta rounded-2xl -z-10" />
@@ -90,13 +81,13 @@ export default function About() {
 
             <div className="prose prose-lg max-w-none text-gray-600 space-y-4 mb-8">
               <p>
-                Nach 20 Jahren im Engineering haben wir gesehen, wie viel Potenzial in deutschen Unternehmen brachliegt. Von der Produktentwicklung über Prozessoptimierung bis zur Schnittstellenkoordination – wir kennen die Herausforderungen aus erster Hand. Unser Ziel: KI zugänglich machen, ohne Buzzwords, ohne Konzernpreise, mit echtem Verständnis für eure Prozesse.
+                Nach 20 Jahren im Engineering haben wir gesehen, wie viel Potenzial in deutschen Unternehmen brachliegt. Von der Produktentwicklung über Prozessoptimierung bis zur Schnittstellenkoordination – wir kennen die Herausforderungen aus erster Hand. Unser Ziel: KI zugänglich machen, ohne Buzzwords, ohne Konzernpreise, mit echtem Verständnis für Ihre Prozesse.
               </p>
               <p>
                 Mit 20 Jahren Erfahrung im Engineering kennen wir die Pain Points in produzierenden Unternehmen genau. Wir wissen, wo Potenzial verschenkt wird, welche Prozesse wirklich Zeitfresser sind und wo man mit KI und Automatisierung schnell messbare Verbesserungen erzielt. Nicht in Monaten – sondern oft schon nach Tagen.
               </p>
               <p>
-                <strong className="text-soft-black">Was uns unterscheidet:</strong> Wir sprechen eure Sprache – vom Shopfloor bis zur Führungsebene. Wir kennen nicht nur Engineering, sondern verstehen auch, wie Vertrieb, Marketing, HR, IT und alle anderen Bereiche funktionieren und zusammenspielen. Dieses ganzheitliche Verständnis ist entscheidend für erfolgreiche KI-Implementierungen, die wirklich etwas verändern.
+                <strong className="text-soft-black">Was uns unterscheidet:</strong> Wir sprechen Ihre Sprache – vom Shopfloor bis zur Führungsebene. Wir kennen nicht nur Engineering, sondern verstehen auch, wie Vertrieb, Marketing, HR, IT und alle anderen Bereiche funktionieren und zusammenspielen. Dieses ganzheitliche Verständnis ist entscheidend für erfolgreiche KI-Implementierungen, die wirklich etwas verändern.
               </p>
               <p className="text-soft-black font-medium">
                 Unser Versprechen: Keine leeren Buzzwords, sondern ehrliche Einschätzungen und praktische Lösungen, die funktionieren. Die Kombination aus Engineering-Know-how, Prozessverständnis und KI-Expertise macht den Unterschied – von der Strategie über die Schulung bis zur fertigen Lösung.

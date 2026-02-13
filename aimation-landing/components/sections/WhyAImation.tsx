@@ -14,7 +14,7 @@ const differentiators = [
   {
     icon: Heart,
     title: 'Nutzen vor Umsatz',
-    description: 'Wir schauen uns eure Prozesse genau an. Und wenn KI nicht die richtige Lösung ist, sagen wir das auch.',
+    description: 'Wir schauen uns Ihre Prozesse genau an. Und wenn KI nicht die richtige Lösung ist, sagen wir das auch.',
     highlight: 'Kein Verkaufsgespräch'
   },
   {
@@ -26,7 +26,7 @@ const differentiators = [
   {
     icon: TrendingUp,
     title: 'Alles aus einer Hand',
-    description: 'Beratung, Schulung, Umsetzung. Ihr braucht nicht drei verschiedene Anbieter unter einen Hut zu bringen.',
+    description: 'Beratung, Schulung, Umsetzung. Sie brauchen nicht drei verschiedene Anbieter unter einen Hut zu bringen.',
     highlight: '3 Säulen, 1 Partner'
   }
 ];
@@ -71,7 +71,7 @@ export default function WhyAImation() {
           </h2>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto font-inter">
-            Die meisten Berater reden über KI. Wir bauen sie. Und sagen euch, ob ihr sie überhaupt braucht.
+            Die meisten Berater reden über KI. Wir bauen sie. Und sagen Ihnen, ob Sie sie überhaupt brauchen.
           </p>
         </motion.div>
 
@@ -132,7 +132,7 @@ export default function WhyAImation() {
               </span>
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              In 2 Tagen wisst ihr, wo ihr steht: <strong className="text-white">AI Audit</strong> eurer aktuellen Prozesse,
+              In 2 Tagen wissen Sie, wo Sie stehen: <strong className="text-white">AI Audit</strong> Ihrer aktuellen Prozesse,
               klare <strong className="text-white">AI Readiness</strong> Bewertung und eine ehrliche <strong className="text-white">AI ROI</strong> Einschätzung.
               Ohne Buzzwords, ohne Verkaufsdruck.
             </p>
