@@ -1,56 +1,33 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle2, XCircle, Target, Zap, Heart, TrendingUp } from 'lucide-react';
+import { Target, Zap, Heart, TrendingUp } from 'lucide-react';
 import { useRef } from 'react';
 
 const differentiators = [
   {
     icon: Target,
-    title: '20 Jahre Engineering-Erfahrung',
-    description: 'Vom Shopfloor bis zur Führungsebene – ich spreche Ihre Sprache und verstehe Ihre Prozesse wirklich.',
+    title: 'Aus der Praxis, nicht aus dem Lehrbuch',
+    description: 'Wir kennen den Alltag in produzierenden Unternehmen. Nicht aus Studien, sondern weil wir selbst jahrelang mittendrin waren.',
     highlight: 'Keine Theorie-Consultants'
   },
   {
     icon: Heart,
-    title: 'Ehrlichkeit vor Umsatz',
-    description: 'AI Readiness Check, AI Audit, ROI-Kalkulation – wir sagen auch Nein, wenn KI nicht die Lösung ist.',
-    highlight: 'Kein Marketing-Blabla'
+    title: 'Nutzen vor Umsatz',
+    description: 'Wir schauen uns eure Prozesse genau an. Und wenn KI nicht die richtige Lösung ist, sagen wir das auch.',
+    highlight: 'Kein Verkaufsgespräch'
   },
   {
     icon: Zap,
     title: 'Für KMUs gemacht',
-    description: 'Keine Konzernpreise, keine 6-Monats-Projekte. Lösungen die funktionieren, nicht in 2 Jahren, sondern morgen.',
+    description: 'Keine Konzernpreise, keine Projekte die sich ewig ziehen. Lösungen die funktionieren. Nicht in 2 Jahren, sondern morgen.',
     highlight: 'Schnell & bezahlbar'
   },
   {
     icon: TrendingUp,
     title: 'Alles aus einer Hand',
-    description: 'Beratung + Schulung + Umsetzung. Sie brauchen nicht 3 verschiedene Anbieter zu koordinieren.',
+    description: 'Beratung, Schulung, Umsetzung. Ihr braucht nicht drei verschiedene Anbieter unter einen Hut zu bringen.',
     highlight: '3 Säulen, 1 Partner'
-  }
-];
-
-const comparisonPoints = [
-  {
-    competitor: 'Große Beratungen',
-    them: 'Wochenlange Workshops, 200-Seiten-PDFs',
-    us: 'AI Readiness Check in 2 Tagen, klare Handlungsempfehlungen'
-  },
-  {
-    competitor: 'Marketing-Agenturen',
-    them: 'Buzzword-Bingo ohne technisches Verständnis',
-    us: '20 Jahre Engineering + AI-Expertise'
-  },
-  {
-    competitor: 'Freelancer',
-    them: 'Spezialisiert auf 1 Tool oder 1 Anwendungsfall',
-    us: 'Beratung → Schulung → Umsetzung – alles aus einer Hand'
-  },
-  {
-    competitor: 'Software-Hersteller',
-    them: 'Verkaufen Ihnen ihre Lösung, egal ob sie passt',
-    us: 'Herstellerunabhängig – Sie bekommen die beste Lösung für Ihren Use Case'
   }
 ];
 
@@ -76,14 +53,14 @@ export default function WhyAImation() {
         >
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 bg-[#071013] border border-[#f90093]/30 rounded-full mb-6"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-[#071013] border border-[#f90093]/30 rounded-full mb-6"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="w-2 h-2 bg-[#f90093] rounded-full shadow-[0_0_10px_#f90093]" />
-            <span className="text-sm font-medium text-white">Warum AI.mation?</span>
+            <div className="w-3 h-3 bg-[#f90093] rounded-full shadow-[0_0_10px_#f90093]" />
+            <span className="text-2xl font-bold text-white">Warum AI.mation?</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
@@ -94,8 +71,7 @@ export default function WhyAImation() {
           </h2>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto font-inter">
-            Die meisten Berater reden über KI. Wir bauen sie. Und sagen Ihnen ehrlich,
-            ob Sie sie überhaupt brauchen.
+            Die meisten Berater reden über KI. Wir bauen sie. Und sagen euch, ob ihr sie überhaupt braucht.
           </p>
         </motion.div>
 
@@ -141,60 +117,6 @@ export default function WhyAImation() {
           })}
         </div>
 
-        {/* Comparison Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-3xl md:text-4xl font-bold text-white text-center mb-4 font-space-grotesk">
-            Der <span className="text-[#f90093]">Unterschied</span> auf einen Blick
-          </h3>
-          <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-            Sie haben die Wahl zwischen vielen Anbietern. Hier sehen Sie, warum AI.mation anders ist.
-          </p>
-
-          <div className="space-y-4">
-            {comparisonPoints.map((point, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-[#f90093]/30 transition-all duration-300"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-                  {/* Competitor Label */}
-                  <div className="md:col-span-3">
-                    <span className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
-                      {point.competitor}
-                    </span>
-                  </div>
-
-                  {/* Them */}
-                  <div className="md:col-span-4 flex items-start gap-3">
-                    <XCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-300 text-sm">{point.them}</p>
-                  </div>
-
-                  {/* Divider */}
-                  <div className="md:col-span-1 hidden md:flex justify-center">
-                    <div className="w-px h-12 bg-gradient-to-b from-transparent via-[#f90093]/30 to-transparent" />
-                  </div>
-
-                  {/* Us */}
-                  <div className="md:col-span-4 flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#f90093] flex-shrink-0 mt-0.5" />
-                    <p className="text-white font-medium text-sm">{point.us}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* AI Services Highlight */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -204,15 +126,15 @@ export default function WhyAImation() {
         >
           <div className="inline-block bg-gradient-to-br from-[#f90093]/10 to-[#ff4ecd]/10 border border-[#f90093]/30 rounded-2xl p-8 md:p-12">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-space-grotesk">
-              Starten Sie mit einem{' '}
+              Startet mit einem{' '}
               <span className="text-[#f90093] drop-shadow-[0_0_20px_rgba(249,0,147,0.4)]">
                 AI Readiness Check
               </span>
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              In 2 Tagen wissen Sie, wo Sie stehen: <strong className="text-white">AI Audit</strong> Ihrer aktuellen Prozesse,
-              klare <strong className="text-white">AI Readiness</strong> Bewertung und eine ehrliche <strong className="text-white">AI ROI</strong> Einschätzung –
-              ohne Buzzwords, ohne Verkaufsdruck.
+              In 2 Tagen wisst ihr, wo ihr steht: <strong className="text-white">AI Audit</strong> eurer aktuellen Prozesse,
+              klare <strong className="text-white">AI Readiness</strong> Bewertung und eine ehrliche <strong className="text-white">AI ROI</strong> Einschätzung.
+              Ohne Buzzwords, ohne Verkaufsdruck.
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 mb-8">
