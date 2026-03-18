@@ -123,7 +123,7 @@ These core messages differentiate AI.mation from competitors:
 
 ### Logo System
 
-The project uses a **NODE TRIANGLE** logo design (geometric network symbol with nodes) representing AI connectivity and automation. All logo files are located in the `Logo/` directory.
+The project uses a **NODE TRIANGLE** logo design (geometric network symbol with nodes) representing AI connectivity and automation. All logo files are located in the `assets/logos/` directory.
 
 **Available Logo Files:**
 
@@ -149,7 +149,7 @@ The project uses a **NODE TRIANGLE** logo design (geometric network symbol with 
 - Font: Space Grotesk 700 Bold
 - The dot between "AI" and "mation" is a key brand element
 
-For complete logo specifications, see `README (1).md`.
+For complete logo specifications, see `docs/README (1).md`.
 
 ### Tools & Technologies
 
@@ -187,11 +187,11 @@ AI.mation has hands-on experience with all relevant AI tools and platforms. This
 
 ## Design System
 
-This project follows a strict design system defined in `aimation-design-system-v3-final.md`. **This design system must be followed precisely** - all visual elements, colors, typography, and components are strictly defined.
+This project follows a strict design system defined in `docs/aimation-design-system-v3-final.md`. **This design system must be followed precisely** - all visual elements, colors, typography, and components are strictly defined.
 
 ### Core Brand Colors (Critical)
 
-**⚠️ IMPORTANT**: Navy Blue (#031d44) is NOT a brand color and must NEVER be used. Only colors from `aimation-design-system-v3-final.md` are valid.
+**⚠️ IMPORTANT**: Navy Blue (#031d44) is NOT a brand color and must NEVER be used. Only colors from `docs/aimation-design-system-v3-final.md` are valid.
 
 **Official Brand Colors**:
 - **Magenta** `#f90093` - Primary brand color (10% usage) - ONLY for CTAs, buttons, clickable elements, and highlights
@@ -261,22 +261,37 @@ Glow effects are a defining brand element, used ONLY on dark (Soft Black) backgr
 
 ```
 .
-├── Logo/                              # Brand assets (SVG logos)
-│   ├── logo-horizontal-light.svg      # Main logo for light backgrounds
-│   ├── logo-horizontal-dark.svg       # Main logo for dark backgrounds
-│   ├── logo-compact-light.svg         # Compact logo variant
-│   ├── icon-square-dark.svg           # Square icon for social media
-│   ├── symbol-only.svg                # Standalone triangle symbol
-│   └── favicon.svg                    # Browser favicon
-├── aimation-design-system-v3-final.md # Complete design system specification (VISUAL)
-├── aimation-landing-page-guideline.md # Technical implementation guide (BEHAVIOR & TECH)
-├── AI-mation_Landing-Page-Guide.md    # Strategy, personas, USPs, messaging (CONTENT STRATEGY)
-├── AI-mation_Hero-Headline.md         # Hero section content (FINAL)
-├── AI.mation_Beratung.md              # Säule 2: Consulting services (3-phase model)
-├── AI.mation_Schulungen.md            # Säule 1: Training catalog (3 levels)
-├── AI.mation_Umsetzung.md             # Säule 3: Implementation (4 solution worlds)
-├── README (1).md                      # Logo brand kit documentation
-└── CLAUDE.md                          # This file
+├── CLAUDE.md                          # This file
+├── aimation-landing/                  # Next.js project (app, components, lib, public)
+├── assets/
+│   └── logos/                         # All brand logos (SVG + PNG)
+│       ├── logo-horizontal-light.svg  # Main logo for light backgrounds
+│       ├── logo-horizontal-dark.svg   # Main logo for dark backgrounds
+│       ├── logo-compact-light.svg     # Compact logo variant
+│       ├── icon-square-dark.svg       # Square icon for social media
+│       ├── symbol-only.svg            # Standalone triangle symbol
+│       └── favicon.svg                # Browser favicon
+├── docs/
+│   ├── aimation-design-system-v3-final.md  # Complete design system (VISUAL)
+│   ├── aimation-landing-page-guideline.md  # Technical implementation guide (TECH)
+│   ├── AI-mation_Landing-Page-Guide.md     # Strategy, personas, USPs (CONTENT)
+│   ├── AI-mation_Hero-Headline.md          # Hero section content (FINAL/LOCKED)
+│   ├── AI.mation_Beratung.md               # Säule 2: Consulting services
+│   ├── AI.mation_Schulungen.md             # Säule 1: Training catalog
+│   ├── AI.mation_Umsetzung.md              # Säule 3: Implementation
+│   ├── README (1).md                       # Logo brand kit documentation
+│   ├── LEGAL-COMPLIANCE-SUMMARY.md         # Legal compliance notes
+│   ├── PAIN-POINTS-QUELLEN.md              # Pain point research sources
+│   ├── POST-REGISTRATION-CHECKLIST.md      # Post-registration tasks
+│   ├── PROJECT_SHOWCASE_BRIEFING.md        # Project showcase info
+│   ├── aimation-faq-legal-socialproof.md   # FAQ, legal, social proof content
+│   └── aimation-landing-master-draft.html  # HTML reference draft
+├── specs/
+│   ├── todo/                          # Pending implementation specs
+│   └── done/                          # Completed specs
+└── tests/
+    ├── airtable-import.csv            # Test data
+    └── screenshots/                   # ROI calculator test screenshots
 ```
 
 ## Tech Stack & Development Setup
@@ -315,7 +330,7 @@ aimation-landing/
 
 ### Development Guidelines
 
-1. **Design System First**: All visual values (colors, fonts, spacing) come from `aimation-design-system-v3-final.md`
+1. **Design System First**: All visual values (colors, fonts, spacing) come from `docs/aimation-design-system-v3-final.md`
 2. **Responsive Required**: Every component must work on mobile (375px), tablet (768px), laptop (1024px), desktop (1920px+)
 3. **Mobile-First Development**: Always develop for mobile first, then scale up
 4. **Performance Targets**: Lighthouse score > 90, LCP < 2.5s, CLS < 0.1
@@ -330,7 +345,7 @@ aimation-landing/
 
 ### Hero Section Content (FINAL - DO NOT CHANGE)
 
-The hero section content is **locked and finalized** in `AI-mation_Hero-Headline.md`. These texts must be used exactly as specified:
+The hero section content is **locked and finalized** in `docs/AI-mation_Hero-Headline.md`. These texts must be used exactly as specified:
 
 **Headline:**
 ```
@@ -411,7 +426,7 @@ While the hero uses the headline from `AI-mation_Hero-Headline.md`, these altern
 
 The service documents (Beratung, Schulungen, Umsetzung) mention colors like **Navy Blue (#031d44)** that are **NOT PART OF THE BRAND**. These colors **MUST BE COMPLETELY IGNORED**.
 
-**ONLY SOURCE FOR COLORS**: `aimation-design-system-v3-final.md`
+**ONLY SOURCE FOR COLORS**: `docs/aimation-design-system-v3-final.md`
 
 **DO NOT USE**:
 - ❌ Navy Blue (#031d44) - **FORBIDDEN**
@@ -452,7 +467,7 @@ The landing page consists of 11 carefully orchestrated sections. Full technical 
    - Goal: Pattern interrupt - capture visitor in 3 seconds
    - Content: Overline badge, headline with highlight word, subheadline, 2 CTAs
    - Animations: Text reveal (word by word), background glow/gradient shift
-   - Use exact content from `AI-mation_Hero-Headline.md`
+   - Use exact content from `docs/AI-mation_Hero-Headline.md`
 
 3. **Pain Points Section**
    - Goal: Mirror visitor's problems - "They understand my problem"
@@ -670,7 +685,7 @@ For ALL design and implementation decisions, consult these documents. They form 
 
 ### Core Design & Technical Specs
 
-**`aimation-design-system-v3-final.md`** - Complete visual design system (VISUAL):
+**`docs/aimation-design-system-v3-final.md`** - Complete visual design system (VISUAL):
 - Section 2: Complete color palette with usage rules
 - Section 3: Typography hierarchy
 - Section 4: CSS Custom Properties (must be integrated into Tailwind config)
@@ -682,7 +697,7 @@ For ALL design and implementation decisions, consult these documents. They form 
 - Section 14: Complete working example
 - Section 15: Quick reference card
 
-**`aimation-landing-page-guideline.md`** - Technical implementation guide (BEHAVIOR & TECH):
+**`docs/aimation-landing-page-guideline.md`** - Technical implementation guide (BEHAVIOR & TECH):
 - Section 2: Complete tech stack (Next.js 14/15, Tailwind, Framer Motion, etc.)
 - Section 3: Project structure and directory layout
 - Section 5: All 11 page sections with structure and goals
@@ -698,7 +713,7 @@ For ALL design and implementation decisions, consult these documents. They form 
 
 ### Content Strategy & Messaging
 
-**`AI-mation_Landing-Page-Guide.md`** - Complete content strategy:
+**`docs/AI-mation_Landing-Page-Guide.md`** - Complete content strategy:
 - Section 2: Target personas (Entscheider, Umsetzer, Skeptiker)
 - Section 3: Complete problem list (strategic, operational, economic, human, resource problems)
 - Section 4: 8 USPs with exact landing page wording
@@ -711,31 +726,31 @@ For ALL design and implementation decisions, consult these documents. They form 
 
 ### Content Specifications
 
-**`AI-mation_Hero-Headline.md`** - Hero section content (LOCKED):
+**`docs/AI-mation_Hero-Headline.md`** - Hero section content (LOCKED):
 - Final approved headline, subline, and CTA text
 - Trust elements and social proof
 - Forbidden changes (critical for brand messaging)
 - Psychological rationale behind wording choices
 - HTML structure example
 
-**`README (1).md`** - Logo brand kit:
+**`docs/README (1).md`** - Logo brand kit:
 - All available logo variants and their usage contexts
 - Logo usage rules (minimum size, clear space, backgrounds)
 - Complete file list
 
 ### Service Portfolio Content
 
-**`AI.mation_Beratung.md`** - Consulting services (Säule 2):
+**`docs/AI.mation_Beratung.md`** - Consulting services (Säule 2):
 - 3-phase consulting model with all modules
 - Typical consulting packages
 - Cross-selling opportunities
 
-**`AI.mation_Schulungen.md`** - Training catalog (Säule 1):
+**`docs/AI.mation_Schulungen.md`** - Training catalog (Säule 1):
 - 3-level training structure with all courses
 - Sub-modules and specializations
 - Duration and format information
 
-**`AI.mation_Umsetzung.md`** - Implementation solutions (Säule 3):
+**`docs/AI.mation_Umsetzung.md`** - Implementation solutions (Säule 3):
 - 4 solution worlds (FLOW, KNOW, THINK, WORK)
 - Detailed descriptions of each solution
 - Solution-world specific colors
@@ -747,17 +762,17 @@ For ALL design and implementation decisions, consult these documents. They form 
 
 When implementing the landing page, follow this order of operations:
 
-1. **🚨 Read Design System First for ALL Colors**: `aimation-design-system-v3-final.md` is the ONLY source for colors. DO NOT use Navy Blue (#031d44) or any other colors from service documents. All visual values (colors, fonts, spacing, shadows, buttons) come from the design system ONLY.
+1. **🚨 Read Design System First for ALL Colors**: `docs/aimation-design-system-v3-final.md` is the ONLY source for colors. DO NOT use Navy Blue (#031d44) or any other colors from service documents. All visual values (colors, fonts, spacing, shadows, buttons) come from the design system ONLY.
 2. **Consult Landing Page Guideline for Technical Implementation**: Tech stack, animations, responsive behavior, performance optimization
-3. **Use Exact Hero Content**: The hero headline/subline from `AI-mation_Hero-Headline.md` must not be changed
+3. **Use Exact Hero Content**: The hero headline/subline from `docs/AI-mation_Hero-Headline.md` must not be changed
 4. **Respect Responsive Requirements**: Test on mobile (375px), tablet (768px), laptop (1024px), desktop (1920px+)
 5. **Prioritize Performance**: Target Lighthouse > 90, LCP < 2.5s, CLS < 0.1
 6. **Accessibility is Required**: Keyboard navigation, screen reader support, reduced motion, visible focus states
 
 ## Critical Reminders
 
-- **🚨 NAVY BLUE IS FORBIDDEN**: Navy Blue (#031d44) mentioned in service docs is NOT a brand color. NEVER use it. Only use colors from `aimation-design-system-v3-final.md`
-- **Color Authority**: `aimation-design-system-v3-final.md` is the ONLY source for all colors. Ignore any colors mentioned in service documents (Beratung, Schulungen, Umsetzung)
+- **🚨 NAVY BLUE IS FORBIDDEN**: Navy Blue (#031d44) mentioned in service docs is NOT a brand color. NEVER use it. Only use colors from `docs/aimation-design-system-v3-final.md`
+- **Color Authority**: `docs/aimation-design-system-v3-final.md` is the ONLY source for all colors. Ignore any colors mentioned in service documents (Beratung, Schulungen, Umsetzung)
 - **Mobile-First Development**: Always build for mobile first, then scale up
 - **No Assumptions**: If information is missing, ask the user rather than making assumptions
 - **Responsive is Non-Negotiable**: Every component MUST work on all device sizes
@@ -792,16 +807,16 @@ Phase 4: Deployment
 Before starting development, ensure these items are ready:
 
 ### Texts to Prepare
-- [ ] Hero headline finalized (already done in `AI-mation_Hero-Headline.md`)
-- [ ] About-me text approved (available in `AI-mation_Landing-Page-Guide.md`)
+- [ ] Hero headline finalized (already done in `docs/AI-mation_Hero-Headline.md`)
+- [ ] About-me text approved (available in `docs/AI-mation_Landing-Page-Guide.md`)
 - [ ] 3 Pillars short descriptions (available in service documents)
 - [ ] FAQ questions collected
 - [ ] Impressum & Datenschutz
 
 ### Assets to Collect
-- [ ] Logo (SVG + PNG) - **Available in `Logo/` directory**
+- [ ] Logo (SVG + PNG) - **Available in `assets/logos/` directory**
 - [ ] Professional photo of Holger - **NEEDED**
-- [ ] Color palette (Hex codes) - **Available in design system**
+- [ ] Color palette (Hex codes) - **Available in `docs/aimation-design-system-v3-final.md`**
 - [ ] Icons for the 3 pillars - **NEEDED**
 
 ### Functions to Setup
@@ -821,6 +836,40 @@ Before starting development, ensure these items are ready:
 - [ ] **Calendly**: Setup account
 - [ ] **Domain**: ai-mation.de or other?
 - [ ] **Lead Magnet**: Create PDF for secondary CTA?
+
+## Integrations & API Keys
+
+### Environment Variables
+
+Alle API Keys und externe Dienste sind in `aimation-landing/.env.local` gespeichert (nicht in Git). Für das Live-Deployment müssen dieselben Variablen in Vercel unter Settings → Environment Variables eingetragen werden.
+
+**Aktuelle Variablen:**
+
+```
+# Resend (E-Mail-Versand)
+RESEND_API_KEY=...
+RESEND_FROM_EMAIL=noreply@ai-mation.de
+RESEND_TO_EMAIL=...           # Holgers E-Mail für Lead-Benachrichtigungen
+
+# Calendly
+NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai
+
+# n8n Webhook (Lead-Formular)
+N8N_WEBHOOK_URL=...
+
+# Airtable (ROI-Rechner Leads)
+AIRTABLE_API_KEY=pat...       # Personal Access Token von airtable.com/create/tokens
+AIRTABLE_BASE_ID=appcBCLtARiwi7iLu
+AIRTABLE_TABLE_NAME=ROI-Rechner Leads
+```
+
+### Airtable Setup
+
+- **Base:** `AI.mation Leads`
+- **Tabelle:** `ROI-Rechner Leads`
+- **Zweck:** Alle ROI-Rechner Eingaben und Ergebnisse werden automatisch gespeichert
+- **Hilfsfunktion:** `aimation-landing/lib/airtable.ts`
+- **API-Route:** `aimation-landing/app/api/send-roi-results/route.ts` (sendet E-Mail + schreibt nach Airtable)
 
 ## Differentiation Strategy
 

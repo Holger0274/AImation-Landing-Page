@@ -355,12 +355,16 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
 
             <div className="text-gray-500 italic mb-4" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>{service.detail}</div>
 
-            <div
-              className="font-heading font-semibold flex items-center gap-2 group/link cursor-pointer"
-              style={{ color: service.gradientFrom }}
-            >
-              Mehr erfahren
-              <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+            <div className="flex items-center justify-between">
+              <div
+                className="font-heading font-semibold flex items-center gap-2 group/link cursor-pointer"
+                style={{ color: service.gradientFrom }}
+              >
+                Mehr erfahren
+                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+              </div>
+              <span className="text-xs text-gray-400 hidden lg:inline">Hover zum Umdrehen</span>
+              <span className="text-xs text-gray-400 lg:hidden">Tippen zum Umdrehen</span>
             </div>
           </div>
         </div>

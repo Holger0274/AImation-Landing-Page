@@ -75,7 +75,7 @@ const steps = [
     title: 'Begleitung',
     subtitle: 'Langfristige Partnerschaft',
     description:
-      'Auch nach Go-Live bleibe ich Ihr Ansprechpartner für Fragen, Anpassungen und Weiterentwicklung.',
+      'Auch nach Go-Live bleiben wir Ihr Ansprechpartner für Fragen, Anpassungen und Weiterentwicklung.',
     details: [
       'Support on Demand',
       'Optimierungen',
@@ -245,10 +245,10 @@ export default function Process() {
                         : 'border-gray-200 hover:border-gray-300'
                       }
                     `}
-                    style={{ minHeight: 'clamp(400px, 55vh, 480px)' }}
+                    style={{ minHeight: 'clamp(340px, 45vh, 420px)' }}
                   >
                     {/* Text Content - Responsive Height */}
-                    <div className="flex flex-col mb-4" style={{ minHeight: 'clamp(180px, 25vh, 220px)' }}>
+                    <div className="flex flex-col mb-4" style={{ minHeight: 'clamp(160px, 22vh, 200px)' }}>
                       <h3 className="font-heading font-bold mb-2 text-gray-900" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                         {step.title}
                       </h3>

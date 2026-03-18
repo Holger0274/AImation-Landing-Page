@@ -1,0 +1,10 @@
+[    1035ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
+[    1626ms] [ERROR] Refused to execute script from 'https://assets.calendly.com/assets/external/widget.css' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled. @ http://localhost:3000/:0
+[   23111ms] [WARNING] Image with src "/images/use-cases/email-classification.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:2297
+[   23112ms] [WARNING] Image with src "/images/use-cases/knowledge-graph.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:2297
+[   23131ms] [WARNING] Image with src "/images/use-cases/tech-scouting.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:2297
+[   23206ms] [WARNING] Image with src "/images/use-cases/patent-research.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:2297
+[   23669ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:3000/_next/image?url=%2Fabout-holger.png&w=1080&q=75:0
+[  105265ms] [WARNING] The specified value "professional" cannot be parsed, or is out of range. @ :13
+[  106073ms] [WARNING] The specified value "professional" cannot be parsed, or is out of range. @ :13
+[  106877ms] [WARNING] The specified value "professional" cannot be parsed, or is out of range. @ :13

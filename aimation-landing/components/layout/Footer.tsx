@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Linkedin, Mail } from 'lucide-react';
 
 export default function Footer() {
@@ -15,8 +16,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="text-2xl md:text-3xl font-heading font-bold mb-4">
-              AI<span className="text-magenta text-glow-magenta">.</span>mation
+            <div className="mb-4">
+              <Image
+                src="/logos/aimation-logo-transparent-light.svg"
+                alt="AI.mation Logo"
+                width={185}
+                height={61}
+                className="h-10 md:h-12 w-auto"
+              />
             </div>
             <p className="text-gray-300 mb-4 max-w-sm">
               Automatisierung mit Intelligenz

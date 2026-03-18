@@ -1,14 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { createAirtableRecord } from '@/lib/airtable';
 
 interface ROIResultsRequest {
   email: string;
   name?: string;
+  company?: string;
+  position?: string;
+  industry?: string;
   input: {
+    useCase: string;
+    package: string;
     numEmployees: number;
     hourlyWage: number;
     weeklyHours: number;
-    priority: string;
+    setupCost: number;
+    monthlyCost: number;
+    timeframMonths: number;
+    rampUpMonths: number;
+    priority?: string;
   };
   results: {
     annualSavings: number;
@@ -16,6 +26,8 @@ interface ROIResultsRequest {
     costReduction: number;
     roiMonths: number;
     weeklyHoursSaved: number;
+    totalSavings?: number;
+    totalCosts?: number;
   };
 }
 
@@ -127,7 +139,7 @@ function createEmailHTML(data: ROIResultsRequest): string {
                     </p>
                     <ul style="color: #6b7280; font-size: 14px; margin: 0; padding-left: 20px;">
                       <li style="margin-bottom: 8px;">${input.numEmployees} Mitarbeiter im Unternehmen</li>
-                      <li style="margin-bottom: 8px;">Schwerpunkt: ${getPriorityLabel(input.priority)}</li>
+                      <li style="margin-bottom: 8px;">Schwerpunkt: ${getPriorityLabel(input.priority ?? input.useCase ?? '')}</li>
                       <li>Durchschnittlicher Stundenlohn: ${formatCurrency(input.hourlyWage)}</li>
                     </ul>
                   </div>
@@ -218,15 +230,78 @@ export async function POST(request: NextRequest) {
           <p><strong>E-Mail:</strong> ${data.email}</p>
           <p><strong>Name:</strong> ${data.name || 'Nicht angegeben'}</p>
           <p><strong>Mitarbeiter:</strong> ${data.input.numEmployees}</p>
-          <p><strong>Schwerpunkt:</strong> ${getPriorityLabel(data.input.priority)}</p>
+          <p><strong>Schwerpunkt:</strong> ${getPriorityLabel(data.input.priority || data.input.useCase || '')}</p>
           <p><strong>Berechnetes Potenzial:</strong> ${formatCurrency(data.results.annualSavings)}/Jahr</p>
         `,
       });
     }
 
+    // Save lead to Airtable
+    const useCaseLabels: Record<string, string> = {
+      research: 'Recherche & Analyse',
+      documentation: 'Dokumentation & Reporting',
+      meetings: 'Meeting-Zusammenfassungen',
+      custom: 'Eigene Werte',
+    };
+
+    const packageLabels: Record<string, string> = {
+      starter: 'Starter',
+      professional: 'Professional',
+      enterprise: 'Enterprise',
+    };
+
+    const positionLabels: Record<string, string> = {
+      ceo: 'Geschäftsführer / Inhaber',
+      department_head: 'Abteilungsleiter',
+      it_head: 'IT-Leiter',
+      process_owner: 'Prozessverantwortlicher',
+      other: 'Sonstige',
+    };
+
+    const industryLabels: Record<string, string> = {
+      production: 'Produktion / Fertigung',
+      service: 'Dienstleistung',
+      trade: 'Handel',
+      it: 'IT / Software',
+      craft: 'Handwerk',
+      other: 'Sonstige',
+    };
+
+    let airtableStatus = 'not attempted';
+    try {
+      await createAirtableRecord({
+        'Name': data.name || null,
+        'E-Mail': data.email,
+        'Firma': data.company || null,
+        'Position': positionLabels[data.position || ''] || data.position || null,
+        'Branche': industryLabels[data.industry || ''] || null,
+        'Use Case': useCaseLabels[data.input.useCase] || data.input.useCase,
+        'Paket': packageLabels[data.input.package] || data.input.package,
+        'Mitarbeiter': data.input.numEmployees,
+        'Stundenlohn (€)': data.input.hourlyWage,
+        'Wochenstunden': data.input.weeklyHours,
+        'Setup-Kosten (€)': data.input.setupCost,
+        'Monatliche Kosten (€)': data.input.monthlyCost,
+        'Betrachtungszeitraum (Monate)': data.input.timeframMonths,
+        'Anlaufzeit (Monate)': data.input.rampUpMonths,
+        'Jährliche Einsparung (€)': data.results.annualSavings,
+        'Eingesparte Stunden/Jahr': data.results.hoursSaved,
+        'Kostenreduktion (%)': data.results.costReduction,
+        'ROI-Payback (Monate)': data.results.roiMonths,
+        'Gesamteinsparung im Zeitraum (€)': data.results.totalSavings || null,
+        'Gesamtkosten (€)': data.results.totalCosts || null,
+        'Status': 'Neu',
+      });
+      airtableStatus = 'success';
+    } catch (airtableError) {
+      airtableStatus = String(airtableError);
+      console.error('Airtable sync failed:', airtableError);
+    }
+
     return NextResponse.json({
       success: true,
       emailId: emailResult.data?.id,
+      airtableStatus,
     });
 
   } catch (error) {

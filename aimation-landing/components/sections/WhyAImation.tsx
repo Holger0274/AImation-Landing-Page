@@ -63,14 +63,14 @@ export default function WhyAImation() {
             <span className="text-2xl font-bold text-white">Warum AI.mation?</span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-space-grotesk">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading">
             Nicht noch eine{' '}
-            <span className="text-[#f90093] drop-shadow-[0_0_40px_rgba(249,0,147,0.5)]">
+            <span className="text-magenta text-glow-magenta">
               KI-Beratung
             </span>
           </h2>
 
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-inter">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-body">
             Die meisten Berater reden über KI. Wir bauen sie. Und sagen Ihnen, ob Sie sie überhaupt brauchen.
           </p>
         </motion.div>
@@ -103,12 +103,12 @@ export default function WhyAImation() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-white mb-3 font-space-grotesk">
+                  <h3 className="text-2xl font-bold text-white mb-3 font-heading">
                     {item.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-300 leading-relaxed font-inter">
+                  <p className="text-gray-300 leading-relaxed font-body">
                     {item.description}
                   </p>
                 </div>
@@ -125,9 +125,9 @@ export default function WhyAImation() {
           className="text-center"
         >
           <div className="inline-block bg-gradient-to-br from-[#f90093]/10 to-[#ff4ecd]/10 border border-[#f90093]/30 rounded-2xl p-8 md:p-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-space-grotesk">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-heading">
               Startet mit einem{' '}
-              <span className="text-[#f90093] drop-shadow-[0_0_20px_rgba(249,0,147,0.4)]">
+              <span className="text-magenta text-glow-magenta">
                 AI Readiness Check
               </span>
             </h3>

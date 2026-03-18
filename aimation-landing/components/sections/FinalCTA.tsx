@@ -41,12 +41,13 @@ export default function FinalCTA() {
           viewport={{ once: true }}
         >
           <h2 className="font-heading font-bold mb-6" style={{ fontSize: 'clamp(2rem, 7vw, 3.75rem)' }}>
-            Lust auf ein{' '}
-            <span className="text-magenta text-glow-magenta">Gespräch?</span>
+            Jetzt{' '}
+            <span className="text-magenta text-glow-magenta">Klarheit</span>{' '}
+            schaffen.
           </h2>
 
           <p className="text-gray-400 max-w-2xl mx-auto mb-12" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
-            Reden wir – oder rechnen Sie erstmal selbst nach.
+            30 Minuten, die Ihnen Monate an Unsicherheit ersparen. Oder rechnen Sie erstmal selbst nach.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">

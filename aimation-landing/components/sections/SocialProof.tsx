@@ -8,7 +8,7 @@ const stats = [
   {
     value: 18000,
     suffix: '+',
-    label: 'LinkedIn-Follower vertrauen meinen KI-Einschätzungen',
+    label: 'LinkedIn-Follower vertrauen unseren KI-Einschätzungen',
   },
   {
     value: 20,
@@ -75,7 +75,7 @@ export default function SocialProof() {
             Wir arbeiten mit den <span className="gradient-text">besten Tools</span>
           </h3>
           <p className="text-gray-600 text-sm md:text-base">
-            Herstellerunabhängig – ich kenne alle relevanten KI-Tools und finde die richtige
+            Herstellerunabhängig – wir kennen alle relevanten KI-Tools und finden die richtige
             Lösung für Ihren Use Case
           </p>
         </motion.div>

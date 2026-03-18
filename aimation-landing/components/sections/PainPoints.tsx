@@ -413,72 +413,48 @@ export default function PainPoints() {
               </div>
             </motion.div>
 
-            {/* ROI Calculator Teaser - ON LEFT SIDE */}
+            {/* Future Perspective - Positive Outlook */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mb-10 p-6 rounded-xl bg-gradient-to-r from-[#60AFFF]/10 to-[#f90093]/5 border-l-4 border-[#60AFFF]"
+            >
+              <p className="text-[#071013] font-medium leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
+                Bürojobs verschwinden nicht. Aber der Teil, über den sich alle beschweren?{' '}
+                <span className="text-[#f90093] font-bold">Der schon.</span>{' '}
+                Was bleibt: die Arbeit, für die Sie Ihre Leute{' '}
+                <span className="font-bold text-[#071013]">eigentlich eingestellt</span> haben.
+              </p>
+            </motion.div>
+
+            {/* ROI Calculator Link */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-10 relative p-8 md:p-10 rounded-2xl border-2 border-[#f90093]/30 bg-white overflow-hidden"
-              style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)' }}
+              className="mt-8"
             >
-              {/* Content */}
-              <div className="relative z-10 text-center">
-                {/* Icon */}
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.6, type: 'spring' }}
-                  className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#f90093]/10 mb-6"
-                >
-                  <Calculator className="w-8 h-8 md:w-10 md:h-10 text-[#f90093]" />
-                </motion.div>
-
-                {/* Headline */}
-                <h3
-                  className="font-heading font-bold text-[#071013] mb-4"
-                  style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}
-                >
-                  Was kostet Sie das eigentlich? <span className="text-[#f90093]">Pro Jahr?</span>
-                </h3>
-
-                {/* Description */}
-                <p className="text-[#071013]/70 font-body text-base md:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-                  Berechnen Sie mit unserem ROI-Rechner, wie viel Zeit und Geld Sie durch Automatisierung einsparen können.
-                </p>
-
-                {/* CTA Button */}
-                <motion.button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const kontaktSection = document.getElementById('kontakt');
-                    if (kontaktSection) {
-                      kontaktSection.scrollIntoView({ behavior: 'smooth' });
-                      // Trigger ROI calculator after scroll (with delay)
-                      setTimeout(() => {
-                        const roiButton = document.querySelector('[data-roi-calculator-trigger]') as HTMLButtonElement;
-                        if (roiButton) roiButton.click();
-                      }, 800);
-                    }
-                  }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-heading font-bold text-lg text-white transition-all duration-300"
-                  style={{
-                    background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
-                    boxShadow: '0 4px 20px rgba(249, 0, 147, 0.3)',
-                  }}
-                >
-                  <Calculator className="w-5 h-5" />
-                  ROI-Rechner jetzt starten
-                </motion.button>
-
-                {/* Hint Text */}
-                <p className="text-[#071013]/60 text-sm mt-4 font-body">
-                  ⏱ Dauert nur 2 Minuten • 💡 Sofortiges Ergebnis
-                </p>
-              </div>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  const kontaktSection = document.getElementById('kontakt');
+                  if (kontaktSection) {
+                    kontaktSection.scrollIntoView({ behavior: 'smooth' });
+                    setTimeout(() => {
+                      const roiButton = document.querySelector('[data-roi-calculator-trigger]') as HTMLButtonElement;
+                      if (roiButton) roiButton.click();
+                    }, 800);
+                  }
+                }}
+                className="inline-flex items-center gap-2 text-[#f90093] font-heading font-semibold hover:underline transition-all group"
+              >
+                <Calculator className="w-5 h-5" />
+                Was kostet Sie das pro Jahr? ROI berechnen
+                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+              </button>
             </motion.div>
           </div>
 

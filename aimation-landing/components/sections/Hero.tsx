@@ -107,7 +107,7 @@ export default function Hero() {
         >
           {/* Overline Badge */}
           <motion.div variants={itemVariants} className="mb-6 mt-4 sm:mt-0">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lightblue/10 backdrop-blur-sm border border-lightblue/20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-magenta/10 backdrop-blur-sm border border-magenta/20">
               <div className="w-2 h-2 rounded-full bg-magenta animate-pulse" />
               <span className="text-sm font-heading font-semibold text-[#071013]">
                 Erkennen • Automatisieren • Wachsen

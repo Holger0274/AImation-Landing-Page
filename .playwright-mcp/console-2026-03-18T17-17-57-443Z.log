@@ -1,0 +1,2 @@
+[    1703ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
+[    2399ms] [ERROR] Refused to execute script from 'https://assets.calendly.com/assets/external/widget.css' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled. @ http://localhost:3000/:0

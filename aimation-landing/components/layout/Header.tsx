@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
@@ -43,12 +44,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <Link
-            href="/"
-            className="font-heading font-bold hover:opacity-80 transition-opacity"
-            style={{ fontSize: 'clamp(1.25rem, 4vw, 1.875rem)' }}
-          >
-            AI<span className="text-magenta">.</span>mation
+          <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
+            <Image
+              src="/logos/aimation-logo-transparent-dark.svg"
+              alt="AI.mation Logo"
+              width={185}
+              height={61}
+              priority
+              className="h-10 md:h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

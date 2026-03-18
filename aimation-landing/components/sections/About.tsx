@@ -28,7 +28,7 @@ export default function About() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aimation.de';
 
   return (
-    <section id="ueber-mich" className="py-20 md:py-32 bg-white">
+    <section id="ueber-mich" className="py-20 md:py-32 bg-warm-white">
       {/* Person Schema.org for Holger Peschke */}
       <PersonSchema siteUrl={siteUrl} />
 
@@ -55,14 +55,26 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-[4/5] relative rounded-2xl overflow-hidden bg-gray-100 border border-gray-200">
+            <div className="aspect-[4/5] relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#071013] to-[#0a1419] border border-gray-200">
               <Image
                 src="/about-holger.png"
                 alt="AI.mation Beratung - Professionelle KI-Beratung und Schulung für den Mittelstand"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                onError={(e) => {
+                  // Hide broken image, show placeholder
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
               />
+              {/* Placeholder until professional photo is available */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 pointer-events-none">
+                <div className="w-24 h-24 rounded-full bg-magenta/20 flex items-center justify-center mb-6">
+                  <Users className="w-12 h-12 text-magenta" />
+                </div>
+                <p className="text-white/60 font-heading font-semibold text-lg mb-2">Foto folgt</p>
+                <p className="text-white/40 text-sm">Professionelles Bild in Kürze</p>
+              </div>
             </div>
             {/* Accent Border */}
             <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-magenta rounded-2xl -z-10" />

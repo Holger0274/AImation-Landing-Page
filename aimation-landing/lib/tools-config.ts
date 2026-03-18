@@ -23,6 +23,7 @@ import { SupabaseIcon } from '@/components/icons/SupabaseIcon';
 import { ObsidianIcon } from '@/components/icons/ObsidianIcon';
 import { PineconeIcon } from '@/components/icons/PineconeIcon';
 import { AirtableIcon } from '@/components/icons/AirtableIcon';
+import { NotebookLMIcon } from '@/components/icons/NotebookLMIcon';
 import { ComponentType } from 'react';
 
 export interface Tool {
@@ -73,6 +74,12 @@ export const AI_TOOLS: Tool[] = [
     category: 'AI Assistants',
     icon: Perplexity,
     description: 'Research, fact-checking',
+  },
+  {
+    name: 'NotebookLM',
+    category: 'AI Assistants',
+    icon: NotebookLMIcon,
+    description: 'AI-powered research and note-taking',
   },
 
   // Automation & Workflows
