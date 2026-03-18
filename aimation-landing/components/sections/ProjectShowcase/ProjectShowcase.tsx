@@ -82,7 +82,7 @@ const PROJECTS: Project[] = [
     description: 'Automatisierte Analyse von Wettbewerbern. Vergleicht Preise, Features, Positionierung und erstellt regelmäßige Reports.',
     solutionWorld: 'THINK',
     status: 'coming-soon',
-    tags: ['Web Scraping', 'Claude', 'Airtable'],
+    tags: ['Web Scraping', 'Claude', 'Automation'],
     image: {
       type: 'image',
       src: '/images/use-cases/competitor-benchmark.png',

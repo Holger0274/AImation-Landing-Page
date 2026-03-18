@@ -166,7 +166,6 @@ AI.mation has hands-on experience with all relevant AI tools and platforms. This
 **Automation & Workflows**:
 - n8n - Open source workflow automation
 - make.com - No-code automation
-- Airtable - Databases, processes
 
 **Development & Data**:
 - Claude Code - AI-assisted development
@@ -290,7 +289,6 @@ Glow effects are a defining brand element, used ONLY on dark (Soft Black) backgr
 │   ├── todo/                          # Pending implementation specs
 │   └── done/                          # Completed specs
 └── tests/
-    ├── airtable-import.csv            # Test data
     └── screenshots/                   # ROI calculator test screenshots
 ```
 
@@ -856,20 +854,11 @@ NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/holgerpeschke-hp/starter-15-minute
 
 # n8n Webhook (Lead-Formular)
 N8N_WEBHOOK_URL=...
-
-# Airtable (ROI-Rechner Leads)
-AIRTABLE_API_KEY=pat...       # Personal Access Token von airtable.com/create/tokens
-AIRTABLE_BASE_ID=appcBCLtARiwi7iLu
-AIRTABLE_TABLE_NAME=ROI-Rechner Leads
 ```
 
-### Airtable Setup
+### API-Route
 
-- **Base:** `AI.mation Leads`
-- **Tabelle:** `ROI-Rechner Leads`
-- **Zweck:** Alle ROI-Rechner Eingaben und Ergebnisse werden automatisch gespeichert
-- **Hilfsfunktion:** `aimation-landing/lib/airtable.ts`
-- **API-Route:** `aimation-landing/app/api/send-roi-results/route.ts` (sendet E-Mail + schreibt nach Airtable)
+- **`aimation-landing/app/api/send-roi-results/route.ts`** - Sendet ROI-Ergebnis per E-Mail via Resend
 
 ## Differentiation Strategy
 

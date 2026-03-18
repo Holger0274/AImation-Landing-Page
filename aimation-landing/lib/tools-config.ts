@@ -22,7 +22,6 @@ import {
 import { SupabaseIcon } from '@/components/icons/SupabaseIcon';
 import { ObsidianIcon } from '@/components/icons/ObsidianIcon';
 import { PineconeIcon } from '@/components/icons/PineconeIcon';
-import { AirtableIcon } from '@/components/icons/AirtableIcon';
 import { NotebookLMIcon } from '@/components/icons/NotebookLMIcon';
 import { ComponentType } from 'react';
 
@@ -140,12 +139,6 @@ export const AI_TOOLS: Tool[] = [
     category: 'Database',
     icon: SupabaseIcon,
     description: 'Backend, database, authentication',
-  },
-  {
-    name: 'Airtable',
-    category: 'Database',
-    icon: AirtableIcon,
-    description: 'Flexible database, workflows',
   },
   {
     name: 'Pinecone',
