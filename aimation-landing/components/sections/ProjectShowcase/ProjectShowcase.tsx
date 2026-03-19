@@ -268,7 +268,7 @@ export default function ProjectShowcase() {
     <section
       id="use-cases"
       ref={sectionRef}
-      className="relative py-20 md:py-24 bg-[#faf9f7] overflow-hidden"
+      className="relative py-20 md:py-32 bg-[#faf9f7] overflow-hidden"
     >
       <div className="container mx-auto px-4">
         {/* Section Header */}

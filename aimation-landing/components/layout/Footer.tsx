@@ -26,7 +26,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-300 mb-4 max-w-sm">
-              Automatisierung mit Intelligenz
+              Mehr Zeit für das <span className="text-[#f90093]">Wesentliche</span>
             </p>
             <p className="text-gray-400 text-sm">
               20 Jahre Engineering-Erfahrung für Ihren KI-Erfolg

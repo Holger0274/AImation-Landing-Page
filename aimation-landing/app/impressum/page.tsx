@@ -24,15 +24,24 @@ export default function ImpressumPage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-soft-black mb-4">
-              Kontaktdaten
+              Angaben zum Unternehmen
             </h2>
             <p className="text-soft-black leading-relaxed">
-              <strong>Inhaber und verantwortlich für den Inhalt:</strong><br />
-              Holger Peschke<br />
-              AI.mation<br />
+              <strong>AImation UG (haftungsbeschränkt)</strong><br />
+              vertreten durch den Geschäftsführer: Holger Peschke<br />
               Sutte 19<br />
               96049 Bamberg<br />
               Deutschland
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-soft-black mb-4">
+              Handelsregister
+            </h2>
+            <p className="text-soft-black leading-relaxed">
+              <strong>Registergericht:</strong> Amtsgericht Bamberg<br />
+              <strong>Registernummer:</strong> HRB 12461
             </p>
           </section>
 
@@ -42,7 +51,7 @@ export default function ImpressumPage() {
             </h2>
             <p className="text-soft-black leading-relaxed">
               <strong>E-Mail:</strong> <a href="mailto:kontakt@ai-mation.de" className="text-magenta hover:underline">kontakt@ai-mation.de</a><br />
-              <strong>Telefon:</strong> [Wird nach Geschäftsanmeldung ergänzt]
+              <strong>Telefon:</strong> [Wird ergänzt]
             </p>
           </section>
 
@@ -51,20 +60,10 @@ export default function ImpressumPage() {
               Steuerliche Angaben
             </h2>
             <p className="text-soft-black leading-relaxed">
-              <strong>Steuernummer:</strong> [Wird nach Finanzamtsbescheid ergänzt]<br />
               <strong>Umsatzsteuer-Identifikationsnummer (USt-IdNr.):</strong> [Wird nach Erteilung durch das Bundeszentralamt für Steuern ergänzt]
             </p>
             <p className="text-sm text-gray-600 italic mt-2">
-              Hinweis: Das Unternehmen befindet sich derzeit im Anmeldeverfahren. Die steuerlichen Angaben werden nach Erteilung durch die zuständigen Behörden unverzüglich ergänzt.
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-soft-black mb-4">
-              Zuständige Aufsichtsbehörde
-            </h2>
-            <p className="text-soft-black leading-relaxed">
-              [Falls eine behördliche Zulassung für die Geschäftstätigkeit erforderlich ist, wird diese hier nach Erteilung angegeben]
+              Hinweis: Die USt-IdNr. wird nach Erteilung unverzüglich ergänzt.
             </p>
           </section>
 

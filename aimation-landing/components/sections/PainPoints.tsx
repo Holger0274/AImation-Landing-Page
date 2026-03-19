@@ -377,7 +377,7 @@ export default function PainPoints() {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-screen">
 
         {/* LEFT SIDE - LIGHT (Warm White Background) */}
-        <div className="relative bg-[#faf9f7] py-16 md:py-20 px-6 md:px-12 flex items-center justify-center order-1">
+        <div className="relative bg-[#faf9f7] py-20 md:py-32 px-6 md:px-12 flex items-center justify-center order-1">
           {/* Content */}
           <div className="relative z-10 max-w-xl mx-auto lg:mx-0 w-full">
             <motion.div
@@ -467,7 +467,7 @@ export default function PainPoints() {
         </div>
 
         {/* RIGHT SIDE - DARK (Soft Black Background with Cards) */}
-        <div className="relative bg-[#071013] py-16 md:py-20 px-6 md:px-12 flex items-center justify-center order-2">
+        <div className="relative bg-[#071013] py-20 md:py-32 px-6 md:px-12 flex items-center justify-center order-2">
           {/* Glow Background */}
           <div className="absolute inset-0 mesh-gradient opacity-30" />
 

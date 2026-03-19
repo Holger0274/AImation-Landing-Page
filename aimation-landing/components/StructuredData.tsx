@@ -38,7 +38,7 @@ export function OrganizationSchema({ siteUrl = 'https://aimation.de' }: Organiza
       "height": "100"
     },
     "description": "KI-Beratung, Schulungen und Umsetzung für kleine und mittlere Unternehmen im DACH-Raum. 20 Jahre Engineering-Erfahrung, keine Buzzwords, keine Konzernpreise.",
-    "slogan": "Automatisierung mit Intelligenz",
+    "slogan": "Mehr Zeit für das Wesentliche",
     "foundingDate": "2024",
     "contactPoint": {
       "@type": "ContactPoint",

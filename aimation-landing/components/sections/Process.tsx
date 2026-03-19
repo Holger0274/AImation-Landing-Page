@@ -190,7 +190,7 @@ export default function Process() {
           </div>
 
           {/* Steps */}
-          <div className="grid grid-cols-5 gap-6">
+          <div className="grid grid-cols-5 gap-6 items-stretch">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isActive = activeStep === index;
@@ -204,7 +204,7 @@ export default function Process() {
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                   onMouseEnter={() => setActiveStep(index)}
                   onMouseLeave={() => setActiveStep(null)}
-                  className="relative"
+                  className="relative flex flex-col"
                 >
                   {/* Icon Circle */}
                   <div className="relative mx-auto mb-6 w-24 h-24 flex items-center justify-center">
@@ -216,7 +216,6 @@ export default function Process() {
                           : 'bg-white border-2 border-gray-200'
                         }
                       `}
-                      style={isActive ? { boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)' } : {}}
                     />
                     <Icon className={`relative w-10 h-10 z-10 transition-colors ${isActive ? 'text-white' : 'text-gray-600'}`} />
 
@@ -235,27 +234,26 @@ export default function Process() {
                     </div>
                   </div>
 
-                  {/* Content Card - Responsive Height */}
+                  {/* Content Card - h-full damit alle Karten gleich hoch wie die höchste */}
                   <div
                     className={`
-                      flex flex-col
+                      flex flex-col h-full
                       bg-white rounded-2xl p-6 border-2 transition-all duration-300
                       ${isActive
-                        ? 'border-magenta shadow-lg scale-105'
+                        ? 'border-magenta shadow-lg'
                         : 'border-gray-200 hover:border-gray-300'
                       }
                     `}
-                    style={{ minHeight: 'clamp(340px, 45vh, 420px)' }}
                   >
-                    {/* Text Content - Responsive Height */}
-                    <div className="flex flex-col mb-4" style={{ minHeight: 'clamp(160px, 22vh, 200px)' }}>
+                    {/* Text Content - fixed height damit Bilder immer auf gleicher Linie */}
+                    <div className="flex flex-col mb-4" style={{ minHeight: '160px' }}>
                       <h3 className="font-heading font-bold mb-2 text-gray-900" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                         {step.title}
                       </h3>
                       <p className="text-magenta font-heading font-semibold mb-3" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                         {step.subtitle}
                       </p>
-                      <p className="text-gray-600 mb-4 leading-relaxed" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
+                      <p className="text-gray-600 mb-4 leading-relaxed line-clamp-4" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                         {step.description}
                       </p>
                     </div>

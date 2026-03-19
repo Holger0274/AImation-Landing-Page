@@ -55,25 +55,28 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-[4/5] relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#071013] to-[#0a1419] border border-gray-200">
+            <div className="aspect-[4/5] relative rounded-2xl overflow-hidden border border-gray-200">
               <Image
                 src="/about-holger.png"
-                alt="AI.mation Beratung - Professionelle KI-Beratung und Schulung für den Mittelstand"
+                alt="Holger Peschke – AI.mation, KI-Beratung und Schulung für den Mittelstand"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 onError={(e) => {
-                  // Hide broken image, show placeholder
                   (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
-              {/* Placeholder until professional photo is available */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 pointer-events-none">
-                <div className="w-24 h-24 rounded-full bg-magenta/20 flex items-center justify-center mb-6">
-                  <Users className="w-12 h-12 text-magenta" />
+              {/* Brand-konformer Placeholder bis professionelles Foto verfügbar */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#faf9f7] via-[#f0eef8] to-[#fce8f3] flex flex-col items-center justify-center text-center p-8 pointer-events-none">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-magenta to-[#ff4ecd] flex items-center justify-center mb-6 shadow-lg" style={{ boxShadow: '0 0 40px rgba(249,0,147,0.25)' }}>
+                  <Users className="w-16 h-16 text-white" />
                 </div>
-                <p className="text-white/60 font-heading font-semibold text-lg mb-2">Foto folgt</p>
-                <p className="text-white/40 text-sm">Professionelles Bild in Kürze</p>
+                <p className="text-[#071013] font-heading font-bold text-xl mb-2">Holger Peschke</p>
+                <p className="text-gray-500 text-sm font-medium">Gründer & KI-Experte</p>
+                <div className="mt-6 flex items-center gap-2 px-4 py-2 rounded-full bg-magenta/10 border border-magenta/20">
+                  <div className="w-2 h-2 rounded-full bg-magenta" />
+                  <span className="text-xs font-heading font-semibold text-[#071013]">20 Jahre Engineering</span>
+                </div>
               </div>
             </div>
             {/* Accent Border */}

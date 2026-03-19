@@ -30,15 +30,15 @@ export default function DatenschutzPage() {
               Verantwortlich für die Datenverarbeitung auf dieser Website ist:
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              Holger Peschke<br />
-              AI.mation<br />
+              AImation UG (haftungsbeschränkt)<br />
+              Geschäftsführer: Holger Peschke<br />
               Sutte 19<br />
               96049 Bamberg<br />
               Deutschland
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
               <strong>E-Mail:</strong> <a href="mailto:kontakt@ai-mation.de" className="text-magenta hover:underline">kontakt@ai-mation.de</a><br />
-              <strong>Telefon:</strong> [Wird nach Geschäftsanmeldung ergänzt]
+              <strong>Telefon:</strong> [Wird ergänzt]
             </p>
             <p className="text-soft-black leading-relaxed">
               Bei Fragen zum Datenschutz können Sie sich jederzeit unter den oben genannten Kontaktdaten an uns wenden.
@@ -105,7 +105,35 @@ export default function DatenschutzPage() {
             </p>
 
             <h3 className="text-xl font-semibold text-soft-black mb-2 mt-6">
-              2.3 Terminbuchung über Calendly
+              2.3 Datenspeicherung über Supabase
+            </h3>
+            <p className="text-soft-black leading-relaxed mb-4">
+              Die über unsere Formulare (Kontaktformular, ROI-Kalkulator) übermittelten Daten werden in einer Datenbank gespeichert, die wir beim Dienstleister Supabase betreiben.
+            </p>
+            <p className="text-soft-black leading-relaxed mb-4">
+              <strong>Anbieter:</strong> Supabase Inc., 970 Toa Payoh North #07-04, Singapur 318992
+            </p>
+            <p className="text-soft-black leading-relaxed mb-4">
+              <strong>Verarbeitete Daten:</strong> Alle Daten, die Sie über unsere Formulare eingeben (Name, E-Mail-Adresse, Unternehmen, Nachricht, ROI-Eingaben)
+            </p>
+            <p className="text-soft-black leading-relaxed mb-4">
+              <strong>Zweck:</strong> Speicherung und Verwaltung eingehender Anfragen und Berechnungen
+            </p>
+            <p className="text-soft-black leading-relaxed mb-4">
+              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der strukturierten Bearbeitung von Anfragen)
+            </p>
+            <p className="text-soft-black leading-relaxed mb-4">
+              <strong>Serverstandort:</strong> Die Daten werden ausschließlich auf Servern innerhalb der Europäischen Union gespeichert. Eine Übermittlung in Drittländer findet nicht statt.
+            </p>
+            <p className="text-soft-black leading-relaxed mb-4">
+              <strong>Auftragsverarbeitung:</strong> Wir haben mit Supabase einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO abgeschlossen.
+            </p>
+            <p className="text-soft-black leading-relaxed mb-4">
+              <strong>Weitere Informationen:</strong> <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="text-magenta hover:underline">Datenschutzerklärung von Supabase</a>
+            </p>
+
+            <h3 className="text-xl font-semibold text-soft-black mb-2 mt-6">
+              2.5 Terminbuchung über Calendly
             </h3>
             <p className="text-soft-black leading-relaxed mb-4">
               Auf unserer Website bieten wir Ihnen die Möglichkeit, direkt einen kostenlosen Beratungstermin zu buchen. Hierfür nutzen wir den Dienst Calendly von Calendly LLC, 271 17th St NW, 10th Floor, Atlanta, GA 30363, USA.
@@ -139,7 +167,7 @@ export default function DatenschutzPage() {
             </p>
 
             <h3 className="text-xl font-semibold text-soft-black mb-2 mt-6">
-              2.4 Website-Analyse (Plausible Analytics)
+              2.6 Website-Analyse (Plausible Analytics)
             </h3>
             <p className="text-soft-black leading-relaxed mb-4">
               Wir nutzen Plausible Analytics, einen datenschutzfreundlichen Website-Analyse-Dienst, um die Nutzung unserer Website zu verstehen und zu verbessern.
