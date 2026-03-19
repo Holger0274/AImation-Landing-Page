@@ -50,13 +50,11 @@ export default function ROICalculator({
     setInputData(calculatorInput);
     setEmailData({ email, name, company, position, industry });
 
-    // Send results via API
+    // Save to database (always, regardless of email)
     try {
-      const response = await fetch('/api/send-roi-results', {
+      await fetch('/api/save-roi-calculation', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email,
           name,
@@ -67,14 +65,33 @@ export default function ROICalculator({
           results: calculatedResults,
         }),
       });
-
-      if (!response.ok) {
-        console.error('Failed to send email');
-        // Still show results even if email fails
-      }
     } catch (error) {
-      console.error('Error sending email:', error);
-      // Still show results even if email fails
+      console.error('Error saving to database:', error);
+    }
+
+    // Send email (only if email provided)
+    if (email) {
+      try {
+        const response = await fetch('/api/send-roi-results', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            name,
+            company,
+            position,
+            industry,
+            input: calculatorInput,
+            results: calculatedResults,
+          }),
+        });
+
+        if (!response.ok) {
+          console.error('Failed to send email');
+        }
+      } catch (error) {
+        console.error('Error sending email:', error);
+      }
     }
   };
 

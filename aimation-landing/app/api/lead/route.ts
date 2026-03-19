@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
+import { createServerClient } from '@/lib/supabase';
 
 // Validation schema matching the form
 const leadSchema = z.object({
@@ -22,11 +23,30 @@ export async function POST(request: Request) {
     // Get n8n webhook URL from environment variable
     const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL;
 
+    // Save to Supabase (always)
+    try {
+      const supabase = createServerClient();
+      const { error: dbError } = await supabase.from('leads').insert({
+        vorname: validatedData.vorname,
+        nachname: validatedData.nachname,
+        email: validatedData.email,
+        firma: validatedData.firma,
+        unternehmensgroesse: validatedData.unternehmensgroesse,
+        telefon: validatedData.telefon || null,
+        herausforderung: validatedData.herausforderung,
+        datenschutz_zugestimmt: validatedData.datenschutz,
+      });
+
+      if (dbError) {
+        console.error('Supabase insert error:', dbError);
+      }
+    } catch (dbError) {
+      console.error('Error saving lead to database:', dbError);
+    }
+
     if (!n8nWebhookUrl) {
       console.warn('N8N_WEBHOOK_URL not configured - lead data not sent to n8n');
-      console.log('Lead data received:', validatedData);
 
-      // Return success even if webhook not configured (for development)
       return NextResponse.json(
         {
           success: true,
@@ -58,7 +78,6 @@ export async function POST(request: Request) {
       throw new Error(`n8n webhook failed with status ${webhookResponse.status}`);
     }
 
-    // Log success
     console.log('Lead successfully sent to n8n:', {
       email: validatedData.email,
       firma: validatedData.firma,
