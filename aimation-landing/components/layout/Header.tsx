@@ -68,7 +68,7 @@ export default function Header() {
             ))}
             <a
               href="#kontakt"
-              className="px-6 py-2.5 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-lg hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+              className="px-6 py-2.5 border-2 border-[#071013] text-[#071013] font-heading font-semibold rounded-lg hover:bg-[#071013] hover:text-white transition-all duration-200"
             >
               Erstgespräch
             </a>

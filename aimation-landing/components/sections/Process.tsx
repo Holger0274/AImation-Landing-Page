@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion';
 import { Calendar, FileText, Rocket, Headphones, CheckCircle, Clock, Euro, Search } from 'lucide-react';
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 
 const steps = [
   {
@@ -133,11 +134,13 @@ function StepMockup({ type }: { type: string }) {
       </div>
 
       {/* Professional Image - Fixed Height for Alignment */}
-      <div className="relative flex items-center justify-center h-full">
-        <img
+      <div className="relative h-full w-full rounded-lg overflow-hidden">
+        <Image
           src={mockup.imageUrl}
           alt={mockup.imageAlt}
-          className="w-full h-full object-cover rounded-lg opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+          fill
+          className="object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
     </div>
@@ -247,7 +250,7 @@ export default function Process() {
                   >
                     {/* Text Content - fixed height damit Bilder immer auf gleicher Linie */}
                     <div className="flex flex-col mb-4" style={{ minHeight: '160px' }}>
-                      <h3 className="font-heading font-bold mb-2 text-gray-900" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
+                      <h3 className="font-heading font-bold mb-2 text-[#071013]" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                         {step.title}
                       </h3>
                       <p className="text-magenta font-heading font-semibold mb-3" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>

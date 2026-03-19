@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { FileSpreadsheet, Brain, Clock, TrendingDown, AlertTriangle, TrendingUp, X, Calculator } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 // Compact Stats (6 main pain points for grid display) - WITH MODAL DATA
@@ -91,6 +91,14 @@ const heroStat = {
 
 // Image Modal Component
 function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0]; onClose: () => void }) {
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [onClose]);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -107,6 +115,9 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
         className="relative max-w-4xl w-full bg-[#071013] rounded-2xl overflow-hidden border-2 border-[#f90093]/50 my-8"
         style={{ boxShadow: '0 0 60px rgba(249, 0, 147, 0.4)' }}
         onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-label={painPoint.title}
       >
         {/* Close Button - Fixed position with safe-area support */}
         <button
@@ -288,7 +299,7 @@ function CompactStatCard({ stat, index, onClick }: { stat: typeof compactStats[0
       </h3>
 
       {/* Click hint */}
-      <p className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
+      <p className="text-xs text-gray-500 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
         Klicken für Bild & Details →
       </p>
     </motion.div>

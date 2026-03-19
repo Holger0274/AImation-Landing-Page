@@ -99,7 +99,7 @@ export default function About() {
                 Nach 20 Jahren im Engineering haben wir gesehen, wie viel Potenzial in deutschen Unternehmen brachliegt. Von der Produktentwicklung über Prozessoptimierung bis zur Schnittstellenkoordination – wir kennen die Herausforderungen aus erster Hand. Unser Ziel: KI zugänglich machen, ohne Buzzwords, ohne Konzernpreise, mit echtem Verständnis für Ihre Prozesse.
               </p>
               <p>
-                Mit 20 Jahren Erfahrung im Engineering kennen wir die Pain Points in produzierenden Unternehmen genau. Wir wissen, wo Potenzial verschenkt wird, welche Prozesse wirklich Zeitfresser sind und wo man mit KI und Automatisierung schnell messbare Verbesserungen erzielt. Nicht in Monaten – sondern oft schon nach Tagen.
+                Wir wissen, wo Potenzial verschenkt wird: welche Prozesse echte Zeitfresser sind, wo Daten in Silos schlummern und wo KI schnell messbare Verbesserungen bringt – nicht in Monaten, sondern oft schon nach Tagen. Und weil unser Netzwerk aus spezialisierten KI-Experten, Entwicklern und Branchenkennern besteht, können wir auch komplexe Projekte schnell und ohne Konzernpreise umsetzen.
               </p>
               <p>
                 <strong className="text-soft-black">Was uns unterscheidet:</strong> Wir sprechen Ihre Sprache – vom Shopfloor bis zur Führungsebene. Wir kennen nicht nur Engineering, sondern verstehen auch, wie Vertrieb, Marketing, HR, IT und alle anderen Bereiche funktionieren und zusammenspielen. Dieses ganzheitliche Verständnis ist entscheidend für erfolgreiche KI-Implementierungen, die wirklich etwas verändern.

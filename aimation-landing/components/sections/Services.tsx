@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GraduationCap, Lightbulb, Zap, ArrowRight, Code, Users, Database, Mail, FileText, TrendingUp } from 'lucide-react';
 import { useReducedMotion } from '@/lib/hooks/useReducedMotion';
@@ -252,13 +252,15 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
   const reducedMotion = useReducedMotion();
   const isMobile = useIsMobile();
 
-  // Mouse tracking - UNTHROTTLED FOR DEBUGGING
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
-    const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
-    setMousePosition({ x, y });
-  }, []);
+  const handleMouseMove = useMemo(
+    () => throttle((e: React.MouseEvent<HTMLDivElement>) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+      const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+      setMousePosition({ x, y });
+    }, 16),
+    []
+  );
 
   const handleMouseLeave = () => {
     setMousePosition({ x: 0, y: 0 });
