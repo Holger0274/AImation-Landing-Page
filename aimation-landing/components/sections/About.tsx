@@ -2,37 +2,72 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { CheckCircle2, Award, Target, Users } from 'lucide-react';
-import { PersonSchema } from '@/components/StructuredData';
+import { Users } from 'lucide-react';
 
-const highlights = [
+const quotes = [
   {
-    icon: Award,
-    text: '20 Jahre Engineering-Erfahrung',
+    text: '„20 Jahre Engineering-Führungskraft in der Industrie."',
+    highlight: null,
   },
   {
-    icon: Target,
-    text: 'Vom Shopfloor bis zur Führungsebene',
+    text: '„Ich kenne [Ihre Prozesse], nicht aus Büchern, sondern aus der Praxis."',
+    highlight: 'Ihre Prozesse',
   },
   {
-    icon: Users,
-    text: 'Verständnis für alle Unternehmensbereiche',
+    text: '„Wenn KI für Sie keinen Sinn ergibt, sage ich Ihnen das. Auch wenn mich das einen Auftrag kostet."',
+    highlight: null,
   },
   {
-    icon: CheckCircle2,
-    text: 'Praktische KI-Lösungen statt Buzzwords',
+    text: '„[Machen] statt reden. Fertige Lösungen, die am nächsten Tag funktionieren."',
+    highlight: 'Machen',
+  },
+  {
+    text: '„20 Jahre Erfahrung haben mir eines gezeigt: [Die einfachste Lösung], die wirklich funktioniert, ist immer die beste."',
+    highlight: 'Die einfachste Lösung',
   },
 ];
 
-export default function About() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aimation.de';
+function QuoteCard({ text, highlight, index }: { text: string; highlight: string | null; index: number }) {
+  let content: React.ReactNode = text;
+
+  if (highlight) {
+    const parts = text.split(`[${highlight}]`);
+    content = (
+      <>
+        {parts[0]}
+        <strong className="text-magenta not-italic underline decoration-magenta/40 underline-offset-[3px]">
+          {highlight}
+        </strong>
+        {parts[1]}
+      </>
+    );
+  }
 
   return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.08 }}
+      className="relative bg-white rounded-2xl border border-gray-100 px-5 pt-7 pb-5 shadow-sm hover:shadow-[0_8px_32px_rgba(249,0,147,0.13)] hover:-translate-y-1 transition-all duration-200"
+    >
+      <span className="absolute -top-4 left-4 text-5xl text-magenta font-serif leading-none">&ldquo;</span>
+      <p className="text-sm text-gray-600 italic leading-relaxed">{content}</p>
+      <span className="absolute -bottom-3 right-4 text-5xl text-magenta font-serif leading-none rotate-180">&ldquo;</span>
+    </motion.div>
+  );
+}
+
+export default function About() {
+  return (
     <section id="ueber-mich" className="py-20 md:py-32 bg-warm-white">
-      {/* Person Schema.org for Holger Peschke */}
-      <PersonSchema siteUrl={siteUrl} />
+      {/*
+        PersonSchema wurde in layout.tsx (Server Component) verlagert.
+        Damit ist es fuer AI-Crawler im initialen HTML sichtbar.
+      */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -40,14 +75,16 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Über <span className="gradient-text">uns</span>
+          <p className="text-xs font-heading font-bold tracking-[2px] uppercase text-magenta mb-3">Über uns</p>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-soft-black">
+            KI-Expertise mit <span className="gradient-text">echtem Fundament</span>
           </h2>
         </motion.div>
 
-        {/* Split Layout: Image + Bio */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
-          {/* Image */}
+        {/* Split Layout: Foto + Intro-Text */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+
+          {/* Foto */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -58,7 +95,7 @@ export default function About() {
             <div className="aspect-[4/5] relative rounded-2xl overflow-hidden border border-gray-200">
               <Image
                 src="/about-holger.png"
-                alt="Holger Peschke – AI.mation, KI-Beratung und Schulung für den Mittelstand"
+                alt="Holger Peschke, Gründer AI.mation"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -66,74 +103,78 @@ export default function About() {
                   (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
-              {/* Brand-konformer Placeholder bis professionelles Foto verfügbar */}
+              {/* Platzhalter bis professionelles Foto verfügbar */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#faf9f7] via-[#f0eef8] to-[#fce8f3] flex flex-col items-center justify-center text-center p-8 pointer-events-none">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-magenta to-[#ff4ecd] flex items-center justify-center mb-6 shadow-lg" style={{ boxShadow: '0 0 40px rgba(249,0,147,0.25)' }}>
-                  <Users className="w-16 h-16 text-white" />
+                <div
+                  className="w-24 h-24 rounded-full bg-gradient-to-br from-magenta to-[#ff4ecd] flex items-center justify-center mb-5 shadow-lg"
+                  style={{ boxShadow: '0 0 32px rgba(249,0,147,0.3)' }}
+                >
+                  <Users className="w-12 h-12 text-white" />
                 </div>
-                <p className="text-[#071013] font-heading font-bold text-xl mb-2">Holger Peschke</p>
-                <p className="text-gray-500 text-sm font-medium">Gründer & KI-Experte</p>
-                <div className="mt-6 flex items-center gap-2 px-4 py-2 rounded-full bg-magenta/10 border border-magenta/20">
-                  <div className="w-2 h-2 rounded-full bg-magenta" />
-                  <span className="text-xs font-heading font-semibold text-[#071013]">20 Jahre Engineering</span>
+                <p className="text-soft-black font-heading font-bold text-xl mb-1">Holger Peschke</p>
+                <p className="text-gray-400 text-sm mb-5">Gründer &amp; KI-Experte</p>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-magenta/10 border border-magenta/20">
+                  <div className="w-2 h-2 rounded-full bg-magenta" style={{ boxShadow: '0 0 8px #f90093' }} />
+                  <span className="text-xs font-heading font-semibold text-soft-black">20 Jahre Engineering</span>
                 </div>
+                <p className="mt-4 text-[11px] text-gray-300 italic">Foto folgt</p>
               </div>
             </div>
-            {/* Accent Border */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-magenta rounded-2xl -z-10" />
+            {/* Magenta Akzentrahmen */}
+            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-magenta/50 rounded-2xl -z-10" />
           </motion.div>
 
-          {/* Bio Text */}
+          {/* Intro-Text */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-3xl md:text-4xl font-heading font-bold text-soft-black mb-6">
-              KI ist nicht unser Job – <span className="gradient-text">es ist das Thema, das uns antreibt</span>
+            <h3 className="text-3xl md:text-4xl font-heading font-bold text-soft-black mb-6 leading-snug">
+              KI ist nicht unser Job.<br />
+              <span className="gradient-text">Es ist das Thema, das uns antreibt.</span>
             </h3>
-
-            <div className="prose prose-lg max-w-none text-gray-600 space-y-4 mb-8">
-              <p>
-                Nach 20 Jahren im Engineering haben wir gesehen, wie viel Potenzial in deutschen Unternehmen brachliegt. Von der Produktentwicklung über Prozessoptimierung bis zur Schnittstellenkoordination – wir kennen die Herausforderungen aus erster Hand. Unser Ziel: KI zugänglich machen, ohne Buzzwords, ohne Konzernpreise, mit echtem Verständnis für Ihre Prozesse.
-              </p>
-              <p>
-                Wir wissen, wo Potenzial verschenkt wird: welche Prozesse echte Zeitfresser sind, wo Daten in Silos schlummern und wo KI schnell messbare Verbesserungen bringt – nicht in Monaten, sondern oft schon nach Tagen. Und weil unser Netzwerk aus spezialisierten KI-Experten, Entwicklern und Branchenkennern besteht, können wir auch komplexe Projekte schnell und ohne Konzernpreise umsetzen.
-              </p>
-              <p>
-                <strong className="text-soft-black">Was uns unterscheidet:</strong> Wir sprechen Ihre Sprache – vom Shopfloor bis zur Führungsebene. Wir kennen nicht nur Engineering, sondern verstehen auch, wie Vertrieb, Marketing, HR, IT und alle anderen Bereiche funktionieren und zusammenspielen. Dieses ganzheitliche Verständnis ist entscheidend für erfolgreiche KI-Implementierungen, die wirklich etwas verändern.
-              </p>
-              <p className="text-soft-black font-medium">
-                Unser Versprechen: Keine leeren Buzzwords, sondern ehrliche Einschätzungen und praktische Lösungen, die funktionieren. Die Kombination aus Engineering-Know-how, Prozessverständnis und KI-Expertise macht den Unterschied – von der Strategie über die Schulung bis zur fertigen Lösung.
-              </p>
-            </div>
+            <p className="text-lg text-gray-500 leading-relaxed">
+              20 Jahre Engineering haben mir gezeigt, wo die Zeit wirklich verloren geht. Nicht in der Arbeit selbst, sondern im Drumherum. Daran arbeite ich.
+            </p>
           </motion.div>
         </div>
 
-        {/* Highlights Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {highlights.map((highlight, index) => {
-            const IconComponent = highlight.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex flex-col items-center text-center gap-3 p-6 bg-warm-white rounded-xl border border-gray-200"
-              >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-magenta to-[#ff4ecd] flex items-center justify-center">
-                  <IconComponent className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-sm text-gray-700 font-medium leading-snug">
-                  {highlight.text}
-                </span>
-              </motion.div>
-            );
-          })}
+        {/* Zitat-Karten */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center text-[11px] font-heading font-bold tracking-[2.5px] uppercase text-gray-300 mb-7"
+        >
+          Das sind wir in 5 Sätzen
+        </motion.p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          {quotes.map((q, i) => (
+            <QuoteCard key={i} text={q.text} highlight={q.highlight} index={i} />
+          ))}
         </div>
+
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-12" />
+
+        {/* CTA */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+          <a href="#kontakt" className="btn-primary text-sm px-8 py-4">
+            Kostenloses Erstgespräch vereinbaren
+          </a>
+          <a
+            href="https://linkedin.com/in/holgerpeschke"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-heading font-semibold text-magenta underline underline-offset-4"
+          >
+            LinkedIn folgen. 18.000 Follower
+          </a>
+        </div>
+
       </div>
     </section>
   );
