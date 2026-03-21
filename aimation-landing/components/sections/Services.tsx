@@ -34,7 +34,7 @@ const services = [
       },
       {
         title: 'Workshop: Automatisierung und KI-Automatisierung',
-        description: 'Praktischer Workshop für Prozessverantwortliche und Teams: Was sind Automatisierungen? Wie unterscheiden sich klassische Workflows von KI-gestützten Automatisierungen? Teilnehmer lernen, Automatisierungspotenziale zu erkennen und KI gezielt einzubringen – von einfachen Workflows bis zu intelligenten Multi-Agent-Systemen.',
+        description: 'Praktischer Workshop für Prozessverantwortliche und Teams: Was sind Automatisierungen? Wie unterscheiden sich klassische Workflows von KI-gestützten Automatisierungen? Teilnehmer lernen, Automatisierungspotenziale zu erkennen und KI gezielt einzubringen, von einfachen Workflows bis zu intelligenten Multi-Agent-Systemen.',
         result: '85% der Teilnehmer identifizieren mindestens 3 Automatisierungs-Use-Cases',
         mockupType: 'automation-workshop',
       },
@@ -59,7 +59,7 @@ const services = [
     patternOpacity: 0.06,
     useCases: [
       {
-        title: 'AI-Tool-Audit für Steuerberatung: Schatten-KI aufdecken & Kosten senken',
+        title: 'AI-Tool-Audit für Anwaltskanzlei: Schatten-KI aufdecken & Kosten senken',
         description: 'Systematisches Audit aller KI-Tools in der Kanzlei: Welche Tools nutzen Mitarbeiter (ChatGPT, Copilot, andere)? DSGVO-Risiken identifiziert, Lizenzkosten analysiert, Tool-Wildwuchs gestoppt. Konsolidierung auf 3 freigegebene Enterprise-Lösungen mit zentraler Verwaltung.',
         result: '12 Tools auf 3 reduziert, 3.200€/Monat gespart, DSGVO-konforme Lösung',
         mockupType: 'ai-audit',
@@ -67,7 +67,7 @@ const services = [
       {
         title: 'Tool-Auswahl Workshop: Die richtige KI-Plattform für Online-Händler',
         description: '2-Tages-Workshop zur Entscheidungsfindung: Microsoft Copilot, Google Workspace AI oder eigenständige Lösung? Requirements definiert, 5 Anbieter verglichen (Kosten, Datenschutz, Integration), klare Empfehlung mit Begründung. Vertragsverhandlung begleitet.',
-        result: 'Entscheidung in 2 Tagen statt 3 Monaten – 40% Kosten gespart',
+        result: 'Entscheidung in 2 Tagen statt 3 Monaten, 40% Kosten gespart',
         mockupType: 'tool-selection',
       },
     ],
@@ -77,7 +77,7 @@ const services = [
     title: 'Umsetzung',
     subtitle: 'Bauen, implementieren, betreiben',
     description:
-      'Von Workflows über Wissenssysteme bis zu intelligenten Assistenten – wir setzen Lösungen um, die funktionieren.',
+      'Von Workflows über Wissenssysteme bis zu intelligenten Assistenten: Wir setzen Lösungen um, die funktionieren.',
     features: [
       'Workflow-Automatisierung',
       'RAG-Systeme & Chatbots',
@@ -92,7 +92,7 @@ const services = [
     useCases: [
       {
         title: 'Chatbot für technische Dokumentation (Maschinenbau)',
-        description: 'Chatbot durchsucht 5000 Seiten technische Dokumentation und antwortet in 3 Sekunden – mit Quellenangabe. Service-Techniker finden Antworten, ohne Experten zu fragen.',
+        description: 'Chatbot durchsucht 5000 Seiten technische Dokumentation und antwortet in 3 Sekunden, mit Quellenangabe. Service-Techniker finden Antworten, ohne Experten zu fragen.',
         result: '70% weniger Support-Anfragen, 95% korrekte Antworten',
         mockupType: 'rag-chatbot',
       },
@@ -277,8 +277,7 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
       }}
       className="perspective-1000"
       style={{
-        height: 'clamp(360px, 50vw, 500px)',
-        minHeight: 'clamp(340px, 45vw, 450px)',
+        height: 'clamp(460px, 55vw, 500px)',
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -301,7 +300,7 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
       >
         {/* Front Side - Glassmorphism - ENHANCED */}
         <div
-          className="absolute inset-0 rounded-2xl p-8 overflow-hidden group"
+          className="absolute inset-0 rounded-2xl p-6 md:p-8 overflow-hidden group"
           style={{
             backfaceVisibility: 'hidden',
             background: 'rgba(250, 249, 247, 0.7)', // MORE TRANSPARENT (was 0.85)
@@ -326,7 +325,7 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
           {/* Content */}
           <div className="relative flex flex-col h-full z-10">
             <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110"
+              className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6 transition-all duration-300 group-hover:scale-110"
               style={{
                 background: `linear-gradient(135deg, ${service.gradientFrom}15, ${service.gradientTo}10)`,
                 boxShadow: `0 4px 16px ${service.gradientFrom}20`,
@@ -353,9 +352,9 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
             >
               {service.subtitle}
             </p>
-            <p className="text-gray-600 mb-6 flex-grow" style={{ fontSize: 'clamp(0.875rem, 2.2vw, 1rem)' }}>{service.description}</p>
+            <p className="text-gray-600 mb-4 md:mb-6 flex-grow" style={{ fontSize: 'clamp(0.875rem, 2.2vw, 1rem)' }}>{service.description}</p>
 
-            <div className="text-gray-500 italic mb-4" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>{service.detail}</div>
+            <div className="text-gray-500 italic mb-3 md:mb-4" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>{service.detail}</div>
 
             <div className="flex items-center justify-between">
               <div
@@ -373,7 +372,7 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
 
         {/* Back Side - Enhanced Dark */}
         <div
-          className="absolute inset-0 rounded-2xl p-8"
+          className="absolute inset-0 rounded-2xl p-6 md:p-8"
           style={{
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
@@ -410,7 +409,7 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
 
           <div className="relative flex flex-col h-full text-white z-10">
             <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+              className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 md:mb-6"
               style={{
                 background: `${service.gradientFrom}20`,
                 boxShadow: `0 0 30px ${service.gradientFrom}60`,
@@ -426,7 +425,7 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
             </div>
 
             <h3
-              className="font-heading font-bold mb-4"
+              className="font-heading font-bold mb-3 md:mb-4"
               style={{
                 fontSize: 'clamp(1.25rem, 3vw, 1.5rem)',
                 background: `linear-gradient(135deg, ${service.gradientFrom}, ${service.gradientTo})`,
@@ -439,7 +438,7 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
               {service.title}
             </h3>
 
-            <ul className="space-y-3 mb-6 flex-grow">
+            <ul className="space-y-2 md:space-y-3 mb-4 md:mb-6 flex-grow">
               {service.features.map((feature, i) => (
                 <motion.li
                   key={i}
@@ -528,7 +527,7 @@ export default function Services() {
             Die 3 <span className="gradient-text">Säulen</span> unserer Arbeit
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}>
-            Alle Bausteine sind frei kombinierbar – je nach Ihrem Bedarf
+            Alle Bausteine sind frei kombinierbar, je nach Ihrem Bedarf
           </p>
         </motion.div>
 
@@ -600,8 +599,8 @@ export default function Services() {
                         <p className="text-gray-300 leading-relaxed" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                           {useCase.description}
                         </p>
-                        <div className="inline-flex items-center gap-2 px-4 py-3 bg-magenta/20 rounded-lg border border-magenta/30">
-                          <span className="font-heading font-bold text-magenta" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
+                        <div className="flex items-start gap-2 px-4 py-3 bg-magenta/20 rounded-lg border border-magenta/30">
+                          <span className="font-heading font-bold text-magenta" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1rem)' }}>
                             ✓ {useCase.result}
                           </span>
                         </div>

@@ -86,7 +86,7 @@ export default function WhyAImation() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-[#f90093]/50 transition-all duration-300"
+                className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 hover:border-[#f90093]/50 transition-all duration-300"
               >
                 {/* Glow on Hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f90093]/0 to-[#f90093]/0 group-hover:from-[#f90093]/10 group-hover:to-transparent rounded-2xl transition-all duration-300" />
@@ -134,7 +134,7 @@ export default function WhyAImation() {
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               In 2 Tagen wissen Sie, wo Sie stehen: <strong className="text-white">AI Audit</strong> Ihrer aktuellen Prozesse,
               klare <strong className="text-white">AI Readiness</strong> Bewertung und eine ehrliche <strong className="text-white">AI ROI</strong> Einschätzung.
-              Ohne Buzzwords, ohne Verkaufsdruck.
+              Ohne leere Versprechen, ohne Verkaufsdruck.
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 mb-8">

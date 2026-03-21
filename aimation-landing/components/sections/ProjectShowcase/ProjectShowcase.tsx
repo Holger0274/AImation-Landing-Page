@@ -298,7 +298,7 @@ export default function ProjectShowcase() {
 
           {/* Subline */}
           <p className="text-lg text-gray-600 font-inter">
-            Konkrete Anwendungsfälle – von der Patentrecherche bis zum Technologie-Radar.
+            Konkrete Anwendungsfälle: von der Patentrecherche bis zum Technologie-Radar.
           </p>
         </motion.div>
 

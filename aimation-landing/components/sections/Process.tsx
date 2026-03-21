@@ -60,7 +60,7 @@ const steps = [
     title: 'Umsetzung',
     subtitle: 'Gemeinsam umsetzen',
     description:
-      'Schulung, Beratung oder Implementierung – wir setzen Ihr Projekt gemeinsam um.',
+      'Schulung, Beratung oder Implementierung: Wir setzen Ihr Projekt gemeinsam um.',
     details: [
       'Praxisorientiert',
       'Iterativ',
@@ -176,7 +176,7 @@ export default function Process() {
             So <span className="gradient-text">einfach</span> starten wir
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}>
-            Vom ersten Gespräch bis zur Umsetzung – transparent und strukturiert
+            Vom ersten Gespräch bis zur Umsetzung. Transparent und strukturiert.
           </p>
         </motion.div>
 

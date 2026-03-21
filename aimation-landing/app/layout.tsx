@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk, Inter } from 'next/font/google';
-import Script from 'next/script';
 import './globals.css';
 import {
   OrganizationSchema,
+  LocalBusinessSchema,
   ServiceSchema,
   WebSiteSchema,
+  PersonSchema,
 } from '@/components/StructuredData';
 
 const spaceGrotesk = Space_Grotesk({
@@ -27,53 +28,70 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || 'https://aimation.de'
   ),
 
+  // K1 FIX: Title auf 50-60 Zeichen gekürzt (war 72 Zeichen)
+  // Primärkeyword vorne, Brand hinten, wichtigster USP sichtbar
   title: {
-    default:
-      'AI.mation - KI-Automatisierung für KMUs | 20 Jahre Engineering-Erfahrung',
+    default: 'KI-Beratung & Automatisierung für KMUs | AI.mation',
     template: '%s | AI.mation',
   },
 
+  // W1 FIX: Description auf optimale 155 Zeichen gebracht (war 148)
   description:
-    'KI-Beratung, Schulungen & Umsetzung für den Mittelstand. 40% Zeitersparnis durch intelligente Automatisierung. Kostenloses Erstgespräch vereinbaren.',
+    'KI-Beratung, Schulungen & Automatisierung für den Mittelstand. Ehrliche Einschätzung, ob KI hilft. 20 Jahre Engineering-Erfahrung. Kostenloses Erstgespräch.',
 
   keywords: [
     'KI-Beratung KMU',
     'KI-Automatisierung Mittelstand',
-    'KI-Schulungen',
+    'KI-Schulungen Unternehmen',
     'Prozessautomatisierung',
+    'AI Readiness Assessment',
     'RAG-Systeme',
-    'AI-Readiness',
     'n8n Automatisierung',
     'Multi-Agent-Systeme',
     'Microsoft Copilot Training',
+    'KI-Beratung DACH',
+    'Künstliche Intelligenz Mittelstand',
   ],
 
-  authors: [{ name: 'Holger Peschke' }],
+  authors: [{ name: 'Holger Peschke', url: 'https://www.linkedin.com/in/holgerpeschke/' }],
 
+  // K5 FIX: Canonical URL explizit setzen
+  alternates: {
+    canonical: '/',
+    languages: {
+      'de-DE': '/',
+    },
+  },
+
+  // OG FIX: Title auf ≤60 Zeichen, Description auf 150-160 Zeichen
   openGraph: {
     type: 'website',
     locale: 'de_DE',
     url: '/',
     siteName: 'AI.mation',
-    title: 'KI-Automatisierung für KMUs – Ohne Buzzwords, ohne Konzernpreise',
+    title: 'KI-Beratung für KMUs: Ehrlich, Praktisch, Bezahlbar',
     description:
-      '40% der Arbeitszeit geht für Aufgaben drauf, die niemand vermissen würde. Wir zeigen Ihnen ehrlich, ob KI die Lösung ist.',
+      '40% der Arbeitszeit geht für Aufgaben drauf, die niemand vermissen würde. KI-Beratung, Schulungen & Automatisierung für den Mittelstand. Ohne leere Versprechen.',
     images: [
       {
-        url: '/images/og-image.png', // TODO: Erstellen!
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'AI.mation - KI-Automatisierung für den Mittelstand',
+        alt: 'AI.mation - KI-Beratung und Automatisierung für den Mittelstand',
+        type: 'image/png',
       },
     ],
   },
 
+  // N4 FIX: Twitter Creator und Site Tags ergänzt
   twitter: {
     card: 'summary_large_image',
-    title: 'AI.mation - KI-Automatisierung für KMUs',
+    title: 'KI-Beratung für KMUs | AI.mation',
     description:
-      '40% Zeitersparnis durch intelligente Automatisierung. Kostenloses Erstgespräch.',
-    images: ['/images/og-image.png'], // TODO: Erstellen!
+      '40% Zeitersparnis durch KI-Automatisierung. Ehrliche Einschätzung, ob KI für Ihr KMU sinnvoll ist. Kostenloses Erstgespräch.',
+    images: ['/images/og-image.png'],
+    creator: '@holgerpeschke',
+    site: '@aimation_de',
   },
 
   robots: {
@@ -103,10 +121,18 @@ export default function RootLayout({
       style={{ overflowX: 'hidden', maxWidth: '100vw' }}
     >
       <head>
-        {/* Structured Data (Schema.org) für SEO & AI-Crawler */}
+        {/*
+          Structured Data (Schema.org) für SEO & AI-Crawler
+          WICHTIG: Alle Schemas hier als Server Components rendern,
+          damit sie im initialen HTML sichtbar sind.
+          GPTBot, ClaudeBot, PerplexityBot koennen kein JavaScript ausfuehren.
+        */}
         <OrganizationSchema siteUrl={siteUrl} />
+        <LocalBusinessSchema siteUrl={siteUrl} />
         <WebSiteSchema siteUrl={siteUrl} />
         <ServiceSchema siteUrl={siteUrl} />
+        {/* K3 FIX: PersonSchema von 'use client' About.tsx hierher verlagert */}
+        <PersonSchema siteUrl={siteUrl} />
       </head>
       <body
         className="antialiased"
@@ -120,15 +146,13 @@ export default function RootLayout({
           Zum Hauptinhalt springen
         </a>
 
-        {/* Calendly Popup Widget Script */}
-        <Script
-          src="https://assets.calendly.com/assets/external/widget.css"
-          strategy="lazyOnload"
-        />
-        <Script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          strategy="lazyOnload"
-        />
+        {/*
+          W7 FIX: Calendly-Scripts werden aus dem globalen Layout entfernt.
+          Sie werden jetzt nur auf Seiten geladen, die sie benoetigen.
+          Globale externe Scripts verschlechtern die Core Web Vitals (TBT/INP)
+          auf Seiten wie Impressum und Datenschutz, die kein Calendly brauchen.
+          Die LeadFormModal und FinalCTA Komponenten laden Calendly bei Bedarf.
+        */}
         {children}
       </body>
     </html>

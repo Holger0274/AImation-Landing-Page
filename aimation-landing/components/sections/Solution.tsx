@@ -33,7 +33,7 @@ export default function Solution() {
             Warum <span className="gradient-text">AI.mation</span>?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-10" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.05rem)' }}>
-            20 Jahre Engineering-Erfahrung trifft auf KI-Know-how – für Lösungen, die funktionieren statt nur gut klingen.
+            20 Jahre Engineering-Erfahrung trifft auf KI-Know-how. Für Lösungen, die funktionieren statt nur gut klingen.
           </p>
         </motion.div>
 

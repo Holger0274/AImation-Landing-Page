@@ -3,41 +3,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import { FAQPageSchema } from '@/components/StructuredData';
+import { faqs } from '@/lib/data/faqs';
 
-// FAQ-Daten exportieren für Schema.org Markup
-export const faqs = [
-  {
-    question: 'Was kostet das?',
-    answer:
-      'Die Investition richtet sich nach Umfang und Komplexität. Ein Erstgespräch ist kostenlos – dort klären wir, was für Ihr Unternehmen sinnvoll ist und welches Budget realistisch wäre. Keine Überraschungen.',
-  },
-  {
-    question: 'Wie schnell sehe ich Ergebnisse?',
-    answer:
-      'Bei Schulungen sofort – erste Erfolge sehen Sie bereits während des Workshops. Bei Automatisierungsprojekten rechnen wir mit 2-6 Wochen bis zum ersten funktionierenden Prototyp, je nach Komplexität.',
-  },
-  {
-    question: 'Brauche ich dafür eine IT-Abteilung?',
-    answer:
-      'Nein. Wir arbeiten mit dem, was da ist. Viele unserer Kunden haben keine dedizierte IT – genau dafür sind wir da. Von der Strategie bis zur Umsetzung aus einer Hand.',
-  },
-  {
-    question: 'Funktioniert das mit unseren bestehenden Systemen?',
-    answer:
-      'Meistens ja. Wir arbeiten mit dem, was Sie haben und finden Lösungen, die sich integrieren lassen – ob Microsoft 365, Google Workspace, SAP oder branchenspezifische Software.',
-  },
-  {
-    question: 'Wie messen wir den ROI?',
-    answer:
-      'Vor jedem Projekt definieren wir gemeinsam messbare Ziele: Zeitersparnis in Stunden, reduzierte Fehlerquoten, eingesparte Kosten. Nach der Umsetzung messen wir gegen diese Baseline.',
-  },
-  {
-    question: 'Was passiert mit unseren Daten?',
-    answer:
-      'Ihre Daten bleiben Ihre Daten. DSGVO-konform, bevorzugt europäische Server. Sensible Daten verlassen Ihr Unternehmen nur mit Ihrer Freigabe.',
-  },
-];
+export { faqs };
 
 function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,8 +48,11 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
 export default function FAQ() {
   return (
     <section id="faq" className="py-20 md:py-32 bg-gray-50">
-      {/* FAQPage Schema.org Structured Data (KRITISCH für AI-Citations!) */}
-      <FAQPageSchema faqs={faqs} />
+      {/*
+        FAQPageSchema wurde in page.tsx (Server Component) verlagert,
+        damit es im initialen HTML-Response fuer AI-Crawler sichtbar ist.
+        Client Components werden erst nach JS-Hydration gerendert.
+      */}
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

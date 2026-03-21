@@ -1,11 +1,9 @@
 /**
  * Structured Data (Schema.org) Components
  *
- * Diese Components fügen JSON-LD Structured Data für Suchmaschinen und AI-Crawler hinzu.
- * Schema.org Markup ist KRITISCH für:
- * - Google Rich Snippets
- * - AI-Citations (ChatGPT, Perplexity, Claude)
- * - Knowledge Graph Integration
+ * WICHTIG: Alle Schema-Komponenten sind Server Components (kein 'use client')
+ * damit sie im initialen HTML-Response fuer AI-Crawler sichtbar sind.
+ * GPTBot, ClaudeBot, PerplexityBot koennen kein JavaScript ausfuehren!
  *
  * Referenz: https://schema.org/
  */
@@ -17,64 +15,94 @@ interface OrganizationSchemaProps {
 /**
  * Organization Schema - Grundlegende Unternehmensinfos
  *
- * Sollte auf JEDER Seite vorhanden sein (im Layout)
- * Hilft Suchmaschinen zu verstehen:
- * - Wer ist AI.mation?
- * - Kontaktdaten
- * - Social Media Profile
- * - Gründer/Team
+ * Auf JEDER Seite vorhanden (im Layout als Server Component)
  */
 export function OrganizationSchema({ siteUrl = 'https://aimation.de' }: OrganizationSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
     "name": "AI.mation",
-    "alternateName": "AImation",
+    "alternateName": ["AImation", "AImation UG"],
+    "legalName": "AImation UG (haftungsbeschränkt)",
     "url": siteUrl,
     "logo": {
       "@type": "ImageObject",
-      "url": `${siteUrl}/logo/logo-horizontal-light.svg`,
-      "width": "400",
-      "height": "100"
+      "url": `${siteUrl}/logos/aimation-logo-transparent-light.svg`,
+      "width": "185",
+      "height": "61"
     },
-    "description": "KI-Beratung, Schulungen und Umsetzung für kleine und mittlere Unternehmen im DACH-Raum. 20 Jahre Engineering-Erfahrung, keine Buzzwords, keine Konzernpreise.",
+    "image": `${siteUrl}/images/og-image.png`,
+    "description": "KI-Beratung, Schulungen und Umsetzung für kleine und mittlere Unternehmen im DACH-Raum. 20 Jahre Engineering-Erfahrung, keine leeren Versprechen, keine Konzernpreise.",
     "slogan": "Mehr Zeit für das Wesentliche",
     "foundingDate": "2024",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sutte 19",
+      "addressLocality": "Bamberg",
+      "postalCode": "96049",
+      "addressCountry": "DE"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
-      "contactType": "Beratung",
+      "contactType": "customer service",
       "email": "kontakt@aimation.de",
-      "availableLanguage": ["de", "en"],
-      "areaServed": "DACH"
+      "availableLanguage": [
+        { "@type": "Language", "name": "German" },
+        { "@type": "Language", "name": "English" }
+      ],
+      "areaServed": ["DE", "AT", "CH"]
     },
     "sameAs": [
-      // TODO: Ergänze echte Social-Media-URLs
-      "https://www.linkedin.com/in/holger-peschke",
+      "https://www.linkedin.com/in/holgerpeschke/",
       "https://www.linkedin.com/company/aimation"
     ],
     "founder": {
       "@type": "Person",
+      "@id": `${siteUrl}/#holger-peschke`,
       "name": "Holger Peschke",
       "jobTitle": "Gründer & KI-Berater",
-      "description": "20+ Jahre Engineering-Erfahrung, 18.000+ LinkedIn-Follower",
+      "description": "20+ Jahre Engineering-Erfahrung in produzierenden Unternehmen. Spezialisiert auf KI-Automatisierung und -Beratung für den Mittelstand. 18.000+ LinkedIn-Follower.",
+      "image": `${siteUrl}/images/holger-consulting.png`,
+      "url": `${siteUrl}/#ueber-mich`,
+      "sameAs": ["https://www.linkedin.com/in/holgerpeschke/"],
       "knowsAbout": [
         "Künstliche Intelligenz",
         "Prozessautomatisierung",
         "Multi-Agent-Systeme",
         "RAG-Systeme",
-        "Engineering Leadership"
-      ]
+        "Engineering Leadership",
+        "KI-Beratung",
+        "Change Management",
+        "Microsoft Copilot",
+        "n8n Workflow-Automatisierung"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "KI-Berater",
+        "occupationLocation": {
+          "@type": "Country",
+          "name": "Deutschland"
+        }
+      }
     },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": "51.1657",
-        "longitude": "10.4515"
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Deutschland",
+        "@id": "https://www.wikidata.org/wiki/Q183"
       },
-      "geoRadius": "500000",
-      "description": "DACH-Region (Deutschland, Österreich, Schweiz)"
-    },
+      {
+        "@type": "Country",
+        "name": "Österreich",
+        "@id": "https://www.wikidata.org/wiki/Q40"
+      },
+      {
+        "@type": "Country",
+        "name": "Schweiz",
+        "@id": "https://www.wikidata.org/wiki/Q39"
+      }
+    ],
     "knowsAbout": [
       "Künstliche Intelligenz",
       "KI-Automatisierung",
@@ -97,9 +125,89 @@ export function OrganizationSchema({ siteUrl = 'https://aimation.de' }: Organiza
 }
 
 /**
+ * K4 FIX: LocalBusiness Schema - fuer lokale Sichtbarkeit in DACH
+ *
+ * Kritisch fuer Google Business Profile Verknuepfung und lokale Suche.
+ * AImation UG ist in Bamberg registriert (aus Impressum).
+ */
+export function LocalBusinessSchema({ siteUrl = 'https://aimation.de' }: OrganizationSchemaProps) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": `${siteUrl}/#localbusiness`,
+    "name": "AI.mation",
+    "legalName": "AImation UG (haftungsbeschränkt)",
+    "description": "KI-Beratung, Schulungen und Automatisierung für kleine und mittlere Unternehmen im DACH-Raum. 20 Jahre Engineering-Erfahrung.",
+    "url": siteUrl,
+    "telephone": "",
+    "email": "kontakt@aimation.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sutte 19",
+      "addressLocality": "Bamberg",
+      "addressRegion": "Bayern",
+      "postalCode": "96049",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "49.8988",
+      "longitude": "10.9028"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "priceRange": "Auf Anfrage",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Rechnung",
+    "areaServed": [
+      { "@type": "Country", "name": "Deutschland" },
+      { "@type": "Country", "name": "Österreich" },
+      { "@type": "Country", "name": "Schweiz" }
+    ],
+    "serviceType": [
+      "KI-Beratung",
+      "KI-Schulungen",
+      "KI-Automatisierung",
+      "AI Readiness Assessment"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "KI-Services für KMUs",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Kostenloses KI-Erstgespräch",
+            "description": "30-minütiges kostenloses Beratungsgespräch zur Einschätzung des KI-Potenzials in Ihrem Unternehmen."
+          },
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      ]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/aimation",
+      "https://www.linkedin.com/in/holgerpeschke/"
+    ]
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+/**
  * Service Schema - Beschreibt die 3 Service-Säulen
  *
- * Sollte auf Startseite und Service-Seiten verwendet werden
+ * Auf Startseite und Service-Seiten verwenden
  */
 export function ServiceSchema({ siteUrl = 'https://aimation.de' }: OrganizationSchemaProps) {
   const schema = {
@@ -111,21 +219,33 @@ export function ServiceSchema({ siteUrl = 'https://aimation.de' }: OrganizationS
         "position": 1,
         "item": {
           "@type": "Service",
+          "@id": `${siteUrl}/#service-schulungen`,
           "name": "KI-Schulungen für Unternehmen",
           "description": "Von KI-Grundlagen bis zu fortgeschrittenen Techniken. 3 Ebenen: Einstieg & Awareness, Anwendung & Tools, Fortgeschritten & Spezialisiert. Themen: Generative KI, Prompt Engineering, Microsoft Copilot, Multi-Agent-Systeme, Vibe Coding.",
           "provider": {
             "@type": "Organization",
-            "name": "AI.mation"
+            "@id": `${siteUrl}/#organization`
           },
-          "areaServed": {
-            "@type": "Place",
-            "name": "DACH-Region"
-          },
+          "url": `${siteUrl}/#leistungen`,
+          "areaServed": [
+            { "@type": "Country", "name": "Deutschland" },
+            { "@type": "Country", "name": "Österreich" },
+            { "@type": "Country", "name": "Schweiz" }
+          ],
           "serviceType": "Training & Schulung",
           "category": "Künstliche Intelligenz Schulung",
           "audience": {
             "@type": "Audience",
             "audienceType": "Kleine und mittlere Unternehmen (10-1000 Mitarbeiter)"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "KI-Schulungsmodule",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Generative KI verstehen", "description": "Grundlagen der KI für Entscheider und Mitarbeiter" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Microsoft Copilot Training", "description": "Praktischer Umgang mit Microsoft 365 Copilot" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Prompt Engineering", "description": "Fortgeschrittene Prompt-Techniken für Teams" } }
+            ]
           }
         }
       },
@@ -134,16 +254,19 @@ export function ServiceSchema({ siteUrl = 'https://aimation.de' }: OrganizationS
         "position": 2,
         "item": {
           "@type": "Service",
+          "@id": `${siteUrl}/#service-beratung`,
           "name": "KI-Beratung für KMUs",
           "description": "3-Phasen-Modell: Analyse (Wo stehen wir?), Strategie (Wo wollen wir hin?), Begleitung (Wie kommen wir dahin?). Module: AI Readiness Assessment, Use Case Identification, AI Roadmap, Change Management, KI-Governance.",
           "provider": {
             "@type": "Organization",
-            "name": "AI.mation"
+            "@id": `${siteUrl}/#organization`
           },
-          "areaServed": {
-            "@type": "Place",
-            "name": "DACH-Region"
-          },
+          "url": `${siteUrl}/#leistungen`,
+          "areaServed": [
+            { "@type": "Country", "name": "Deutschland" },
+            { "@type": "Country", "name": "Österreich" },
+            { "@type": "Country", "name": "Schweiz" }
+          ],
           "serviceType": "Beratung & Strategie",
           "category": "KI-Beratung",
           "audience": {
@@ -157,16 +280,19 @@ export function ServiceSchema({ siteUrl = 'https://aimation.de' }: OrganizationS
         "position": 3,
         "item": {
           "@type": "Service",
-          "name": "KI-Umsetzung & Automatisierung",
+          "@id": `${siteUrl}/#service-umsetzung`,
+          "name": "KI-Umsetzung & Automatisierung für KMUs",
           "description": "Von Workflows über RAG-Systeme bis zu intelligenten Agenten. 4 Lösungswelten: FLOW (Workflows & Prozesse), KNOW (Wissen & Intelligence), THINK (Innovation & Strategie), WORK (Assistenten & Produktivität).",
           "provider": {
             "@type": "Organization",
-            "name": "AI.mation"
+            "@id": `${siteUrl}/#organization`
           },
-          "areaServed": {
-            "@type": "Place",
-            "name": "DACH-Region"
-          },
+          "url": `${siteUrl}/#leistungen`,
+          "areaServed": [
+            { "@type": "Country", "name": "Deutschland" },
+            { "@type": "Country", "name": "Österreich" },
+            { "@type": "Country", "name": "Schweiz" }
+          ],
           "serviceType": "Implementierung & Umsetzung",
           "category": "KI-Automatisierung",
           "audience": {
@@ -187,27 +313,30 @@ export function ServiceSchema({ siteUrl = 'https://aimation.de' }: OrganizationS
 }
 
 /**
- * Person Schema - Holger Peschke (Gründer)
+ * K3 FIX: PersonSchema jetzt als reiner Server-Export fuer Verwendung im Layout
  *
- * Sollte auf About-Sektion verwendet werden
- * Hilft bei Personal Branding und E-E-A-T (Expertise, Experience, Authority, Trust)
+ * Wurde vorher in About.tsx ('use client') eingebunden und war fuer AI-Crawler unsichtbar.
+ * Jetzt im layout.tsx als Server Component gerendert.
  */
 export function PersonSchema({ siteUrl = 'https://aimation.de' }: OrganizationSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${siteUrl}/#holger-peschke`,
     "name": "Holger Peschke",
+    "givenName": "Holger",
+    "familyName": "Peschke",
     "jobTitle": "KI-Berater & Gründer",
-    "description": "20+ Jahre Engineering-Erfahrung, spezialisiert auf KI-Automatisierung für den Mittelstand. 18.000+ LinkedIn-Follower.",
+    "description": "20+ Jahre Engineering-Erfahrung in produzierenden Unternehmen. Spezialisiert auf KI-Automatisierung und -Beratung für den Mittelstand. 18.000+ LinkedIn-Follower. Gründer von AI.mation.",
     "image": `${siteUrl}/images/holger-consulting.png`,
     "url": `${siteUrl}/#ueber-mich`,
     "worksFor": {
       "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
       "name": "AI.mation"
     },
     "sameAs": [
-      // TODO: Ergänze echte LinkedIn-URL
-      "https://www.linkedin.com/in/holger-peschke"
+      "https://www.linkedin.com/in/holgerpeschke/"
     ],
     "knowsAbout": [
       "Künstliche Intelligenz",
@@ -216,7 +345,9 @@ export function PersonSchema({ siteUrl = 'https://aimation.de' }: OrganizationSc
       "RAG-Systeme",
       "Engineering Leadership",
       "KI-Beratung",
-      "Change Management"
+      "Change Management",
+      "Microsoft Copilot",
+      "n8n Workflow-Automatisierung"
     ],
     "hasOccupation": {
       "@type": "Occupation",
@@ -225,8 +356,10 @@ export function PersonSchema({ siteUrl = 'https://aimation.de' }: OrganizationSc
         "@type": "Country",
         "name": "Deutschland"
       },
-      "description": "Beratung, Schulung und Umsetzung von KI-Projekten für kleine und mittlere Unternehmen"
-    }
+      "description": "Beratung, Schulung und Umsetzung von KI-Projekten für kleine und mittlere Unternehmen im DACH-Raum"
+    },
+    "alumniOf": [],
+    "award": "18.000+ LinkedIn-Follower im Bereich KI und Automatisierung"
   };
 
   return (
@@ -239,20 +372,23 @@ export function PersonSchema({ siteUrl = 'https://aimation.de' }: OrganizationSc
 
 /**
  * WebSite Schema - Sitewide Search & Navigation
- *
- * Hilft Google bei der Verknüpfung von Site-Search
  */
 export function WebSiteSchema({ siteUrl = 'https://aimation.de' }: OrganizationSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "AI.mation - KI-Automatisierung für KMUs",
+    "@id": `${siteUrl}/#website`,
+    "name": "AI.mation",
     "url": siteUrl,
-    "description": "KI-Beratung, Schulungen und Umsetzung für den Mittelstand. 40% Zeitersparnis durch intelligente Automatisierung.",
+    "description": "KI-Beratung, Schulungen und Automatisierung für den Mittelstand. 40% Zeitersparnis durch intelligente KI-Implementierung.",
     "inLanguage": "de-DE",
     "publisher": {
       "@type": "Organization",
-      "name": "AI.mation"
+      "@id": `${siteUrl}/#organization`
+    },
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": siteUrl
     }
   };
 
@@ -274,15 +410,14 @@ interface FAQPageSchemaProps {
 }
 
 /**
- * FAQPage Schema - KRITISCH für AI-Citations!
+ * FAQPage Schema - KRITISCH fuer AI-Citations und Featured Snippets
  *
- * Laut Research: FAQPage Schema hat 78% höhere AI-Citation-Rate
- * Sollte auf jeder Seite mit FAQ-Sektion verwendet werden
+ * K3 FIX: Nicht mehr in 'use client' FAQ.tsx eingebunden.
+ * Stattdessen wird dieses Schema in page.tsx (Server Component) verwendet
+ * und die FAQ-Daten werden aus FAQ.tsx exportiert und hier konsumiert.
  *
- * WICHTIG:
- * - Question-Text muss EXAKT mit H3-Heading übereinstimmen
- * - Answer sollte 40-60 Wörter sein (optimal für Featured Snippets)
- * - Direkte Antwort im ersten Satz
+ * WICHTIG: Question-Text muss EXAKT mit H3-Heading uebereinstimmen.
+ * Antworten sollten 40-60 Woerter sein (optimal fuer Featured Snippets).
  */
 export function FAQPageSchema({ faqs }: FAQPageSchemaProps) {
   const schema = {

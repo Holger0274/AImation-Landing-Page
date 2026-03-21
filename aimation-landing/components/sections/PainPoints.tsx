@@ -22,7 +22,7 @@ const compactStats = [
     id: 'cost',
     icon: TrendingDown,
     stat: '200k€',
-    title: 'Das sind 200.000€ aus dem Fenster geworfen – jedes Jahr',
+    title: 'Das sind 200.000€ aus dem Fenster geworfen. Jedes Jahr.',
     description: 'Bei nur 10 Mitarbeitern verbrennen Sie über 200.000€ pro Jahr für Tätigkeiten ohne Mehrwert. Das sind die Jahresgehälter von 3 qualifizierten Fachkräften. Jedes Jahr. Einfach weg. Für Aufgaben, die längst automatisierbar wären.',
     statLabel: 'Verschwendung/Jahr',
     source: 'Berechnung: McKinsey-Studie 2024',
@@ -33,7 +33,7 @@ const compactStats = [
     id: 'quality',
     icon: AlertTriangle,
     stat: '1-4%',
-    title: 'Jeder Fehler kostet Geld – und Ihr Image',
+    title: 'Jeder Fehler kostet Geld. Und Ihr Image.',
     description: 'Bei jeder manuellen Dateneingabe passieren Fehler. Kunden beschweren sich. Rechnungen stimmen nicht. Liefertermine werden verpasst. Und während Ihr Team Fehler korrigiert, bleibt die eigentliche Arbeit liegen. Frustrierend? Absolut. Vermeidbar? Ja.',
     statLabel: 'Fehlerrate',
     source: 'Gartner 2023 & Ernst & Young 2025',
@@ -45,7 +45,7 @@ const compactStats = [
     icon: Brain,
     stat: '71%',
     title: 'Wenn Petra in Rente geht, geht 30 Jahre Erfahrung mit',
-    description: 'Nur sie weiß, wie dieser eine Prozess funktioniert. Nur sie kennt alle Sonderfälle. Und wenn sie geht? Chaos. Fehler. Verzögerungen. Neue Mitarbeiter brauchen Monate, um aufzuholen – wenn Sie überhaupt jemanden finden.',
+    description: 'Nur sie weiß, wie dieser eine Prozess funktioniert. Nur sie kennt alle Sonderfälle. Und wenn sie geht? Chaos. Fehler. Verzögerungen. Neue Mitarbeiter brauchen Monate, um aufzuholen, wenn Sie überhaupt jemanden finden.',
     statLabel: 'der IT-Führungskräfte sehen Wissensverlust',
     source: 'Sinequa-Studie 2022',
     imagePath: '/images/knowledge-loss.webp',
@@ -55,7 +55,7 @@ const compactStats = [
     id: 'chaos',
     icon: FileSpreadsheet,
     stat: '86%',
-    title: '86% tippen Rechnungen ab – als gäbe es kein Internet',
+    title: '86% tippen Rechnungen ab, als gäbe es kein Internet',
     description: 'PDF kommt per E-Mail. Ihre Mitarbeiter öffnen es, lesen die Zahlen, tippen sie ins ERP. Fehler inklusive. Es gibt OCR-Software seit 20 Jahren. Trotzdem tippen 86% der KMUs wie 1995. Absurd? Ja. Änderbar? Sofort.',
     statLabel: 'erfassen Rechnungen manuell',
     source: 'KfW Digitalisierungsbericht 2024',
@@ -67,7 +67,7 @@ const compactStats = [
     icon: TrendingUp,
     stat: '81%',
     title: '81% wissen: Ohne KI verlieren wir den Anschluss',
-    description: 'Ihre Konkurrenz nutzt bereits KI. Ihre Branche verändert sich. Schneller, effizienter, günstiger – ohne Sie. Während Sie noch überlegen, ob KI etwas für Sie ist, ziehen andere davon. Der Abstand wächst. Jeden Tag.',
+    description: 'Ihre Konkurrenz nutzt bereits KI. Ihre Branche verändert sich. Schneller, effizienter, günstiger. Ohne Sie. Während Sie noch überlegen, ob KI etwas für Sie ist, ziehen andere davon. Der Abstand wächst. Jeden Tag.',
     statLabel: 'sehen KI als wichtigste Zukunftstechnologie',
     source: 'Bitkom-Studie September 2025',
     imagePath: '/images/competition.webp',
@@ -332,7 +332,7 @@ function HeroHighlightCard({ stat, onClick }: { stat: typeof heroStat; onClick: 
         },
       }}
       onClick={onClick}
-      className="relative p-8 rounded-2xl border-2 border-[#f90093] overflow-hidden cursor-pointer group hover:scale-[1.01] transition-transform duration-300"
+      className="relative p-5 md:p-8 rounded-2xl border-2 border-[#f90093] overflow-hidden cursor-pointer group hover:scale-[1.01] transition-transform duration-300"
       style={{
         background: 'linear-gradient(135deg, rgba(249, 0, 147, 0.1), rgba(96, 175, 255, 0.05))',
       }}
@@ -419,7 +419,7 @@ export default function PainPoints() {
                   Diese 6 Probleme hören wir fast wörtlich in jedem Erstgespräch. Manchmal sind es alle 6 gleichzeitig.
                 </p>
                 <p className="leading-relaxed font-medium text-[#071013] break-words">
-                  Das Positive: Keines dieser Probleme muss 2026 noch existieren. Die Lösungen sind da – Sie kennen sie nur noch nicht.
+                  Das Positive: Keines dieser Probleme muss 2026 noch existieren. Die Lösungen sind da. Sie kennen sie nur noch nicht.
                 </p>
               </div>
             </motion.div>

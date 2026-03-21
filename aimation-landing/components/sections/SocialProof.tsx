@@ -180,7 +180,7 @@ export default function SocialProof() {
             Wir arbeiten mit den <span className="gradient-text">besten Tools</span>
           </h3>
           <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto">
-            Herstellerunabhängig – wir kennen alle relevanten KI-Tools und finden die richtige
+            Herstellerunabhängig. Wir kennen alle relevanten KI-Tools und finden die richtige
             Lösung für Ihren Use Case
           </p>
         </motion.div>

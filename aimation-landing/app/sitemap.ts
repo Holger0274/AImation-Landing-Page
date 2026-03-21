@@ -4,6 +4,10 @@ import { MetadataRoute } from 'next';
  * XML-Sitemap für AI.mation Landing Page
  * Optimiert für klassische Suchmaschinen und AI-Crawler
  *
+ * W6 FIX: Impressum und Datenschutz aus der Sitemap entfernt.
+ * Seiten mit robots: { index: false } (noindex) duerfen NICHT in der Sitemap stehen.
+ * Google ignoriert noindex-Seiten in Sitemaps, aber es sendet ein falsches Signal.
+ *
  * Next.js generiert automatisch die sitemap.xml unter /sitemap.xml
  */
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -17,19 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1.0,
     },
-    {
-      url: `${baseUrl}/impressum`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/datenschutz`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    // Zukünftige Pillar-Pages (auskommentiert bis zur Erstellung)
+    // Zukuenftige Pillar-Pages (auskommentiert bis zur Erstellung)
+    // Sobald diese Seiten live gehen, hier einkommentieren:
     // {
     //   url: `${baseUrl}/ki-beratung-kmu`,
     //   lastModified: currentDate,

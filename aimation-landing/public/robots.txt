@@ -1,39 +1,62 @@
-# robots.txt für AI.mation Landing Page
-# Optimiert für klassische Suchmaschinen UND AI-Crawler
+# robots.txt fuer AI.mation Landing Page
+# Optimiert fuer klassische Suchmaschinen UND AI-Crawler
 
-# Standard Crawling erlauben
+# Standard-Crawling erlauben
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
 
-# AI-Crawler explizit erlauben (kritisch für LLM-Visibility!)
+# Rechtliche Seiten haben noindex im Meta-Tag.
+# Sie werden hier NICHT disallowed, damit Suchmaschinen
+# den noindex-Header lesen und respektieren koennen.
+# (Disallow + noindex wuerde bedeuten, Google sieht noindex gar nicht)
+
+# AI-Crawler explizit erlauben (kritisch fuer LLM-Visibility!)
 User-agent: GPTBot
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
 User-agent: ChatGPT-User
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
 User-agent: anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
 User-agent: Google-Extended
 Allow: /
 
 User-agent: Googlebot
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
 User-agent: Bingbot
 Allow: /
-
-# Technische Bereiche blockieren
 Disallow: /api/
 Disallow: /_next/
-Disallow: /admin/
 
-# Sitemap-Referenz (wird in nächstem Schritt erstellt)
+# Weitere relevante AI-Crawler
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Sitemap-Referenz
 Sitemap: https://aimation.de/sitemap.xml
+
+# llms.txt fuer AI Content Curation
+# https://aimation.de/llms.txt
