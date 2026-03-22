@@ -278,6 +278,9 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
       className="perspective-1000"
       style={{
         height: 'clamp(460px, 55vw, 500px)',
+        isolation: 'isolate',
+        willChange: 'transform',
+        contain: 'layout style',
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -532,7 +535,7 @@ export default function Services() {
         </motion.div>
 
         {/* Service Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" style={{ alignItems: 'start' }}>
           {services.map((service, index) => (
             <FlipCard
               key={service.title}
