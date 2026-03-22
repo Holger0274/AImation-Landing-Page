@@ -4,7 +4,7 @@ import { Linkedin, Mail } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const lastUpdated = new Date('2026-02-08'); // Update dieses Datum bei Content-Änderungen
+  const lastUpdated = new Date('2026-03-22'); // Update dieses Datum bei Content-Änderungen
   const formattedDate = lastUpdated.toLocaleDateString('de-DE', {
     year: 'numeric',
     month: 'long',
