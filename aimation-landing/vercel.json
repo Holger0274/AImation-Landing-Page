@@ -4,5 +4,6 @@
       "main": true,
       "develop": true
     }
-  }
+  },
+  "installCommand": "npm install --legacy-peer-deps"
 }
