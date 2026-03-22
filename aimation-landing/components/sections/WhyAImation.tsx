@@ -26,7 +26,7 @@ const differentiators = [
   {
     icon: TrendingUp,
     title: 'Alles aus einer Hand',
-    description: 'Beratung, Schulung, Umsetzung. Sie brauchen nicht drei verschiedene Anbieter unter einen Hut zu bringen.',
+    description: 'Beratung, Schulung, Umsetzung – und wenn es Sinn macht: KI-Agenten, die für Sie arbeiten während Sie schlafen. Sie brauchen nicht drei verschiedene Anbieter unter einen Hut zu bringen.',
     highlight: '3 Säulen, 1 Partner'
   }
 ];

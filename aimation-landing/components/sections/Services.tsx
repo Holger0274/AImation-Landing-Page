@@ -59,8 +59,8 @@ const services = [
     patternOpacity: 0.06,
     useCases: [
       {
-        title: 'AI-Tool-Audit für Anwaltskanzlei: Schatten-KI aufdecken & Kosten senken',
-        description: 'Systematisches Audit aller KI-Tools in der Kanzlei: Welche Tools nutzen Mitarbeiter (ChatGPT, Copilot, andere)? DSGVO-Risiken identifiziert, Lizenzkosten analysiert, Tool-Wildwuchs gestoppt. Konsolidierung auf 3 freigegebene Enterprise-Lösungen mit zentraler Verwaltung.',
+        title: 'AI-Tool-Audit für Maschinenbauer: Schatten-KI aufdecken & Kosten senken',
+        description: 'Systematisches Audit aller KI-Tools im Unternehmen: Welche Tools nutzen Mitarbeiter (ChatGPT, Copilot, andere)? DSGVO-Risiken identifiziert, Lizenzkosten analysiert, Tool-Wildwuchs gestoppt. Konsolidierung auf 3 freigegebene Enterprise-Lösungen mit zentraler Verwaltung.',
         result: '12 Tools auf 3 reduziert, 3.200€/Monat gespart, DSGVO-konforme Lösung',
         mockupType: 'ai-audit',
       },
@@ -77,11 +77,11 @@ const services = [
     title: 'Umsetzung',
     subtitle: 'Bauen, implementieren, betreiben',
     description:
-      'Von Workflows über Wissenssysteme bis zu intelligenten Assistenten: Wir setzen Lösungen um, die funktionieren.',
+      'Von einfachen Workflows bis zu KI-Agenten, die eigenständig recherchieren, entscheiden und handeln. Lösungen, die morgen funktionieren – nicht in zwei Jahren.',
     features: [
       'Workflow-Automatisierung',
       'RAG-Systeme & Chatbots',
-      'Intelligente Agenten',
+      'KI-Agenten, die selbstständig arbeiten',
       'Dokumenten-Workflows',
       'Knowledge Management',
     ],

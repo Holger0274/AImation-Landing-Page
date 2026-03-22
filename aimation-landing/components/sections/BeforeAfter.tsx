@@ -77,7 +77,7 @@ const transformations = [
       title: 'Nachher: KI-Recherche-Agent',
       gain: '30 Minuten pro Woche',
       benefits: [
-        'Agent durchsucht automatisch relevante Quellen',
+        'Ein KI-Agent durchsucht eigenständig Quellen, bewertet Relevanz und fasst zusammen',
         'Strukturierte Reports in Notion',
         'Tägliche Updates zu definierten Themen',
         'Zentrale Knowledge Base',
