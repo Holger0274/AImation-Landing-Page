@@ -74,7 +74,7 @@ const steps = [
     number: '5',
     icon: Headphones,
     title: 'Begleitung',
-    subtitle: 'Langfristige Partnerschaft',
+    subtitle: 'Langfristige Begleitung',
     description:
       'Auch nach Go-Live bleiben wir Ihr Ansprechpartner für Fragen, Anpassungen und Weiterentwicklung.',
     details: [
@@ -248,12 +248,12 @@ export default function Process() {
                       }
                     `}
                   >
-                    {/* Text Content - fixed height damit Bilder immer auf gleicher Linie */}
-                    <div className="flex flex-col mb-4" style={{ minHeight: '160px' }}>
+                    {/* Text Content - feste Mindesthöhe damit Bilder immer auf gleicher Linie */}
+                    <div className="flex flex-col mb-4 min-h-[178px]">
                       <h3 className="font-heading font-bold mb-2 text-[#071013]" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                         {step.title}
                       </h3>
-                      <p className="text-magenta font-heading font-semibold mb-3" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
+                      <p className="text-magenta font-heading font-semibold mb-3 line-clamp-1" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                         {step.subtitle}
                       </p>
                       <p className="text-gray-600 mb-4 leading-relaxed line-clamp-4" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
