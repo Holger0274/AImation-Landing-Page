@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Users } from 'lucide-react';
 
 const quotes = [
   {
@@ -94,7 +93,7 @@ export default function About() {
           >
             <div className="aspect-[4/5] relative rounded-2xl overflow-hidden border border-gray-200">
               <Image
-                src="/about-holger.png"
+                src="/images/about-holger.png"
                 alt="Holger Peschke, Gründer AI.mation"
                 fill
                 className="object-cover"
@@ -103,22 +102,6 @@ export default function About() {
                   (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
-              {/* Platzhalter bis professionelles Foto verfügbar */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#faf9f7] via-[#f0eef8] to-[#fce8f3] flex flex-col items-center justify-center text-center p-8 pointer-events-none">
-                <div
-                  className="w-24 h-24 rounded-full bg-gradient-to-br from-magenta to-[#ff4ecd] flex items-center justify-center mb-5 shadow-lg"
-                  style={{ boxShadow: '0 0 32px rgba(249,0,147,0.3)' }}
-                >
-                  <Users className="w-12 h-12 text-white" />
-                </div>
-                <p className="text-soft-black font-heading font-bold text-xl mb-1">Holger Peschke</p>
-                <p className="text-gray-400 text-sm mb-5">Gründer &amp; KI-Experte</p>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-magenta/10 border border-magenta/20">
-                  <div className="w-2 h-2 rounded-full bg-magenta" style={{ boxShadow: '0 0 8px #f90093' }} />
-                  <span className="text-xs font-heading font-semibold text-soft-black">20 Jahre Engineering</span>
-                </div>
-                <p className="mt-4 text-[11px] text-gray-300 italic">Foto folgt</p>
-              </div>
             </div>
             {/* Magenta Akzentrahmen */}
             <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-magenta/50 rounded-2xl -z-10" />

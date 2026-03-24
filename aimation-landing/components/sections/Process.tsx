@@ -192,8 +192,8 @@ export default function Process() {
             />
           </div>
 
-          {/* Steps */}
-          <div className="grid grid-cols-5 gap-6 items-stretch">
+          {/* Steps - pb-48 gibt Platz für absolut positionierte Dropdowns */}
+          <div className="grid grid-cols-5 gap-6 items-start pb-48">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isActive = activeStep === index;
@@ -237,60 +237,70 @@ export default function Process() {
                     </div>
                   </div>
 
-                  {/* Content Card - h-full damit alle Karten gleich hoch wie die höchste */}
-                  <div
-                    className={`
-                      flex flex-col h-full
-                      bg-white rounded-2xl p-6 border-2 transition-all duration-300
-                      ${isActive
-                        ? 'border-magenta shadow-lg'
-                        : 'border-gray-200 hover:border-gray-300'
-                      }
-                    `}
-                  >
-                    {/* Text Content - feste Mindesthöhe damit Bilder immer auf gleicher Linie */}
-                    <div className="flex flex-col mb-4 min-h-[178px]">
-                      <h3 className="font-heading font-bold mb-2 text-[#071013]" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
-                        {step.title}
-                      </h3>
-                      <p className="text-magenta font-heading font-semibold mb-3 line-clamp-1" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
-                        {step.subtitle}
-                      </p>
-                      <p className="text-gray-600 mb-4 leading-relaxed line-clamp-4" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
-                        {step.description}
-                      </p>
-                    </div>
-
-                    {/* Mockup - Fixed at Same Position for All Cards */}
-                    <div className="mb-4">
-                      <StepMockup type={step.mockupType} />
-                    </div>
-
-                    {/* Details (show on hover) - Smooth Expansion */}
-                    <motion.div
-                      initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                      animate={isActive ? { height: 'auto', opacity: 1, marginTop: 16 } : { height: 0, opacity: 0, marginTop: 0 }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="overflow-hidden"
+                  {/* Content Card - feste Struktur, expandierter Teil absolut positioniert */}
+                  <div className="relative">
+                    <div
+                      className={`
+                        flex flex-col
+                        bg-white rounded-2xl p-6 border-2 transition-all duration-300
+                        ${isActive
+                          ? 'border-magenta shadow-lg'
+                          : 'border-gray-200 hover:border-gray-300'
+                        }
+                      `}
                     >
-                      <div className="border-t border-gray-200 pt-4 space-y-2">
-                        {step.details.map((detail, i) => (
-                          <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-magenta flex-shrink-0" />
-                            <span>{detail}</span>
-                          </div>
-                        ))}
+                      {/* Text Content */}
+                      <div className="flex flex-col mb-4 min-h-[178px]">
+                        <h3 className="font-heading font-bold mb-2 text-[#071013]" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
+                          {step.title}
+                        </h3>
+                        <p className="text-magenta font-heading font-semibold mb-3 line-clamp-1" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
+                          {step.subtitle}
+                        </p>
+                        <p className="text-gray-600 mb-4 leading-relaxed line-clamp-4" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
+                          {step.description}
+                        </p>
                       </div>
 
-                      {/* Meta Info */}
-                      <div className="flex items-center gap-4 mt-4 pt-4 border-t border-gray-200">
-                        <div className="flex items-center gap-2 text-xs text-gray-500">
-                          <Clock className="w-4 h-4" />
-                          <span>{step.duration}</span>
+                      {/* Mockup */}
+                      <div>
+                        <StepMockup type={step.mockupType} />
+                      </div>
+                    </div>
+
+                    {/* Details - absolut positioniert, beeinflusst kein Layout */}
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={isActive ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden absolute left-0 right-0 top-full z-10"
+                      style={{ marginTop: '-2px' }}
+                    >
+                      <div
+                        className={`
+                          bg-white border-2 border-t-0 rounded-b-2xl p-6 pt-4
+                          ${isActive ? 'border-magenta shadow-lg' : 'border-gray-200'}
+                        `}
+                      >
+                        <div className="border-t border-gray-200 pt-4 space-y-2">
+                          {step.details.map((detail, i) => (
+                            <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-magenta flex-shrink-0" />
+                              <span>{detail}</span>
+                            </div>
+                          ))}
                         </div>
-                        <div className="flex items-center gap-2 text-xs text-gray-500">
-                          <Euro className="w-4 h-4" />
-                          <span>{step.cost}</span>
+
+                        {/* Meta Info */}
+                        <div className="flex items-center gap-4 mt-4 pt-4 border-t border-gray-200">
+                          <div className="flex items-center gap-2 text-xs text-gray-500">
+                            <Clock className="w-4 h-4" />
+                            <span>{step.duration}</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-xs text-gray-500">
+                            <Euro className="w-4 h-4" />
+                            <span>{step.cost}</span>
+                          </div>
                         </div>
                       </div>
                     </motion.div>
