@@ -94,6 +94,12 @@ export const metadata: Metadata = {
     site: '@aimation_de',
   },
 
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
+
   robots: {
     index: true,
     follow: true,
