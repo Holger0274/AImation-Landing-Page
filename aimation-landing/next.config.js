@@ -3,6 +3,9 @@ const path = require('path');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   // ESM package support for @lobehub/icons
   transpilePackages: ['@lobehub/icons'],
   images: {

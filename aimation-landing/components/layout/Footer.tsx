@@ -113,11 +113,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:kontakt@aimation.de"
+                  href="mailto:info@aimation.de"
                   className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"
                 >
                   <Mail size={14} />
-                  kontakt@aimation.de
+                  info@aimation.de
                 </a>
               </li>
               <li>
