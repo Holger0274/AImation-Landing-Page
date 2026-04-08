@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Project, SOLUTION_WORLD_COLORS, SOLUTION_WORLD_LABELS, STATUS_CONFIG } from './types';
@@ -13,7 +14,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const statusConfig = STATUS_CONFIG[project.status];
   const isComingSoon = project.status === 'coming-soon';
 
-  return (
+  const cardContent = (
     <motion.div
       className={`
         group relative h-full bg-white rounded-xl border border-gray-200 overflow-hidden
@@ -126,4 +127,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       )}
     </motion.div>
   );
+
+  if (project.detailUrl && project.status === 'completed') {
+    return (
+      <Link href={project.detailUrl} className="block h-full">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return cardContent;
 }

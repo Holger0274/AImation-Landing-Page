@@ -14,6 +14,7 @@ const PROJECTS: Project[] = [
     status: 'completed',
     tags: ['Perplexity', 'Claude', 'Patent-APIs'],
     metrics: '80% schnellere Recherche',
+    detailUrl: '/use-cases/patentrecherche-ki',
     image: {
       type: 'image',
       src: '/images/use-cases/patent-research.png',
@@ -42,6 +43,7 @@ const PROJECTS: Project[] = [
     status: 'completed',
     tags: ['Obsidian', 'Claude Code', 'Knowledge Graph'],
     metrics: 'Vernetztes Wissensmanagement',
+    detailUrl: '/use-cases/knowledge-graph-management',
     image: {
       type: 'image',
       src: '/images/use-cases/knowledge-graph.png',
@@ -56,6 +58,7 @@ const PROJECTS: Project[] = [
     status: 'completed',
     tags: ['OpenAI', 'n8n', 'Outlook'],
     metrics: '60% weniger Sortieraufwand',
+    detailUrl: '/use-cases/email-klassifizierung',
     image: {
       type: 'image',
       src: '/images/use-cases/email-classification.png',

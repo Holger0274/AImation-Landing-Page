@@ -10,6 +10,7 @@ export interface Project {
   status: ProjectStatus;
   tags: string[];
   metrics?: string;
+  detailUrl?: string;
   image: {
     type: 'placeholder' | 'image';
     src?: string;
