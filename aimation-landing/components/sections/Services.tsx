@@ -473,13 +473,9 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
               ))}
             </ul>
 
-            <a
-              href="/#use-cases"
-              onClick={(e) => {
-                e.preventDefault();
-                onSelect();
-              }}
-              className="w-full text-center py-3 font-heading font-semibold cursor-pointer transition-all block"
+            <button
+              onClick={onSelect}
+              className="w-full text-center py-3 font-heading font-semibold cursor-pointer transition-all"
               style={{
                 color: service.gradientFrom,
                 textDecoration: 'underline',
@@ -489,7 +485,7 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
               onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'underline'}
             >
               Use Cases ansehen →
-            </a>
+            </button>
           </div>
         </div>
       </motion.div>
