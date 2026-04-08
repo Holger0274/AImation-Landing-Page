@@ -7,6 +7,9 @@ export const metadata = {
     index: false, // Impressum sollte nicht indexiert werden
     follow: true,
   },
+  alternates: {
+    canonical: '/impressum',
+  },
 };
 
 export default function ImpressumPage() {

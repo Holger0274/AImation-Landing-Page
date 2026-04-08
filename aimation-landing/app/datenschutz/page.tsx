@@ -7,6 +7,9 @@ export const metadata = {
     index: false, // Datenschutz sollte nicht indexiert werden
     follow: true,
   },
+  alternates: {
+    canonical: '/datenschutz',
+  },
 };
 
 export default function DatenschutzPage() {
