@@ -19,6 +19,7 @@ export default function Header() {
   const [isLeistungenOpen, setIsLeistungenOpen] = useState(false);
   const [isMobileLeistungenOpen, setIsMobileLeistungenOpen] = useState(false);
   const leistungenRef = useRef<HTMLDivElement>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const { scrollY } = useScroll();
   const headerBackground = useTransform(
@@ -53,6 +54,7 @@ export default function Header() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleKeyDown);
+      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
     };
   }, []);
 
@@ -84,13 +86,19 @@ export default function Header() {
             <div
               ref={leistungenRef}
               className="relative"
-              onMouseEnter={() => setIsLeistungenOpen(true)}
-              onMouseLeave={() => setIsLeistungenOpen(false)}
+              onMouseEnter={() => {
+                if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+                setIsLeistungenOpen(true);
+              }}
+              onMouseLeave={() => {
+                closeTimeoutRef.current = setTimeout(() => setIsLeistungenOpen(false), 150);
+              }}
             >
               <button
                 onClick={() => setIsLeistungenOpen((prev) => !prev)}
-                className="flex items-center gap-1 text-sm font-heading font-medium text-gray-600 hover:text-[#071013] transition-colors"
+                className={`flex items-center gap-1 text-sm font-heading font-medium transition-colors ${isLeistungenOpen ? 'text-[#f90093]' : 'text-gray-600 hover:text-[#071013]'}`}
                 aria-expanded={isLeistungenOpen}
+                aria-haspopup="true"
               >
                 Leistungen
                 <ChevronDown
@@ -100,20 +108,34 @@ export default function Header() {
               </button>
 
               {/* Dropdown menu */}
-              {isLeistungenOpen && (
-                <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-gray-200 shadow-lg py-2 z-50">
-                  {leistungenItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setIsLeistungenOpen(false)}
-                      className="block px-4 py-2.5 text-sm font-heading font-medium text-gray-600 hover:text-[#071013] hover:bg-gray-50 transition-colors"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
+              <AnimatePresence>
+                {isLeistungenOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-gray-100 shadow-xl py-1.5 z-50"
+                    onMouseEnter={() => {
+                      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+                    }}
+                    onMouseLeave={() => {
+                      closeTimeoutRef.current = setTimeout(() => setIsLeistungenOpen(false), 150);
+                    }}
+                  >
+                    {leistungenItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setIsLeistungenOpen(false)}
+                        className="flex items-center gap-2 px-4 py-2.5 text-sm font-heading font-medium text-gray-600 hover:text-[#f90093] hover:bg-[#f90093]/5 transition-colors whitespace-nowrap"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Use Cases */}
@@ -123,14 +145,6 @@ export default function Header() {
             >
               Use Cases
             </a>
-
-            {/* Blog */}
-            <Link
-              href="/blog"
-              className="text-sm font-heading font-medium text-gray-600 hover:text-[#071013] transition-colors"
-            >
-              Blog
-            </Link>
 
             {/* Über uns */}
             <a
@@ -207,15 +221,6 @@ export default function Header() {
             >
               Use Cases
             </a>
-
-            {/* Blog */}
-            <Link
-              href="/blog"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-base font-heading font-medium text-gray-600 hover:text-[#071013] transition-colors py-2"
-            >
-              Blog
-            </Link>
 
             {/* Über uns */}
             <a
