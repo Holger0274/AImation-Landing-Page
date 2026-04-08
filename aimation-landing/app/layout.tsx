@@ -25,7 +25,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://aimation.de'
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de'
   ),
 
   // K1 FIX: Title auf 50-60 Zeichen gekürzt (war 72 Zeichen)
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     locale: 'de_DE',
     url: '/',
     siteName: 'AI.mation',
-    title: 'KI-Beratung für KMUs: Ehrlich, Praktisch, Bezahlbar',
+    title: 'KI-Beratung für KMUs: Klartext, Praxis, bezahlbar | AI.mation',
     description:
       '40% der Arbeitszeit geht für Aufgaben drauf, die niemand vermissen würde. KI-Beratung, Schulungen & Automatisierung für den Mittelstand. Ohne leere Versprechen.',
     images: [
@@ -118,7 +118,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aimation.de';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
   return (
     <html
