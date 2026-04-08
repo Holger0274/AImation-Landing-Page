@@ -248,7 +248,7 @@ function UseCaseMockup({ type }: { type: string }) {
   );
 }
 
-function FlipCard({ service, index, onSelect, isSelected }: { service: typeof services[0] & { href: string }; index: number; onSelect: () => void; isSelected: boolean }) {
+function FlipCard({ service, index, onSelect }: { service: typeof services[0] & { href: string }; index: number; onSelect: () => void }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -547,7 +547,6 @@ export default function Services() {
               service={service}
               index={index}
               onSelect={() => setSelectedService(index)}
-              isSelected={selectedService === index}
             />
           ))}
         </div>
