@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Project, SOLUTION_WORLD_COLORS, SOLUTION_WORLD_LABELS, STATUS_CONFIG } from './types';
+import { Project, SOLUTION_WORLD_COLORS, STATUS_CONFIG } from './types';
 import ImagePlaceholder from './ImagePlaceholder';
 
 interface ProjectCardProps {
@@ -19,7 +19,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       className={`
         group relative h-full bg-white rounded-xl border border-gray-200 overflow-hidden
         transition-all duration-300
-        hover:-translate-y-1 hover:shadow-xl
+        hover:shadow-xl
         ${isComingSoon ? 'opacity-60' : ''}
       `}
       whileHover={{ y: -4 }}
