@@ -420,7 +420,7 @@ interface BreadcrumbSchemaProps {
  * ]} />
  */
 export function BreadcrumbSchema({ items, siteUrl }: BreadcrumbSchemaProps) {
-  const base = siteUrl || process.env.NEXT_PUBLIC_SITE_URL || 'https://aimation.de';
+  const base = siteUrl || process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
   const schema = {
     "@context": "https://schema.org",
