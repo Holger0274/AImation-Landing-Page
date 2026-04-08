@@ -17,7 +17,7 @@ interface OrganizationSchemaProps {
  *
  * Auf JEDER Seite vorhanden (im Layout als Server Component)
  */
-export function OrganizationSchema({ siteUrl = 'https://aimation.de' }: OrganizationSchemaProps) {
+export function OrganizationSchema({ siteUrl = 'https://www.aimation.de' }: OrganizationSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -130,7 +130,7 @@ export function OrganizationSchema({ siteUrl = 'https://aimation.de' }: Organiza
  * Kritisch fuer Google Business Profile Verknuepfung und lokale Suche.
  * AImation UG ist in Bamberg registriert (aus Impressum).
  */
-export function LocalBusinessSchema({ siteUrl = 'https://aimation.de' }: OrganizationSchemaProps) {
+export function LocalBusinessSchema({ siteUrl = 'https://www.aimation.de' }: OrganizationSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ProfessionalService"],
@@ -209,7 +209,7 @@ export function LocalBusinessSchema({ siteUrl = 'https://aimation.de' }: Organiz
  *
  * Auf Startseite und Service-Seiten verwenden
  */
-export function ServiceSchema({ siteUrl = 'https://aimation.de' }: OrganizationSchemaProps) {
+export function ServiceSchema({ siteUrl = 'https://www.aimation.de' }: OrganizationSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -318,7 +318,7 @@ export function ServiceSchema({ siteUrl = 'https://aimation.de' }: OrganizationS
  * Wurde vorher in About.tsx ('use client') eingebunden und war fuer AI-Crawler unsichtbar.
  * Jetzt im layout.tsx als Server Component gerendert.
  */
-export function PersonSchema({ siteUrl = 'https://aimation.de' }: OrganizationSchemaProps) {
+export function PersonSchema({ siteUrl = 'https://www.aimation.de' }: OrganizationSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -373,7 +373,7 @@ export function PersonSchema({ siteUrl = 'https://aimation.de' }: OrganizationSc
 /**
  * WebSite Schema - Sitewide Search & Navigation
  */
-export function WebSiteSchema({ siteUrl = 'https://aimation.de' }: OrganizationSchemaProps) {
+export function WebSiteSchema({ siteUrl = 'https://www.aimation.de' }: OrganizationSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -390,6 +390,47 @@ export function WebSiteSchema({ siteUrl = 'https://aimation.de' }: OrganizationS
       "@type": "ReadAction",
       "target": siteUrl
     }
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface BreadcrumbSchemaProps {
+  items: BreadcrumbItem[];
+  siteUrl?: string;
+}
+
+/**
+ * BreadcrumbList Schema - für Unterseiten (Pillar Pages, Blog, Use Cases)
+ *
+ * Verwendung:
+ * <BreadcrumbSchema items={[
+ *   { name: 'Startseite', url: '/' },
+ *   { name: 'KI-Agenten für Unternehmen', url: '/ki-agenten-unternehmen' },
+ * ]} />
+ */
+export function BreadcrumbSchema({ items, siteUrl }: BreadcrumbSchemaProps) {
+  const base = siteUrl || process.env.NEXT_PUBLIC_SITE_URL || 'https://aimation.de';
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url.startsWith('http') ? item.url : `${base}${item.url}`
+    }))
   };
 
   return (
