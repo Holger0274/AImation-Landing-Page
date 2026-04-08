@@ -36,7 +36,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside or pressing Escape
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (leistungenRef.current && !leistungenRef.current.contains(event.target as Node)) {
@@ -44,8 +44,16 @@ export default function Header() {
       }
     };
 
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsLeistungenOpen(false);
+    };
+
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   return (
@@ -83,7 +91,6 @@ export default function Header() {
                 onClick={() => setIsLeistungenOpen((prev) => !prev)}
                 className="flex items-center gap-1 text-sm font-heading font-medium text-gray-600 hover:text-[#071013] transition-colors"
                 aria-expanded={isLeistungenOpen}
-                aria-haspopup="true"
               >
                 Leistungen
                 <ChevronDown
@@ -181,7 +188,7 @@ export default function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={() => { setIsMobileMenuOpen(false); setIsMobileLeistungenOpen(false); }}
                       className="text-sm font-heading font-medium text-gray-500 hover:text-[#071013] transition-colors py-2"
                     >
                       {item.label}
