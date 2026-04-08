@@ -59,4 +59,4 @@ Allow: /
 Sitemap: https://www.aimation.de/sitemap.xml
 
 # llms.txt fuer AI Content Curation
-# https://aimation.de/llms.txt
+# https://www.aimation.de/llms.txt
