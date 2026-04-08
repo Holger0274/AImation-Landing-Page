@@ -27,12 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // === PHASE 3: Pillar Pages ===
     // Aktivieren sobald Seite erstellt ist (Reihenfolge = Priorität):
 
-    // {
-    //   url: `${baseUrl}/ki-agenten-unternehmen`,       // Pillar 4 — stärkster Differentiator
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly',
-    //   priority: 0.9,
-    // },
+    {
+      url: `${baseUrl}/ki-agenten-unternehmen`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
     // {
     //   url: `${baseUrl}/ki-beratung-kmu`,              // Pillar 2
     //   lastModified: currentDate,

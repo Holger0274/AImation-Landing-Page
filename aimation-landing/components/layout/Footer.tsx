@@ -40,28 +40,36 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#leistungen"
+                <Link
+                  href="/ki-schulungen-mittelstand"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   Schulungen
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#leistungen"
+                <Link
+                  href="/ki-beratung-kmu"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   Beratung
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#leistungen"
+                <Link
+                  href="/ki-automatisierung-mittelstand"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   Umsetzung
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/ki-agenten-unternehmen"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  KI-Agenten
+                </Link>
               </li>
             </ul>
           </div>
