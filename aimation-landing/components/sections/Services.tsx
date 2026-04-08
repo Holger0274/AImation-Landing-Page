@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useMemo } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GraduationCap, Lightbulb, Zap, ArrowRight, Code, Users, Database, Mail, FileText, TrendingUp } from 'lucide-react';
 import { useReducedMotion } from '@/lib/hooks/useReducedMotion';
@@ -25,6 +26,7 @@ const services = [
     gradientFrom: '#f90093',
     gradientTo: '#ff4ecd',
     patternOpacity: 0.08,
+    href: '/ki-schulungen-mittelstand',
     useCases: [
       {
         title: '2-Tages-Workshop: Prompt Engineering für Engineering-Teams',
@@ -57,6 +59,7 @@ const services = [
     gradientFrom: '#f90093',
     gradientTo: '#ff4ecd',
     patternOpacity: 0.06,
+    href: '/ki-beratung-kmu',
     useCases: [
       {
         title: 'AI-Tool-Audit für Maschinenbauer: Schatten-KI aufdecken & Kosten senken',
@@ -89,6 +92,7 @@ const services = [
     gradientFrom: '#f90093',
     gradientTo: '#ff4ecd',
     patternOpacity: 0.07,
+    href: '/ki-automatisierung-mittelstand',
     useCases: [
       {
         title: 'Chatbot für technische Dokumentation (Maschinenbau)',
@@ -244,7 +248,7 @@ function UseCaseMockup({ type }: { type: string }) {
   );
 }
 
-function FlipCard({ service, index, onSelect, isSelected }: { service: typeof services[0]; index: number; onSelect: () => void; isSelected: boolean }) {
+function FlipCard({ service, index, onSelect, isSelected }: { service: typeof services[0] & { href: string }; index: number; onSelect: () => void; isSelected: boolean }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -360,13 +364,14 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
             <div className="text-gray-500 italic mb-3 md:mb-4" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>{service.detail}</div>
 
             <div className="flex items-center justify-between">
-              <div
-                className="font-heading font-semibold flex items-center gap-2 group/link cursor-pointer"
+              <Link
+                href={service.href}
+                className="font-heading font-semibold flex items-center gap-2 group/link"
                 style={{ color: service.gradientFrom }}
               >
                 Mehr erfahren
                 <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-              </div>
+              </Link>
               <span className="text-xs text-gray-400 hidden lg:inline">Hover zum Umdrehen</span>
               <span className="text-xs text-gray-400 lg:hidden">Tippen zum Umdrehen</span>
             </div>
@@ -468,9 +473,13 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
               ))}
             </ul>
 
-            <div
-              onClick={onSelect}
-              className="w-full text-center py-3 font-heading font-semibold cursor-pointer transition-all"
+            <a
+              href="/#use-cases"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelect();
+              }}
+              className="w-full text-center py-3 font-heading font-semibold cursor-pointer transition-all block"
               style={{
                 color: service.gradientFrom,
                 textDecoration: 'underline',
@@ -480,7 +489,7 @@ function FlipCard({ service, index, onSelect, isSelected }: { service: typeof se
               onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'underline'}
             >
               Use Cases ansehen →
-            </div>
+            </a>
           </div>
         </div>
       </motion.div>
