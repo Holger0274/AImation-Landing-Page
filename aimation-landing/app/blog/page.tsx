@@ -33,6 +33,15 @@ const breadcrumbs = [
 
 const ARTICLES = [
   {
+    slug: 'ki-cad-zukunft-jetzt-starten',
+    title: 'KI kennt keinen Halt — warum wir bei CAD jetzt starten müssen, auch wenn es noch nicht ausgereift ist.',
+    excerpt: 'Claude Opus 4.7 liest technische Zeichnungen mit 98,5 % Genauigkeit — ein Kategoriesprung. Warum Konstruktionsabteilungen trotzdem nicht auf Reife warten sollten, und was ein PoC konkret bringt.',
+    tag: 'KI-Umsetzung',
+    date: '2026-04-19',
+    readingTime: '9 Min.',
+    relatedPillar: { label: 'KI-Umsetzung', href: '/ki-automatisierung-mittelstand' },
+  },
+  {
     slug: 'ki-prompts-die-wirklich-funktionieren',
     title: 'KI-Prompts, die wirklich funktionieren: 7 Muster für den Arbeitsalltag im Mittelstand.',
     excerpt: 'Vague In, Vague Out. Wer ChatGPT oder Claude mit schlechten Prompts füttert, bekommt schlechte Antworten. Diese 7 Prompt-Muster liefern sofort brauchbare Ergebnisse – in Vertrieb, HR und Produktion.',
