@@ -5,11 +5,11 @@ import { useState } from 'react';
 const FAQ_ITEMS = [
   {
     q: 'Ist KI + CAD nicht noch zu unreif für den Produktiveinsatz?',
-    a: 'Differenziert betrachtet: Für einfache parametrische Teile, Variantenkonstruktion und die Digitalisierung von Altbestandzeichnungen funktioniert KI heute schon zuverlässig. Für komplexe Baugruppen mit Toleranzketten, Normkonformität und Bewegungsanalyse braucht es weiterhin erfahrene Konstrukteure. Der Schlüssel ist, mit den reifen Teilbereichen zu starten — und dabei Teamerfahrung aufzubauen.',
+    a: 'Differenziert betrachtet: Für einfache parametrische Teile, Variantenkonstruktion und die Digitalisierung von Altbestandzeichnungen funktioniert KI heute schon zuverlässig. Für komplexe Baugruppen mit Toleranzketten, Normkonformität und Bewegungsanalyse braucht es weiterhin erfahrene Konstrukteure. Der Schlüssel ist, mit den reifen Teilbereichen zu starten. Und dabei Teamerfahrung aufzubauen.',
   },
   {
     q: 'Was hat sich mit Claude Opus 4.7 konkret verändert?',
-    a: 'Die visuelle Genauigkeit beim Lesen technischer Zeichnungen und Screenshots ist von 54,5 % auf 98,5 % gestiegen — das ist kein Inkrement, sondern ein Kategoriesprung. Kombiniert mit der auf 3,75 Megapixel verdreifachten Auflösung kann das Modell dichte Zeichnungen mit Bemaßungen und Symbolbibliotheken erstmals zuverlässig lesen. Für Konstruktionsabteilungen öffnet das völlig neue Automatisierungsmöglichkeiten.',
+    a: 'Die visuelle Genauigkeit beim Lesen technischer Zeichnungen ist von 54,5 % auf 98,5 % gestiegen. Kein Inkrement, sondern ein Kategoriesprung. Kombiniert mit der mehr als verdreifachten Auflösung kann das Modell dichte Zeichnungen mit Bemaßungen und Symbolbibliotheken erstmals zuverlässig lesen. Für Konstruktionsabteilungen öffnet das völlig neue Automatisierungsmöglichkeiten.',
   },
   {
     q: 'Welche CAD-Systeme lassen sich heute an KI anbinden?',
@@ -17,7 +17,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Was ist ein Proof of Concept (PoC) und wie lange dauert er?',
-    a: 'Ein PoC ist ein kleines, zeitlich begrenztes Experiment mit einem konkreten Lernziel. Typischerweise dauert er 4–8 Wochen, kostet deutlich weniger als eine klassische Digitalisierungsstudie und liefert genau das, was Whitepapers nicht liefern können: die ehrliche Antwort auf die Frage, was in Ihrem Unternehmen mit Ihren Daten funktioniert und was nicht.',
+    a: 'Ein PoC ist ein kleines, zeitlich begrenztes Experiment mit einem konkreten Lernziel. Typischerweise dauert er 4 bis 8 Wochen, kostet deutlich weniger als eine klassische Digitalisierungsstudie und liefert genau das, was Whitepapers nicht liefern können: die ehrliche Antwort auf die Frage, was in Ihrem Unternehmen mit Ihren Daten funktioniert und was nicht.',
   },
   {
     q: 'Wie stelle ich sicher, dass keine Konstruktionsdaten in US-Clouds abfließen?',

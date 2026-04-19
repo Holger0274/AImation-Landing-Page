@@ -74,16 +74,22 @@ export default function KiCadZukunftPage() {
         {/* ── ARTIKEL ── */}
         <section className="pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="prose prose-gray max-w-none font-inter text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
+            <div className="font-inter text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
 
-              <p>
-                Wenn ich Kunden erkläre, wie schnell sich KI entwickelt, fehlt uns meist das richtige Bild. Wir denken Technologiefortschritt in Jahren. Zwischen zwei Windows-Generationen liegen sechs, zwischen zwei CAD-Major-Releases oft acht. Mit KI funktioniert diese Rechnung nicht mehr.
+              <p className="mb-5">
+                Wenn ich Kunden erkläre, wie schnell sich KI entwickelt, fehlt uns meist das richtige Bild. Wir denken Technologiefortschritt in Jahren. Zwischen zwei Windows-Generationen liegen sechs, zwischen zwei CAD-Major-Releases oft acht.
               </p>
-              <p>
-                Zwischen dem Release von Claude Opus 4.6 und 4.7 lagen gerade einmal ein paar Monate. Und doch hat sich an einer einzigen Kennzahl etwas verschoben, das für die Konstruktionswelt weitreichender ist, als die meisten Ingenieurabteilungen gerade realisieren: Die visuelle Genauigkeit beim Lesen von Screenshots und Zeichnungen ist von 54,5 % auf 98,5 % gesprungen. Das ist kein Inkrement. Das ist ein Kategoriesprung.
+              <p className="mb-5">
+                Mit KI funktioniert diese Rechnung nicht mehr.
               </p>
-              <p>
-                Ich will in diesem Beitrag drei Dinge nüchtern zusammenbringen. Erstens: Was sich mit Opus 4.7 konkret verändert hat. Zweitens: Warum das für CAD noch nicht ausgereift ist, aber dennoch ein riesiges Potential bedeutet. Und drittens: Warum genau das der Grund ist, heute mit Proof of Concepts zu starten. Nicht in einem Jahr.
+              <p className="mb-5">
+                Zwischen dem Release von Claude Opus 4.6 und 4.7 lagen gerade einmal ein paar Monate. Und doch hat sich an einer einzigen Kennzahl etwas verschoben, das für die Konstruktionswelt weitreichender ist, als die meisten Ingenieurabteilungen gerade realisieren.
+              </p>
+              <p className="mb-5">
+                Die visuelle Genauigkeit beim Lesen von Zeichnungen ist von 54,5 % auf 98,5 % gesprungen. Das ist kein Inkrement. Das ist ein Kategoriesprung.
+              </p>
+              <p className="mb-5">
+                In diesem Beitrag bringe ich drei Dinge nüchtern zusammen: Was sich konkret verändert hat. Warum das für CAD noch nicht ausgereift ist, aber dennoch ein riesiges Potential bedeutet. Und warum genau das der Grund ist, heute mit Proof of Concepts zu starten. Nicht in einem Jahr.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -91,53 +97,72 @@ export default function KiCadZukunftPage() {
               <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Die Kurve, die wir unterschätzen
               </h2>
-              <p>
-                Menschen sind lineare Denker. Wenn sich eine Technologie in den letzten zwei Jahren „ordentlich verbessert" hat, extrapolieren wir das geradlinig in die Zukunft. Genauso viel Fortschritt in den nächsten zwei Jahren? Erscheint plausibel, ist aber fast immer falsch. KI-Fähigkeiten entwickeln sich nicht linear, sondern in Sprüngen: lange Plateaus, in denen man das Gefühl hat, nichts Relevantes passiert, und dann innerhalb weniger Wochen eine Schwelle, die vorher als unerreichbar galt.
+              <p className="mb-5">
+                Menschen sind lineare Denker. Wenn sich eine Technologie in den letzten zwei Jahren „ordentlich verbessert" hat, extrapolieren wir das geradlinig in die Zukunft. Genauso viel Fortschritt in den nächsten zwei Jahren? Erscheint plausibel, ist aber fast immer falsch.
               </p>
-              <p>
-                Opus 4.7 ist so ein Schwellenmoment. Die Bildauflösung wurde mehr als verdreifacht. Was das für einen Konstrukteur bedeutet: Das Modell liest dichte technische Zeichnungen, Bemaßungen, Schraffuren und Symbolbibliotheken jetzt erstmals zuverlässig. Die Genauigkeit beim Lesen von Zeichnungen ist von 54,5 % auf 98,5 % gestiegen. Dazu kommt eine deutlich bessere Fähigkeit, direkt mit Software zu interagieren und komplexen Code zu schreiben. In der Summe entsteht eine neue Klasse: Modelle, die Konstruktionsartefakte nicht nur „sehen", sondern auch strukturiert damit arbeiten können.
+              <p className="mb-5">
+                KI-Fähigkeiten entwickeln sich in Sprüngen: lange Plateaus, in denen man das Gefühl hat, nichts Relevantes passiert, und dann innerhalb weniger Wochen eine Schwelle, die vorher als unerreichbar galt.
               </p>
-              <p>Das Wichtige dabei: Die nächste Schwelle kommt bestimmt. Und sie wird wieder schneller kommen, als wir erwarten.</p>
+              <p className="mb-5">
+                Opus 4.7 ist so ein Schwellenmoment. Die Bildauflösung wurde mehr als verdreifacht. Was das für einen Konstrukteur bedeutet: Das Modell liest dichte technische Zeichnungen, Bemaßungen, Schraffuren und Symbolbibliotheken jetzt erstmals zuverlässig. Dazu kommt eine deutlich bessere Fähigkeit, direkt mit Software zu interagieren und komplexen Code zu schreiben.
+              </p>
+              <p className="mb-5">
+                In der Summe entsteht eine neue Klasse: Modelle, die Konstruktionsartefakte nicht nur „sehen", sondern auch strukturiert damit arbeiten können.
+              </p>
+              <p className="mb-5">
+                Das Wichtige dabei: Die nächste Schwelle kommt bestimmt. Und sie wird wieder schneller kommen, als wir erwarten.
+              </p>
 
               <hr className="border-gray-200 my-8" />
 
               <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Der ehrliche Stand von KI + CAD
               </h2>
-              <p>
-                Parallel zu den Modellen ist ein Ökosystem gewachsen, das fast niemand im deutschen Mittelstand auf dem Schirm hat. Das Model Context Protocol (MCP), ein offener Standard den Anthropic 2024 eingeführt hat, erlaubt die direkte Anbindung von CAD-Systemen an Claude. Es gibt aktive Open-Source-Integrationen für FreeCAD, Blender, Onshape, und die Community arbeitet an Anbindungen für Fusion 360, AutoCAD und SolidWorks.
+              <p className="mb-5">
+                Parallel zu den Modellen ist ein Ökosystem gewachsen, das fast niemand im deutschen Mittelstand auf dem Schirm hat. Das Model Context Protocol (MCP), ein offener Standard den Anthropic 2024 eingeführt hat, erlaubt die direkte Anbindung von CAD-Systemen an Claude. Es gibt aktive Integrationen für FreeCAD, Blender und Onshape, und die Community arbeitet an Anbindungen für Fusion 360, AutoCAD und SolidWorks.
               </p>
-              <p>Das heißt praktisch: Ein Modell wie Opus 4.7 kann heute schon</p>
-              <ul>
-                <li>eine 2D-Zeichnung analysieren und daraus Bemaßungen, Features und Stücklisteninformationen extrahieren,</li>
-                <li>in FreeCAD oder Onshape parametrische Sketches, Extrudes, Fillets und Assemblies direkt erzeugen,</li>
-                <li>Baugruppen mit Mates aufbauen und als STEP oder STL exportieren,</li>
-                <li>in Blender ganze 3D-Szenen aus Text-Prompts generieren (für Visualisierung, nicht für Fertigung).</li>
+              <p className="mb-4">Ein Modell wie Opus 4.7 kann heute schon:</p>
+              <ul className="mb-6 space-y-2 pl-5 list-disc">
+                <li>2D-Zeichnungen analysieren und Bemaßungen, Features und Stücklisteninformationen extrahieren</li>
+                <li>in FreeCAD oder Onshape parametrische Sketches, Extrudes und Assemblies direkt erzeugen</li>
+                <li>Baugruppen aufbauen und als STEP oder STL exportieren</li>
+                <li>in Blender 3D-Szenen aus Text-Prompts generieren (für Visualisierung, nicht Fertigung)</li>
               </ul>
-              <p>Das ist beeindruckend. Und trotzdem bin ich der Letzte, der diesen Stand als „reif" bezeichnen würde.</p>
-
-              <h3 className="font-heading font-semibold text-[#071013] mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
-                Was realistisch funktioniert
-              </h3>
-              <p>
-                Einfache parametrische Teile, Variantenkonstruktion auf Basis bestehender Vorlagen, Digitalisierung alter 2D-Zeichnungen in strukturierte Daten, Feature-Tree-Cleanup in Onshape, schnelle Konzept-Visualisierungen.
+              <p className="mb-5">
+                Das ist beeindruckend. Und trotzdem bin ich der Letzte, der diesen Stand als „reif" bezeichnen würde.
               </p>
 
-              <h3 className="font-heading font-semibold text-[#071013] mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
-                Was noch holprig ist
-              </h3>
-              <p>
-                Toleranzketten, normgerechte Konstruktion, komplexe Baugruppen mit Bewegungsanalyse, Fertigungsgerechtheit (DFM), realistische Mehrkörper-Kinematik. Hier braucht es weiterhin den erfahrenen Konstrukteur.
-              </p>
+              <div className="grid gap-4 my-8 sm:grid-cols-3">
+                <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+                  <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">Funktioniert heute</p>
+                  <ul className="text-sm text-gray-700 space-y-1">
+                    <li>Einfache parametrische Teile</li>
+                    <li>Variantenkonstruktion</li>
+                    <li>Altzeichnungen digitalisieren</li>
+                    <li>Konzept-Visualisierungen</li>
+                  </ul>
+                </div>
+                <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+                  <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">Noch holprig</p>
+                  <ul className="text-sm text-gray-700 space-y-1">
+                    <li>Toleranzketten</li>
+                    <li>Normgerechte Konstruktion</li>
+                    <li>Komplexe Baugruppen</li>
+                    <li>Mehrkörper-Kinematik</li>
+                  </ul>
+                </div>
+                <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+                  <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">Bleibt Marketing</p>
+                  <ul className="text-sm text-gray-700 space-y-1">
+                    <li>„Ein Satz, fertiges 3D-Modell"</li>
+                    <li>Normkonforme Teile per Prompt</li>
+                    <li>Vollautomatische Baugruppen</li>
+                  </ul>
+                </div>
+              </div>
 
-              <h3 className="font-heading font-semibold text-[#071013] mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
-                Was Marketing bleibt
-              </h3>
-              <p>
-                „Ein Satz, druckfertiges 3D-Modell." Solche Clips laufen gerade auf LinkedIn und TikTok. Für Werbezwecke klappt das in kuratierten Demos. Für reale Konstruktionsaufgaben mit Normen, Toleranzen und Prüfpflichten ist das heute nicht der Fall.
-              </p>
-              <p>
-                Diese drei Kategorien sauber zu trennen, ist meine tägliche Arbeit bei AImation. Wer den Hype für Reife hält, wird enttäuscht. Wer die Unreife als Beweis nimmt, dass man noch nicht anfangen muss, verpasst den eigentlichen Punkt.
+              <p className="mb-5">
+                Diese drei Kategorien sauber zu trennen, ist meine tägliche Arbeit. Wer den Hype für Reife hält, wird enttäuscht. Wer die Unreife als Beweis nimmt, dass man noch nicht anfangen muss, verpasst den eigentlichen Punkt.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -145,14 +170,17 @@ export default function KiCadZukunftPage() {
               <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Das Potential, das die meisten noch nicht sehen
               </h2>
-              <p>
-                Ich habe die letzten Jahre damit verbracht, FEM-Simulationen von Stunden auf Minuten zu beschleunigen. Mit Graph Convolutional Neural Networks haben wir Berechnungen, die drei Stunden dauerten, auf unter drei Minuten gebracht. Das war vor wenigen Jahren so weit weg von der Praxis, dass die meisten CAE-Abteilungen es für eine Spielerei hielten. Heute ist ML-beschleunigte Simulation in führenden Häusern Standard-Werkzeug.
+              <p className="mb-5">
+                Ich habe die letzten Jahre damit verbracht, FEM-Simulationen von Stunden auf Minuten zu beschleunigen. Mit Graph Convolutional Neural Networks haben wir Berechnungen, die drei Stunden dauerten, auf unter drei Minuten gebracht.
               </p>
-              <p>
-                Genau diesen Bogen sehe ich jetzt bei CAD kommen. Was FEM vor fünf Jahren durchgemacht hat, von „Forschungsthema" zu „produktiv im Alltag", macht die Konstruktionsseite jetzt durch. Nur schneller. Weil die Modelle besser starten, die Tooling-Infrastruktur (MCP, Cloud-CAD, Open-Source-Integrationen) bereits steht, und weil der Druck auf Konstruktionsabteilungen durch Fachkräftemangel und Variantenvielfalt real ist.
+              <p className="mb-5">
+                Das war vor wenigen Jahren so weit weg von der Praxis, dass die meisten CAE-Abteilungen es für eine Spielerei hielten. Heute ist ML-beschleunigte Simulation in führenden Häusern Standard-Werkzeug.
               </p>
-              <p>
-                Wenn ich heute mit Inhabern mittelständischer Konstruktions- und Ingenieurbüros spreche, höre ich oft: „Wir warten, bis das ausgereift ist." Ich verstehe die Haltung. Aber sie ist aus meiner Sicht die teuerste Strategie.
+              <p className="mb-5">
+                Genau diesen Bogen sehe ich jetzt bei CAD kommen. Was FEM vor fünf Jahren durchgemacht hat, von „Forschungsthema" zu „produktiv im Alltag", macht die Konstruktionsseite jetzt durch. Nur schneller. Weil die Modelle besser starten, die Infrastruktur bereits steht, und weil der Druck durch Fachkräftemangel und Variantenvielfalt real ist.
+              </p>
+              <p className="mb-5">
+                Wenn ich heute mit Inhabern mittelständischer Konstruktionsbüros spreche, höre ich oft: „Wir warten, bis das ausgereift ist." Ich verstehe die Haltung. Aber sie ist die teuerste Strategie.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -160,13 +188,16 @@ export default function KiCadZukunftPage() {
               <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Warum Abwarten nicht funktioniert
               </h2>
-              <p>
+              <p className="mb-5">
                 Wer bis zur Reife wartet, wartet auf zwei Dinge gleichzeitig: dass die Technologie stabil wird, und dass das eigene Team damit umgehen kann. Letzteres ist das eigentliche Problem.
               </p>
-              <p>
-                KI-Kompetenz in einer Konstruktionsabteilung entsteht nicht durch ein Seminar. Sie entsteht durch das Ausprobieren von Werkzeugen an echten, kleinen Aufgaben. Durch das Scheitern an Toleranzen, das Lernen, welche Prompts zuverlässig welche Ergebnisse liefern, das Entwickeln eines Gefühls dafür, wo die Maschine hilft und wo sie noch nicht kann. Dieses Erfahrungswissen lässt sich nicht kaufen und nicht nachholen. Es wird über Monate aufgebaut. Oder eben nicht.
+              <p className="mb-5">
+                KI-Kompetenz entsteht nicht durch ein Seminar. Sie entsteht durch das Ausprobieren an echten, kleinen Aufgaben. Durch das Scheitern an Toleranzen, das Lernen, welche Prompts zuverlässig welche Ergebnisse liefern, das Entwickeln eines Gefühls dafür, wo die Maschine hilft und wo nicht.
               </p>
-              <p>
+              <p className="mb-5">
+                Dieses Wissen lässt sich nicht kaufen. Es wird über Monate aufgebaut. Oder eben nicht.
+              </p>
+              <p className="mb-5">
                 Unternehmen, die jetzt starten, sind in drei Jahren nicht einfach „ein bisschen weiter". Sie sind in einer anderen Liga. Nicht wegen der Technik, sondern wegen des Teamwissens und der eingespielten Workflows.
               </p>
 
@@ -175,14 +206,19 @@ export default function KiCadZukunftPage() {
               <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Die Antwort ist kein Strategiepapier, sondern ein PoC
               </h2>
-              <p>
-                Klassische Digitalisierungsstrategien mit 18-Monats-Roadmap funktionieren bei KI nicht. Die Technologie entwickelt sich während der Planungsphase weiter, als die Planung zu Ende ist. Wer in diesem Umfeld mit großen Papieren arbeitet, ist bei der Umsetzung immer einen Schritt hinter dem, was schon möglich wäre.
+              <p className="mb-5">
+                Klassische Digitalisierungsstrategien mit 18-Monats-Roadmap funktionieren bei KI nicht. Die Technologie entwickelt sich während der Planungsphase weiter. Wer mit großen Papieren arbeitet, ist bei der Umsetzung immer einen Schritt hinter dem, was schon möglich wäre.
               </p>
-              <p>
-                Die Antwort, die wir bei AImation konsequent vertreten, heißt Proof of Concept. Klein, konkret, zeitlich begrenzt, mit einem klaren Lernziel. Zum Beispiel: eine Variante einer Halteranwendung, die automatisiert aus Parametern generiert wird. Oder die Extraktion von Stücklisten aus archivierten PDF-Zeichnungen. Oder ein KI-Assistent, der aus Kundenanforderungen einen Vorschlag für das CAD-Modell macht, den der Konstrukteur anschließend prüft und übernimmt.
+              <p className="mb-5">
+                Die Antwort heißt Proof of Concept. Klein, konkret, zeitlich begrenzt, mit einem klaren Lernziel. Zum Beispiel:
               </p>
-              <p>
-                Solche PoCs kosten nicht viel. Sie dauern Wochen, nicht Quartale. Sie sind so gebaut, dass sie scheitern dürfen, denn das ist ihr Zweck. Was sie liefern, ist genau das, was in keinem Benchmark und keinem Whitepaper steht: die Antwort auf die Frage, was in meinem Unternehmen mit meinen Daten und meinen Prozessen funktioniert und was nicht. Und sie liefern Teamerfahrung, die jedes nächste Projekt schneller macht.
+              <ul className="mb-6 space-y-2 pl-5 list-disc">
+                <li>eine Variante einer Halteranwendung, die automatisiert aus Parametern generiert wird</li>
+                <li>die Extraktion von Stücklisten aus archivierten PDF-Zeichnungen</li>
+                <li>ein KI-Assistent, der aus Kundenanforderungen einen Vorschlag für das CAD-Modell macht</li>
+              </ul>
+              <p className="mb-5">
+                Solche PoCs dauern Wochen, nicht Quartale. Sie dürfen scheitern, denn das ist ihr Zweck. Was sie liefern, steht in keinem Whitepaper: die ehrliche Antwort darauf, was in Ihrem Unternehmen mit Ihren Daten und Ihren Prozessen funktioniert. Und Teamerfahrung, die jedes nächste Projekt schneller macht.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -190,42 +226,39 @@ export default function KiCadZukunftPage() {
               <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was konkret zu tun ist
               </h2>
-              <p>Wenn Sie heute in einer Konstruktions-, Entwicklungs- oder Ingenieurverantwortung sind, sehe ich drei pragmatische Schritte:</p>
+              <p className="mb-6">Wenn Sie heute in einer Konstruktions-, Entwicklungs- oder Ingenieurverantwortung sind, sehe ich drei pragmatische Schritte:</p>
 
-              <h3 className="font-heading font-semibold text-[#071013] mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
-                1. Einen einzigen Usecase auswählen
-              </h3>
-              <p>
-                Wählen Sie einen Usecase, der heute Zeit frisst und bei dem ein Fehler nicht katastrophal ist. Digitalisierung von Altbestandzeichnungen ist ein Klassiker. Variantenkonstruktion aus Parametertabellen ein anderer. Meeting- und Anforderungsprotokolle automatisiert in CAD-taugliche Spezifikationen zu überführen ein dritter.
-              </p>
-
-              <h3 className="font-heading font-semibold text-[#071013] mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
-                2. Einen Stack wählen, der Datensouveränität wahrt
-              </h3>
-              <p>
-                Für DACH-Mittelstand empfehlen wir self-hosted Werkzeuge: n8n, Claude über AWS Bedrock in Frankfurt, lokale CAD-Systeme wie FreeCAD oder Onshape mit Unternehmenskonto. Keine unkontrollierten Datenflüsse in US-Clouds.
-              </p>
-
-              <h3 className="font-heading font-semibold text-[#071013] mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
-                3. Zwei Personen aus dem Team einplanen, nicht eine
-              </h3>
-              <p>
-                Einen Konstrukteur mit Domänenwissen, eine Person mit Affinität zu Automatisierung. Beide brauchen Zeit. Nicht nebenher. Wer das als „macht der Praktikant mal" behandelt, bekommt auch Praktikantenergebnisse.
-              </p>
+              <div className="space-y-4 mb-8">
+                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                  <p className="font-heading font-semibold text-[#071013] mb-2">1. Einen einzigen Usecase auswählen</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">Wählen Sie einen Usecase, der heute Zeit frisst und bei dem ein Fehler nicht katastrophal ist. Digitalisierung von Altbestandzeichnungen ist ein Klassiker. Variantenkonstruktion aus Parametertabellen ein anderer. Anforderungsprotokolle automatisiert in CAD-taugliche Spezifikationen überführen ein dritter.</p>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                  <p className="font-heading font-semibold text-[#071013] mb-2">2. Einen Stack wählen, der Datensouveränität wahrt</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">Für DACH-Mittelstand empfehlen wir self-hosted Werkzeuge: n8n, Claude über AWS Bedrock in Frankfurt, lokale CAD-Systeme wie FreeCAD oder Onshape mit Unternehmenskonto. Keine unkontrollierten Datenflüsse in US-Clouds.</p>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                  <p className="font-heading font-semibold text-[#071013] mb-2">3. Zwei Personen einplanen, nicht eine</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">Einen Konstrukteur mit Domänenwissen, eine Person mit Affinität zu Automatisierung. Beide brauchen Zeit. Nicht nebenher. Wer das als „macht der Praktikant mal" behandelt, bekommt auch Praktikantenergebnisse.</p>
+                </div>
+              </div>
 
               <hr className="border-gray-200 my-8" />
 
               <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was bleibt
               </h2>
-              <p>
-                KI entwickelt sich weiter. Sie macht keine Pause, während Unternehmen noch überlegen, ob sie bereit sind. Und der entscheidende Vorteil entsteht nicht beim Werkzeug, sondern beim Team: bei den Menschen, die gelernt haben, damit umzugehen.
+              <p className="mb-5">
+                KI entwickelt sich weiter. Sie macht keine Pause, während Unternehmen noch überlegen, ob sie bereit sind.
               </p>
-              <p>
+              <p className="mb-5">
+                Der entscheidende Vorteil entsteht nicht beim Werkzeug, sondern beim Team: bei den Menschen, die gelernt haben, damit umzugehen.
+              </p>
+              <p className="mb-5">
                 Wer jetzt einen konkreten Usecase auswählt, einen kleinen PoC startet und das dabei entstehende Wissen im Team verankert, baut etwas auf, das sich nicht kaufen lässt. Keine Beraterpräsentation liefert das. Kein Whitepaper. Nur das eigene Tun.
               </p>
-              <p>
-                Wenn Sie wissen möchten, welcher Usecase in Ihrer Konstruktionsabteilung als erstes Sinn ergibt und wie ein PoC bei Ihnen aussehen könnte, sprechen Sie mich an. Das erste Gespräch kostet nichts, und Sie wissen danach mehr als vorher.
+              <p className="mb-5">
+                Wenn Sie wissen möchten, welcher Usecase in Ihrer Konstruktionsabteilung als erstes Sinn ergibt und wie ein PoC bei Ihnen konkret aussehen könnte, sprechen Sie mich an. Das erste Gespräch kostet nichts, und Sie wissen danach mehr als vorher.
               </p>
             </div>
 

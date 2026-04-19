@@ -34,8 +34,8 @@ const breadcrumbs = [
 const ARTICLES = [
   {
     slug: 'ki-cad-zukunft-jetzt-starten',
-    title: 'KI kennt keinen Halt — warum wir bei CAD jetzt starten müssen, auch wenn es noch nicht ausgereift ist.',
-    excerpt: 'Claude Opus 4.7 liest technische Zeichnungen mit 98,5 % Genauigkeit — ein Kategoriesprung. Warum Konstruktionsabteilungen trotzdem nicht auf Reife warten sollten, und was ein PoC konkret bringt.',
+    title: 'KI kennt keinen Halt: warum wir bei CAD jetzt starten müssen, auch wenn es noch nicht ausgereift ist.',
+    excerpt: 'Claude Opus 4.7 liest technische Zeichnungen mit 98,5 % Genauigkeit. Ein Kategoriesprung. Warum Konstruktionsabteilungen trotzdem nicht auf Reife warten sollten, und was ein PoC konkret bringt.',
     tag: 'KI-Umsetzung',
     date: '2026-04-19',
     readingTime: '9 Min.',
@@ -44,7 +44,7 @@ const ARTICLES = [
   {
     slug: 'ki-prompts-die-wirklich-funktionieren',
     title: 'KI-Prompts, die wirklich funktionieren: 7 Muster für den Arbeitsalltag im Mittelstand.',
-    excerpt: 'Vague In, Vague Out. Wer ChatGPT oder Claude mit schlechten Prompts füttert, bekommt schlechte Antworten. Diese 7 Prompt-Muster liefern sofort brauchbare Ergebnisse – in Vertrieb, HR und Produktion.',
+    excerpt: 'Vague In, Vague Out. Wer ChatGPT oder Claude mit schlechten Prompts füttert, bekommt schlechte Antworten. Diese 7 Prompt-Muster liefern sofort brauchbare Ergebnisse in Vertrieb, HR und Produktion.',
     tag: 'Prompt Engineering',
     date: '2026-04-01',
     readingTime: '6 Min.',
@@ -53,7 +53,7 @@ const ARTICLES = [
   {
     slug: '6-stufen-ki-nutzung',
     title: 'Wo steht Ihr Unternehmen bei KI? Die 6 Stufen von Prompting bis autonome Agenten.',
-    excerpt: 'Von ChatGPT-Prompting bis Multi-Agenten-System: 6 Stufen mit konkreten Beispielen. Finden Sie Ihre Stufe — und den nächsten sinnvollen Schritt.',
+    excerpt: 'Von ChatGPT-Prompting bis Multi-Agenten-System: 6 Stufen mit konkreten Beispielen. Finden Sie Ihre Stufe und den nächsten sinnvollen Schritt.',
     tag: 'KI-Strategie',
     date: '2026-03-30',
     readingTime: '8 Min.',
@@ -101,7 +101,7 @@ export default function BlogOverviewPage() {
               <span className="text-[#f90093]">Praxis statt Buzzwords</span>
             </h1>
             <p className="text-gray-600 font-inter leading-relaxed max-w-2xl" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
-              Keine Hochglanzbroschüren. Keine Theorie-Vorträge. Artikel, die Sie morgen anwenden können — mit ehrlichen Einschätzungen, was KI kann und was nicht.
+              Keine Hochglanzbroschüren. Keine Theorie-Vorträge. Artikel, die Sie morgen anwenden können. Mit ehrlichen Einschätzungen, was KI kann und was nicht.
             </p>
           </div>
         </section>
