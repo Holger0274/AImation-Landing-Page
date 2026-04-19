@@ -1,0 +1,29 @@
+# Playwright MCP logs
+.playwright-mcp/
+
+# Superpowers skill cache
+.superpowers/
+
+# Local screenshots / analysis images (root level only)
+/desktop-full-page.png
+/full-page-analysis.png
+/screenshot-email-klassifizierung.png
+/screenshot-patentrecherche.png
+
+# Bilder-Ordner (local only)
+Bilder/
+
+# Node modules
+node_modules/
+
+# Next.js build output
+aimation-landing/.next/
+aimation-landing/out/
+
+# Environment variables
+aimation-landing/.env.local
+aimation-landing/.env
+
+# OS
+.DS_Store
+Thumbs.db

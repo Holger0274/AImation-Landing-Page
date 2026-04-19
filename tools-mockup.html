@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools Section – Design-Optionen</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #f0f0ee;
+    color: #071013;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #071013;
+  }
+  .subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+    font-size: 15px;
+  }
+  .option-label {
+    display: inline-block;
+    background: #f90093;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  .option-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #071013;
+  }
+  .option-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  .section-wrapper {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+  }
+
+  /* ===== OPTION 1: KATEGORIE-TABS ===== */
+  .opt1-container {
+    background: #faf9f7;
+    border-radius: 20px;
+    padding: 50px 40px;
+    border: 1px solid #e5e5e5;
+  }
+  .opt1-headline {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .opt1-sub {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  .highlight { color: #f90093; }
+  .opt1-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .tab {
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1.5px solid #e0e0e0;
+    background: white;
+    color: #555;
+  }
+  .tab.active {
+    background: linear-gradient(135deg, #f90093, #ff4ecd);
+    color: white;
+    border-color: transparent;
+  }
+  .opt1-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  .tool-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 1.5px solid #f0f0f0;
+    transition: all 0.25s;
+    cursor: default;
+  }
+  .tool-card:hover {
+    border-color: #f90093;
+    box-shadow: 0 4px 20px rgba(249, 0, 147, 0.12);
+    transform: translateY(-3px);
+  }
+  .icon-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+  }
+  .tool-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+  }
+  .tool-badge {
+    font-size: 10px;
+    color: #999;
+  }
+
+  /* ===== OPTION 2: DARK BENTO GRID ===== */
+  .opt2-container {
+    background: #071013;
+    border-radius: 20px;
+    padding: 50px 40px;
+  }
+  .opt2-headline {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .opt2-sub {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 36px;
+  }
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 12px;
+  }
+  .bento-cell {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.25s;
+    cursor: default;
+  }
+  .bento-cell:hover {
+    background: rgba(249, 0, 147, 0.15);
+    border-color: rgba(249, 0, 147, 0.5);
+    box-shadow: 0 0 20px rgba(249, 0, 147, 0.2);
+  }
+  .bento-cell.featured {
+    grid-column: span 2;
+    flex-direction: row;
+    gap: 16px;
+    padding: 24px 20px;
+    justify-content: flex-start;
+    background: rgba(249, 0, 147, 0.12);
+    border-color: rgba(249, 0, 147, 0.3);
+  }
+  .bento-cell.featured .icon-circle-dark {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+  .bento-featured-text { text-align: left; }
+  .bento-featured-name { color: white; font-size: 16px; font-weight: 700; }
+  .bento-featured-desc { color: #aaa; font-size: 12px; margin-top: 4px; line-height: 1.4; }
+  .icon-circle-dark {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background: rgba(255,255,255,0.08);
+  }
+  .bento-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #ddd;
+    text-align: center;
+  }
+  .bento-tag {
+    font-size: 10px;
+    color: #666;
+  }
+
+  /* ===== OPTION 3: MASONRY / FLOATING CARDS ===== */
+  .opt3-container {
+    background: #faf9f7;
+    border-radius: 20px;
+    padding: 50px 40px;
+    border: 1px solid #e5e5e5;
+    overflow: hidden;
+    position: relative;
+  }
+  .opt3-headline {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .opt3-sub {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .floating-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 14px;
+    justify-content: center;
+  }
+  .floating-row:nth-child(2) {
+    transform: translateX(30px);
+  }
+  .floating-row:nth-child(3) {
+    transform: translateX(-20px);
+  }
+  .float-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 1.5px solid #eee;
+    border-radius: 50px;
+    padding: 10px 18px 10px 10px;
+    white-space: nowrap;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: all 0.25s;
+    cursor: default;
+  }
+  .float-pill:hover {
+    border-color: #f90093;
+    box-shadow: 0 4px 20px rgba(249, 0, 147, 0.15);
+    transform: translateY(-2px);
+  }
+  .pill-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: #faf9f7;
+    flex-shrink: 0;
+  }
+  .pill-text strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #071013;
+    line-height: 1.2;
+  }
+  .pill-text span {
+    font-size: 10px;
+    color: #aaa;
+  }
+  .pill-cat {
+    font-size: 10px;
+    padding: 2px 10px;
+    background: #f5f5f5;
+    border-radius: 20px;
+    color: #777;
+    font-weight: 500;
+  }
+  .pill-cat.automation { background: rgba(249,0,147,0.08); color: #f90093; }
+  .pill-cat.ai { background: rgba(96,175,255,0.1); color: #3b82f6; }
+  .pill-cat.dev { background: rgba(16,185,129,0.1); color: #059669; }
+  .pill-cat.enterprise { background: rgba(245,158,11,0.1); color: #d97706; }
+
+  /* Comparison note */
+  .comparison-bar {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    background: white;
+    border-radius: 16px;
+    padding: 24px 32px;
+    border: 1px solid #e5e5e5;
+  }
+  .comparison-bar h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: #555;
+  }
+  .comp-table { width: 100%; border-collapse: collapse; }
+  .comp-table th {
+    text-align: left;
+    font-size: 12px;
+    color: #999;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .comp-table td {
+    padding: 8px 12px;
+    font-size: 13px;
+    border-top: 1px solid #f5f5f5;
+  }
+  .comp-table tr:first-child td { border-top: none; }
+  .opt-name { font-weight: 700; color: #071013; }
+  .star { color: #f90093; }
+  .neutral { color: #999; }
+  .rec-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #f90093, #ff4ecd);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<h1>Tools-Sektion – 3 Design-Optionen</h1>
+<p class="subtitle">Welche Variante gefällt dir am besten?</p>
+
+<!-- OPTION 1 -->
+<div class="section-wrapper">
+  <div>
+    <span class="option-label">Option 1</span>
+    <div class="option-title">Kategorie-Tabs mit Hover-Cards</div>
+    <div class="option-desc">Filterbare Tabs nach Kategorie (AI Assistants, Automation, Enterprise…). Sauberes Grid mit weißen Karten. Interaktiv ohne Laufband.</div>
+  </div>
+  <div class="opt1-container">
+    <h2 class="opt1-headline">Wir arbeiten mit den <span class="highlight">besten Tools</span></h2>
+    <p class="opt1-sub">Herstellerunabhängig – die richtige Lösung für jeden Use Case</p>
+    <div class="opt1-tabs">
+      <div class="tab active">Alle</div>
+      <div class="tab">AI Assistants</div>
+      <div class="tab">Automation</div>
+      <div class="tab">Enterprise</div>
+      <div class="tab">Development</div>
+      <div class="tab">Productivity</div>
+    </div>
+    <div class="opt1-grid">
+      <div class="tool-card">
+        <div class="icon-circle" style="background:#f0fdf4">🤖</div>
+        <div class="tool-name">ChatGPT</div>
+        <div class="tool-badge">AI Assistants</div>
+      </div>
+      <div class="tool-card">
+        <div class="icon-circle" style="background:#fdf4ff">🧠</div>
+        <div class="tool-name">Claude AI</div>
+        <div class="tool-badge">AI Assistants</div>
+      </div>
+      <div class="tool-card">
+        <div class="icon-circle" style="background:#eff6ff">✨</div>
+        <div class="tool-name">Gemini</div>
+        <div class="tool-badge">AI Assistants</div>
+      </div>
+      <div class="tool-card">
+        <div class="icon-circle" style="background:#fff7ed">🔍</div>
+        <div class="tool-name">Perplexity</div>
+        <div class="tool-badge">AI Assistants</div>
+      </div>
+      <div class="tool-card">
+        <div class="icon-circle" style="background:#f0fdf4">🌊</div>
+        <div class="tool-name">n8n</div>
+        <div class="tool-badge">Automation</div>
+      </div>
+      <div class="tool-card">
+        <div class="icon-circle" style="background:#fef3c7">⚙️</div>
+        <div class="tool-name">Make.com</div>
+        <div class="tool-badge">Automation</div>
+      </div>
+      <div class="tool-card">
+        <div class="icon-circle" style="background:#eff6ff">💼</div>
+        <div class="tool-name">Copilot</div>
+        <div class="tool-badge">Enterprise</div>
+      </div>
+      <div class="tool-card">
+        <div class="icon-circle" style="background:#fdf4ff">📝</div>
+        <div class="tool-name">Notion</div>
+        <div class="tool-badge">Productivity</div>
+      </div>
+      <div class="tool-card">
+        <div class="icon-circle" style="background:#ecfdf5">🗄️</div>
+        <div class="tool-name">Supabase</div>
+        <div class="tool-badge">Database</div>
+      </div>
+      <div class="tool-card" style="border-color:#f90093; box-shadow:0 4px 20px rgba(249,0,147,0.12)">
+        <div class="icon-circle" style="background:#fff0f8">🌲</div>
+        <div class="tool-name">Pinecone</div>
+        <div class="tool-badge">AI Infra</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPTION 2 -->
+<div class="section-wrapper">
+  <div>
+    <span class="option-label">Option 2</span>
+    <div class="option-title">Dark Bento-Grid mit Glow-Effekten</div>
+    <div class="option-desc">Auf dunklem Hintergrund mit Brand-Glow. Featured-Karten für die wichtigsten Tools doppelt so breit. Passt perfekt zum Dark-Section-Stil des Design-Systems.</div>
+  </div>
+  <div class="opt2-container">
+    <h2 class="opt2-headline">Wir arbeiten mit den <span class="highlight">besten Tools</span></h2>
+    <p class="opt2-sub">Herstellerunabhängig – die richtige Lösung für jeden Use Case</p>
+    <div class="bento-grid">
+      <!-- Featured: ChatGPT -->
+      <div class="bento-cell featured">
+        <div class="icon-circle-dark" style="background:rgba(16,163,127,0.2); font-size:30px">🤖</div>
+        <div class="bento-featured-text">
+          <div class="bento-featured-name">ChatGPT</div>
+          <div class="bento-featured-desc">Text generation, analysis, coding – der Standard für produktive KI-Arbeit</div>
+        </div>
+      </div>
+      <!-- Featured: n8n -->
+      <div class="bento-cell featured">
+        <div class="icon-circle-dark" style="background:rgba(234,84,49,0.2); font-size:30px">🌊</div>
+        <div class="bento-featured-text">
+          <div class="bento-featured-name">n8n</div>
+          <div class="bento-featured-desc">Open-source Workflow-Automation – das Herzstück unserer Umsetzungsprojekte</div>
+        </div>
+      </div>
+      <!-- Regular -->
+      <div class="bento-cell">
+        <div class="icon-circle-dark">🧠</div>
+        <div class="bento-name">Claude AI</div>
+        <div class="bento-tag">AI Assistants</div>
+      </div>
+      <div class="bento-cell">
+        <div class="icon-circle-dark">✨</div>
+        <div class="bento-name">Gemini</div>
+        <div class="bento-tag">AI Assistants</div>
+      </div>
+      <div class="bento-cell">
+        <div class="icon-circle-dark">🔍</div>
+        <div class="bento-name">Perplexity</div>
+        <div class="bento-tag">AI Assistants</div>
+      </div>
+      <div class="bento-cell">
+        <div class="icon-circle-dark">⚙️</div>
+        <div class="bento-name">Make.com</div>
+        <div class="bento-tag">Automation</div>
+      </div>
+      <div class="bento-cell">
+        <div class="icon-circle-dark">💼</div>
+        <div class="bento-name">MS Copilot</div>
+        <div class="bento-tag">Enterprise</div>
+      </div>
+      <div class="bento-cell">
+        <div class="icon-circle-dark">🌐</div>
+        <div class="bento-name">Google WS</div>
+        <div class="bento-tag">Enterprise</div>
+      </div>
+      <div class="bento-cell">
+        <div class="icon-circle-dark">📝</div>
+        <div class="bento-name">Notion</div>
+        <div class="bento-tag">Productivity</div>
+      </div>
+      <div class="bento-cell">
+        <div class="icon-circle-dark">💎</div>
+        <div class="bento-name">Obsidian</div>
+        <div class="bento-tag">Productivity</div>
+      </div>
+      <div class="bento-cell">
+        <div class="icon-circle-dark">🗄️</div>
+        <div class="bento-name">Supabase</div>
+        <div class="bento-tag">Database</div>
+      </div>
+      <div class="bento-cell">
+        <div class="icon-circle-dark">🌲</div>
+        <div class="bento-name">Pinecone</div>
+        <div class="bento-tag">AI Infra</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPTION 3 -->
+<div class="section-wrapper">
+  <div>
+    <span class="option-label">Option 3</span>
+    <div class="option-title">Floating Pills mit versetzten Reihen</div>
+    <div class="option-desc">Organisch versetzte Reihen von Pill-Badges. Jedes Tool zeigt Icon + Name + Kategorie-Tag. Wirkt lebendig und modern – ohne monotones Laufband.</div>
+  </div>
+  <div class="opt3-container">
+    <h2 class="opt3-headline">Wir arbeiten mit den <span class="highlight">besten Tools</span></h2>
+    <p class="opt3-sub">Herstellerunabhängig – die richtige Lösung für jeden Use Case</p>
+
+    <!-- Reihe 1 -->
+    <div class="floating-row">
+      <div class="float-pill">
+        <div class="pill-icon">🤖</div>
+        <div class="pill-text">
+          <strong>ChatGPT</strong>
+          <span>OpenAI</span>
+        </div>
+        <span class="pill-cat ai">AI</span>
+      </div>
+      <div class="float-pill">
+        <div class="pill-icon">🧠</div>
+        <div class="pill-text">
+          <strong>Claude AI</strong>
+          <span>Anthropic</span>
+        </div>
+        <span class="pill-cat ai">AI</span>
+      </div>
+      <div class="float-pill">
+        <div class="pill-icon">✨</div>
+        <div class="pill-text">
+          <strong>Gemini</strong>
+          <span>Google</span>
+        </div>
+        <span class="pill-cat ai">AI</span>
+      </div>
+      <div class="float-pill">
+        <div class="pill-icon">🔍</div>
+        <div class="pill-text">
+          <strong>Perplexity</strong>
+          <span>Research</span>
+        </div>
+        <span class="pill-cat ai">AI</span>
+      </div>
+      <div class="float-pill">
+        <div class="pill-icon">🌊</div>
+        <div class="pill-text">
+          <strong>n8n</strong>
+          <span>Automation</span>
+        </div>
+        <span class="pill-cat automation">Auto</span>
+      </div>
+    </div>
+
+    <!-- Reihe 2 (verschoben) -->
+    <div class="floating-row">
+      <div class="float-pill">
+        <div class="pill-icon">⚙️</div>
+        <div class="pill-text">
+          <strong>Make.com</strong>
+          <span>Automation</span>
+        </div>
+        <span class="pill-cat automation">Auto</span>
+      </div>
+      <div class="float-pill">
+        <div class="pill-icon">💼</div>
+        <div class="pill-text">
+          <strong>MS Copilot</strong>
+          <span>Microsoft</span>
+        </div>
+        <span class="pill-cat enterprise">Enterprise</span>
+      </div>
+      <div class="float-pill">
+        <div class="pill-icon">🌐</div>
+        <div class="pill-text">
+          <strong>Google WS</strong>
+          <span>Enterprise</span>
+        </div>
+        <span class="pill-cat enterprise">Enterprise</span>
+      </div>
+      <div class="float-pill">
+        <div class="pill-icon">📝</div>
+        <div class="pill-text">
+          <strong>Notion</strong>
+          <span>Knowledge</span>
+        </div>
+        <span class="pill-cat">Productivity</span>
+      </div>
+    </div>
+
+    <!-- Reihe 3 (verschoben) -->
+    <div class="floating-row">
+      <div class="float-pill">
+        <div class="pill-icon">💎</div>
+        <div class="pill-text">
+          <strong>Obsidian</strong>
+          <span>Notes</span>
+        </div>
+        <span class="pill-cat">Productivity</span>
+      </div>
+      <div class="float-pill">
+        <div class="pill-icon">❤️</div>
+        <div class="pill-text">
+          <strong>Lovable</strong>
+          <span>Prototyping</span>
+        </div>
+        <span class="pill-cat dev">Dev</span>
+      </div>
+      <div class="float-pill">
+        <div class="pill-icon">🗄️</div>
+        <div class="pill-text">
+          <strong>Supabase</strong>
+          <span>Database</span>
+        </div>
+        <span class="pill-cat dev">Dev</span>
+      </div>
+      <div class="float-pill">
+        <div class="pill-icon">🌲</div>
+        <div class="pill-text">
+          <strong>Pinecone</strong>
+          <span>AI Infra</span>
+        </div>
+        <span class="pill-cat dev">Dev</span>
+      </div>
+      <div class="float-pill">
+        <div class="pill-icon">🎓</div>
+        <div class="pill-text">
+          <strong>NotebookLM</strong>
+          <span>Research</span>
+        </div>
+        <span class="pill-cat ai">AI</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VERGLEICH -->
+<div class="comparison-bar">
+  <h3>Direktvergleich der Optionen</h3>
+  <table class="comp-table">
+    <tr>
+      <th>Option</th>
+      <th>Interaktivität</th>
+      <th>Passt zum Design-System</th>
+      <th>Umsetzungsaufwand</th>
+      <th>Empfehlung</th>
+    </tr>
+    <tr>
+      <td class="opt-name">1 – Kategorie-Tabs</td>
+      <td><span class="star">★★★</span> Filterbar</td>
+      <td>Gut (Light Section)</td>
+      <td class="neutral">Mittel</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="opt-name">2 – Dark Bento-Grid</td>
+      <td><span class="star">★★</span> Hover-Glow</td>
+      <td><span class="star">Perfekt</span> (Dark + Glow)</td>
+      <td class="neutral">Niedrig</td>
+      <td><span class="rec-badge">Empfohlen</span></td>
+    </tr>
+    <tr>
+      <td class="opt-name">3 – Floating Pills</td>
+      <td><span class="star">★★</span> Hover</td>
+      <td>Gut (Modern)</td>
+      <td class="neutral">Niedrig</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
