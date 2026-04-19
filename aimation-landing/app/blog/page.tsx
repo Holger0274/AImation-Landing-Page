@@ -10,7 +10,7 @@ export const dynamic = 'force-static';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Blog: KI für den Mittelstand | Praxis statt Buzzwords | AI.mation' },
+  title: { absolute: 'Blog: KI für den Mittelstand | Praxis statt leeren Versprechen | AI.mation' },
   description: 'Ehrliche Einschätzungen zu KI im Mittelstand. Keine Hochglanzbroschüren, sondern Artikel, die Sie morgen anwenden können.',
   alternates: {
     canonical: `${siteUrl}/blog`,
@@ -98,7 +98,7 @@ export default function BlogOverviewPage() {
               style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}
             >
               KI für den Mittelstand:{' '}
-              <span className="text-[#f90093]">Praxis statt Buzzwords</span>
+              <span className="text-[#f90093]">Praxis statt leeren Versprechen</span>
             </h1>
             <p className="text-gray-600 font-inter leading-relaxed max-w-2xl" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
               Keine Hochglanzbroschüren. Keine Theorie-Vorträge. Artikel, die Sie morgen anwenden können. Mit ehrlichen Einschätzungen, was KI kann und was nicht.
@@ -147,7 +147,7 @@ export default function BlogOverviewPage() {
                     href={article.relatedPillar.href}
                     className="text-xs text-gray-400 font-inter hover:text-[#071013] transition-colors"
                   >
-                    Verwandte Seite: {article.relatedPillar.label} →
+                    Verwandte Seite: {article.relatedPillar.label}
                   </Link>
                 </div>
               </article>
