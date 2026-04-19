@@ -13,7 +13,7 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: { absolute: 'KI kennt keinen Halt: Warum CAD-Teams jetzt starten müssen | AI.mation' },
-  description: 'Claude Opus 4.7 liest technische Zeichnungen mit 98,5 % Genauigkeit. Warum das für Konstruktionsabteilungen ein Kategoriesprung ist — und warum Abwarten die teuerste Strategie ist.',
+  description: 'Claude Opus 4.7 liest technische Zeichnungen mit 98,5 % Genauigkeit. Warum das für Konstruktionsabteilungen ein Kategoriesprung ist. Und warum Abwarten die teuerste Strategie ist.',
   alternates: { canonical: `${siteUrl}/blog/ki-cad-zukunft-jetzt-starten` },
   openGraph: {
     title: 'KI kennt keinen Halt: Warum CAD-Teams jetzt starten müssen',
@@ -55,14 +55,14 @@ export default function KiCadZukunftPage() {
               className="font-heading font-bold text-[#071013] mb-6 leading-tight"
               style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)' }}
             >
-              KI kennt keinen Halt — warum wir bei CAD jetzt starten müssen,{' '}
+              KI kennt keinen Halt: warum wir bei CAD jetzt starten müssen,{' '}
               <span className="text-[#f90093]">auch wenn es noch nicht ausgereift ist</span>
             </h1>
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
               <Image
                 src="/images/blog/ki-cad-ingenieur-hero.jpg"
-                alt="Ingenieur analysiert CAD-Modell am Workstation – KI-gestützte Konstruktion im Mittelstand"
+                alt="Ingenieur analysiert CAD-Modell am Workstation, KI-gestützte Konstruktion im Mittelstand"
                 fill
                 className="object-cover"
                 priority
@@ -83,7 +83,7 @@ export default function KiCadZukunftPage() {
                 Zwischen dem Release von Claude Opus 4.6 und 4.7 lagen gerade einmal ein paar Monate. Und doch hat sich an einer einzigen Kennzahl etwas verschoben, das für die Konstruktionswelt weitreichender ist, als die meisten Ingenieurabteilungen gerade realisieren: Die visuelle Genauigkeit beim Lesen von Screenshots und Zeichnungen ist von 54,5 % auf 98,5 % gesprungen. Das ist kein Inkrement. Das ist ein Kategoriesprung.
               </p>
               <p>
-                Ich will in diesem Beitrag drei Dinge nüchtern zusammenbringen. Erstens: Was sich mit Opus 4.7 konkret verändert hat. Zweitens: Warum das für CAD noch nicht ausgereift ist, aber dennoch ein riesiges Potential bedeutet. Und drittens: Warum genau das der Grund ist, heute mit Proof of Concepts zu starten — nicht in einem Jahr.
+                Ich will in diesem Beitrag drei Dinge nüchtern zusammenbringen. Erstens: Was sich mit Opus 4.7 konkret verändert hat. Zweitens: Warum das für CAD noch nicht ausgereift ist, aber dennoch ein riesiges Potential bedeutet. Und drittens: Warum genau das der Grund ist, heute mit Proof of Concepts zu starten. Nicht in einem Jahr.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -92,7 +92,7 @@ export default function KiCadZukunftPage() {
                 Die Kurve, die wir unterschätzen
               </h2>
               <p>
-                Menschen sind lineare Denker. Wenn sich eine Technologie in den letzten zwei Jahren „ordentlich verbessert" hat, extrapolieren wir das geradlinig in die Zukunft. Genauso viel Fortschritt in den nächsten zwei Jahren — erscheint plausibel, ist aber fast immer falsch. KI-Fähigkeiten entwickeln sich nicht linear, sondern in Sprüngen: Lange Plateaus, in denen man das Gefühl hat, nichts Relevantes passiert, und dann innerhalb weniger Wochen eine Schwelle, die vorher als unerreichbar galt.
+                Menschen sind lineare Denker. Wenn sich eine Technologie in den letzten zwei Jahren „ordentlich verbessert" hat, extrapolieren wir das geradlinig in die Zukunft. Genauso viel Fortschritt in den nächsten zwei Jahren? Erscheint plausibel, ist aber fast immer falsch. KI-Fähigkeiten entwickeln sich nicht linear, sondern in Sprüngen: lange Plateaus, in denen man das Gefühl hat, nichts Relevantes passiert, und dann innerhalb weniger Wochen eine Schwelle, die vorher als unerreichbar galt.
               </p>
               <p>
                 Opus 4.7 ist so ein Schwellenmoment. Mit der neuen Auflösung von 3,75 Megapixeln (mehr als verdreifacht gegenüber dem Vorgänger) kann das Modell dichte technische Zeichnungen, Bemaßungen, Schraffuren und Symbolbibliotheken erstmals zuverlässig lesen. Kombiniert mit dem Sprung bei Computer-Use-Aufgaben von 72,7 % auf 78,0 % und einem klaren Plus bei komplexen Coding-Aufgaben (SWE-bench Pro von 53,4 % auf 64,3 %) entsteht eine neue Klasse: Modelle, die Konstruktionsartefakte nicht nur „sehen", sondern auch strukturiert damit arbeiten können.
@@ -105,7 +105,7 @@ export default function KiCadZukunftPage() {
                 Der ehrliche Stand von KI + CAD
               </h2>
               <p>
-                Parallel zu den Modellen ist ein Ökosystem gewachsen, das fast niemand im deutschen Mittelstand auf dem Schirm hat. Über das Model Context Protocol (MCP) — einen offenen Standard, den Anthropic 2024 eingeführt hat — lassen sich CAD-Systeme direkt an Claude anbinden. Es gibt aktive Open-Source-Integrationen für FreeCAD, Blender, Onshape, und die Community arbeitet an Anbindungen für Fusion 360, AutoCAD und SolidWorks.
+                Parallel zu den Modellen ist ein Ökosystem gewachsen, das fast niemand im deutschen Mittelstand auf dem Schirm hat. Das Model Context Protocol (MCP), ein offener Standard den Anthropic 2024 eingeführt hat, erlaubt die direkte Anbindung von CAD-Systemen an Claude. Es gibt aktive Open-Source-Integrationen für FreeCAD, Blender, Onshape, und die Community arbeitet an Anbindungen für Fusion 360, AutoCAD und SolidWorks.
               </p>
               <p>Das heißt praktisch: Ein Modell wie Opus 4.7 kann heute schon</p>
               <ul>
@@ -134,7 +134,7 @@ export default function KiCadZukunftPage() {
                 Was Marketing bleibt
               </h3>
               <p>
-                „Ein Satz — druckfertiges 3D-Modell." Solche Clips laufen gerade auf LinkedIn und TikTok. Für Werbezwecke klappt das in kuratierten Demos. Für reale Konstruktionsaufgaben mit Normen, Toleranzen und Prüfpflichten ist das heute nicht der Fall.
+                „Ein Satz, druckfertiges 3D-Modell." Solche Clips laufen gerade auf LinkedIn und TikTok. Für Werbezwecke klappt das in kuratierten Demos. Für reale Konstruktionsaufgaben mit Normen, Toleranzen und Prüfpflichten ist das heute nicht der Fall.
               </p>
               <p>
                 Diese drei Kategorien sauber zu trennen, ist meine tägliche Arbeit bei AImation. Wer den Hype für Reife hält, wird enttäuscht. Wer die Unreife als Beweis nimmt, dass man noch nicht anfangen muss, verpasst den eigentlichen Punkt.
@@ -146,10 +146,10 @@ export default function KiCadZukunftPage() {
                 Das Potential, das die meisten noch nicht sehen
               </h2>
               <p>
-                Ich habe die letzten Jahre damit verbracht, FEM-Simulationen von Stunden auf Minuten zu beschleunigen — mit Graph Convolutional Neural Networks haben wir Berechnungen, die drei Stunden dauerten, auf unter drei Minuten gebracht. Das war vor wenigen Jahren so weit weg von der Praxis, dass die meisten CAE-Abteilungen es für eine Spielerei hielten. Heute ist ML-beschleunigte Simulation in führenden Häusern Standard-Werkzeug.
+                Ich habe die letzten Jahre damit verbracht, FEM-Simulationen von Stunden auf Minuten zu beschleunigen. Mit Graph Convolutional Neural Networks haben wir Berechnungen, die drei Stunden dauerten, auf unter drei Minuten gebracht. Das war vor wenigen Jahren so weit weg von der Praxis, dass die meisten CAE-Abteilungen es für eine Spielerei hielten. Heute ist ML-beschleunigte Simulation in führenden Häusern Standard-Werkzeug.
               </p>
               <p>
-                Genau diesen Bogen sehe ich jetzt bei CAD kommen. Was FEM vor fünf Jahren durchgemacht hat — von „Forschungsthema" zu „produktiv im Alltag" — macht die Konstruktionsseite jetzt durch. Nur schneller. Weil die Modelle besser starten, die Tooling-Infrastruktur (MCP, Cloud-CAD, Open-Source-Integrationen) bereits steht, und weil der Druck auf Konstruktionsabteilungen durch Fachkräftemangel und Variantenvielfalt real ist.
+                Genau diesen Bogen sehe ich jetzt bei CAD kommen. Was FEM vor fünf Jahren durchgemacht hat, von „Forschungsthema" zu „produktiv im Alltag", macht die Konstruktionsseite jetzt durch. Nur schneller. Weil die Modelle besser starten, die Tooling-Infrastruktur (MCP, Cloud-CAD, Open-Source-Integrationen) bereits steht, und weil der Druck auf Konstruktionsabteilungen durch Fachkräftemangel und Variantenvielfalt real ist.
               </p>
               <p>
                 Wenn ich heute mit Inhabern mittelständischer Konstruktions- und Ingenieurbüros spreche, höre ich oft: „Wir warten, bis das ausgereift ist." Ich verstehe die Haltung. Aber sie ist aus meiner Sicht die teuerste Strategie.
@@ -164,10 +164,10 @@ export default function KiCadZukunftPage() {
                 Wer bis zur Reife wartet, wartet auf zwei Dinge gleichzeitig: dass die Technologie stabil wird, und dass das eigene Team damit umgehen kann. Letzteres ist das eigentliche Problem.
               </p>
               <p>
-                KI-Kompetenz in einer Konstruktionsabteilung entsteht nicht durch ein Seminar. Sie entsteht durch das Ausprobieren von Werkzeugen an echten, kleinen Aufgaben. Durch das Scheitern an Toleranzen, das Lernen, welche Prompts zuverlässig welche Ergebnisse liefern, das Entwickeln eines Gefühls dafür, wo die Maschine hilft und wo sie noch nicht kann. Dieses Erfahrungswissen lässt sich nicht kaufen und nicht nachholen. Es wird über Monate aufgebaut — oder eben nicht.
+                KI-Kompetenz in einer Konstruktionsabteilung entsteht nicht durch ein Seminar. Sie entsteht durch das Ausprobieren von Werkzeugen an echten, kleinen Aufgaben. Durch das Scheitern an Toleranzen, das Lernen, welche Prompts zuverlässig welche Ergebnisse liefern, das Entwickeln eines Gefühls dafür, wo die Maschine hilft und wo sie noch nicht kann. Dieses Erfahrungswissen lässt sich nicht kaufen und nicht nachholen. Es wird über Monate aufgebaut. Oder eben nicht.
               </p>
               <p>
-                Unternehmen, die jetzt starten, sind in drei Jahren nicht einfach „ein bisschen weiter". Sie sind in einer anderen Liga — nicht wegen der Technik, sondern wegen des Teamwissens und der eingespielten Workflows.
+                Unternehmen, die jetzt starten, sind in drei Jahren nicht einfach „ein bisschen weiter". Sie sind in einer anderen Liga. Nicht wegen der Technik, sondern wegen des Teamwissens und der eingespielten Workflows.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -179,10 +179,10 @@ export default function KiCadZukunftPage() {
                 Klassische Digitalisierungsstrategien mit 18-Monats-Roadmap funktionieren bei KI nicht. Die Technologie entwickelt sich während der Planungsphase weiter, als die Planung zu Ende ist. Wer in diesem Umfeld mit großen Papieren arbeitet, ist bei der Umsetzung immer einen Schritt hinter dem, was schon möglich wäre.
               </p>
               <p>
-                Die Antwort, die wir bei AImation konsequent vertreten, heißt Proof of Concept. Klein, konkret, zeitlich begrenzt, mit einem klaren Lernziel. Ein PoC zu einer realen Aufgabe aus dem Konstruktionsalltag — eine Variante einer Halteranwendung, die automatisiert aus Parametern generiert wird. Die Extraktion von Stücklisten aus archivierten PDF-Zeichnungen. Ein KI-Assistent, der aus Kundenanforderungen einen Vorschlag für das CAD-Modell macht, den der Konstrukteur anschließend prüft und übernimmt.
+                Die Antwort, die wir bei AImation konsequent vertreten, heißt Proof of Concept. Klein, konkret, zeitlich begrenzt, mit einem klaren Lernziel. Zum Beispiel: eine Variante einer Halteranwendung, die automatisiert aus Parametern generiert wird. Oder die Extraktion von Stücklisten aus archivierten PDF-Zeichnungen. Oder ein KI-Assistent, der aus Kundenanforderungen einen Vorschlag für das CAD-Modell macht, den der Konstrukteur anschließend prüft und übernimmt.
               </p>
               <p>
-                Solche PoCs kosten nicht viel. Sie dauern Wochen, nicht Quartale. Sie sind so gebaut, dass sie scheitern dürfen — das ist ihr Zweck. Was sie liefern, ist genau das, was in keinem Benchmark und keinem Whitepaper steht: die Antwort auf die Frage, was in meinem Unternehmen mit meinen Daten und meinen Prozessen funktioniert und was nicht. Und sie liefern Teamerfahrung, die jedes nächste Projekt schneller macht.
+                Solche PoCs kosten nicht viel. Sie dauern Wochen, nicht Quartale. Sie sind so gebaut, dass sie scheitern dürfen, denn das ist ihr Zweck. Was sie liefern, ist genau das, was in keinem Benchmark und keinem Whitepaper steht: die Antwort auf die Frage, was in meinem Unternehmen mit meinen Daten und meinen Prozessen funktioniert und was nicht. Und sie liefern Teamerfahrung, die jedes nächste Projekt schneller macht.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -210,7 +210,7 @@ export default function KiCadZukunftPage() {
                 3. Zwei Personen aus dem Team einplanen, nicht eine
               </h3>
               <p>
-                Einen Konstrukteur mit Domänenwissen, eine Person mit Affinität zu Automatisierung. Beide brauchen Zeit — nicht nebenher. Wer das als „macht der Praktikant mal" behandelt, bekommt auch Praktikantenergebnisse.
+                Einen Konstrukteur mit Domänenwissen, eine Person mit Affinität zu Automatisierung. Beide brauchen Zeit. Nicht nebenher. Wer das als „macht der Praktikant mal" behandelt, bekommt auch Praktikantenergebnisse.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -219,10 +219,10 @@ export default function KiCadZukunftPage() {
                 Was bleibt
               </h2>
               <p>
-                KI entwickelt sich weiter. Sie macht keine Pause, während wir uns überlegen, ob wir bereit sind. Das Modell, das in sechs Monaten auf meinem Rechner läuft, wird Dinge können, die heute in keinem Blogbeitrag stehen — auch nicht in diesem.
+                KI entwickelt sich weiter. Sie macht keine Pause, während wir uns überlegen, ob wir bereit sind. Das Modell, das in sechs Monaten auf meinem Rechner läuft, wird Dinge können, die heute in keinem Blogbeitrag stehen. Auch nicht in diesem.
               </p>
               <p>
-                Die einzige Strategie, die in diesem Umfeld zuverlässig funktioniert, heißt: klein anfangen, konkret werden, regelmäßig testen. Nicht auf das perfekte Werkzeug warten. Nicht auf die große Entscheidung. Sondern den nächsten kleinen Schritt machen — jetzt, mit dem was heute da ist.
+                Die einzige Strategie, die in diesem Umfeld zuverlässig funktioniert, heißt: klein anfangen, konkret werden, regelmäßig testen. Nicht auf das perfekte Werkzeug warten. Nicht auf die große Entscheidung. Sondern den nächsten kleinen Schritt machen. Jetzt, mit dem was heute da ist.
               </p>
               <p className="font-semibold text-[#071013]">
                 Für CAD ist das heutige Werkzeug noch nicht perfekt. Es wird nie perfekt sein, bevor jemand es einsetzt. Genau deshalb: jetzt anfangen.
