@@ -53,18 +53,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // },
 
     // === PHASE 3: Blog-Artikel ===
-    // {
-    //   url: `${baseUrl}/blog/schatten-ki-unternehmen`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly',
-    //   priority: 0.8,
-    // },
-    // {
-    //   url: `${baseUrl}/blog/6-stufen-ki-nutzung`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly',
-    //   priority: 0.8,
-    // },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/schatten-ki-unternehmen`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/6-stufen-ki-nutzung`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/ki-prompts-die-wirklich-funktionieren`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
 
     // === PHASE 3: Use-Case-Seiten ===
     // {

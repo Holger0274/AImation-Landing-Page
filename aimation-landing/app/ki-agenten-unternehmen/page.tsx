@@ -9,7 +9,7 @@ export const dynamic = 'force-static';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
 export const metadata: Metadata = {
-  title: 'KI-Agenten für Unternehmen | Was sie können, was sie kosten | AI.mation',
+  title: { absolute: 'KI-Agenten für Unternehmen | Was sie können, was sie kosten | AI.mation' },
   description: 'KI-Agenten erklärt: Was sie von Chatbots unterscheidet, was sie kosten, wann sie sich lohnen. Mit Engineering-Use-Cases, die kein generischer Berater kennt.',
   alternates: {
     canonical: `${siteUrl}/ki-agenten-unternehmen`,

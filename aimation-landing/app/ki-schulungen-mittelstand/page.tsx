@@ -9,7 +9,7 @@ export const dynamic = 'force-static';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
 export const metadata: Metadata = {
-  title: 'KI-Schulungen für KMUs und Mittelstand | Praxis, kein Hype | AI.mation',
+  title: { absolute: 'KI-Schulungen für KMUs und Mittelstand | Praxis, kein Hype | AI.mation' },
   description: 'KI-Schulungen für KMUs: Von Grundlagen bis Multi-Agent-Systeme. 3 Ebenen, alle Module kombinierbar. 20 Jahre Engineering-Erfahrung. Direkt anwendbar.',
   alternates: {
     canonical: `${siteUrl}/ki-schulungen-mittelstand`,

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Datenschutzerklärung | AI.mation',
+  title: { absolute: 'Datenschutzerklärung | AI.mation' },
   description: 'Datenschutzerklärung von AI.mation: Informationen zur DSGVO-konformen Datenverarbeitung, Cookies, Analytics und Ihren Rechten. Transparenter Umgang mit Ihren Daten.',
   robots: {
     index: false, // Datenschutz sollte nicht indexiert werden

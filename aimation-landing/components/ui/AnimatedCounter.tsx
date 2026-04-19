@@ -61,35 +61,40 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
   // Motion Value: Der aktuelle Zählwert (startet bei 0)
   const motionValue = useMotionValue(0);
 
-  // Spring: Macht die Animation smooth (nicht linear)
-  // damping und stiffness sind so abgestimmt, dass die Animation ca. 2 Sekunden dauert
   const springValue = useSpring(motionValue, {
-    damping: 60,        // Höheres damping = langsamere Animation
-    stiffness: 100,     // Wie "straff" die Feder ist
-    restDelta: 0.001    // Stoppt die Animation, wenn der Wert sehr nah am Ziel ist
+    damping: 50,
+    stiffness: 80,
+    restDelta: 1
   });
 
-  // Ist die Komponente im Viewport? (once: true = nur einmal triggern)
   const isInView = useInView(ref, {
-    once: true,           // Animation nur einmal abspielen
-    margin: '0px 0px -50px 0px',  // Startet 50px bevor Element unten aus Viewport verschwindet
-    amount: 0.1          // Mindestens 10% des Elements muss sichtbar sein
+    once: true,
+    margin: '0px 0px -10px 0px',
+    amount: 0.1
   });
 
   // Der angezeigte Wert (formatiert mit Tausendertrennzeichen, Prefix, Suffix)
-  const [displayValue, setDisplayValue] = React.useState(`${prefix}0${suffix}`);
+  const formatNumber = (num: number) => {
+    let formatted = num.toFixed(decimals);
+    if (separator) {
+      const parts = formatted.split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      formatted = parts.join('.');
+    }
+    return `${prefix}${formatted}${suffix}`;
+  };
+
+  const [displayValue, setDisplayValue] = React.useState(() => formatNumber(target));
 
   // Effekt: Startet die Animation, wenn Komponente sichtbar wird
   useEffect(() => {
     if (isInView) {
-      // Stelle sicher, dass der Startwert bei 0 ist
-      motionValue.set(0);
-
       const timeout = setTimeout(() => {
-        motionValue.set(target); // Setze Ziel → Animation startet!
+        motionValue.set(0);
+        requestAnimationFrame(() => motionValue.set(target));
       }, delay * 1000);
 
-      return () => clearTimeout(timeout); // Cleanup
+      return () => clearTimeout(timeout);
     }
   }, [isInView, target, motionValue, delay]);
 

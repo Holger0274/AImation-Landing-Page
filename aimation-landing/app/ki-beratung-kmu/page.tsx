@@ -8,7 +8,7 @@ export const dynamic = 'force-static';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
 export const metadata: Metadata = {
-  title: 'KI-Beratung für KMUs | Klarheit statt Hype | AI.mation',
+  title: { absolute: 'KI-Beratung für KMUs | Klarheit statt Hype | AI.mation' },
   description: 'KI-Beratung für den Mittelstand: AI Readiness Assessment, Use Case Identifikation, Strategie & Roadmap. Ehrliche Einschätzung – auch wenn KI nicht die Antwort ist.',
   alternates: { canonical: `${siteUrl}/ki-beratung-kmu` },
   openGraph: {
