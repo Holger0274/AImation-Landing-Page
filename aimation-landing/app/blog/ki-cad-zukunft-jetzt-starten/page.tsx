@@ -95,7 +95,7 @@ export default function KiCadZukunftPage() {
                 Menschen sind lineare Denker. Wenn sich eine Technologie in den letzten zwei Jahren „ordentlich verbessert" hat, extrapolieren wir das geradlinig in die Zukunft. Genauso viel Fortschritt in den nächsten zwei Jahren? Erscheint plausibel, ist aber fast immer falsch. KI-Fähigkeiten entwickeln sich nicht linear, sondern in Sprüngen: lange Plateaus, in denen man das Gefühl hat, nichts Relevantes passiert, und dann innerhalb weniger Wochen eine Schwelle, die vorher als unerreichbar galt.
               </p>
               <p>
-                Opus 4.7 ist so ein Schwellenmoment. Mit der neuen Auflösung von 3,75 Megapixeln (mehr als verdreifacht gegenüber dem Vorgänger) kann das Modell dichte technische Zeichnungen, Bemaßungen, Schraffuren und Symbolbibliotheken erstmals zuverlässig lesen. Kombiniert mit dem Sprung bei Computer-Use-Aufgaben von 72,7 % auf 78,0 % und einem klaren Plus bei komplexen Coding-Aufgaben (SWE-bench Pro von 53,4 % auf 64,3 %) entsteht eine neue Klasse: Modelle, die Konstruktionsartefakte nicht nur „sehen", sondern auch strukturiert damit arbeiten können.
+                Opus 4.7 ist so ein Schwellenmoment. Die Bildauflösung wurde mehr als verdreifacht. Was das für einen Konstrukteur bedeutet: Das Modell liest dichte technische Zeichnungen, Bemaßungen, Schraffuren und Symbolbibliotheken jetzt erstmals zuverlässig. Die Genauigkeit beim Lesen von Zeichnungen ist von 54,5 % auf 98,5 % gestiegen. Dazu kommt eine deutlich bessere Fähigkeit, direkt mit Software zu interagieren und komplexen Code zu schreiben. In der Summe entsteht eine neue Klasse: Modelle, die Konstruktionsartefakte nicht nur „sehen", sondern auch strukturiert damit arbeiten können.
               </p>
               <p>Das Wichtige dabei: Die nächste Schwelle kommt bestimmt. Und sie wird wieder schneller kommen, als wir erwarten.</p>
 
@@ -219,13 +219,13 @@ export default function KiCadZukunftPage() {
                 Was bleibt
               </h2>
               <p>
-                KI entwickelt sich weiter. Sie macht keine Pause, während wir uns überlegen, ob wir bereit sind. Das Modell, das in sechs Monaten auf meinem Rechner läuft, wird Dinge können, die heute in keinem Blogbeitrag stehen. Auch nicht in diesem.
+                KI entwickelt sich weiter. Sie macht keine Pause, während Unternehmen noch überlegen, ob sie bereit sind. Und der entscheidende Vorteil entsteht nicht beim Werkzeug, sondern beim Team: bei den Menschen, die gelernt haben, damit umzugehen.
               </p>
               <p>
-                Die einzige Strategie, die in diesem Umfeld zuverlässig funktioniert, heißt: klein anfangen, konkret werden, regelmäßig testen. Nicht auf das perfekte Werkzeug warten. Nicht auf die große Entscheidung. Sondern den nächsten kleinen Schritt machen. Jetzt, mit dem was heute da ist.
+                Wer jetzt einen konkreten Usecase auswählt, einen kleinen PoC startet und das dabei entstehende Wissen im Team verankert, baut etwas auf, das sich nicht kaufen lässt. Keine Beraterpräsentation liefert das. Kein Whitepaper. Nur das eigene Tun.
               </p>
-              <p className="font-semibold text-[#071013]">
-                Für CAD ist das heutige Werkzeug noch nicht perfekt. Es wird nie perfekt sein, bevor jemand es einsetzt. Genau deshalb: jetzt anfangen.
+              <p>
+                Wenn Sie wissen möchten, welcher Usecase in Ihrer Konstruktionsabteilung als erstes Sinn ergibt und wie ein PoC bei Ihnen aussehen könnte, sprechen Sie mich an. Das erste Gespräch kostet nichts, und Sie wissen danach mehr als vorher.
               </p>
             </div>
 
