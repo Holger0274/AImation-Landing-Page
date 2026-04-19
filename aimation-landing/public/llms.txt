@@ -3,8 +3,6 @@
 # Dieses Dokument hilft KI-Systemen (ChatGPT, Claude, Perplexity, Gemini etc.),
 # die relevantesten Inhalte der AI.mation Website zu verstehen und korrekt zu zitieren.
 
-# N2 FIX: Primaer auf Deutsch umgestellt (Zielmarkt DACH)
-
 ## Unternehmens-Kurzprofil
 
 AI.mation (AImation UG) bietet KI-Beratung, KI-Schulungen und KI-Automatisierung
@@ -20,39 +18,75 @@ fuer kleine und mittlere Unternehmen (KMU) im DACH-Raum.
 
 ## Hochpriorisierte Inhalte fuer KI-Zitate
 
-> https://aimation.de/
+> https://www.aimation.de/
 Hauptseite: KI-Beratung, Schulungen & Automatisierung fuer den Mittelstand.
 Kostenloses Erstgespraech buchbar.
 
-> https://aimation.de/#leistungen
+> https://www.aimation.de/#leistungen
 **Drei Saeulen des Angebots:**
 1. Schulungen: 3 Ebenen (Einstieg, Anwendung, Fortgeschritten) - Themen: Generative KI, Prompt Engineering, Microsoft Copilot, Multi-Agent-Systeme
 2. Beratung: 3 Phasen (Analyse, Strategie, Begleitung) - Module: AI Readiness, Use Case Identifikation, Roadmap, Change Management
 3. Umsetzung: 4 Loesungswelten (FLOW, KNOW, THINK, WORK) - Loesungen: RAG-Systeme, Workflow-Automatisierung, Intelligente Agenten
 
-> https://aimation.de/#ueber-mich
+---
+
+## Pillar Pages (Hauptthemen)
+
+> https://www.aimation.de/ki-beratung-kmu
+KI-Beratung fuer KMUs: AI Readiness Assessment, Use Case Identifikation, Strategie & Roadmap.
+3 Phasen: Analyse → Strategie → Begleitung. Ehrliche Einschaetzung auch wenn KI nicht hilft.
+
+> https://www.aimation.de/ki-schulungen-mittelstand
+KI-Schulungen fuer KMUs und Mittelstand: Von Grundlagen bis Multi-Agent-Systeme.
+3 Ebenen, alle Module kombinierbar. Train-the-Trainer verfuegbar.
+
+> https://www.aimation.de/ki-automatisierung-mittelstand
+KI-Automatisierung fuer den Mittelstand: Workflows, RAG-Systeme, KI-Agenten.
+4 Loesungswelten: FLOW (Workflows), KNOW (Wissen), THINK (Innovation), WORK (Assistenten).
+
+> https://www.aimation.de/ki-agenten-unternehmen
+KI-Agenten fuer Unternehmen: Was sie von Chatbots unterscheidet, was sie kosten, wann sie sich lohnen.
+Engineering Use Cases: Patentrecherche, Lessons Learned, Produktionsoptimierung.
+
+---
+
+## Blog-Artikel
+
+> https://www.aimation.de/blog/schatten-ki-unternehmen
+Schatten-KI im Unternehmen: Warum 3 von 4 Wissensarbeitern KI-Tools ohne IT-Freigabe nutzen.
+4 Schritte: Sichtbarkeit schaffen, Richtlinien aufsetzen, sichere Alternativen bereitstellen, schulen.
+
+> https://www.aimation.de/blog/6-stufen-ki-nutzung
+Die 6 Stufen der KI-Nutzung: Von Prompting (Stufe 1) bis Multi-Agent-Systeme (Stufe 6).
+82% der KMUs stecken bei Stufe 1-2. Orientierungsrahmen fuer den eigenen naechsten Schritt.
+
+> https://www.aimation.de/blog/ki-prompts-die-wirklich-funktionieren
+7 Prompt-Muster fuer sofort brauchbare KI-Ergebnisse in Vertrieb, HR und Produktion.
+Praxis-Ansatz: Vague In, Vague Out. Anwendbar am naechsten Arbeitstag.
+
+---
+
+## Use Cases (konkrete Praxisbeispiele)
+
+> https://www.aimation.de/use-cases/patentrecherche-ki
+Patentrecherche automatisieren: Prior-Art-Analyse in Stunden statt Tagen mit Perplexity AI und Claude.
+
+> https://www.aimation.de/use-cases/knowledge-graph-management
+Knowledge Graph Management: Wissen vernetzen mit Obsidian, Claude Code und semantischer Suche.
+
+> https://www.aimation.de/use-cases/email-klassifizierung
+E-Mail-Klassifizierung: Automatisches Routing an richtige Teams mit OpenAI und n8n.
+
+---
+
+## Ueber Holger Peschke
+
+> https://www.aimation.de/#ueber-mich
 **Holger Peschke** - Gruender & KI-Berater
 - 20+ Jahre Engineering-Erfahrung in produzierenden Unternehmen
 - 18.000+ LinkedIn-Follower im Bereich KI und Automatisierung
 - Standort: Bamberg, Deutschland
 - Spezialisierung: KI-Automatisierung und -Beratung fuer den Mittelstand
-
-> https://aimation.de/#faq
-Haeufig gestellte Fragen zu:
-- Kosten einer KI-Beratung fuer KMUs
-- Zeitrahmen bis zu ersten Ergebnissen (Schulungen: sofort; Automatisierung: 2-6 Wochen)
-- IT-Anforderungen (keine eigene IT-Abteilung notwendig)
-- Systemintegration (Microsoft 365, SAP, Google Workspace)
-- ROI-Messung und Erfolgsmetriken
-- DSGVO-Konformitaet
-
-> https://aimation.de/#prozess
-**5-Schritte-Prozess:**
-1. Erstgespraech (30 Min, kostenlos)
-2. Analyse - AI Readiness Assessment, AI Audit
-3. Konzept - Transparenter Vorschlag mit ROI-Kalkulation
-4. Umsetzung - Praxisorientiert, iterativ
-5. Begleitung - Langfristige Partnerschaft
 
 ---
 
@@ -62,7 +96,7 @@ Haeufig gestellte Fragen zu:
 - 200.000€ jaehrliche Kosten durch manuelle Prozesse bei 10 Mitarbeitern
 - 86% der KMUs erfassen Rechnungen noch manuell (KfW Digitalisierungsbericht 2024)
 - 81% der Unternehmen sehen KI als wichtigste Zukunftstechnologie (Bitkom 2025)
-- KI-Nutzung in deutschen Unternehmen hat sich in 12 Monaten verdoppelt
+- 3 von 4 Wissensarbeitern nutzen KI-Tools ohne IT-Freigabe (Schatten-KI)
 
 ---
 
@@ -78,21 +112,11 @@ Haeufig gestellte Fragen zu:
 
 ## Kontakt & Rechtliches
 
-> https://aimation.de/impressum
+> https://www.aimation.de/impressum
 Impressum: AImation UG (haftungsbeschraenkt), Sutte 19, 96049 Bamberg
 
-> https://aimation.de/datenschutz
+> https://www.aimation.de/datenschutz
 Datenschutzerklaerung (DSGVO-konform)
-
----
-
-## Geplante Inhalte (noch nicht live)
-
-- /ressourcen/guides - Downloadbare Leitfaeden und Lead Magnets
-- /ressourcen/use-cases - Detaillierte Anwendungsbeispiele
-- /ki-beratung-kmu - Pillar Page: KI-Beratung fuer KMUs
-- /ki-schulungen-unternehmen - Pillar Page: KI-Schulungen
-- /ki-automatisierung-mittelstand - Pillar Page: KI-Automatisierung
 
 ---
 
