@@ -2,13 +2,12 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
-  const currentDate = new Date();
 
   return [
     // Startseite
     {
       url: baseUrl,
-      lastModified: currentDate,
+      lastModified: new Date('2026-04-20'),
       changeFrequency: 'weekly',
       priority: 1.0,
     },
@@ -16,25 +15,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Pillar Pages
     {
       url: `${baseUrl}/ki-agenten-unternehmen`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-04-01'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/ki-beratung-kmu`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-04-01'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/ki-schulungen-mittelstand`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-04-01'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/ki-automatisierung-mittelstand`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-04-01'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
@@ -42,37 +41,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Blog
     {
       url: `${baseUrl}/blog`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-04-20'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/blog/schatten-ki-unternehmen`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/6-stufen-ki-nutzung`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/ki-prompts-die-wirklich-funktionieren`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/blog/ki-projekte-scheitern-fundament`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-04-20'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/blog/ki-cad-zukunft-jetzt-starten`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-04-19'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/ki-prompts-die-wirklich-funktionieren`,
+      lastModified: new Date('2026-04-01'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/6-stufen-ki-nutzung`,
+      lastModified: new Date('2026-03-30'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/schatten-ki-unternehmen`,
+      lastModified: new Date('2026-03-16'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
@@ -80,19 +79,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Use Cases
     {
       url: `${baseUrl}/use-cases/patentrecherche-ki`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-04-01'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/use-cases/knowledge-graph-management`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-04-01'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/use-cases/email-klassifizierung`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-04-01'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
