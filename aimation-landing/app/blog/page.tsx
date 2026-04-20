@@ -33,6 +33,15 @@ const breadcrumbs = [
 
 const ARTICLES = [
   {
+    slug: 'ki-projekte-scheitern-fundament',
+    title: 'KI-Projekte scheitern nicht am Modell. Sie scheitern an dem, was darunter liegt.',
+    excerpt: 'Warum KI-Einführungen im Mittelstand still im Sand verlaufen – und was zwei echte PoC-Beispiele über Daten, Compliance und Teamwiderstand zeigen. Mit konkreten Schritten für den richtigen Einstieg.',
+    tag: 'KI-Strategie',
+    date: '2026-04-20',
+    readingTime: '10 Min.',
+    relatedPillar: { label: 'KI-Beratung', href: '/ki-beratung-kmu' },
+  },
+  {
     slug: 'ki-cad-zukunft-jetzt-starten',
     title: 'KI kennt keinen Halt: warum wir bei CAD jetzt starten müssen, auch wenn es noch nicht ausgereift ist.',
     excerpt: 'Claude Opus 4.7 liest technische Zeichnungen mit 98,5 % Genauigkeit. Ein Kategoriesprung. Warum Konstruktionsabteilungen trotzdem nicht auf Reife warten sollten, und was ein PoC konkret bringt.',
