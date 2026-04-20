@@ -115,7 +115,7 @@ export default function KiProjekteScheiternPage() {
                     <p className="font-heading font-semibold text-[#071013] text-sm">Demo versus Skalierung</p>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Im kleinen Pilot-Chat wirkt das Modell souverän. Im produktiven Betrieb tauchen Halluzinationen dort auf, wo vorher keine waren — weil plötzlich Sonderfälle kommen, die in der Demo nicht vorkamen. Was auf zehn Testdokumenten funktioniert, stößt auf zehntausend an Grenzen.
+                    Im kleinen Pilot-Chat wirkt das Modell souverän. Im produktiven Betrieb tauchen Halluzinationen dort auf, wo vorher keine waren, weil plötzlich Sonderfälle kommen, die in der Demo nicht vorkamen. Was auf zehn Testdokumenten funktioniert, stößt auf zehntausend an Grenzen.
                   </p>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
@@ -133,7 +133,7 @@ export default function KiProjekteScheiternPage() {
                     <p className="font-heading font-semibold text-[#071013] text-sm">Faktor Mensch</p>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Das technisch beste Werkzeug bleibt ungenutzt, wenn das Team nicht mitgenommen wurde. Widerstand kommt selten aus Bosheit. Er kommt aus Unsicherheit — die berechtigte Sorge, den eigenen Arbeitsplatz oder das vertraute Selbstverständnis zu verlieren.
+                    Das technisch beste Werkzeug bleibt ungenutzt, wenn das Team nicht mitgenommen wurde. Widerstand kommt selten aus Bosheit. Er kommt aus Unsicherheit. Die berechtigte Sorge, den eigenen Arbeitsplatz oder das vertraute Selbstverständnis zu verlieren.
                   </p>
                 </div>
               </div>
@@ -149,13 +149,13 @@ export default function KiProjekteScheiternPage() {
                 Beispiel 1: Der Patent-PoC, der etwas ganz anderes zeigte als geplant
               </h2>
               <p className="mb-5">
-                Ein klassischer Use Case, den ich bei AImation in Varianten regelmäßig sehe: Ein Unternehmen möchte seine eigene Patentlandschaft und die des Wettbewerbs systematisch auswerten lassen. Auf den ersten Blick eine typische KI-Aufgabe — Texte analysieren, Cluster bilden, Trends erkennen. Moderne Sprachmodelle liefern dafür auf Anhieb beeindruckende Ergebnisse in der Demo.
+                Ein klassischer Use Case, den ich bei AImation in Varianten regelmäßig sehe: Ein Unternehmen möchte seine eigene Patentlandschaft und die des Wettbewerbs systematisch auswerten lassen. Auf den ersten Blick eine typische KI-Aufgabe: Texte analysieren, Cluster bilden, Trends erkennen. Moderne Sprachmodelle liefern dafür auf Anhieb beeindruckende Ergebnisse in der Demo.
               </p>
               <p className="mb-5">
                 Der PoC, den wir aufsetzen, ist bewusst klein: ein definierter Technologiebereich, ein paar hundert Patentschriften, eine konkrete Fragestellung. Zeitrahmen: vier bis sechs Wochen.
               </p>
               <p className="mb-5">
-                Was dabei meistens passiert, hat wenig mit der KI zu tun. In den ersten Tagen wird klar, dass die interne Patentdatenbank drei verschiedene Nummernsysteme parallel führt — aus unterschiedlichen Firmenübernahmen. Zwei Fachbereiche haben unabhängig voneinander an derselben Frage gearbeitet, mit unterschiedlichen Begriffen. Die Rechtsabteilung meldet sich und will wissen, ob externe KI-Dienste überhaupt mit diesen Dokumenten in Berührung kommen dürfen.
+                Was dabei meistens passiert, hat wenig mit der KI zu tun. In den ersten Tagen wird klar, dass die interne Patentdatenbank drei verschiedene Nummernsysteme parallel führt, entstanden aus unterschiedlichen Firmenübernahmen. Zwei Fachbereiche haben unabhängig voneinander an derselben Frage gearbeitet, mit unterschiedlichen Begriffen. Die Rechtsabteilung meldet sich und will wissen, ob externe KI-Dienste überhaupt mit diesen Dokumenten in Berührung kommen dürfen.
               </p>
 
               <div className="bg-[#071013] rounded-xl p-6 my-8 text-white">
@@ -168,7 +168,7 @@ export default function KiProjekteScheiternPage() {
               </div>
 
               <p className="mb-5">
-                Ohne diesen PoC hätte der Kunde ein Budget für ein „Patent-KI-System" freigegeben, das mit hoher Wahrscheinlichkeit in exakt den oben genannten Hürden stecken geblieben wäre. Mit dem PoC weiß er vorher, was zu tun ist — und was nicht.
+                Ohne diesen PoC hätte der Kunde ein Budget für ein „Patent-KI-System" freigegeben, das mit hoher Wahrscheinlichkeit in exakt den oben genannten Hürden stecken geblieben wäre. Mit dem PoC weiß er vorher, was zu tun ist. Und was nicht.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -178,10 +178,10 @@ export default function KiProjekteScheiternPage() {
                 Beispiel 2: Die multimodale Ablage, die ein Organisationsproblem offenlegte
               </h2>
               <p className="mb-5">
-                Ein zweites Muster, das ich immer wieder sehe: Ein Mittelständler hat über Jahre technische Dokumentationen, Prüfberichte, Herstellerunterlagen, Fotos von Anlagen, handschriftliche Notizen und gescannte Altpläne angesammelt. Die Bedienung verteilt sich auf verschiedene Systeme — und zunehmend auf das Gedächtnis einzelner Mitarbeiter. Wenn einer davon in Rente geht, entsteht ein spürbares Loch.
+                Ein zweites Muster, das ich immer wieder sehe: Ein Mittelständler hat über Jahre technische Dokumentationen, Prüfberichte, Herstellerunterlagen, Fotos von Anlagen, handschriftliche Notizen und gescannte Altpläne angesammelt. Die Bedienung verteilt sich auf verschiedene Systeme, zunehmend aber auch auf das Gedächtnis einzelner Mitarbeiter. Wenn einer davon in Rente geht, entsteht ein spürbares Loch.
               </p>
               <p className="mb-5">
-                Die Wunsch-Story lautet: „Wir wollen eine KI, die unsere gesamte Wissensbasis durchsuchbar macht — auch die Fotos, auch die gescannten PDFs, auch die handschriftlichen Protokolle." Technisch ist das heute mit moderner multimodaler KI grundsätzlich machbar. Modelle lesen Bilder, extrahieren Text aus schlechten Scans, verstehen Tabellen.
+                Die Wunsch-Story lautet: „Wir wollen eine KI, die unsere gesamte Wissensbasis durchsuchbar macht: auch die Fotos, auch die gescannten PDFs, auch die handschriftlichen Protokolle." Technisch ist das heute mit moderner multimodaler KI grundsätzlich machbar. Modelle lesen Bilder, extrahieren Text aus schlechten Scans, verstehen Tabellen.
               </p>
               <p className="mb-5">
                 Was der PoC in diesem Fall zeigt, ist selten ein technisches Problem:
@@ -190,7 +190,7 @@ export default function KiProjekteScheiternPage() {
               <ul className="mb-6 space-y-3 pl-0">
                 {[
                   'Niemand im Haus hat eine belastbare Antwort darauf, welche Dokumente überhaupt noch aktuell sind.',
-                  'Zwei Abteilungen führen dasselbe Prüfprotokoll in zwei Versionen — und niemand kann sagen, welche stimmt.',
+                  'Zwei Abteilungen führen dasselbe Prüfprotokoll in zwei Versionen, und niemand kann sagen, welche stimmt.',
                   'Einige Dokumente dürfen aus rechtlichen Gründen überhaupt nicht in ein KI-System einfließen.',
                   'Die betroffenen Mitarbeiter haben Vorbehalte, wenn ihr implizites Erfahrungswissen plötzlich „abfragbar" werden soll.',
                 ].map((item, i) => (
@@ -202,7 +202,7 @@ export default function KiProjekteScheiternPage() {
               </ul>
 
               <p className="mb-5">
-                Der PoC löst diese Probleme nicht. Aber er bringt sie zum ersten Mal auf einen Tisch, an dem sie bearbeitet werden können — bevor sechs- oder siebenstellige Budgets auf eine Lösung geworfen werden, die an genau diesen Punkten scheitern würde.
+                Der PoC löst diese Probleme nicht. Aber er bringt sie zum ersten Mal auf einen Tisch, an dem sie bearbeitet werden können. Bevor sechs- oder siebenstellige Budgets auf eine Lösung geworfen werden, die an genau diesen Punkten scheitern würde.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -212,46 +212,14 @@ export default function KiProjekteScheiternPage() {
                 Warum der PoC das richtige Werkzeug ist
               </h2>
               <p className="mb-5">
-                Beide Geschichten haben dieselbe Pointe. Der PoC ist nicht in erster Linie ein technisches Bauprojekt. Er ist ein Diagnose-Instrument — für den Zustand der Daten, die Belastbarkeit der Prozesse, die Haltung des Teams und die Compliance-Realität.
+                Beide Geschichten haben dieselbe Pointe. Der PoC ist nicht in erster Linie ein technisches Bauprojekt. Er ist ein Diagnose-Instrument: für den Zustand der Daten, die Belastbarkeit der Prozesse, die Haltung des Teams und die Compliance-Realität.
               </p>
               <p className="mb-5">
                 Genau das ist der Grund, warum ich bei AImation konsequent vom PoC ausgehe, statt mit einer großen Strategie zu starten. Eine Strategie, die auf ungeprüften Annahmen über die eigenen Daten, Prozesse und Menschen aufsetzt, ist in einem sich monatlich verändernden KI-Umfeld bestenfalls Theater.
               </p>
 
-              {/* PoC Ablauf */}
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 my-8">
-                <p className="font-heading font-semibold text-[#071013] mb-5 text-sm uppercase tracking-widest">Unser Ablauf: Discovery bis PoC</p>
-                <div className="flex flex-col sm:flex-row gap-0">
-                  {[
-                    { step: '1', title: 'Discovery', desc: '1–2 Workshops: Daten, Tools, Prozesse, Team', weeks: 'Woche 1–2' },
-                    { step: '2', title: 'PoC aufsetzen', desc: 'Konkreter Usecase, definiertes Ziel', weeks: 'Woche 2–3' },
-                    { step: '3', title: 'Lernen & anpassen', desc: 'Echte Daten, echte Reibung sichtbar machen', weeks: 'Woche 3–5' },
-                    { step: '4', title: 'Erkenntnisse', desc: 'Ehrliches Bild: was skaliert, was nicht', weeks: 'Woche 5–6' },
-                  ].map((item, i) => (
-                    <div key={i} className="flex sm:flex-col flex-1 gap-3 sm:gap-0 items-start sm:items-center relative">
-                      <div className="flex flex-col sm:flex-row items-center w-full sm:w-auto">
-                        <div className="w-10 h-10 rounded-full bg-[#f90093] text-white font-heading font-bold text-sm flex items-center justify-center flex-shrink-0">
-                          {item.step}
-                        </div>
-                        {i < 3 && (
-                          <div className="hidden sm:block flex-1 h-px bg-gray-200 mx-2" />
-                        )}
-                        {i < 3 && (
-                          <div className="sm:hidden w-px flex-1 bg-gray-200 ml-5 my-1" style={{ minHeight: '12px' }} />
-                        )}
-                      </div>
-                      <div className="sm:text-center sm:mt-3 pb-4 sm:pb-0 sm:px-1">
-                        <p className="font-heading font-semibold text-[#071013] text-sm">{item.title}</p>
-                        <p className="text-xs text-gray-500 mt-0.5 leading-snug">{item.desc}</p>
-                        <p className="text-xs text-[#f90093] font-semibold mt-1">{item.weeks}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               <p className="mb-5">
-                Das ist auch der Grund, warum der Discovery-Schritt bei uns nie übersprungen wird. Bevor ein PoC überhaupt aufgesetzt wird, schauen wir uns an, welche Tools tatsächlich im Einsatz sind, wie Daten fließen, wo sie liegen und welche Prozesse betroffen sind. Die Hälfte der späteren Reibung ist damit schon sichtbar, bevor die erste Zeile Code geschrieben wird.
+                Deshalb wird der Discovery-Schritt bei uns nie übersprungen. Bevor ein PoC aufgesetzt wird, schauen wir uns an, welche Tools tatsächlich im Einsatz sind, wie Daten fließen, wo sie liegen und welche Prozesse betroffen sind. Die Hälfte der späteren Reibung ist damit schon sichtbar, bevor die erste Zeile Code geschrieben wird.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -278,7 +246,7 @@ export default function KiProjekteScheiternPage() {
                     <span className="text-[#f90093]">02</span> Planen Sie ein, dass die ersten zwei Wochen Überraschungen bringen.
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Datenprobleme, Zuständigkeitslücken, Compliance-Fragen, Skepsis im Team. Das ist kein Zeichen, dass Sie den falschen Anbieter gewählt haben. Das ist der Wert des PoCs — er zeigt Ihnen das Haus, bevor Sie es umbauen.
+                    Datenprobleme, Zuständigkeitslücken, Compliance-Fragen, Skepsis im Team. Das ist kein Zeichen, dass Sie den falschen Anbieter gewählt haben. Das ist der Wert des PoCs. Er zeigt Ihnen das Haus, bevor Sie es umbauen.
                   </p>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
@@ -286,7 +254,7 @@ export default function KiProjekteScheiternPage() {
                     <span className="text-[#f90093]">03</span> Rechnen Sie mit schmutzigen Daten, sich ändernden Anforderungen und langsamer Compliance.
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Ein ehrliches KI-Audit am Anfang spart am Ende sechsstellige Fehlbeträge. Das gilt für den Mittelständler genauso wie für den Konzern — ich habe die Abkürzungsversuche über viele Jahre aus der Nähe erlebt.
+                    Ein ehrliches KI-Audit am Anfang spart am Ende sechsstellige Fehlbeträge. Das gilt für den Mittelständler genauso wie für den Konzern. Ich habe die Abkürzungsversuche über viele Jahre aus der Nähe erlebt.
                   </p>
                 </div>
               </div>
