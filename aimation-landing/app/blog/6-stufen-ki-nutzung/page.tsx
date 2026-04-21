@@ -13,11 +13,11 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: { absolute: 'Die 6 Stufen der KI-Nutzung: Von Prompting bis autonome Agenten | AI.mation' },
-  description: '82% der KMUs stecken bei Stufe 1. Wo steht Ihr Unternehmen? Die 6 Stufen von Prompting bis Multi-Agenten-Systeme – mit konkreten Beispielen und nächsten Schritten.',
+  description: '82% der KMUs haben Kompetenzlücken bei KI. Wo steht Ihr Unternehmen? Die 6 Stufen von Prompting bis Multi-Agenten-Systeme – mit konkreten Beispielen und nächsten Schritten.',
   alternates: { canonical: `${siteUrl}/blog/6-stufen-ki-nutzung` },
   openGraph: {
     title: 'Die 6 Stufen der KI-Nutzung: Von Prompting bis autonome Agenten',
-    description: '82% der KMUs stecken bei Stufe 1. Wo steht Ihr Unternehmen? Mit konkreten Beispielen und nächsten Schritten.',
+    description: '82% der KMUs haben Kompetenzlücken bei KI. Wo steht Ihr Unternehmen? Mit konkreten Beispielen und nächsten Schritten.',
     url: `${siteUrl}/blog/6-stufen-ki-nutzung`,
     type: 'article',
     locale: 'de_DE',
@@ -118,7 +118,7 @@ export default function SechsStufenPage() {
             </h1>
 
             <p className="text-gray-600 font-inter leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)' }}>
-              82% der KMUs arbeiten noch überwiegend manuell. Die meisten, die KI nutzen, stecken bei Stufe 1: jemand tippt eine Frage in ChatGPT. Oft ohne dass die IT davon weiß.{' '}
+              82% der KMUs berichten von erheblichen Kompetenzlücken bei KI, nur 23% haben bislang erfolgreiche KI-Projekte umgesetzt. Die meisten, die KI nutzen, stecken bei Stufe 1: jemand tippt eine Frage in ChatGPT. Oft ohne dass die IT davon weiß.{' '}
               <Link href="/blog/schatten-ki-unternehmen" className="text-[#f90093] hover:underline">Warum das ein Problem ist.</Link>
             </p>
 
@@ -143,6 +143,21 @@ export default function SechsStufenPage() {
             <p className="mt-4">
               Zwischen diesen beiden Welten liegen 6 Stufen. Dieser Artikel zeigt Ihnen, wo Sie stehen und wo der nächste sinnvolle Schritt liegt. Nicht jedes Unternehmen muss auf Stufe 6. Aber jedes sollte wissen, wo es steht.
             </p>
+          </div>
+        </section>
+
+        {/* ── DIAGRAMM ── */}
+        <section className="pb-8 px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="relative w-full rounded-2xl overflow-hidden border border-gray-200 bg-white">
+              <Image
+                src="/images/blog/6-stufen-diagramm.png"
+                alt="Die 6 Stufen der KI-Nutzung im Überblick: von Prompting (01) über Custom GPTs, Automatisierung, KI-Automatisierung, KI-Agenten bis zur agentischen KI (06) – dargestellt nach Komplexität und Wertschöpfung"
+                width={1366}
+                height={768}
+                className="w-full h-auto"
+              />
+            </div>
           </div>
         </section>
 
@@ -225,7 +240,7 @@ export default function SechsStufenPage() {
                 Wo stehen die meisten Unternehmen?
               </h2>
               <p className="font-inter text-gray-300 leading-relaxed mb-4" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.0625rem)' }}>
-                82% der KMUs befinden sich auf Stufe 1 bis 2. Viele davon als Schatten-KI: Mitarbeiter nutzen ChatGPT auf dem Privathandy, ohne dass die IT davon weiß.{' '}
+                82% der KMUs melden Kompetenzlücken bei KI, nur 23% haben erfolgreiche KI-Projekte umgesetzt. Die meisten, die KI nutzen, stecken auf Stufe 1 bis 2 – oft als Schatten-KI: Mitarbeiter nutzen ChatGPT auf dem Privathandy, ohne dass die IT davon weiß.{' '}
                 <Link href="/blog/schatten-ki-unternehmen" className="text-[#f90093] hover:underline">Warum das ein Risiko ist.</Link>
               </p>
               <p className="font-inter text-gray-300 leading-relaxed mb-4" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.0625rem)' }}>

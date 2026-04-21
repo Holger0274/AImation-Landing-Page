@@ -90,7 +90,7 @@ export default function SchattenKiPage() {
                 Schatten-KI (englisch: Shadow AI) beschreibt die Nutzung von KI-Tools am Arbeitsplatz ohne offizielle Genehmigung der IT-Abteilung oder Geschäftsführung. Es ist die Weiterentwicklung der bekannten Schatten-IT, aber mit einer völlig neuen Dimension: Während Schatten-IT Infrastruktur betraf (jemand nutzt Dropbox statt des Firmen-Servers), betrifft Schatten-KI die Verarbeitung von Unternehmensdaten und die Qualität von Entscheidungen.
               </p>
               <p>
-                Die Zahlen sind eindeutig: Drei von vier Wissensarbeitern nutzen KI-Tools zur Arbeitsentlastung. In vielen Unternehmen passiert das ohne jede Richtlinie, ohne Freigabe, ohne Dokumentation.
+                Die Zahlen sind eindeutig: Laut Microsoft-Bericht nutzen weltweit drei von vier Wissensarbeitern KI-Tools am Arbeitsplatz – in Deutschland berichten BCG und ZEW von 60–67 %. In vielen Unternehmen passiert das ohne jede Richtlinie, ohne Freigabe, ohne Dokumentation.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -136,7 +136,7 @@ export default function SchattenKiPage() {
 
               <p><strong>Qualitätsrisiken:</strong> KI-Ergebnisse können fehlerhaft, verzerrt oder halluziniert sein. Wenn niemand die Nutzung kennt, prüft auch niemand die Ergebnisse. Ein Angebot mit falschen Spezifikationen, ein Vertragsentwurf mit erfundenen Klauseln, eine Kundenantwort mit falschen Fakten.</p>
 
-              <p><strong>EU AI Act:</strong> Seit 2025 müssen Unternehmen wissen, welche KI-Systeme im Einsatz sind. Hochrisiko-Anwendungen (Recruiting, Kreditvergabe, sicherheitskritische Systeme) müssen dokumentiert und überwacht werden. Schatten-KI macht das unmöglich.</p>
+              <p><strong>EU AI Act:</strong> Seit Februar 2025 gilt die Pflicht zur KI-Kompetenz (Art. 4) – Unternehmen müssen ihr Personal zu KI schulen und wissen, welche Systeme im Einsatz sind. Vollständige Dokumentationspflichten für Hochrisiko-Anwendungen wie Recruiting oder Kreditvergabe folgen ab 2026. Schatten-KI macht beides unmöglich.</p>
 
               <hr className="border-gray-200 my-8" />
 

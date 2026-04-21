@@ -13,11 +13,11 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: { absolute: 'KI kennt keinen Halt: Warum CAD-Teams jetzt starten müssen | AI.mation' },
-  description: 'Claude Opus 4.7 liest technische Zeichnungen mit 98,5 % Genauigkeit. Warum das für Konstruktionsabteilungen ein Kategoriesprung ist. Und warum Abwarten die teuerste Strategie ist.',
+  description: 'Claude Opus 4.7 verdreifacht die Bildauflösung – ein Kategoriesprung für Konstruktionsabteilungen. Warum das für CAD so relevant ist. Und warum Abwarten die teuerste Strategie ist.',
   alternates: { canonical: `${siteUrl}/blog/ki-cad-zukunft-jetzt-starten` },
   openGraph: {
     title: 'KI kennt keinen Halt: Warum CAD-Teams jetzt starten müssen',
-    description: 'Claude Opus 4.7 liest technische Zeichnungen mit 98,5 % Genauigkeit. Warum Abwarten die teuerste Strategie für Konstruktionsabteilungen ist.',
+    description: 'Claude Opus 4.7 verdreifacht die Bildauflösung – ein Kategoriesprung für Konstruktionsabteilungen. Warum Abwarten die teuerste Strategie ist.',
     url: `${siteUrl}/blog/ki-cad-zukunft-jetzt-starten`,
     type: 'article',
     locale: 'de_DE',
@@ -83,10 +83,10 @@ export default function KiCadZukunftPage() {
                 Mit KI funktioniert diese Rechnung nicht mehr.
               </p>
               <p className="mb-5">
-                Zwischen dem Release von Claude Opus 4.6 und 4.7 lagen gerade einmal ein paar Monate. Und doch hat sich an einer einzigen Kennzahl etwas verschoben, das für die Konstruktionswelt weitreichender ist, als die meisten Ingenieurabteilungen gerade realisieren.
+                Zwischen dem Release von Claude Opus 4.6 und 4.7 lagen gerade einmal ein paar Monate. Und doch hat sich an einer Sache etwas verschoben, das für die Konstruktionswelt weitreichender ist, als die meisten Ingenieurabteilungen gerade realisieren.
               </p>
               <p className="mb-5">
-                Die visuelle Genauigkeit beim Lesen von Zeichnungen ist von 54,5 % auf 98,5 % gesprungen. Das ist kein Inkrement. Das ist ein Kategoriesprung.
+                Die unterstützte Bildauflösung wurde mehr als verdreifacht: auf bis zu 3,75 Megapixel. Was das bedeutet: Das Modell kann dichte technische Zeichnungen, enge Bemaßungsketten und Symbolbibliotheken erstmals so auflösen, dass verlässliche Extraktion möglich wird. Das ist kein Inkrement. Das ist ein Kategoriesprung.
               </p>
               <p className="mb-5">
                 In diesem Beitrag bringe ich drei Dinge nüchtern zusammen: Was sich konkret verändert hat. Warum das für CAD noch nicht ausgereift ist, aber dennoch ein riesiges Potential bedeutet. Und warum genau das der Grund ist, heute mit Proof of Concepts zu starten. Nicht in einem Jahr.
@@ -104,7 +104,7 @@ export default function KiCadZukunftPage() {
                 KI-Fähigkeiten entwickeln sich in Sprüngen: lange Plateaus, in denen man das Gefühl hat, nichts Relevantes passiert, und dann innerhalb weniger Wochen eine Schwelle, die vorher als unerreichbar galt.
               </p>
               <p className="mb-5">
-                Opus 4.7 ist so ein Schwellenmoment. Die Bildauflösung wurde mehr als verdreifacht. Was das für einen Konstrukteur bedeutet: Das Modell liest dichte technische Zeichnungen, Bemaßungen, Schraffuren und Symbolbibliotheken jetzt erstmals zuverlässig. Dazu kommt eine deutlich bessere Fähigkeit, direkt mit Software zu interagieren und komplexen Code zu schreiben.
+                Opus 4.7 ist so ein Schwellenmoment. Die maximale Bildauflösung stieg von rund 1,15 auf 3,75 Megapixel. Was das für einen Konstrukteur bedeutet: Das Modell kann dichte technische Zeichnungen, Bemaßungen, Schraffuren und Symbolbibliotheken jetzt erstmals in einer Qualität auflösen, die verlässliche Arbeit erlaubt. Dazu kommt eine deutlich bessere Fähigkeit, direkt mit Software zu interagieren und komplexen Code zu schreiben.
               </p>
               <p className="mb-5">
                 In der Summe entsteht eine neue Klasse: Modelle, die Konstruktionsartefakte nicht nur „sehen", sondern auch strukturiert damit arbeiten können.
