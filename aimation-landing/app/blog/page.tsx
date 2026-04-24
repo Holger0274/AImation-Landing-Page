@@ -33,6 +33,15 @@ const breadcrumbs = [
 
 const ARTICLES = [
   {
+    slug: 'ki-projekte-priorisierung-rice',
+    title: 'Warum Ihr spannendstes KI-Projekt nicht zuerst kommt',
+    excerpt: 'Fünf Ideen, Budget für zwei. Die RICE-Formel aus dem Produktmanagement hilft bei der KI-Priorisierung – wenn man ihre Grenzen kennt. Mit einem konkreten Beispiel aus einer Entwicklungsabteilung.',
+    tag: 'KI-Strategie',
+    date: '2026-04-24',
+    readingTime: '11 Min.',
+    relatedPillar: { label: 'KI-Beratung', href: '/ki-beratung-kmu' },
+  },
+  {
     slug: 'ki-projekte-scheitern-fundament',
     title: 'KI-Projekte scheitern nicht am Modell. Sie scheitern an dem, was darunter liegt.',
     excerpt: 'Warum KI-Einführungen im Mittelstand still im Sand verlaufen – und was zwei echte PoC-Beispiele über Daten, Compliance und Teamwiderstand zeigen. Mit konkreten Schritten für den richtigen Einstieg.',
