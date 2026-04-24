@@ -161,7 +161,7 @@ export default function RicePriorisierungPage() {
                 Fünf Ideen, eine Entwicklungsabteilung
               </h2>
               <p className="mb-5">
-                Ein mittelständischer Maschinenbauer. Dreißig Konstrukteure, ein Patentingenieur. Fünf Vorschläge auf dem Tisch des Entwicklungsleiters.
+                Ein mittelständischer Maschinenbauer. Dreißig Konstrukteure, ein Patentingenieur. Fünf Vorschläge auf dem Tisch des Entwicklungsleiters. Die ersten drei sind die ausführlichen Fälle, die letzten beiden folgen kompakt. Die Rangliste kommt danach.
               </p>
 
               {/* Use Case 1 */}
@@ -184,7 +184,7 @@ export default function RicePriorisierungPage() {
                     { label: 'Reach', value: '300/Q' },
                     { label: 'Impact', value: '3 (massiv)' },
                     { label: 'Confidence', value: '75%' },
-                    { label: 'Effort', value: '4 PM' },
+                    { label: 'Effort', value: '4 Monate' },
                   ].map((item) => (
                     <div key={item.label} className="text-center">
                       <p className="text-xs text-gray-400 font-inter mb-1">{item.label}</p>
@@ -220,7 +220,7 @@ export default function RicePriorisierungPage() {
                     { label: 'Reach', value: '400/Q' },
                     { label: 'Impact', value: '2 (hoch)' },
                     { label: 'Confidence', value: '70%' },
-                    { label: 'Effort', value: '5 PM' },
+                    { label: 'Effort', value: '5 Monate' },
                   ].map((item) => (
                     <div key={item.label} className="text-center">
                       <p className="text-xs text-gray-400 font-inter mb-1">{item.label}</p>
@@ -253,7 +253,7 @@ export default function RicePriorisierungPage() {
                     { label: 'Reach', value: '20/Q' },
                     { label: 'Impact', value: '3 (massiv)' },
                     { label: 'Confidence', value: '35%' },
-                    { label: 'Effort', value: '8 PM' },
+                    { label: 'Effort', value: '8 Monate' },
                   ].map((item) => (
                     <div key={item.label} className="text-center">
                       <p className="text-xs text-gray-400 font-inter mb-1">{item.label}</p>
@@ -267,22 +267,65 @@ export default function RicePriorisierungPage() {
                 </div>
               </div>
 
-              <p className="mb-5 text-gray-500 italic text-sm">
-                Eine Zahl, bei der man zweimal hinschaut. Dazu gleich mehr.
+              <hr className="border-gray-200 my-8" />
+
+              {/* Use Case 4 */}
+              <h3 className="font-heading font-semibold text-[#071013] mt-8 mb-3" style={{ fontSize: 'clamp(1.05rem, 2.5vw, 1.25rem)' }}>
+                Datenblatt-Extractor
+              </h3>
+              <p className="mb-5">
+                Lieferanten-Datenblätter kommen als PDFs in tausend verschiedenen Formaten. Eine Software liest sie automatisch aus, extrahiert Kennwerte und baut Vergleichstabellen. Unspektakulär, aber eine der sichersten Wetten in der Liste: hohe Reichweite, hohe Confidence, geringer Aufwand.
               </p>
+
+              <div className="bg-white border border-gray-200 rounded-xl p-5 my-6">
+                <div className="grid grid-cols-4 gap-3 mb-4">
+                  {[
+                    { label: 'Reach', value: '150/Q' },
+                    { label: 'Impact', value: '1 (mittel)' },
+                    { label: 'Confidence', value: '90%' },
+                    { label: 'Effort', value: '2 Monate' },
+                  ].map((item) => (
+                    <div key={item.label} className="text-center">
+                      <p className="text-xs text-gray-400 font-inter mb-1">{item.label}</p>
+                      <p className="font-heading font-semibold text-[#071013] text-sm">{item.value}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <p className="text-xs text-gray-500 font-inter">150 × 1 × 0,90 ÷ 2</p>
+                  <p className="font-heading font-bold text-[#071013] text-lg">RICE = 67,5</p>
+                </div>
+              </div>
 
               <hr className="border-gray-200 my-8" />
 
-              {/* Use Case 4 + 5 kompakt */}
+              {/* Use Case 5 */}
               <h3 className="font-heading font-semibold text-[#071013] mt-8 mb-3" style={{ fontSize: 'clamp(1.05rem, 2.5vw, 1.25rem)' }}>
-                Norm-Checker und Datenblatt-Extractor
+                Norm-Checker
               </h3>
               <p className="mb-5">
-                Der Norm-Checker prüft Konstruktionen gegen DIN-, ISO- und VDI-Normen. Klingt nach einem Selbstgänger, ist aber keiner: Normen sind urheberrechtlich geschützt, viele existieren nicht in maschinenlesbarer Form. Score: 10.
+                Konstruktionen automatisch gegen DIN-, ISO- und VDI-Normen prüfen. Klingt wie ein Selbstgänger, ist aber keiner. Normen sind urheberrechtlich geschützt, viele existieren nicht in maschinenlesbarer Form. Die Interpretation erfordert Erfahrung, die ein Sprachmodell nur bedingt mitbringt. Hoher Aufwand, mittlere Confidence.
               </p>
-              <p className="mb-5">
-                Der Datenblatt-Extractor liest Lieferanten-PDFs automatisch aus, extrahiert Kennwerte und baut Vergleichstabellen. Unspektakulär, aber solide. 150 Komponenten-Auswahlen pro Quartal, Confidence 90 %, Aufwand zwei Person-Monate. Score: 67,5.
-              </p>
+
+              <div className="bg-white border border-gray-200 rounded-xl p-5 my-6">
+                <div className="grid grid-cols-4 gap-3 mb-4">
+                  {[
+                    { label: 'Reach', value: '200/Q' },
+                    { label: 'Impact', value: '1 (mittel)' },
+                    { label: 'Confidence', value: '40%' },
+                    { label: 'Effort', value: '8 Monate' },
+                  ].map((item) => (
+                    <div key={item.label} className="text-center">
+                      <p className="text-xs text-gray-400 font-inter mb-1">{item.label}</p>
+                      <p className="font-heading font-semibold text-[#071013] text-sm">{item.value}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <p className="text-xs text-gray-500 font-inter">200 × 1 × 0,40 ÷ 8</p>
+                  <p className="font-heading font-bold text-[#071013] text-lg">RICE = 10</p>
+                </div>
+              </div>
 
               <hr className="border-gray-200 my-8" />
 
@@ -351,13 +394,10 @@ export default function RicePriorisierungPage() {
 
               {/* ── DER MULTI-AGENT-FALL ── */}
               <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
-                Der Multi-Agent-Fall
+                Was der Score verschweigt
               </h2>
               <p className="mb-5">
-                Und dann ist da das Multi-Agent-System. Strategisch das spannendste Projekt auf der Liste, potenziell das mit dem größten Hebel. Und mit einem Score von 2,6 abgeschlagen auf dem letzten Platz.
-              </p>
-              <p className="mb-5">
-                Hier wird es interessant.
+                Schauen Sie sich noch einmal den Multi-Agent Innovation-Scout an. Strategisch das spannendste Projekt auf der Liste, potenziell das mit dem größten Hebel. Und trotzdem auf dem letzten Platz.
               </p>
               <p className="mb-5">
                 Die Formel ist nicht kaputt. Sie beantwortet genau die Frage, die sie beantworten soll: Was liefert heute den größten Wert pro investiertem Aufwand? Für diese Frage stimmt der Score.
