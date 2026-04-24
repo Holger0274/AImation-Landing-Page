@@ -141,11 +141,17 @@ export default function RicePriorisierungPage() {
               </div>
 
               <div className="bg-[#071013] rounded-xl p-6 my-8 text-white text-center">
-                <p className="text-xs font-heading font-semibold uppercase tracking-widest mb-3" style={{ color: '#f90093' }}>Die Formel</p>
-                <p className="font-heading font-bold text-2xl">
-                  RICE = (Reach × Impact × Confidence) ÷ Effort
-                </p>
-                <p className="text-gray-400 text-sm mt-3 font-inter">Je höher der Score, desto mehr Wert pro investiertem Aufwand</p>
+                <p className="text-xs font-heading font-semibold uppercase tracking-widest mb-5" style={{ color: '#f90093' }}>Die Formel</p>
+                <div className="inline-flex items-center gap-4 font-heading font-bold" style={{ fontSize: 'clamp(1rem, 3vw, 1.375rem)' }}>
+                  <span>RICE</span>
+                  <span className="text-gray-400">=</span>
+                  <div className="flex flex-col items-center gap-0">
+                    <span className="pb-1.5" style={{ color: '#f90093' }}>Reach &times; Impact &times; Confidence</span>
+                    <div className="w-full h-px bg-white" />
+                    <span className="pt-1.5 text-gray-300">Effort</span>
+                  </div>
+                </div>
+                <p className="text-gray-400 text-sm mt-5 font-inter">Je höher der Score, desto mehr Wert pro investiertem Aufwand</p>
               </div>
 
               <hr className="border-gray-200 my-8" />
@@ -329,16 +335,6 @@ export default function RicePriorisierungPage() {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* Infografik */}
-              <div className="relative w-full rounded-2xl overflow-hidden my-8" style={{ aspectRatio: '2/3', maxHeight: '520px' }}>
-                <Image
-                  src="/images/blog/rice-priorisierung-infografik.png"
-                  alt="Infografik: RICE-Score-Rangliste mit 5 KI-Projekten. Patent Intelligence führt mit 169, Multi-Agent Innovation-Scout mit 2,6 auf dem letzten Platz"
-                  fill
-                  className="object-contain object-top"
-                />
               </div>
 
               <p className="mb-5">
