@@ -33,6 +33,15 @@ const breadcrumbs = [
 
 const ARTICLES = [
   {
+    slug: 'bewertungsmethoden-ki-projekte',
+    title: 'Wenn RICE nicht reicht: Vier Methoden zur Bewertung von KI-Projekten',
+    excerpt: 'Die RICE-Formel hat blinde Flecken. Vier ergänzende Bewertungsmethoden – Impact-Effort-Matrix, WSJF, AI-Feasibility und Weighted Scoring – im direkten Vergleich an denselben fünf Engineering-Projekten.',
+    tag: 'KI-Strategie',
+    date: '2026-05-02',
+    readingTime: '10 Min.',
+    relatedPillar: { label: 'KI-Beratung', href: '/ki-beratung-kmu' },
+  },
+  {
     slug: 'ki-projekte-priorisierung-rice',
     title: 'Warum Ihr spannendstes KI-Projekt nicht zuerst kommt',
     excerpt: 'Fünf Ideen, Budget für zwei. Die RICE-Formel aus dem Produktmanagement hilft bei der KI-Priorisierung – wenn man ihre Grenzen kennt. Mit einem konkreten Beispiel aus einer Entwicklungsabteilung.',
