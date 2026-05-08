@@ -16,6 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Tone**: Modern, competent, accessible, innovative - Professional but approachable, NEVER conservative or "bank-like", NO buzzwords
 - **USP**: 20 Jahre Engineering-Erfahrung kombiniert mit tiefem Prozessverständnis
 - **Pricing**: Auf Anfrage (prices on request)
+- **Anti-KI-Text-Spec**: See `docs/spec-anti-ki.md` — ALL content must pass this spec before use
 
 ### Target Personas
 
@@ -340,6 +341,31 @@ aimation-landing/
 - **Headlines**: One Magenta highlight word per headline
 - **CTAs**: Clear action-oriented German text
 - **Tone**: Professional but approachable, emphasizing real-world results
+
+### Anti-KI-Text-Spec (CRITICAL — applies to ALL text on this site)
+
+Full spec: `docs/spec-anti-ki.md`. When writing ANY text for the landing page, check against these rules:
+
+**Forbidden patterns (17 named patterns in spec):**
+- ❌ Em-Dash inflation: replace `—` and `–` with comma or period
+- ❌ Fragmentierter Dreiklang: "Effizienz. Fokus. Erfolg." → write a real sentence
+- ❌ Adjektiv-Trio: never 3 adjectives in a row
+- ❌ Binäre Kontrastierung: no "Nicht X, sondern Y" / "Es geht nicht um X, es geht um Y"
+- ❌ Mehr-als-nur-Falle: no "mehr als nur X, es ist Y"
+- ❌ Epochen-Einleitung: no "Im heutigen digitalen Zeitalter..." / "In einer Welt, in der..."
+- ❌ Rhetorische Frage als Eröffnung: no "Hast du dich jemals gefragt..."
+- ❌ Strukturelle Platzhalter: no "Ein weiterer wichtiger Aspekt ist...", "Ein zentraler Vorteil ist..."
+- ❌ Abschluss-Floskeln: no "Insgesamt zeigt sich...", "Zusammenfassend lässt sich sagen..."
+- ❌ Geschmeidigkeitsverben: no "ermöglichen", "gewährleisten", "sicherstellen", "optimieren" (unless concrete)
+- ❌ Bullet-Inflation mit Fett+Doppelpunkt: no **Begriff**: Erläuterung lists
+- ❌ Buzzword-Cluster: no "ganzheitlich", "innovativ", "revolutionär", "skalierbar", "nahtlos", "transformativ", "disruptiv", "agil", "Synergie", "Mehrwert", "Potenziale heben", "Exzellenz", "Paradigmenwechsel", "maßgeschneidert" (as filler)
+
+**Positive markers to include:**
+- ✅ Konkrete Anker: Namen, Zahlen, Orte, Daten — at least 3 per block of text
+- ✅ Variable Satzlängen (Burstiness): mix short (3-4 words) with longer sentences
+- ✅ Kanten zeigen: one opinion per section that not everyone would sign off on
+- ✅ Subtext: leave one thing unexplained per section — trust the reader
+- ✅ Small imperfections: contractions, colloquial turns, sentence fragments where they fit the voice
 
 ### Hero Section Content (FINAL - DO NOT CHANGE)
 

@@ -533,7 +533,7 @@ export default function RicePriorisierungPage() {
               className="font-heading font-bold text-white mb-4 leading-tight"
               style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}
             >
-              Sie stehen vor der gleichen Frage?
+              Welche Ihrer KI-Projekte kommt zuerst?
             </h2>
             <p className="text-gray-300 font-inter mb-8" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)' }}>
               Ein Use-Case-Workshop mit strukturierter Priorisierung bringt in zwei halben Tagen die Reihenfolge, die Ihnen sonst Monate an Diskussion kostet. Kein Framework-Verkauf, sondern eine ehrliche Landkarte Ihrer Projektlandschaft.

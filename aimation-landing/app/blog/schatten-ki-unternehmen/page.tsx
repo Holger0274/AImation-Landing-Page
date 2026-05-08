@@ -187,7 +187,7 @@ export default function SchattenKiPage() {
                 Schatten-KI als Chance
               </h2>
               <p>
-                Schatten-KI ist nicht nur ein Risiko. Sie ist auch ein Signal: Ihre Mitarbeiter wollen produktiver arbeiten. Sie sind bereit für KI. Die Frage ist nicht OB Ihr Team KI nutzt, sondern ob es das kontrolliert und sicher tut.
+                Schatten-KI ist auch ein Signal: Ihre Mitarbeiter wollen produktiver arbeiten. Sie sind bereit. Ihr Team nutzt KI bereits. Die Frage ist nur, ob das kontrolliert und sicher passiert.
               </p>
               <p>
                 Unternehmen, die Schatten-KI in geordnete Bahnen lenken statt sie zu verbieten, berichten von höherer Mitarbeiterzufriedenheit, weniger Sicherheitsvorfällen und messbaren Produktivitätsgewinnen.

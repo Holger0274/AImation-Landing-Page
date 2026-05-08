@@ -47,7 +47,7 @@ const services = [
     title: 'Beratung',
     subtitle: 'Denken, planen, entscheiden',
     description:
-      'Wo stehen Sie? Wo wollen Sie hin? Wir entwickeln gemeinsam die Strategie für Ihre KI-Reise.',
+      'Wir schauen uns an, wie Sie heute arbeiten. Dann sagen wir Ihnen ehrlich, was sinnvoll ist und was nicht.',
     features: [
       'AI Readiness Assessment',
       'Use Case Identifikation',

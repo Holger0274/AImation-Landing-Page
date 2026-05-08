@@ -75,7 +75,7 @@ export default function EmailKlassifizierungPage() {
           </p>
           <div className="bg-[#faf9f7] border border-gray-200 rounded-2xl p-6 mb-8">
             <p className="text-gray-700 font-inter leading-relaxed italic">
-              Und jetzt stellen Sie sich vor: Die dringende Angebotsanfrage landet ohne Umweg beim Vertrieb, mit Vorschlag für die Antwort und den passenden Unterlagen aus dem Knowledge Graph. Die Beschwerde geht direkt an den Service, inklusive Hinweis auf den letzten Kontakt mit dem Kunden. Der Newsletter wird stumm archiviert. Ihr Team beginnt den Tag nicht mit Sortieren, sondern mit Arbeiten. Das ist keine Zukunftsmusik. Das ist der nächste Ausbauschritt auf demselben Fundament.
+              Was das konkret bedeutet: Die dringende Angebotsanfrage landet ohne Umweg beim Vertrieb, mit Vorschlag für die Antwort und den passenden Unterlagen aus dem Knowledge Graph. Die Beschwerde geht direkt an den Service, inklusive Hinweis auf den letzten Kontakt mit dem Kunden. Der Newsletter wird stumm archiviert. In einem unserer Projekte haben wir das so aufgebaut. Wer sehen möchte, wie es aussieht, kann das im Erstgespräch tun.
             </p>
           </div>
 

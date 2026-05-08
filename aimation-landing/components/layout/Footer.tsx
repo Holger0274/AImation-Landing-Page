@@ -29,7 +29,7 @@ export default function Footer() {
               Mehr Zeit für das <span className="text-[#f90093]">Wesentliche</span>
             </p>
             <p className="text-gray-400 text-sm">
-              20 Jahre Engineering-Erfahrung für Ihren KI-Erfolg
+              20 Jahre Engineering. Kein Buzzword-Bingo.
             </p>
           </div>
 

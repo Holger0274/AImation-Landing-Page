@@ -45,7 +45,7 @@ export default function KnowledgeGraphPage() {
           </h1>
 
           <p className="text-gray-600 font-inter leading-relaxed mb-6 text-lg">
-            Wissen gezielt miteinander verknüpfen und ein zweites Brain für Ihr Unternehmen bauen. Vernetzte Informationsarchitektur mit intelligenter Verknüpfung und semantischer Suche, angereichert mit dem Expertenwissen Ihrer Fachbereiche.
+            Unternehmenswissen semantisch verknüpfen, statt es in Silos sterben zu lassen. Dokumente, Notizen und Protokolle werden nicht nur abgelegt, sondern zusammengebracht. Angereichert mit dem Expertenwissen Ihrer Fachbereiche.
           </p>
 
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
@@ -78,7 +78,7 @@ export default function KnowledgeGraphPage() {
           </p>
           <div className="bg-[#faf9f7] border border-gray-200 rounded-2xl p-6 mb-8">
             <p className="text-gray-700 font-inter leading-relaxed italic">
-              Und jetzt stellen Sie sich vor: Ein neuer Mitarbeiter stellt eine Frage und bekommt nicht nur das passende Dokument, sondern den Kontext dazu. Wer hat daran gearbeitet, welche Entscheidungen wurden getroffen, welche Probleme sind aufgetaucht. Oder ein Ingenieur fragt nach einer technischen Lösung und das System zeigt ihm parallel, dass ein Kollege im Nachbarwerk vor zwei Jahren daran gearbeitet hat. Das ist keine Zukunftsmusik. Das ist der nächste Ausbauschritt auf demselben Fundament.
+              Was das im Alltag bedeutet: Ein neuer Mitarbeiter stellt eine Frage und bekommt nicht nur das passende Dokument, sondern den Kontext dazu. Wer hat daran gearbeitet, welche Entscheidungen wurden getroffen, welche Probleme sind aufgetaucht. Oder ein Ingenieur fragt nach einer technischen Lösung und das System zeigt ihm, dass ein Kollege im Nachbarwerk vor zwei Jahren daran gearbeitet hat. Wir haben das in einem PoC aufgebaut. Im Erstgespräch zeigen wir, wie das aussieht.
             </p>
           </div>
 

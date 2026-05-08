@@ -76,7 +76,7 @@ export default function About() {
         >
           <p className="text-xs font-heading font-bold tracking-[2px] uppercase text-magenta mb-3">Über uns</p>
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-soft-black">
-            KI-Expertise mit <span className="gradient-text">echtem Fundament</span>
+            20 Jahre Industrie. Kein <span className="gradient-text">Theorieberater.</span>
           </h2>
         </motion.div>
 
@@ -115,11 +115,11 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-3xl md:text-4xl font-heading font-bold text-soft-black mb-6 leading-snug">
-              KI ist nicht unser Job.<br />
-              <span className="gradient-text">Es ist das Thema, das uns antreibt.</span>
+              KI ist das Thema, das uns antreibt.<br />
+              <span className="gradient-text">Seit Jahren. Nicht seit dem Hype.</span>
             </h3>
             <p className="text-lg text-gray-500 leading-relaxed">
-              20 Jahre Engineering haben mir gezeigt, wo die Zeit wirklich verloren geht. Nicht in der Arbeit selbst, sondern im Drumherum. Daran arbeite ich.
+              20 Jahre Engineering haben mir gezeigt, wo die Zeit wirklich verloren geht. Im Drumherum. In den Dingen, die niemand erklärt hat, wie man anders macht. Daran arbeite ich.
             </p>
           </motion.div>
         </div>

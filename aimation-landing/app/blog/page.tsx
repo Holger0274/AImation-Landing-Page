@@ -189,7 +189,7 @@ export default function BlogOverviewPage() {
               className="font-heading font-bold text-white mb-4 leading-tight"
               style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}
             >
-              Fragen zu KI in Ihrem Unternehmen?
+              30 Minuten. Wir sagen Ihnen, was bei Ihnen Sinn ergibt.
             </h2>
             <p className="text-gray-300 font-inter mb-8" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)' }}>
               30 Minuten Erstgespräch. Kostenlos. Wir sagen Ihnen ehrlich, ob und wo KI bei Ihnen Sinn ergibt.

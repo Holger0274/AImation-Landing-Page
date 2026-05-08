@@ -71,14 +71,14 @@ export default function PatentrechercheKiPage() {
             In unserem PoC haben wir mit Perplexity AI und Claude einen Agenten gebaut, der parallel mehrere Datenbank-APIs abfragt, Claims analysiert und einen Bericht auf Engineering-Niveau liefert. Das Ziel: Recherchen, die bisher einen Tag dauern, in Stunden abzuschließen.
           </p>
           <p className="text-gray-600 font-inter leading-relaxed mb-4">
-            Die Ergebnisse stehen nicht nur der Patentabteilung zur Verfügung, sondern jedem Ingenieur im Projekt. Wir nennen das die Demokratisierung der Patentwelt.
+            Die Ergebnisse stehen nicht nur der Patentabteilung zur Verfügung, sondern jedem Ingenieur im Projekt. Was bisher beim Patentingenieur saß, ist jetzt Alltagswerkzeug für das ganze Team.
           </p>
           <p className="text-gray-600 font-inter leading-relaxed mb-8">
             Zusätzlich kann der Agent definierte Technologiegruppen und Wettbewerber dauerhaft überwachen und neue Anmeldungen früh melden, oft bevor sie in Fachpresse oder Produkten sichtbar werden.
           </p>
           <div className="bg-[#faf9f7] border border-gray-200 rounded-2xl p-6 mb-8">
             <p className="text-gray-700 font-inter leading-relaxed italic">
-              Und jetzt stellen Sie sich vor: ein Chatbot, mit dem Ihre Ingenieure direkt mit den Patenten sprechen. Fragen stellen, Claims verstehen, Zusammenhänge erklären lassen, angereichert mit dem technischen Wissen Ihres Unternehmens. Oder ein autonomer KI-Agent, der die komplette Vorrecherche übernimmt und Ihnen morgens den Bericht auf den Tisch legt. Das ist keine Zukunftsmusik. Das ist der nächste Ausbauschritt auf demselben Fundament.
+              Der nächste Schritt wäre ein Chatbot, mit dem Ingenieure direkt mit den Patenten sprechen: Fragen stellen, Claims verstehen, Zusammenhänge erklären lassen, angereichert mit dem technischen Wissen Ihres Unternehmens. Oder ein autonomer Agent, der die komplette Vorrecherche übernimmt und morgens einen Bericht liefert. Beides haben wir in Projekten aufgebaut. Wer das live sehen möchte, kann das im Erstgespräch tun.
             </p>
           </div>
 

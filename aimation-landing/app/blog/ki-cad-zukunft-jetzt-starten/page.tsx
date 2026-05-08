@@ -302,7 +302,7 @@ export default function KiCadZukunftPage() {
               className="font-heading font-bold text-white mb-4 leading-tight"
               style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}
             >
-              Bereit für den ersten PoC in Ihrer Konstruktionsabteilung?
+              Den ersten PoC in Ihrer Konstruktionsabteilung starten.
             </h2>
             <p className="text-gray-300 font-inter mb-8" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)' }}>
               Wir helfen Ihnen, den richtigen Usecase zu finden, den passenden Stack aufzusetzen und das Team einzubinden. 30 Minuten Erstgespräch. Kostenlos.

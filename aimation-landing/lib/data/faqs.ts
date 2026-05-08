@@ -2,17 +2,17 @@ export const faqs = [
   {
     question: 'Was kostet eine KI-Beratung für ein KMU?',
     answer:
-      'Die Kosten einer KI-Beratung für KMUs richten sich nach Umfang und Komplexität. Das Erstgespräch ist kostenlos. Typische Projekte beginnen bei einem AI Readiness Check (2 Tage) bis zu mehrmonatiger Begleitung. In einem kostenlosen Erstgespräch klären wir, welches Budget für Ihr Unternehmen realistisch und sinnvoll wäre – ohne versteckte Kosten.',
+      'Das Erstgespräch kostet nichts. Danach kommt es auf den Umfang an. Ein AI Readiness Check dauert 2 Tage, eine längere Begleitung kann sich über Monate ziehen. Im ersten Gespräch rechnen wir gemeinsam durch, was für Ihr Unternehmen realistisch ist, ohne versteckte Posten.',
   },
   {
     question: 'Wie schnell sieht ein KMU Ergebnisse durch KI-Automatisierung?',
     answer:
-      'Bei KI-Schulungen sehen Teilnehmer erste Ergebnisse bereits während des Workshops – viele nutzen KI-Tools noch am selben Tag produktiv. Bei Automatisierungsprojekten rechnen wir mit 2-6 Wochen bis zum ersten funktionierenden Prototyp, je nach Komplexität. Quick-Wins wie E-Mail-Automatisierung sind oft in 1-2 Wochen umsetzbar.',
+      'Bei Schulungen: oft noch während des Workshops. Viele Teilnehmer nutzen die Tools am selben Tag das erste Mal produktiv. Bei Automatisierungsprojekten: 2 bis 6 Wochen bis zum laufenden Prototyp, je nach Komplexität. E-Mail-Automatisierung haben wir schon in einer Woche fertig gehabt.',
   },
   {
     question: 'Braucht ein KMU eine eigene IT-Abteilung für KI-Projekte?',
     answer:
-      'Nein. Die meisten unserer Kunden haben keine dedizierte IT-Abteilung – und genau dafür sind wir da. Wir begleiten KMUs von der Strategie bis zur technischen Umsetzung aus einer Hand. Unsere Lösungen sind so konzipiert, dass sie von Ihrem bestehenden Team ohne tiefe IT-Kenntnisse bedient werden können.',
+      'Nein. Die meisten unserer Kunden haben keine dedizierte IT-Abteilung. Wir begleiten von der Idee bis zur fertigen Lösung, technisch und inhaltlich. Die Lösungen, die wir bauen, können Ihre Leute selbst bedienen, ohne IT-Studium.',
   },
   {
     question: 'Funktioniert KI-Automatisierung mit bestehenden Systemen wie SAP oder Microsoft 365?',
@@ -22,16 +22,16 @@ export const faqs = [
   {
     question: 'Wie messen wir den ROI einer KI-Investition?',
     answer:
-      'Vor jedem Projekt definieren wir gemeinsam messbare Ziele: eingesparte Arbeitsstunden, reduzierte Fehlerquoten, beschleunigte Durchlaufzeiten, eingesparte Kosten. Wir erstellen eine Baseline-Messung und vergleichen nach der Umsetzung. Unser kostenloser ROI-Rechner zeigt Ihnen bereits vorab das Potenzial.',
+      'Vor jedem Projekt legen wir gemeinsam fest, was sich wie messen lässt: eingesparte Stunden, weniger Fehler, kürzere Durchlaufzeiten. Wir nehmen eine Ausgangsmessung, vergleichen nach der Umsetzung. Unser ROI-Rechner zeigt das Potenzial vorab, ohne Registrierung.',
   },
   {
     question: 'Was ist der Unterschied zwischen KI-Automatisierung und einem KI-Agenten?',
     answer:
-      'Gute Frage – der Unterschied ist entscheidend. Eine klassische Automatisierung folgt festen Regeln: Wenn A passiert, dann B. Das ist wertvoll, aber starr. Ein KI-Agent dagegen kann eigenständig urteilen, Informationen beschaffen und Entscheidungen treffen – ohne dass jeder Schritt vorher programmiert wurde. Stellen Sie sich vor: kein Mensch gibt eine Recherche in Auftrag, der Agent erkennt selbst, was gerade wichtig ist, und liefert täglich einen strukturierten Report. Wir nennen das agentische KI – und es ist das, was KI wirklich von einfacher Automatisierung unterscheidet.',
+      'Eine klassische Automatisierung folgt festen Regeln: Wenn A passiert, dann B. Das ist wertvoll, aber starr. Ein KI-Agent kann eigenständig urteilen, Informationen beschaffen und Entscheidungen treffen, ohne dass jeder Schritt vorher programmiert wurde. Konkretes Beispiel: kein Mensch gibt eine Recherche in Auftrag, der Agent erkennt selbst, was gerade wichtig ist, und liefert jeden Morgen einen strukturierten Report. Das ist der Unterschied.',
   },
   {
     question: 'Sind KI-Lösungen DSGVO-konform und datenschutzrechtlich sicher?',
     answer:
-      'Ja. Datenschutz ist bei uns kein Nachgedanke, sondern Teil des Designs. Wir arbeiten bevorzugt mit europäischen Anbietern und On-Premise-Lösungen. Sensible Unternehmensdaten verlassen Ihr Netzwerk nur mit expliziter Freigabe. Für regulierte Branchen setzen wir auf datenschutzkonforme Alternativen zu US-amerikanischen Cloud-Diensten.',
+      'Wir bauen Datenschutz von Anfang an ein. Wo es geht, arbeiten wir mit europäischen Anbietern und On-Premise-Lösungen. Sensible Unternehmensdaten verlassen Ihr Netzwerk nur mit expliziter Freigabe. In regulierten Branchen wählen wir gezielt datenschutzkonforme Alternativen zu US-Diensten.',
   },
 ];

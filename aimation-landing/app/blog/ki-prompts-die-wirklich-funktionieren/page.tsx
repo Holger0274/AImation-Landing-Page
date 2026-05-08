@@ -242,7 +242,7 @@ export default function KiPromptsPage() {
               className="font-heading font-bold text-white mb-4 leading-tight"
               style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}
             >
-              KI-Kompetenz für Ihr ganzes Team aufbauen?
+            KI-Schulung für Ihr Team. Halber Tag, direkt anwendbar.
             </h2>
             <p className="text-gray-300 font-inter mb-8" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)' }}>
               In einem halben Tag zeigen wir Ihrem Team, wie sie KI wirklich produktiv einsetzen – mit konkreten Prompts für Ihre Aufgaben. 30 Minuten Erstgespräch. Kostenlos.

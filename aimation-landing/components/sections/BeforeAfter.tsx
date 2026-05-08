@@ -196,7 +196,7 @@ export default function BeforeAfter() {
             <span className="gradient-text">Kontrolle</span>
           </h2>
           <p className="font-semibold text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.5rem)' }}>
-            So sieht Transformation in der Praxis aus
+            Drei Prozesse. Vorher und nachher. Konkrete Zahlen.
           </p>
         </motion.div>
 
@@ -279,7 +279,7 @@ export default function BeforeAfter() {
           className="text-center mt-16"
         >
           <p className="text-lg text-gray-600 mb-6">
-            Welche Prozesse in Ihrem Unternehmen könnten so transformiert werden?
+            Zehn Minuten Gespräch reichen meistens, um ähnliche Potenziale in Ihren Prozessen zu finden.
           </p>
           <button
             onClick={() => (window.location.href = '#kontakt')}

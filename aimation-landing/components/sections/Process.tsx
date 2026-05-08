@@ -28,7 +28,7 @@ const steps = [
     title: 'Analyse',
     subtitle: 'Potenziale erkennen',
     description:
-      'Wir schauen uns an, wie Sie heute arbeiten. Wo hakt\'s? Wo geht Zeit verloren? Und wo könnte KI wirklich helfen?',
+      'Wir schauen uns an, wie Sie heute arbeiten. Wo hakt\'s? Wo geht Zeit verloren? Und was lässt sich realistisch automatisieren?',
     details: [
       'AI Readiness Assessment durchführen',
       'AI Audit bestehender Tools & Prozesse',
@@ -378,7 +378,7 @@ export default function Process() {
           className="text-center mt-16"
         >
           <p className="text-gray-600 mb-6">
-            Bereit für den ersten Schritt?
+            Das Erstgespräch kostet 30 Minuten und nichts weiter.
           </p>
           <a
             href="#kontakt"

@@ -546,7 +546,7 @@ export default function BewertungsmethodenPage() {
               className="font-heading font-bold text-white mb-4 leading-tight"
               style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}
             >
-              Sie priorisieren gerade Ihre eigenen Projekte?
+              Welche Ihrer KI-Projekte kommt zuerst?
             </h2>
             <p className="text-gray-300 font-inter mb-8" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)' }}>
               Methoden sind ein Werkzeug, kein Selbstzweck. Die eigentliche Arbeit beginnt mit der ehrlichen Bewertung konkreter Vorschläge in Ihrer Organisation – mit Ihren Daten, Ihren Kriterien, Ihren strategischen Zielen. Im Use-Case-Workshop kombinieren wir die Methoden, die für Ihre Entscheidungen wirklich relevant sind.

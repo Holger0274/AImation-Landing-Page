@@ -419,7 +419,7 @@ export default function PainPoints() {
                   Diese 6 Probleme hören wir fast wörtlich in jedem Erstgespräch. Manchmal sind es alle 6 gleichzeitig.
                 </p>
                 <p className="leading-relaxed font-medium text-[#071013] break-words">
-                  Das Positive: Keines dieser Probleme muss 2026 noch existieren. Die Lösungen sind da. Sie kennen sie nur noch nicht.
+                  Keines davon muss 2026 noch existieren. Die Lösungen sind längst da, nur noch nicht bei Ihnen.
                 </p>
               </div>
             </motion.div>

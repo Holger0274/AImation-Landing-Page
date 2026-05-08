@@ -7,26 +7,26 @@ import { useRef } from 'react';
 const differentiators = [
   {
     icon: Target,
-    title: 'Aus der Praxis, nicht aus dem Lehrbuch',
-    description: 'Wir kennen den Alltag in produzierenden Unternehmen. Nicht aus Studien, sondern weil wir selbst jahrelang mittendrin waren.',
-    highlight: 'Keine Theorie-Consultants'
+    title: 'Shopfloor bis Führungsebene',
+    description: 'Ich war selbst jahrelang mittendrin in produzierenden Unternehmen. Welche Probleme wirklich nerven, weiß ich aus eigener Erfahrung, nicht aus einer Studie.',
+    highlight: 'Praxis, keine Theorie'
   },
   {
     icon: Heart,
-    title: 'Nutzen vor Umsatz',
-    description: 'Wir schauen uns Ihre Prozesse genau an. Und wenn KI nicht die richtige Lösung ist, sagen wir das auch.',
-    highlight: 'Kein Verkaufsgespräch'
+    title: 'Wenn KI nicht hilft, sagen wir das',
+    description: 'Ich schaue mir Ihre Prozesse an. Manchmal lautet die Antwort: KI ist hier falsch. Das kostet mich manchmal einen Auftrag. Trotzdem sage ich es.',
+    highlight: 'Ehrlich, auch wenn unbequem'
   },
   {
     icon: Zap,
-    title: 'Für KMUs gemacht',
-    description: 'Keine Konzernpreise, keine Projekte die sich ewig ziehen. Lösungen die funktionieren. Nicht in 2 Jahren, sondern morgen.',
+    title: 'Für KMUs, nicht für Konzerne',
+    description: 'Konzernpreise kommen nicht infrage. Projekte, die sich ewig ziehen, auch nicht. Was zählt: läuft es nächste Woche? Meistens ja.',
     highlight: 'Schnell & bezahlbar'
   },
   {
     icon: TrendingUp,
-    title: 'Alles aus einer Hand',
-    description: 'Beratung, Schulung, Umsetzung – und wenn es Sinn macht: KI-Agenten, die für Sie arbeiten während Sie schlafen. Sie brauchen nicht drei verschiedene Anbieter unter einen Hut zu bringen.',
+    title: 'Drei Säulen, ein Ansprechpartner',
+    description: 'Beratung, Schulung, Umsetzung, alles unter einem Dach. Kein Koordinationsaufwand zwischen drei Anbietern. Ein Anruf reicht.',
     highlight: '3 Säulen, 1 Partner'
   }
 ];
@@ -71,7 +71,7 @@ export default function WhyAImation() {
           </h2>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto font-body">
-            Die meisten Berater reden über KI. Wir bauen sie. Und sagen Ihnen, ob Sie sie überhaupt brauchen.
+            Wir bauen KI-Lösungen. Und sagen Ihnen, wenn Sie keine brauchen.
           </p>
         </motion.div>
 
@@ -132,20 +132,18 @@ export default function WhyAImation() {
               </span>
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              In 2 Tagen wissen Sie, wo Sie stehen: <strong className="text-white">AI Audit</strong> Ihrer aktuellen Prozesse,
-              klare <strong className="text-white">AI Readiness</strong> Bewertung und eine ehrliche <strong className="text-white">AI ROI</strong> Einschätzung.
-              Ohne leere Versprechen, ohne Verkaufsdruck.
+              In 2 Tagen wissen Sie, wo Sie stehen. Wir schauen uns Ihre Prozesse an, bewerten was schon läuft, und rechnen durch, was realistisch herauszuholen ist. Kein Verkaufsgespräch, kein Blabla.
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               <div className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg">
-                <span className="text-white font-semibold">✓ AI Readiness Assessment</span>
+                <span className="text-white font-semibold">✓ Prozesse analysieren</span>
               </div>
               <div className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg">
-                <span className="text-white font-semibold">✓ AI Audit & Potenzialanalyse</span>
+                <span className="text-white font-semibold">✓ Potenziale bewerten</span>
               </div>
               <div className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg">
-                <span className="text-white font-semibold">✓ AI ROI Kalkulation</span>
+                <span className="text-white font-semibold">✓ ROI durchrechnen</span>
               </div>
             </div>
 

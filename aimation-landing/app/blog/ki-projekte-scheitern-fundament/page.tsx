@@ -317,7 +317,7 @@ export default function KiProjekteScheiternPage() {
               className="font-heading font-bold text-white mb-4 leading-tight"
               style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}
             >
-              Bereit für einen ehrlichen Blick auf Ihr KI-Fundament?
+              Welcher Usecase macht bei Ihnen als erstes Sinn?
             </h2>
             <p className="text-gray-300 font-inter mb-8" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)' }}>
               Im ersten Gespräch schauen wir gemeinsam, welcher Usecase bei Ihnen als erstes Sinn ergibt und wie ein PoC konkret aussehen könnte. 30 Minuten. Kostenlos. Ohne Verkaufspitch.

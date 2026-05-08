@@ -47,7 +47,7 @@ export default function FinalCTA() {
           </h2>
 
           <p className="text-gray-400 max-w-2xl mx-auto mb-12" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
-            30 Minuten, die Ihnen Monate an Unsicherheit ersparen. Oder rechnen Sie erstmal selbst nach.
+            30 Minuten. Wir sagen Ihnen, was für Sie realistisch ist. Oder rechnen Sie erstmal selbst nach.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
