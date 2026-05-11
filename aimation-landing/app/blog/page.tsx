@@ -33,6 +33,15 @@ const breadcrumbs = [
 
 const ARTICLES = [
   {
+    slug: 'ki-roadmap-illusion-mittelstand',
+    title: 'Die KI-Lüge im Mittelstand: Warum der gerade Strich auf der Roadmap eine Illusion ist.',
+    excerpt: 'Vier Boxen, drei Pfeile, ein gerader Kurs. Auf dem Whiteboard wirkt das überzeugend. Ein Maschinenbauer mit 350 Mitarbeitern und vier veralteten Lastenheft-Versionen zeigt, wie der Pfeil in der Realität aussieht.',
+    tag: 'KI-Strategie',
+    date: '2026-05-08',
+    readingTime: '12 Min.',
+    relatedPillar: { label: 'KI-Beratung', href: '/ki-beratung-kmu' },
+  },
+  {
     slug: 'bewertungsmethoden-ki-projekte',
     title: 'Wenn RICE nicht reicht: Vier Methoden zur Bewertung von KI-Projekten',
     excerpt: 'Die RICE-Formel hat blinde Flecken. Vier ergänzende Bewertungsmethoden – Impact-Effort-Matrix, WSJF, AI-Feasibility und Weighted Scoring – im direkten Vergleich an denselben fünf Engineering-Projekten.',
