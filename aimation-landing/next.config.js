@@ -1,4 +1,7 @@
 const path = require('path');
+const createNextIntlPlugin = require('next-intl/plugin');
+
+const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -8,6 +11,13 @@ const nextConfig = {
   },
   // ESM package support for @lobehub/icons
   transpilePackages: ['@lobehub/icons'],
+  async redirects() {
+    return [
+      { source: '/en/impressum', destination: '/impressum', permanent: true },
+      { source: '/en/datenschutz', destination: '/datenschutz', permanent: true },
+      { source: '/en/blog/:slug', destination: '/blog/:slug', permanent: false },
+    ];
+  },
   images: {
     remotePatterns: [
       {
@@ -45,4 +55,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withNextIntl(nextConfig);
