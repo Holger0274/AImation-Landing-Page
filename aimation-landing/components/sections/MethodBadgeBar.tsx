@@ -2,26 +2,16 @@
 
 import { motion } from 'framer-motion';
 import { CheckCircle, TrendingUp, FileSearch } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
-const methods = [
-  {
-    icon: CheckCircle,
-    label: 'AI Readiness Assessment',
-    description: 'Ist Ihr Unternehmen bereit für KI?',
-  },
-  {
-    icon: TrendingUp,
-    label: 'AI ROI-Kalkulation',
-    description: 'Welchen Mehrwert bringt KI konkret?',
-  },
-  {
-    icon: FileSearch,
-    label: 'AI Audit',
-    description: 'Welche Tools bringen wirklich Nutzen?',
-  },
-];
+const methodIcons = [CheckCircle, TrendingUp, FileSearch];
 
 export default function MethodBadgeBar() {
+  const t = useTranslations('methodBadgeBar');
+  const methods = (t.raw('methods') as { label: string; description: string }[]).map(
+    (m, i) => ({ ...m, icon: methodIcons[i] })
+  );
+
   return (
     <section className="py-12 md:py-16 bg-white border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,7 +24,7 @@ export default function MethodBadgeBar() {
         >
           {/* Headline */}
           <h3 className="font-heading font-semibold text-gray-600 mb-8" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1rem)' }}>
-            Unsere <span className="gradient-text">bewährten Analyse-Methoden</span>
+            {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span>
           </h3>
 
           {/* Badge Grid */}
@@ -111,7 +101,7 @@ export default function MethodBadgeBar() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-gray-500 text-sm mt-8"
           >
-            Wissenschaftlich fundierte Methoden für messbare Ergebnisse
+            {t('trustLine')}
           </motion.p>
         </motion.div>
       </div>

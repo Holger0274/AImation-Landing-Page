@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { faqs } from '@/lib/data/faqs';
 
 export { faqs };
@@ -46,6 +47,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
 }
 
 export default function FAQ() {
+  const t = useTranslations('faq');
   return (
     <section id="faq" className="py-20 md:py-32 bg-gray-50">
       {/*
@@ -62,9 +64,9 @@ export default function FAQ() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-            Häufige <span className="gradient-text">Fragen</span>
+            {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span>
           </h2>
-          <p className="text-lg text-gray-600">Die Antworten auf die wichtigsten Fragen</p>
+          <p className="text-lg text-gray-600">{t('subline')}</p>
         </motion.div>
 
         <div className="space-y-4">

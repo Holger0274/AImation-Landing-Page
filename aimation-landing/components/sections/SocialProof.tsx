@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import {
   OpenAI,
@@ -23,23 +24,11 @@ import { ObsidianIcon } from '@/components/icons/ObsidianIcon';
 import { PineconeIcon } from '@/components/icons/PineconeIcon';
 import { ClaudeAIIcon } from '@/components/icons/ClaudeAIIcon';
 
-const stats = [
-  {
-    value: 18000,
-    suffix: '+',
-    label: 'Menschen folgen Holger auf LinkedIn',
-  },
-  {
-    value: 20,
-    suffix: '+',
-    label: 'Jahre Engineering-Erfahrung',
-  },
-  {
-    value: 10,
-    suffix: '-1000',
-    label: 'Mitarbeiter in Zielunternehmen',
-  },
-];
+const statsConfig = [
+  { value: 18000, suffix: '+', labelKey: 'linkedin' },
+  { value: 20, suffix: '+', labelKey: 'experience' },
+  { value: 10, suffix: '-1000', labelKey: 'employees' },
+] as const;
 
 interface ToolPill {
   name: string;
@@ -129,6 +118,9 @@ function ToolPillItem({ tool, delay }: { tool: ToolPill; delay: number }) {
 }
 
 export default function SocialProof() {
+  const t = useTranslations('socialProof');
+  const stats = statsConfig.map((s) => ({ ...s, label: t(`stats.${s.labelKey}`) }));
+
   return (
     <section className="py-20 md:py-32 bg-[#faf9f7]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -140,7 +132,7 @@ export default function SocialProof() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-            Vertrauen durch <span className="gradient-text">Erfahrung</span>
+            {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span>
           </h2>
         </motion.div>
 
@@ -177,10 +169,10 @@ export default function SocialProof() {
           className="text-center mb-12"
         >
           <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3">
-            Wir arbeiten mit den <span className="gradient-text">besten Tools</span>
+            {t('toolsHeadline')} <span className="gradient-text">{t('toolsHighlight')}</span>
           </h3>
           <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto">
-            Wir binden uns an keinen Hersteller. Was für Ihren Fall passt, finden wir, weil wir alle relevanten Tools kennen und täglich nutzen.
+            {t('toolsSubline')}
           </p>
         </motion.div>
 

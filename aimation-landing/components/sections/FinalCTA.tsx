@@ -3,12 +3,14 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calculator } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import ROICalculator from '@/components/ROICalculator/ROICalculator';
 import LeadFormModal from '@/components/LeadFormModal';
 
 export default function FinalCTA() {
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
+  const t = useTranslations('finalCta');
 
   return (
     <section id="kontakt" className="relative py-20 md:py-32 bg-[#071013] text-white overflow-hidden">
@@ -41,13 +43,13 @@ export default function FinalCTA() {
           viewport={{ once: true }}
         >
           <h2 className="font-heading font-bold mb-6" style={{ fontSize: 'clamp(2rem, 7vw, 3.75rem)' }}>
-            Jetzt{' '}
-            <span className="text-magenta text-glow-magenta">Klarheit</span>{' '}
-            schaffen.
+            {t('headline')}{' '}
+            <span className="text-magenta text-glow-magenta">{t('headlineHighlight')}</span>{' '}
+            {t('headlineEnd')}
           </h2>
 
           <p className="text-gray-400 max-w-2xl mx-auto mb-12" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
-            30 Minuten. Wir sagen Ihnen, was für Sie realistisch ist. Oder rechnen Sie erstmal selbst nach.
+            {t('subline')}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -59,7 +61,7 @@ export default function FinalCTA() {
               whileTap={{ scale: 0.95 }}
             >
               <span className="flex items-center justify-center gap-2">
-                Kostenloses Erstgespräch buchen
+                {t('ctaPrimary')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </motion.button>
@@ -74,16 +76,16 @@ export default function FinalCTA() {
             >
               <span className="flex items-center justify-center gap-2">
                 <Calculator className="w-5 h-5" />
-                ROI selbst berechnen
+                {t('ctaSecondary')}
               </span>
             </motion.button>
           </div>
 
           {/* Microcopy below CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-300">
-            <p>30 Minuten • Unverbindlich • Sofort verfügbar</p>
+            <p>{t('microcopy1')}</p>
             <p className="hidden sm:block">|</p>
-            <p>2 Minuten • Keine Vorkenntnisse nötig</p>
+            <p>{t('microcopy2')}</p>
           </div>
         </motion.div>
       </div>

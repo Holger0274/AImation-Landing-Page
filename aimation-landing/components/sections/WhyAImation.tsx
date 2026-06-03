@@ -3,36 +3,17 @@
 import { motion } from 'framer-motion';
 import { Target, Zap, Heart, TrendingUp } from 'lucide-react';
 import { useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
-const differentiators = [
-  {
-    icon: Target,
-    title: 'Shopfloor bis Führungsebene',
-    description: 'Ich war selbst jahrelang mittendrin in produzierenden Unternehmen. Welche Probleme wirklich nerven, weiß ich aus eigener Erfahrung, nicht aus einer Studie.',
-    highlight: 'Praxis, keine Theorie'
-  },
-  {
-    icon: Heart,
-    title: 'Wenn KI nicht hilft, sagen wir das',
-    description: 'Ich schaue mir Ihre Prozesse an. Manchmal lautet die Antwort: KI ist hier falsch. Das kostet mich manchmal einen Auftrag. Trotzdem sage ich es.',
-    highlight: 'Ehrlich, auch wenn unbequem'
-  },
-  {
-    icon: Zap,
-    title: 'Für KMUs, nicht für Konzerne',
-    description: 'Konzernpreise kommen nicht infrage. Projekte, die sich ewig ziehen, auch nicht. Was zählt: läuft es nächste Woche? Meistens ja.',
-    highlight: 'Schnell & bezahlbar'
-  },
-  {
-    icon: TrendingUp,
-    title: 'Drei Säulen, ein Ansprechpartner',
-    description: 'Beratung, Schulung, Umsetzung, alles unter einem Dach. Kein Koordinationsaufwand zwischen drei Anbietern. Ein Anruf reicht.',
-    highlight: '3 Säulen, 1 Partner'
-  }
-];
+const differentiatorIcons = [Target, Heart, Zap, TrendingUp];
 
 export default function WhyAImation() {
   const sectionRef = useRef(null);
+  const t = useTranslations('whyAImation');
+
+  const differentiators = (t.raw('differentiators') as { title: string; description: string; highlight: string }[]).map(
+    (d, i) => ({ ...d, icon: differentiatorIcons[i] })
+  );
 
   return (
     <section
@@ -60,18 +41,18 @@ export default function WhyAImation() {
             transition={{ duration: 0.5 }}
           >
             <div className="w-3 h-3 bg-[#f90093] rounded-full shadow-[0_0_10px_#f90093]" />
-            <span className="text-2xl font-bold text-white">Warum AI.mation?</span>
+            <span className="text-2xl font-bold text-white">{t('badge')}</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading">
-            Nicht noch eine{' '}
+            {t('headline')}{' '}
             <span className="text-magenta text-glow-magenta">
-              KI-Beratung
+              {t('headlineHighlight')}
             </span>
           </h2>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto font-body">
-            Wir bauen KI-Lösungen. Und sagen Ihnen, wenn Sie keine brauchen.
+            {t('subline')}
           </p>
         </motion.div>
 
@@ -126,24 +107,24 @@ export default function WhyAImation() {
         >
           <div className="inline-block bg-gradient-to-br from-[#f90093]/10 to-[#ff4ecd]/10 border border-[#f90093]/30 rounded-2xl p-8 md:p-12">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-heading">
-              Startet mit einem{' '}
+              {t('readinessHeadline')}{' '}
               <span className="text-magenta text-glow-magenta">
-                AI Readiness Check
+                {t('readinessHighlight')}
               </span>
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              In 2 Tagen wissen Sie, wo Sie stehen. Wir schauen uns Ihre Prozesse an, bewerten was schon läuft, und rechnen durch, was realistisch herauszuholen ist. Kein Verkaufsgespräch, kein Blabla.
+              {t('readinessText')}
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               <div className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg">
-                <span className="text-white font-semibold">✓ Prozesse analysieren</span>
+                <span className="text-white font-semibold">{t('readinessBadge1')}</span>
               </div>
               <div className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg">
-                <span className="text-white font-semibold">✓ Potenziale bewerten</span>
+                <span className="text-white font-semibold">{t('readinessBadge2')}</span>
               </div>
               <div className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg">
-                <span className="text-white font-semibold">✓ ROI durchrechnen</span>
+                <span className="text-white font-semibold">{t('readinessBadge3')}</span>
               </div>
             </div>
 
@@ -160,7 +141,7 @@ export default function WhyAImation() {
                 hover:scale-105
               "
             >
-              Jetzt AI Readiness Check anfragen
+              {t('readinessCta')}
               <svg
                 className="w-5 h-5"
                 fill="none"

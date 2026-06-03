@@ -1,30 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-
-const quotes = [
-  {
-    text: '„20 Jahre Engineering-Führungskraft in der Industrie."',
-    highlight: null,
-  },
-  {
-    text: '„Ich kenne [Ihre Prozesse], nicht aus Büchern, sondern aus der Praxis."',
-    highlight: 'Ihre Prozesse',
-  },
-  {
-    text: '„Wenn KI für Sie keinen Sinn ergibt, sage ich Ihnen das. Auch wenn mich das einen Auftrag kostet."',
-    highlight: null,
-  },
-  {
-    text: '„[Machen] statt reden. Fertige Lösungen, die am nächsten Tag funktionieren."',
-    highlight: 'Machen',
-  },
-  {
-    text: '„20 Jahre Erfahrung haben mir eines gezeigt: [Die einfachste Lösung], die wirklich funktioniert, ist immer die beste."',
-    highlight: 'Die einfachste Lösung',
-  },
-];
 
 function QuoteCard({ text, highlight, index }: { text: string; highlight: string | null; index: number }) {
   let content: React.ReactNode = text;
@@ -58,6 +36,9 @@ function QuoteCard({ text, highlight, index }: { text: string; highlight: string
 }
 
 export default function About() {
+  const t = useTranslations('about');
+  const quotes = (t.raw('quotes') as { text: string; highlight: string | null }[]);
+
   return (
     <section id="ueber-mich" className="py-20 md:py-32 bg-warm-white">
       {/*
@@ -74,9 +55,9 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-xs font-heading font-bold tracking-[2px] uppercase text-magenta mb-3">Über uns</p>
+          <p className="text-xs font-heading font-bold tracking-[2px] uppercase text-magenta mb-3">{t('overline')}</p>
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-soft-black">
-            20 Jahre Industrie. Kein <span className="gradient-text">Theorieberater.</span>
+            {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span>
           </h2>
         </motion.div>
 
@@ -115,11 +96,11 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-3xl md:text-4xl font-heading font-bold text-soft-black mb-6 leading-snug">
-              KI ist das Thema, das uns antreibt.<br />
-              <span className="gradient-text">Seit Jahren. Nicht seit dem Hype.</span>
+              {t('introHeadline')}<br />
+              <span className="gradient-text">{t('introHighlight')}</span>
             </h3>
             <p className="text-lg text-gray-500 leading-relaxed">
-              20 Jahre Engineering haben mir gezeigt, wo die Zeit wirklich verloren geht. Im Drumherum. In den Dingen, die niemand erklärt hat, wie man anders macht. Daran arbeite ich.
+              {t('introText')}
             </p>
           </motion.div>
         </div>
@@ -131,7 +112,7 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center text-[11px] font-heading font-bold tracking-[2.5px] uppercase text-gray-300 mb-7"
         >
-          Das sind wir in 5 Sätzen
+          {t('quotesLabel')}
         </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
@@ -146,7 +127,7 @@ export default function About() {
         {/* CTA */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
           <a href="#kontakt" className="btn-primary text-sm px-8 py-4">
-            Kostenloses Erstgespräch vereinbaren
+            {t('ctaPrimary')}
           </a>
           <a
             href="https://linkedin.com/in/holgerpeschke"
@@ -154,7 +135,7 @@ export default function About() {
             rel="noopener noreferrer"
             className="text-sm font-heading font-semibold text-magenta underline underline-offset-4"
           >
-            LinkedIn folgen. 18.000 Follower
+            {t('ctaLinkedIn')}
           </a>
         </div>
 
