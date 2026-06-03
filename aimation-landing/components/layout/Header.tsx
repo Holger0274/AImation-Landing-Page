@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, GraduationCap, Lightbulb, Zap, Bot } from 'lucide-react';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 
 const leistungenItems = [
   {
@@ -262,6 +263,9 @@ export default function Header() {
               Über uns
             </a>
 
+            {/* Language Switcher */}
+            <LanguageSwitcher isDark={false} />
+
             {/* CTA */}
             <a
               href="#kontakt"
@@ -377,6 +381,10 @@ export default function Header() {
                 >
                   Kostenloses Erstgespräch
                 </a>
+              </div>
+
+              <div className="pt-4 border-t border-gray-200">
+                <LanguageSwitcher isDark={false} />
               </div>
             </nav>
           </motion.div>
