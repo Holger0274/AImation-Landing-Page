@@ -3,92 +3,11 @@
 import { motion } from 'framer-motion';
 import { X, Check, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
-const transformations = [
-  {
-    id: 'workflow',
-    title: 'E-Mail-Bearbeitung',
-    before: {
-      title: 'Vorher: Manueller Prozess',
-      pain: '2 Stunden täglich',
-      problems: [
-        'E-Mails manuell sortieren',
-        'Copy-Paste in Excel',
-        'Fehlende Informationen nachfragen',
-        'Status in mehreren Tools aktualisieren',
-      ],
-      visual: 'chaos',
-    },
-    after: {
-      title: 'Nachher: Automatisiert',
-      gain: '10 Minuten täglich',
-      benefits: [
-        'KI sortiert & priorisiert automatisch',
-        'Daten werden direkt ins System übertragen',
-        'Fehlende Infos werden automatisch angefordert',
-        'Status-Updates in Echtzeit',
-      ],
-      visual: 'automated',
-      roi: '90% Zeitersparnis',
-    },
-  },
-  {
-    id: 'knowledge',
-    title: 'Wissensmanagement',
-    before: {
-      title: 'Vorher: Wissen in Köpfen',
-      pain: 'Wissensverlust bei Kündigungen',
-      problems: [
-        'Know-how nur in Mitarbeiter-Köpfen',
-        'Neue Kollegen 6 Monate Einarbeitung',
-        'Prozesse nicht dokumentiert',
-        'Experten ständig im Meeting',
-      ],
-      visual: 'isolated',
-    },
-    after: {
-      title: 'Nachher: KI-Wissensdatenbank',
-      gain: 'Wissen bleibt im Unternehmen',
-      benefits: [
-        'RAG-System mit gesamtem Firmenwissen',
-        'Neue Kollegen produktiv in 2 Wochen',
-        'Prozesse automatisch dokumentiert',
-        'KI beantwortet 80% der Fragen sofort',
-      ],
-      visual: 'connected',
-      roi: '>85% Zeitersparnis',
-    },
-  },
-  {
-    id: 'research',
-    title: 'Marktrecherche',
-    before: {
-      title: 'Vorher: Manuelle Recherche',
-      pain: '8 Stunden pro Woche',
-      problems: [
-        'Google, LinkedIn, Fachmedien durchsuchen',
-        'Informationen in Word sammeln',
-        'Veraltete Daten',
-        'Keine strukturierte Ablage',
-      ],
-      visual: 'scattered',
-    },
-    after: {
-      title: 'Nachher: KI-Recherche-Agent',
-      gain: '30 Minuten pro Woche',
-      benefits: [
-        'Ein KI-Agent durchsucht eigenständig Quellen, bewertet Relevanz und fasst zusammen',
-        'Strukturierte Reports in Notion',
-        'Tägliche Updates zu definierten Themen',
-        'Zentrale Knowledge Base',
-      ],
-      visual: 'organized',
-      roi: '>90% Zeitersparnis',
-    },
-  },
-];
+const transformationIds = ['workflow', 'knowledge', 'research'] as const;
 
-function BeforeCard({ data, type }: { data: any; type: 'before' | 'after' }) {
+function BeforeCard({ data, type, labelProblem, labelLoesung }: { data: any; type: 'before' | 'after'; labelProblem: string; labelLoesung: string }) {
   const isBefore = type === 'before';
 
   return (
@@ -114,7 +33,7 @@ function BeforeCard({ data, type }: { data: any; type: 'before' | 'after' }) {
           style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}
         >
           {isBefore ? <X className="w-4 h-4" /> : <Check className="w-4 h-4" />}
-          {isBefore ? 'Problem' : 'Lösung'}
+          {isBefore ? labelProblem : labelLoesung}
         </div>
         <h4 className="font-heading font-bold text-white mb-2" style={{ fontSize: 'clamp(1.25rem, 4vw, 1.875rem)' }}>
           {data.title}
@@ -170,6 +89,26 @@ function BeforeCard({ data, type }: { data: any; type: 'before' | 'after' }) {
 
 export default function BeforeAfter() {
   const [activeTransformation, setActiveTransformation] = useState(0);
+  const t = useTranslations('beforeAfter');
+
+  const transformations = transformationIds.map((id) => ({
+    id,
+    title: t(`transformations.${id}.title`),
+    before: {
+      title: t(`transformations.${id}.before.title`),
+      pain: t(`transformations.${id}.before.pain`),
+      problems: t.raw(`transformations.${id}.before.problems`) as string[],
+    },
+    after: {
+      title: t(`transformations.${id}.after.title`),
+      gain: t(`transformations.${id}.after.gain`),
+      benefits: t.raw(`transformations.${id}.after.benefits`) as string[],
+      roi: t(`transformations.${id}.after.roi`),
+    },
+  }));
+
+  const labelProblem = t('labelProblem');
+  const labelLoesung = t('labelLoesung');
 
   return (
     <section className="relative py-20 md:py-32 bg-[#faf9f7] overflow-hidden">
@@ -192,11 +131,11 @@ export default function BeforeAfter() {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="font-heading font-bold mb-4" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
-            Von <span className="text-gray-600">Chaos</span> zu{' '}
-            <span className="gradient-text">Kontrolle</span>
+            {t('headline')} <span className="text-gray-600">{t('headlineChao')}</span> {t('headlineMid')}{' '}
+            <span className="gradient-text">{t('headlineHighlight')}</span>
           </h2>
           <p className="font-semibold text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.5rem)' }}>
-            Drei Prozesse. Vorher und nachher. Konkrete Zahlen.
+            {t('subline')}
           </p>
         </motion.div>
 
@@ -237,6 +176,8 @@ export default function BeforeAfter() {
             <BeforeCard
               data={transformations[activeTransformation].before}
               type="before"
+              labelProblem={labelProblem}
+              labelLoesung={labelLoesung}
             />
           </motion.div>
 
@@ -267,6 +208,8 @@ export default function BeforeAfter() {
             <BeforeCard
               data={transformations[activeTransformation].after}
               type="after"
+              labelProblem={labelProblem}
+              labelLoesung={labelLoesung}
             />
           </motion.div>
         </div>
@@ -279,14 +222,14 @@ export default function BeforeAfter() {
           className="text-center mt-16"
         >
           <p className="text-lg text-gray-600 mb-6">
-            Zehn Minuten Gespräch reichen meistens, um ähnliche Potenziale in Ihren Prozessen zu finden.
+            {t('ctaText')}
           </p>
           <button
             onClick={() => (window.location.href = '#kontakt')}
             className="px-8 py-4 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
             style={{ boxShadow: '0 0 30px rgba(249, 0, 147, 0.2)' }}
           >
-            Kostenloses Potenzial-Gespräch vereinbaren
+            {t('ctaButton')}
           </button>
         </motion.div>
       </div>

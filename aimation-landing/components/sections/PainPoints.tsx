@@ -3,94 +3,42 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { FileSpreadsheet, Brain, Clock, TrendingDown, AlertTriangle, TrendingUp, X, Calculator } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-// Compact Stats (6 main pain points for grid display) - WITH MODAL DATA
-const compactStats = [
-  {
-    id: 'time',
-    icon: Clock,
-    stat: '40%',
-    title: 'der Arbeitszeit verpufft für Aufgaben, die niemand vermissen würde',
-    description: 'Ihre Mitarbeiter tippen Zahlen ab, die längst digital vorliegen. Kopieren Daten von Excel in SAP. Erstellen manuell Berichte, die automatisiert werden könnten. Während die Konkurrenz automatisiert, verschwenden Sie Potenzial.',
-    statLabel: 'Zeitverschwendung',
-    source: 'McKinsey Global Survey 2024',
-    imagePath: '/images/time-waste.webp',
-    imageAlt: 'Gestresster Büroangestellter verschwendet Zeit mit manuellen repetitiven Aufgaben statt Wertschöpfung',
-  },
-  {
-    id: 'cost',
-    icon: TrendingDown,
-    stat: '200k€',
-    title: 'Das sind 200.000€ aus dem Fenster geworfen. Jedes Jahr.',
-    description: 'Bei nur 10 Mitarbeitern verbrennen Sie über 200.000€ pro Jahr für Tätigkeiten ohne Mehrwert. Das sind die Jahresgehälter von 3 qualifizierten Fachkräften. Jedes Jahr. Einfach weg. Für Aufgaben, die längst automatisierbar wären.',
-    statLabel: 'Verschwendung/Jahr',
-    source: 'Berechnung: McKinsey-Studie 2024',
-    imagePath: '/images/cost-waste.webp',
-    imageAlt: 'Finanzgrafik zeigt Kostenverschwendung durch ineffiziente manuelle Prozesse im KMU',
-  },
-  {
-    id: 'quality',
-    icon: AlertTriangle,
-    stat: '1-4%',
-    title: 'Jeder Fehler kostet Geld. Und Ihr Image.',
-    description: 'Bei jeder manuellen Dateneingabe passieren Fehler. Kunden beschweren sich. Rechnungen stimmen nicht. Liefertermine werden verpasst. Und während Ihr Team Fehler korrigiert, bleibt die eigentliche Arbeit liegen. Frustrierend? Absolut. Vermeidbar? Ja.',
-    statLabel: 'Fehlerrate',
-    source: 'Gartner 2023 & Ernst & Young 2025',
-    imagePath: '/images/quality-issues.webp',
-    imageAlt: 'Qualitätsprobleme und Fehler durch manuelle Dateneingabe in Unternehmensprozessen',
-  },
-  {
-    id: 'knowledge',
-    icon: Brain,
-    stat: '71%',
-    title: 'Wenn Petra in Rente geht, geht 30 Jahre Erfahrung mit',
-    description: 'Nur sie weiß, wie dieser eine Prozess funktioniert. Nur sie kennt alle Sonderfälle. Und wenn sie geht? Chaos. Fehler. Verzögerungen. Neue Mitarbeiter brauchen Monate, um aufzuholen, wenn Sie überhaupt jemanden finden.',
-    statLabel: 'der IT-Führungskräfte sehen Wissensverlust',
-    source: 'Sinequa-Studie 2022',
-    imagePath: '/images/knowledge-loss.webp',
-    imageAlt: 'Wissensverlust durch Mitarbeiter-Fluktuation - Fachkräftemangel im deutschen Mittelstand',
-  },
-  {
-    id: 'chaos',
-    icon: FileSpreadsheet,
-    stat: '86%',
-    title: '86% tippen Rechnungen ab, als gäbe es kein Internet',
-    description: 'PDF kommt per E-Mail. Ihre Mitarbeiter öffnen es, lesen die Zahlen, tippen sie ins ERP. Fehler inklusive. Es gibt OCR-Software seit 20 Jahren. Trotzdem tippen 86% der KMUs wie 1995. Absurd? Ja. Änderbar? Sofort.',
-    statLabel: 'erfassen Rechnungen manuell',
-    source: 'KfW Digitalisierungsbericht 2024',
-    imagePath: '/images/excel-chaos.webp',
-    imageAlt: 'Excel-Chaos und manuelle Rechnungserfassung in KMU - ineffiziente Buchhaltungsprozesse',
-  },
-  {
-    id: 'competition',
-    icon: TrendingUp,
-    stat: '81%',
-    title: '81% wissen: Ohne KI verlieren wir den Anschluss',
-    description: 'Ihre Konkurrenz nutzt bereits KI. Ihre Branche verändert sich. Schneller, effizienter, günstiger. Ohne Sie. Während Sie noch überlegen, ob KI etwas für Sie ist, ziehen andere davon. Der Abstand wächst. Jeden Tag.',
-    statLabel: 'sehen KI als wichtigste Zukunftstechnologie',
-    source: 'Bitkom-Studie September 2025',
-    imagePath: '/images/competition.webp',
-    imageAlt: 'Wettbewerbsvorteil durch KI-Automatisierung - deutsche Unternehmen im digitalen Wettlauf',
-  },
-];
-
-// Hero Highlight (most important pain point) - WITH MODAL DATA
-const heroStat = {
-  id: 'waiting',
-  icon: AlertTriangle,
-  stat: '2x',
-  title: 'Während Sie noch planen, hat Ihr Wettbewerber schon automatisiert',
-  subtitle: 'Die KI-Nutzung in deutschen Unternehmen hat sich im letzten Jahr verdoppelt. Nicht in 10 Jahren. In 12 Monaten. Wer jetzt wartet, holt diesen Vorsprung nicht mehr auf. Die Frage ist nicht OB, sondern WANN Sie starten.',
-  description: 'Die KI-Nutzung in deutschen Unternehmen hat sich im letzten Jahr verdoppelt. Nicht in 10 Jahren. In 12 Monaten. Wer jetzt wartet, holt diesen Vorsprung nicht mehr auf. Die Frage ist nicht OB, sondern WANN Sie starten.',
-  statLabel: 'KI-Wachstum in 12 Monaten',
-  source: 'Bitkom September 2025',
-  imagePath: '/images/waiting-competition.webp',
-  imageAlt: 'Rückstand im KI-Wettbewerb - Konkurrenz automatisiert während andere warten',
+type PainStat = {
+  id: string;
+  icon: typeof Clock;
+  stat: string;
+  title: string;
+  description: string;
+  subtitle?: string;
+  statLabel: string;
+  source: string;
+  imagePath: string;
+  imageAlt: string;
 };
 
+// Static config (icons + images) — text comes from translations
+const compactStatsConfig = [
+  { id: 'time', icon: Clock, imagePath: '/images/time-waste.webp', imageAlt: 'Gestresster Büroangestellter verschwendet Zeit mit manuellen repetitiven Aufgaben statt Wertschöpfung' },
+  { id: 'cost', icon: TrendingDown, imagePath: '/images/cost-waste.webp', imageAlt: 'Finanzgrafik zeigt Kostenverschwendung durch ineffiziente manuelle Prozesse im KMU' },
+  { id: 'quality', icon: AlertTriangle, imagePath: '/images/quality-issues.webp', imageAlt: 'Qualitätsprobleme und Fehler durch manuelle Dateneingabe in Unternehmensprozessen' },
+  { id: 'knowledge', icon: Brain, imagePath: '/images/knowledge-loss.webp', imageAlt: 'Wissensverlust durch Mitarbeiter-Fluktuation - Fachkräftemangel im deutschen Mittelstand' },
+  { id: 'chaos', icon: FileSpreadsheet, imagePath: '/images/excel-chaos.webp', imageAlt: 'Excel-Chaos und manuelle Rechnungserfassung in KMU - ineffiziente Buchhaltungsprozesse' },
+  { id: 'competition', icon: TrendingUp, imagePath: '/images/competition.webp', imageAlt: 'Wettbewerbsvorteil durch KI-Automatisierung - deutsche Unternehmen im digitalen Wettlauf' },
+] as const;
+
+const heroStatConfig = {
+  id: 'waiting',
+  icon: AlertTriangle,
+  imagePath: '/images/waiting-competition.webp',
+  imageAlt: 'Rückstand im KI-Wettbewerb - Konkurrenz automatisiert während andere warten',
+} as const;
+
 // Image Modal Component
-function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0]; onClose: () => void }) {
+function ImageModal({ painPoint, onClose }: { painPoint: PainStat; onClose: () => void }) {
+  const t = useTranslations('painPoints');
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -127,7 +75,7 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
             // Respect safe-area insets on mobile devices (notches, etc.)
             top: 'max(1.5rem, env(safe-area-inset-top, 1.5rem))',
           }}
-          aria-label="Modal schließen"
+          aria-label={t('modalClose')}
         >
           <X className="w-6 h-6 text-white" strokeWidth={2.5} />
         </button>
@@ -190,7 +138,7 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
                 {painPoint.description}
               </p>
               <p className="text-gray-400 text-sm italic">
-                Quelle: {painPoint.source}
+                {t('quellePrafix')} {painPoint.source}
               </p>
             </motion.div>
           </div>
@@ -254,7 +202,7 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
                 {painPoint.description}
               </p>
               <p className="text-gray-300 text-sm italic">
-                Quelle: {painPoint.source}
+                {t('quellePrafix')} {painPoint.source}
               </p>
             </motion.div>
           </div>
@@ -265,7 +213,7 @@ function ImageModal({ painPoint, onClose }: { painPoint: typeof compactStats[0];
 }
 
 // Compact Stat Card Component (NOW CLICKABLE)
-function CompactStatCard({ stat, index, onClick }: { stat: typeof compactStats[0]; index: number; onClick: () => void }) {
+function CompactStatCard({ stat, index, onClick, clickHint }: { stat: PainStat; index: number; onClick: () => void; clickHint: string }) {
   const Icon = stat.icon;
 
   return (
@@ -300,14 +248,14 @@ function CompactStatCard({ stat, index, onClick }: { stat: typeof compactStats[0
 
       {/* Click hint */}
       <p className="text-xs text-gray-500 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
-        Klicken für Bild & Details →
+        {clickHint}
       </p>
     </motion.div>
   );
 }
 
 // Hero Highlight Card Component (NOW CLICKABLE)
-function HeroHighlightCard({ stat, onClick }: { stat: typeof heroStat; onClick: () => void }) {
+function HeroHighlightCard({ stat, onClick, clickHint }: { stat: PainStat; onClick: () => void; clickHint: string }) {
   const Icon = stat.icon;
 
   return (
@@ -368,7 +316,7 @@ function HeroHighlightCard({ stat, onClick }: { stat: typeof heroStat; onClick: 
           </p>
           {/* Click hint */}
           <p className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
-            Klicken für Bild & Details →
+            {clickHint}
           </p>
         </div>
       </div>
@@ -380,7 +328,27 @@ function HeroHighlightCard({ stat, onClick }: { stat: typeof heroStat; onClick: 
 }
 
 export default function PainPoints() {
-  const [modalPainPoint, setModalPainPoint] = useState<typeof compactStats[0] | null>(null);
+  const [modalPainPoint, setModalPainPoint] = useState<PainStat | null>(null);
+  const t = useTranslations('painPoints');
+
+  const compactStats: PainStat[] = compactStatsConfig.map((c) => ({
+    ...c,
+    stat: t(`stats.${c.id}.stat`),
+    title: t(`stats.${c.id}.title`),
+    description: t(`stats.${c.id}.description`),
+    statLabel: t(`stats.${c.id}.statLabel`),
+    source: t(`stats.${c.id}.source`),
+  }));
+
+  const heroStat: PainStat = {
+    ...heroStatConfig,
+    stat: t('stats.waiting.stat'),
+    title: t('stats.waiting.title'),
+    subtitle: t('stats.waiting.subtitle'),
+    description: t('stats.waiting.subtitle'),
+    statLabel: t('stats.waiting.statLabel'),
+    source: t('stats.waiting.source'),
+  };
 
   return (
     <section className="relative overflow-hidden">
@@ -401,25 +369,25 @@ export default function PainPoints() {
               <div className="inline-block mb-6">
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#60AFFF]/10 border border-[#60AFFF]/20">
                   <span className="text-sm font-medium text-[#071013]">
-                    Diese Probleme kennen wir von jedem dritten KMU
+                    {t('badge')}
                   </span>
                 </span>
               </div>
 
               {/* Main Headline */}
               <h2 className="font-heading font-bold text-[#071013] mb-8 break-words" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)', lineHeight: 1.35 }}>
-                Kommt Ihnen das{' '}
-                <span className="text-[#f90093]">bekannt</span>{' '}
-                vor?
+                {t('headline')}{' '}
+                <span className="text-[#f90093]">{t('headlineHighlight')}</span>{' '}
+                {t('headlineEnd')}
               </h2>
 
               {/* Supporting Text */}
               <div className="space-y-4 text-[#071013]/80 mb-8 break-words" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
                 <p className="leading-relaxed break-words">
-                  Diese 6 Probleme hören wir fast wörtlich in jedem Erstgespräch. Manchmal sind es alle 6 gleichzeitig.
+                  {t('body1')}
                 </p>
                 <p className="leading-relaxed font-medium text-[#071013] break-words">
-                  Keines davon muss 2026 noch existieren. Die Lösungen sind längst da, nur noch nicht bei Ihnen.
+                  {t('body2')}
                 </p>
               </div>
             </motion.div>
@@ -433,10 +401,10 @@ export default function PainPoints() {
               className="mb-10 p-6 rounded-xl bg-gradient-to-r from-[#60AFFF]/10 to-[#f90093]/5 border-l-4 border-[#60AFFF]"
             >
               <p className="text-[#071013] font-medium leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
-                Bürojobs verschwinden nicht. Aber der Teil, über den sich alle beschweren?{' '}
-                <span className="text-[#f90093] font-bold">Der schon.</span>{' '}
-                Was bleibt: die Arbeit, für die Sie Ihre Leute{' '}
-                <span className="font-bold text-[#071013]">eigentlich eingestellt</span> haben.
+                {t('futureText')}{' '}
+                <span className="text-[#f90093] font-bold">{t('futureHighlight')}</span>{' '}
+                {t('futureEnd')}{' '}
+                <span className="font-bold text-[#071013]">{t('futureStrong')}</span> {t('futureEndText')}
               </p>
             </motion.div>
 
@@ -463,7 +431,7 @@ export default function PainPoints() {
                 className="inline-flex items-center gap-2 text-[#f90093] font-heading font-semibold hover:underline transition-all group"
               >
                 <Calculator className="w-5 h-5" />
-                Was kostet Sie das pro Jahr? ROI berechnen
+                {t('roiLink')}
                 <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
               </button>
             </motion.div>
@@ -495,6 +463,7 @@ export default function PainPoints() {
                   stat={stat}
                   index={index}
                   onClick={() => setModalPainPoint(stat)}
+                  clickHint={t('clickHint')}
                 />
               ))}
             </div>
@@ -502,7 +471,8 @@ export default function PainPoints() {
             {/* Hero Highlight Card (Full Width) */}
             <HeroHighlightCard
               stat={heroStat}
-              onClick={() => setModalPainPoint(heroStat as typeof compactStats[0])}
+              onClick={() => setModalPainPoint(heroStat)}
+              clickHint={t('clickHint')}
             />
           </div>
         </div>

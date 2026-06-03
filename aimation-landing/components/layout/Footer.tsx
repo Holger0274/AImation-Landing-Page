@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Linkedin, Mail } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations('footer');
   const currentYear = new Date().getFullYear();
   const lastUpdated = new Date('2026-03-22'); // Update dieses Datum bei Content-Änderungen
   const formattedDate = lastUpdated.toLocaleDateString('de-DE', {
@@ -26,17 +28,17 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-300 mb-4 max-w-sm">
-              Mehr Zeit für das <span className="text-[#f90093]">Wesentliche</span>
+              {t('tagline')} <span className="text-[#f90093]">{t('taglineHighlight')}</span>
             </p>
             <p className="text-gray-400 text-sm">
-              20 Jahre Engineering. Kein Buzzword-Bingo.
+              {t('subtagline')}
             </p>
           </div>
 
           {/* Services Column */}
           <div>
             <h4 className="font-heading font-semibold text-sm mb-4">
-              Leistungen
+              {t('colLeistungen')}
             </h4>
             <ul className="space-y-2">
               <li>
@@ -44,7 +46,7 @@ export default function Footer() {
                   href="/ki-schulungen-mittelstand"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  Schulungen
+                  {t('linkSchulungen')}
                 </Link>
               </li>
               <li>
@@ -52,7 +54,7 @@ export default function Footer() {
                   href="/ki-beratung-kmu"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  Beratung
+                  {t('linkBeratung')}
                 </Link>
               </li>
               <li>
@@ -60,7 +62,7 @@ export default function Footer() {
                   href="/ki-automatisierung-mittelstand"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  Umsetzung
+                  {t('linkUmsetzung')}
                 </Link>
               </li>
               <li>
@@ -68,7 +70,7 @@ export default function Footer() {
                   href="/ki-agenten-unternehmen"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  KI-Agenten
+                  {t('linkAgenten')}
                 </Link>
               </li>
             </ul>
@@ -77,7 +79,7 @@ export default function Footer() {
           {/* Company Column */}
           <div>
             <h4 className="font-heading font-semibold text-sm mb-4">
-              Unternehmen
+              {t('colUnternehmen')}
             </h4>
             <ul className="space-y-2">
               <li>
@@ -85,7 +87,7 @@ export default function Footer() {
                   href="#ueber-mich"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  Über uns
+                  {t('linkUeberUns')}
                 </a>
               </li>
               <li>
@@ -93,7 +95,7 @@ export default function Footer() {
                   href="#prozess"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  Prozess
+                  {t('linkProzess')}
                 </a>
               </li>
               <li>
@@ -101,7 +103,7 @@ export default function Footer() {
                   href="#faq"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  FAQ
+                  {t('linkFaq')}
                 </a>
               </li>
             </ul>
@@ -109,14 +111,14 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h4 className="font-heading font-semibold text-sm mb-4">Kontakt</h4>
+            <h4 className="font-heading font-semibold text-sm mb-4">{t('colKontakt')}</h4>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#kontakt"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  Erstgespräch buchen
+                  {t('linkErstgespraech')}
                 </a>
               </li>
               <li>
@@ -147,25 +149,25 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-800">
           {/* Last Updated Signal (SEO Content Freshness) */}
           <p className="text-gray-500 text-xs mb-3 text-center md:text-left">
-            Zuletzt aktualisiert: {formattedDate}
+            {t('lastUpdated')} {formattedDate}
           </p>
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {currentYear} AI.mation – Alle Rechte vorbehalten
+              {t('copyright', { year: currentYear })}
             </p>
             <div className="flex gap-6">
               <Link
                 href="/impressum"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
-                Impressum
+                {t('impressum')}
               </Link>
               <Link
                 href="/datenschutz"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
-                Datenschutz
+                {t('datenschutz')}
               </Link>
             </div>
           </div>

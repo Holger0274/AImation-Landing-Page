@@ -5,36 +5,39 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, GraduationCap, Lightbulb, Zap, Bot } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 
-const leistungenItems = [
-  {
-    href: '/ki-schulungen-mittelstand',
-    label: 'KI-Schulungen',
-    description: 'Wissen aufbauen – vom Einstieg bis zur Spezialisierung',
-    icon: GraduationCap,
-  },
-  {
-    href: '/ki-beratung-kmu',
-    label: 'KI-Beratung',
-    description: 'Strategie & Roadmap – wo stehen Sie, wo wollen Sie hin?',
-    icon: Lightbulb,
-  },
-  {
-    href: '/ki-automatisierung-mittelstand',
-    label: 'KI-Automatisierung',
-    description: 'Workflows & Prozesse automatisieren – sofort einsatzbereit',
-    icon: Zap,
-  },
-  {
-    href: '/ki-agenten-unternehmen',
-    label: 'KI-Agenten',
-    description: 'Intelligente Assistenten, die für Sie arbeiten',
-    icon: Bot,
-  },
-];
-
 export default function Header() {
+  const t = useTranslations('nav');
+
+  const leistungenItems = [
+    {
+      href: '/ki-schulungen-mittelstand',
+      label: t('schulungen'),
+      description: t('schulungenDesc'),
+      icon: GraduationCap,
+    },
+    {
+      href: '/ki-beratung-kmu',
+      label: t('beratung'),
+      description: t('beratungDesc'),
+      icon: Lightbulb,
+    },
+    {
+      href: '/ki-automatisierung-mittelstand',
+      label: t('automatisierung'),
+      description: t('automatisierungDesc'),
+      icon: Zap,
+    },
+    {
+      href: '/ki-agenten-unternehmen',
+      label: t('agenten'),
+      description: t('agentenDesc'),
+      icon: Bot,
+    },
+  ];
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLeistungenOpen, setIsLeistungenOpen] = useState(false);
@@ -122,7 +125,7 @@ export default function Header() {
                 aria-expanded={isLeistungenOpen}
                 aria-haspopup="true"
               >
-                Leistungen
+                {t('leistungen')}
                 <ChevronDown
                   size={14}
                   className={`transition-transform duration-200 ${isLeistungenOpen ? 'rotate-180' : ''}`}
@@ -167,7 +170,7 @@ export default function Header() {
                       {/* Label */}
                       <div className="px-5 pt-5 pb-2">
                         <span className="text-[10px] font-heading font-bold uppercase tracking-[0.18em] text-white/25">
-                          Unsere Leistungen
+                          {t('leistungenLabel')}
                         </span>
                       </div>
 
@@ -220,7 +223,7 @@ export default function Header() {
                       <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} className="mx-3" />
                       <div className="flex items-center justify-between px-5 py-3.5">
                         <span className="text-[11px] text-white/30 font-inter">
-                          Kostenlos · 30 Min · Unverbindlich
+                          {t('dropdownFooter')}
                         </span>
                         <a
                           href="https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai"
@@ -230,7 +233,7 @@ export default function Header() {
                           className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-[12px] font-heading font-semibold text-white transition-all duration-150 hover:brightness-110 hover:scale-[1.03]"
                           style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
                         >
-                          Erstgespräch →
+                          {t('dropdownCta')}
                         </a>
                       </div>
                     </div>
@@ -244,7 +247,7 @@ export default function Header() {
               href="/#use-cases"
               className="text-sm font-heading font-medium text-[#071013]/70 hover:text-[#071013] transition-colors"
             >
-              Use Cases
+              {t('useCases')}
             </a>
 
             {/* Blog */}
@@ -252,7 +255,7 @@ export default function Header() {
               href="/blog"
               className="text-sm font-heading font-medium text-[#071013]/70 hover:text-[#071013] transition-colors"
             >
-              Blog
+              {t('blog')}
             </Link>
 
             {/* Über uns */}
@@ -260,7 +263,7 @@ export default function Header() {
               href="#ueber-mich"
               className="text-sm font-heading font-medium text-[#071013]/70 hover:text-[#071013] transition-colors"
             >
-              Über uns
+              {t('ueberUns')}
             </a>
 
             {/* Language Switcher */}
@@ -271,7 +274,7 @@ export default function Header() {
               href="#kontakt"
               className="px-6 py-2.5 border-2 border-[#071013] text-[#071013] font-heading font-semibold text-sm rounded-xl hover:bg-[#071013] hover:text-white transition-all duration-200"
             >
-              Erstgespräch
+              {t('cta')}
             </a>
           </nav>
 
@@ -279,7 +282,7 @@ export default function Header() {
           <button
             onClick={() => setIsMobileMenuOpen(p => !p)}
             className="md:hidden p-2 text-[#071013]/70 hover:text-[#071013] transition-colors"
-            aria-label="Menü öffnen"
+            aria-label={t('menuOpen')}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -304,7 +307,7 @@ export default function Header() {
                   onClick={() => setIsMobileLeistungenOpen(p => !p)}
                   className="flex items-center justify-between w-full text-[15px] font-heading font-semibold text-[#071013] py-3 px-2"
                 >
-                  Leistungen
+                  {t('leistungen')}
                   <ChevronDown
                     size={16}
                     className={`transition-transform duration-200 text-[#f90093] ${isMobileLeistungenOpen ? 'rotate-180' : ''}`}
@@ -353,7 +356,7 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#f90093] transition-colors"
               >
-                Use Cases
+                {t('useCases')}
               </a>
 
               <Link
@@ -361,7 +364,7 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#f90093] transition-colors"
               >
-                Blog
+                {t('blog')}
               </Link>
 
               <a
@@ -369,7 +372,7 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#f90093] transition-colors"
               >
-                Über uns
+                {t('ueberUns')}
               </a>
 
               <div className="pt-3 pb-1">
@@ -379,7 +382,7 @@ export default function Header() {
                   className="flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-heading font-semibold text-white text-[15px]"
                   style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
                 >
-                  Kostenloses Erstgespräch
+                  {t('ctaMobile')}
                 </a>
               </div>
 

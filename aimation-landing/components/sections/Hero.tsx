@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { cn } from '@/lib/utils';
 import { Check, Users, Award, TrendingUp } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import LeadFormModal from '@/components/LeadFormModal';
 
 // Animation variants for Framer Motion
@@ -56,13 +57,14 @@ const floatingVariants = {
 
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const t = useTranslations('hero');
 
   // Final approved content from AI-mation_Hero-Headline.md
-  const headlineStart = '40% der Arbeitszeit Ihrer Mitarbeiter geht für Aufgaben drauf, die ';
-  const headlineHighlight = 'niemand vermissen würde';
-  const headlineEnd = '.';
+  const headlineStart = t('headlineStart');
+  const headlineHighlight = t('headlineHighlight');
+  const headlineEnd = t('headlineEnd');
 
-  const subtitle = 'Ob KI dafür die Lösung ist? Das sagen wir Ihnen ehrlich. Auch wenn die Antwort Nein lautet.';
+  const subtitle = t('subline');
 
   // Trust Elements with animated counters
   const trustElements = [
@@ -70,20 +72,20 @@ export default function Hero() {
       icon: <Users className="h-5 w-5 text-magenta" />,
       target: 18000,
       suffix: '+',
-      label: 'LinkedIn-Follower',
+      label: t('trust1Label'),
       hasCounter: true,
     },
     {
       icon: <Award className="h-5 w-5 text-magenta" />,
       target: 20,
       suffix: '+',
-      label: 'Jahre Engineering',
+      label: t('trust2Label'),
       hasCounter: true,
     },
     {
       icon: <TrendingUp className="h-5 w-5 text-magenta" />,
-      value: '10-1000',
-      label: 'Mitarbeiter (KMUs)',
+      value: t('trust3Value'),
+      label: t('trust3Label'),
       hasCounter: false,
     },
   ];
@@ -110,7 +112,7 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-magenta/10 backdrop-blur-sm border border-magenta/20">
               <div className="w-2 h-2 rounded-full bg-magenta animate-pulse" />
               <span className="text-sm font-heading font-semibold text-[#071013]">
-                Erkennen • Automatisieren • Wachsen
+                {t('badge')}
               </span>
             </div>
           </motion.div>
@@ -147,7 +149,7 @@ export default function Hero() {
               size="lg"
               className="bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold hover:shadow-[0_0_30px_rgba(249,0,147,0.4)] transition-all duration-300"
             >
-              Kostenloses Erstgespräch vereinbaren
+              {t('cta')}
             </Button>
           </motion.div>
 
