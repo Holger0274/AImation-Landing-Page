@@ -24,6 +24,10 @@ import { FAQPageSchema } from '@/components/StructuredData';
  */
 export const dynamic = 'force-static';
 
+export function generateStaticParams() {
+  return [{ locale: 'en' }]; // 'de' is served from app/page.tsx via localePrefix: 'as-needed'
+}
+
 export default function Home() {
   return (
     <>
