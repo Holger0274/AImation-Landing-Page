@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { setRequestLocale } from 'next-intl/server';
+import GermanOnlyNotice from '@/components/GermanOnlyNotice';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -60,7 +62,18 @@ const USE_CASES = [
   { name: 'Multi-Agent Scout', wsjf: '2,75', feasibility: 'Niedrig', weighted: '3,10' },
 ];
 
-export default function BewertungsmethodenPage() {
+export default async function BewertungsmethodenPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  if (locale === 'en') {
+    return <GermanOnlyNotice namespace="enBlogNotice" href="/blog/bewertungsmethoden-ki-projekte" />;
+  }
+
   return (
     <>
       <Header />

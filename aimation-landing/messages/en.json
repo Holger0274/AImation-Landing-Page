@@ -585,5 +585,10 @@
     "headline": "Blog",
     "notice": "Our articles are currently available in German only.",
     "cta": "Go to German blog"
+  },
+  "enUseCaseNotice": {
+    "headline": "Use Cases",
+    "notice": "Our use cases are currently available in German only.",
+    "cta": "Go to German use case"
   }
 }

@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { setRequestLocale } from 'next-intl/server';
+import GermanOnlyNotice from '@/components/GermanOnlyNotice';
 import FaqAccordion from './FaqAccordion';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
@@ -75,7 +77,18 @@ const PROMPT_MUSTER = [
   },
 ];
 
-export default function KiPromptsPage() {
+export default async function KiPromptsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  if (locale === 'en') {
+    return <GermanOnlyNotice namespace="enBlogNotice" href="/blog/ki-prompts-die-wirklich-funktionieren" />;
+  }
+
   return (
     <>
       <Header />

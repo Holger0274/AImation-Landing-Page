@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { setRequestLocale } from 'next-intl/server';
+import GermanOnlyNotice from '@/components/GermanOnlyNotice';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -16,7 +18,18 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function PatentrechercheKiPage() {
+export default async function PatentrechercheKiPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  if (locale === 'en') {
+    return <GermanOnlyNotice namespace="enUseCaseNotice" href="/use-cases/patentrecherche-ki" />;
+  }
+
   return (
     <>
       <Header />

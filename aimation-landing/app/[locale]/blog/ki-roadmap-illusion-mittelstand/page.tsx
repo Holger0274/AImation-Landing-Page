@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { setRequestLocale } from 'next-intl/server';
+import GermanOnlyNotice from '@/components/GermanOnlyNotice';
 import FaqAccordion from './FaqAccordion';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
@@ -26,7 +28,18 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function KiRoadmapIllusionPage() {
+export default async function KiRoadmapIllusionPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  if (locale === 'en') {
+    return <GermanOnlyNotice namespace="enBlogNotice" href="/blog/ki-roadmap-illusion-mittelstand" />;
+  }
+
   return (
     <>
       <Header />
