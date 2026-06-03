@@ -1,3 +1,589 @@
 {
-  "_test": "ok"
+  "nav": {
+    "leistungen": "Services",
+    "leistungenLabel": "Our Services",
+    "schulungen": "AI Training",
+    "schulungenDesc": "Build knowledge, from beginner to specialist",
+    "beratung": "AI Consulting",
+    "beratungDesc": "Strategy and roadmap, where you stand and where you want to go",
+    "automatisierung": "AI Automation",
+    "automatisierungDesc": "Automate workflows and processes, ready to use immediately",
+    "agenten": "AI Agents",
+    "agentenDesc": "Intelligent assistants that work for you",
+    "useCases": "Use Cases",
+    "blog": "Blog",
+    "ueberUns": "About",
+    "cta": "Get in touch",
+    "ctaMobile": "Free initial consultation",
+    "menuOpen": "Open menu",
+    "dropdownFooter": "Free · 30 min · No obligation",
+    "dropdownCta": "Book a call →"
+  },
+  "hero": {
+    "badge": "Identify · Automate · Grow",
+    "headlineStart": "40% of your employees' working time goes to tasks ",
+    "headlineHighlight": "nobody would miss",
+    "headlineEnd": ".",
+    "subline": "Whether AI is the right solution? We'll tell you straight. Even if the answer is no.",
+    "cta": "Book a free initial consultation",
+    "trust1Label": "LinkedIn followers",
+    "trust2Label": "years in engineering",
+    "trust3Value": "10-1000",
+    "trust3Label": "employees (SMEs)"
+  },
+  "painPoints": {
+    "badge": "These problems appear in every third SME we talk to",
+    "headline": "Does any of this sound",
+    "headlineHighlight": "familiar",
+    "headlineEnd": "?",
+    "body1": "We hear these 6 problems almost word for word in every first call. Sometimes all 6 at once.",
+    "body2": "None of them need to exist in 2026. The solutions are already there, just not in your company yet.",
+    "futureText": "Office jobs are not disappearing. But the part everyone complains about?",
+    "futureHighlight": "That one will.",
+    "futureEnd": "What stays: the work you",
+    "futureStrong": "actually hired",
+    "futureEndText": "your people for.",
+    "roiLink": "What is this costing you per year? Calculate ROI",
+    "modalClose": "Close modal",
+    "clickHint": "Click for image and details →",
+    "quellePrafix": "Source:",
+    "stats": {
+      "time": {
+        "stat": "40%",
+        "title": "of working time disappears into tasks nobody would miss",
+        "description": "Your employees type in numbers that have been digital for years. They copy data from Excel into SAP. They write reports manually that could run automatically. While competitors automate, you are burning potential.",
+        "statLabel": "Time wasted",
+        "source": "McKinsey Global Survey 2024"
+      },
+      "cost": {
+        "stat": "200k€",
+        "title": "That is 200,000€ thrown out the window. Every year.",
+        "description": "With just 10 employees, you are burning over 200,000€ per year on tasks with no real value. That is the annual salary of 3 qualified specialists. Every year. Simply gone. For work that could have been automated long ago.",
+        "statLabel": "Waste per year",
+        "source": "Calculation based on: McKinsey study 2024"
+      },
+      "quality": {
+        "stat": "1-4%",
+        "title": "Every mistake costs money. And your reputation.",
+        "description": "Manual data entry always produces errors. Customers complain. Invoices are wrong. Delivery dates get missed. And while your team fixes mistakes, the actual work piles up. Frustrating? Absolutely. Avoidable? Yes.",
+        "statLabel": "Error rate",
+        "source": "Gartner 2023 & Ernst & Young 2025"
+      },
+      "knowledge": {
+        "stat": "71%",
+        "title": "When Petra retires, 30 years of expertise walk out the door",
+        "description": "Only she knows how that one process works. Only she knows all the edge cases. And when she leaves? Chaos. Errors. Delays. New colleagues need months to catch up, if you can find anyone at all.",
+        "statLabel": "of IT leaders report knowledge loss",
+        "source": "Sinequa study 2022"
+      },
+      "chaos": {
+        "stat": "86%",
+        "title": "86% type invoices as if the internet never happened",
+        "description": "A PDF arrives by email. Your employees open it, read the numbers, type them into the ERP. Errors included. OCR software has existed for 20 years. Yet 86% of SMEs work like it is 1995. Absurd? Yes. Fixable? Immediately.",
+        "statLabel": "process invoices manually",
+        "source": "KfW Digitalisation Report 2024"
+      },
+      "competition": {
+        "stat": "81%",
+        "title": "81% know: without AI we will fall behind",
+        "description": "Your competitors are already using AI. Your industry is changing. Faster, more efficient, cheaper. Without you. While you are still deciding whether AI is relevant, others are pulling ahead. The gap grows. Every day.",
+        "statLabel": "see AI as the most important future technology",
+        "source": "Bitkom study September 2025"
+      },
+      "waiting": {
+        "stat": "2x",
+        "title": "While you are still planning, your competitor has already automated",
+        "subtitle": "AI adoption in German companies doubled in the last year. Not in 10 years. In 12 months. Whoever waits now will not close this gap. The question is not IF but WHEN you start.",
+        "statLabel": "AI growth in 12 months",
+        "source": "Bitkom September 2025"
+      }
+    }
+  },
+  "beforeAfter": {
+    "headline": "From",
+    "headlineChao": "chaos",
+    "headlineMid": "to",
+    "headlineHighlight": "control",
+    "subline": "Three processes. Before and after. Concrete numbers.",
+    "labelProblem": "Problem",
+    "labelLoesung": "Solution",
+    "ctaText": "Ten minutes is usually enough to find similar potential in your processes.",
+    "ctaButton": "Book a free potential conversation",
+    "transformations": {
+      "workflow": {
+        "title": "Email processing",
+        "before": {
+          "title": "Before: Manual process",
+          "pain": "2 hours per day",
+          "problems": [
+            "Sort emails manually",
+            "Copy-paste into Excel",
+            "Chase missing information",
+            "Update status in multiple tools"
+          ]
+        },
+        "after": {
+          "title": "After: Automated",
+          "gain": "10 minutes per day",
+          "benefits": [
+            "AI sorts and prioritises automatically",
+            "Data transfers directly into the system",
+            "Missing info is requested automatically",
+            "Status updates in real time"
+          ],
+          "roi": "90% time saved"
+        }
+      },
+      "knowledge": {
+        "title": "Knowledge management",
+        "before": {
+          "title": "Before: Knowledge locked in people's heads",
+          "pain": "Knowledge lost when staff leave",
+          "problems": [
+            "Know-how lives only in employees' heads",
+            "New colleagues need 6 months to get up to speed",
+            "Processes not documented",
+            "Experts constantly pulled into meetings"
+          ]
+        },
+        "after": {
+          "title": "After: AI knowledge base",
+          "gain": "Knowledge stays in the company",
+          "benefits": [
+            "RAG system with the full company knowledge base",
+            "New colleagues productive within 2 weeks",
+            "Processes documented automatically",
+            "AI answers 80% of questions immediately"
+          ],
+          "roi": ">85% time saved"
+        }
+      },
+      "research": {
+        "title": "Market research",
+        "before": {
+          "title": "Before: Manual research",
+          "pain": "8 hours per week",
+          "problems": [
+            "Search Google, LinkedIn, trade publications",
+            "Collect information in Word",
+            "Outdated data",
+            "No structured storage"
+          ]
+        },
+        "after": {
+          "title": "After: AI research agent",
+          "gain": "30 minutes per week",
+          "benefits": [
+            "One AI agent searches sources independently, evaluates relevance, and summarises",
+            "Structured reports in Notion",
+            "Daily updates on defined topics",
+            "Central knowledge base"
+          ],
+          "roi": ">90% time saved"
+        }
+      }
+    }
+  },
+  "services": {
+    "headline": "The 3",
+    "headlineHighlight": "pillars",
+    "headlineEnd": "of our work",
+    "subline": "All modules are freely combinable, depending on what you need",
+    "flipHintDesktop": "Hover to flip",
+    "flipHintMobile": "Tap to flip",
+    "moreInfo": "Learn more",
+    "useCasesButton": "View use cases →",
+    "practiceExamples": "PRACTICAL EXAMPLES",
+    "inPractice": "in practice",
+    "close": "Close ✕",
+    "similarProject": "Discuss a similar project",
+    "items": {
+      "schulungen": {
+        "title": "Training",
+        "subtitle": "Build knowledge",
+        "description": "From AI fundamentals to advanced techniques. Your team learns to use AI tools with confidence.",
+        "features": [
+          "Understanding generative AI",
+          "Microsoft Copilot and tools",
+          "Prompt engineering",
+          "Multi-agent systems",
+          "Automation and AI"
+        ],
+        "detail": "3 levels: Beginner, Applied, Advanced"
+      },
+      "beratung": {
+        "title": "Consulting",
+        "subtitle": "Think, plan, decide",
+        "description": "We look at how you work today. Then we tell you honestly what makes sense and what does not.",
+        "features": [
+          "AI readiness assessment",
+          "Use case identification",
+          "Strategy and roadmap",
+          "ROI and business case",
+          "Change management"
+        ],
+        "detail": "3 phases: Analysis, Strategy, Guidance"
+      },
+      "umsetzung": {
+        "title": "Implementation",
+        "subtitle": "Build, deploy, operate",
+        "description": "From simple workflows to AI agents that research, decide, and act independently. Solutions that work tomorrow, not in two years.",
+        "features": [
+          "Workflow automation",
+          "RAG systems and chatbots",
+          "AI agents that work autonomously",
+          "Document workflows",
+          "Knowledge management"
+        ],
+        "detail": "4 solution worlds: FLOW, KNOW, THINK, WORK"
+      }
+    },
+    "useCases": {
+      "schulungen": [
+        {
+          "title": "2-day workshop: Prompt engineering for engineering teams",
+          "description": "2-day workshop for engineering teams and adjacent departments. Participants learn to work with LLMs such as ChatGPT, Claude, Microsoft Copilot, and Perplexity AI. From the basics to advanced prompt techniques for immediate results. Includes concrete use cases from the engineering day-to-day.",
+          "result": "80% of participants use AI tools daily in their work"
+        },
+        {
+          "title": "Workshop: Automation and AI automation",
+          "description": "Hands-on workshop for process owners and teams. What is automation? How do classic workflows differ from AI-driven automation? Participants learn to spot automation potential and apply AI deliberately, from simple workflows to intelligent multi-agent systems.",
+          "result": "85% of participants identify at least 3 automation use cases"
+        }
+      ],
+      "beratung": [
+        {
+          "title": "AI tool audit for a mechanical engineering firm: uncover shadow AI and cut costs",
+          "description": "Systematic audit of all AI tools in the company. Which tools are employees using (ChatGPT, Copilot, others)? GDPR risks identified, licence costs analysed, tool sprawl stopped. Consolidated to 3 approved enterprise solutions with central management.",
+          "result": "12 tools reduced to 3, 3,200€/month saved, GDPR-compliant solution"
+        },
+        {
+          "title": "Tool selection workshop: the right AI platform for an online retailer",
+          "description": "2-day decision workshop. Microsoft Copilot, Google Workspace AI, or a standalone solution? Requirements defined, 5 providers compared (cost, data protection, integration), clear recommendation with rationale. Contract negotiation supported.",
+          "result": "Decision made in 2 days instead of 3 months, 40% cost savings"
+        }
+      ],
+      "umsetzung": [
+        {
+          "title": "Chatbot for technical documentation (mechanical engineering)",
+          "description": "Chatbot searches 5,000 pages of technical documentation and responds within 3 seconds, with source references. Service technicians find answers without having to ask an expert.",
+          "result": "70% fewer support requests, 95% correct answers"
+        },
+        {
+          "title": "Email automation with n8n for a sales team",
+          "description": "Intelligent email workflow with n8n. Incoming emails are automatically analysed, categorised (enquiry, complaint, order), enriched with CRM data, and routed to the right employee. Tickets are created automatically.",
+          "result": "2 hours saved per day, no email gets lost anymore"
+        }
+      ]
+    }
+  },
+  "projectShowcase": {
+    "badge": "Use Cases",
+    "headline": "What",
+    "headlineHighlight": "AI automation",
+    "headlineEnd": "looks like in practice",
+    "subline": "Concrete use cases: from patent research to technology radar.",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right",
+    "ctaText": "Do you have a similar use case in mind?",
+    "ctaButton": "Book a free initial consultation",
+    "detailsView": "View details",
+    "comingSoon": "Coming Soon"
+  },
+  "process": {
+    "headline": "How",
+    "headlineHighlight": "straightforward",
+    "headlineEnd": "getting started is",
+    "subline": "From the first call to delivery. Transparent and structured.",
+    "ctaText": "The initial consultation takes 30 minutes and nothing more.",
+    "ctaButton": "Book a free initial consultation",
+    "steps": {
+      "erstgespraech": {
+        "title": "Initial call",
+        "subtitle": "30 minutes, free",
+        "description": "We get to know each other. You tell us where the friction is. We tell you honestly whether we can help.",
+        "details": [
+          "What is causing the most frustration?",
+          "Where is time being lost?",
+          "Are there quick wins?"
+        ],
+        "duration": "30 min",
+        "cost": "Free"
+      },
+      "analyse": {
+        "title": "Analysis",
+        "subtitle": "Identify potential",
+        "description": "We look at how you work today. Where are the bottlenecks? Where is time lost? And what can realistically be automated?",
+        "details": [
+          "Conduct AI readiness assessment",
+          "AI audit of existing tools and processes",
+          "Calculate AI ROI potential"
+        ],
+        "duration": "2-4 weeks",
+        "cost": "By effort"
+      },
+      "konzept": {
+        "title": "Proposal",
+        "subtitle": "Transparent offer",
+        "description": "You receive a concrete offer: what do we build? What does it cost? What does it deliver? In black and white.",
+        "details": [
+          "Solution architecture and implementation plan",
+          "Timeline and milestones",
+          "ROI calculation"
+        ],
+        "duration": "3-5 days",
+        "cost": "Transparent"
+      },
+      "umsetzung": {
+        "title": "Delivery",
+        "subtitle": "Build it together",
+        "description": "Training, consulting, or implementation: we deliver your project together.",
+        "details": [
+          "Practice-oriented",
+          "Iterative",
+          "Hands-on support"
+        ],
+        "duration": "2-12 weeks",
+        "cost": "By effort"
+      },
+      "begleitung": {
+        "title": "Ongoing support",
+        "subtitle": "Long-term partnership",
+        "description": "After go-live we remain your contact for questions, adjustments, and further development.",
+        "details": [
+          "Support on demand",
+          "Optimisations",
+          "New features"
+        ],
+        "duration": "Ongoing",
+        "cost": "Optional"
+      }
+    }
+  },
+  "socialProof": {
+    "headline": "Trust built on",
+    "headlineHighlight": "experience",
+    "toolsHeadline": "We work with the",
+    "toolsHighlight": "best tools",
+    "toolsSubline": "We are not tied to any vendor. We know all the relevant tools and use them daily, which means we find what fits your situation.",
+    "stats": {
+      "linkedin": "people follow Holger on LinkedIn",
+      "experience": "years of engineering experience",
+      "employees": "employees in target companies"
+    }
+  },
+  "about": {
+    "overline": "About us",
+    "headline": "20 years in industry. No",
+    "headlineHighlight": "armchair consultant.",
+    "introHeadline": "AI is the topic that drives us.",
+    "introHighlight": "For years. Not since the hype.",
+    "introText": "20 years of engineering showed me where time is really lost. In the surrounding noise. In the things nobody ever explained how to do differently. That is what I work on.",
+    "quotesLabel": "Who we are in 5 sentences",
+    "ctaPrimary": "Book a free initial consultation",
+    "ctaLinkedIn": "Follow on LinkedIn. 18,000 followers",
+    "quotes": [
+      {
+        "text": "\"20 years as an engineering leader in industry.\"",
+        "highlight": null
+      },
+      {
+        "text": "\"I know [your processes], not from books, but from practice.\"",
+        "highlight": "your processes"
+      },
+      {
+        "text": "\"If AI does not make sense for you, I will tell you that. Even if it costs me the project.\"",
+        "highlight": null
+      },
+      {
+        "text": "\"[Doing] instead of talking. Finished solutions that work the next day.\"",
+        "highlight": "Doing"
+      },
+      {
+        "text": "\"20 years have shown me one thing: [the simplest solution] that actually works is always the best one.\"",
+        "highlight": "the simplest solution"
+      }
+    ]
+  },
+  "whyAImation": {
+    "badge": "Why AI.mation?",
+    "headline": "Not yet another",
+    "headlineHighlight": "AI consultancy",
+    "subline": "We build AI solutions. And we tell you when you do not need one.",
+    "readinessHeadline": "Starts with an",
+    "readinessHighlight": "AI Readiness Check",
+    "readinessText": "In 2 days you will know where you stand. We look at your processes, assess what is already working, and calculate what can realistically be achieved. No sales pitch, no filler.",
+    "readinessBadge1": "✓ Analyse processes",
+    "readinessBadge2": "✓ Evaluate potential",
+    "readinessBadge3": "✓ Calculate ROI",
+    "readinessCta": "Request AI Readiness Check",
+    "differentiators": [
+      {
+        "title": "Shop floor to boardroom",
+        "description": "I spent years inside manufacturing companies myself. I know which problems actually cause pain from my own experience, not from a study.",
+        "highlight": "Practice, not theory"
+      },
+      {
+        "title": "If AI does not help, we say so",
+        "description": "I look at your processes. Sometimes the answer is: AI is the wrong call here. That occasionally costs me a project. I say it anyway.",
+        "highlight": "Honest, even when uncomfortable"
+      },
+      {
+        "title": "Built for SMEs, not corporations",
+        "description": "Corporate prices are out of the question. So are projects that drag on forever. What matters: does it work next week? Usually yes.",
+        "highlight": "Fast and affordable"
+      },
+      {
+        "title": "Three pillars, one contact",
+        "description": "Consulting, training, implementation, all under one roof. No coordination overhead between three vendors. One call is enough.",
+        "highlight": "3 pillars, 1 partner"
+      }
+    ]
+  },
+  "methodBadgeBar": {
+    "headline": "Our",
+    "headlineHighlight": "proven analysis methods",
+    "trustLine": "Scientifically grounded methods for measurable results",
+    "methods": [
+      {
+        "label": "AI Readiness Assessment",
+        "description": "Is your company ready for AI?"
+      },
+      {
+        "label": "AI ROI calculation",
+        "description": "What value does AI actually deliver?"
+      },
+      {
+        "label": "AI Audit",
+        "description": "Which tools are genuinely useful?"
+      }
+    ]
+  },
+  "solution": {
+    "headline": "Why",
+    "headlineHighlight": "AI.mation",
+    "headlineEnd": "?",
+    "subline": "20 years of engineering. Deep inside processes nobody fully understands anymore. That background is our advantage when we build AI solutions today.",
+    "badge1": "20+ years engineering experience",
+    "badge2": "18,000+ LinkedIn followers",
+    "badge3": "Focused on SMEs (10-1000 employees)"
+  },
+  "faq": {
+    "headline": "Frequently asked",
+    "headlineHighlight": "questions",
+    "subline": "Answers to the most important questions",
+    "items": [
+      {
+        "question": "What does AI consulting cost for an SME?",
+        "answer": "The initial consultation is free. After that it depends on scope. An AI Readiness Check takes 2 days; a longer engagement can span several months. In the first conversation we work out together what is realistic for your company, no hidden line items."
+      },
+      {
+        "question": "How quickly does an SME see results from AI automation?",
+        "answer": "With training: often during the workshop itself. Many participants use the tools productively for the first time that same day. With automation projects: 2 to 6 weeks to a working prototype, depending on complexity. We have had email automation ready in one week."
+      },
+      {
+        "question": "Does an SME need its own IT department for AI projects?",
+        "answer": "No. Most of our clients do not have a dedicated IT department. We guide you from idea to finished solution, technically and in terms of content. The solutions we build, your people can operate themselves, without an IT degree."
+      },
+      {
+        "question": "Does AI automation work with existing systems like SAP or Microsoft 365?",
+        "answer": "Usually yes. We work with what you already have in place. Our solutions connect to Microsoft 365, Google Workspace, SAP, industry-specific software, and other systems. In an AI Audit we analyse your existing system landscape and find integration points without complex migration."
+      },
+      {
+        "question": "How do we measure the ROI of an AI investment?",
+        "answer": "Before every project we agree together on what can be measured and how: hours saved, fewer errors, shorter cycle times. We take a baseline measurement and compare after delivery. Our ROI calculator shows the potential upfront, no registration required."
+      },
+      {
+        "question": "What is the difference between AI automation and an AI agent?",
+        "answer": "Classic automation follows fixed rules: if A happens, then B. Valuable, but rigid. An AI agent can make independent judgements, gather information, and take decisions without every step being programmed in advance. A concrete example: no human assigns a research task, the agent recognises what is currently important, and delivers a structured report every morning. That is the difference."
+      },
+      {
+        "question": "Are AI solutions GDPR-compliant and safe from a data protection perspective?",
+        "answer": "We build data protection in from the start. Where possible, we work with European providers and on-premise solutions. Sensitive company data only leaves your network with explicit approval. In regulated industries we deliberately choose data-protection-compliant alternatives to US services."
+      }
+    ]
+  },
+  "finalCta": {
+    "headline": "Get",
+    "headlineHighlight": "clarity",
+    "headlineEnd": "now.",
+    "subline": "30 minutes. We tell you what is realistic for you. Or calculate it yourself first.",
+    "ctaPrimary": "Book a free initial consultation",
+    "ctaSecondary": "Calculate ROI yourself",
+    "microcopy1": "30 minutes · No obligation · Available now",
+    "microcopy2": "2 minutes · No prior knowledge needed"
+  },
+  "leadForm": {
+    "ariaLabel": "Book a free initial consultation",
+    "closeAriaLabel": "Close",
+    "headline": "Your path to a",
+    "headlineHighlight": "free AI consultation",
+    "subline": "Fill in the form and book your free consultation directly.",
+    "vornameLabel": "First name *",
+    "vornamePlaceholder": "John",
+    "nachnameLabel": "Last name *",
+    "nachnamePlaceholder": "Smith",
+    "emailLabel": "Email address *",
+    "emailPlaceholder": "john.smith@company.com",
+    "firmaLabel": "Company name *",
+    "firmaPlaceholder": "Acme Ltd",
+    "unternehmensgroesseLabel": "Company size *",
+    "unternehmensgroessePlaceholder": "Please select",
+    "sizeOption1": "10-50 employees",
+    "sizeOption2": "50-250 employees",
+    "sizeOption3": "250-1000 employees",
+    "sizeOption4": "1000+ employees",
+    "telefonLabel": "Phone (optional)",
+    "telefonPlaceholder": "+44 20 1234 5678",
+    "herausforderungLabel": "Your biggest challenge *",
+    "herausforderungPlaceholder": "Briefly describe where AI could help you (e.g. 'Too many manual steps in order processing' or 'We want to use AI but do not know where to start')...",
+    "herausforderungHint": "Min. 10 characters, max. 500 characters",
+    "datenschutzLabel": "I have read the",
+    "datenschutzLink": "privacy policy",
+    "datenschutzEnd": "and agree to the processing of my data. *",
+    "submitButton": "Book appointment now →",
+    "submitting": "Sending...",
+    "submitNote": "After submitting you will be redirected directly to our calendar.",
+    "errorGeneric": "An error occurred. Please try again.",
+    "validation": {
+      "vornameRequired": "First name is required",
+      "nachnameRequired": "Last name is required",
+      "emailInvalid": "Please enter a valid email address",
+      "firmaRequired": "Company name is required",
+      "groesseRequired": "Please select a company size",
+      "herausforderungMin": "Please briefly describe your challenge (min. 10 characters)",
+      "herausforderungMax": "Maximum 500 characters",
+      "datenschutzRequired": "You must agree to the privacy policy"
+    }
+  },
+  "footer": {
+    "tagline": "More time for what",
+    "taglineHighlight": "matters",
+    "subtagline": "20 years of engineering. No buzzword bingo.",
+    "colLeistungen": "Services",
+    "linkSchulungen": "Training",
+    "linkBeratung": "Consulting",
+    "linkUmsetzung": "Implementation",
+    "linkAgenten": "AI Agents",
+    "colUnternehmen": "Company",
+    "linkUeberUns": "About",
+    "linkProzess": "Process",
+    "linkFaq": "FAQ",
+    "colKontakt": "Contact",
+    "linkErstgespraech": "Book a consultation",
+    "lastUpdated": "Last updated:",
+    "copyright": "© {year} AI.mation – All rights reserved",
+    "impressum": "Legal notice",
+    "datenschutz": "Privacy policy"
+  },
+  "blog": {
+    "headline": "Blog",
+    "readMore": "Read more",
+    "backToBlog": "Back to blog"
+  },
+  "enBlogNotice": {
+    "headline": "Blog",
+    "notice": "Our articles are currently available in German only.",
+    "cta": "Go to German blog"
+  }
 }
