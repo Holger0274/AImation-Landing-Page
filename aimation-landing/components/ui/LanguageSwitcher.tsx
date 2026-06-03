@@ -12,9 +12,10 @@ export default function LanguageSwitcher({ isDark = false }: LanguageSwitcherPro
   const pathname = usePathname();
   const locale = useLocale();
 
-  // Safe href calculation — no double slashes
-  const deHref = pathname.startsWith('/en') ? pathname.slice(3) || '/' : pathname;
-  const enHref = pathname.startsWith('/en') ? pathname : `/en${pathname}`;
+  // Safe href calculation — no double slashes, guard against false positives like /engineering
+  const isEnLocale = pathname === '/en' || pathname.startsWith('/en/');
+  const deHref = isEnLocale ? (pathname === '/en' ? '/' : pathname.slice(3)) : pathname;
+  const enHref = isEnLocale ? pathname : `/en${pathname}`;
 
   const pillBg = isDark ? 'bg-[#1a2a2f]' : 'bg-[#e5e7eb]';
 
