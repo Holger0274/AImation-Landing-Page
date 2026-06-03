@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Loader2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const leadFormSchema = z.object({
   vorname: z.string().min(2, 'Vorname ist erforderlich'),
@@ -35,6 +36,7 @@ interface LeadFormModalProps {
 
 export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const t = useTranslations('leadForm');
 
   useEffect(() => {
     if (!isOpen) return;
@@ -91,7 +93,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
       window.location.href = calendlyUrl.toString();
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.');
+      alert(t('errorGeneric'));
     } finally {
       setIsSubmitting(false);
     }
@@ -129,13 +131,13 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
-            aria-label="Kostenloses Erstgespräch vereinbaren"
+            aria-label={t('ariaLabel')}
           >
             {/* Close button */}
             <button
               onClick={onClose}
               className="absolute top-4 right-4 z-10 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-              aria-label="Schließen"
+              aria-label={t('closeAriaLabel')}
             >
               <X className="w-5 h-5 text-[#071013]" />
             </button>
@@ -144,12 +146,11 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
             <div className="p-8 md:p-12">
               <div className="mb-8">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#071013] font-heading mb-3">
-                  Ihr Weg zum{' '}
-                  <span className="text-[#f90093]">KI-Erstgespräch</span>
+                  {t('headline')}{' '}
+                  <span className="text-[#f90093]">{t('headlineHighlight')}</span>
                 </h2>
                 <p className="text-gray-600 font-body">
-                  Füllen Sie das Formular aus und buchen Sie direkt Ihren kostenlosen
-                  Beratungstermin.
+                  {t('subline')}
                 </p>
               </div>
 
@@ -161,14 +162,14 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                       htmlFor="vorname"
                       className="block text-sm font-medium text-[#071013] mb-2"
                     >
-                      Vorname *
+                      {t('vornameLabel')}
                     </label>
                     <input
                       id="vorname"
                       type="text"
                       {...register('vorname')}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all text-[#071013] bg-white"
-                      placeholder="Max"
+                      placeholder={t('vornamePlaceholder')}
                     />
                     {errors.vorname && (
                       <p className="mt-1 text-sm text-red-600">{errors.vorname.message}</p>
@@ -180,14 +181,14 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                       htmlFor="nachname"
                       className="block text-sm font-medium text-[#071013] mb-2"
                     >
-                      Nachname *
+                      {t('nachnameLabel')}
                     </label>
                     <input
                       id="nachname"
                       type="text"
                       {...register('nachname')}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all text-[#071013] bg-white"
-                      placeholder="Mustermann"
+                      placeholder={t('nachnamePlaceholder')}
                     />
                     {errors.nachname && (
                       <p className="mt-1 text-sm text-red-600">{errors.nachname.message}</p>
@@ -201,14 +202,14 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                     htmlFor="email"
                     className="block text-sm font-medium text-[#071013] mb-2"
                   >
-                    E-Mail-Adresse *
+                    {t('emailLabel')}
                   </label>
                   <input
                     id="email"
                     type="email"
                     {...register('email')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all text-[#071013] bg-white"
-                    placeholder="max.mustermann@firma.de"
+                    placeholder={t('emailPlaceholder')}
                   />
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
@@ -221,14 +222,14 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                     htmlFor="firma"
                     className="block text-sm font-medium text-[#071013] mb-2"
                   >
-                    Firmenname *
+                    {t('firmaLabel')}
                   </label>
                   <input
                     id="firma"
                     type="text"
                     {...register('firma')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all text-[#071013] bg-white"
-                    placeholder="Musterfirma GmbH"
+                    placeholder={t('firmaPlaceholder')}
                   />
                   {errors.firma && (
                     <p className="mt-1 text-sm text-red-600">{errors.firma.message}</p>
@@ -242,18 +243,18 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                       htmlFor="unternehmensgroesse"
                       className="block text-sm font-medium text-[#071013] mb-2"
                     >
-                      Unternehmensgröße *
+                      {t('unternehmensgroesseLabel')}
                     </label>
                     <select
                       id="unternehmensgroesse"
                       {...register('unternehmensgroesse')}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all bg-white text-[#071013]"
                     >
-                      <option value="">Bitte wählen</option>
-                      <option value="10-50">10-50 Mitarbeiter</option>
-                      <option value="50-250">50-250 Mitarbeiter</option>
-                      <option value="250-1000">250-1000 Mitarbeiter</option>
-                      <option value="1000+">1000+ Mitarbeiter</option>
+                      <option value="">{t('unternehmensgroessePlaceholder')}</option>
+                      <option value="10-50">{t('sizeOption1')}</option>
+                      <option value="50-250">{t('sizeOption2')}</option>
+                      <option value="250-1000">{t('sizeOption3')}</option>
+                      <option value="1000+">{t('sizeOption4')}</option>
                     </select>
                     {errors.unternehmensgroesse && (
                       <p className="mt-1 text-sm text-red-600">
@@ -267,14 +268,14 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                       htmlFor="telefon"
                       className="block text-sm font-medium text-[#071013] mb-2"
                     >
-                      Telefon (optional)
+                      {t('telefonLabel')}
                     </label>
                     <input
                       id="telefon"
                       type="tel"
                       {...register('telefon')}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all text-[#071013] bg-white"
-                      placeholder="+49 123 456789"
+                      placeholder={t('telefonPlaceholder')}
                     />
                   </div>
                 </div>
@@ -285,14 +286,14 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                     htmlFor="herausforderung"
                     className="block text-sm font-medium text-[#071013] mb-2"
                   >
-                    Ihre größte Herausforderung *
+                    {t('herausforderungLabel')}
                   </label>
                   <textarea
                     id="herausforderung"
                     {...register('herausforderung')}
                     rows={4}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all resize-none text-[#071013] bg-white"
-                    placeholder="Beschreiben Sie kurz, wobei KI Ihnen helfen könnte (z.B. 'Zu viele manuelle Prozesse in der Auftragsabwicklung' oder 'Wir wollen AI einsetzen, wissen aber nicht wo anfangen')..."
+                    placeholder={t('herausforderungPlaceholder')}
                   />
                   {errors.herausforderung && (
                     <p className="mt-1 text-sm text-red-600">
@@ -300,7 +301,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                     </p>
                   )}
                   <p className="mt-1 text-xs text-gray-500">
-                    {register('herausforderung').name && 'Min. 10 Zeichen, max. 500 Zeichen'}
+                    {t('herausforderungHint')}
                   </p>
                 </div>
 
@@ -313,16 +314,16 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                     className="mt-1 h-5 w-5 border-gray-300 rounded text-[#f90093] focus:ring-[#f90093]"
                   />
                   <label htmlFor="datenschutz" className="ml-3 text-sm text-gray-600">
-                    Ich habe die{' '}
+                    {t('datenschutzLabel')}{' '}
                     <a
                       href="/datenschutz"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#f90093] underline hover:no-underline"
                     >
-                      Datenschutzerklärung
+                      {t('datenschutzLink')}
                     </a>{' '}
-                    gelesen und stimme der Verarbeitung meiner Daten zu. *
+                    {t('datenschutzEnd')}
                   </label>
                 </div>
                 {errors.datenschutz && (
@@ -338,15 +339,15 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                      Wird gesendet...
+                      {t('submitting')}
                     </>
                   ) : (
-                    'Termin jetzt buchen →'
+                    t('submitButton')
                   )}
                 </button>
 
                 <p className="text-xs text-center text-gray-500">
-                  Nach dem Absenden werden Sie direkt zu unserem Kalender weitergeleitet.
+                  {t('submitNote')}
                 </p>
               </form>
             </div>
