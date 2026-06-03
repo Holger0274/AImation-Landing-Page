@@ -9,95 +9,118 @@ import {
   PersonSchema,
 } from '@/components/StructuredData';
 
-// K1 FIX: Title auf 50-60 Zeichen gekürzt (war 72 Zeichen)
-// Primärkeyword vorne, Brand hinten, wichtigster USP sichtbar
-// W1 FIX: Description auf optimale 155 Zeichen gebracht (war 148)
-export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de'
-  ),
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isDE = locale !== 'en';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
-  title: {
-    default: 'KI-Beratung & Automatisierung für KMUs | AI.mation',
-    template: '%s | AI.mation',
-  },
+  return {
+    metadataBase: new URL(siteUrl),
 
-  description:
-    'KI-Beratung, Schulungen & Automatisierung für den Mittelstand. Ehrliche Einschätzung, ob KI hilft. 20 Jahre Engineering-Erfahrung. Kostenloses Erstgespräch.',
-
-  keywords: [
-    'KI-Beratung KMU',
-    'KI-Automatisierung Mittelstand',
-    'KI-Schulungen Unternehmen',
-    'Prozessautomatisierung',
-    'AI Readiness Assessment',
-    'RAG-Systeme',
-    'n8n Automatisierung',
-    'Multi-Agent-Systeme',
-    'Microsoft Copilot Training',
-    'KI-Beratung DACH',
-    'Künstliche Intelligenz Mittelstand',
-  ],
-
-  authors: [{ name: 'Holger Peschke', url: 'https://www.linkedin.com/in/holgerpeschke/' }],
-
-  // K5 FIX: Canonical URL explizit setzen
-  alternates: {
-    canonical: '/',
-    languages: {
-      'de-DE': '/',
+    title: {
+      default: isDE
+        ? 'KI-Beratung & Automatisierung für KMUs | AI.mation'
+        : 'AI Consulting & Automation for SMEs | AI.mation',
+      template: '%s | AI.mation',
     },
-  },
 
-  // OG FIX: Title auf ≤60 Zeichen, Description auf 150-160 Zeichen
-  openGraph: {
-    type: 'website',
-    locale: 'de_DE',
-    url: '/',
-    siteName: 'AI.mation',
-    title: 'KI-Beratung für KMUs: Klartext, Praxis, bezahlbar | AI.mation',
-    description:
-      '40% der Arbeitszeit geht für Aufgaben drauf, die niemand vermissen würde. KI-Beratung, Schulungen & Automatisierung für den Mittelstand. Ohne leere Versprechen.',
-    images: [
-      {
-        url: '/images/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'AI.mation - KI-Beratung und Automatisierung für den Mittelstand',
-        type: 'image/png',
+    description: isDE
+      ? 'KI-Beratung, Schulungen & Automatisierung für den Mittelstand. Ehrliche Einschätzung, ob KI hilft. 20 Jahre Engineering-Erfahrung. Kostenloses Erstgespräch.'
+      : 'AI consulting, training & automation for mid-sized businesses. Honest assessment of whether AI helps. 20 years engineering experience. Free initial consultation.',
+
+    keywords: isDE
+      ? [
+          'KI-Beratung KMU',
+          'KI-Automatisierung Mittelstand',
+          'KI-Schulungen Unternehmen',
+          'Prozessautomatisierung',
+          'AI Readiness Assessment',
+          'RAG-Systeme',
+          'n8n Automatisierung',
+          'Multi-Agent-Systeme',
+          'Microsoft Copilot Training',
+          'KI-Beratung DACH',
+          'Künstliche Intelligenz Mittelstand',
+        ]
+      : [
+          'AI consulting SME',
+          'AI automation business',
+          'AI training companies',
+          'process automation',
+          'AI readiness assessment',
+          'RAG systems',
+          'AI consulting Germany',
+        ],
+
+    authors: [{ name: 'Holger Peschke', url: 'https://www.linkedin.com/in/holgerpeschke/' }],
+
+    alternates: {
+      canonical: isDE ? '/' : '/en/',
+      languages: {
+        'de-DE': '/',
+        'en': '/en/',
       },
-    ],
-  },
+    },
 
-  // N4 FIX: Twitter Creator und Site Tags ergänzt
-  twitter: {
-    card: 'summary_large_image',
-    title: 'KI-Beratung für KMUs | AI.mation',
-    description:
-      '40% Zeitersparnis durch KI-Automatisierung. Ehrliche Einschätzung, ob KI für Ihr KMU sinnvoll ist. Kostenloses Erstgespräch.',
-    images: ['/images/og-image.png'],
-    creator: '@holgerpeschke',
-    site: '@aimation_de',
-  },
+    openGraph: {
+      type: 'website',
+      locale: isDE ? 'de_DE' : 'en_US',
+      alternateLocale: isDE ? ['en_US'] : ['de_DE'],
+      url: isDE ? '/' : '/en/',
+      siteName: 'AI.mation',
+      title: isDE
+        ? 'KI-Beratung für KMUs: Klartext, Praxis, bezahlbar | AI.mation'
+        : 'AI Consulting for SMEs: Clarity, Practice, Affordable | AI.mation',
+      description: isDE
+        ? '40% der Arbeitszeit geht für Aufgaben drauf, die niemand vermissen würde. KI-Beratung, Schulungen & Automatisierung für den Mittelstand. Ohne leere Versprechen.'
+        : '40% of working time goes on tasks no one would miss. AI consulting, training & automation for SMEs. No empty promises.',
+      images: [
+        {
+          url: '/images/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: isDE
+            ? 'AI.mation - KI-Beratung und Automatisierung für den Mittelstand'
+            : 'AI.mation - AI Consulting and Automation for SMEs',
+          type: 'image/png',
+        },
+      ],
+    },
 
-  icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
-  },
+    twitter: {
+      card: 'summary_large_image',
+      title: isDE ? 'KI-Beratung für KMUs | AI.mation' : 'AI Consulting for SMEs | AI.mation',
+      description: isDE
+        ? '40% Zeitersparnis durch KI-Automatisierung. Ehrliche Einschätzung, ob KI für Ihr KMU sinnvoll ist. Kostenloses Erstgespräch.'
+        : '40% time savings through AI automation. Honest assessment of whether AI makes sense for your business. Free initial consultation.',
+      images: ['/images/og-image.png'],
+      creator: '@holgerpeschke',
+      site: '@aimation_de',
+    },
 
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    icons: {
+      icon: '/favicon.svg',
+      shortcut: '/favicon.svg',
+      apple: '/favicon.svg',
+    },
+
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
-};
+  };
+}
 
 export default async function LocaleLayout({
   children,
