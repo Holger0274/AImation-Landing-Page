@@ -1,8 +1,7 @@
 'use client';
 
-import { useRouter, usePathname } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
-import { useTransition } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface LanguageSwitcherProps {
   isDark?: boolean;
@@ -11,22 +10,34 @@ interface LanguageSwitcherProps {
 export default function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
   const locale = useLocale();
   const router = useRouter();
-  const pathname = usePathname();
-  const [isPending, startTransition] = useTransition();
 
   function switchLocale(next: string) {
-    startTransition(() => {
-      router.replace(pathname, { locale: next });
-    });
+    const path = window.location.pathname;
+
+    let targetPath: string;
+    if (next === 'en') {
+      // DE → EN: prepend /en (path is already without /en prefix)
+      targetPath = '/en' + (path === '/' ? '' : path);
+    } else {
+      // EN → DE: strip /en prefix
+      if (path === '/en' || path === '/en/') {
+        targetPath = '/';
+      } else if (path.startsWith('/en/')) {
+        targetPath = path.slice(3);
+      } else {
+        targetPath = path;
+      }
+    }
+
+    router.push(targetPath);
   }
 
   const pillBg = isDark ? 'bg-[#1a2a2f]' : 'bg-[#e5e7eb]';
 
   return (
-    <div className={`flex ${pillBg} rounded-full p-0.5 gap-0.5 ${isPending ? 'opacity-60' : ''}`}>
+    <div className={`flex ${pillBg} rounded-full p-0.5 gap-0.5`}>
       <button
         onClick={() => switchLocale('de')}
-        disabled={locale === 'de' || isPending}
         className={
           locale === 'de'
             ? 'bg-[#f90093] text-white px-3 py-1 rounded-full text-xs font-bold transition-colors'
@@ -38,7 +49,6 @@ export default function LanguageSwitcher({ isDark = false }: LanguageSwitcherPro
       </button>
       <button
         onClick={() => switchLocale('en')}
-        disabled={locale === 'en' || isPending}
         className={
           locale === 'en'
             ? 'bg-[#f90093] text-white px-3 py-1 rounded-full text-xs font-bold transition-colors'
