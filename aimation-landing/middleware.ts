@@ -1,11 +1,7 @@
 import createMiddleware from 'next-intl/middleware';
+import { routing } from './i18n/routing';
 
-export default createMiddleware({
-  locales: ['de', 'en'],
-  defaultLocale: 'de',
-  localePrefix: 'as-needed',
-  localeDetection: false,
-});
+export default createMiddleware(routing);
 
 export const config = {
   // Exclude: static files, images, favicon, api routes, legal pages

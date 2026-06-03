@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { getMessages, setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 import {
   OrganizationSchema,
   LocalBusinessSchema,
@@ -122,6 +124,10 @@ export async function generateMetadata({
   };
 }
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export default async function LocaleLayout({
   children,
   params,
@@ -130,6 +136,16 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+
+  // Ungueltige Locales (z.B. /xx) auf 404 leiten, statt still auf Deutsch zu fallen
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  // Locale fuer statisches Rendering an next-intl weitergeben.
+  // OHNE diesen Aufruf rendert /en still die deutsche Version.
+  setRequestLocale(locale);
+
   const messages = await getMessages();
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
@@ -161,7 +177,7 @@ export default async function LocaleLayout({
         auf Seiten wie Impressum und Datenschutz, die kein Calendly brauchen.
         Die LeadFormModal und FinalCTA Komponenten laden Calendly bei Bedarf.
       */}
-      <NextIntlClientProvider messages={messages}>
+      <NextIntlClientProvider locale={locale} messages={messages}>
         {children}
       </NextIntlClientProvider>
     </>
