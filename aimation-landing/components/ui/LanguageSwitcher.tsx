@@ -1,7 +1,6 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
 
 interface LanguageSwitcherProps {
   isDark?: boolean;
@@ -9,7 +8,6 @@ interface LanguageSwitcherProps {
 
 export default function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
   const locale = useLocale();
-  const router = useRouter();
 
   function switchLocale(next: string) {
     const path = window.location.pathname;
@@ -29,7 +27,7 @@ export default function LanguageSwitcher({ isDark = false }: LanguageSwitcherPro
       }
     }
 
-    router.push(targetPath);
+    window.location.href = targetPath;
   }
 
   const pillBg = isDark ? 'bg-[#1a2a2f]' : 'bg-[#e5e7eb]';
