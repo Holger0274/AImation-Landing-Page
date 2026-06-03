@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { Project } from './types';
 import ProjectCard from './ProjectCard';
 
@@ -207,6 +208,7 @@ const PROJECTS: Project[] = [
 ];
 
 export default function ProjectShowcase() {
+  const t = useTranslations('projectShowcase');
   const sectionRef = useRef(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
@@ -289,19 +291,19 @@ export default function ProjectShowcase() {
             transition={{ duration: 0.5 }}
           >
             <div className="w-2 h-2 bg-[#f90093] rounded-full" />
-            <span className="text-sm font-medium text-[#071013]">Use Cases</span>
+            <span className="text-sm font-medium text-[#071013]">{t('badge')}</span>
           </motion.div>
 
           {/* Headline */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#071013] mb-4 font-space-grotesk">
-            So sieht{' '}
-            <span className="text-[#f90093]">KI-Automatisierung</span>{' '}
-            in der Praxis aus
+            {t('headline')}{' '}
+            <span className="text-[#f90093]">{t('headlineHighlight')}</span>{' '}
+            {t('headlineEnd')}
           </h2>
 
           {/* Subline */}
           <p className="text-lg text-gray-600 font-inter">
-            Konkrete Anwendungsfälle: von der Patentrecherche bis zum Technologie-Radar.
+            {t('subline')}
           </p>
         </motion.div>
 
@@ -325,7 +327,7 @@ export default function ProjectShowcase() {
                 transition-all duration-300
                 hover:scale-110
               "
-              aria-label="Scroll left"
+              aria-label={t('scrollLeft')}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -345,7 +347,7 @@ export default function ProjectShowcase() {
                 transition-all duration-300
                 hover:scale-110
               "
-              aria-label="Scroll right"
+              aria-label={t('scrollRight')}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -409,7 +411,7 @@ export default function ProjectShowcase() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <p className="text-gray-600 mb-4 font-inter">
-            Haben Sie einen ähnlichen Anwendungsfall im Kopf?
+            {t('ctaText')}
           </p>
           <a
             href="#kontakt"
@@ -422,7 +424,7 @@ export default function ProjectShowcase() {
               hover:-translate-y-0.5
             "
           >
-            Kostenloses Erstgespräch buchen
+            {t('ctaButton')}
             <svg
               className="w-5 h-5"
               fill="none"

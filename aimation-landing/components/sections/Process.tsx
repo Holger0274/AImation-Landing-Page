@@ -3,90 +3,17 @@
 import { motion, useInView } from 'framer-motion';
 import { Calendar, FileText, Rocket, Headphones, CheckCircle, Clock, Euro, Search } from 'lucide-react';
 import { useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-const steps = [
-  {
-    number: '1',
-    icon: Calendar,
-    title: 'Erstgespräch',
-    subtitle: '30 Minuten, kostenlos',
-    description:
-      'Wir lernen uns kennen. Sie erzählen uns, wo der Schuh drückt. Wir sagen Ihnen ehrlich, ob wir helfen können.',
-    details: [
-      'Was nervt am meisten?',
-      'Wo verbrennen Sie Zeit?',
-      'Gibt\'s Quick Wins?',
-    ],
-    duration: '30 Min',
-    cost: 'Kostenlos',
-    mockupType: 'video-call',
-  },
-  {
-    number: '2',
-    icon: Search,
-    title: 'Analyse',
-    subtitle: 'Potenziale erkennen',
-    description:
-      'Wir schauen uns an, wie Sie heute arbeiten. Wo hakt\'s? Wo geht Zeit verloren? Und was lässt sich realistisch automatisieren?',
-    details: [
-      'AI Readiness Assessment durchführen',
-      'AI Audit bestehender Tools & Prozesse',
-      'AI ROI-Potenziale kalkulieren',
-    ],
-    duration: '2-4 Wochen',
-    cost: 'Nach Aufwand',
-    mockupType: 'analysis',
-  },
-  {
-    number: '3',
-    icon: FileText,
-    title: 'Konzept',
-    subtitle: 'Transparenter Vorschlag',
-    description:
-      'Sie bekommen ein konkretes Angebot: Was bauen wir? Was kostet das? Was bringt es? Schwarz auf weiß.',
-    details: [
-      'Lösungsarchitektur & Umsetzungsplan',
-      'Timeline & Meilensteine',
-      'ROI-Kalkulation',
-    ],
-    duration: '3-5 Tage',
-    cost: 'Transparent',
-    mockupType: 'proposal',
-  },
-  {
-    number: '4',
-    icon: Rocket,
-    title: 'Umsetzung',
-    subtitle: 'Gemeinsam umsetzen',
-    description:
-      'Schulung, Beratung oder Implementierung: Wir setzen Ihr Projekt gemeinsam um.',
-    details: [
-      'Praxisorientiert',
-      'Iterativ',
-      'Hands-On Support',
-    ],
-    duration: '2-12 Wochen',
-    cost: 'Nach Aufwand',
-    mockupType: 'implementation',
-  },
-  {
-    number: '5',
-    icon: Headphones,
-    title: 'Begleitung',
-    subtitle: 'Langfristige Begleitung',
-    description:
-      'Auch nach Go-Live bleiben wir Ihr Ansprechpartner für Fragen, Anpassungen und Weiterentwicklung.',
-    details: [
-      'Support on Demand',
-      'Optimierungen',
-      'Neue Features',
-    ],
-    duration: 'Ongoing',
-    cost: 'Optional',
-    mockupType: 'support',
-  },
-];
+// Static config (numbers, icons, mockup types) — text comes from translations
+const stepsConfig = [
+  { id: 'erstgespraech', number: '1', icon: Calendar, mockupType: 'video-call' },
+  { id: 'analyse', number: '2', icon: Search, mockupType: 'analysis' },
+  { id: 'konzept', number: '3', icon: FileText, mockupType: 'proposal' },
+  { id: 'umsetzung', number: '4', icon: Rocket, mockupType: 'implementation' },
+  { id: 'begleitung', number: '5', icon: Headphones, mockupType: 'support' },
+] as const;
 
 // Process Step Mockup Component
 function StepMockup({ type }: { type: string }) {
@@ -151,6 +78,19 @@ export default function Process() {
   const [activeStep, setActiveStep] = useState<number | null>(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const t = useTranslations('process');
+
+  const steps = stepsConfig.map((cfg) => ({
+    number: cfg.number,
+    icon: cfg.icon,
+    mockupType: cfg.mockupType,
+    title: t(`steps.${cfg.id}.title`),
+    subtitle: t(`steps.${cfg.id}.subtitle`),
+    description: t(`steps.${cfg.id}.description`),
+    details: t.raw(`steps.${cfg.id}.details`) as string[],
+    duration: t(`steps.${cfg.id}.duration`),
+    cost: t(`steps.${cfg.id}.cost`),
+  }));
 
   return (
     <section id="prozess" className="py-20 md:py-32 bg-gradient-to-b from-warm-white to-gray-50 relative overflow-hidden">
@@ -173,10 +113,10 @@ export default function Process() {
           className="text-center mb-16 md:mb-20"
         >
           <h2 className="font-heading font-bold mb-4" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
-            So <span className="gradient-text">einfach</span> starten wir
+            {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span> {t('headlineEnd')}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}>
-            Vom ersten Gespräch bis zur Umsetzung. Transparent und strukturiert.
+            {t('subline')}
           </p>
         </motion.div>
 
@@ -378,14 +318,14 @@ export default function Process() {
           className="text-center mt-16"
         >
           <p className="text-gray-600 mb-6">
-            Das Erstgespräch kostet 30 Minuten und nichts weiter.
+            {t('ctaText')}
           </p>
           <a
             href="#kontakt"
             className="inline-block px-8 py-4 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
             style={{ boxShadow: '0 0 30px rgba(249, 0, 147, 0.2)' }}
           >
-            Kostenloses Erstgespräch vereinbaren
+            {t('ctaButton')}
           </a>
         </motion.div>
       </div>

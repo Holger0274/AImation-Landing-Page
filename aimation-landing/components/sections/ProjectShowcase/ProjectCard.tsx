@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { Project, SOLUTION_WORLD_COLORS, STATUS_CONFIG } from './types';
 import ImagePlaceholder from './ImagePlaceholder';
 
@@ -11,6 +12,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const t = useTranslations('projectShowcase');
   const statusConfig = STATUS_CONFIG[project.status];
   const isComingSoon = project.status === 'coming-soon';
 
@@ -33,7 +35,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
               </svg>
-              <span className="text-sm font-semibold text-[#071013]">Details ansehen</span>
+              <span className="text-sm font-semibold text-[#071013]">{t('detailsView')}</span>
             </div>
           </div>
         )}
@@ -129,7 +131,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </div>
             {project.detailUrl && project.status === 'completed' && (
               <span className="flex items-center gap-1 text-xs font-medium text-[#f90093] group-hover:gap-2 transition-all duration-200">
-                Details ansehen
+                {t('detailsView')}
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                 </svg>
@@ -143,7 +145,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       {isComingSoon && (
         <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px] flex items-center justify-center pointer-events-none">
           <div className="bg-white px-6 py-3 rounded-full shadow-lg border border-gray-200">
-            <span className="text-sm font-semibold text-gray-600">Coming Soon</span>
+            <span className="text-sm font-semibold text-gray-600">{t('comingSoon')}</span>
           </div>
         </div>
       )}

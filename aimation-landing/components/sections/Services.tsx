@@ -7,108 +7,52 @@ import { GraduationCap, Lightbulb, Zap, ArrowRight, Code, Users, Database, Mail,
 import { useReducedMotion } from '@/lib/hooks/useReducedMotion';
 import { useIsMobile } from '@/lib/hooks/useIsMobile';
 import { throttle } from '@/lib/utils/throttle';
+import { useTranslations } from 'next-intl';
 
-const services = [
+type ServiceData = {
+  icon: any;
+  title: string;
+  subtitle: string;
+  description: string;
+  features: string[];
+  detail: string;
+  gradientFrom: string;
+  gradientTo: string;
+  patternOpacity: number;
+  href: string;
+  useCases: { title: string; description: string; result: string; mockupType: string }[];
+};
+
+// Static config (icons, colors, links, mockup types) — text comes from translations
+const servicesConfig = [
   {
+    id: 'schulungen',
     icon: GraduationCap,
-    title: 'Schulungen',
-    subtitle: 'Wissen vermitteln',
-    description:
-      'Von KI-Grundlagen bis zu fortgeschrittenen Techniken. Ihr Team lernt, KI-Tools souverän einzusetzen.',
-    features: [
-      'Generative KI verstehen',
-      'Microsoft Copilot & Tools',
-      'Prompt Engineering',
-      'Multi-Agent-Systeme',
-      'Automatisierung & KI',
-    ],
-    detail: '3 Ebenen: Einstieg, Anwendung, Fortgeschritten',
     gradientFrom: '#f90093',
     gradientTo: '#ff4ecd',
     patternOpacity: 0.08,
     href: '/ki-schulungen-mittelstand',
-    useCases: [
-      {
-        title: '2-Tages-Workshop: Prompt Engineering für Engineering-Teams',
-        description: '2-Tages-Workshop für Engineering-Teams und angrenzende Bereiche: Teilnehmer lernen den Umgang mit LLMs wie ChatGPT, Claude, Microsoft Copilot und Perplexity AI. Von den Grundlagen bis zu fortgeschrittenen Prompt-Techniken, um sofort Ergebnisse zu erzielen. Inklusive konkreter Use Cases aus dem Engineering-Alltag.',
-        result: '80% der Teilnehmer nutzen KI-Tools täglich im Arbeitsalltag',
-        mockupType: 'training-workshop',
-      },
-      {
-        title: 'Workshop: Automatisierung und KI-Automatisierung',
-        description: 'Praktischer Workshop für Prozessverantwortliche und Teams: Was sind Automatisierungen? Wie unterscheiden sich klassische Workflows von KI-gestützten Automatisierungen? Teilnehmer lernen, Automatisierungspotenziale zu erkennen und KI gezielt einzubringen, von einfachen Workflows bis zu intelligenten Multi-Agent-Systemen.',
-        result: '85% der Teilnehmer identifizieren mindestens 3 Automatisierungs-Use-Cases',
-        mockupType: 'automation-workshop',
-      },
-    ],
+    mockupTypes: ['training-workshop', 'automation-workshop'],
   },
   {
+    id: 'beratung',
     icon: Lightbulb,
-    title: 'Beratung',
-    subtitle: 'Denken, planen, entscheiden',
-    description:
-      'Wir schauen uns an, wie Sie heute arbeiten. Dann sagen wir Ihnen ehrlich, was sinnvoll ist und was nicht.',
-    features: [
-      'AI Readiness Assessment',
-      'Use Case Identifikation',
-      'Strategie & Roadmap',
-      'ROI & Business Case',
-      'Change Management',
-    ],
-    detail: '3 Phasen: Analyse, Strategie, Begleitung',
     gradientFrom: '#f90093',
     gradientTo: '#ff4ecd',
     patternOpacity: 0.06,
     href: '/ki-beratung-kmu',
-    useCases: [
-      {
-        title: 'AI-Tool-Audit für Maschinenbauer: Schatten-KI aufdecken & Kosten senken',
-        description: 'Systematisches Audit aller KI-Tools im Unternehmen: Welche Tools nutzen Mitarbeiter (ChatGPT, Copilot, andere)? DSGVO-Risiken identifiziert, Lizenzkosten analysiert, Tool-Wildwuchs gestoppt. Konsolidierung auf 3 freigegebene Enterprise-Lösungen mit zentraler Verwaltung.',
-        result: '12 Tools auf 3 reduziert, 3.200€/Monat gespart, DSGVO-konforme Lösung',
-        mockupType: 'ai-audit',
-      },
-      {
-        title: 'Tool-Auswahl Workshop: Die richtige KI-Plattform für Online-Händler',
-        description: '2-Tages-Workshop zur Entscheidungsfindung: Microsoft Copilot, Google Workspace AI oder eigenständige Lösung? Requirements definiert, 5 Anbieter verglichen (Kosten, Datenschutz, Integration), klare Empfehlung mit Begründung. Vertragsverhandlung begleitet.',
-        result: 'Entscheidung in 2 Tagen statt 3 Monaten, 40% Kosten gespart',
-        mockupType: 'tool-selection',
-      },
-    ],
+    mockupTypes: ['ai-audit', 'tool-selection'],
   },
   {
+    id: 'umsetzung',
     icon: Zap,
-    title: 'Umsetzung',
-    subtitle: 'Bauen, implementieren, betreiben',
-    description:
-      'Von einfachen Workflows bis zu KI-Agenten, die eigenständig recherchieren, entscheiden und handeln. Lösungen, die morgen funktionieren – nicht in zwei Jahren.',
-    features: [
-      'Workflow-Automatisierung',
-      'RAG-Systeme & Chatbots',
-      'KI-Agenten, die selbstständig arbeiten',
-      'Dokumenten-Workflows',
-      'Knowledge Management',
-    ],
-    detail: '4 Lösungswelten: FLOW, KNOW, THINK, WORK',
     gradientFrom: '#f90093',
     gradientTo: '#ff4ecd',
     patternOpacity: 0.07,
     href: '/ki-automatisierung-mittelstand',
-    useCases: [
-      {
-        title: 'Chatbot für technische Dokumentation (Maschinenbau)',
-        description: 'Chatbot durchsucht 5000 Seiten technische Dokumentation und antwortet in 3 Sekunden, mit Quellenangabe. Service-Techniker finden Antworten, ohne Experten zu fragen.',
-        result: '70% weniger Support-Anfragen, 95% korrekte Antworten',
-        mockupType: 'rag-chatbot',
-      },
-      {
-        title: 'E-Mail-Automatisierung mit n8n für Vertriebsteam',
-        description: 'Intelligenter E-Mail-Workflow mit n8n: Eingehende E-Mails werden automatisch analysiert, kategorisiert (Anfrage, Beschwerde, Bestellung), mit CRM-Daten angereichert und an zuständige Mitarbeiter geroutet. Tickets werden automatisch erstellt.',
-        result: '2 Stunden pro Tag gespart, keine E-Mail geht mehr verloren',
-        mockupType: 'email-automation',
-      },
-    ],
+    mockupTypes: ['rag-chatbot', 'email-automation'],
   },
-];
+] as const;
 
 // Use Case Mockup Component - PROFESSIONAL DASHBOARD DESIGN
 function UseCaseMockup({ type }: { type: string }) {
@@ -248,7 +192,7 @@ function UseCaseMockup({ type }: { type: string }) {
   );
 }
 
-function FlipCard({ service, index, onSelect }: { service: typeof services[0] & { href: string }; index: number; onSelect: () => void }) {
+function FlipCard({ service, index, onSelect, labels }: { service: ServiceData; index: number; onSelect: () => void; labels: { moreInfo: string; flipHintDesktop: string; flipHintMobile: string; useCasesButton: string } }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -369,11 +313,11 @@ function FlipCard({ service, index, onSelect }: { service: typeof services[0] & 
                 className="font-heading font-semibold flex items-center gap-2 group/link"
                 style={{ color: service.gradientFrom }}
               >
-                Mehr erfahren
+                {labels.moreInfo}
                 <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </Link>
-              <span className="text-xs text-gray-400 hidden lg:inline">Hover zum Umdrehen</span>
-              <span className="text-xs text-gray-400 lg:hidden">Tippen zum Umdrehen</span>
+              <span className="text-xs text-gray-400 hidden lg:inline">{labels.flipHintDesktop}</span>
+              <span className="text-xs text-gray-400 lg:hidden">{labels.flipHintMobile}</span>
             </div>
           </div>
         </div>
@@ -484,7 +428,7 @@ function FlipCard({ service, index, onSelect }: { service: typeof services[0] & 
               onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'none'}
               onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'underline'}
             >
-              Use Cases ansehen →
+              {labels.useCasesButton}
             </button>
           </div>
         </div>
@@ -496,6 +440,30 @@ function FlipCard({ service, index, onSelect }: { service: typeof services[0] & 
 export default function Services() {
   const reducedMotion = useReducedMotion();
   const [selectedService, setSelectedService] = useState<number | null>(null);
+  const t = useTranslations('services');
+
+  const services: ServiceData[] = servicesConfig.map((cfg) => ({
+    icon: cfg.icon,
+    gradientFrom: cfg.gradientFrom,
+    gradientTo: cfg.gradientTo,
+    patternOpacity: cfg.patternOpacity,
+    href: cfg.href,
+    title: t(`items.${cfg.id}.title`),
+    subtitle: t(`items.${cfg.id}.subtitle`),
+    description: t(`items.${cfg.id}.description`),
+    features: t.raw(`items.${cfg.id}.features`) as string[],
+    detail: t(`items.${cfg.id}.detail`),
+    useCases: (t.raw(`useCases.${cfg.id}`) as { title: string; description: string; result: string }[]).map(
+      (uc, i) => ({ ...uc, mockupType: cfg.mockupTypes[i] })
+    ),
+  }));
+
+  const flipLabels = {
+    moreInfo: t('moreInfo'),
+    flipHintDesktop: t('flipHintDesktop'),
+    flipHintMobile: t('flipHintMobile'),
+    useCasesButton: t('useCasesButton'),
+  };
 
   return (
     <section id="leistungen" className="relative py-20 md:py-32 bg-[#faf9f7] overflow-hidden">
@@ -532,10 +500,10 @@ export default function Services() {
           className="text-center mb-16 md:mb-20"
         >
           <h2 className="font-heading font-bold mb-4" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
-            Die 3 <span className="gradient-text">Säulen</span> unserer Arbeit
+            {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span> {t('headlineEnd')}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}>
-            Alle Bausteine sind frei kombinierbar, je nach Ihrem Bedarf
+            {t('subline')}
           </p>
         </motion.div>
 
@@ -547,6 +515,7 @@ export default function Services() {
               service={service}
               index={index}
               onSelect={() => setSelectedService(index)}
+              labels={flipLabels}
             />
           ))}
         </div>
@@ -569,17 +538,17 @@ export default function Services() {
                 <div className="flex items-center justify-between mb-8">
                   <div>
                     <p className="text-magenta font-heading font-bold mb-2" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>
-                      PRAXIS-BEISPIELE
+                      {t('practiceExamples')}
                     </p>
                     <h3 className="font-heading font-bold text-white" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}>
-                      {services[selectedService].title} in der Praxis
+                      {services[selectedService].title} {t('inPractice')}
                     </h3>
                   </div>
                   <button
                     onClick={() => setSelectedService(null)}
                     className="text-white/50 hover:text-white transition-colors text-sm font-heading"
                   >
-                    Schließen ✕
+                    {t('close')}
                   </button>
                 </div>
 
@@ -623,7 +592,7 @@ export default function Services() {
                     className="inline-block px-8 py-4 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
                     style={{ boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)' }}
                   >
-                    Ähnliches Projekt besprechen
+                    {t('similarProject')}
                   </a>
                 </div>
               </div>
