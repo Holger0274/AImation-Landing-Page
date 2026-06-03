@@ -1,3 +1,584 @@
 {
-  "_test": "ok"
+  "nav": {
+    "leistungen": "Leistungen",
+    "leistungenLabel": "Unsere Leistungen",
+    "schulungen": "KI-Schulungen",
+    "schulungenDesc": "Wissen aufbauen – vom Einstieg bis zur Spezialisierung",
+    "beratung": "KI-Beratung",
+    "beratungDesc": "Strategie & Roadmap – wo stehen Sie, wo wollen Sie hin?",
+    "automatisierung": "KI-Automatisierung",
+    "automatisierungDesc": "Workflows & Prozesse automatisieren – sofort einsatzbereit",
+    "agenten": "KI-Agenten",
+    "agentenDesc": "Intelligente Assistenten, die für Sie arbeiten",
+    "useCases": "Use Cases",
+    "blog": "Blog",
+    "ueberUns": "Über uns",
+    "cta": "Erstgespräch",
+    "ctaMobile": "Kostenloses Erstgespräch",
+    "menuOpen": "Menü öffnen",
+    "dropdownFooter": "Kostenlos · 30 Min · Unverbindlich",
+    "dropdownCta": "Erstgespräch →"
+  },
+  "hero": {
+    "badge": "Erkennen • Automatisieren • Wachsen",
+    "headlineStart": "40% der Arbeitszeit Ihrer Mitarbeiter geht für Aufgaben drauf, die ",
+    "headlineHighlight": "niemand vermissen würde",
+    "headlineEnd": ".",
+    "subline": "Ob KI dafür die Lösung ist? Das sagen wir Ihnen ehrlich. Auch wenn die Antwort Nein lautet.",
+    "cta": "Kostenloses Erstgespräch vereinbaren",
+    "trust1Label": "LinkedIn-Follower",
+    "trust2Label": "Jahre Engineering",
+    "trust3Value": "10-1000",
+    "trust3Label": "Mitarbeiter (KMUs)"
+  },
+  "painPoints": {
+    "badge": "Diese Probleme kennen wir von jedem dritten KMU",
+    "headline": "Kommt Ihnen das",
+    "headlineHighlight": "bekannt",
+    "headlineEnd": "vor?",
+    "body1": "Diese 6 Probleme hören wir fast wörtlich in jedem Erstgespräch. Manchmal sind es alle 6 gleichzeitig.",
+    "body2": "Keines davon muss 2026 noch existieren. Die Lösungen sind längst da, nur noch nicht bei Ihnen.",
+    "futureText": "Bürojobs verschwinden nicht. Aber der Teil, über den sich alle beschweren?",
+    "futureHighlight": "Der schon.",
+    "futureEnd": "Was bleibt: die Arbeit, für die Sie Ihre Leute",
+    "futureStrong": "eigentlich eingestellt",
+    "futureEndText": "haben.",
+    "roiLink": "Was kostet Sie das pro Jahr? ROI berechnen",
+    "modalClose": "Modal schließen",
+    "clickHint": "Klicken für Bild & Details →",
+    "quellePrafix": "Quelle:",
+    "stats": {
+      "time": {
+        "stat": "40%",
+        "title": "der Arbeitszeit verpufft für Aufgaben, die niemand vermissen würde",
+        "description": "Ihre Mitarbeiter tippen Zahlen ab, die längst digital vorliegen. Kopieren Daten von Excel in SAP. Erstellen manuell Berichte, die automatisiert werden könnten. Während die Konkurrenz automatisiert, verschwenden Sie Potenzial.",
+        "statLabel": "Zeitverschwendung",
+        "source": "McKinsey Global Survey 2024"
+      },
+      "cost": {
+        "stat": "200k€",
+        "title": "Das sind 200.000€ aus dem Fenster geworfen. Jedes Jahr.",
+        "description": "Bei nur 10 Mitarbeitern verbrennen Sie über 200.000€ pro Jahr für Tätigkeiten ohne Mehrwert. Das sind die Jahresgehälter von 3 qualifizierten Fachkräften. Jedes Jahr. Einfach weg. Für Aufgaben, die längst automatisierbar wären.",
+        "statLabel": "Verschwendung/Jahr",
+        "source": "Berechnung: McKinsey-Studie 2024"
+      },
+      "quality": {
+        "stat": "1-4%",
+        "title": "Jeder Fehler kostet Geld. Und Ihr Image.",
+        "description": "Bei jeder manuellen Dateneingabe passieren Fehler. Kunden beschweren sich. Rechnungen stimmen nicht. Liefertermine werden verpasst. Und während Ihr Team Fehler korrigiert, bleibt die eigentliche Arbeit liegen. Frustrierend? Absolut. Vermeidbar? Ja.",
+        "statLabel": "Fehlerrate",
+        "source": "Gartner 2023 & Ernst & Young 2025"
+      },
+      "knowledge": {
+        "stat": "71%",
+        "title": "Wenn Petra in Rente geht, geht 30 Jahre Erfahrung mit",
+        "description": "Nur sie weiß, wie dieser eine Prozess funktioniert. Nur sie kennt alle Sonderfälle. Und wenn sie geht? Chaos. Fehler. Verzögerungen. Neue Mitarbeiter brauchen Monate, um aufzuholen, wenn Sie überhaupt jemanden finden.",
+        "statLabel": "der IT-Führungskräfte sehen Wissensverlust",
+        "source": "Sinequa-Studie 2022"
+      },
+      "chaos": {
+        "stat": "86%",
+        "title": "86% tippen Rechnungen ab, als gäbe es kein Internet",
+        "description": "PDF kommt per E-Mail. Ihre Mitarbeiter öffnen es, lesen die Zahlen, tippen sie ins ERP. Fehler inklusive. Es gibt OCR-Software seit 20 Jahren. Trotzdem tippen 86% der KMUs wie 1995. Absurd? Ja. Änderbar? Sofort.",
+        "statLabel": "erfassen Rechnungen manuell",
+        "source": "KfW Digitalisierungsbericht 2024"
+      },
+      "competition": {
+        "stat": "81%",
+        "title": "81% wissen: Ohne KI verlieren wir den Anschluss",
+        "description": "Ihre Konkurrenz nutzt bereits KI. Ihre Branche verändert sich. Schneller, effizienter, günstiger. Ohne Sie. Während Sie noch überlegen, ob KI etwas für Sie ist, ziehen andere davon. Der Abstand wächst. Jeden Tag.",
+        "statLabel": "sehen KI als wichtigste Zukunftstechnologie",
+        "source": "Bitkom-Studie September 2025"
+      },
+      "waiting": {
+        "stat": "2x",
+        "title": "Während Sie noch planen, hat Ihr Wettbewerber schon automatisiert",
+        "subtitle": "Die KI-Nutzung in deutschen Unternehmen hat sich im letzten Jahr verdoppelt. Nicht in 10 Jahren. In 12 Monaten. Wer jetzt wartet, holt diesen Vorsprung nicht mehr auf. Die Frage ist nicht OB, sondern WANN Sie starten.",
+        "statLabel": "KI-Wachstum in 12 Monaten",
+        "source": "Bitkom September 2025"
+      }
+    }
+  },
+  "beforeAfter": {
+    "headline": "Von",
+    "headlineChao": "Chaos",
+    "headlineMid": "zu",
+    "headlineHighlight": "Kontrolle",
+    "subline": "Drei Prozesse. Vorher und nachher. Konkrete Zahlen.",
+    "labelProblem": "Problem",
+    "labelLoesung": "Lösung",
+    "ctaText": "Zehn Minuten Gespräch reichen meistens, um ähnliche Potenziale in Ihren Prozessen zu finden.",
+    "ctaButton": "Kostenloses Potenzial-Gespräch vereinbaren",
+    "transformations": {
+      "workflow": {
+        "title": "E-Mail-Bearbeitung",
+        "before": {
+          "title": "Vorher: Manueller Prozess",
+          "pain": "2 Stunden täglich",
+          "problems": [
+            "E-Mails manuell sortieren",
+            "Copy-Paste in Excel",
+            "Fehlende Informationen nachfragen",
+            "Status in mehreren Tools aktualisieren"
+          ]
+        },
+        "after": {
+          "title": "Nachher: Automatisiert",
+          "gain": "10 Minuten täglich",
+          "benefits": [
+            "KI sortiert & priorisiert automatisch",
+            "Daten werden direkt ins System übertragen",
+            "Fehlende Infos werden automatisch angefordert",
+            "Status-Updates in Echtzeit"
+          ],
+          "roi": "90% Zeitersparnis"
+        }
+      },
+      "knowledge": {
+        "title": "Wissensmanagement",
+        "before": {
+          "title": "Vorher: Wissen in Köpfen",
+          "pain": "Wissensverlust bei Kündigungen",
+          "problems": [
+            "Know-how nur in Mitarbeiter-Köpfen",
+            "Neue Kollegen 6 Monate Einarbeitung",
+            "Prozesse nicht dokumentiert",
+            "Experten ständig im Meeting"
+          ]
+        },
+        "after": {
+          "title": "Nachher: KI-Wissensdatenbank",
+          "gain": "Wissen bleibt im Unternehmen",
+          "benefits": [
+            "RAG-System mit gesamtem Firmenwissen",
+            "Neue Kollegen produktiv in 2 Wochen",
+            "Prozesse automatisch dokumentiert",
+            "KI beantwortet 80% der Fragen sofort"
+          ],
+          "roi": ">85% Zeitersparnis"
+        }
+      },
+      "research": {
+        "title": "Marktrecherche",
+        "before": {
+          "title": "Vorher: Manuelle Recherche",
+          "pain": "8 Stunden pro Woche",
+          "problems": [
+            "Google, LinkedIn, Fachmedien durchsuchen",
+            "Informationen in Word sammeln",
+            "Veraltete Daten",
+            "Keine strukturierte Ablage"
+          ]
+        },
+        "after": {
+          "title": "Nachher: KI-Recherche-Agent",
+          "gain": "30 Minuten pro Woche",
+          "benefits": [
+            "Ein KI-Agent durchsucht eigenständig Quellen, bewertet Relevanz und fasst zusammen",
+            "Strukturierte Reports in Notion",
+            "Tägliche Updates zu definierten Themen",
+            "Zentrale Knowledge Base"
+          ],
+          "roi": ">90% Zeitersparnis"
+        }
+      }
+    }
+  },
+  "services": {
+    "headline": "Die 3",
+    "headlineHighlight": "Säulen",
+    "headlineEnd": "unserer Arbeit",
+    "subline": "Alle Bausteine sind frei kombinierbar, je nach Ihrem Bedarf",
+    "flipHintDesktop": "Hover zum Umdrehen",
+    "flipHintMobile": "Tippen zum Umdrehen",
+    "moreInfo": "Mehr erfahren",
+    "useCasesButton": "Use Cases ansehen →",
+    "practiceExamples": "PRAXIS-BEISPIELE",
+    "inPractice": "in der Praxis",
+    "close": "Schließen ✕",
+    "similarProject": "Ähnliches Projekt besprechen",
+    "items": {
+      "schulungen": {
+        "title": "Schulungen",
+        "subtitle": "Wissen vermitteln",
+        "description": "Von KI-Grundlagen bis zu fortgeschrittenen Techniken. Ihr Team lernt, KI-Tools souverän einzusetzen.",
+        "features": [
+          "Generative KI verstehen",
+          "Microsoft Copilot & Tools",
+          "Prompt Engineering",
+          "Multi-Agent-Systeme",
+          "Automatisierung & KI"
+        ],
+        "detail": "3 Ebenen: Einstieg, Anwendung, Fortgeschritten"
+      },
+      "beratung": {
+        "title": "Beratung",
+        "subtitle": "Denken, planen, entscheiden",
+        "description": "Wir schauen uns an, wie Sie heute arbeiten. Dann sagen wir Ihnen ehrlich, was sinnvoll ist und was nicht.",
+        "features": [
+          "AI Readiness Assessment",
+          "Use Case Identifikation",
+          "Strategie & Roadmap",
+          "ROI & Business Case",
+          "Change Management"
+        ],
+        "detail": "3 Phasen: Analyse, Strategie, Begleitung"
+      },
+      "umsetzung": {
+        "title": "Umsetzung",
+        "subtitle": "Bauen, implementieren, betreiben",
+        "description": "Von einfachen Workflows bis zu KI-Agenten, die eigenständig recherchieren, entscheiden und handeln. Lösungen, die morgen funktionieren – nicht in zwei Jahren.",
+        "features": [
+          "Workflow-Automatisierung",
+          "RAG-Systeme & Chatbots",
+          "KI-Agenten, die selbstständig arbeiten",
+          "Dokumenten-Workflows",
+          "Knowledge Management"
+        ],
+        "detail": "4 Lösungswelten: FLOW, KNOW, THINK, WORK"
+      }
+    },
+    "useCases": {
+      "schulungen": [
+        {
+          "title": "2-Tages-Workshop: Prompt Engineering für Engineering-Teams",
+          "description": "2-Tages-Workshop für Engineering-Teams und angrenzende Bereiche: Teilnehmer lernen den Umgang mit LLMs wie ChatGPT, Claude, Microsoft Copilot und Perplexity AI. Von den Grundlagen bis zu fortgeschrittenen Prompt-Techniken, um sofort Ergebnisse zu erzielen. Inklusive konkreter Use Cases aus dem Engineering-Alltag.",
+          "result": "80% der Teilnehmer nutzen KI-Tools täglich im Arbeitsalltag"
+        },
+        {
+          "title": "Workshop: Automatisierung und KI-Automatisierung",
+          "description": "Praktischer Workshop für Prozessverantwortliche und Teams: Was sind Automatisierungen? Wie unterscheiden sich klassische Workflows von KI-gestützten Automatisierungen? Teilnehmer lernen, Automatisierungspotenziale zu erkennen und KI gezielt einzubringen, von einfachen Workflows bis zu intelligenten Multi-Agent-Systemen.",
+          "result": "85% der Teilnehmer identifizieren mindestens 3 Automatisierungs-Use-Cases"
+        }
+      ],
+      "beratung": [
+        {
+          "title": "AI-Tool-Audit für Maschinenbauer: Schatten-KI aufdecken & Kosten senken",
+          "description": "Systematisches Audit aller KI-Tools im Unternehmen: Welche Tools nutzen Mitarbeiter (ChatGPT, Copilot, andere)? DSGVO-Risiken identifiziert, Lizenzkosten analysiert, Tool-Wildwuchs gestoppt. Konsolidierung auf 3 freigegebene Enterprise-Lösungen mit zentraler Verwaltung.",
+          "result": "12 Tools auf 3 reduziert, 3.200€/Monat gespart, DSGVO-konforme Lösung"
+        },
+        {
+          "title": "Tool-Auswahl Workshop: Die richtige KI-Plattform für Online-Händler",
+          "description": "2-Tages-Workshop zur Entscheidungsfindung: Microsoft Copilot, Google Workspace AI oder eigenständige Lösung? Requirements definiert, 5 Anbieter verglichen (Kosten, Datenschutz, Integration), klare Empfehlung mit Begründung. Vertragsverhandlung begleitet.",
+          "result": "Entscheidung in 2 Tagen statt 3 Monaten, 40% Kosten gespart"
+        }
+      ],
+      "umsetzung": [
+        {
+          "title": "Chatbot für technische Dokumentation (Maschinenbau)",
+          "description": "Chatbot durchsucht 5000 Seiten technische Dokumentation und antwortet in 3 Sekunden, mit Quellenangabe. Service-Techniker finden Antworten, ohne Experten zu fragen.",
+          "result": "70% weniger Support-Anfragen, 95% korrekte Antworten"
+        },
+        {
+          "title": "E-Mail-Automatisierung mit n8n für Vertriebsteam",
+          "description": "Intelligenter E-Mail-Workflow mit n8n: Eingehende E-Mails werden automatisch analysiert, kategorisiert (Anfrage, Beschwerde, Bestellung), mit CRM-Daten angereichert und an zuständige Mitarbeiter geroutet. Tickets werden automatisch erstellt.",
+          "result": "2 Stunden pro Tag gespart, keine E-Mail geht mehr verloren"
+        }
+      ]
+    }
+  },
+  "projectShowcase": {
+    "badge": "Use Cases",
+    "headline": "So sieht",
+    "headlineHighlight": "KI-Automatisierung",
+    "headlineEnd": "in der Praxis aus",
+    "subline": "Konkrete Anwendungsfälle: von der Patentrecherche bis zum Technologie-Radar.",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right",
+    "ctaText": "Haben Sie einen ähnlichen Anwendungsfall im Kopf?",
+    "ctaButton": "Kostenloses Erstgespräch buchen",
+    "detailsView": "Details ansehen",
+    "comingSoon": "Coming Soon"
+  },
+  "process": {
+    "headline": "So",
+    "headlineHighlight": "einfach",
+    "headlineEnd": "starten wir",
+    "subline": "Vom ersten Gespräch bis zur Umsetzung. Transparent und strukturiert.",
+    "ctaText": "Das Erstgespräch kostet 30 Minuten und nichts weiter.",
+    "ctaButton": "Kostenloses Erstgespräch vereinbaren",
+    "steps": {
+      "erstgespraech": {
+        "title": "Erstgespräch",
+        "subtitle": "30 Minuten, kostenlos",
+        "description": "Wir lernen uns kennen. Sie erzählen uns, wo der Schuh drückt. Wir sagen Ihnen ehrlich, ob wir helfen können.",
+        "details": [
+          "Was nervt am meisten?",
+          "Wo verbrennen Sie Zeit?",
+          "Gibt's Quick Wins?"
+        ],
+        "duration": "30 Min",
+        "cost": "Kostenlos"
+      },
+      "analyse": {
+        "title": "Analyse",
+        "subtitle": "Potenziale erkennen",
+        "description": "Wir schauen uns an, wie Sie heute arbeiten. Wo hakt's? Wo geht Zeit verloren? Und was lässt sich realistisch automatisieren?",
+        "details": [
+          "AI Readiness Assessment durchführen",
+          "AI Audit bestehender Tools & Prozesse",
+          "AI ROI-Potenziale kalkulieren"
+        ],
+        "duration": "2-4 Wochen",
+        "cost": "Nach Aufwand"
+      },
+      "konzept": {
+        "title": "Konzept",
+        "subtitle": "Transparenter Vorschlag",
+        "description": "Sie bekommen ein konkretes Angebot: Was bauen wir? Was kostet das? Was bringt es? Schwarz auf weiß.",
+        "details": [
+          "Lösungsarchitektur & Umsetzungsplan",
+          "Timeline & Meilensteine",
+          "ROI-Kalkulation"
+        ],
+        "duration": "3-5 Tage",
+        "cost": "Transparent"
+      },
+      "umsetzung": {
+        "title": "Umsetzung",
+        "subtitle": "Gemeinsam umsetzen",
+        "description": "Schulung, Beratung oder Implementierung: Wir setzen Ihr Projekt gemeinsam um.",
+        "details": [
+          "Praxisorientiert",
+          "Iterativ",
+          "Hands-On Support"
+        ],
+        "duration": "2-12 Wochen",
+        "cost": "Nach Aufwand"
+      },
+      "begleitung": {
+        "title": "Begleitung",
+        "subtitle": "Langfristige Begleitung",
+        "description": "Auch nach Go-Live bleiben wir Ihr Ansprechpartner für Fragen, Anpassungen und Weiterentwicklung.",
+        "details": [
+          "Support on Demand",
+          "Optimierungen",
+          "Neue Features"
+        ],
+        "duration": "Ongoing",
+        "cost": "Optional"
+      }
+    }
+  },
+  "socialProof": {
+    "headline": "Vertrauen durch",
+    "headlineHighlight": "Erfahrung",
+    "toolsHeadline": "Wir arbeiten mit den",
+    "toolsHighlight": "besten Tools",
+    "toolsSubline": "Wir binden uns an keinen Hersteller. Was für Ihren Fall passt, finden wir, weil wir alle relevanten Tools kennen und täglich nutzen.",
+    "stats": {
+      "linkedin": "Menschen folgen Holger auf LinkedIn",
+      "experience": "Jahre Engineering-Erfahrung",
+      "employees": "Mitarbeiter in Zielunternehmen"
+    }
+  },
+  "about": {
+    "overline": "Über uns",
+    "headline": "20 Jahre Industrie. Kein",
+    "headlineHighlight": "Theorieberater.",
+    "introHeadline": "KI ist das Thema, das uns antreibt.",
+    "introHighlight": "Seit Jahren. Nicht seit dem Hype.",
+    "introText": "20 Jahre Engineering haben mir gezeigt, wo die Zeit wirklich verloren geht. Im Drumherum. In den Dingen, die niemand erklärt hat, wie man anders macht. Daran arbeite ich.",
+    "quotesLabel": "Das sind wir in 5 Sätzen",
+    "ctaPrimary": "Kostenloses Erstgespräch vereinbaren",
+    "ctaLinkedIn": "LinkedIn folgen. 18.000 Follower",
+    "quotes": [
+      {
+        "text": "„20 Jahre Engineering-Führungskraft in der Industrie."",
+        "highlight": null
+      },
+      {
+        "text": "„Ich kenne [Ihre Prozesse], nicht aus Büchern, sondern aus der Praxis."",
+        "highlight": "Ihre Prozesse"
+      },
+      {
+        "text": "„Wenn KI für Sie keinen Sinn ergibt, sage ich Ihnen das. Auch wenn mich das einen Auftrag kostet."",
+        "highlight": null
+      },
+      {
+        "text": "„[Machen] statt reden. Fertige Lösungen, die am nächsten Tag funktionieren."",
+        "highlight": "Machen"
+      },
+      {
+        "text": "„20 Jahre Erfahrung haben mir eines gezeigt: [Die einfachste Lösung], die wirklich funktioniert, ist immer die beste."",
+        "highlight": "Die einfachste Lösung"
+      }
+    ]
+  },
+  "whyAImation": {
+    "badge": "Warum AI.mation?",
+    "headline": "Nicht noch eine",
+    "headlineHighlight": "KI-Beratung",
+    "subline": "Wir bauen KI-Lösungen. Und sagen Ihnen, wenn Sie keine brauchen.",
+    "readinessHeadline": "Startet mit einem",
+    "readinessHighlight": "AI Readiness Check",
+    "readinessText": "In 2 Tagen wissen Sie, wo Sie stehen. Wir schauen uns Ihre Prozesse an, bewerten was schon läuft, und rechnen durch, was realistisch herauszuholen ist. Kein Verkaufsgespräch, kein Blabla.",
+    "readinessBadge1": "✓ Prozesse analysieren",
+    "readinessBadge2": "✓ Potenziale bewerten",
+    "readinessBadge3": "✓ ROI durchrechnen",
+    "readinessCta": "Jetzt AI Readiness Check anfragen",
+    "differentiators": [
+      {
+        "title": "Shopfloor bis Führungsebene",
+        "description": "Ich war selbst jahrelang mittendrin in produzierenden Unternehmen. Welche Probleme wirklich nerven, weiß ich aus eigener Erfahrung, nicht aus einer Studie.",
+        "highlight": "Praxis, keine Theorie"
+      },
+      {
+        "title": "Wenn KI nicht hilft, sagen wir das",
+        "description": "Ich schaue mir Ihre Prozesse an. Manchmal lautet die Antwort: KI ist hier falsch. Das kostet mich manchmal einen Auftrag. Trotzdem sage ich es.",
+        "highlight": "Ehrlich, auch wenn unbequem"
+      },
+      {
+        "title": "Für KMUs, nicht für Konzerne",
+        "description": "Konzernpreise kommen nicht infrage. Projekte, die sich ewig ziehen, auch nicht. Was zählt: läuft es nächste Woche? Meistens ja.",
+        "highlight": "Schnell & bezahlbar"
+      },
+      {
+        "title": "Drei Säulen, ein Ansprechpartner",
+        "description": "Beratung, Schulung, Umsetzung, alles unter einem Dach. Kein Koordinationsaufwand zwischen drei Anbietern. Ein Anruf reicht.",
+        "highlight": "3 Säulen, 1 Partner"
+      }
+    ]
+  },
+  "methodBadgeBar": {
+    "headline": "Unsere",
+    "headlineHighlight": "bewährten Analyse-Methoden",
+    "trustLine": "Wissenschaftlich fundierte Methoden für messbare Ergebnisse",
+    "methods": [
+      {
+        "label": "AI Readiness Assessment",
+        "description": "Ist Ihr Unternehmen bereit für KI?"
+      },
+      {
+        "label": "AI ROI-Kalkulation",
+        "description": "Welchen Mehrwert bringt KI konkret?"
+      },
+      {
+        "label": "AI Audit",
+        "description": "Welche Tools bringen wirklich Nutzen?"
+      }
+    ]
+  },
+  "solution": {
+    "headline": "Warum",
+    "headlineHighlight": "AI.mation",
+    "headlineEnd": "?",
+    "subline": "20 Jahre Engineering. Tief drin in Prozessen, die keiner mehr versteht. Das ist unser Vorteil, wenn wir heute KI-Lösungen bauen.",
+    "badge1": "20+ Jahre Engineering-Erfahrung",
+    "badge2": "18.000+ LinkedIn-Follower",
+    "badge3": "Spezialisiert auf KMU (10-1000 MA)"
+  },
+  "faq": {
+    "headline": "Häufige",
+    "headlineHighlight": "Fragen",
+    "subline": "Die Antworten auf die wichtigsten Fragen",
+    "items": [
+      {
+        "question": "Was kostet eine KI-Beratung für ein KMU?",
+        "answer": "Das Erstgespräch kostet nichts. Danach kommt es auf den Umfang an. Ein AI Readiness Check dauert 2 Tage, eine längere Begleitung kann sich über Monate ziehen. Im ersten Gespräch rechnen wir gemeinsam durch, was für Ihr Unternehmen realistisch ist, ohne versteckte Posten."
+      },
+      {
+        "question": "Wie schnell sieht ein KMU Ergebnisse durch KI-Automatisierung?",
+        "answer": "Bei Schulungen: oft noch während des Workshops. Viele Teilnehmer nutzen die Tools am selben Tag das erste Mal produktiv. Bei Automatisierungsprojekten: 2 bis 6 Wochen bis zum laufenden Prototyp, je nach Komplexität. E-Mail-Automatisierung haben wir schon in einer Woche fertig gehabt."
+      },
+      {
+        "question": "Braucht ein KMU eine eigene IT-Abteilung für KI-Projekte?",
+        "answer": "Nein. Die meisten unserer Kunden haben keine dedizierte IT-Abteilung. Wir begleiten von der Idee bis zur fertigen Lösung, technisch und inhaltlich. Die Lösungen, die wir bauen, können Ihre Leute selbst bedienen, ohne IT-Studium."
+      },
+      {
+        "question": "Funktioniert KI-Automatisierung mit bestehenden Systemen wie SAP oder Microsoft 365?",
+        "answer": "Meistens ja. Wir arbeiten mit dem, was Sie bereits im Einsatz haben. Unsere Lösungen lassen sich an Microsoft 365, Google Workspace, SAP, Branchensoftware und andere Systeme anbinden. In einem AI Audit analysieren wir Ihre bestehende Systemlandschaft und finden Integrationspunkte ohne aufwändige Migration."
+      },
+      {
+        "question": "Wie messen wir den ROI einer KI-Investition?",
+        "answer": "Vor jedem Projekt legen wir gemeinsam fest, was sich wie messen lässt: eingesparte Stunden, weniger Fehler, kürzere Durchlaufzeiten. Wir nehmen eine Ausgangsmessung, vergleichen nach der Umsetzung. Unser ROI-Rechner zeigt das Potenzial vorab, ohne Registrierung."
+      },
+      {
+        "question": "Was ist der Unterschied zwischen KI-Automatisierung und einem KI-Agenten?",
+        "answer": "Eine klassische Automatisierung folgt festen Regeln: Wenn A passiert, dann B. Das ist wertvoll, aber starr. Ein KI-Agent kann eigenständig urteilen, Informationen beschaffen und Entscheidungen treffen, ohne dass jeder Schritt vorher programmiert wurde. Konkretes Beispiel: kein Mensch gibt eine Recherche in Auftrag, der Agent erkennt selbst, was gerade wichtig ist, und liefert jeden Morgen einen strukturierten Report. Das ist der Unterschied."
+      },
+      {
+        "question": "Sind KI-Lösungen DSGVO-konform und datenschutzrechtlich sicher?",
+        "answer": "Wir bauen Datenschutz von Anfang an ein. Wo es geht, arbeiten wir mit europäischen Anbietern und On-Premise-Lösungen. Sensible Unternehmensdaten verlassen Ihr Netzwerk nur mit expliziter Freigabe. In regulierten Branchen wählen wir gezielt datenschutzkonforme Alternativen zu US-Diensten."
+      }
+    ]
+  },
+  "finalCta": {
+    "headline": "Jetzt",
+    "headlineHighlight": "Klarheit",
+    "headlineEnd": "schaffen.",
+    "subline": "30 Minuten. Wir sagen Ihnen, was für Sie realistisch ist. Oder rechnen Sie erstmal selbst nach.",
+    "ctaPrimary": "Kostenloses Erstgespräch buchen",
+    "ctaSecondary": "ROI selbst berechnen",
+    "microcopy1": "30 Minuten • Unverbindlich • Sofort verfügbar",
+    "microcopy2": "2 Minuten • Keine Vorkenntnisse nötig"
+  },
+  "leadForm": {
+    "ariaLabel": "Kostenloses Erstgespräch vereinbaren",
+    "closeAriaLabel": "Schließen",
+    "headline": "Ihr Weg zum",
+    "headlineHighlight": "KI-Erstgespräch",
+    "subline": "Füllen Sie das Formular aus und buchen Sie direkt Ihren kostenlosen Beratungstermin.",
+    "vornameLabel": "Vorname *",
+    "vornamePlaceholder": "Max",
+    "nachnameLabel": "Nachname *",
+    "nachnamePlaceholder": "Mustermann",
+    "emailLabel": "E-Mail-Adresse *",
+    "emailPlaceholder": "max.mustermann@firma.de",
+    "firmaLabel": "Firmenname *",
+    "firmaPlaceholder": "Musterfirma GmbH",
+    "unternehmensgroesseLabel": "Unternehmensgröße *",
+    "unternehmensgroessePlaceholder": "Bitte wählen",
+    "sizeOption1": "10-50 Mitarbeiter",
+    "sizeOption2": "50-250 Mitarbeiter",
+    "sizeOption3": "250-1000 Mitarbeiter",
+    "sizeOption4": "1000+ Mitarbeiter",
+    "telefonLabel": "Telefon (optional)",
+    "telefonPlaceholder": "+49 123 456789",
+    "herausforderungLabel": "Ihre größte Herausforderung *",
+    "herausforderungPlaceholder": "Beschreiben Sie kurz, wobei KI Ihnen helfen könnte (z.B. 'Zu viele manuelle Prozesse in der Auftragsabwicklung' oder 'Wir wollen AI einsetzen, wissen aber nicht wo anfangen')...",
+    "herausforderungHint": "Min. 10 Zeichen, max. 500 Zeichen",
+    "datenschutzLabel": "Ich habe die",
+    "datenschutzLink": "Datenschutzerklärung",
+    "datenschutzEnd": "gelesen und stimme der Verarbeitung meiner Daten zu. *",
+    "submitButton": "Termin jetzt buchen →",
+    "submitting": "Wird gesendet...",
+    "submitNote": "Nach dem Absenden werden Sie direkt zu unserem Kalender weitergeleitet.",
+    "errorGeneric": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+    "validation": {
+      "vornameRequired": "Vorname ist erforderlich",
+      "nachnameRequired": "Nachname ist erforderlich",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "firmaRequired": "Firmenname ist erforderlich",
+      "groesseRequired": "Bitte wählen Sie eine Unternehmensgröße aus",
+      "herausforderungMin": "Bitte beschreiben Sie kurz Ihre Herausforderung (min. 10 Zeichen)",
+      "herausforderungMax": "Maximal 500 Zeichen",
+      "datenschutzRequired": "Sie müssen der Datenschutzerklärung zustimmen"
+    }
+  },
+  "footer": {
+    "tagline": "Mehr Zeit für das",
+    "taglineHighlight": "Wesentliche",
+    "subtagline": "20 Jahre Engineering. Kein Buzzword-Bingo.",
+    "colLeistungen": "Leistungen",
+    "linkSchulungen": "Schulungen",
+    "linkBeratung": "Beratung",
+    "linkUmsetzung": "Umsetzung",
+    "linkAgenten": "KI-Agenten",
+    "colUnternehmen": "Unternehmen",
+    "linkUeberUns": "Über uns",
+    "linkProzess": "Prozess",
+    "linkFaq": "FAQ",
+    "colKontakt": "Kontakt",
+    "linkErstgespraech": "Erstgespräch buchen",
+    "lastUpdated": "Zuletzt aktualisiert:",
+    "copyright": "© {year} AI.mation – Alle Rechte vorbehalten",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz"
+  },
+  "blog": {
+    "headline": "Blog",
+    "readMore": "Weiterlesen",
+    "backToBlog": "Zurück zum Blog"
+  }
 }
