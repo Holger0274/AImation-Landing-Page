@@ -384,23 +384,23 @@
     "ctaLinkedIn": "LinkedIn folgen. 18.000 Follower",
     "quotes": [
       {
-        "text": "„20 Jahre Engineering-Führungskraft in der Industrie."",
+        "text": "„20 Jahre Engineering-Führungskraft in der Industrie.\"",
         "highlight": null
       },
       {
-        "text": "„Ich kenne [Ihre Prozesse], nicht aus Büchern, sondern aus der Praxis."",
+        "text": "„Ich kenne [Ihre Prozesse], nicht aus Büchern, sondern aus der Praxis.\"",
         "highlight": "Ihre Prozesse"
       },
       {
-        "text": "„Wenn KI für Sie keinen Sinn ergibt, sage ich Ihnen das. Auch wenn mich das einen Auftrag kostet."",
+        "text": "„Wenn KI für Sie keinen Sinn ergibt, sage ich Ihnen das. Auch wenn mich das einen Auftrag kostet.\"",
         "highlight": null
       },
       {
-        "text": "„[Machen] statt reden. Fertige Lösungen, die am nächsten Tag funktionieren."",
+        "text": "„[Machen] statt reden. Fertige Lösungen, die am nächsten Tag funktionieren.\"",
         "highlight": "Machen"
       },
       {
-        "text": "„20 Jahre Erfahrung haben mir eines gezeigt: [Die einfachste Lösung], die wirklich funktioniert, ist immer die beste."",
+        "text": "„20 Jahre Erfahrung haben mir eines gezeigt: [Die einfachste Lösung], die wirklich funktioniert, ist immer die beste.\"",
         "highlight": "Die einfachste Lösung"
       }
     ]
@@ -572,7 +572,7 @@
     "colKontakt": "Kontakt",
     "linkErstgespraech": "Erstgespräch buchen",
     "lastUpdated": "Zuletzt aktualisiert:",
-    "copyright": "© {year} AI.mation – Alle Rechte vorbehalten",
+    "copyright": "© {year} AI.mation. Alle Rechte vorbehalten.",
     "impressum": "Impressum",
     "datenschutz": "Datenschutz"
   },
