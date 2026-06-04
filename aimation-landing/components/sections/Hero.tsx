@@ -192,93 +192,112 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Column: Image Collage */}
+        {/* Right Column: Image Collage — desktop only */}
         <motion.div
-          className="relative w-full max-w-full hidden lg:block"
-          style={{ height: '560px' }}
+          className="relative w-full max-w-full hidden lg:flex lg:items-center"
+          style={{ height: '520px' }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Decorative dots */}
+          {/* Decorative dot — top left */}
           <motion.div
-            className="absolute top-8 left-8 h-14 w-14 rounded-full bg-magenta/15"
+            className="absolute top-0 left-8 h-14 w-14 rounded-full bg-magenta/15"
             variants={floatingVariants}
             animate="animate"
           />
-          <motion.div
-            className="absolute bottom-8 right-8 h-10 w-10 rounded-lg bg-lightblue/25"
-            variants={floatingVariants}
-            animate="animate"
-            style={{ transitionDelay: '1s' }}
-          />
 
-          {/* Main image — Engineering Desk — groß oben rechts */}
+          {/* Bild 1: Engineering Desk — groß, oben rechts, leicht links rotiert */}
           <motion.div
-            className="absolute top-0 right-0 rounded-2xl bg-white p-2 shadow-xl border border-gray-100"
-            style={{ width: '340px', height: '340px' }}
+            className="absolute overflow-hidden"
+            style={{
+              top: '16px',
+              right: '0px',
+              width: '320px',
+              height: '320px',
+              borderRadius: '20px',
+              border: '1px solid rgba(7,16,19,0.08)',
+              boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
+              transform: 'rotate(-2deg)',
+            }}
             variants={imageVariants}
           >
-            <div className="relative h-full w-full rounded-xl overflow-hidden">
-              <Image
-                src={images[0]}
-                alt="Ingenieur prüft technische Zeichnung mit Magenta-Markierungen — KI-gestützte Prozessoptimierung im Mittelstand"
-                fill
-                sizes="340px"
-                className="object-cover object-top"
-                priority
-              />
-            </div>
+            <Image
+              src={images[0]}
+              alt="Hand prüft technische Konstruktionszeichnung mit markierten Prüfstellen"
+              fill
+              sizes="320px"
+              className="object-cover object-top"
+              priority
+            />
           </motion.div>
 
-          {/* Second image — unten links */}
+          {/* Bild 2: Kanban Board — mitte links, gerade */}
           <motion.div
-            className="absolute rounded-2xl bg-white p-2 shadow-lg border border-gray-100"
-            style={{ bottom: '0px', left: '24px', width: '220px', height: '220px' }}
+            className="absolute overflow-hidden"
+            style={{
+              top: '160px',
+              left: '0px',
+              width: '210px',
+              height: '210px',
+              borderRadius: '20px',
+              border: '1px solid rgba(7,16,19,0.08)',
+              boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
+            }}
             variants={imageVariants}
           >
-            <div className="relative h-full w-full rounded-xl overflow-hidden">
-              <Image
-                src={images[1]}
-                alt="Entwicklungsleiter und KI-Berater analysieren Prozesse in der Entwicklungsabteilung"
-                fill
-                sizes="220px"
-                className="object-cover"
-                priority
-              />
-            </div>
+            <Image
+              src={images[1]}
+              alt="Ingenieur arbeitet am Projektboard mit Statuskarten im Projektraum"
+              fill
+              sizes="210px"
+              className="object-cover"
+              priority
+            />
           </motion.div>
 
-          {/* Third image — unten rechts, versetzt */}
+          {/* Bild 3: Laptop Dashboard — unten rechts, leicht rechts rotiert */}
           <motion.div
-            className="absolute rounded-2xl bg-white p-2 shadow-lg border border-gray-100"
-            style={{ bottom: '32px', right: '0px', width: '190px', height: '190px' }}
+            className="absolute overflow-hidden"
+            style={{
+              bottom: '16px',
+              right: '16px',
+              width: '210px',
+              height: '210px',
+              borderRadius: '20px',
+              border: '1px solid rgba(7,16,19,0.08)',
+              boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
+              transform: 'rotate(2deg)',
+            }}
             variants={imageVariants}
           >
-            <div className="relative h-full w-full rounded-xl overflow-hidden">
-              <Image
-                src={images[2]}
-                alt="KI-Dashboard mit Echtzeit-Prozessdaten auf Laptop neben präzisionsgefertigten Bauteilen"
-                fill
-                sizes="190px"
-                className="object-cover"
-                priority
-              />
-            </div>
+            <Image
+              src={images[2]}
+              alt="Laptop mit Auswertungs-Dashboard neben gefrästem Bauteil auf dem Schreibtisch"
+              fill
+              sizes="210px"
+              className="object-cover"
+              priority
+            />
           </motion.div>
         </motion.div>
 
         {/* Mobile: single image */}
         <motion.div
-          className="relative w-full lg:hidden rounded-2xl overflow-hidden shadow-xl border border-gray-100"
-          style={{ height: '260px' }}
+          className="relative w-full lg:hidden overflow-hidden"
+          style={{
+            height: '260px',
+            borderRadius: '20px',
+            border: '1px solid rgba(7,16,19,0.08)',
+            boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
+          }}
           variants={imageVariants}
           initial="hidden"
           animate="visible"
         >
           <Image
             src={images[0]}
-            alt="Ingenieur prüft technische Zeichnung mit Magenta-Markierungen"
+            alt="Hand prüft technische Konstruktionszeichnung mit markierten Prüfstellen"
             fill
             sizes="100vw"
             className="object-cover object-top"
