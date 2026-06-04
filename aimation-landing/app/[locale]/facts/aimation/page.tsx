@@ -84,7 +84,7 @@ export default async function GroundingPage({
       addressLocality: 'Bamberg',
       addressCountry: 'DE',
     },
-    email: 'kontakt@ai-mation.de',
+    email: 'kontakt@aimation.de',
     sameAs: ['https://www.linkedin.com/in/holgerpeschke/'],
     description: isEn
       ? 'AImation UG (haftungsbeschränkt) is a consulting company for AI training, AI consulting and the implementation of AI automation in small and medium-sized enterprises.'
@@ -285,7 +285,7 @@ export default async function GroundingPage({
 
               <dt className="font-semibold text-[#071013]">{isEn ? 'Contact' : 'Kontakt'}</dt>
               <dd className="text-gray-700">
-                <a href="mailto:kontakt@ai-mation.de" className="text-[#60AFFF] hover:underline">kontakt@ai-mation.de</a>
+                <a href="mailto:kontakt@aimation.de" className="text-[#60AFFF] hover:underline">kontakt@aimation.de</a>
               </dd>
 
               <dt className="font-semibold text-[#071013]">LinkedIn</dt>

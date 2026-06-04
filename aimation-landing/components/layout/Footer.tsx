@@ -123,11 +123,11 @@ export default async function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:kontakt@ai-mation.de"
+                  href="mailto:kontakt@aimation.de"
                   className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"
                 >
                   <Mail size={14} />
-                  kontakt@ai-mation.de
+                  kontakt@aimation.de
                 </a>
               </li>
               <li>

@@ -53,8 +53,17 @@ export default function ImpressumPage() {
               Kontaktaufnahme
             </h2>
             <p className="text-soft-black leading-relaxed">
-              <strong>E-Mail:</strong> <a href="mailto:kontakt@ai-mation.de" className="text-magenta hover:underline">kontakt@ai-mation.de</a><br />
+              <strong>E-Mail:</strong> <a href="mailto:kontakt@aimation.de" className="text-magenta hover:underline">kontakt@aimation.de</a><br />
               <strong>Telefon:</strong> [Wird ergänzt]
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-soft-black mb-4">
+              Weitere Unternehmensinformationen
+            </h2>
+            <p className="text-soft-black leading-relaxed">
+              Strukturierte Unternehmensdaten, FAQ und Abgrenzung: <a href="/facts/aimation" className="text-magenta hover:underline">Fakten zu AImation UG</a>
             </p>
           </section>
 

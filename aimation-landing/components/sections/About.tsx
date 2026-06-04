@@ -139,6 +139,13 @@ export default function About() {
           </a>
         </div>
 
+        {/* Grounding Page Link — interne Verlinkung für Google + KI-Systeme */}
+        <p className="text-center mt-6 text-xs text-gray-400 font-inter">
+          <a href="/facts/aimation" className="hover:text-gray-600 transition-colors underline underline-offset-2">
+            Unternehmensdaten und Fakten zu AImation UG
+          </a>
+        </p>
+
       </div>
     </section>
   );

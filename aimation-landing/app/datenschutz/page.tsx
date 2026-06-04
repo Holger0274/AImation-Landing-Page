@@ -40,7 +40,7 @@ export default function DatenschutzPage() {
               Deutschland
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>E-Mail:</strong> <a href="mailto:kontakt@ai-mation.de" className="text-magenta hover:underline">kontakt@ai-mation.de</a><br />
+              <strong>E-Mail:</strong> <a href="mailto:kontakt@aimation.de" className="text-magenta hover:underline">kontakt@aimation.de</a><br />
               <strong>Telefon:</strong> [Wird ergänzt]
             </p>
             <p className="text-soft-black leading-relaxed">
@@ -416,7 +416,7 @@ export default function DatenschutzPage() {
               Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten, bei Auskünften, Berichtigung, Sperrung oder Löschung von Daten sowie Widerruf erteilter Einwilligungen wenden Sie sich bitte an:
             </p>
             <p className="text-soft-black leading-relaxed mt-3">
-              <strong>E-Mail:</strong> <a href="mailto:kontakt@ai-mation.de" className="text-magenta hover:underline">kontakt@ai-mation.de</a>
+              <strong>E-Mail:</strong> <a href="mailto:kontakt@aimation.de" className="text-magenta hover:underline">kontakt@aimation.de</a>
             </p>
           </div>
 
