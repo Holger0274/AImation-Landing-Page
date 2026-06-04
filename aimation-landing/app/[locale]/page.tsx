@@ -6,6 +6,7 @@ import BeforeAfter from '@/components/sections/BeforeAfter';
 import Services from '@/components/sections/Services';
 import ProjectShowcase from '@/components/sections/ProjectShowcase/ProjectShowcase';
 import Process from '@/components/sections/Process';
+import { PilotSection } from '@/components/sections/PilotSection';
 import SocialProof from '@/components/sections/SocialProof';
 import About from '@/components/sections/About';
 import WhyAImation from '@/components/sections/WhyAImation';
@@ -59,6 +60,7 @@ export default async function Home({
         <Services />
         <ProjectShowcase />
         <Process />
+        <PilotSection />
         <SocialProof />
         <About />
         <WhyAImation />

@@ -369,6 +369,16 @@
       }
     }
   },
+  "pilot": {
+    "headline": "Der kleinste sinnvolle Start:",
+    "headlineHighlight": "ein Pilot",
+    "body": "Sie müssen an kein Großprojekt glauben, um anzufangen. Wir nehmen einen einzigen Prozess, der bei Ihnen jede Woche Zeit kostet, und automatisieren ihn. Festpreis, klarer Zeitrahmen, definiertes Ergebnis. Danach entscheiden Sie, ob mehr daraus wird. Und falls der Pilot zeigt, dass KI für Ihren Fall nichts bringt, wissen Sie auch das. Dann hat Sie diese Erkenntnis genau einen Piloten gekostet, nicht ein Jahresbudget.",
+    "point1": "Ein Prozess, von Ihnen gewählt",
+    "point2": "Festpreis, vorher vereinbart",
+    "point3": "Ihre Daten bleiben in der EU, DSGVO-konform",
+    "cta": "Besprechen Sie Ihren Piloten mit mir",
+    "ctaMicrocopy": "Kostenlos, 30 Minuten, kein Verkaufsgespräch."
+  },
   "process": {
     "headline": "So",
     "headlineHighlight": "einfach",
