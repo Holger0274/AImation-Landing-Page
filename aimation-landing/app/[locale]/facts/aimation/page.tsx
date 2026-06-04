@@ -85,7 +85,10 @@ export default async function GroundingPage({
       addressCountry: 'DE',
     },
     email: 'kontakt@aimation.de',
-    sameAs: ['https://www.linkedin.com/in/holgerpeschke/'],
+    sameAs: [
+      'https://www.linkedin.com/company/aimation-ug',
+      'https://www.linkedin.com/in/holgerpeschke/',
+    ],
     description: isEn
       ? 'AImation UG (haftungsbeschränkt) is a consulting company for AI training, AI consulting and the implementation of AI automation in small and medium-sized enterprises.'
       : 'AImation UG (haftungsbeschränkt) ist ein Beratungsunternehmen für KI-Schulung, KI-Beratung und die Umsetzung von KI-Automatisierung in kleinen und mittleren Unternehmen.',
@@ -288,7 +291,19 @@ export default async function GroundingPage({
                 <a href="mailto:kontakt@aimation.de" className="text-[#60AFFF] hover:underline">kontakt@aimation.de</a>
               </dd>
 
-              <dt className="font-semibold text-[#071013]">LinkedIn</dt>
+              <dt className="font-semibold text-[#071013]">LinkedIn {isEn ? 'Company' : 'Unternehmen'}</dt>
+              <dd className="text-gray-700">
+                <a
+                  href="https://www.linkedin.com/company/aimation-ug"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#60AFFF] hover:underline"
+                >
+                  linkedin.com/company/aimation-ug
+                </a>
+              </dd>
+
+              <dt className="font-semibold text-[#071013]">LinkedIn {isEn ? 'Founder' : 'Gründer'}</dt>
               <dd className="text-gray-700">
                 <a
                   href="https://www.linkedin.com/in/holgerpeschke/"

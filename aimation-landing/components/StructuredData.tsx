@@ -55,7 +55,7 @@ export function OrganizationSchema({ siteUrl = 'https://www.aimation.de' }: Orga
     },
     "sameAs": [
       "https://www.linkedin.com/in/holgerpeschke/",
-      "https://www.linkedin.com/company/aimation"
+      "https://www.linkedin.com/company/aimation-ug"
     ],
     "founder": {
       "@type": "Person",
@@ -190,7 +190,7 @@ export function LocalBusinessSchema({ siteUrl = 'https://www.aimation.de' }: Org
       ]
     },
     "sameAs": [
-      "https://www.linkedin.com/company/aimation",
+      "https://www.linkedin.com/company/aimation-ug",
       "https://www.linkedin.com/in/holgerpeschke/"
     ]
   };
