@@ -272,101 +272,90 @@
     "headline": "So sieht",
     "headlineHighlight": "KI-Automatisierung",
     "headlineEnd": "in der Praxis aus",
-    "subline": "Konkrete Anwendungsfälle: von der Patentrecherche bis zum Technologie-Radar.",
+    "subline": "Anwendungsfälle aus dem Entwicklungsalltag: von der Patentrecherche bis zum Projektreview.",
     "scrollLeft": "Scroll left",
     "scrollRight": "Scroll right",
     "ctaText": "Haben Sie einen ähnlichen Anwendungsfall im Kopf?",
     "ctaButton": "Kostenloses Erstgespräch buchen",
     "detailsView": "Details ansehen",
-    "comingSoon": "Coming Soon",
+    "comingSoon": "In Planung",
     "status": {
       "completed": "PoC abgeschlossen",
       "in-progress": "In Entwicklung",
-      "coming-soon": "Coming Soon"
+      "coming-soon": "In Planung"
     },
     "cards": {
       "patent-research": {
-        "title": "Patentrecherche & Prior Art",
+        "title": "Patentrecherche und Prior Art",
         "description": "Automatisierte Analyse von Patentdatenbanken. Findet relevante Prior Art, identifiziert Wettbewerber-Patente und erstellt strukturierte Übersichten.",
-        "metrics": "80% schnellere Recherche",
+        "metrics": "Prior Art vollständig im Blick, bevor die Konstruktion startet. Konto: Qualität und Timing.",
         "alt": "Patent-Recherche Workflow"
+      },
+      "project-review-dashboard": {
+        "title": "Projekt-Review-Dashboard",
+        "description": "Automatisierte Analyse des Projektreifegrads mit Ampelsystem. Identifiziert Schwachstellen, bewertet Freigabekriterien und gibt datenbasierte Empfehlungen für die nächsten Entwicklungsschritte.",
+        "metrics": "Reifegrad auf einen Blick, Schwachstellen zeigen sich vor dem Gate statt danach. Konto: Qualität und Timing.",
+        "alt": "Projekt Review Dashboard mit Reifegradanalyse"
+      },
+      "email-classification": {
+        "title": "Technische Anfragen automatisch vorsortieren",
+        "description": "Klassifizierung eingehender technischer Anfragen und Änderungsanträge. Sammelt Kontext aus Ihren Systemen und legt einen Antwortentwurf vor. Jede beantwortete Anfrage fließt in die Lessons-Learned-Basis.",
+        "metrics": "Antworten am selben Tag, und jede Antwort wird zu gesichertem Wissen. Konto: Timing und Kosten.",
+        "alt": "E-Mail Klassifizierungs-Flow"
       },
       "tech-scouting": {
         "title": "Technologie-Scouting",
-        "description": "Kontinuierliches Monitoring von Technologie-Trends und Innovationen. Filtert relevante Entwicklungen aus Fachpublikationen, Papers und News.",
-        "metrics": "Wöchentlicher Tech-Radar",
+        "description": "Kontinuierliches Monitoring von Technologie-Trends und Innovationen. Filtert relevante Entwicklungen aus Fachpublikationen, Papers und News und meldet, was Ihre Produkte betrifft.",
+        "metrics": "Relevante Entwicklungen landen wöchentlich auf Ihrem Tisch, ohne Suchaufwand. Konto: Timing und Qualität.",
         "alt": "Tech-Scouting Automatisierung"
       },
       "knowledge-graph-management": {
-        "title": "Knowledge Graph Management",
-        "description": "Wissen gezielt miteinander verknüpfen und ein zweites Brain bauen. Vernetzte Informationsarchitektur mit intelligenter Verknüpfung und semantischer Suche.",
-        "metrics": "Vernetztes Wissensmanagement",
+        "title": "Engineering-Wissen vernetzen",
+        "description": "Berichte, Protokolle und Dokumente werden automatisch verschlagwortet, semantisch verknüpft und vernetzt. Jede Frage in Sekunden beantwortet, mit Quellenangabe. Nie mehr Wissen verlieren oder lange suchen.",
+        "metrics": "Jede Antwort in Sekunden auffindbar, mit Quelle. Konto: Timing und Qualität.",
         "alt": "Knowledge Graph Struktur"
       },
-      "email-classification": {
-        "title": "E-Mail Klassifizierung",
-        "description": "Intelligente Kategorisierung eingehender E-Mails. Erkennt Anfrage-Typ, Dringlichkeit und routet automatisch an die richtige Stelle.",
-        "metrics": "60% weniger Sortieraufwand",
-        "alt": "E-Mail Klassifizierungs-Flow"
+      "customer-meeting-prep": {
+        "title": "Technische Kundengespräche vorbereiten",
+        "description": "Briefing vor jeder Abstimmungsrunde: Anforderungsstand, offene Punkte, letzte Protokolle, aktuelle Entwicklungen beim Kunden. Kompakt und vollständig.",
+        "metrics": "Vorbereitet in Minuten, kein offener Punkt wird vergessen. Konto: Timing und Qualität.",
+        "alt": "Kundenvorbereitung Dashboard"
+      },
+      "audit-documentation": {
+        "title": "Audit und Dokumentenanalyse",
+        "description": "Intelligente Analyse und Kategorisierung von Audit-Dokumenten. Automatisches Extrahieren von Compliance-Anforderungen, Risiken und Handlungsempfehlungen aus Prüfberichten.",
+        "metrics": "Anforderungen und Risiken aus Prüfdokumenten automatisch erfasst. Konto: Qualität und Kosten.",
+        "alt": "Audit-Dokumentenanalyse Dashboard"
       },
       "meeting-transcript-analysis": {
-        "title": "Meeting-Transkript-Analyse",
-        "description": "Transkripte aus Meetings automatisch in To-Dos, Ideen, Probleme, Wissen und Lösungen kategorisieren. Speicherung in Vektordatenbanken für semantische Suche. Coming soon: Audit-Dokumente, automatisierte Kategorisierung.",
-        "metrics": "PoC in Entwicklung",
+        "title": "Besprechungen ohne Protokollaufwand",
+        "description": "Transkripte aus Meetings automatisch in To-Dos, Erkenntnisse und offene Punkte kategorisieren. Speicherung für semantische Suche.",
+        "metrics": "To-dos und Erkenntnisse sind festgehalten, bevor der Raum leer ist. Konto: Kosten und Timing.",
         "alt": "Transkript-Analyse Pipeline"
+      },
+      "multi-agent-debate": {
+        "title": "Konzepte aus mehreren Blickwinkeln prüfen",
+        "description": "KI-Agenten prüfen Ideen aus verschiedenen Perspektiven. Analysiert Konzepte systematisch, erweiterbar mit der 6-Hüte-Innovationsmethode für umfassende Ideenvalidierung.",
+        "metrics": "Schwächen einer Idee zeigen sich, bevor Budget hineinfließt. Konto: Qualität und Kosten.",
+        "alt": "Multi-Agenten-Debattier-System"
       },
       "competitor-benchmark": {
         "title": "Wettbewerbs-Benchmark",
-        "description": "Automatisierte Analyse von Wettbewerbern. Vergleicht Preise, Features, Positionierung und erstellt regelmäßige Reports.",
+        "description": "Automatisierte Analyse von Wettbewerbern. Vergleicht Preise, Funktionen und Positionierung und erstellt regelmäßige Reports.",
+        "metrics": "Preise, Funktionen und Positionierung der Wettbewerber regelmäßig im Vergleich. Konto: Qualität und Timing.",
         "alt": "Benchmark-Prozess"
-      },
-      "multi-agent-debate": {
-        "title": "Multi-Agenten-Debattier-System",
-        "description": "KI-Agenten debattieren Ideen aus verschiedenen Perspektiven. Drei Agenten (positiv, neutral, negativ) analysieren Konzepte systematisch. Erweiterbar mit der 6-Hüte-Innovationsmethode für umfassende Ideenvalidierung.",
-        "metrics": "PoC in Entwicklung",
-        "alt": "Multi-Agenten-Debattier-System"
-      },
-      "audit-documentation": {
-        "title": "Audit & Dokumentenanalyse",
-        "description": "Intelligente Analyse und Kategorisierung von Audit-Dokumenten. Automatisches Extrahieren von Compliance-Anforderungen, Risiken und Handlungsempfehlungen aus Prüfberichten und Dokumentationen.",
-        "metrics": "Compliance-Ready",
-        "alt": "Audit-Dokumentenanalyse Dashboard"
-      },
-      "document-tagging-ai": {
-        "title": "Intelligentes Dokument-Tagging",
-        "description": "Automatische Kategorisierung und intelligente Verlinkung von Dokumenten. Erstellt semantische Verbindungen zwischen Berichten, Anforderungen und Reviews. Nie mehr Wissen verlieren oder lange suchen.",
-        "metrics": "Intelligente Vernetzung",
-        "alt": "Intelligentes Dokument-Tagging System"
-      },
-      "customer-meeting-prep": {
-        "title": "Automatisierte Kundenvorbereitung",
-        "description": "Automatisches Sammeln und Aufbereiten von Kundeninformationen für optimale Meeting-Vorbereitung. Analysiert LinkedIn, News, Geschäftsberichte und erstellt kompakte Briefings.",
-        "metrics": "70% schnellere Vorbereitung",
-        "alt": "Kundenvorbereitung Dashboard"
       },
       "innovation-assessment-dashboard": {
         "title": "Innovations-Assessment Dashboard",
-        "description": "Systematische Bewertung von Technologien und Innovationsideen. Analysiert technische Machbarkeit, Herstellbarkeit und Wirtschaftlichkeit. Datenbasierte Entscheidungsgrundlage für Ihr Innovations-Portfolio.",
-        "metrics": "Objektive Innovation-Scores",
+        "description": "Systematische Bewertung von Technologien und Innovationsideen. Analysiert technische Machbarkeit, Herstellbarkeit und Wirtschaftlichkeit.",
+        "metrics": "Machbarkeit und Wirtschaftlichkeit vergleichbar bewertet, statt nach Bauchgefühl. Konto: Qualität und Kosten.",
         "alt": "Innovations-Assessment Dashboard"
       },
-      "project-review-dashboard": {
-        "title": "Projekt Review Dashboard",
-        "description": "Automatisierte Analyse des Projektreifegrads mit Ampelsystem. Identifiziert Schwachstellen, bewertet Freigabekriterien und gibt datenbasierte Empfehlungen für die nächsten Entwicklungsschritte. Dashboard zeigt auf einen Blick den Status aller Qualitätsparameter.",
-        "metrics": "Strukturierte Freigabe-Prozesse",
-        "alt": "Projekt Review Dashboard mit Reifegradanalyse"
-      },
       "analysis-tools-framework": {
-        "title": "KI-gestützte Analyse-Tools",
-        "description": "Systematische Kundenbedarfsanalyse mit Jobs-to-be-Done Framework, Business Model Canvas und Customer Journey Mapping. KI unterstützt bei der Identifikation von Customer Pain Points, Optimierung der Value Proposition und Entwicklung kundenorientierter Produktstrategien.",
-        "metrics": "Datenbasierte Produktstrategie",
-        "alt": "Business Analyse Tools Workshop"
-      },
-      "tiktok-trend-analysis": {
-        "title": "TikTok Trend-Erkennung",
-        "description": "Automatisches Monitoring von TikTok-Trends zur Identifikation von Produkterweiterungs- und Optimierungsmöglichkeiten. KI analysiert virale Inhalte, Engagement-Patterns und User-Feedback, um relevante Insights für Produktentwicklung und Marketing zu extrahieren.",
-        "metrics": "Trend-basierte Innovation",
-        "alt": "TikTok Trend Analytics Dashboard"
+        "title": "Kundenbedarf systematisch verstehen",
+        "description": "Systematische Kundenbedarfsanalyse mit Jobs-to-be-Done Framework und Customer Journey Mapping. KI unterstützt bei der Identifikation von Anforderungen und Schmerzpunkten.",
+        "metrics": "Anforderungen und Schmerzpunkte der Kunden strukturiert statt anekdotisch. Konto: Qualität.",
+        "alt": "Business Analyse Tools"
       }
     }
   },

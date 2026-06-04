@@ -275,101 +275,90 @@
     "headline": "What",
     "headlineHighlight": "AI automation",
     "headlineEnd": "looks like in practice",
-    "subline": "Concrete use cases: from patent research to technology radar.",
+    "subline": "Use cases from the engineering day-to-day: from patent research to project reviews.",
     "scrollLeft": "Scroll left",
     "scrollRight": "Scroll right",
     "ctaText": "Do you have a similar use case in mind?",
     "ctaButton": "Book a free initial consultation",
     "detailsView": "View details",
-    "comingSoon": "Coming Soon",
+    "comingSoon": "Planned",
     "status": {
       "completed": "PoC completed",
       "in-progress": "In development",
-      "coming-soon": "Coming Soon"
+      "coming-soon": "Planned"
     },
     "cards": {
       "patent-research": {
-        "title": "Patent Research & Prior Art",
+        "title": "Patent Research and Prior Art",
         "description": "Automated analysis of patent databases. Finds relevant prior art, identifies competitor patents and produces structured overviews.",
-        "metrics": "80% faster research",
+        "metrics": "Prior art fully in view before design work begins. Account: quality and timing.",
         "alt": "Patent research workflow"
+      },
+      "project-review-dashboard": {
+        "title": "Project Review Dashboard",
+        "description": "Automated analysis of project maturity with a traffic-light system. Spots weak points, assesses release criteria and gives data-based recommendations for the next development steps.",
+        "metrics": "Maturity at a glance, weak points visible before the gate rather than after. Account: quality and timing.",
+        "alt": "Project review dashboard with maturity analysis"
+      },
+      "email-classification": {
+        "title": "Automatically pre-sort technical requests",
+        "description": "Classification of incoming technical requests and change orders. Gathers context from your systems and drafts a reply. Every answered request feeds into the lessons-learned base.",
+        "metrics": "Replies the same day, and every answer becomes secured knowledge. Account: timing and cost.",
+        "alt": "Email classification flow"
       },
       "tech-scouting": {
         "title": "Technology Scouting",
-        "description": "Continuous monitoring of technology trends and innovations. Filters relevant developments out of journals, papers and news.",
-        "metrics": "Weekly tech radar",
+        "description": "Continuous monitoring of technology trends and innovations. Filters relevant developments out of journals, papers and news and flags what affects your products.",
+        "metrics": "Relevant developments land on your desk weekly, without any search effort. Account: timing and quality.",
         "alt": "Tech scouting automation"
       },
       "knowledge-graph-management": {
-        "title": "Knowledge Graph Management",
-        "description": "Connect knowledge on purpose and build a second brain. A linked information architecture with smart connections and semantic search.",
-        "metrics": "Connected knowledge management",
+        "title": "Connect engineering knowledge",
+        "description": "Reports, minutes and documents are tagged automatically, linked semantically and networked. Every question answered in seconds, with a source reference. No more lost knowledge or long searches.",
+        "metrics": "Every answer findable in seconds, with source. Account: timing and quality.",
         "alt": "Knowledge graph structure"
       },
-      "email-classification": {
-        "title": "Email Classification",
-        "description": "Smart categorization of incoming emails. Detects request type and urgency, then routes each message to the right place automatically.",
-        "metrics": "60% less sorting effort",
-        "alt": "Email classification flow"
+      "customer-meeting-prep": {
+        "title": "Prepare technical client meetings",
+        "description": "A briefing before every review round: requirements status, open points, latest minutes, current developments at the client. Compact and complete.",
+        "metrics": "Prepared in minutes, no open point gets forgotten. Account: timing and quality.",
+        "alt": "Client preparation dashboard"
+      },
+      "audit-documentation": {
+        "title": "Audit and Document Analysis",
+        "description": "Smart analysis and categorization of audit documents. Automatically extracts compliance requirements, risks and recommended actions from audit reports.",
+        "metrics": "Requirements and risks from audit documents captured automatically. Account: quality and cost.",
+        "alt": "Audit document analysis dashboard"
       },
       "meeting-transcript-analysis": {
-        "title": "Meeting Transcript Analysis",
-        "description": "Automatically sorts meeting transcripts into to-dos, ideas, problems, knowledge and solutions. Stored in vector databases for semantic search. Coming soon: audit documents, automated categorization.",
-        "metrics": "PoC in development",
+        "title": "Meetings without the minutes effort",
+        "description": "Meeting transcripts automatically sorted into to-dos, insights and open points. Stored for semantic search.",
+        "metrics": "To-dos and insights captured before the room empties. Account: cost and timing.",
         "alt": "Transcript analysis pipeline"
+      },
+      "multi-agent-debate": {
+        "title": "Review concepts from multiple angles",
+        "description": "AI agents examine ideas from different perspectives. Analyzes concepts systematically, extendable with the Six Thinking Hats method for thorough idea validation.",
+        "metrics": "Weaknesses in an idea surface before budget flows in. Account: quality and cost.",
+        "alt": "Multi-agent debate system"
       },
       "competitor-benchmark": {
         "title": "Competitor Benchmark",
         "description": "Automated competitor analysis. Compares prices, features and positioning, and produces regular reports.",
+        "metrics": "Competitor prices, features and positioning in regular comparison. Account: quality and timing.",
         "alt": "Benchmark process"
-      },
-      "multi-agent-debate": {
-        "title": "Multi-Agent Debate System",
-        "description": "AI agents debate ideas from different angles. Three agents (positive, neutral, negative) analyze concepts systematically. Extendable with the Six Thinking Hats method for thorough idea validation.",
-        "metrics": "PoC in development",
-        "alt": "Multi-agent debate system"
-      },
-      "audit-documentation": {
-        "title": "Audit & Document Analysis",
-        "description": "Smart analysis and categorization of audit documents. Automatically extracts compliance requirements, risks and recommended actions from audit reports and documentation.",
-        "metrics": "Compliance-ready",
-        "alt": "Audit document analysis dashboard"
-      },
-      "document-tagging-ai": {
-        "title": "Smart Document Tagging",
-        "description": "Automatic categorization and smart linking of documents. Creates semantic connections between reports, requirements and reviews. No more lost knowledge or long searches.",
-        "metrics": "Smart cross-linking",
-        "alt": "Smart document tagging system"
-      },
-      "customer-meeting-prep": {
-        "title": "Automated Client Preparation",
-        "description": "Automatically gathers and prepares client information for a solid meeting prep. Analyzes LinkedIn, news and annual reports, then writes compact briefings.",
-        "metrics": "70% faster preparation",
-        "alt": "Client preparation dashboard"
       },
       "innovation-assessment-dashboard": {
         "title": "Innovation Assessment Dashboard",
-        "description": "Systematic evaluation of technologies and innovation ideas. Analyzes technical feasibility, manufacturability and profitability. A data-based basis for decisions on your innovation portfolio.",
-        "metrics": "Objective innovation scores",
+        "description": "Systematic evaluation of technologies and innovation ideas. Analyzes technical feasibility, manufacturability and profitability.",
+        "metrics": "Feasibility and profitability assessed comparably, not by gut feel. Account: quality and cost.",
         "alt": "Innovation assessment dashboard"
       },
-      "project-review-dashboard": {
-        "title": "Project Review Dashboard",
-        "description": "Automated analysis of project maturity with a traffic-light system. Spots weak points, assesses release criteria and gives data-based recommendations for the next development steps. The dashboard shows the status of every quality parameter at a glance.",
-        "metrics": "Structured release processes",
-        "alt": "Project review dashboard with maturity analysis"
-      },
       "analysis-tools-framework": {
-        "title": "AI-Powered Analysis Tools",
-        "description": "Systematic customer needs analysis with the Jobs-to-be-Done framework, Business Model Canvas and customer journey mapping. AI helps identify customer pain points, sharpen the value proposition and develop customer-focused product strategies.",
-        "metrics": "Data-based product strategy",
-        "alt": "Business analysis tools workshop"
-      },
-      "tiktok-trend-analysis": {
-        "title": "TikTok Trend Detection",
-        "description": "Automatic monitoring of TikTok trends to spot opportunities for product extensions and improvements. AI analyzes viral content, engagement patterns and user feedback to extract relevant insights for product development and marketing.",
-        "metrics": "Trend-based innovation",
-        "alt": "TikTok trend analytics dashboard"
+        "title": "Understand customer needs systematically",
+        "description": "Systematic customer needs analysis with the Jobs-to-be-Done framework and customer journey mapping. AI helps identify requirements and pain points.",
+        "metrics": "Customer requirements and pain points structured rather than anecdotal. Account: quality.",
+        "alt": "Business analysis tools"
       }
     }
   },

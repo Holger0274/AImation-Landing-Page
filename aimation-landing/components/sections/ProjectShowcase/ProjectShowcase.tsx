@@ -9,12 +9,12 @@ import ProjectCard from './ProjectCard';
 const PROJECTS: Project[] = [
   {
     id: 'patent-research',
-    title: 'Patentrecherche & Prior Art',
+    title: 'Patentrecherche und Prior Art',
     description: 'Automatisierte Analyse von Patentdatenbanken. Findet relevante Prior Art, identifiziert Wettbewerber-Patente und erstellt strukturierte Übersichten.',
     solutionWorld: 'KNOW',
     status: 'completed',
     tags: ['Perplexity', 'Claude', 'Patent-APIs'],
-    metrics: '80% schnellere Recherche',
+    metrics: 'Prior Art vollständig im Blick, bevor die Konstruktion startet.',
     detailUrl: '/use-cases/patentrecherche-ki',
     image: {
       type: 'image',
@@ -23,42 +23,27 @@ const PROJECTS: Project[] = [
     }
   },
   {
-    id: 'tech-scouting',
-    title: 'Technologie-Scouting',
-    description: 'Kontinuierliches Monitoring von Technologie-Trends und Innovationen. Filtert relevante Entwicklungen aus Fachpublikationen, Papers und News.',
-    solutionWorld: 'KNOW',
-    status: 'completed',
-    tags: ['RSS', 'Claude', 'Notion'],
-    metrics: 'Wöchentlicher Tech-Radar',
+    id: 'project-review-dashboard',
+    title: 'Projekt-Review-Dashboard',
+    description: 'Automatisierte Analyse des Projektreifegrads mit Ampelsystem. Identifiziert Schwachstellen, bewertet Freigabekriterien und gibt datenbasierte Empfehlungen für die nächsten Entwicklungsschritte.',
+    solutionWorld: 'THINK',
+    status: 'coming-soon',
+    tags: ['Claude', 'Analytics', 'Dashboard'],
+    metrics: 'Reifegrad auf einen Blick, Schwachstellen zeigen sich vor dem Gate statt danach.',
     image: {
       type: 'image',
-      src: '/images/use-cases/tech-scouting.png',
-      alt: 'Tech-Scouting Automatisierung'
-    }
-  },
-  {
-    id: 'knowledge-graph-management',
-    title: 'Knowledge Graph Management',
-    description: 'Wissen gezielt miteinander verknüpfen und ein zweites Brain bauen. Vernetzte Informationsarchitektur mit intelligenter Verknüpfung und semantischer Suche.',
-    solutionWorld: 'KNOW',
-    status: 'completed',
-    tags: ['Obsidian', 'Claude Code', 'Knowledge Graph'],
-    metrics: 'Vernetztes Wissensmanagement',
-    detailUrl: '/use-cases/knowledge-graph-management',
-    image: {
-      type: 'image',
-      src: '/images/use-cases/knowledge-graph.png',
-      alt: 'Knowledge Graph Struktur'
+      src: '/images/use-cases/project-review-dashboard.png',
+      alt: 'Projekt Review Dashboard mit Reifegradanalyse'
     }
   },
   {
     id: 'email-classification',
-    title: 'E-Mail Klassifizierung',
-    description: 'Intelligente Kategorisierung eingehender E-Mails. Erkennt Anfrage-Typ, Dringlichkeit und routet automatisch an die richtige Stelle.',
+    title: 'Technische Anfragen automatisch vorsortieren',
+    description: 'Klassifizierung eingehender technischer Anfragen und Änderungsanträge. Sammelt Kontext aus Ihren Systemen und legt einen Antwortentwurf vor. Jede beantwortete Anfrage fließt in die Lessons-Learned-Basis.',
     solutionWorld: 'FLOW',
     status: 'completed',
     tags: ['OpenAI', 'n8n', 'Outlook'],
-    metrics: '60% weniger Sortieraufwand',
+    metrics: 'Antworten am selben Tag, und jede Antwort wird zu gesichertem Wissen.',
     detailUrl: '/use-cases/email-klassifizierung',
     image: {
       type: 'image',
@@ -67,82 +52,42 @@ const PROJECTS: Project[] = [
     }
   },
   {
-    id: 'meeting-transcript-analysis',
-    title: 'Meeting-Transkript-Analyse',
-    description: 'Transkripte aus Meetings automatisch in To-Dos, Ideen, Probleme, Wissen und Lösungen kategorisieren. Speicherung in Vektordatenbanken für semantische Suche. Coming soon: Audit-Dokumente, automatisierte Kategorisierung.',
-    solutionWorld: 'WORK',
-    status: 'in-progress',
-    tags: ['Transkription', 'Vektordatenbank', 'Kategorisierung'],
-    metrics: 'PoC in Entwicklung',
-    image: {
-      type: 'image',
-      src: '/images/use-cases/meeting-transcript.png',
-      alt: 'Transkript-Analyse Pipeline'
-    }
-  },
-  {
-    id: 'competitor-benchmark',
-    title: 'Wettbewerbs-Benchmark',
-    description: 'Automatisierte Analyse von Wettbewerbern. Vergleicht Preise, Features, Positionierung und erstellt regelmäßige Reports.',
-    solutionWorld: 'THINK',
-    status: 'coming-soon',
-    tags: ['Web Scraping', 'Claude', 'Automation'],
-    image: {
-      type: 'image',
-      src: '/images/use-cases/competitor-benchmark.png',
-      alt: 'Benchmark-Prozess'
-    }
-  },
-  {
-    id: 'multi-agent-debate',
-    title: 'Multi-Agenten-Debattier-System',
-    description: 'KI-Agenten debattieren Ideen aus verschiedenen Perspektiven. Drei Agenten (positiv, neutral, negativ) analysieren Konzepte systematisch. Erweiterbar mit der 6-Hüte-Innovationsmethode für umfassende Ideenvalidierung.',
-    solutionWorld: 'THINK',
-    status: 'in-progress',
-    tags: ['Claude', 'Multi-Agent', '6-Hüte-Methode'],
-    metrics: 'PoC in Entwicklung',
-    image: {
-      type: 'image',
-      src: '/images/use-cases/multi-agent-debate.png',
-      alt: 'Multi-Agenten-Debattier-System'
-    }
-  },
-  {
-    id: 'audit-documentation',
-    title: 'Audit & Dokumentenanalyse',
-    description: 'Intelligente Analyse und Kategorisierung von Audit-Dokumenten. Automatisches Extrahieren von Compliance-Anforderungen, Risiken und Handlungsempfehlungen aus Prüfberichten und Dokumentationen.',
+    id: 'tech-scouting',
+    title: 'Technologie-Scouting',
+    description: 'Kontinuierliches Monitoring von Technologie-Trends und Innovationen. Filtert relevante Entwicklungen aus Fachpublikationen, Papers und News und meldet, was Ihre Produkte betrifft.',
     solutionWorld: 'KNOW',
-    status: 'coming-soon',
-    tags: ['Claude', 'Dokumentenanalyse', 'OCR'],
-    metrics: 'Compliance-Ready',
+    status: 'completed',
+    tags: ['RSS', 'Claude', 'Notion'],
+    metrics: 'Relevante Entwicklungen landen wöchentlich auf Ihrem Tisch, ohne Suchaufwand.',
     image: {
       type: 'image',
-      src: '/images/use-cases/audit-documentation.png',
-      alt: 'Audit-Dokumentenanalyse Dashboard'
+      src: '/images/use-cases/tech-scouting.png',
+      alt: 'Tech-Scouting Automatisierung'
     }
   },
   {
-    id: 'document-tagging-ai',
-    title: 'Intelligentes Dokument-Tagging',
-    description: 'Automatische Kategorisierung und intelligente Verlinkung von Dokumenten. Erstellt semantische Verbindungen zwischen Berichten, Anforderungen und Reviews. Nie mehr Wissen verlieren oder lange suchen.',
+    id: 'knowledge-graph-management',
+    title: 'Engineering-Wissen vernetzen',
+    description: 'Berichte, Protokolle und Dokumente werden automatisch verschlagwortet, semantisch verknüpft und vernetzt. Jede Frage in Sekunden beantwortet, mit Quellenangabe. Nie mehr Wissen verlieren oder lange suchen.',
     solutionWorld: 'KNOW',
-    status: 'coming-soon',
-    tags: ['Claude', 'Vektordatenbank', 'Semantic Search'],
-    metrics: 'Intelligente Vernetzung',
+    status: 'completed',
+    tags: ['Obsidian', 'Claude Code', 'Knowledge Graph'],
+    metrics: 'Jede Antwort in Sekunden auffindbar, mit Quelle.',
+    detailUrl: '/use-cases/knowledge-graph-management',
     image: {
       type: 'image',
-      src: '/images/use-cases/document-tagging.png',
-      alt: 'Intelligentes Dokument-Tagging System'
+      src: '/images/use-cases/knowledge-graph.png',
+      alt: 'Knowledge Graph Struktur'
     }
   },
   {
     id: 'customer-meeting-prep',
-    title: 'Automatisierte Kundenvorbereitung',
-    description: 'Automatisches Sammeln und Aufbereiten von Kundeninformationen für optimale Meeting-Vorbereitung. Analysiert LinkedIn, News, Geschäftsberichte und erstellt kompakte Briefings.',
+    title: 'Technische Kundengespräche vorbereiten',
+    description: 'Briefing vor jeder Abstimmungsrunde: Anforderungsstand, offene Punkte, letzte Protokolle, aktuelle Entwicklungen beim Kunden. Kompakt und vollständig.',
     solutionWorld: 'WORK',
     status: 'coming-soon',
     tags: ['Perplexity', 'n8n', 'LinkedIn API'],
-    metrics: '70% schnellere Vorbereitung',
+    metrics: 'Vorbereitet in Minuten, kein offener Punkt wird vergessen.',
     image: {
       type: 'image',
       src: '/images/use-cases/customer-preparation.png',
@@ -150,13 +95,69 @@ const PROJECTS: Project[] = [
     }
   },
   {
+    id: 'audit-documentation',
+    title: 'Audit und Dokumentenanalyse',
+    description: 'Intelligente Analyse und Kategorisierung von Audit-Dokumenten. Automatisches Extrahieren von Compliance-Anforderungen, Risiken und Handlungsempfehlungen aus Prüfberichten.',
+    solutionWorld: 'KNOW',
+    status: 'coming-soon',
+    tags: ['Claude', 'Dokumentenanalyse', 'OCR'],
+    metrics: 'Anforderungen und Risiken aus Prüfdokumenten automatisch erfasst.',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/audit-documentation.png',
+      alt: 'Audit-Dokumentenanalyse Dashboard'
+    }
+  },
+  {
+    id: 'meeting-transcript-analysis',
+    title: 'Besprechungen ohne Protokollaufwand',
+    description: 'Transkripte aus Meetings automatisch in To-Dos, Erkenntnisse und offene Punkte kategorisieren. Speicherung für semantische Suche.',
+    solutionWorld: 'WORK',
+    status: 'in-progress',
+    tags: ['Transkription', 'Vektordatenbank', 'Kategorisierung'],
+    metrics: 'To-dos und Erkenntnisse sind festgehalten, bevor der Raum leer ist.',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/meeting-transcript.png',
+      alt: 'Transkript-Analyse Pipeline'
+    }
+  },
+  {
+    id: 'multi-agent-debate',
+    title: 'Konzepte aus mehreren Blickwinkeln prüfen',
+    description: 'KI-Agenten prüfen Ideen aus verschiedenen Perspektiven. Analysiert Konzepte systematisch, erweiterbar mit der 6-Hüte-Innovationsmethode für umfassende Ideenvalidierung.',
+    solutionWorld: 'THINK',
+    status: 'in-progress',
+    tags: ['Claude', 'Multi-Agent', '6-Hüte-Methode'],
+    metrics: 'Schwächen einer Idee zeigen sich, bevor Budget hineinfließt.',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/multi-agent-debate.png',
+      alt: 'Multi-Agenten-Debattier-System'
+    }
+  },
+  {
+    id: 'competitor-benchmark',
+    title: 'Wettbewerbs-Benchmark',
+    description: 'Automatisierte Analyse von Wettbewerbern. Vergleicht Preise, Funktionen und Positionierung und erstellt regelmäßige Reports.',
+    solutionWorld: 'THINK',
+    status: 'coming-soon',
+    tags: ['Web Scraping', 'Claude', 'Automation'],
+    metrics: 'Preise, Funktionen und Positionierung der Wettbewerber regelmäßig im Vergleich.',
+    image: {
+      type: 'image',
+      src: '/images/use-cases/competitor-benchmark.png',
+      alt: 'Benchmark-Prozess'
+    }
+  },
+  {
     id: 'innovation-assessment-dashboard',
     title: 'Innovations-Assessment Dashboard',
-    description: 'Systematische Bewertung von Technologien und Innovationsideen. Analysiert technische Machbarkeit, Herstellbarkeit und Wirtschaftlichkeit. Datenbasierte Entscheidungsgrundlage für Ihr Innovations-Portfolio.',
+    description: 'Systematische Bewertung von Technologien und Innovationsideen. Analysiert technische Machbarkeit, Herstellbarkeit und Wirtschaftlichkeit.',
     solutionWorld: 'THINK',
     status: 'coming-soon',
     tags: ['Claude', 'Scoring-Algorithmen', 'Analytics'],
-    metrics: 'Objektive Innovation-Scores',
+    metrics: 'Machbarkeit und Wirtschaftlichkeit vergleichbar bewertet, statt nach Bauchgefühl.',
     image: {
       type: 'image',
       src: '/images/use-cases/innovation-dashboard.png',
@@ -164,45 +165,17 @@ const PROJECTS: Project[] = [
     }
   },
   {
-    id: 'project-review-dashboard',
-    title: 'Projekt Review Dashboard',
-    description: 'Automatisierte Analyse des Projektreifegrads mit Ampelsystem. Identifiziert Schwachstellen, bewertet Freigabekriterien und gibt datenbasierte Empfehlungen für die nächsten Entwicklungsschritte. Dashboard zeigt auf einen Blick den Status aller Qualitätsparameter.',
-    solutionWorld: 'THINK',
-    status: 'coming-soon',
-    tags: ['Claude', 'Analytics', 'Dashboard'],
-    metrics: 'Strukturierte Freigabe-Prozesse',
-    image: {
-      type: 'image',
-      src: '/images/use-cases/project-review-dashboard.png',
-      alt: 'Projekt Review Dashboard mit Reifegradanalyse'
-    }
-  },
-  {
     id: 'analysis-tools-framework',
-    title: 'KI-gestützte Analyse-Tools',
-    description: 'Systematische Kundenbedarfsanalyse mit Jobs-to-be-Done Framework, Business Model Canvas und Customer Journey Mapping. KI unterstützt bei der Identifikation von Customer Pain Points, Optimierung der Value Proposition und Entwicklung kundenorientierter Produktstrategien.',
+    title: 'Kundenbedarf systematisch verstehen',
+    description: 'Systematische Kundenbedarfsanalyse mit Jobs-to-be-Done Framework und Customer Journey Mapping. KI unterstützt bei der Identifikation von Anforderungen und Schmerzpunkten.',
     solutionWorld: 'THINK',
     status: 'coming-soon',
     tags: ['Business Canvas', 'Jobs-to-be-Done', 'Customer Journey'],
-    metrics: 'Datenbasierte Produktstrategie',
+    metrics: 'Anforderungen und Schmerzpunkte der Kunden strukturiert statt anekdotisch.',
     image: {
       type: 'image',
       src: '/images/use-cases/analysis-tools.png',
-      alt: 'Business Analyse Tools Workshop'
-    }
-  },
-  {
-    id: 'tiktok-trend-analysis',
-    title: 'TikTok Trend-Erkennung',
-    description: 'Automatisches Monitoring von TikTok-Trends zur Identifikation von Produkterweiterungs- und Optimierungsmöglichkeiten. KI analysiert virale Inhalte, Engagement-Patterns und User-Feedback, um relevante Insights für Produktentwicklung und Marketing zu extrahieren.',
-    solutionWorld: 'THINK',
-    status: 'coming-soon',
-    tags: ['TikTok', 'Trend Analysis', 'Product Development'],
-    metrics: 'Trend-basierte Innovation',
-    image: {
-      type: 'image',
-      src: '/images/use-cases/tiktok-trend-analysis.png',
-      alt: 'TikTok Trend Analytics Dashboard'
+      alt: 'Business Analyse Tools'
     }
   }
 ];
