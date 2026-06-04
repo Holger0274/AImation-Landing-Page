@@ -48,7 +48,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <ImagePlaceholder
               type={project.image.placeholderType}
               solutionWorld={project.solutionWorld}
-              alt={project.image.alt}
+              alt={t(`cards.${project.id}.alt`)}
             />
           </motion.div>
         ) : project.image.src ? (
@@ -59,7 +59,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           >
             <Image
               src={project.image.src}
-              alt={project.image.alt}
+              alt={t(`cards.${project.id}.alt`)}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
               className="object-cover"
@@ -80,12 +80,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Title */}
         <h3 className="text-xl font-semibold text-[#071013] font-space-grotesk">
-          {project.title}
+          {t(`cards.${project.id}.title`)}
         </h3>
 
         {/* Description */}
         <p className="text-sm text-gray-600 leading-relaxed font-inter">
-          {project.description}
+          {t(`cards.${project.id}.description`)}
         </p>
 
         {/* Metric (if available) */}
@@ -104,7 +104,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
               />
             </svg>
-            <span className="text-sm font-medium text-[#071013]">{project.metrics}</span>
+            <span className="text-sm font-medium text-[#071013]">{t(`cards.${project.id}.metrics`)}</span>
           </div>
         )}
 
@@ -126,7 +126,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <div className="flex items-center gap-2">
               <div className={`w-2 h-2 rounded-full ${statusConfig.dotColor}`} />
               <span className={`text-xs font-medium ${statusConfig.color}`}>
-                {statusConfig.label}
+                {t(`status.${project.status}`)}
               </span>
             </div>
             {project.detailUrl && project.status === 'completed' && (
