@@ -24,7 +24,7 @@
     "headlineStart": "Anfragen sortieren sich selbst. Wissen bleibt im Haus. Ihre Produkte werden ",
     "headlineHighlight": "schneller reif",
     "headlineEnd": ".",
-    "subline": "KI-Lösungen für Entwicklungsabteilungen im produzierenden Mittelstand. DSGVO-konform, Verarbeitung in der EU. Und wenn KI bei Ihnen nichts bringt, sagen wir Ihnen das.",
+    "subline": "AImation automatisiert die Fleißarbeit in Entwicklungsabteilungen: Berichte, Recherchen, Anfragen, Wissenssicherung. DSGVO-konform, Verarbeitung in der EU, Ihre Daten bleiben Ihre Daten. Und wenn KI für Ihren Fall nichts bringt, sagen wir Ihnen genau das.",
     "cta": "Finden Sie heraus, wo Ihre Entwicklung Zeit verliert",
     "ctaMicrocopy": "Kostenlos, 30 Minuten, kein Verkaufsgespräch.",
     "trust1Label": "Jahre Produktentwicklung und Führung in der Industrie",
@@ -189,7 +189,7 @@
     "items": {
       "schulungen": {
         "title": "Schulungen",
-        "subtitle": "Ihr Team nutzt KI im Entwicklungsalltag",
+        "subtitle": "Ihr Team nutzt KI im Entwicklungsalltag, statt darüber zu diskutieren.",
         "description": "Praxisnah, an Ihren eigenen Aufgaben, in der Sprache von Ingenieuren.",
         "features": [
           "Berichte, Recherchen und Dokumentation in deutlich kürzerer Zeit.",
@@ -207,7 +207,7 @@
       },
       "beratung": {
         "title": "Beratung",
-        "subtitle": "Sie wissen, wo KI in Ihrer Entwicklung Geld spart",
+        "subtitle": "Sie wissen, wo KI in Ihrer Entwicklung Geld spart. Bevor Sie investieren.",
         "description": "Wir bestimmen Ihren Standort und zeigen den Weg, statt Ihnen das nächste Tool zu verkaufen.",
         "features": [
           "Ein klares Bild Ihrer größten Hebel, in Wochen statt Monaten.",
@@ -218,7 +218,7 @@
       },
       "umsetzung": {
         "title": "Umsetzung",
-        "subtitle": "Die Fleißarbeit erledigt sich",
+        "subtitle": "Die Fleißarbeit erledigt sich. Die letzte Freigabe bleibt bei Ihnen.",
         "description": "Wir bauen Systeme, die täglich arbeiten, mit Ihrem Ingenieur als letzter Instanz.",
         "features": [
           "Anfragen, Berichte und Recherchen laufen automatisch, geprüft wird von Menschen.",
@@ -458,13 +458,13 @@
     "introHeadline": "Zwei Welten in einer Person.",
     "introHighlight": "Keine Übersetzung nötig.",
     "introText": "Sie kennen das Problem mit Beratern: Die einen verstehen KI, aber nicht Ihre Entwicklungsprozesse. Die anderen kennen Ihre Welt, holen für KI aber jemanden dazu. Bei mir bekommen Sie beides in einer Person.",
-    "mainText": "20 Jahre habe ich selbst in Entwicklungsabteilungen gearbeitet und Teams geführt. Ich weiß, wo in einer Entwicklungsabteilung die Zeit wirklich verloren geht, weil ich an genau diesen Stellen gesessen habe: in Projektreviews, in Änderungsschleifen, in der Suche nach dem einen Bericht von vor drei Jahren. Und KI ist seit Jahren meine Leidenschaft, nicht erst seit dem Hype. Diese Kombination ist AImation: Ich übersetze zwischen Ihrer Entwicklungswelt und der KI-Welt. Sie brauchen keinen Dolmetscher dazwischen.",
+    "mainText": "20 Jahre habe ich selbst in der Produktentwicklung gearbeitet und Teams geführt. Ich weiß, wo in einer Entwicklungsabteilung die Zeit wirklich verloren geht, weil ich an genau diesen Stellen gesessen habe: in Projektreviews, in Änderungsschleifen, in der Suche nach dem einen Bericht von vor drei Jahren. Und KI ist seit Jahren meine Leidenschaft, nicht erst seit dem Hype. Diese Kombination ist AImation: Ich übersetze zwischen Ihrer Entwicklungswelt und der KI-Welt. Sie brauchen keinen Dolmetscher dazwischen.",
     "quotesLabel": "Das bin ich in 5 Sätzen",
     "ctaPrimary": "Kostenloses Erstgespräch vereinbaren",
     "ctaLinkedIn": "LinkedIn folgen. 18.000 Follower",
     "quotes": [
       {
-        "text": "20 Jahre Führungskraft in der Industrie, in Entwicklungsabteilungen und Engineering-Teams.",
+        "text": "20 Jahre Führungskraft in der Produktentwicklung der Industrie.",
         "highlight": null
       },
       {
@@ -500,12 +500,12 @@
     "differentiators": [
       {
         "title": "Shopfloor bis Führungsebene",
-        "description": "Wir kommen aus Entwicklungsabteilungen produzierender Unternehmen, vom Projektraum bis zur Führungsebene. Welche Probleme wirklich nerven, wissen wir aus eigener Erfahrung, nicht aus einer Studie.",
+        "description": "Ich war selbst jahrelang mittendrin: in Entwicklungsabteilungen produzierender Unternehmen, vom Projektraum bis zur Führungsebene. Welche Probleme wirklich nerven, weiß ich aus eigener Erfahrung, nicht aus einer Studie.",
         "highlight": "Praxis, keine Theorie"
       },
       {
         "title": "Wenn KI nicht hilft, sagen wir das",
-        "description": "Wir schauen uns Ihre Prozesse an. Manchmal lautet die Antwort: KI ist hier falsch. Das kostet uns manchmal einen Auftrag. Trotzdem sagen wir es.",
+        "description": "Ich schaue mir Ihre Prozesse an. Manchmal lautet die Antwort: KI ist hier falsch. Das kostet mich manchmal einen Auftrag. Trotzdem sage ich es.",
         "highlight": "Ehrlich, auch wenn unbequem"
       },
       {
