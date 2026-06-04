@@ -57,10 +57,10 @@ export default async function Home({
         <Hero />
         <PainPoints />
         <BeforeAfter />
-        <Services />
-        <ProjectShowcase />
         <Process />
         <PilotSection />
+        <Services />
+        <ProjectShowcase />
         <SocialProof />
         <About />
         <WhyAImation />
