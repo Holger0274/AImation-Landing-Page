@@ -211,150 +211,117 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Column: Image Bento Collage — desktop only */}
+        {/* Right Column: Scattered photo stack — desktop only */}
         <motion.div
-          className="relative hidden lg:block w-full"
+          className="relative hidden lg:block w-full self-center"
+          style={{ height: '520px' }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Magenta Glow Circle — behind top-left of Image 1 */}
-          <motion.div
-            className="absolute rounded-full pointer-events-none"
-            style={{
-              top: '-20px',
-              left: '-20px',
-              width: '140px',
-              height: '140px',
-              background: 'radial-gradient(circle, rgba(249,0,147,0.18) 0%, rgba(249,0,147,0.04) 70%, transparent 100%)',
-              zIndex: 0,
-              filter: 'blur(8px)',
-            }}
-            variants={floatingVariants}
-            animate="animate"
-          />
-
-          {/* Magenta accent line — bottom-right corner accent */}
+          {/* Magenta Glow — diffuses hinter dem Stack */}
           <div
             className="absolute pointer-events-none"
             style={{
-              bottom: '-4px',
-              right: '8px',
-              width: '60px',
-              height: '3px',
-              background: 'linear-gradient(90deg, transparent, #f90093)',
-              borderRadius: '2px',
+              top: '20%',
+              left: '10%',
+              width: '300px',
+              height: '300px',
+              background: 'radial-gradient(circle, rgba(249,0,147,0.12) 0%, transparent 70%)',
+              filter: 'blur(40px)',
               zIndex: 0,
             }}
           />
 
-          <div
+          {/* Bild 1: Konstruktionszeichnung — groß, oben links, leicht nach links geneigt */}
+          <motion.div
+            variants={imageVariants}
+            whileHover={{ scale: 1.04, rotate: -1, zIndex: 10, transition: { duration: 0.25 } }}
             style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '20px',
-              position: 'relative',
-              zIndex: 1,
+              position: 'absolute',
+              top: '0px',
+              left: '0px',
+              width: '340px',
+              height: '230px',
+              borderRadius: '16px',
+              border: '1px solid rgba(7,16,19,0.08)',
+              boxShadow: '0 16px 48px rgba(7,16,19,0.14)',
+              overflow: 'hidden',
+              transform: 'rotate(-3deg)',
+              zIndex: 3,
             }}
           >
-            {/* Bild 1: Konstruktionszeichnung — volle Breite, 16/9, leicht rotiert */}
-            <motion.div
-              variants={imageVariants}
-              animate="animate"
-              whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
-              style={{
-                gridColumn: '1 / 3',
-                aspectRatio: '16 / 9',
-                borderRadius: '20px',
-                border: '1px solid rgba(7,16,19,0.08)',
-                boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
-                overflow: 'hidden',
-                position: 'relative',
-                transform: 'rotate(-1.5deg)',
-                transformOrigin: 'center center',
-                cursor: 'default',
-              }}
-            >
-              <motion.div
-                className="w-full h-full"
-                variants={float1}
-                animate="animate"
-              >
-                <Image
-                  src={images[0]}
-                  alt="Hand prüft technische Konstruktionszeichnung mit markierten Prüfstellen"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover object-top"
-                  priority
-                />
-              </motion.div>
+            <motion.div className="w-full h-full" variants={float1} animate="animate">
+              <Image
+                src={images[0]}
+                alt="Hand prüft technische Konstruktionszeichnung mit markierten Prüfstellen"
+                fill
+                sizes="340px"
+                className="object-cover object-top"
+                priority
+              />
             </motion.div>
+          </motion.div>
 
-            {/* Bild 2: Projektboard — linke Spalte, 4/3 */}
-            <motion.div
-              variants={imageVariants}
-              whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
-              style={{
-                gridColumn: '1',
-                aspectRatio: '4 / 3',
-                borderRadius: '20px',
-                border: '1px solid rgba(7,16,19,0.08)',
-                boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
-                overflow: 'hidden',
-                position: 'relative',
-                cursor: 'default',
-              }}
-            >
-              <motion.div
-                className="w-full h-full"
-                variants={float2}
-                animate="animate"
-              >
-                <Image
-                  src={images[1]}
-                  alt="Ingenieur arbeitet am Projektboard mit Statuskarten im Projektraum"
-                  fill
-                  sizes="(min-width: 1024px) 25vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-              </motion.div>
+          {/* Bild 3: Laptop Dashboard — mittel, oben rechts, leicht nach rechts geneigt, überlappt Bild 1 */}
+          <motion.div
+            variants={imageVariants}
+            whileHover={{ scale: 1.04, rotate: 2, zIndex: 10, transition: { duration: 0.25 } }}
+            style={{
+              position: 'absolute',
+              top: '40px',
+              left: '200px',
+              width: '290px',
+              height: '200px',
+              borderRadius: '16px',
+              border: '1px solid rgba(7,16,19,0.08)',
+              boxShadow: '0 16px 48px rgba(7,16,19,0.14)',
+              overflow: 'hidden',
+              transform: 'rotate(4deg)',
+              zIndex: 4,
+            }}
+          >
+            <motion.div className="w-full h-full" variants={float3} animate="animate">
+              <Image
+                src={images[2]}
+                alt="Laptop mit Auswertungs-Dashboard neben gefrästem Bauteil auf dem Schreibtisch"
+                fill
+                sizes="290px"
+                className="object-cover"
+                priority
+              />
             </motion.div>
+          </motion.div>
 
-            {/* Bild 3: Laptop Dashboard — rechte Spalte, 4/3, leicht rotiert */}
-            <motion.div
-              variants={imageVariants}
-              whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
-              style={{
-                gridColumn: '2',
-                aspectRatio: '4 / 3',
-                borderRadius: '20px',
-                border: '1px solid rgba(7,16,19,0.08)',
-                boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
-                overflow: 'hidden',
-                position: 'relative',
-                transform: 'rotate(1.5deg)',
-                transformOrigin: 'center center',
-                cursor: 'default',
-              }}
-            >
-              <motion.div
-                className="w-full h-full"
-                variants={float3}
-                animate="animate"
-              >
-                <Image
-                  src={images[2]}
-                  alt="Laptop mit Auswertungs-Dashboard neben gefrästem Bauteil auf dem Schreibtisch"
-                  fill
-                  sizes="(min-width: 1024px) 25vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-              </motion.div>
+          {/* Bild 2: Projektboard — groß, unten mittig, gerade, überlappt beide */}
+          <motion.div
+            variants={imageVariants}
+            whileHover={{ scale: 1.04, rotate: 1, zIndex: 10, transition: { duration: 0.25 } }}
+            style={{
+              position: 'absolute',
+              top: '200px',
+              left: '60px',
+              width: '360px',
+              height: '260px',
+              borderRadius: '16px',
+              border: '1px solid rgba(7,16,19,0.08)',
+              boxShadow: '0 20px 60px rgba(7,16,19,0.18)',
+              overflow: 'hidden',
+              transform: 'rotate(-1deg)',
+              zIndex: 5,
+            }}
+          >
+            <motion.div className="w-full h-full" variants={float2} animate="animate">
+              <Image
+                src={images[1]}
+                alt="Ingenieur arbeitet am Projektboard mit Statuskarten im Projektraum"
+                fill
+                sizes="360px"
+                className="object-cover"
+                priority
+              />
             </motion.div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Mobile: single image */}
