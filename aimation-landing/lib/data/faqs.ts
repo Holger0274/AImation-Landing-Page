@@ -1,37 +1,37 @@
 export const faqs = [
   {
-    question: 'Was kostet eine KI-Beratung für ein KMU?',
+    question: 'Was passiert mit unseren Konstruktions- und Projektdaten?',
     answer:
-      'Das Erstgespräch kostet nichts. Danach kommt es auf den Umfang an. Ein AI Readiness Check dauert 2 Tage, eine längere Begleitung kann sich über Monate ziehen. Im ersten Gespräch rechnen wir gemeinsam durch, was für Ihr Unternehmen realistisch ist, ohne versteckte Posten.',
+      'Ihre Daten werden DSGVO-konform in der EU verarbeitet und nicht zum Training von KI-Modellen verwendet. Ein Auftragsverarbeitungsvertrag ist selbstverständlich. Und Projekte unter Geheimhaltung behandeln wir wie das, was sie sind: vertraulich. Welche Architektur im Einzelfall passt, klären wir vor dem Projekt, nicht währenddessen.',
   },
   {
-    question: 'Wie schnell sieht ein KMU Ergebnisse durch KI-Automatisierung?',
+    question: 'Sind die Lösungen DSGVO-konform und rechtlich sauber?',
     answer:
-      'Bei Schulungen: oft noch während des Workshops. Viele Teilnehmer nutzen die Tools am selben Tag das erste Mal produktiv. Bei Automatisierungsprojekten: 2 bis 6 Wochen bis zum laufenden Prototyp, je nach Komplexität. E-Mail-Automatisierung haben wir schon in einer Woche fertig gehabt.',
+      'Ja, das ist bei uns keine Option, sondern Ausgangspunkt. Wir wählen Tools und Architekturen so, dass die Verarbeitung in der EU stattfindet und nachvollziehbar dokumentiert ist. Wenn ein gewünschtes Werkzeug das nicht hergibt, sagen wir es und schlagen eine Alternative vor.',
   },
   {
-    question: 'Braucht ein KMU eine eigene IT-Abteilung für KI-Projekte?',
+    question: 'Funktioniert das mit unseren bestehenden Systemen, etwa Microsoft 365, SharePoint oder unserem ERP?',
     answer:
-      'Nein. Die meisten unserer Kunden haben keine dedizierte IT-Abteilung. Wir begleiten von der Idee bis zur fertigen Lösung, technisch und inhaltlich. Die Lösungen, die wir bauen, können Ihre Leute selbst bedienen, ohne IT-Studium.',
+      'In der Regel ja. Wir docken an das an, was Sie haben, statt neue Insellösungen zu bauen. Was im Einzelfall geht, klären wir im Erstgespräch. Und wenn etwas nicht geht, sagen wir Ihnen das vorher.',
   },
   {
-    question: 'Funktioniert KI-Automatisierung mit bestehenden Systemen wie SAP oder Microsoft 365?',
+    question: 'Ersetzt das unsere Ingenieure?',
     answer:
-      'Meistens ja. Wir arbeiten mit dem, was Sie bereits im Einsatz haben. Unsere Lösungen lassen sich an Microsoft 365, Google Workspace, SAP, Branchensoftware und andere Systeme anbinden. In einem AI Audit analysieren wir Ihre bestehende Systemlandschaft und finden Integrationspunkte ohne aufwändige Migration.',
+      'Nein. Es ersetzt die Fleißarbeit, die Ihre Ingenieure vom Entwickeln abhält: Sortieren, Suchen, Zusammenschreiben. Die fachliche Bewertung und die letzte Freigabe bleiben immer beim Menschen. Genau so bauen wir jede Lösung.',
   },
   {
-    question: 'Wie messen wir den ROI einer KI-Investition?',
+    question: 'Wie schnell sehen wir Ergebnisse?',
     answer:
-      'Vor jedem Projekt legen wir gemeinsam fest, was sich wie messen lässt: eingesparte Stunden, weniger Fehler, kürzere Durchlaufzeiten. Wir nehmen eine Ausgangsmessung, vergleichen nach der Umsetzung. Unser ROI-Rechner zeigt das Potenzial vorab, ohne Registrierung.',
+      'Der schnellste Weg ist der Pilot: ein einzelner Prozess, Festpreis, in Wochen produktiv statt in Quartalen. Danach wissen Sie aus eigener Anschauung, was KI bei Ihnen leistet, und entscheiden auf dieser Basis weiter.',
   },
   {
-    question: 'Was ist der Unterschied zwischen KI-Automatisierung und einem KI-Agenten?',
+    question: 'Was kostet das?',
     answer:
-      'Eine klassische Automatisierung folgt festen Regeln: Wenn A passiert, dann B. Das ist wertvoll, aber starr. Ein KI-Agent kann eigenständig urteilen, Informationen beschaffen und Entscheidungen treffen, ohne dass jeder Schritt vorher programmiert wurde. Konkretes Beispiel: kein Mensch gibt eine Recherche in Auftrag, der Agent erkennt selbst, was gerade wichtig ist, und liefert jeden Morgen einen strukturierten Report. Das ist der Unterschied.',
+      'Das hängt vom Umfang ab, aber Sie erfahren es vorher, nicht hinterher. Schulungen und der Pilot haben Festpreise, der Pilot liegt bei 4.900 Euro für vier Wochen. Für alles Weitere bekommen Sie ein Konzept mit Kosten und erwartetem Nutzen, schwarz auf weiß, bevor Sie sich entscheiden.',
   },
   {
-    question: 'Sind KI-Lösungen DSGVO-konform und datenschutzrechtlich sicher?',
+    question: 'Was ist der Unterschied zwischen einer Automatisierung und einem KI-Agenten?',
     answer:
-      'Wir bauen Datenschutz von Anfang an ein. Wo es geht, arbeiten wir mit europäischen Anbietern und On-Premise-Lösungen. Sensible Unternehmensdaten verlassen Ihr Netzwerk nur mit expliziter Freigabe. In regulierten Branchen wählen wir gezielt datenschutzkonforme Alternativen zu US-Diensten.',
+      'Eine Automatisierung folgt festen Regeln: Wenn A passiert, tue B. Ein KI-Agent kann darüber hinaus selbst recherchieren, bewerten und Vorschläge erarbeiten, etwa eine technische Anfrage lesen, den Kontext aus Ihren Systemen sammeln und einen Antwortentwurf vorlegen. Die Freigabe bleibt bei Ihrem Team.',
   },
 ];
