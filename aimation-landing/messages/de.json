@@ -33,7 +33,7 @@
     "trust3Label": "Verarbeitung in der EU, keine Nutzung Ihrer Daten zum KI-Training"
   },
   "painPoints": {
-    "badge": "Diese sechs Sätze hören wir in fast jedem Gespräch mit Entwicklungsleitern.",
+    "badge": "",
     "headline": "Kommt Ihnen das",
     "headlineHighlight": "bekannt",
     "headlineEnd": "vor?",
@@ -214,7 +214,7 @@
           "Eine Entscheidung auf Basis Ihrer Abläufe und Daten, nicht auf Basis von Hype.",
           "Ein Fahrplan, den auch Ihr Team versteht und mitträgt."
         ],
-        "detail": "Finden Sie heraus, wo Ihre Entwicklung Zeit verliert"
+        "detail": "Holen Sie sich Ihren KI-Fahrplan"
       },
       "umsetzung": {
         "title": "Umsetzung",
@@ -367,7 +367,7 @@
     "point2": "Festpreis 4.900 Euro, Laufzeit 4 Wochen",
     "point3": "Ihre Daten bleiben in der EU, DSGVO-konform",
     "cta": "Besprechen Sie Ihren Piloten mit mir",
-    "ctaMicrocopy": "Kostenlos, 30 Minuten, kein Verkaufsgespräch."
+    "ctaMicrocopy": "Kostenlos, 15 Minuten, kein Verkaufsgespräch."
   },
   "process": {
     "headline": "So",
@@ -446,9 +446,9 @@
     "toolsHighlight": "besten Tools",
     "toolsSubline": "Wir binden uns an keinen Hersteller. Was für Ihren Fall passt, finden wir, weil wir alle relevanten Tools kennen und täglich nutzen. Bei der Auswahl zählt für uns neben der Leistung immer, ob ein Tool DSGVO-konform betrieben werden kann.",
     "stats": {
-      "linkedin": "Menschen folgen Holger auf LinkedIn",
+      "linkedin": "LinkedIn-Follower",
       "experience": "Jahre Engineering-Erfahrung",
-      "employees": "Mitarbeiter in Zielunternehmen"
+      "employees": "Use Cases als PoC abgeschlossen, weitere in Arbeit"
     }
   },
   "about": {
@@ -575,7 +575,7 @@
       },
       {
         "question": "Was kostet das?",
-        "answer": "Das hängt vom Umfang ab, aber Sie erfahren es vorher, nicht hinterher. Schulungen und der Pilot haben Festpreise. Für alles Weitere bekommen Sie ein Konzept mit Kosten und erwartetem Nutzen, schwarz auf weiß, bevor Sie sich entscheiden."
+        "answer": "Das hängt vom Umfang ab, aber Sie erfahren es vorher, nicht hinterher. Schulungen und der Pilot haben Festpreise, der Pilot liegt bei 4.900 Euro für vier Wochen. Für alles Weitere bekommen Sie ein Konzept mit Kosten und erwartetem Nutzen, schwarz auf weiß, bevor Sie sich entscheiden."
       },
       {
         "question": "Was ist der Unterschied zwischen einer Automatisierung und einem KI-Agenten?",

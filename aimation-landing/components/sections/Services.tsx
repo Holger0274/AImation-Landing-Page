@@ -304,7 +304,16 @@ function FlipCard({ service, index, onSelect, labels }: { service: ServiceData; 
             >
               {service.subtitle}
             </p>
-            <p className="text-gray-600 mb-4 md:mb-6 flex-grow" style={{ fontSize: 'clamp(0.875rem, 2.2vw, 1rem)' }}>{service.description}</p>
+            <p className="text-gray-600 mb-4" style={{ fontSize: 'clamp(0.875rem, 2.2vw, 1rem)' }}>{service.description}</p>
+
+            <ul className="space-y-1.5 mb-4 md:mb-5 flex-grow">
+              {service.features.map((feature, i) => (
+                <li key={i} className="flex items-start gap-2 text-gray-700" style={{ fontSize: 'clamp(0.8rem, 2vw, 0.875rem)' }}>
+                  <span className="mt-0.5 flex-shrink-0" style={{ color: service.gradientFrom }}>✓</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
 
             <div className="text-gray-500 italic mb-3 md:mb-4" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>{service.detail}</div>
 
@@ -505,7 +514,7 @@ export default function Services() {
           className="text-center mb-16 md:mb-20"
         >
           <h2 className="font-heading font-bold mb-4" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
-            {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span> {t('headlineEnd')}
+            {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span>{t('headlineEnd')}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}>
             {t('subline')}

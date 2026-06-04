@@ -27,7 +27,7 @@ import { ClaudeAIIcon } from '@/components/icons/ClaudeAIIcon';
 const statsConfig = [
   { value: 18000, suffix: '+', labelKey: 'linkedin' },
   { value: 20, suffix: '+', labelKey: 'experience' },
-  { value: 10, suffix: '-1000', labelKey: 'employees' },
+  { value: 4, suffix: '', labelKey: 'employees' },
 ] as const;
 
 interface ToolPill {

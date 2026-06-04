@@ -236,7 +236,7 @@ export default function Hero() {
             <div className="relative h-full w-full rounded-xl overflow-hidden">
               <Image
                 src={images[0]}
-                alt="Deutsches KMU-Team arbeitet gemeinsam an KI-gestützter Prozessautomatisierung und Workflow-Optimierung"
+                alt="Entwicklungsteam bespricht Automatisierung von Routineaufgaben in der Produktentwicklung"
                 fill
                 sizes="(max-width: 640px) 180px, 288px"
                 className="object-cover"
@@ -259,7 +259,7 @@ export default function Hero() {
             <div className="relative h-full w-full rounded-xl overflow-hidden">
               <Image
                 src={images[1]}
-                alt="KI-Beratung und Training für Mittelstand - Holger erklärt AI-Readiness und Use Case Identifikation"
+                alt="Entwicklungsleiter und KI-Berater analysieren Prozesse in der Entwicklungsabteilung"
                 fill
                 sizes="(max-width: 640px) 150px, 256px"
                 className="object-cover"
@@ -282,7 +282,7 @@ export default function Hero() {
             <div className="relative h-full w-full rounded-xl overflow-hidden">
               <Image
                 src={images[2]}
-                alt="Automatisierte Workflows und intelligente Agents - KI-Umsetzung für produzierende Unternehmen"
+                alt="KI-Agent übernimmt Fleißarbeit in der Entwicklungsabteilung: Anfragen, Berichte, Recherche"
                 fill
                 sizes="(max-width: 640px) 130px, 224px"
                 className="object-cover"

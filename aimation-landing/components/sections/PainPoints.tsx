@@ -257,6 +257,11 @@ function CompactStatCard({ stat, index, onClick, clickHint }: { stat: PainStat; 
         {stat.title}
       </h3>
 
+      {/* Description — always visible */}
+      <p className="text-xs text-gray-300 leading-relaxed mb-3">
+        {stat.description}
+      </p>
+
       {/* Click hint */}
       <p className="text-xs text-gray-500 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
         {clickHint}
@@ -294,13 +299,15 @@ export default function PainPoints() {
               transition={{ duration: 0.6 }}
             >
               {/* Overline Badge */}
-              <div className="inline-block mb-6">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#60AFFF]/10 border border-[#60AFFF]/20">
-                  <span className="text-sm font-medium text-[#071013]">
-                    {t('badge')}
+              {t('badge') && (
+                <div className="inline-block mb-6">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#60AFFF]/10 border border-[#60AFFF]/20">
+                    <span className="text-sm font-medium text-[#071013]">
+                      {t('badge')}
+                    </span>
                   </span>
-                </span>
-              </div>
+                </div>
+              )}
 
               {/* Main Headline */}
               <h2 className="font-heading font-bold text-[#071013] mb-8 break-words" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)', lineHeight: 1.35 }}>
