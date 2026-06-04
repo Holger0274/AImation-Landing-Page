@@ -21,23 +21,24 @@
   },
   "hero": {
     "badge": "AI · Product Development · SME",
-    "headlineStart": "40% of your employees' working time goes to tasks ",
-    "headlineHighlight": "nobody would miss",
+    "headlineStart": "Requests sort themselves. Knowledge stays in-house. Your products reach maturity ",
+    "headlineHighlight": "faster",
     "headlineEnd": ".",
-    "subline": "AI solutions for engineering departments in manufacturing SMEs. GDPR-compliant, processed in the EU. And if AI brings nothing for your case, we'll tell you straight.",
-    "cta": "Book a free initial consultation",
-    "trust1Label": "LinkedIn followers",
-    "trust2Label": "years in engineering",
-    "trust3Value": "10-1000",
-    "trust3Label": "employees (SMEs)"
+    "subline": "AImation automates the routine work in engineering departments: reports, research, requests, knowledge retention. GDPR-compliant, processed in the EU, your data stays yours. And if AI brings nothing for your case, we will tell you exactly that.",
+    "cta": "Find out where your engineering is losing time",
+    "ctaMicrocopy": "Free, 30 minutes, no sales pitch.",
+    "trust1Label": "Years of product development and leadership in industry",
+    "trust2Label": "LinkedIn followers",
+    "trust3Value": "GDPR-compliant",
+    "trust3Label": "Processed in the EU, your data is never used for AI training"
   },
   "painPoints": {
-    "badge": "We hear these six sentences in almost every conversation with engineering managers.",
+    "badge": "",
     "headline": "Does any of this sound",
     "headlineHighlight": "familiar",
     "headlineEnd": "?",
-    "body1": "We hear these six sentences in almost every conversation with engineering managers. None of them need to be true in 2026.",
-    "body2": "",
+    "body1": "These six sentences come up in almost every conversation we have with engineering managers. None of them need to be true in 2026.",
+    "body2": "If you are an engineering manager, CTO, or technical CEO: you recognise at least three of them.",
     "futureText": "",
     "futureHighlight": "",
     "futureEnd": "",
@@ -94,94 +95,89 @@
   },
   "beforeAfter": {
     "headline": "From",
-    "headlineChao": "chaos",
+    "headlineChao": "Chaos",
     "headlineMid": "to",
-    "headlineHighlight": "control",
-    "subline": "Three processes. Before and after. Concrete numbers.",
-    "labelProblem": "Problem",
-    "labelLoesung": "Solution",
+    "headlineHighlight": "Control",
+    "subline": "Every solution pays into the three accounts by which engineering is measured: quality, cost, timing.",
+    "labelProblem": "Before",
+    "labelLoesung": "After",
     "ctaText": "Ten minutes is usually enough to find similar potential in your processes.",
-    "ctaButton": "Book a free potential conversation",
+    "ctaButton": "Find out which process in your company would be first in line",
     "transformations": {
       "workflow": {
-        "title": "Email processing",
+        "title": "Requests and change orders",
         "before": {
           "title": "Before: Manual process",
-          "pain": "2 hours per day",
+          "pain": "Replies get written between two meetings",
           "problems": [
-            "Sort emails manually",
-            "Copy-paste into Excel",
-            "Chase missing information",
-            "Update status in multiple tools"
+            "Every request is read, categorised, and forwarded manually.",
+            "The handler searches for project status, similar cases, and old emails.",
+            "The reply gets written between two meetings — or simply does not happen."
           ]
         },
         "after": {
-          "title": "After: Automated",
-          "gain": "10 minutes per day",
+          "title": "After: Agent supports",
+          "gain": "Replies the same day",
           "benefits": [
-            "AI sorts and prioritises automatically",
-            "Data transfers directly into the system",
-            "Missing info is requested automatically",
-            "Status updates in real time"
+            "An agent reads and classifies incoming requests.",
+            "It gathers context from your systems and drafts a reply.",
+            "Your engineer reviews and approves.",
+            "Every answered request flows into your lessons-learned database."
           ],
-          "roi": "90% time saved"
+          "roi": "Replies the same day instead of days later. Account: timing and cost."
         }
       },
       "knowledge": {
-        "title": "Knowledge management",
+        "title": "Knowledge retention and lessons learned",
         "before": {
-          "title": "Before: Knowledge locked in people's heads",
-          "pain": "Knowledge lost when staff leave",
+          "title": "Before: Knowledge in people's heads",
+          "pain": "When someone leaves, they take what was never written down",
           "problems": [
-            "Know-how lives only in employees' heads",
-            "New colleagues need 6 months to get up to speed",
-            "Processes not documented",
-            "Experts constantly pulled into meetings"
+            "Knowledge lives in people's heads, folder structures, and inboxes.",
+            "Anyone who needs something has to ask around.",
+            "When someone leaves, they take what was never written down.",
+            "Mistakes from old projects resurface in new ones."
           ]
         },
         "after": {
-          "title": "After: AI knowledge base",
-          "gain": "Knowledge stays in the company",
+          "title": "After: Knowledge systematically retained",
+          "gain": "Mistakes do not repeat themselves",
           "benefits": [
-            "RAG system with the full company knowledge base",
-            "New colleagues productive within 2 weeks",
-            "Processes documented automatically",
-            "AI answers 80% of questions immediately"
+            "Reports, minutes, and documents are automatically tagged and linked.",
+            "Every question answered in seconds, with a source reference.",
+            "The expertise of departing colleagues is captured in a structured way before it leaves the building."
           ],
-          "roi": ">85% time saved"
+          "roi": "Mistakes do not repeat themselves, new colleagues become productive faster. Account: quality and timing."
         }
       },
       "research": {
-        "title": "Market research",
+        "title": "Research and customer preparation",
         "before": {
           "title": "Before: Manual research",
-          "pain": "8 hours per week",
+          "pain": "Every research effort starts from scratch",
           "problems": [
-            "Search Google, LinkedIn, trade publications",
-            "Collect information in Word",
-            "Outdated data",
-            "No structured storage"
+            "Standards, patents, and competitors are researched by hand, every time from zero.",
+            "Before client meetings, everyone searches on their own through five systems."
           ]
         },
         "after": {
-          "title": "After: AI research agent",
-          "gain": "30 minutes per week",
+          "title": "After: Agent takes over",
+          "gain": "Prepared in minutes",
           "benefits": [
-            "One AI agent searches sources independently, evaluates relevance, and summarises",
-            "Structured reports in Notion",
-            "Daily updates on defined topics",
-            "Central knowledge base"
+            "An agent monitors standards, patents, and technology trends continuously.",
+            "It flags what affects your products.",
+            "Before every client meeting, a compact briefing is ready: open points, requirements status, latest minutes."
           ],
-          "roi": ">90% time saved"
+          "roi": "Prepared in minutes instead of hours, nothing relevant is missed. Account: timing and quality."
         }
       }
     }
   },
   "services": {
-    "headline": "The 3",
-    "headlineHighlight": "pillars",
-    "headlineEnd": "of our work",
-    "subline": "All modules are freely combinable, depending on what you need",
+    "headline": "Three paths,",
+    "headlineHighlight": "one goal",
+    "headlineEnd": ": faster engineering",
+    "subline": "All modules are freely combinable, depending on what you need.",
     "flipHintDesktop": "Hover to flip",
     "flipHintMobile": "Tap to flip",
     "moreInfo": "Learn more",
@@ -193,42 +189,43 @@
     "items": {
       "schulungen": {
         "title": "Training",
-        "subtitle": "Build knowledge",
-        "description": "From AI fundamentals to advanced techniques. Your team learns to use AI tools with confidence.",
+        "subtitle": "Your team uses AI in everyday engineering work, instead of debating it.",
+        "description": "Hands-on, based on your own tasks, in the language of engineers.",
         "features": [
-          "Understanding generative AI",
-          "Microsoft Copilot and tools",
-          "Prompt engineering",
-          "Multi-agent systems",
-          "Automation and AI"
+          "Reports, research, and documentation in significantly less time.",
+          "Managers who can make AI decisions without going on gut feel.",
+          "Engineers who build their own small analysis tools instead of waiting for IT."
         ],
-        "detail": "3 levels: Beginner, Applied, Advanced"
+        "backFeatures": [
+          "AI in Leadership",
+          "Introduction to generative AI in engineering",
+          "Copilot in daily engineering work",
+          "Vibe Coding for engineers",
+          "AI agents in product development"
+        ],
+        "detail": "Get your team up to speed in two days"
       },
       "beratung": {
         "title": "Consulting",
-        "subtitle": "Think, plan, decide",
-        "description": "We look at how you work today. Then we tell you honestly what makes sense and what does not.",
+        "subtitle": "You know where AI saves money in your engineering. Before you invest.",
+        "description": "We determine your starting point and show you the path, instead of selling you the next tool.",
         "features": [
-          "AI readiness assessment",
-          "Use case identification",
-          "Strategy and roadmap",
-          "ROI and business case",
-          "Change management"
+          "A clear picture of your biggest levers, in weeks rather than months.",
+          "A decision based on your processes and data, not on hype.",
+          "A roadmap that your team also understands and supports."
         ],
-        "detail": "3 phases: Analysis, Strategy, Guidance"
+        "detail": "Get your AI roadmap"
       },
       "umsetzung": {
         "title": "Implementation",
-        "subtitle": "Build, deploy, operate",
-        "description": "From simple workflows to AI agents that research, decide, and act independently. Solutions that work tomorrow, not in two years.",
+        "subtitle": "The routine work takes care of itself. The final sign-off stays with you.",
+        "description": "We build systems that work every day, with your engineer as the final authority.",
         "features": [
-          "Workflow automation",
-          "RAG systems and chatbots",
-          "AI agents that work autonomously",
-          "Document workflows",
-          "Knowledge management"
+          "Requests, reports, and research run automatically — reviewed by humans.",
+          "Answers from your own documents in seconds, with source references.",
+          "GDPR-compliant, processed in the EU, your design and project data stays yours."
         ],
-        "detail": "4 solution worlds: FLOW, KNOW, THINK, WORK"
+        "detail": "Have your first process automated"
       }
     },
     "useCases": {
@@ -326,7 +323,7 @@
       },
       "audit-documentation": {
         "title": "Audit and Document Analysis",
-        "description": "Smart analysis and categorization of audit documents. Automatically extracts compliance requirements, risks and recommended actions from audit reports.",
+        "description": "Smart analysis and categorisation of audit documents. Automatically extracts compliance requirements, risks and recommended actions from audit reports.",
         "metrics": "Requirements and risks from audit documents captured automatically. Account: quality and cost.",
         "alt": "Audit document analysis dashboard"
       },
@@ -338,7 +335,7 @@
       },
       "multi-agent-debate": {
         "title": "Review concepts from multiple angles",
-        "description": "AI agents examine ideas from different perspectives. Analyzes concepts systematically, extendable with the Six Thinking Hats method for thorough idea validation.",
+        "description": "AI agents examine ideas from different perspectives. Analyses concepts systematically, extendable with the Six Thinking Hats method for thorough idea validation.",
         "metrics": "Weaknesses in an idea surface before budget flows in. Account: quality and cost.",
         "alt": "Multi-agent debate system"
       },
@@ -350,7 +347,7 @@
       },
       "innovation-assessment-dashboard": {
         "title": "Innovation Assessment Dashboard",
-        "description": "Systematic evaluation of technologies and innovation ideas. Analyzes technical feasibility, manufacturability and profitability.",
+        "description": "Systematic evaluation of technologies and innovation ideas. Analyses technical feasibility, manufacturability and profitability.",
         "metrics": "Feasibility and profitability assessed comparably, not by gut feel. Account: quality and cost.",
         "alt": "Innovation assessment dashboard"
       },
@@ -365,12 +362,12 @@
   "pilot": {
     "headline": "The smallest sensible start:",
     "headlineHighlight": "a pilot",
-    "body": "You don't need to believe in a large project to get started. We take one single process that costs you time every week and automate it. Fixed price, clear timeline, defined outcome. Then you decide if more follows. And if the pilot shows that AI brings nothing for your case, you will know that too. Then this insight cost you exactly one pilot, not an annual budget.",
+    "body": "You do not need to believe in a large project to get started. We take one single process that costs you time every week and automate it. Fixed price, clear timeline, defined outcome. Then you decide whether more follows. And if the pilot shows that AI brings nothing for your case, you will know that too. Then this insight cost you exactly one pilot, not an annual budget.",
     "point1": "One process, chosen by you",
     "point2": "Fixed price 4,900 euros, 4-week timeline",
     "point3": "Your data stays in the EU, GDPR-compliant",
     "cta": "Discuss your pilot with me",
-    "ctaMicrocopy": "Free, 30 minutes, no sales pitch."
+    "ctaMicrocopy": "Free, 15 minutes, no sales pitch."
   },
   "process": {
     "headline": "How",
@@ -385,9 +382,9 @@
         "subtitle": "30 minutes, free",
         "description": "We get to know each other. You tell us where the friction is. We tell you honestly whether we can help.",
         "details": [
-          "What is causing the most frustration?",
-          "Where is time being lost?",
-          "Are there quick wins?"
+          "Where is your engineering losing time?",
+          "Which process is a weekly frustration?",
+          "Is there a quick win?"
         ],
         "duration": "30 min",
         "cost": "Free"
@@ -395,7 +392,7 @@
       "analyse": {
         "title": "Analysis",
         "subtitle": "Identify potential",
-        "description": "We look at how you work today. Where are the bottlenecks? Where is time lost? And what can realistically be automated?",
+        "description": "We look at how your engineering works today. Where are the bottlenecks? Where is time lost? And what can realistically be automated?",
         "details": [
           "Conduct AI readiness assessment",
           "AI audit of existing tools and processes",
@@ -447,43 +444,43 @@
     "headlineHighlight": "experience",
     "toolsHeadline": "We work with the",
     "toolsHighlight": "best tools",
-    "toolsSubline": "We are not tied to any vendor. We know all the relevant tools and use them daily, which means we find what fits your situation.",
+    "toolsSubline": "We are not tied to any vendor. We find what fits your situation because we know all the relevant tools and use them every day. In choosing them, performance always goes hand in hand with whether a tool can be operated in a GDPR-compliant way.",
     "stats": {
-      "linkedin": "people follow Holger on LinkedIn",
+      "linkedin": "LinkedIn followers",
       "experience": "years of engineering experience",
-      "employees": "employees in target companies"
+      "employees": "Use cases completed as PoC, more in progress"
     }
   },
   "about": {
     "overline": "About us",
-    "headline": "20 years in industry. No",
-    "headlineHighlight": "armchair consultant.",
-    "introHeadline": "AI is the topic that drives us.",
-    "introHighlight": "For years. Not since the hype.",
-    "introText": "20 years of engineering showed me where time is really lost. In the surrounding noise. In the things nobody ever explained how to do differently. That is what I work on.",
-    "mainText": "For 20 years I worked in product development myself, leading teams. I know where time is really lost in an engineering department, because I sat in exactly those places myself: in project reviews, in change loops, searching for that one report from three years ago. And AI has been my passion for years, not just since the hype. That combination is AImation: I translate between your engineering world and the AI world. You do not need an interpreter in between.",
-    "quotesLabel": "Who we are in 5 sentences",
+    "headline": "20 years of product development.",
+    "headlineHighlight": "No armchair consultant.",
+    "introHeadline": "Two worlds in one person.",
+    "introHighlight": "No translation needed.",
+    "introText": "You know the problem with consultants: some understand AI but not your development processes. Others know your world but bring someone else in for AI. With me you get both in one person.",
+    "mainText": "For 20 years I worked in product development myself and led teams. I know where time is really lost in an engineering department, because I sat in exactly those places myself: in project reviews, in change loops, searching for that one report from three years ago. And AI has been my passion for years, not just since the hype. That combination is AImation: I translate between your engineering world and the AI world. You do not need an interpreter in between.",
+    "quotesLabel": "Who I am in 5 sentences",
     "ctaPrimary": "Book a free initial consultation",
     "ctaLinkedIn": "Follow on LinkedIn. 18,000 followers",
     "quotes": [
       {
-        "text": "\"20 years as an engineering leader in industry.\"",
+        "text": "20 years as an engineering leader in industry.",
         "highlight": null
       },
       {
-        "text": "\"I know [your processes], not from books, but from practice.\"",
+        "text": "I know [your processes], not from books, but because I lived them myself.",
         "highlight": "your processes"
       },
       {
-        "text": "\"If AI does not make sense for you, I will tell you that. Even if it costs me the project.\"",
+        "text": "If AI does not make sense for you, I will tell you that. Even if it costs me the project.",
         "highlight": null
       },
       {
-        "text": "\"[Doing] instead of talking. Finished solutions that work the next day.\"",
-        "highlight": "Doing"
+        "text": "[Doing instead of talking]: solutions that run next week, not next quarter.",
+        "highlight": "Doing instead of talking"
       },
       {
-        "text": "\"20 years have shown me one thing: [the simplest solution] that actually works is always the best one.\"",
+        "text": "20 years have taught me one thing: [the simplest solution] that actually works is always the best.",
         "highlight": "the simplest solution"
       }
     ]
@@ -495,15 +492,15 @@
     "subline": "We build AI solutions. And we tell you when you do not need one.",
     "readinessHeadline": "Starts with an",
     "readinessHighlight": "AI Readiness Check",
-    "readinessText": "In 2 days you will know where you stand. We look at your processes, assess what is already working, and calculate what can realistically be achieved. No sales pitch, no filler.",
+    "readinessText": "In 2 days you will know where you stand. We look at your engineering processes, assess what is already working, and calculate what can realistically be achieved. No sales pitch, no filler.",
     "readinessBadge1": "✓ Analyse processes",
     "readinessBadge2": "✓ Evaluate potential",
     "readinessBadge3": "✓ Calculate ROI",
-    "readinessCta": "Request AI Readiness Check",
+    "readinessCta": "Request AI Readiness Check now",
     "differentiators": [
       {
         "title": "Shop floor to boardroom",
-        "description": "I spent years inside manufacturing companies myself. I know which problems actually cause pain from my own experience, not from a study.",
+        "description": "I spent years inside engineering departments of manufacturing companies myself, from the project room to the management level. Which problems actually cause pain, I know from my own experience, not from a study.",
         "highlight": "Practice, not theory"
       },
       {
@@ -513,7 +510,7 @@
       },
       {
         "title": "Built for SMEs, not corporations",
-        "description": "Corporate prices are out of the question. So are projects that drag on forever. What matters: does it work next week? Usually yes.",
+        "description": "Corporate prices are out of the question. So are projects that drag on forever. What matters: does it run next week? Usually yes.",
         "highlight": "Fast and affordable"
       },
       {
@@ -557,44 +554,44 @@
     "subline": "Answers to the most important questions",
     "items": [
       {
-        "question": "What does AI consulting cost for an SME?",
-        "answer": "The initial consultation is free. After that it depends on scope. An AI Readiness Check takes 2 days; a longer engagement can span several months. In the first conversation we work out together what is realistic for your company, no hidden line items."
+        "question": "What happens to our design and project data?",
+        "answer": "Your data is processed GDPR-compliant in the EU and is not used to train AI models. A data processing agreement is a matter of course. Projects under confidentiality we treat as exactly that: confidential. Which architecture is right in each case, we clarify before the project, not during."
       },
       {
-        "question": "How quickly does an SME see results from AI automation?",
-        "answer": "With training: often during the workshop itself. Many participants use the tools productively for the first time that same day. With automation projects: 2 to 6 weeks to a working prototype, depending on complexity. We have had email automation ready in one week."
+        "question": "Are the solutions GDPR-compliant and legally sound?",
+        "answer": "Yes, that is not an option for us but a starting point. We select tools and architectures so that processing takes place in the EU and is transparently documented. If a desired tool cannot deliver that, we say so and suggest an alternative."
       },
       {
-        "question": "Does an SME need its own IT department for AI projects?",
-        "answer": "No. Most of our clients do not have a dedicated IT department. We guide you from idea to finished solution, technically and in terms of content. The solutions we build, your people can operate themselves, without an IT degree."
+        "question": "Does this work with our existing systems, such as Microsoft 365, SharePoint, or our ERP?",
+        "answer": "Usually yes. We connect to what you already have instead of building new island solutions. What is possible in each case, we clarify in the initial call. And if something is not possible, we tell you upfront."
       },
       {
-        "question": "Does AI automation work with existing systems like SAP or Microsoft 365?",
-        "answer": "Usually yes. We work with what you already have in place. Our solutions connect to Microsoft 365, Google Workspace, SAP, industry-specific software, and other systems. In an AI Audit we analyse your existing system landscape and find integration points without complex migration."
+        "question": "Does this replace our engineers?",
+        "answer": "No. It replaces the routine work that keeps your engineers from actually engineering: sorting, searching, writing things up. The expert judgement and the final sign-off always stay with the human. That is how we build every solution."
       },
       {
-        "question": "How do we measure the ROI of an AI investment?",
-        "answer": "Before every project we agree together on what can be measured and how: hours saved, fewer errors, shorter cycle times. We take a baseline measurement and compare after delivery. Our ROI calculator shows the potential upfront, no registration required."
+        "question": "How quickly do we see results?",
+        "answer": "The fastest path is the pilot: one single process, fixed price, live in weeks rather than quarters. After that you know from direct experience what AI delivers for you, and you decide on that basis."
       },
       {
-        "question": "What is the difference between AI automation and an AI agent?",
-        "answer": "Classic automation follows fixed rules: if A happens, then B. Valuable, but rigid. An AI agent can make independent judgements, gather information, and take decisions without every step being programmed in advance. A concrete example: no human assigns a research task, the agent recognises what is currently important, and delivers a structured report every morning. That is the difference."
+        "question": "What does it cost?",
+        "answer": "That depends on scope, but you find out beforehand, not afterwards. Training and the pilot have fixed prices; the pilot is 4,900 euros for four weeks. For everything else you receive a proposal with cost and expected benefit, in black and white, before you decide."
       },
       {
-        "question": "Are AI solutions GDPR-compliant and safe from a data protection perspective?",
-        "answer": "We build data protection in from the start. Where possible, we work with European providers and on-premise solutions. Sensitive company data only leaves your network with explicit approval. In regulated industries we deliberately choose data-protection-compliant alternatives to US services."
+        "question": "What is the difference between automation and an AI agent?",
+        "answer": "Automation follows fixed rules: if A happens, do B. An AI agent can go further — independently researching, evaluating, and drafting proposals. For example: reading a technical request, gathering context from your systems, and presenting a draft reply. The approval stays with your team."
       }
     ]
   },
   "finalCta": {
-    "headline": "Get",
-    "headlineHighlight": "clarity",
-    "headlineEnd": "now.",
-    "subline": "30 minutes. We tell you what is realistic for you. Or calculate it yourself first.",
+    "headline": "Find out where your",
+    "headlineHighlight": "engineering",
+    "headlineEnd": "is losing time.",
+    "subline": "30-minute conversation. You get a concrete first step, even if we never work together afterwards.",
     "ctaPrimary": "Book a free initial consultation",
-    "ctaSecondary": "Calculate ROI yourself",
-    "microcopy1": "30 minutes · No obligation · Available now",
-    "microcopy2": "2 minutes · No prior knowledge needed"
+    "ctaSecondary": "Or calculate it yourself first",
+    "microcopy1": "Free, no obligation, answer from me personally.",
+    "microcopy2": "2 minutes, no prior knowledge needed"
   },
   "leadForm": {
     "ariaLabel": "Book a free initial consultation",
