@@ -174,10 +174,10 @@
     }
   },
   "services": {
-    "headline": "Die 3",
-    "headlineHighlight": "Säulen",
-    "headlineEnd": "unserer Arbeit",
-    "subline": "Alle Bausteine sind frei kombinierbar, je nach Ihrem Bedarf",
+    "headline": "Drei Wege,",
+    "headlineHighlight": "ein Ziel",
+    "headlineEnd": ": eine schnellere Entwicklung",
+    "subline": "Alle Bausteine sind frei kombinierbar, je nach Ihrem Bedarf.",
     "flipHintDesktop": "Hover zum Umdrehen",
     "flipHintMobile": "Tippen zum Umdrehen",
     "moreInfo": "Mehr erfahren",
@@ -189,42 +189,43 @@
     "items": {
       "schulungen": {
         "title": "Schulungen",
-        "subtitle": "Wissen vermitteln",
-        "description": "Von KI-Grundlagen bis zu fortgeschrittenen Techniken. Ihr Team lernt, KI-Tools souverän einzusetzen.",
+        "subtitle": "Ihr Team nutzt KI im Entwicklungsalltag",
+        "description": "Praxisnah, an Ihren eigenen Aufgaben, in der Sprache von Ingenieuren.",
         "features": [
-          "Generative KI verstehen",
-          "Microsoft Copilot & Tools",
-          "Prompt Engineering",
-          "Multi-Agent-Systeme",
-          "Automatisierung & KI"
+          "Berichte, Recherchen und Dokumentation in deutlich kürzerer Zeit.",
+          "Führungskräfte, die KI-Entscheidungen treffen können, ohne Bauchgefühl.",
+          "Ingenieure, die sich kleine Auswertetools selbst bauen, statt auf die IT zu warten."
         ],
-        "detail": "3 Ebenen: Einstieg, Anwendung, Fortgeschritten"
+        "backFeatures": [
+          "KI im Leadership",
+          "Einstieg generative KI im Engineering",
+          "Copilot im Entwicklungsalltag",
+          "Vibe Coding für Ingenieure",
+          "KI-Agenten in der Produktentwicklung"
+        ],
+        "detail": "Machen Sie Ihr Team in zwei Tagen schneller"
       },
       "beratung": {
         "title": "Beratung",
-        "subtitle": "Denken, planen, entscheiden",
-        "description": "Wir schauen uns an, wie Sie heute arbeiten. Dann sagen wir Ihnen ehrlich, was sinnvoll ist und was nicht.",
+        "subtitle": "Sie wissen, wo KI in Ihrer Entwicklung Geld spart",
+        "description": "Wir bestimmen Ihren Standort und zeigen den Weg, statt Ihnen das nächste Tool zu verkaufen.",
         "features": [
-          "AI Readiness Assessment",
-          "Use Case Identifikation",
-          "Strategie & Roadmap",
-          "ROI & Business Case",
-          "Change Management"
+          "Ein klares Bild Ihrer größten Hebel, in Wochen statt Monaten.",
+          "Eine Entscheidung auf Basis Ihrer Abläufe und Daten, nicht auf Basis von Hype.",
+          "Ein Fahrplan, den auch Ihr Team versteht und mitträgt."
         ],
-        "detail": "3 Phasen: Analyse, Strategie, Begleitung"
+        "detail": "Finden Sie heraus, wo Ihre Entwicklung Zeit verliert"
       },
       "umsetzung": {
         "title": "Umsetzung",
-        "subtitle": "Bauen, implementieren, betreiben",
-        "description": "Von einfachen Workflows bis zu KI-Agenten, die eigenständig recherchieren, entscheiden und handeln. Lösungen, die morgen funktionieren – nicht in zwei Jahren.",
+        "subtitle": "Die Fleißarbeit erledigt sich",
+        "description": "Wir bauen Systeme, die täglich arbeiten, mit Ihrem Ingenieur als letzter Instanz.",
         "features": [
-          "Workflow-Automatisierung",
-          "RAG-Systeme & Chatbots",
-          "KI-Agenten, die selbstständig arbeiten",
-          "Dokumenten-Workflows",
-          "Knowledge Management"
+          "Anfragen, Berichte und Recherchen laufen automatisch, geprüft wird von Menschen.",
+          "Antworten aus Ihren eigenen Dokumenten in Sekunden, mit Quellenangabe.",
+          "DSGVO-konform, Verarbeitung in der EU, Ihre Konstruktions- und Projektdaten bleiben Ihre."
         ],
-        "detail": "4 Lösungswelten: FLOW, KNOW, THINK, WORK"
+        "detail": "Lassen Sie Ihren ersten Prozess automatisieren"
       }
     },
     "useCases": {

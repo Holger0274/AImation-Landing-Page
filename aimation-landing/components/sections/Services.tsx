@@ -15,6 +15,7 @@ type ServiceData = {
   subtitle: string;
   description: string;
   features: string[];
+  backFeatures?: string[];
   detail: string;
   gradientFrom: string;
   gradientTo: string;
@@ -391,7 +392,7 @@ function FlipCard({ service, index, onSelect, labels }: { service: ServiceData; 
             </h3>
 
             <ul className="space-y-2 md:space-y-3 mb-4 md:mb-6 flex-grow">
-              {service.features.map((feature, i) => (
+              {(service.backFeatures ?? service.features).map((feature, i) => (
                 <motion.li
                   key={i}
                   initial={reducedMotion ? {} : { opacity: 0, x: -20 }}
@@ -442,21 +443,25 @@ export default function Services() {
   const [selectedService, setSelectedService] = useState<number | null>(null);
   const t = useTranslations('services');
 
-  const services: ServiceData[] = servicesConfig.map((cfg) => ({
-    icon: cfg.icon,
-    gradientFrom: cfg.gradientFrom,
-    gradientTo: cfg.gradientTo,
-    patternOpacity: cfg.patternOpacity,
-    href: cfg.href,
-    title: t(`items.${cfg.id}.title`),
-    subtitle: t(`items.${cfg.id}.subtitle`),
-    description: t(`items.${cfg.id}.description`),
-    features: t.raw(`items.${cfg.id}.features`) as string[],
-    detail: t(`items.${cfg.id}.detail`),
-    useCases: (t.raw(`useCases.${cfg.id}`) as { title: string; description: string; result: string }[]).map(
-      (uc, i) => ({ ...uc, mockupType: cfg.mockupTypes[i] })
-    ),
-  }));
+  const services: ServiceData[] = servicesConfig.map((cfg) => {
+    const rawItem = t.raw(`items.${cfg.id}`) as Record<string, unknown>;
+    return {
+      icon: cfg.icon,
+      gradientFrom: cfg.gradientFrom,
+      gradientTo: cfg.gradientTo,
+      patternOpacity: cfg.patternOpacity,
+      href: cfg.href,
+      title: t(`items.${cfg.id}.title`),
+      subtitle: t(`items.${cfg.id}.subtitle`),
+      description: t(`items.${cfg.id}.description`),
+      features: rawItem.features as string[],
+      ...(rawItem.backFeatures ? { backFeatures: rawItem.backFeatures as string[] } : {}),
+      detail: t(`items.${cfg.id}.detail`),
+      useCases: (t.raw(`useCases.${cfg.id}`) as { title: string; description: string; result: string }[]).map(
+        (uc, i) => ({ ...uc, mockupType: cfg.mockupTypes[i] })
+      ),
+    };
+  });
 
   const flipLabels = {
     moreInfo: t('moreInfo'),
