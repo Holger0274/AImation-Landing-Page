@@ -21,20 +21,13 @@ type PainStat = {
 
 // Static config (icons + images) — text comes from translations
 const compactStatsConfig = [
-  { id: 'time', icon: Clock, imagePath: '/images/time-waste.webp', imageAlt: 'Gestresster Büroangestellter verschwendet Zeit mit manuellen repetitiven Aufgaben statt Wertschöpfung' },
-  { id: 'cost', icon: TrendingDown, imagePath: '/images/cost-waste.webp', imageAlt: 'Finanzgrafik zeigt Kostenverschwendung durch ineffiziente manuelle Prozesse im KMU' },
-  { id: 'quality', icon: AlertTriangle, imagePath: '/images/quality-issues.webp', imageAlt: 'Qualitätsprobleme und Fehler durch manuelle Dateneingabe in Unternehmensprozessen' },
-  { id: 'knowledge', icon: Brain, imagePath: '/images/knowledge-loss.webp', imageAlt: 'Wissensverlust durch Mitarbeiter-Fluktuation - Fachkräftemangel im deutschen Mittelstand' },
-  { id: 'chaos', icon: FileSpreadsheet, imagePath: '/images/excel-chaos.webp', imageAlt: 'Excel-Chaos und manuelle Rechnungserfassung in KMU - ineffiziente Buchhaltungsprozesse' },
-  { id: 'competition', icon: TrendingUp, imagePath: '/images/competition.webp', imageAlt: 'Wettbewerbsvorteil durch KI-Automatisierung - deutsche Unternehmen im digitalen Wettlauf' },
+  { id: 'knowledge', icon: Brain, imagePath: '/images/knowledge-loss.webp', imageAlt: 'Wissensverlust in der Entwicklungsabteilung - Erfahrung geht mit dem Mitarbeiter verloren' },
+  { id: 'reporting', icon: FileSpreadsheet, imagePath: '/images/excel-chaos.webp', imageAlt: 'Ingenieure schreiben Berichte und Protokolle statt zu entwickeln' },
+  { id: 'requests', icon: Clock, imagePath: '/images/time-waste.webp', imageAlt: 'Technische Anfragen und Änderungsanträge warten zu lange auf Bearbeitung' },
+  { id: 'searching', icon: AlertTriangle, imagePath: '/images/quality-issues.webp', imageAlt: 'Dokumente über viele Systeme verteilt - Wissen geht verloren, Fehler wiederholen sich' },
+  { id: 'research', icon: TrendingDown, imagePath: '/images/cost-waste.webp', imageAlt: 'Manuelle Recherche zu Normen und Patenten ist zeitaufwendig und fehleranfällig' },
+  { id: 'competition', icon: TrendingUp, imagePath: '/images/competition.webp', imageAlt: 'Wettbewerber automatisiert Entwicklungsprozesse während andere noch abwarten' },
 ] as const;
-
-const heroStatConfig = {
-  id: 'waiting',
-  icon: AlertTriangle,
-  imagePath: '/images/waiting-competition.webp',
-  imageAlt: 'Rückstand im KI-Wettbewerb - Konkurrenz automatisiert während andere warten',
-} as const;
 
 // Image Modal Component
 function ImageModal({ painPoint, onClose }: { painPoint: PainStat; onClose: () => void }) {
@@ -97,25 +90,31 @@ function ImageModal({ painPoint, onClose }: { painPoint: PainStat; onClose: () =
           {/* Content Below Image */}
           <div className="p-6 space-y-4">
             {/* Stat */}
-            <motion.div
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-center"
-            >
-              <div
-                className="font-heading font-bold text-[#f90093]"
-                style={{
-                  fontSize: 'clamp(2.5rem, 10vw, 4rem)',
-                  textShadow: '0 0 40px rgba(249, 0, 147, 0.6)'
-                }}
+            {(painPoint.stat || painPoint.statLabel) && (
+              <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="text-center"
               >
-                {painPoint.stat}
-              </div>
-              <div className="text-white/70 font-heading font-semibold text-base">
-                {painPoint.statLabel}
-              </div>
-            </motion.div>
+                {painPoint.stat && (
+                  <div
+                    className="font-heading font-bold text-[#f90093]"
+                    style={{
+                      fontSize: 'clamp(2.5rem, 10vw, 4rem)',
+                      textShadow: '0 0 40px rgba(249, 0, 147, 0.6)'
+                    }}
+                  >
+                    {painPoint.stat}
+                  </div>
+                )}
+                {painPoint.statLabel && (
+                  <div className="text-white/70 font-heading font-semibold text-base">
+                    {painPoint.statLabel}
+                  </div>
+                )}
+              </motion.div>
+            )}
 
             {/* Title */}
             <motion.div
@@ -137,9 +136,11 @@ function ImageModal({ painPoint, onClose }: { painPoint: PainStat; onClose: () =
               <p className="text-gray-300 text-base leading-relaxed mb-2">
                 {painPoint.description}
               </p>
-              <p className="text-gray-400 text-sm italic">
-                {t('quellePrafix')} {painPoint.source}
-              </p>
+              {painPoint.source && (
+                <p className="text-gray-400 text-sm italic">
+                  {t('quellePrafix')} {painPoint.source}
+                </p>
+              )}
             </motion.div>
           </div>
         </div>
@@ -159,25 +160,31 @@ function ImageModal({ painPoint, onClose }: { painPoint: PainStat; onClose: () =
           {/* Content Overlay */}
           <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center overflow-y-auto">
             {/* Stat */}
-            <motion.div
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-4"
-            >
-              <div
-                className="font-heading font-bold text-[#f90093]"
-                style={{
-                  fontSize: 'clamp(3rem, 10vw, 5rem)',
-                  textShadow: '0 0 40px rgba(249, 0, 147, 0.6), 0 0 20px rgba(0, 0, 0, 0.8)'
-                }}
+            {(painPoint.stat || painPoint.statLabel) && (
+              <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="mb-4"
               >
-                {painPoint.stat}
-              </div>
-              <div className="text-white/70 font-heading font-semibold text-lg">
-                {painPoint.statLabel}
-              </div>
-            </motion.div>
+                {painPoint.stat && (
+                  <div
+                    className="font-heading font-bold text-[#f90093]"
+                    style={{
+                      fontSize: 'clamp(3rem, 10vw, 5rem)',
+                      textShadow: '0 0 40px rgba(249, 0, 147, 0.6), 0 0 20px rgba(0, 0, 0, 0.8)'
+                    }}
+                  >
+                    {painPoint.stat}
+                  </div>
+                )}
+                {painPoint.statLabel && (
+                  <div className="text-white/70 font-heading font-semibold text-lg">
+                    {painPoint.statLabel}
+                  </div>
+                )}
+              </motion.div>
+            )}
 
             {/* Title */}
             <motion.div
@@ -201,9 +208,11 @@ function ImageModal({ painPoint, onClose }: { painPoint: PainStat; onClose: () =
               <p className="text-white text-lg mb-2 leading-relaxed drop-shadow-md">
                 {painPoint.description}
               </p>
-              <p className="text-gray-300 text-sm italic">
-                {t('quellePrafix')} {painPoint.source}
-              </p>
+              {painPoint.source && (
+                <p className="text-gray-300 text-sm italic">
+                  {t('quellePrafix')} {painPoint.source}
+                </p>
+              )}
             </motion.div>
           </div>
         </div>
@@ -232,14 +241,16 @@ function CompactStatCard({ stat, index, onClick, clickHint }: { stat: PainStat; 
       </div>
 
       {/* Stat */}
-      <div className="mb-2">
-        <div
-          className="font-heading font-bold text-[#f90093] leading-none"
-          style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}
-        >
-          {stat.stat}
+      {stat.stat && (
+        <div className="mb-2">
+          <div
+            className="font-heading font-bold text-[#f90093] leading-none"
+            style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}
+          >
+            {stat.stat}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Title */}
       <h3 className="font-heading font-semibold text-[#faf9f7] text-sm md:text-base leading-tight mb-2">
@@ -340,16 +351,6 @@ export default function PainPoints() {
     source: t(`stats.${c.id}.source`),
   }));
 
-  const heroStat: PainStat = {
-    ...heroStatConfig,
-    stat: t('stats.waiting.stat'),
-    title: t('stats.waiting.title'),
-    subtitle: t('stats.waiting.subtitle'),
-    description: t('stats.waiting.subtitle'),
-    statLabel: t('stats.waiting.statLabel'),
-    source: t('stats.waiting.source'),
-  };
-
   return (
     <section className="relative overflow-hidden">
       {/* Hybrid Split Container - SYNCHRONIZED HEIGHTS */}
@@ -386,27 +387,31 @@ export default function PainPoints() {
                 <p className="leading-relaxed break-words">
                   {t('body1')}
                 </p>
-                <p className="leading-relaxed font-medium text-[#071013] break-words">
-                  {t('body2')}
-                </p>
+                {t('body2') && (
+                  <p className="leading-relaxed font-medium text-[#071013] break-words">
+                    {t('body2')}
+                  </p>
+                )}
               </div>
             </motion.div>
 
-            {/* Future Perspective - Positive Outlook */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-10 p-6 rounded-xl bg-gradient-to-r from-[#60AFFF]/10 to-[#f90093]/5 border-l-4 border-[#60AFFF]"
-            >
-              <p className="text-[#071013] font-medium leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
-                {t('futureText')}{' '}
-                <span className="text-[#f90093] font-bold">{t('futureHighlight')}</span>{' '}
-                {t('futureEnd')}{' '}
-                <span className="font-bold text-[#071013]">{t('futureStrong')}</span> {t('futureEndText')}
-              </p>
-            </motion.div>
+            {/* Future Perspective - Positive Outlook (only shown when content is set) */}
+            {t('futureText') && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="mb-10 p-6 rounded-xl bg-gradient-to-r from-[#60AFFF]/10 to-[#f90093]/5 border-l-4 border-[#60AFFF]"
+              >
+                <p className="text-[#071013] font-medium leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
+                  {t('futureText')}{' '}
+                  <span className="text-[#f90093] font-bold">{t('futureHighlight')}</span>{' '}
+                  {t('futureEnd')}{' '}
+                  <span className="font-bold text-[#071013]">{t('futureStrong')}</span> {t('futureEndText')}
+                </p>
+              </motion.div>
+            )}
 
             {/* ROI Calculator Link */}
             <motion.div
@@ -453,10 +458,10 @@ export default function PainPoints() {
           {/* Radial Glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f90093]/10 rounded-full blur-[120px] pointer-events-none" />
 
-          {/* Grid of Compact Stats + Hero Card */}
+          {/* Grid of Compact Stats */}
           <div className="relative z-10 w-full max-w-3xl mx-auto lg:mx-0">
             {/* 3-Column Grid for 6 Compact Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {compactStats.map((stat, index) => (
                 <CompactStatCard
                   key={stat.id}
@@ -467,13 +472,6 @@ export default function PainPoints() {
                 />
               ))}
             </div>
-
-            {/* Hero Highlight Card (Full Width) */}
-            <HeroHighlightCard
-              stat={heroStat}
-              onClick={() => setModalPainPoint(heroStat)}
-              clickHint={t('clickHint')}
-            />
           </div>
         </div>
       </div>

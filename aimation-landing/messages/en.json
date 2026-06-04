@@ -32,70 +32,70 @@
     "trust3Label": "employees (SMEs)"
   },
   "painPoints": {
-    "badge": "These problems appear in every third SME we talk to",
+    "badge": "We hear these six sentences in almost every conversation with engineering managers.",
     "headline": "Does any of this sound",
     "headlineHighlight": "familiar",
     "headlineEnd": "?",
-    "body1": "We hear these 6 problems almost word for word in every first call. Sometimes all 6 at once.",
-    "body2": "None of them need to exist in 2026. The solutions are already there, just not in your company yet.",
-    "futureText": "Office jobs are not disappearing. But the part everyone complains about?",
-    "futureHighlight": "That one will.",
-    "futureEnd": "What stays: the work you",
-    "futureStrong": "actually hired",
-    "futureEndText": "your people for.",
+    "body1": "We hear these six sentences in almost every conversation with engineering managers. None of them need to be true in 2026.",
+    "body2": "",
+    "futureText": "",
+    "futureHighlight": "",
+    "futureEnd": "",
+    "futureStrong": "",
+    "futureEndText": "",
     "roiLink": "What is this costing you per year? Calculate ROI",
     "modalClose": "Close modal",
     "clickHint": "Click for image and details →",
     "quellePrafix": "Source:",
     "stats": {
-      "time": {
-        "stat": "40%",
-        "title": "of working time disappears into tasks nobody would miss",
-        "description": "Your employees type in numbers that have been digital for years. They copy data from Excel into SAP. They write reports manually that could run automatically. While competitors automate, you are burning potential.",
-        "statLabel": "Time wasted",
-        "source": "McKinsey Global Survey 2024"
-      },
-      "cost": {
-        "stat": "200k€",
-        "title": "That is 200,000€ thrown out the window. Every year.",
-        "description": "With just 10 employees, you are burning over 200,000€ per year on tasks with no real value. That is the annual salary of 3 qualified specialists. Every year. Simply gone. For work that could have been automated long ago.",
-        "statLabel": "Waste per year",
-        "source": "Calculation based on: McKinsey study 2024"
-      },
-      "quality": {
-        "stat": "1-4%",
-        "title": "Every mistake costs money. And your reputation.",
-        "description": "Manual data entry always produces errors. Customers complain. Invoices are wrong. Delivery dates get missed. And while your team fixes mistakes, the actual work piles up. Frustrating? Absolutely. Avoidable? Yes.",
-        "statLabel": "Error rate",
-        "source": "Gartner 2023 & Ernst & Young 2025"
-      },
       "knowledge": {
-        "stat": "71%",
-        "title": "When Petra retires, 30 years of expertise walk out the door",
-        "description": "Only she knows how that one process works. Only she knows all the edge cases. And when she leaves? Chaos. Errors. Delays. New colleagues need months to catch up, if you can find anyone at all.",
-        "statLabel": "of IT leaders report knowledge loss",
-        "source": "Sinequa study 2022"
+        "stat": "",
+        "title": "Knowledge loss",
+        "description": "When your most experienced engineer retires, three decades of project knowledge go with them. Almost none of it is documented.",
+        "statLabel": "",
+        "source": ""
       },
-      "chaos": {
-        "stat": "86%",
-        "title": "86% type invoices as if the internet never happened",
-        "description": "A PDF arrives by email. Your employees open it, read the numbers, type them into the ERP. Errors included. OCR software has existed for 20 years. Yet 86% of SMEs work like it is 1995. Absurd? Yes. Fixable? Immediately.",
-        "statLabel": "process invoices manually",
-        "source": "KfW Digitalisation Report 2024"
+      "reporting": {
+        "stat": "",
+        "title": "Reporting work",
+        "description": "You hired your engineers to engineer. On Fridays they write reports, meeting minutes, and status slides.",
+        "statLabel": "",
+        "source": ""
+      },
+      "requests": {
+        "stat": "",
+        "title": "Requests and changes",
+        "description": "Technical requests and change orders reach the right colleague. They get answered when day-to-day operations allow it. Which is often too late.",
+        "statLabel": "",
+        "source": ""
+      },
+      "searching": {
+        "stat": "",
+        "title": "Searching instead of finding",
+        "description": "Requirements specs, meeting minutes, lessons learned: spread across five systems. What gets found is what someone happens to remember. Mistakes repeat themselves.",
+        "statLabel": "",
+        "source": ""
+      },
+      "research": {
+        "stat": "",
+        "title": "Manual research",
+        "description": "Standards, patents, competitors: every research effort starts from scratch, and nobody knows whether it is complete.",
+        "statLabel": "",
+        "source": ""
       },
       "competition": {
-        "stat": "81%",
-        "title": "81% know: without AI we will fall behind",
-        "description": "Your competitors are already using AI. Your industry is changing. Faster, more efficient, cheaper. Without you. While you are still deciding whether AI is relevant, others are pulling ahead. The gap grows. Every day.",
-        "statLabel": "see AI as the most important future technology",
-        "source": "Bitkom study September 2025"
+        "stat": "",
+        "title": "Falling behind",
+        "description": "While you are still checking whether AI is safe with your data, your competitor is already automating their development. The safety question has long been solvable: GDPR-compliant, hosted in the EU.",
+        "statLabel": "",
+        "source": ""
       },
       "waiting": {
-        "stat": "2x",
-        "title": "While you are still planning, your competitor has already automated",
-        "subtitle": "AI adoption in German companies doubled in the last year. Not in 10 years. In 12 months. Whoever waits now will not close this gap. The question is not IF but WHEN you start.",
-        "statLabel": "AI growth in 12 months",
-        "source": "Bitkom September 2025"
+        "stat": "",
+        "title": "",
+        "subtitle": "",
+        "statLabel": "",
+        "source": ""
       }
     }
   },

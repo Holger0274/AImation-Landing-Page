@@ -33,70 +33,70 @@
     "trust3Label": "Verarbeitung in der EU, keine Nutzung Ihrer Daten zum KI-Training"
   },
   "painPoints": {
-    "badge": "Diese Probleme kennen wir von jedem dritten KMU",
+    "badge": "Diese sechs Sätze hören wir in fast jedem Gespräch mit Entwicklungsleitern.",
     "headline": "Kommt Ihnen das",
     "headlineHighlight": "bekannt",
     "headlineEnd": "vor?",
-    "body1": "Diese 6 Probleme hören wir fast wörtlich in jedem Erstgespräch. Manchmal sind es alle 6 gleichzeitig.",
-    "body2": "Keines davon muss 2026 noch existieren. Die Lösungen sind längst da, nur noch nicht bei Ihnen.",
-    "futureText": "Bürojobs verschwinden nicht. Aber der Teil, über den sich alle beschweren?",
-    "futureHighlight": "Der schon.",
-    "futureEnd": "Was bleibt: die Arbeit, für die Sie Ihre Leute",
-    "futureStrong": "eigentlich eingestellt",
-    "futureEndText": "haben.",
+    "body1": "Diese sechs Sätze hören wir in fast jedem Gespräch mit Entwicklungsleitern. Keiner davon muss 2026 noch wahr sein.",
+    "body2": "",
+    "futureText": "",
+    "futureHighlight": "",
+    "futureEnd": "",
+    "futureStrong": "",
+    "futureEndText": "",
     "roiLink": "Was kostet Sie das pro Jahr? ROI berechnen",
     "modalClose": "Modal schließen",
     "clickHint": "Klicken für Bild & Details →",
     "quellePrafix": "Quelle:",
     "stats": {
-      "time": {
-        "stat": "40%",
-        "title": "der Arbeitszeit verpufft für Aufgaben, die niemand vermissen würde",
-        "description": "Ihre Mitarbeiter tippen Zahlen ab, die längst digital vorliegen. Kopieren Daten von Excel in SAP. Erstellen manuell Berichte, die automatisiert werden könnten. Während die Konkurrenz automatisiert, verschwenden Sie Potenzial.",
-        "statLabel": "Zeitverschwendung",
-        "source": "McKinsey Global Survey 2024"
-      },
-      "cost": {
-        "stat": "200k€",
-        "title": "Das sind 200.000€ aus dem Fenster geworfen. Jedes Jahr.",
-        "description": "Bei nur 10 Mitarbeitern verbrennen Sie über 200.000€ pro Jahr für Tätigkeiten ohne Mehrwert. Das sind die Jahresgehälter von 3 qualifizierten Fachkräften. Jedes Jahr. Einfach weg. Für Aufgaben, die längst automatisierbar wären.",
-        "statLabel": "Verschwendung/Jahr",
-        "source": "Berechnung: McKinsey-Studie 2024"
-      },
-      "quality": {
-        "stat": "1-4%",
-        "title": "Jeder Fehler kostet Geld. Und Ihr Image.",
-        "description": "Bei jeder manuellen Dateneingabe passieren Fehler. Kunden beschweren sich. Rechnungen stimmen nicht. Liefertermine werden verpasst. Und während Ihr Team Fehler korrigiert, bleibt die eigentliche Arbeit liegen. Frustrierend? Absolut. Vermeidbar? Ja.",
-        "statLabel": "Fehlerrate",
-        "source": "Gartner 2023 & Ernst & Young 2025"
-      },
       "knowledge": {
-        "stat": "71%",
-        "title": "Wenn Petra in Rente geht, geht 30 Jahre Erfahrung mit",
-        "description": "Nur sie weiß, wie dieser eine Prozess funktioniert. Nur sie kennt alle Sonderfälle. Und wenn sie geht? Chaos. Fehler. Verzögerungen. Neue Mitarbeiter brauchen Monate, um aufzuholen, wenn Sie überhaupt jemanden finden.",
-        "statLabel": "der IT-Führungskräfte sehen Wissensverlust",
-        "source": "Sinequa-Studie 2022"
+        "stat": "",
+        "title": "Wissensverlust",
+        "description": "Wenn Ihr erfahrenster Entwickler in Rente geht, gehen drei Jahrzehnte Projektwissen mit. Dokumentiert ist davon fast nichts.",
+        "statLabel": "",
+        "source": ""
       },
-      "chaos": {
-        "stat": "86%",
-        "title": "86% tippen Rechnungen ab, als gäbe es kein Internet",
-        "description": "PDF kommt per E-Mail. Ihre Mitarbeiter öffnen es, lesen die Zahlen, tippen sie ins ERP. Fehler inklusive. Es gibt OCR-Software seit 20 Jahren. Trotzdem tippen 86% der KMUs wie 1995. Absurd? Ja. Änderbar? Sofort.",
-        "statLabel": "erfassen Rechnungen manuell",
-        "source": "KfW Digitalisierungsbericht 2024"
+      "reporting": {
+        "stat": "",
+        "title": "Berichtsarbeit",
+        "description": "Ihre Ingenieure haben Sie fürs Entwickeln eingestellt. Freitags schreiben sie Berichte, Protokolle und Statusfolien.",
+        "statLabel": "",
+        "source": ""
+      },
+      "requests": {
+        "stat": "",
+        "title": "Anfragen und Änderungen",
+        "description": "Technische Anfragen und Änderungsanträge erreichen den richtigen Kollegen. Beantwortet werden sie, wenn das Tagesgeschäft es zulässt. Also oft zu spät.",
+        "statLabel": "",
+        "source": ""
+      },
+      "searching": {
+        "stat": "",
+        "title": "Suchen statt Finden",
+        "description": "Lastenhefte, Protokolle, Lessons Learned: verteilt über fünf Systeme. Gefunden wird, was zufällig jemand erinnert. Fehler wiederholen sich.",
+        "statLabel": "",
+        "source": ""
+      },
+      "research": {
+        "stat": "",
+        "title": "Recherche von Hand",
+        "description": "Normen, Patente, Wettbewerber: Jede Recherche beginnt bei null, und keiner weiß, ob sie vollständig ist.",
+        "statLabel": "",
+        "source": ""
       },
       "competition": {
-        "stat": "81%",
-        "title": "81% wissen: Ohne KI verlieren wir den Anschluss",
-        "description": "Ihre Konkurrenz nutzt bereits KI. Ihre Branche verändert sich. Schneller, effizienter, günstiger. Ohne Sie. Während Sie noch überlegen, ob KI etwas für Sie ist, ziehen andere davon. Der Abstand wächst. Jeden Tag.",
-        "statLabel": "sehen KI als wichtigste Zukunftstechnologie",
-        "source": "Bitkom-Studie September 2025"
+        "stat": "",
+        "title": "Der Anschluss",
+        "description": "Während Sie noch prüfen, ob KI mit Ihren Daten sicher ist, automatisiert Ihr Wettbewerber bereits seine Entwicklung. Dabei ist die Sicherheitsfrage längst lösbar: DSGVO-konform, in der EU.",
+        "statLabel": "",
+        "source": ""
       },
       "waiting": {
-        "stat": "2x",
-        "title": "Während Sie noch planen, hat Ihr Wettbewerber schon automatisiert",
-        "subtitle": "Die KI-Nutzung in deutschen Unternehmen hat sich im letzten Jahr verdoppelt. Nicht in 10 Jahren. In 12 Monaten. Wer jetzt wartet, holt diesen Vorsprung nicht mehr auf. Die Frage ist nicht OB, sondern WANN Sie starten.",
-        "statLabel": "KI-Wachstum in 12 Monaten",
-        "source": "Bitkom September 2025"
+        "stat": "",
+        "title": "",
+        "subtitle": "",
+        "statLabel": "",
+        "source": ""
       }
     }
   },
