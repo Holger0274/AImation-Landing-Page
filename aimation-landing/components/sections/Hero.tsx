@@ -192,112 +192,99 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Column: Image Collage — desktop only */}
-        {/* Container starts at same level as left column (items-start on grid),
-            so top-0 of container = top of badge. Bild 1 gets a negative marginTop
-            to align its top edge with the H1 (~48px below badge+margin). */}
+        {/* Right Column: Image Grid — desktop only */}
         <motion.div
-          className="relative w-full max-w-full hidden lg:block"
-          style={{ height: '580px', marginTop: '-150px' }}
+          className="relative hidden lg:block w-full"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Deko-Kreis: oben links, teilweise hinter Bild 1 (z-index 0) */}
+          {/* Deko-Kreis hinter oberer linker Ecke von Bild 1 */}
           <motion.div
-            className="absolute rounded-full bg-magenta/15"
-            style={{
-              top: '0px',
-              left: '-16px',
-              width: '120px',
-              height: '120px',
-              zIndex: 0,
-            }}
+            className="absolute rounded-full bg-magenta/15 pointer-events-none"
+            style={{ top: '-16px', left: '-16px', width: '120px', height: '120px', zIndex: 0 }}
             variants={floatingVariants}
             animate="animate"
           />
 
-          {/* Bild 1: Konstruktionszeichnung — Leitbild, oben rechts, -2deg */}
-          {/* top: 0 → Oberkante des Containers = Oberkante Badge.
-              Wir verschieben mit marginTop auf den Container, nicht hier. */}
-          <motion.div
-            className="absolute overflow-hidden"
+          <div
             style={{
-              top: '0px',
-              right: '0px',
-              width: '460px',
-              height: '345px',
-              borderRadius: '20px',
-              border: '1px solid rgba(7,16,19,0.08)',
-              boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
-              transform: 'rotate(-2deg)',
-              zIndex: 2,
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '24px',
+              position: 'relative',
+              zIndex: 1,
             }}
-            variants={imageVariants}
           >
-            <Image
-              src={images[0]}
-              alt="Hand prüft technische Konstruktionszeichnung mit markierten Prüfstellen"
-              fill
-              sizes="460px"
-              className="object-cover object-top"
-              priority
-            />
-          </motion.div>
+            {/* Bild 1: Konstruktionszeichnung — volle Breite, 16/9 */}
+            <motion.div
+              style={{
+                gridColumn: '1 / 3',
+                aspectRatio: '16 / 9',
+                borderRadius: '20px',
+                border: '1px solid rgba(7,16,19,0.08)',
+                boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
+                overflow: 'hidden',
+                position: 'relative',
+              }}
+              variants={imageVariants}
+            >
+              <Image
+                src={images[0]}
+                alt="Hand prüft technische Konstruktionszeichnung mit markierten Prüfstellen"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover object-top"
+                priority
+              />
+            </motion.div>
 
-          {/* Bild 3: Laptop Dashboard — unten rechts, überlappt Bild 1 um 32px, +2deg */}
-          {/* Bild 1 endet bei top(0) + height(345) = 345px.
-              Überlappung 32px → Bild 3 top = 345 - 32 = 313px */}
-          <motion.div
-            className="absolute overflow-hidden"
-            style={{
-              top: '313px',
-              right: '0px',
-              width: '340px',
-              height: '255px',
-              borderRadius: '20px',
-              border: '1px solid rgba(7,16,19,0.08)',
-              boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
-              transform: 'rotate(2deg)',
-              zIndex: 3,
-            }}
-            variants={imageVariants}
-          >
-            <Image
-              src={images[2]}
-              alt="Laptop mit Auswertungs-Dashboard neben gefrästem Bauteil auf dem Schreibtisch"
-              fill
-              sizes="340px"
-              className="object-cover"
-              priority
-            />
-          </motion.div>
+            {/* Bild 2: Projektboard — linke Spalte, 4/3 */}
+            <motion.div
+              style={{
+                gridColumn: '1',
+                aspectRatio: '4 / 3',
+                borderRadius: '20px',
+                border: '1px solid rgba(7,16,19,0.08)',
+                boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
+                overflow: 'hidden',
+                position: 'relative',
+              }}
+              variants={imageVariants}
+            >
+              <Image
+                src={images[1]}
+                alt="Ingenieur arbeitet am Projektboard mit Statuskarten im Projektraum"
+                fill
+                sizes="(min-width: 1024px) 25vw, 50vw"
+                className="object-cover"
+                priority
+              />
+            </motion.div>
 
-          {/* Bild 2: Projektboard — links, Unterkante = Unterkante Bild 3, gerade */}
-          {/* Bild 3 Unterkante: 313 + 255 = 568px. Bild 2 Höhe: 255px → top = 313px */}
-          <motion.div
-            className="absolute overflow-hidden"
-            style={{
-              top: '313px',
-              right: '364px',
-              width: '310px',
-              height: '255px',
-              borderRadius: '20px',
-              border: '1px solid rgba(7,16,19,0.08)',
-              boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
-              zIndex: 2,
-            }}
-            variants={imageVariants}
-          >
-            <Image
-              src={images[1]}
-              alt="Ingenieur arbeitet am Projektboard mit Statuskarten im Projektraum"
-              fill
-              sizes="310px"
-              className="object-cover"
-              priority
-            />
-          </motion.div>
+            {/* Bild 3: Laptop Dashboard — rechte Spalte, 4/3 */}
+            <motion.div
+              style={{
+                gridColumn: '2',
+                aspectRatio: '4 / 3',
+                borderRadius: '20px',
+                border: '1px solid rgba(7,16,19,0.08)',
+                boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
+                overflow: 'hidden',
+                position: 'relative',
+              }}
+              variants={imageVariants}
+            >
+              <Image
+                src={images[2]}
+                alt="Laptop mit Auswertungs-Dashboard neben gefrästem Bauteil auf dem Schreibtisch"
+                fill
+                sizes="(min-width: 1024px) 25vw, 50vw"
+                className="object-cover"
+                priority
+              />
+            </motion.div>
+          </div>
         </motion.div>
 
         {/* Mobile: single image */}
