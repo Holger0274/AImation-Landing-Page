@@ -90,13 +90,6 @@
         "description": "Während Sie noch prüfen, ob KI mit Ihren Daten sicher ist, automatisiert Ihr Wettbewerber bereits seine Entwicklung. Dabei ist die Sicherheitsfrage längst lösbar: DSGVO-konform, in der EU.",
         "statLabel": "",
         "source": ""
-      },
-      "waiting": {
-        "stat": "",
-        "title": "",
-        "subtitle": "",
-        "statLabel": "",
-        "source": ""
       }
     }
   },
