@@ -444,7 +444,7 @@
     "headlineHighlight": "Erfahrung",
     "toolsHeadline": "Wir arbeiten mit den",
     "toolsHighlight": "besten Tools",
-    "toolsSubline": "Wir binden uns an keinen Hersteller. Was für Ihren Fall passt, finden wir, weil wir alle relevanten Tools kennen und täglich nutzen.",
+    "toolsSubline": "Wir binden uns an keinen Hersteller. Was für Ihren Fall passt, finden wir, weil wir alle relevanten Tools kennen und täglich nutzen. Bei der Auswahl zählt für uns neben der Leistung immer, ob ein Tool DSGVO-konform betrieben werden kann.",
     "stats": {
       "linkedin": "Menschen folgen Holger auf LinkedIn",
       "experience": "Jahre Engineering-Erfahrung",
@@ -492,7 +492,7 @@
     "subline": "Wir bauen KI-Lösungen. Und sagen Ihnen, wenn Sie keine brauchen.",
     "readinessHeadline": "Startet mit einem",
     "readinessHighlight": "AI Readiness Check",
-    "readinessText": "In 2 Tagen wissen Sie, wo Sie stehen. Wir schauen uns Ihre Prozesse an, bewerten was schon läuft, und rechnen durch, was realistisch herauszuholen ist. Kein Verkaufsgespräch, kein Blabla.",
+    "readinessText": "In 2 Tagen wissen Sie, wo Sie stehen. Wir schauen uns Ihre Entwicklungsprozesse an, bewerten was schon läuft, und rechnen durch, was realistisch herauszuholen ist. Kein Verkaufsgespräch, kein Blabla.",
     "readinessBadge1": "✓ Prozesse analysieren",
     "readinessBadge2": "✓ Potenziale bewerten",
     "readinessBadge3": "✓ ROI durchrechnen",
@@ -500,7 +500,7 @@
     "differentiators": [
       {
         "title": "Shopfloor bis Führungsebene",
-        "description": "Ich war selbst jahrelang mittendrin in produzierenden Unternehmen. Welche Probleme wirklich nerven, weiß ich aus eigener Erfahrung, nicht aus einer Studie.",
+        "description": "Ich war selbst jahrelang mittendrin: in Entwicklungsabteilungen produzierender Unternehmen, vom Projektraum bis zur Führungsebene. Welche Probleme wirklich nerven, weiß ich aus eigener Erfahrung, nicht aus einer Studie.",
         "highlight": "Praxis, keine Theorie"
       },
       {
