@@ -98,82 +98,77 @@
     "headlineChao": "Chaos",
     "headlineMid": "zu",
     "headlineHighlight": "Kontrolle",
-    "subline": "Drei Prozesse. Vorher und nachher. Konkrete Zahlen.",
-    "labelProblem": "Problem",
-    "labelLoesung": "Lösung",
+    "subline": "Jede Lösung zahlt auf die drei Konten ein, an denen Entwicklung gemessen wird: Qualität, Kosten, Timing.",
+    "labelProblem": "Vorher",
+    "labelLoesung": "Nachher",
     "ctaText": "Zehn Minuten Gespräch reichen meistens, um ähnliche Potenziale in Ihren Prozessen zu finden.",
-    "ctaButton": "Kostenloses Potenzial-Gespräch vereinbaren",
+    "ctaButton": "Finden Sie heraus, welcher Prozess bei Ihnen zuerst dran wäre",
     "transformations": {
       "workflow": {
-        "title": "E-Mail-Bearbeitung",
+        "title": "Anfragen und Änderungsanträge",
         "before": {
           "title": "Vorher: Manueller Prozess",
-          "pain": "2 Stunden täglich",
+          "pain": "Antworten entstehen zwischen zwei Terminen",
           "problems": [
-            "E-Mails manuell sortieren",
-            "Copy-Paste in Excel",
-            "Fehlende Informationen nachfragen",
-            "Status in mehreren Tools aktualisieren"
+            "Jede Anfrage wird gelesen, eingeordnet und weitergeleitet.",
+            "Der Bearbeiter sucht Projektstand, ähnliche Fälle und alte Mails zusammen.",
+            "Die Antwort entsteht zwischen zwei Terminen, oder eben nicht."
           ]
         },
         "after": {
-          "title": "Nachher: Automatisiert",
-          "gain": "10 Minuten täglich",
+          "title": "Nachher: Agent unterstützt",
+          "gain": "Antworten am selben Tag",
           "benefits": [
-            "KI sortiert & priorisiert automatisch",
-            "Daten werden direkt ins System übertragen",
-            "Fehlende Infos werden automatisch angefordert",
-            "Status-Updates in Echtzeit"
+            "Ein Agent liest und klassifiziert eingehende Anfragen.",
+            "Er sammelt den Kontext aus Ihren Systemen und legt einen Antwortentwurf vor.",
+            "Ihr Ingenieur prüft und gibt frei.",
+            "Jede beantwortete Anfrage fließt in Ihre Lessons-Learned-Datenbank."
           ],
-          "roi": "90% Zeitersparnis"
+          "roi": "Antworten am selben Tag statt nach Tagen. Konto: Timing und Kosten."
         }
       },
       "knowledge": {
-        "title": "Wissensmanagement",
+        "title": "Wissenssicherung und Lessons Learned",
         "before": {
           "title": "Vorher: Wissen in Köpfen",
-          "pain": "Wissensverlust bei Kündigungen",
+          "pain": "Wer geht, nimmt mit, was nie aufgeschrieben wurde",
           "problems": [
-            "Know-how nur in Mitarbeiter-Köpfen",
-            "Neue Kollegen 6 Monate Einarbeitung",
-            "Prozesse nicht dokumentiert",
-            "Experten ständig im Meeting"
+            "Das Wissen liegt in Köpfen, Ordnerstrukturen und Postfächern.",
+            "Wer etwas sucht, fragt herum.",
+            "Wer geht, nimmt mit, was nie aufgeschrieben wurde.",
+            "Fehler aus alten Projekten tauchen in neuen wieder auf."
           ]
         },
         "after": {
-          "title": "Nachher: KI-Wissensdatenbank",
-          "gain": "Wissen bleibt im Unternehmen",
+          "title": "Nachher: Wissen strukturiert gesichert",
+          "gain": "Fehler wiederholen sich nicht",
           "benefits": [
-            "RAG-System mit gesamtem Firmenwissen",
-            "Neue Kollegen produktiv in 2 Wochen",
-            "Prozesse automatisch dokumentiert",
-            "KI beantwortet 80% der Fragen sofort"
+            "Berichte, Protokolle und Dokumente werden automatisch verschlagwortet und vernetzt.",
+            "Jede Frage wird in Sekunden beantwortet, mit Quellenangabe.",
+            "Das Erfahrungswissen ausscheidender Kollegen wird strukturiert erfasst, bevor es das Haus verlässt."
           ],
-          "roi": ">85% Zeitersparnis"
+          "roi": "Fehler wiederholen sich nicht, neue Kollegen sind schneller produktiv. Konto: Qualität und Timing."
         }
       },
       "research": {
-        "title": "Marktrecherche",
+        "title": "Recherche und Kundenvorbereitung",
         "before": {
           "title": "Vorher: Manuelle Recherche",
-          "pain": "8 Stunden pro Woche",
+          "pain": "Jede Recherche beginnt bei null",
           "problems": [
-            "Google, LinkedIn, Fachmedien durchsuchen",
-            "Informationen in Word sammeln",
-            "Veraltete Daten",
-            "Keine strukturierte Ablage"
+            "Normen, Patente und Wettbewerber werden von Hand recherchiert, jedes Mal von vorn.",
+            "Vor Kundengesprächen sucht jeder selbst zusammen, was in fünf Systemen verteilt liegt."
           ]
         },
         "after": {
-          "title": "Nachher: KI-Recherche-Agent",
-          "gain": "30 Minuten pro Woche",
+          "title": "Nachher: Agent übernimmt",
+          "gain": "Vorbereitet in Minuten",
           "benefits": [
-            "Ein KI-Agent durchsucht eigenständig Quellen, bewertet Relevanz und fasst zusammen",
-            "Strukturierte Reports in Notion",
-            "Tägliche Updates zu definierten Themen",
-            "Zentrale Knowledge Base"
+            "Ein Agent überwacht Normen, Patente und Technologie-Trends laufend.",
+            "Er meldet, was Ihre Produkte betrifft.",
+            "Vor jedem Kundengespräch liegt ein kompaktes Briefing bereit: offene Punkte, Anforderungsstand, letzte Protokolle."
           ],
-          "roi": ">90% Zeitersparnis"
+          "roi": "Vorbereitet in Minuten statt Stunden, nichts Relevantes wird übersehen. Konto: Timing und Qualität."
         }
       }
     }
