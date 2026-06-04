@@ -99,7 +99,7 @@ export default function Hero() {
 
   return (
     <section className="w-full overflow-hidden bg-warm-white pt-24 pb-12 sm:py-24 min-h-screen flex items-center max-w-full">
-      <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 max-w-7xl">
+      <div className="container mx-auto grid grid-cols-1 items-start gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 max-w-7xl">
         {/* Left Column: Text Content */}
         <motion.div
           className="flex flex-col items-center text-center lg:items-start lg:text-left"
@@ -193,32 +193,45 @@ export default function Hero() {
         </motion.div>
 
         {/* Right Column: Image Collage — desktop only */}
+        {/* Container starts at same level as left column (items-start on grid),
+            so top-0 of container = top of badge. Bild 1 gets a negative marginTop
+            to align its top edge with the H1 (~48px below badge+margin). */}
         <motion.div
-          className="relative w-full max-w-full hidden lg:flex lg:items-center"
-          style={{ height: '520px' }}
+          className="relative w-full max-w-full hidden lg:block"
+          style={{ height: '580px', marginTop: '-150px' }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Decorative dot — top left */}
+          {/* Deko-Kreis: oben links, teilweise hinter Bild 1 (z-index 0) */}
           <motion.div
-            className="absolute top-0 left-8 h-14 w-14 rounded-full bg-magenta/15"
+            className="absolute rounded-full bg-magenta/15"
+            style={{
+              top: '0px',
+              left: '-16px',
+              width: '120px',
+              height: '120px',
+              zIndex: 0,
+            }}
             variants={floatingVariants}
             animate="animate"
           />
 
-          {/* Bild 1: Engineering Desk — groß, oben rechts, leicht links rotiert */}
+          {/* Bild 1: Konstruktionszeichnung — Leitbild, oben rechts, -2deg */}
+          {/* top: 0 → Oberkante des Containers = Oberkante Badge.
+              Wir verschieben mit marginTop auf den Container, nicht hier. */}
           <motion.div
             className="absolute overflow-hidden"
             style={{
-              top: '16px',
+              top: '0px',
               right: '0px',
-              width: '320px',
-              height: '320px',
+              width: '460px',
+              height: '345px',
               borderRadius: '20px',
               border: '1px solid rgba(7,16,19,0.08)',
               boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
               transform: 'rotate(-2deg)',
+              zIndex: 2,
             }}
             variants={imageVariants}
           >
@@ -226,48 +239,27 @@ export default function Hero() {
               src={images[0]}
               alt="Hand prüft technische Konstruktionszeichnung mit markierten Prüfstellen"
               fill
-              sizes="320px"
+              sizes="460px"
               className="object-cover object-top"
               priority
             />
           </motion.div>
 
-          {/* Bild 2: Kanban Board — mitte links, gerade */}
+          {/* Bild 3: Laptop Dashboard — unten rechts, überlappt Bild 1 um 32px, +2deg */}
+          {/* Bild 1 endet bei top(0) + height(345) = 345px.
+              Überlappung 32px → Bild 3 top = 345 - 32 = 313px */}
           <motion.div
             className="absolute overflow-hidden"
             style={{
-              top: '160px',
-              left: '0px',
-              width: '210px',
-              height: '210px',
-              borderRadius: '20px',
-              border: '1px solid rgba(7,16,19,0.08)',
-              boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
-            }}
-            variants={imageVariants}
-          >
-            <Image
-              src={images[1]}
-              alt="Ingenieur arbeitet am Projektboard mit Statuskarten im Projektraum"
-              fill
-              sizes="210px"
-              className="object-cover"
-              priority
-            />
-          </motion.div>
-
-          {/* Bild 3: Laptop Dashboard — unten rechts, leicht rechts rotiert */}
-          <motion.div
-            className="absolute overflow-hidden"
-            style={{
-              bottom: '16px',
-              right: '16px',
-              width: '210px',
-              height: '210px',
+              top: '313px',
+              right: '0px',
+              width: '340px',
+              height: '255px',
               borderRadius: '20px',
               border: '1px solid rgba(7,16,19,0.08)',
               boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
               transform: 'rotate(2deg)',
+              zIndex: 3,
             }}
             variants={imageVariants}
           >
@@ -275,7 +267,33 @@ export default function Hero() {
               src={images[2]}
               alt="Laptop mit Auswertungs-Dashboard neben gefrästem Bauteil auf dem Schreibtisch"
               fill
-              sizes="210px"
+              sizes="340px"
+              className="object-cover"
+              priority
+            />
+          </motion.div>
+
+          {/* Bild 2: Projektboard — links, Unterkante = Unterkante Bild 3, gerade */}
+          {/* Bild 3 Unterkante: 313 + 255 = 568px. Bild 2 Höhe: 255px → top = 313px */}
+          <motion.div
+            className="absolute overflow-hidden"
+            style={{
+              top: '313px',
+              right: '364px',
+              width: '310px',
+              height: '255px',
+              borderRadius: '20px',
+              border: '1px solid rgba(7,16,19,0.08)',
+              boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
+              zIndex: 2,
+            }}
+            variants={imageVariants}
+          >
+            <Image
+              src={images[1]}
+              alt="Ingenieur arbeitet am Projektboard mit Statuskarten im Projektraum"
+              fill
+              sizes="310px"
               className="object-cover"
               priority
             />
