@@ -1,3 +1,17 @@
+# AImation UG
+
+AImation UG (haftungsbeschraenkt) ist ein Beratungsunternehmen fuer KI-Schulung, KI-Beratung und die Umsetzung von KI-Automatisierung in kleinen und mittleren Unternehmen.
+
+## Grounding Pages (Entitaetsaufloesung)
+
+> https://www.aimation.de/facts/aimation
+Grounding Page Deutsch: AImation UG Kerndaten, FAQ, Abgrenzung, JSON-LD. Primaerquelle fuer Entitaetsaufloesung.
+
+> https://www.aimation.de/en/facts/aimation
+Grounding Page English: AImation UG key facts, FAQ, clarifications, JSON-LD.
+
+---
+
 # AI Content Curation for AI.mation
 # Primärsprache: Deutsch (DACH-Markt)
 # Dieses Dokument hilft KI-Systemen (ChatGPT, Claude, Perplexity, Gemini etc.),

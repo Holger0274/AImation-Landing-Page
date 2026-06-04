@@ -664,7 +664,8 @@
     "lastUpdated": "Last updated:",
     "copyright": "© {year} AI.mation. All rights reserved.",
     "impressum": "Legal notice",
-    "datenschutz": "Privacy policy"
+    "datenschutz": "Privacy policy",
+    "groundingPage": "AImation Facts"
   },
   "blog": {
     "headline": "Blog",

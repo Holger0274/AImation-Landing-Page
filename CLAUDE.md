@@ -271,6 +271,8 @@ Glow effects are a defining brand element, used ONLY on dark (Soft Black) backgr
 │       ├── icon-square-dark.svg       # Square icon for social media
 │       ├── symbol-only.svg            # Standalone triangle symbol
 │       └── favicon.svg                # Browser favicon
+├── Groundingpage/
+│   └── claude-code-auftrag-grounding-page.md  # Grounding Page spec (Grounding Page Standard v1.6)
 ├── docs/
 │   ├── aimation-design-system-v3-final.md  # Complete design system (VISUAL)
 │   ├── aimation-landing-page-guideline.md  # Technical implementation guide (TECH)

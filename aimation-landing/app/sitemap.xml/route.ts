@@ -13,6 +13,7 @@ const staticPages = [
   { path: '/use-cases/patentrecherche-ki', priority: '0.7', changefreq: 'monthly' },
   { path: '/use-cases/knowledge-graph-management', priority: '0.7', changefreq: 'monthly' },
   { path: '/use-cases/email-klassifizierung', priority: '0.7', changefreq: 'monthly' },
+  { path: '/facts/aimation', priority: '0.8', changefreq: 'monthly' },
 ];
 
 const blogSlugs = [

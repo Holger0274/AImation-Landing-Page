@@ -123,11 +123,11 @@ export default async function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@aimation.de"
+                  href="mailto:kontakt@ai-mation.de"
                   className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"
                 >
                   <Mail size={14} />
-                  info@aimation.de
+                  kontakt@ai-mation.de
                 </a>
               </li>
               <li>
@@ -171,6 +171,12 @@ export default async function Footer() {
               >
                 {t('datenschutz')}
               </a>
+              <Link
+                href="/facts/aimation"
+                className="text-gray-400 hover:text-white transition-colors text-sm"
+              >
+                {t('groundingPage')}
+              </Link>
             </div>
           </div>
         </div>
