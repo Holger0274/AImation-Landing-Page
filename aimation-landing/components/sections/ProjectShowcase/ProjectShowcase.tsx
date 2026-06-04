@@ -14,7 +14,7 @@ const PROJECTS: Project[] = [
     solutionWorld: 'KNOW',
     status: 'completed',
     tags: ['Perplexity', 'Claude', 'Patent-APIs'],
-    metrics: 'Prior Art vollständig im Blick, bevor die Konstruktion startet.',
+    metrics: 'Prior Art vollständig im Blick, bevor die Konstruktion startet. Konto: Qualität und Timing.',
     detailUrl: '/use-cases/patentrecherche-ki',
     image: {
       type: 'image',
@@ -29,7 +29,7 @@ const PROJECTS: Project[] = [
     solutionWorld: 'THINK',
     status: 'coming-soon',
     tags: ['Claude', 'Analytics', 'Dashboard'],
-    metrics: 'Reifegrad auf einen Blick, Schwachstellen zeigen sich vor dem Gate statt danach.',
+    metrics: 'Reifegrad auf einen Blick, Schwachstellen zeigen sich vor dem Gate statt danach. Konto: Qualität und Timing.',
     image: {
       type: 'image',
       src: '/images/use-cases/project-review-dashboard.png',
@@ -43,7 +43,7 @@ const PROJECTS: Project[] = [
     solutionWorld: 'FLOW',
     status: 'completed',
     tags: ['OpenAI', 'n8n', 'Outlook'],
-    metrics: 'Antworten am selben Tag, und jede Antwort wird zu gesichertem Wissen.',
+    metrics: 'Antworten am selben Tag, und jede Antwort wird zu gesichertem Wissen. Konto: Timing und Kosten.',
     detailUrl: '/use-cases/email-klassifizierung',
     image: {
       type: 'image',
@@ -58,7 +58,7 @@ const PROJECTS: Project[] = [
     solutionWorld: 'KNOW',
     status: 'completed',
     tags: ['RSS', 'Claude', 'Notion'],
-    metrics: 'Relevante Entwicklungen landen wöchentlich auf Ihrem Tisch, ohne Suchaufwand.',
+    metrics: 'Relevante Entwicklungen landen wöchentlich auf Ihrem Tisch, ohne Suchaufwand. Konto: Timing und Qualität.',
     image: {
       type: 'image',
       src: '/images/use-cases/tech-scouting.png',
@@ -72,7 +72,7 @@ const PROJECTS: Project[] = [
     solutionWorld: 'KNOW',
     status: 'completed',
     tags: ['Obsidian', 'Claude Code', 'Knowledge Graph'],
-    metrics: 'Jede Antwort in Sekunden auffindbar, mit Quelle.',
+    metrics: 'Jede Antwort in Sekunden auffindbar, mit Quelle. Konto: Timing und Qualität.',
     detailUrl: '/use-cases/knowledge-graph-management',
     image: {
       type: 'image',
@@ -87,7 +87,7 @@ const PROJECTS: Project[] = [
     solutionWorld: 'WORK',
     status: 'coming-soon',
     tags: ['Perplexity', 'n8n', 'LinkedIn API'],
-    metrics: 'Vorbereitet in Minuten, kein offener Punkt wird vergessen.',
+    metrics: 'Vorbereitet in Minuten, kein offener Punkt wird vergessen. Konto: Timing und Qualität.',
     image: {
       type: 'image',
       src: '/images/use-cases/customer-preparation.png',
@@ -101,7 +101,7 @@ const PROJECTS: Project[] = [
     solutionWorld: 'KNOW',
     status: 'coming-soon',
     tags: ['Claude', 'Dokumentenanalyse', 'OCR'],
-    metrics: 'Anforderungen und Risiken aus Prüfdokumenten automatisch erfasst.',
+    metrics: 'Anforderungen und Risiken aus Prüfdokumenten automatisch erfasst. Konto: Qualität und Kosten.',
     image: {
       type: 'image',
       src: '/images/use-cases/audit-documentation.png',
@@ -115,7 +115,7 @@ const PROJECTS: Project[] = [
     solutionWorld: 'WORK',
     status: 'in-progress',
     tags: ['Transkription', 'Vektordatenbank', 'Kategorisierung'],
-    metrics: 'To-dos und Erkenntnisse sind festgehalten, bevor der Raum leer ist.',
+    metrics: 'To-dos und Erkenntnisse sind festgehalten, bevor der Raum leer ist. Konto: Kosten und Timing.',
     image: {
       type: 'image',
       src: '/images/use-cases/meeting-transcript.png',
@@ -129,7 +129,7 @@ const PROJECTS: Project[] = [
     solutionWorld: 'THINK',
     status: 'in-progress',
     tags: ['Claude', 'Multi-Agent', '6-Hüte-Methode'],
-    metrics: 'Schwächen einer Idee zeigen sich, bevor Budget hineinfließt.',
+    metrics: 'Schwächen einer Idee zeigen sich, bevor Budget hineinfließt. Konto: Qualität und Kosten.',
     image: {
       type: 'image',
       src: '/images/use-cases/multi-agent-debate.png',
@@ -143,7 +143,7 @@ const PROJECTS: Project[] = [
     solutionWorld: 'THINK',
     status: 'coming-soon',
     tags: ['Web Scraping', 'Claude', 'Automation'],
-    metrics: 'Preise, Funktionen und Positionierung der Wettbewerber regelmäßig im Vergleich.',
+    metrics: 'Preise, Funktionen und Positionierung der Wettbewerber regelmäßig im Vergleich. Konto: Qualität und Timing.',
     image: {
       type: 'image',
       src: '/images/use-cases/competitor-benchmark.png',
@@ -157,7 +157,7 @@ const PROJECTS: Project[] = [
     solutionWorld: 'THINK',
     status: 'coming-soon',
     tags: ['Claude', 'Scoring-Algorithmen', 'Analytics'],
-    metrics: 'Machbarkeit und Wirtschaftlichkeit vergleichbar bewertet, statt nach Bauchgefühl.',
+    metrics: 'Machbarkeit und Wirtschaftlichkeit vergleichbar bewertet, statt nach Bauchgefühl. Konto: Qualität und Kosten.',
     image: {
       type: 'image',
       src: '/images/use-cases/innovation-dashboard.png',
@@ -171,7 +171,7 @@ const PROJECTS: Project[] = [
     solutionWorld: 'THINK',
     status: 'coming-soon',
     tags: ['Business Canvas', 'Jobs-to-be-Done', 'Customer Journey'],
-    metrics: 'Anforderungen und Schmerzpunkte der Kunden strukturiert statt anekdotisch.',
+    metrics: 'Anforderungen und Schmerzpunkte der Kunden strukturiert statt anekdotisch. Konto: Qualität.',
     image: {
       type: 'image',
       src: '/images/use-cases/analysis-tools.png',
