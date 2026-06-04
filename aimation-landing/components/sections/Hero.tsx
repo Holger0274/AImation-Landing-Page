@@ -92,9 +92,9 @@ export default function Hero() {
 
   // Custom generated images with AI.mation brand colors
   const images = [
-    '/images/hero-team-collaboration.png', // Team collaboration
-    '/images/hero-professional-meeting.png', // Professional meeting
-    '/images/hero-office-work.png', // Office work
+    '/images/hero-engineering-desk.jpg', // Engineering desk with magenta highlights — main hero image
+    '/images/hero-project-room-kanban.jpg', // Project room kanban board
+    '/images/hero-laptop-dashboard.jpg', // Laptop with magenta dashboard + engineering parts
   ];
 
   return (
@@ -194,66 +194,47 @@ export default function Hero() {
 
         {/* Right Column: Image Collage */}
         <motion.div
-          className="relative w-full max-w-full"
-          style={{
-            height: 'clamp(260px, 55vw, 600px)',
-            minHeight: '260px'
-          }}
+          className="relative w-full max-w-full hidden lg:block"
+          style={{ height: '560px' }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Decorative Shapes with AI.mation colors - Hide on very small mobile */}
+          {/* Decorative dots */}
           <motion.div
-            className="hidden sm:block absolute -top-4 left-1/4 h-16 w-16 rounded-full bg-magenta/20"
+            className="absolute top-8 left-8 h-14 w-14 rounded-full bg-magenta/15"
             variants={floatingVariants}
             animate="animate"
           />
           <motion.div
-            className="hidden sm:block absolute bottom-0 right-1/4 h-12 w-12 rounded-lg bg-lightblue/30"
-            variants={floatingVariants}
-            animate="animate"
-            style={{ transitionDelay: '0.5s' }}
-          />
-          <motion.div
-            className="hidden sm:block absolute bottom-1/4 left-4 h-6 w-6 rounded-full bg-magenta/30"
+            className="absolute bottom-8 right-8 h-10 w-10 rounded-lg bg-lightblue/25"
             variants={floatingVariants}
             animate="animate"
             style={{ transitionDelay: '1s' }}
           />
 
-          {/* Images - Optimized for all screen sizes including < 375px */}
-          {/* Top Center Image */}
+          {/* Main image — Engineering Desk — groß oben rechts */}
           <motion.div
-            className="absolute left-1/2 top-0 -translate-x-1/2 rounded-2xl bg-white p-1.5 sm:p-2 shadow-lg border border-gray-100"
-            style={{
-              transformOrigin: 'bottom center',
-              width: 'clamp(160px, 42vw, 288px)',
-              height: 'clamp(160px, 42vw, 288px)',
-            }}
+            className="absolute top-0 right-0 rounded-2xl bg-white p-2 shadow-xl border border-gray-100"
+            style={{ width: '340px', height: '340px' }}
             variants={imageVariants}
           >
             <div className="relative h-full w-full rounded-xl overflow-hidden">
               <Image
                 src={images[0]}
-                alt="Entwicklungsteam bespricht Automatisierung von Routineaufgaben in der Produktentwicklung"
+                alt="Ingenieur prüft technische Zeichnung mit Magenta-Markierungen — KI-gestützte Prozessoptimierung im Mittelstand"
                 fill
-                sizes="(max-width: 640px) 180px, 288px"
-                className="object-cover"
+                sizes="340px"
+                className="object-cover object-top"
                 priority
               />
             </div>
           </motion.div>
 
-          {/* Right Image - Optimized for small screens */}
+          {/* Second image — unten links */}
           <motion.div
-            className="absolute top-1/3 rounded-2xl bg-white p-1.5 sm:p-2 shadow-lg border border-gray-100"
-            style={{
-              transformOrigin: 'left center',
-              right: 'clamp(0px, 3vw, 16px)',
-              width: 'clamp(135px, 36vw, 256px)',
-              height: 'clamp(135px, 36vw, 256px)',
-            }}
+            className="absolute rounded-2xl bg-white p-2 shadow-lg border border-gray-100"
+            style={{ bottom: '0px', left: '24px', width: '220px', height: '220px' }}
             variants={imageVariants}
           >
             <div className="relative h-full w-full rounded-xl overflow-hidden">
@@ -261,35 +242,48 @@ export default function Hero() {
                 src={images[1]}
                 alt="Entwicklungsleiter und KI-Berater analysieren Prozesse in der Entwicklungsabteilung"
                 fill
-                sizes="(max-width: 640px) 150px, 256px"
+                sizes="220px"
                 className="object-cover"
                 priority
               />
             </div>
           </motion.div>
 
-          {/* Left Bottom Image - Optimized for small screens */}
+          {/* Third image — unten rechts, versetzt */}
           <motion.div
-            className="absolute bottom-0 rounded-2xl bg-white p-1.5 sm:p-2 shadow-lg border border-gray-100"
-            style={{
-              transformOrigin: 'top right',
-              left: 'clamp(0px, 3vw, 16px)',
-              width: 'clamp(120px, 30vw, 224px)',
-              height: 'clamp(120px, 30vw, 224px)',
-            }}
+            className="absolute rounded-2xl bg-white p-2 shadow-lg border border-gray-100"
+            style={{ bottom: '32px', right: '0px', width: '190px', height: '190px' }}
             variants={imageVariants}
           >
             <div className="relative h-full w-full rounded-xl overflow-hidden">
               <Image
                 src={images[2]}
-                alt="KI-Agent übernimmt Fleißarbeit in der Entwicklungsabteilung: Anfragen, Berichte, Recherche"
+                alt="KI-Dashboard mit Echtzeit-Prozessdaten auf Laptop neben präzisionsgefertigten Bauteilen"
                 fill
-                sizes="(max-width: 640px) 130px, 224px"
+                sizes="190px"
                 className="object-cover"
                 priority
               />
             </div>
           </motion.div>
+        </motion.div>
+
+        {/* Mobile: single image */}
+        <motion.div
+          className="relative w-full lg:hidden rounded-2xl overflow-hidden shadow-xl border border-gray-100"
+          style={{ height: '260px' }}
+          variants={imageVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <Image
+            src={images[0]}
+            alt="Ingenieur prüft technische Zeichnung mit Magenta-Markierungen"
+            fill
+            sizes="100vw"
+            className="object-cover object-top"
+            priority
+          />
         </motion.div>
       </div>
 
