@@ -214,41 +214,41 @@ export default function Hero() {
         {/* Right Column: Scattered photo stack — desktop only */}
         <motion.div
           className="relative hidden lg:block w-full self-center"
-          style={{ height: '520px' }}
+          style={{ height: '420px' }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Magenta Glow — diffuses hinter dem Stack */}
+          {/* Magenta Glow */}
           <div
             className="absolute pointer-events-none"
             style={{
-              top: '20%',
-              left: '10%',
-              width: '300px',
-              height: '300px',
-              background: 'radial-gradient(circle, rgba(249,0,147,0.12) 0%, transparent 70%)',
-              filter: 'blur(40px)',
+              top: '15%',
+              left: '20%',
+              width: '280px',
+              height: '280px',
+              background: 'radial-gradient(circle, rgba(249,0,147,0.13) 0%, transparent 70%)',
+              filter: 'blur(50px)',
               zIndex: 0,
             }}
           />
 
-          {/* Bild 1: Konstruktionszeichnung — groß, oben links, leicht nach links geneigt */}
+          {/* Bild 1: Konstruktionszeichnung — klein, oben links, stark geneigt */}
           <motion.div
             variants={imageVariants}
-            whileHover={{ scale: 1.04, rotate: -1, zIndex: 10, transition: { duration: 0.25 } }}
+            whileHover={{ scale: 1.06, zIndex: 20, transition: { duration: 0.2 } }}
             style={{
               position: 'absolute',
-              top: '0px',
-              left: '0px',
-              width: '340px',
-              height: '230px',
-              borderRadius: '16px',
-              border: '1px solid rgba(7,16,19,0.08)',
-              boxShadow: '0 16px 48px rgba(7,16,19,0.14)',
+              top: '10px',
+              left: '-10px',
+              width: '240px',
+              height: '160px',
+              borderRadius: '14px',
+              border: '1px solid rgba(7,16,19,0.09)',
+              boxShadow: '0 12px 40px rgba(7,16,19,0.16)',
               overflow: 'hidden',
-              transform: 'rotate(-3deg)',
-              zIndex: 3,
+              transform: 'rotate(-6deg)',
+              zIndex: 2,
             }}
           >
             <motion.div className="w-full h-full" variants={float1} animate="animate">
@@ -256,28 +256,28 @@ export default function Hero() {
                 src={images[0]}
                 alt="Hand prüft technische Konstruktionszeichnung mit markierten Prüfstellen"
                 fill
-                sizes="340px"
+                sizes="240px"
                 className="object-cover object-top"
                 priority
               />
             </motion.div>
           </motion.div>
 
-          {/* Bild 3: Laptop Dashboard — mittel, oben rechts, leicht nach rechts geneigt, überlappt Bild 1 */}
+          {/* Bild 3: Laptop — mittel, oben rechts, nach rechts geneigt, stark überlappend */}
           <motion.div
             variants={imageVariants}
-            whileHover={{ scale: 1.04, rotate: 2, zIndex: 10, transition: { duration: 0.25 } }}
+            whileHover={{ scale: 1.06, zIndex: 20, transition: { duration: 0.2 } }}
             style={{
               position: 'absolute',
-              top: '40px',
-              left: '200px',
-              width: '290px',
+              top: '0px',
+              left: '160px',
+              width: '300px',
               height: '200px',
-              borderRadius: '16px',
-              border: '1px solid rgba(7,16,19,0.08)',
-              boxShadow: '0 16px 48px rgba(7,16,19,0.14)',
+              borderRadius: '14px',
+              border: '1px solid rgba(7,16,19,0.09)',
+              boxShadow: '0 16px 50px rgba(7,16,19,0.18)',
               overflow: 'hidden',
-              transform: 'rotate(4deg)',
+              transform: 'rotate(5deg)',
               zIndex: 4,
             }}
           >
@@ -286,28 +286,28 @@ export default function Hero() {
                 src={images[2]}
                 alt="Laptop mit Auswertungs-Dashboard neben gefrästem Bauteil auf dem Schreibtisch"
                 fill
-                sizes="290px"
+                sizes="300px"
                 className="object-cover"
                 priority
               />
             </motion.div>
           </motion.div>
 
-          {/* Bild 2: Projektboard — groß, unten mittig, gerade, überlappt beide */}
+          {/* Bild 2: Projektboard — groß, unten, leicht geneigt, überlappt beide stark */}
           <motion.div
             variants={imageVariants}
-            whileHover={{ scale: 1.04, rotate: 1, zIndex: 10, transition: { duration: 0.25 } }}
+            whileHover={{ scale: 1.04, zIndex: 20, transition: { duration: 0.2 } }}
             style={{
               position: 'absolute',
-              top: '200px',
-              left: '60px',
-              width: '360px',
-              height: '260px',
-              borderRadius: '16px',
-              border: '1px solid rgba(7,16,19,0.08)',
-              boxShadow: '0 20px 60px rgba(7,16,19,0.18)',
+              top: '150px',
+              left: '30px',
+              width: '380px',
+              height: '250px',
+              borderRadius: '14px',
+              border: '1px solid rgba(7,16,19,0.09)',
+              boxShadow: '0 24px 64px rgba(7,16,19,0.20)',
               overflow: 'hidden',
-              transform: 'rotate(-1deg)',
+              transform: 'rotate(-2.5deg)',
               zIndex: 5,
             }}
           >
@@ -316,7 +316,7 @@ export default function Hero() {
                 src={images[1]}
                 alt="Ingenieur arbeitet am Projektboard mit Statuskarten im Projektraum"
                 fill
-                sizes="360px"
+                sizes="380px"
                 className="object-cover"
                 priority
               />
