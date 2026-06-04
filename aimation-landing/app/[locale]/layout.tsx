@@ -25,13 +25,13 @@ export async function generateMetadata({
 
     title: {
       default: isDE
-        ? 'KI-Beratung & Automatisierung für KMUs | AI.mation'
+        ? 'KI in der Produktentwicklung: Beratung, Schulung, Umsetzung | AImation'
         : 'AI Consulting & Automation for SMEs | AI.mation',
       template: '%s | AI.mation',
     },
 
     description: isDE
-      ? 'KI-Beratung, Schulungen & Automatisierung für den Mittelstand. Ehrliche Einschätzung, ob KI hilft. 20 Jahre Engineering-Erfahrung. Kostenloses Erstgespräch.'
+      ? 'AImation automatisiert die Fleißarbeit in Entwicklungsabteilungen: Anfragen, Berichte, Recherche, Wissenssicherung. DSGVO-konform, aus 20 Jahren Engineering-Praxis. Für den produzierenden Mittelstand.'
       : 'AI consulting, training & automation for mid-sized businesses. Honest assessment of whether AI helps. 20 years engineering experience. Free initial consultation.',
 
     keywords: isDE

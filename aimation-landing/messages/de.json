@@ -584,14 +584,14 @@
     ]
   },
   "finalCta": {
-    "headline": "Jetzt",
-    "headlineHighlight": "Klarheit",
-    "headlineEnd": "schaffen.",
-    "subline": "30 Minuten. Wir sagen Ihnen, was für Sie realistisch ist. Oder rechnen Sie erstmal selbst nach.",
+    "headline": "Finden Sie heraus, wo Ihre",
+    "headlineHighlight": "Entwicklung",
+    "headlineEnd": "Zeit verliert.",
+    "subline": "30 Minuten Gespräch. Sie bekommen einen konkreten ersten Schritt, auch wenn wir danach nie zusammenarbeiten.",
     "ctaPrimary": "Kostenloses Erstgespräch buchen",
-    "ctaSecondary": "ROI selbst berechnen",
-    "microcopy1": "30 Minuten • Unverbindlich • Sofort verfügbar",
-    "microcopy2": "2 Minuten • Keine Vorkenntnisse nötig"
+    "ctaSecondary": "Oder rechnen Sie erst selbst nach",
+    "microcopy1": "Kostenlos, unverbindlich, Antwort von mir persönlich.",
+    "microcopy2": "2 Minuten, keine Vorkenntnisse nötig"
   },
   "leadForm": {
     "ariaLabel": "Kostenloses Erstgespräch vereinbaren",
