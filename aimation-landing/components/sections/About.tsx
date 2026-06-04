@@ -102,6 +102,11 @@ export default function About() {
             <p className="text-lg text-gray-500 leading-relaxed">
               {t('introText')}
             </p>
+            {t('mainText') && (
+              <p className="text-base text-gray-500 leading-relaxed mt-4">
+                {t('mainText')}
+              </p>
+            )}
           </motion.div>
         </div>
 

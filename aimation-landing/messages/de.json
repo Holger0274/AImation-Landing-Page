@@ -453,33 +453,34 @@
   },
   "about": {
     "overline": "Über uns",
-    "headline": "20 Jahre Industrie. Kein",
-    "headlineHighlight": "Theorieberater.",
-    "introHeadline": "KI ist das Thema, das uns antreibt.",
-    "introHighlight": "Seit Jahren. Nicht seit dem Hype.",
-    "introText": "20 Jahre Engineering haben mir gezeigt, wo die Zeit wirklich verloren geht. Im Drumherum. In den Dingen, die niemand erklärt hat, wie man anders macht. Daran arbeite ich.",
-    "quotesLabel": "Das sind wir in 5 Sätzen",
+    "headline": "20 Jahre Produktentwicklung.",
+    "headlineHighlight": "Kein Theorieberater.",
+    "introHeadline": "Zwei Welten in einer Person.",
+    "introHighlight": "Keine Übersetzung nötig.",
+    "introText": "Sie kennen das Problem mit Beratern: Die einen verstehen KI, aber nicht Ihre Entwicklungsprozesse. Die anderen kennen Ihre Welt, holen für KI aber jemanden dazu. Bei mir bekommen Sie beides in einer Person.",
+    "mainText": "20 Jahre habe ich selbst in der Produktentwicklung gearbeitet und Teams geführt. Ich weiß, wo in einer Entwicklungsabteilung die Zeit wirklich verloren geht, weil ich an genau diesen Stellen gesessen habe: in Projektreviews, in Änderungsschleifen, in der Suche nach dem einen Bericht von vor drei Jahren. Und KI ist seit Jahren meine Leidenschaft, nicht erst seit dem Hype. Diese Kombination ist AImation: Ich übersetze zwischen Ihrer Entwicklungswelt und der KI-Welt. Sie brauchen keinen Dolmetscher dazwischen.",
+    "quotesLabel": "Das bin ich in 5 Sätzen",
     "ctaPrimary": "Kostenloses Erstgespräch vereinbaren",
     "ctaLinkedIn": "LinkedIn folgen. 18.000 Follower",
     "quotes": [
       {
-        "text": "„20 Jahre Engineering-Führungskraft in der Industrie.\"",
+        "text": "20 Jahre Führungskraft in der Produktentwicklung der Industrie.",
         "highlight": null
       },
       {
-        "text": "„Ich kenne [Ihre Prozesse], nicht aus Büchern, sondern aus der Praxis.\"",
+        "text": "Ich kenne [Ihre Prozesse] nicht aus Büchern, sondern weil ich sie selbst gelebt habe.",
         "highlight": "Ihre Prozesse"
       },
       {
-        "text": "„Wenn KI für Sie keinen Sinn ergibt, sage ich Ihnen das. Auch wenn mich das einen Auftrag kostet.\"",
+        "text": "Wenn KI für Sie keinen Sinn ergibt, sage ich Ihnen das. Auch wenn mich das einen Auftrag kostet.",
         "highlight": null
       },
       {
-        "text": "„[Machen] statt reden. Fertige Lösungen, die am nächsten Tag funktionieren.\"",
-        "highlight": "Machen"
+        "text": "[Machen statt reden]: Lösungen, die nächste Woche laufen, nicht nächstes Quartal.",
+        "highlight": "Machen statt reden"
       },
       {
-        "text": "„20 Jahre Erfahrung haben mir eines gezeigt: [Die einfachste Lösung], die wirklich funktioniert, ist immer die beste.\"",
+        "text": "20 Jahre haben mich eines gelehrt: [Die einfachste Lösung], die wirklich funktioniert, ist immer die beste.",
         "highlight": "Die einfachste Lösung"
       }
     ]
