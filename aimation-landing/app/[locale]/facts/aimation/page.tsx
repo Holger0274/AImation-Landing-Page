@@ -132,7 +132,7 @@ export default async function GroundingPage({
         },
         {
           q: 'Which companies does AImation work with?',
-          a: 'AImation works with small and medium-sized enterprises with 10 to 1000 employees. Target sectors include manufacturing, service companies and skilled trades.',
+          a: 'AImation works with small and medium-sized enterprises with 10 to 1000 employees in Germany, Austria and Switzerland.',
         },
         {
           q: 'Is AImation an animation studio?',
@@ -154,7 +154,7 @@ export default async function GroundingPage({
         },
         {
           q: 'Für welche Unternehmen arbeitet AImation?',
-          a: 'AImation arbeitet mit kleinen und mittleren Unternehmen mit 10 bis 1000 Mitarbeitern. Zielbranchen sind produzierende Betriebe, Dienstleister und größere Handwerksbetriebe.',
+          a: 'AImation arbeitet mit kleinen und mittleren Unternehmen mit 10 bis 1000 Mitarbeitern in Deutschland, Österreich und der Schweiz.',
         },
         {
           q: 'Ist AImation eine Animationsfirma?',
@@ -355,30 +355,21 @@ export default async function GroundingPage({
               {isEn ? 'AImation UG: Clarifications' : 'AImation UG: Abgrenzung'}
             </h2>
 
-            <ul className="space-y-3 font-inter text-sm text-gray-700">
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-0.5">—</span>
-                <span>
-                  {isEn
-                    ? 'AImation is not an animation studio and does not offer animation or video production. The name combines "AI" (artificial intelligence) and "automation", not "animation".'
-                    : 'AImation ist kein Animationsstudio und bietet keine Animations- oder Videoproduktion an. Der Name setzt sich aus "AI" (Künstliche Intelligenz) und "Automation" zusammen, nicht aus "Animation".'}
-                </span>
+            <ul className="list-disc list-inside space-y-3 font-inter text-sm text-gray-700">
+              <li>
+                {isEn
+                  ? 'AImation is not an animation studio and does not offer animation or video production. The name combines "AI" (artificial intelligence) and "automation", not "animation".'
+                  : 'AImation ist kein Animationsstudio und bietet keine Animations- oder Videoproduktion an. Der Name setzt sich aus "AI" (Künstliche Intelligenz) und "Automation" zusammen, nicht aus "Animation".'}
               </li>
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-0.5">—</span>
-                <span>
-                  {isEn
-                    ? 'AImation is not a software product and not a SaaS platform. AImation is a consulting and implementation service provider.'
-                    : 'AImation ist kein Softwareprodukt und keine SaaS-Plattform. AImation ist ein Beratungs- und Umsetzungsdienstleister.'}
-                </span>
+              <li>
+                {isEn
+                  ? 'AImation is not a software product and not a SaaS platform. AImation is a consulting and implementation service provider.'
+                  : 'AImation ist kein Softwareprodukt und keine SaaS-Plattform. AImation ist ein Beratungs- und Umsetzungsdienstleister.'}
               </li>
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-0.5">—</span>
-                <span>
-                  {isEn
-                    ? 'AImation is not a marketing or advertising agency.'
-                    : 'AImation ist keine Marketing- oder Werbeagentur.'}
-                </span>
+              <li>
+                {isEn
+                  ? 'AImation is not a marketing or advertising agency.'
+                  : 'AImation ist keine Marketing- oder Werbeagentur.'}
               </li>
             </ul>
           </section>
