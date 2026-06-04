@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { Linkedin, Mail } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
@@ -157,18 +157,20 @@ export default async function Footer() {
               {t('copyright', { year: currentYear })}
             </p>
             <div className="flex gap-6">
-              <Link
+              {/* Legal-Seiten liegen ausserhalb [locale] (nur /impressum, /datenschutz),
+                  daher bewusst plain <a> statt der locale-aware Link. */}
+              <a
                 href="/impressum"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
                 {t('impressum')}
-              </Link>
-              <Link
+              </a>
+              <a
                 href="/datenschutz"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
                 {t('datenschutz')}
-              </Link>
+              </a>
             </div>
           </div>
         </div>

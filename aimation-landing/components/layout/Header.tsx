@@ -1,15 +1,20 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, GraduationCap, Lightbulb, Zap, Bot } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 
 export default function Header() {
   const t = useTranslations('nav');
+  const locale = useLocale();
+  // Anker auf der Startseite muessen das aktuelle Locale-Praefix behalten,
+  // sonst springt man von /en zurueck auf die deutsche Startseite.
+  const homeHref = locale === 'de' ? '/' : `/${locale}`;
+  const useCasesHref = `${homeHref}#use-cases`;
 
   const leistungenItems = [
     {
@@ -244,7 +249,7 @@ export default function Header() {
 
             {/* Use Cases */}
             <a
-              href="/#use-cases"
+              href={useCasesHref}
               className="text-sm font-heading font-medium text-[#071013]/70 hover:text-[#071013] transition-colors"
             >
               {t('useCases')}
@@ -352,7 +357,7 @@ export default function Header() {
               </div>
 
               <a
-                href="/#use-cases"
+                href={useCasesHref}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#f90093] transition-colors"
               >

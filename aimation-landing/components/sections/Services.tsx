@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, useMemo } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GraduationCap, Lightbulb, Zap, ArrowRight, Code, Users, Database, Mail, FileText, TrendingUp } from 'lucide-react';
 import { useReducedMotion } from '@/lib/hooks/useReducedMotion';
