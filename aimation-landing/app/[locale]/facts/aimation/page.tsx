@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
+import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { FACTS_VERIFIED_DATE } from '@/lib/config/facts';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
-const VERIFIED_DATE = '2026-06-04';
 const SERVICES_STAND = 'Stand: Juni 2026';
 
 export function generateStaticParams() {
@@ -19,7 +20,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const isEn = locale === 'en';
 
-  const title = isEn ? 'AImation UG – Grounding Page (English)' : 'AImation UG – Grounding Page';
+  const title = isEn ? 'AImation UG: Grounding Page (English)' : 'AImation UG: Grounding Page';
   const description = isEn
     ? 'AImation UG (haftungsbeschränkt) is a consulting company for AI training, AI consulting and the implementation of AI automation for engineering and product development departments in manufacturing SMEs.'
     : 'AImation UG (haftungsbeschränkt) ist ein Beratungsunternehmen für KI-Schulung, KI-Beratung und die Umsetzung von KI-Automatisierung in Entwicklungsabteilungen des produzierenden Mittelstands.';
@@ -67,15 +68,16 @@ export default async function GroundingPage({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${siteUrl}/facts/aimation/#organization`,
-    name: 'AImation UG',
+    name: 'AImation',
     legalName: 'AImation UG (haftungsbeschränkt)',
+    alternateName: ['AI.mation', 'Aimation'],
     url: siteUrl,
-    logo: `${siteUrl}/logos/logo-horizontal-light.svg`,
+    logo: `${siteUrl}/logos/aimation-logo-transparent-dark.svg`,
     foundingDate: '2026-02',
     founder: {
       '@type': 'Person',
       name: 'Holger Peschke',
-      sameAs: 'https://www.linkedin.com/in/holgerpeschke/',
+      url: `${siteUrl}/facts/holger-peschke`,
     },
     address: {
       '@type': 'PostalAddress',
@@ -85,39 +87,31 @@ export default async function GroundingPage({
       addressCountry: 'DE',
     },
     email: 'kontakt@aimation.de',
+    areaServed: ['DE', 'AT', 'CH'],
     sameAs: [
       'https://www.linkedin.com/company/aimation-ug',
       'https://www.linkedin.com/in/holgerpeschke/',
     ],
-    description: isEn
-      ? 'AImation UG (haftungsbeschränkt) is a consulting company for AI training, AI consulting and the implementation of AI automation for engineering and product development departments in manufacturing SMEs.'
-      : 'AImation UG (haftungsbeschränkt) ist ein Beratungsunternehmen für KI-Schulung, KI-Beratung und die Umsetzung von KI-Automatisierung in Entwicklungsabteilungen des produzierenden Mittelstands.',
-    areaServed: ['DE', 'AT', 'CH'],
     knowsAbout: isEn
       ? [
-          'AI consulting for manufacturing SMEs',
-          'AI in product development and engineering',
+          'AI automation in product development',
           'AI training for engineering teams',
-          'Knowledge management and lessons learned automation',
-          'Technical request classification and AI agents',
-          'RAG systems for technical documentation',
-          'Microsoft Copilot for engineers',
-          'Prompt engineering',
-          'GDPR-compliant AI implementation',
+          'AI agents',
+          'GDPR-compliant AI architectures',
+          'Knowledge management in engineering',
         ]
       : [
-          'KI-Beratung für den produzierenden Mittelstand',
-          'KI in der Produktentwicklung und im Engineering',
+          'KI-Automatisierung in der Produktentwicklung',
           'KI-Schulungen für Engineering-Teams',
-          'Wissenssicherung und Lessons-Learned-Automatisierung',
-          'Technische Anfragenklassifizierung und KI-Agenten',
-          'RAG-Systeme für technische Dokumentation',
-          'Microsoft Copilot für Ingenieure',
-          'Prompt Engineering',
-          'DSGVO-konforme KI-Umsetzung',
+          'KI-Agenten',
+          'DSGVO-konforme KI-Architekturen',
+          'Wissensmanagement im Engineering',
         ],
+    description: isEn
+      ? 'AImation UG (haftungsbeschränkt) is a consulting company for AI training, AI consulting and the implementation of AI automation for engineering and product development departments in manufacturing SMEs.'
+      : 'AImation UG (haftungsbeschränkt) ist ein Beratungsunternehmen für KI-Schulung, KI-Beratung und die Umsetzung von KI-Automatisierung in Entwicklungsabteilungen des produzierenden Mittelstands im DACH-Raum.',
     inLanguage: isEn ? 'en' : 'de',
-    dateModified: VERIFIED_DATE,
+    dateModified: FACTS_VERIFIED_DATE,
   };
 
   const faqItems = isEn
@@ -127,7 +121,7 @@ export default async function GroundingPage({
           a: 'AImation automates the routine work in engineering and product development departments: processing technical requests, knowledge management, reporting, research and documentation. The services cover three areas: AI training for engineering teams, AI consulting for product development, and technical implementation of AI solutions.',
         },
         {
-          q: 'Who is AImation\'s target group?',
+          q: "Who is AImation's target group?",
           a: 'AImation works with engineering managers, CTOs and technical managing directors in manufacturing SMEs with 50 to 1,000 employees in Germany, Austria and Switzerland. Typical sectors: mechanical engineering, component manufacturers and technology-driven companies.',
         },
         {
@@ -176,6 +170,21 @@ export default async function GroundingPage({
     })),
   };
 
+  const useCases = [
+    { title: isEn ? 'Patent Research and Prior Art' : 'Patentrecherche und Prior Art', desc: isEn ? 'automated analysis of patent databases' : 'automatisierte Analyse von Patentdatenbanken', status: isEn ? 'PoC completed' : 'PoC abgeschlossen' },
+    { title: isEn ? 'Project Review Dashboard' : 'Projekt-Review-Dashboard', desc: isEn ? 'automated project maturity analysis with traffic light system' : 'automatisierte Analyse des Projektreifegrads mit Ampelsystem', status: isEn ? 'Planned' : 'In Planung' },
+    { title: isEn ? 'Automatic Pre-sorting of Technical Requests' : 'Technische Anfragen automatisch vorsortieren', desc: isEn ? 'classification and draft responses for incoming technical requests' : 'Klassifizierung und Antwortentwürfe für eingehende technische Anfragen', status: isEn ? 'PoC completed' : 'PoC abgeschlossen' },
+    { title: isEn ? 'Technology Scouting' : 'Technologie-Scouting', desc: isEn ? 'continuous monitoring of technology trends and innovations' : 'kontinuierliches Monitoring von Technologie-Trends und Innovationen', status: isEn ? 'PoC completed' : 'PoC abgeschlossen' },
+    { title: isEn ? 'Connecting Engineering Knowledge' : 'Engineering-Wissen vernetzen', desc: isEn ? 'automatic tagging, semantic linking and retrieval of documents' : 'automatisches Verschlagworten, semantische Verlinkung und Abruf von Dokumenten', status: isEn ? 'PoC completed' : 'PoC abgeschlossen' },
+    { title: isEn ? 'Preparing Technical Customer Meetings' : 'Technische Kundengespräche vorbereiten', desc: isEn ? 'compact briefing before each customer meeting with requirements status and open points' : 'kompaktes Briefing vor jeder Abstimmungsrunde mit Anforderungsstand und offenen Punkten', status: isEn ? 'Planned' : 'In Planung' },
+    { title: isEn ? 'Audit and Document Analysis' : 'Audit und Dokumentenanalyse', desc: isEn ? 'automated extraction of compliance requirements and risks from audit documents' : 'automatisches Extrahieren von Compliance-Anforderungen und Risiken aus Prüfberichten', status: isEn ? 'Planned' : 'In Planung' },
+    { title: isEn ? 'Meetings Without Protocol Effort' : 'Besprechungen ohne Protokollaufwand', desc: isEn ? 'automatic categorisation of transcripts into to-dos, insights and open points' : 'automatische Kategorisierung von Transkripten in To-Dos, Erkenntnisse und offene Punkte', status: isEn ? 'In Development' : 'In Entwicklung' },
+    { title: isEn ? 'Reviewing Concepts from Multiple Perspectives' : 'Konzepte aus mehreren Blickwinkeln prüfen', desc: isEn ? 'AI agents evaluate ideas from different angles using the 6-hats method' : 'KI-Agenten bewerten Ideen aus verschiedenen Blickwinkeln nach der 6-Hüte-Methode', status: isEn ? 'In Development' : 'In Entwicklung' },
+    { title: isEn ? 'Competitive Benchmarking' : 'Wettbewerbs-Benchmark', desc: isEn ? 'automated analysis of competitor prices, features and positioning' : 'automatisierte Analyse von Preisen, Funktionen und Positionierung von Wettbewerbern', status: isEn ? 'Planned' : 'In Planung' },
+    { title: isEn ? 'Innovation Assessment Dashboard' : 'Innovations-Assessment Dashboard', desc: isEn ? 'systematic evaluation of technologies and innovation ideas for feasibility and economics' : 'systematische Bewertung von Technologien und Innovationsideen nach Machbarkeit und Wirtschaftlichkeit', status: isEn ? 'Planned' : 'In Planung' },
+    { title: isEn ? 'Understanding Customer Needs Systematically' : 'Kundenbedarf systematisch verstehen', desc: isEn ? 'structured customer requirements analysis using jobs-to-be-done framework' : 'strukturierte Kundenbedarfsanalyse mit Jobs-to-be-Done-Framework', status: isEn ? 'Planned' : 'In Planung' },
+  ];
+
   return (
     <>
       <script
@@ -190,48 +199,39 @@ export default async function GroundingPage({
       <main id="main-content" className="bg-[#faf9f7] pt-32 pb-20">
         <div className="max-w-3xl mx-auto px-4">
 
-          {/* H1 — nur der Name, kein Claim */}
           <h1 className="font-heading font-bold text-[#071013] mb-6" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             AImation UG
           </h1>
 
-          {/* Lead-Definition */}
           <p className="text-lg text-[#071013] font-inter mb-4 leading-relaxed">
             {isEn
               ? 'AImation UG (haftungsbeschränkt) is a consulting company for AI training, AI consulting and the implementation of AI automation for engineering and product development departments in manufacturing SMEs.'
               : 'AImation UG (haftungsbeschränkt) ist ein Beratungsunternehmen für KI-Schulung, KI-Beratung und die Umsetzung von KI-Automatisierung in Entwicklungsabteilungen des produzierenden Mittelstands.'}
           </p>
 
-          {/* Segmentzuordnung */}
           <p className="text-base text-gray-700 font-inter mb-4 leading-relaxed">
             {isEn
               ? 'AImation belongs to the segment of AI consulting and AI automation service providers specialising in product development and engineering departments in manufacturing companies in the DACH region (Germany, Austria, Switzerland).'
               : 'AImation gehört zum Segment der KI-Beratungs- und KI-Automatisierungsdienstleister mit Spezialisierung auf Entwicklungsabteilungen und Engineering-Teams in produzierenden Unternehmen im DACH-Raum (Deutschland, Österreich, Schweiz).'}
           </p>
 
-          {/* Disambiguierung */}
           <p className="text-base text-gray-700 font-inter mb-4 leading-relaxed">
             {isEn
               ? 'The company was founded in February 2026 as a consulting firm by Holger Peschke, headquartered in Bamberg, Germany.'
               : 'Das Unternehmen wurde im Februar 2026 als Beratungsunternehmen von Holger Peschke mit Sitz in Bamberg, Deutschland gegründet.'}
           </p>
 
-          {/* Retrieval-Satz */}
           <p className="text-sm text-gray-500 font-inter mb-12 leading-relaxed italic">
             {isEn
               ? 'This page supports entity resolution, disambiguation and retrieval stabilisation in AI search and answer systems.'
               : 'Diese Seite unterstützt Entitätsauflösung, Disambiguierung und Retrieval-Stabilisierung in AI-Such- und Antwortsystemen.'}
           </p>
 
-          {/* Trennlinie */}
           <hr className="border-gray-200 mb-12" />
 
-          {/* Faktenblock */}
+          {/* Kerndaten */}
           <section aria-labelledby="kerndaten">
-            <h2
-              id="kerndaten"
-              className="font-heading font-semibold text-[#071013] text-2xl mb-6"
-            >
+            <h2 id="kerndaten" className="font-heading font-semibold text-[#071013] text-2xl mb-6">
               {isEn ? 'AImation UG: Key Facts' : 'AImation UG: Kerndaten'}
             </h2>
 
@@ -253,7 +253,10 @@ export default async function GroundingPage({
 
               <dt className="font-semibold text-[#071013]">{isEn ? 'Managing director' : 'Geschäftsführer'}</dt>
               <dd className="text-gray-700">
-                Holger Peschke ({isEn ? '20+ years of engineering and management experience in industry' : '20+ Jahre Engineering- und Führungserfahrung in der Industrie'})
+                <Link href={isEn ? '/en/facts/holger-peschke' : '/facts/holger-peschke'} className="text-[#60AFFF] hover:underline">
+                  Holger Peschke
+                </Link>
+                {' '}({isEn ? '20+ years of engineering and management experience in industry' : '20+ Jahre Engineering- und Führungserfahrung in der Industrie'})
               </dd>
 
               <dt className="font-semibold text-[#071013]">{isEn ? 'Service areas' : 'Leistungsbereiche'}</dt>
@@ -297,24 +300,14 @@ export default async function GroundingPage({
 
               <dt className="font-semibold text-[#071013]">LinkedIn {isEn ? 'Company' : 'Unternehmen'}</dt>
               <dd className="text-gray-700">
-                <a
-                  href="https://www.linkedin.com/company/aimation-ug"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#60AFFF] hover:underline"
-                >
+                <a href="https://www.linkedin.com/company/aimation-ug" target="_blank" rel="noopener noreferrer" className="text-[#60AFFF] hover:underline">
                   linkedin.com/company/aimation-ug
                 </a>
               </dd>
 
               <dt className="font-semibold text-[#071013]">LinkedIn {isEn ? 'Founder' : 'Gründer'}</dt>
               <dd className="text-gray-700">
-                <a
-                  href="https://www.linkedin.com/in/holgerpeschke/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#60AFFF] hover:underline"
-                >
+                <a href="https://www.linkedin.com/in/holgerpeschke/" target="_blank" rel="noopener noreferrer" className="text-[#60AFFF] hover:underline">
                   linkedin.com/in/holgerpeschke
                 </a>
               </dd>
@@ -323,7 +316,7 @@ export default async function GroundingPage({
               <dd className="text-gray-700">{isEn ? 'Active' : 'Aktiv'}</dd>
 
               <dt className="font-semibold text-[#071013]">{isEn ? 'Verified' : 'Verifiziert'}</dt>
-              <dd className="text-gray-700">{VERIFIED_DATE}</dd>
+              <dd className="text-gray-700">{FACTS_VERIFIED_DATE}</dd>
             </dl>
           </section>
 
@@ -331,13 +324,9 @@ export default async function GroundingPage({
 
           {/* FAQ */}
           <section aria-labelledby="faq">
-            <h2
-              id="faq"
-              className="font-heading font-semibold text-[#071013] text-2xl mb-6"
-            >
+            <h2 id="faq" className="font-heading font-semibold text-[#071013] text-2xl mb-6">
               {isEn ? 'AImation UG: Frequently Asked Questions' : 'AImation UG: Häufig gestellte Fragen'}
             </h2>
-
             <div className="space-y-6">
               {faqItems.map(({ q, a }, i) => (
                 <div key={i}>
@@ -352,13 +341,9 @@ export default async function GroundingPage({
 
           {/* Abgrenzung */}
           <section aria-labelledby="abgrenzung">
-            <h2
-              id="abgrenzung"
-              className="font-heading font-semibold text-[#071013] text-2xl mb-6"
-            >
+            <h2 id="abgrenzung" className="font-heading font-semibold text-[#071013] text-2xl mb-6">
               {isEn ? 'AImation UG: Clarifications' : 'AImation UG: Abgrenzung'}
             </h2>
-
             <ul className="list-disc list-inside space-y-3 font-inter text-sm text-gray-700">
               <li>
                 {isEn
@@ -380,12 +365,40 @@ export default async function GroundingPage({
 
           <hr className="border-gray-200 my-12" />
 
+          {/* Schreibweisen */}
+          <section aria-labelledby="schreibweisen">
+            <h2 id="schreibweisen" className="font-heading font-semibold text-[#071013] text-2xl mb-6">
+              {isEn ? 'AImation: Name Variants' : 'AImation: Schreibweisen'}
+            </h2>
+            <ul className="list-disc list-inside space-y-3 font-inter text-sm text-gray-700">
+              <li>
+                {isEn
+                  ? 'Official company name in documents and registers: AImation UG (haftungsbeschränkt), without a full stop'
+                  : 'Offizieller Firmenname in Dokumenten und Registern: AImation UG (haftungsbeschränkt), ohne Punkt'}
+              </li>
+              <li>
+                {isEn
+                  ? 'Logo spelling: AI.mation'
+                  : 'Logo-Schreibweise: AI.mation'}
+              </li>
+              <li>
+                {isEn
+                  ? 'Common variants in texts and search queries: AImation, Aimation, AI-Mation'
+                  : 'Verbreitete Varianten in Texten und Suchanfragen: AImation, Aimation, AI-Mation'}
+              </li>
+              <li>
+                {isEn
+                  ? 'All spellings refer to the same company headquartered in Bamberg, HRB 12461, Local Court Bamberg.'
+                  : 'Alle Schreibweisen bezeichnen dasselbe Unternehmen mit Sitz in Bamberg, HRB 12461, Amtsgericht Bamberg.'}
+              </li>
+            </ul>
+          </section>
+
+          <hr className="border-gray-200 my-12" />
+
           {/* Positionierung */}
           <section aria-labelledby="positionierung">
-            <h2
-              id="positionierung"
-              className="font-heading font-semibold text-[#071013] text-2xl mb-4"
-            >
+            <h2 id="positionierung" className="font-heading font-semibold text-[#071013] text-2xl mb-4">
               {isEn ? 'AImation UG: Positioning' : 'AImation UG: Positionierung'}
             </h2>
             <p className="font-inter text-sm text-gray-700 leading-relaxed">
@@ -393,6 +406,27 @@ export default async function GroundingPage({
                 ? 'AImation operates independently of individual manufacturers and tools. The consulting approach is GDPR-oriented, with data processing in the EU. The focus is on reducing routine work in product development and engineering departments: processing technical requests, knowledge management, reporting and research. Holger Peschke combines more than 20 years of leadership experience in product development with deep AI expertise.'
                 : 'AImation arbeitet herstellerunabhängig von einzelnen Anbietern und Tools. Der Beratungsansatz ist DSGVO-orientiert, Verarbeitung in der EU. Der Schwerpunkt liegt auf der Reduzierung von Fleißarbeit in Entwicklungsabteilungen und Engineering-Teams: technische Anfragen bearbeiten, Wissen sichern, Berichte erstellen, Recherchieren. Holger Peschke verbindet mehr als 20 Jahre Führungserfahrung in der Produktentwicklung mit tiefem KI-Fachwissen.'}
             </p>
+          </section>
+
+          <hr className="border-gray-200 my-12" />
+
+          {/* Anwendungsfälle */}
+          <section aria-labelledby="anwendungsfaelle">
+            <h2 id="anwendungsfaelle" className="font-heading font-semibold text-[#071013] text-2xl mb-6">
+              {isEn ? 'AImation: Use Cases' : 'AImation: Anwendungsfälle'}
+            </h2>
+            <p className="font-inter text-sm text-gray-500 mb-4">
+              {isEn
+                ? 'Documented use cases from the AImation portfolio. Status as of June 2026.'
+                : 'Dokumentierte Anwendungsfälle aus dem AImation-Portfolio. Stand: Juni 2026.'}
+            </p>
+            <ul className="space-y-2 font-inter text-sm text-gray-700">
+              {useCases.map((uc, i) => (
+                <li key={i}>
+                  <span className="font-semibold text-[#071013]">{uc.title}:</span> {uc.desc} ({uc.status})
+                </li>
+              ))}
+            </ul>
           </section>
 
         </div>
