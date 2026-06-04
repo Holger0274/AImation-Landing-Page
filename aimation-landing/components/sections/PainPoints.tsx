@@ -289,7 +289,7 @@ export default function PainPoints() {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-screen">
 
         {/* LEFT SIDE - LIGHT (Warm White Background) */}
-        <div className="relative bg-[#faf9f7] py-20 md:py-32 px-6 md:px-12 flex items-center justify-center order-1">
+        <div className="relative bg-[#faf9f7] py-12 md:py-20 px-6 md:px-12 flex items-center justify-center order-1">
           {/* Content */}
           <div className="relative z-10 max-w-xl mx-auto lg:mx-0 w-full">
             <motion.div
@@ -310,7 +310,7 @@ export default function PainPoints() {
               )}
 
               {/* Main Headline */}
-              <h2 className="font-heading font-bold text-[#071013] mb-8 break-words" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)', lineHeight: 1.35 }}>
+              <h2 className="font-heading font-bold text-[#071013] mb-4 break-words" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)', lineHeight: 1.35 }}>
                 {t('headline')}{' '}
                 <span className="text-[#f90093]">{t('headlineHighlight')}</span>{' '}
                 {t('headlineEnd')}
@@ -353,7 +353,7 @@ export default function PainPoints() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-8"
+              className="mt-4"
             >
               <button
                 onClick={(e) => {
