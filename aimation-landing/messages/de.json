@@ -3,11 +3,11 @@
     "leistungen": "Leistungen",
     "leistungenLabel": "Unsere Leistungen",
     "schulungen": "KI-Schulungen",
-    "schulungenDesc": "Wissen aufbauen – vom Einstieg bis zur Spezialisierung",
+    "schulungenDesc": "Wissen aufbauen, vom Einstieg bis zur Spezialisierung",
     "beratung": "KI-Beratung",
-    "beratungDesc": "Strategie & Roadmap – wo stehen Sie, wo wollen Sie hin?",
+    "beratungDesc": "Strategie & Roadmap, wo stehen Sie, wo wollen Sie hin?",
     "automatisierung": "KI-Automatisierung",
-    "automatisierungDesc": "Workflows & Prozesse automatisieren – sofort einsatzbereit",
+    "automatisierungDesc": "Workflows & Prozesse automatisieren, sofort einsatzbereit",
     "agenten": "KI-Agenten",
     "agentenDesc": "Intelligente Assistenten, die für Sie arbeiten",
     "useCases": "Use Cases",
@@ -458,13 +458,13 @@
     "introHeadline": "Zwei Welten in einer Person.",
     "introHighlight": "Keine Übersetzung nötig.",
     "introText": "Sie kennen das Problem mit Beratern: Die einen verstehen KI, aber nicht Ihre Entwicklungsprozesse. Die anderen kennen Ihre Welt, holen für KI aber jemanden dazu. Bei mir bekommen Sie beides in einer Person.",
-    "mainText": "20 Jahre habe ich selbst in der Produktentwicklung gearbeitet und Teams geführt. Ich weiß, wo in einer Entwicklungsabteilung die Zeit wirklich verloren geht, weil ich an genau diesen Stellen gesessen habe: in Projektreviews, in Änderungsschleifen, in der Suche nach dem einen Bericht von vor drei Jahren. Und KI ist seit Jahren meine Leidenschaft, nicht erst seit dem Hype. Diese Kombination ist AImation: Ich übersetze zwischen Ihrer Entwicklungswelt und der KI-Welt. Sie brauchen keinen Dolmetscher dazwischen.",
+    "mainText": "20 Jahre habe ich selbst in Entwicklungsabteilungen gearbeitet und Teams geführt. Ich weiß, wo in einer Entwicklungsabteilung die Zeit wirklich verloren geht, weil ich an genau diesen Stellen gesessen habe: in Projektreviews, in Änderungsschleifen, in der Suche nach dem einen Bericht von vor drei Jahren. Und KI ist seit Jahren meine Leidenschaft, nicht erst seit dem Hype. Diese Kombination ist AImation: Ich übersetze zwischen Ihrer Entwicklungswelt und der KI-Welt. Sie brauchen keinen Dolmetscher dazwischen.",
     "quotesLabel": "Das bin ich in 5 Sätzen",
     "ctaPrimary": "Kostenloses Erstgespräch vereinbaren",
     "ctaLinkedIn": "LinkedIn folgen. 18.000 Follower",
     "quotes": [
       {
-        "text": "20 Jahre Führungskraft in der Produktentwicklung der Industrie.",
+        "text": "20 Jahre Führungskraft in der Industrie, in Entwicklungsabteilungen und Engineering-Teams.",
         "highlight": null
       },
       {
@@ -500,12 +500,12 @@
     "differentiators": [
       {
         "title": "Shopfloor bis Führungsebene",
-        "description": "Ich war selbst jahrelang mittendrin: in Entwicklungsabteilungen produzierender Unternehmen, vom Projektraum bis zur Führungsebene. Welche Probleme wirklich nerven, weiß ich aus eigener Erfahrung, nicht aus einer Studie.",
+        "description": "Wir kommen aus Entwicklungsabteilungen produzierender Unternehmen, vom Projektraum bis zur Führungsebene. Welche Probleme wirklich nerven, wissen wir aus eigener Erfahrung, nicht aus einer Studie.",
         "highlight": "Praxis, keine Theorie"
       },
       {
         "title": "Wenn KI nicht hilft, sagen wir das",
-        "description": "Ich schaue mir Ihre Prozesse an. Manchmal lautet die Antwort: KI ist hier falsch. Das kostet mich manchmal einen Auftrag. Trotzdem sage ich es.",
+        "description": "Wir schauen uns Ihre Prozesse an. Manchmal lautet die Antwort: KI ist hier falsch. Das kostet uns manchmal einen Auftrag. Trotzdem sagen wir es.",
         "highlight": "Ehrlich, auch wenn unbequem"
       },
       {
