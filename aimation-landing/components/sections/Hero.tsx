@@ -69,15 +69,15 @@ export default function Hero() {
   // Trust Elements with animated counters
   const trustElements = [
     {
-      icon: <Users className="h-5 w-5 text-magenta" />,
-      target: 18000,
+      icon: <Award className="h-5 w-5 text-magenta" />,
+      target: 20,
       suffix: '+',
       label: t('trust1Label'),
       hasCounter: true,
     },
     {
-      icon: <Award className="h-5 w-5 text-magenta" />,
-      target: 20,
+      icon: <Users className="h-5 w-5 text-magenta" />,
+      target: 18000,
       suffix: '+',
       label: t('trust2Label'),
       hasCounter: true,
@@ -152,6 +152,14 @@ export default function Hero() {
               {t('cta')}
             </Button>
           </motion.div>
+
+          {/* CTA Microcopy */}
+          <motion.p
+            className="mt-2 text-sm text-gray-500 font-body text-center lg:text-left"
+            variants={itemVariants}
+          >
+            {t('ctaMicrocopy')}
+          </motion.p>
 
           {/* Trust Elements (Stats replacement) with Animated Counters */}
           <motion.div

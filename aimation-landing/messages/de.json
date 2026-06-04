@@ -21,15 +21,16 @@
   },
   "hero": {
     "badge": "Erkennen • Automatisieren • Wachsen",
-    "headlineStart": "40% der Arbeitszeit Ihrer Mitarbeiter geht für Aufgaben drauf, die ",
-    "headlineHighlight": "niemand vermissen würde",
+    "headlineStart": "Anfragen sortieren sich selbst. Wissen bleibt im Haus. Ihre Produkte werden ",
+    "headlineHighlight": "schneller reif",
     "headlineEnd": ".",
-    "subline": "Ob KI dafür die Lösung ist? Das sagen wir Ihnen ehrlich. Auch wenn die Antwort Nein lautet.",
-    "cta": "Kostenloses Erstgespräch vereinbaren",
-    "trust1Label": "LinkedIn-Follower",
-    "trust2Label": "Jahre Engineering",
-    "trust3Value": "10-1000",
-    "trust3Label": "Mitarbeiter (KMUs)"
+    "subline": "AImation automatisiert die Fleißarbeit in Entwicklungsabteilungen: Berichte, Recherchen, Anfragen, Wissenssicherung. DSGVO-konform, Verarbeitung in der EU, Ihre Daten bleiben Ihre Daten. Und wenn KI für Ihren Fall nichts bringt, sagen wir Ihnen genau das.",
+    "cta": "Finden Sie heraus, wo Ihre Entwicklung Zeit verliert",
+    "ctaMicrocopy": "Kostenlos, 30 Minuten, kein Verkaufsgespräch.",
+    "trust1Label": "Jahre Produktentwicklung und Führung in der Industrie",
+    "trust2Label": "LinkedIn-Follower",
+    "trust3Value": "DSGVO-konform",
+    "trust3Label": "Verarbeitung in der EU, keine Nutzung Ihrer Daten zum KI-Training"
   },
   "painPoints": {
     "badge": "Diese Probleme kennen wir von jedem dritten KMU",
