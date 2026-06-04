@@ -382,9 +382,9 @@
         "subtitle": "30 Minuten, kostenlos",
         "description": "Wir lernen uns kennen. Sie erzählen uns, wo der Schuh drückt. Wir sagen Ihnen ehrlich, ob wir helfen können.",
         "details": [
-          "Was nervt am meisten?",
-          "Wo verbrennen Sie Zeit?",
-          "Gibt's Quick Wins?"
+          "Wo verliert Ihre Entwicklung Zeit?",
+          "Welcher Prozess nervt jede Woche?",
+          "Gibt es einen Quick Win?"
         ],
         "duration": "30 Min",
         "cost": "Kostenlos"
@@ -392,10 +392,10 @@
       "analyse": {
         "title": "Analyse",
         "subtitle": "Potenziale erkennen",
-        "description": "Wir schauen uns an, wie Sie heute arbeiten. Wo hakt's? Wo geht Zeit verloren? Und was lässt sich realistisch automatisieren?",
+        "description": "Wir schauen uns an, wie Ihre Entwicklung heute arbeitet. Wo hakt es? Wo geht Zeit verloren? Und was lässt sich realistisch automatisieren?",
         "details": [
           "AI Readiness Assessment durchführen",
-          "AI Audit bestehender Tools & Prozesse",
+          "AI Audit bestehender Tools und Prozesse",
           "AI ROI-Potenziale kalkulieren"
         ],
         "duration": "2-4 Wochen",
