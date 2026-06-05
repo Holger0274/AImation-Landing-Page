@@ -117,7 +117,28 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-warm-white pt-24 pb-12 sm:pt-28 sm:pb-16 min-h-screen flex flex-col justify-center max-w-full">
+    <section className="w-full overflow-hidden bg-warm-white pt-24 pb-12 sm:pt-28 sm:pb-16 min-h-screen flex flex-col justify-center max-w-full relative">
+
+      {/* Subtiles Grid-Hintergrundmuster mit Fade nach unten */}
+      <div
+        className="absolute inset-0 -z-10 pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(7,16,19,0.09) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(7,16,19,0.09) 1px, transparent 1px)
+          `,
+          backgroundSize: '72px 72px',
+        }}
+      />
+      {/* Fade-Overlay: Grid läuft nach unten aus */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ zIndex: -9 }}
+        style={{
+          background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, #faf9f7 85%)',
+        }}
+      />
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
         {/* Badge — volle Breite, über dem Grid */}
