@@ -121,7 +121,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
         {/* Zweispaltiges Grid: nur Text oben + Bilder — gleiche Höhe */}
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
 
           {/* Left Column: Badge + H1 + Subline + CTA */}
           <motion.div
@@ -188,7 +188,7 @@ export default function Hero() {
         {/* Right Column: Scattered photo stack — desktop only */}
         <motion.div
           className="relative hidden lg:block w-full"
-          style={{ height: '420px' }}
+          style={{ height: '420px', alignSelf: 'center' }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
