@@ -117,27 +117,17 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full overflow-hidden pt-20 pb-10 sm:pt-28 sm:pb-16 min-h-[90vh] lg:min-h-screen flex flex-col justify-center max-w-full relative">
-
-      {/* Hintergrund + subtiles Grid-Muster — läuft nach unten aus */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundColor: '#faf9f7',
-          backgroundImage: `
-            linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)
-          `,
-          backgroundSize: '72px 72px',
-        }}
-      />
-      {/* Fade nach unten */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'linear-gradient(to bottom, transparent 50%, #faf9f7 90%)',
-        }}
-      />
+    <section
+      className="w-full overflow-hidden pt-20 pb-10 sm:pt-28 sm:pb-16 min-h-[90vh] lg:min-h-screen flex flex-col justify-center max-w-full relative"
+      style={{
+        backgroundColor: '#faf9f7',
+        backgroundImage: `
+          linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)
+        `,
+        backgroundSize: '72px 72px',
+      }}
+    >
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
