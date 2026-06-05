@@ -120,26 +120,31 @@ export default function Hero() {
     <section className="w-full overflow-hidden bg-warm-white pt-24 pb-12 sm:pt-28 sm:pb-16 min-h-screen flex flex-col justify-center max-w-full">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
-        {/* Zweispaltiges Grid: nur Text oben + Bilder — gleiche Höhe */}
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+        {/* Badge — volle Breite, über dem Grid */}
+        <motion.div
+          className="flex justify-center lg:justify-start mb-6"
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-magenta/10 backdrop-blur-sm border border-magenta/20">
+            <div className="w-2 h-2 rounded-full bg-magenta animate-pulse" />
+            <span className="text-sm font-heading font-semibold text-[#071013]">
+              {t('badge')}
+            </span>
+          </div>
+        </motion.div>
 
-          {/* Left Column: Badge + H1 + Subline + CTA */}
+        {/* Zweispaltiges Grid: Headline links + Foto-Stack rechts — vertikal zentriert */}
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+
+          {/* Left Column: H1 */}
           <motion.div
             className="flex flex-col items-center text-center lg:items-start lg:text-left"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            {/* Overline Badge */}
-            <motion.div variants={itemVariants} className="mb-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-magenta/10 backdrop-blur-sm border border-magenta/20">
-                <div className="w-2 h-2 rounded-full bg-magenta animate-pulse" />
-                <span className="text-sm font-heading font-semibold text-[#071013]">
-                  {t('badge')}
-                </span>
-              </div>
-            </motion.div>
-
             {/* Headline with Magenta Highlight */}
             <motion.h1
               className="font-bold tracking-tight font-heading text-[#071013] leading-tight"
@@ -157,7 +162,7 @@ export default function Hero() {
         {/* Right Column: Scattered photo stack — desktop only */}
         <motion.div
           className="relative hidden lg:block w-full"
-          style={{ height: '420px', alignSelf: 'flex-start', marginTop: '40px' }}
+          style={{ height: '420px' }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -294,21 +299,21 @@ export default function Hero() {
 
         {/* Subline + CTA — volle Breite, linksbündig */}
         <motion.div
-          className="mt-10 flex flex-col items-center text-center lg:items-start lg:text-left"
+          className="mt-10 w-full flex flex-col items-center text-center lg:items-start lg:text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.p
-            className="max-w-2xl text-gray-600 font-body leading-relaxed"
-            style={{ fontSize: 'clamp(0.95rem, 2vw, 1.125rem)' }}
+            className="w-full text-gray-600 font-body leading-relaxed"
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}
             variants={itemVariants}
           >
             {subtitle}
           </motion.p>
 
           <motion.div
-            className="mt-6 flex flex-wrap justify-center gap-4 lg:justify-start"
+            className="mt-5 flex flex-wrap justify-center gap-4 lg:justify-start"
             variants={itemVariants}
           >
             <Button
