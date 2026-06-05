@@ -118,17 +118,13 @@ export default function Hero() {
 
   return (
     <section
-      className="w-full overflow-hidden pt-20 pb-10 sm:pt-28 sm:pb-16 min-h-[90vh] lg:min-h-screen flex flex-col justify-center max-w-full relative"
+      className="w-full overflow-hidden pt-20 pb-10 sm:pt-28 sm:pb-16 min-h-[90vh] lg:min-h-screen flex flex-col justify-center max-w-full"
       style={{
         backgroundColor: '#faf9f7',
-        backgroundImage: `
-          linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)
-        `,
+        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
         backgroundSize: '72px 72px',
       }}
     >
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
         {/* Badge — volle Breite, über dem Grid */}
@@ -287,10 +283,10 @@ export default function Hero() {
           <motion.div
             className="relative w-full lg:hidden overflow-hidden"
             style={{
-              height: '220px',
-              borderRadius: '16px',
+              height: '260px',
+              borderRadius: '20px',
               border: '1px solid rgba(7,16,19,0.08)',
-              boxShadow: '0 12px 32px rgba(7,16,19,0.10)',
+              boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
             }}
             variants={imageVariants}
             initial="hidden"
@@ -310,14 +306,14 @@ export default function Hero() {
 
         {/* Subline + CTA — volle Breite, linksbündig */}
         <motion.div
-          className="mt-8 lg:mt-10 w-full flex flex-col items-center text-center lg:items-start lg:text-left"
+          className="mt-10 w-full flex flex-col items-center text-center lg:items-start lg:text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.p
-            className="w-full max-w-xl lg:max-w-none text-gray-600 font-body leading-relaxed"
-            style={{ fontSize: 'clamp(0.95rem, 2vw, 1.2rem)' }}
+            className="w-full text-gray-600 font-body leading-relaxed"
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}
             variants={itemVariants}
           >
             {subtitle}
@@ -346,7 +342,7 @@ export default function Hero() {
 
         {/* Trust Elements — volle Breite unter dem Grid */}
         <motion.div
-          className="mt-6 lg:mt-8 flex flex-wrap justify-center gap-4 lg:gap-10 lg:justify-start"
+          className="mt-8 flex flex-wrap justify-center gap-6 lg:gap-10 lg:justify-start"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
