@@ -111,7 +111,14 @@ export default function BeforeAfter() {
   const labelLoesung = t('labelLoesung');
 
   return (
-    <section className="relative py-20 md:py-32 bg-[#faf9f7] overflow-hidden">
+    <section
+      className="relative py-20 md:py-32 overflow-hidden"
+      style={{
+        backgroundColor: '#faf9f7',
+        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+        backgroundSize: '72px 72px',
+      }}
+    >
       {/* Background Glow */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div

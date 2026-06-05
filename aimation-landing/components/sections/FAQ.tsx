@@ -49,7 +49,15 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
 export default function FAQ() {
   const t = useTranslations('faq');
   return (
-    <section id="faq" className="py-20 md:py-32 bg-gray-50">
+    <section
+      id="faq"
+      className="py-20 md:py-32"
+      style={{
+        backgroundColor: '#f3f4f6',
+        backgroundImage: 'linear-gradient(rgba(7,16,19,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.06) 1px, transparent 1px)',
+        backgroundSize: '72px 72px',
+      }}
+    >
       {/*
         FAQPageSchema wurde in page.tsx (Server Component) verlagert,
         damit es im initialen HTML-Response fuer AI-Crawler sichtbar ist.

@@ -19,7 +19,12 @@ export default function WhyAImation() {
     <section
       id="warum-aimation"
       ref={sectionRef}
-      className="relative py-20 md:py-32 bg-[#071013] overflow-hidden"
+      className="relative py-20 md:py-32 overflow-hidden"
+      style={{
+        backgroundColor: '#071013',
+        backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+        backgroundSize: '72px 72px',
+      }}
     >
       {/* Background Glow Effect */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#f90093] rounded-full blur-[120px] opacity-10 pointer-events-none" />

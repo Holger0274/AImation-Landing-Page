@@ -289,7 +289,14 @@ export default function PainPoints() {
       <div className="grid grid-cols-1 lg:grid-cols-2">
 
         {/* LEFT SIDE - LIGHT (Warm White Background) */}
-        <div className="relative bg-[#faf9f7] py-12 md:py-16 px-6 md:px-12 flex items-center justify-center order-1">
+        <div
+          className="relative py-12 md:py-16 px-6 md:px-12 flex items-center justify-center order-1"
+          style={{
+            backgroundColor: '#faf9f7',
+            backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+            backgroundSize: '72px 72px',
+          }}
+        >
           {/* Content */}
           <div className="relative z-10 max-w-xl mx-auto lg:mx-0 w-full">
             <motion.div
@@ -385,7 +392,14 @@ export default function PainPoints() {
         </div>
 
         {/* RIGHT SIDE - DARK (Soft Black Background with Cards) */}
-        <div className="relative bg-[#071013] py-12 md:py-16 px-6 md:px-12 flex items-center justify-center order-2">
+        <div
+          className="relative py-12 md:py-16 px-6 md:px-12 flex items-center justify-center order-2"
+          style={{
+            backgroundColor: '#071013',
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+            backgroundSize: '72px 72px',
+          }}
+        >
           {/* Glow Background */}
           <div className="absolute inset-0 mesh-gradient opacity-30" />
 

@@ -480,7 +480,15 @@ export default function Services() {
   };
 
   return (
-    <section id="leistungen" className="relative py-20 md:py-32 bg-[#faf9f7] overflow-hidden">
+    <section
+      id="leistungen"
+      className="relative py-20 md:py-32 overflow-hidden"
+      style={{
+        backgroundColor: '#faf9f7',
+        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+        backgroundSize: '72px 72px',
+      }}
+    >
       {/* Gradient Mesh Background for Glassmorphism Effect */}
       <div className="absolute inset-0 opacity-40 pointer-events-none">
         <div

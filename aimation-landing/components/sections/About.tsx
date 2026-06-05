@@ -40,7 +40,15 @@ export default function About() {
   const quotes = (t.raw('quotes') as { text: string; highlight: string | null }[]);
 
   return (
-    <section id="ueber-mich" className="py-20 md:py-32 bg-warm-white">
+    <section
+      id="ueber-mich"
+      className="py-20 md:py-32"
+      style={{
+        backgroundColor: '#faf9f7',
+        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+        backgroundSize: '72px 72px',
+      }}
+    >
       {/*
         PersonSchema wurde in layout.tsx (Server Component) verlagert.
         Damit ist es fuer AI-Crawler im initialen HTML sichtbar.

@@ -9,7 +9,14 @@ export function PilotSection() {
   const CALENDLY_URL = process.env.NEXT_PUBLIC_CALENDLY_URL ?? '#'
 
   return (
-    <section className="bg-[#071013] py-20 px-4">
+    <section
+      className="py-20 px-4"
+      style={{
+        backgroundColor: '#071013',
+        backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+        backgroundSize: '72px 72px',
+      }}
+    >
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

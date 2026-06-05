@@ -93,7 +93,15 @@ export default function Process() {
   }));
 
   return (
-    <section id="prozess" className="py-20 md:py-32 bg-gradient-to-b from-warm-white to-gray-50 relative overflow-hidden">
+    <section
+      id="prozess"
+      className="py-20 md:py-32 relative overflow-hidden"
+      style={{
+        backgroundColor: '#faf9f7',
+        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+        backgroundSize: '72px 72px',
+      }}
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div

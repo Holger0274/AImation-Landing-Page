@@ -122,7 +122,14 @@ export default function SocialProof() {
   const stats = statsConfig.map((s) => ({ ...s, label: t(`stats.${s.labelKey}`) }));
 
   return (
-    <section className="py-20 md:py-32 bg-[#faf9f7]">
+    <section
+      className="py-20 md:py-32"
+      style={{
+        backgroundColor: '#faf9f7',
+        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+        backgroundSize: '72px 72px',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

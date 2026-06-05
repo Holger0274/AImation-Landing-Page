@@ -13,7 +13,15 @@ export default function FinalCTA() {
   const t = useTranslations('finalCta');
 
   return (
-    <section id="kontakt" className="relative py-20 md:py-32 bg-[#071013] text-white overflow-hidden">
+    <section
+      id="kontakt"
+      className="relative py-20 md:py-32 text-white overflow-hidden"
+      style={{
+        backgroundColor: '#071013',
+        backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+        backgroundSize: '72px 72px',
+      }}
+    >
       {/* Animated Glow Background - Responsive */}
       <div className="absolute inset-0">
         <motion.div
