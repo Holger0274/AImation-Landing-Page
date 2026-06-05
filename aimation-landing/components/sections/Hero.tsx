@@ -117,25 +117,18 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-warm-white pt-24 pb-12 sm:pt-28 sm:pb-16 min-h-screen flex flex-col justify-center max-w-full relative">
+    <section className="w-full overflow-hidden bg-warm-white pt-24 pb-12 sm:pt-28 sm:pb-16 min-h-screen flex flex-col justify-center max-w-full" style={{ position: 'relative', isolation: 'isolate' }}>
 
-      {/* Subtiles Grid-Hintergrundmuster mit Fade nach unten */}
+      {/* Subtiles Grid-Hintergrundmuster — läuft nach unten aus */}
       <div
         className="absolute inset-0 -z-10 pointer-events-none"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(7,16,19,0.09) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(7,16,19,0.09) 1px, transparent 1px)
+            linear-gradient(rgba(7,16,19,0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(7,16,19,0.08) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(250,249,247,0) 0%, rgba(250,249,247,0) 55%, rgba(250,249,247,1) 90%)
           `,
-          backgroundSize: '72px 72px',
-        }}
-      />
-      {/* Fade-Overlay: Grid läuft nach unten aus */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          zIndex: -9,
-          background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, #faf9f7 85%)',
+          backgroundSize: '72px 72px, 72px 72px, 100% 100%',
         }}
       />
 
