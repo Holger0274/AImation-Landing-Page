@@ -118,7 +118,7 @@ export default function Hero() {
 
   return (
     <section className="w-full overflow-hidden bg-warm-white pt-24 pb-12 sm:py-24 min-h-screen flex items-center max-w-full">
-      <div className="container mx-auto grid grid-cols-1 items-start gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 max-w-7xl">
+      <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 max-w-7xl">
         {/* Left Column: Text Content */}
         <motion.div
           className="flex flex-col items-center text-center lg:items-start lg:text-left"
@@ -214,7 +214,7 @@ export default function Hero() {
         {/* Right Column: Scattered photo stack — desktop only */}
         <motion.div
           className="relative hidden lg:block w-full"
-          style={{ height: '420px', marginTop: '-120px', paddingLeft: '24px' }}
+          style={{ height: '420px' }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
