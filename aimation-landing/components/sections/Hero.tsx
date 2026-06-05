@@ -117,99 +117,73 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-warm-white pt-24 pb-12 sm:py-24 min-h-screen flex items-center max-w-full">
-      <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 max-w-7xl">
-        {/* Left Column: Text Content */}
-        <motion.div
-          className="flex flex-col items-center text-center lg:items-start lg:text-left"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {/* Overline Badge */}
-          <motion.div variants={itemVariants} className="mb-6 mt-4 sm:mt-0">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-magenta/10 backdrop-blur-sm border border-magenta/20">
-              <div className="w-2 h-2 rounded-full bg-magenta animate-pulse" />
-              <span className="text-sm font-heading font-semibold text-[#071013]">
-                {t('badge')}
-              </span>
-            </div>
-          </motion.div>
+    <section className="w-full overflow-hidden bg-warm-white pt-24 pb-16 sm:pt-32 sm:pb-20 min-h-screen flex flex-col justify-center max-w-full">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
-          {/* Headline with Magenta Highlight */}
-          <motion.h1
-            className="font-bold tracking-tight font-heading text-[#071013] leading-tight"
-            style={{ fontSize: 'clamp(1.75rem, 5vw, 4.5rem)' }}
-            variants={itemVariants}
-          >
-            {headlineStart}
-            <span className="text-magenta">
-              {headlineHighlight}
-            </span>
-            {headlineEnd}
-          </motion.h1>
+        {/* Zweispaltiges Grid: nur Text oben + Bilder — gleiche Höhe */}
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
-          {/* Subtitle */}
-          <motion.p
-            className="mt-6 max-w-md text-gray-600 font-body leading-relaxed"
-            style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}
-            variants={itemVariants}
-          >
-            {subtitle}
-          </motion.p>
-
-          {/* CTA Button */}
+          {/* Left Column: Badge + H1 + Subline + CTA */}
           <motion.div
-            className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start"
-            variants={itemVariants}
+            className="flex flex-col items-center text-center lg:items-start lg:text-left"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
           >
-            <Button
-              onClick={() => setIsModalOpen(true)}
-              size="lg"
-              className="bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold hover:shadow-[0_0_30px_rgba(249,0,147,0.4)] transition-all duration-300"
-            >
-              {t('cta')}
-            </Button>
-          </motion.div>
-
-          {/* CTA Microcopy */}
-          <motion.p
-            className="mt-2 text-sm text-gray-500 font-body text-center lg:text-left"
-            variants={itemVariants}
-          >
-            {t('ctaMicrocopy')}
-          </motion.p>
-
-          {/* Trust Elements (Stats replacement) with Animated Counters */}
-          <motion.div
-            className="mt-12 flex flex-wrap justify-center gap-3 sm:gap-6 lg:gap-8 lg:justify-start max-w-2xl"
-            variants={itemVariants}
-          >
-            {trustElements.map((item, index) => (
-              <div key={index} className="flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-0">
-                <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-magenta/10 flex-shrink-0">
-                  {item.icon}
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="font-bold text-[#071013] font-heading" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
-                    {item.hasCounter ? (
-                      <AnimatedCounter
-                        target={item.target!}
-                        suffix={item.suffix}
-                        duration={2.5}
-                        separator={true}
-                        delay={0.5 + index * 0.2}
-                      />
-                    ) : (
-                      item.value
-                    )}
-                  </p>
-                  <p className="text-xs sm:text-sm text-gray-600 font-body break-words leading-tight">{item.label}</p>
-                </div>
+            {/* Overline Badge */}
+            <motion.div variants={itemVariants} className="mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-magenta/10 backdrop-blur-sm border border-magenta/20">
+                <div className="w-2 h-2 rounded-full bg-magenta animate-pulse" />
+                <span className="text-sm font-heading font-semibold text-[#071013]">
+                  {t('badge')}
+                </span>
               </div>
-            ))}
+            </motion.div>
+
+            {/* Headline with Magenta Highlight */}
+            <motion.h1
+              className="font-bold tracking-tight font-heading text-[#071013] leading-tight"
+              style={{ fontSize: 'clamp(1.75rem, 5vw, 4.5rem)' }}
+              variants={itemVariants}
+            >
+              {headlineStart}
+              <span className="text-magenta">
+                {headlineHighlight}
+              </span>
+              {headlineEnd}
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              className="mt-6 max-w-md text-gray-600 font-body leading-relaxed"
+              style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}
+              variants={itemVariants}
+            >
+              {subtitle}
+            </motion.p>
+
+            {/* CTA Button */}
+            <motion.div
+              className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start"
+              variants={itemVariants}
+            >
+              <Button
+                onClick={() => setIsModalOpen(true)}
+                size="lg"
+                className="bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold hover:shadow-[0_0_30px_rgba(249,0,147,0.4)] transition-all duration-300"
+              >
+                {t('cta')}
+              </Button>
+            </motion.div>
+
+            {/* CTA Microcopy */}
+            <motion.p
+              className="mt-2 text-sm text-gray-500 font-body text-center lg:text-left"
+              variants={itemVariants}
+            >
+              {t('ctaMicrocopy')}
+            </motion.p>
           </motion.div>
-        </motion.div>
 
         {/* Right Column: Scattered photo stack — desktop only */}
         <motion.div
@@ -324,28 +298,63 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Mobile: single image */}
+          {/* Mobile: single image */}
+          <motion.div
+            className="relative w-full lg:hidden overflow-hidden"
+            style={{
+              height: '260px',
+              borderRadius: '20px',
+              border: '1px solid rgba(7,16,19,0.08)',
+              boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
+            }}
+            variants={imageVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <Image
+              src={images[0]}
+              alt="Hand prüft technische Konstruktionszeichnung mit markierten Prüfstellen"
+              fill
+              sizes="100vw"
+              className="object-cover object-top"
+              priority
+            />
+          </motion.div>
+
+        </div>{/* end grid */}
+
+        {/* Trust Elements — volle Breite unter dem Grid */}
         <motion.div
-          className="relative w-full lg:hidden overflow-hidden"
-          style={{
-            height: '260px',
-            borderRadius: '20px',
-            border: '1px solid rgba(7,16,19,0.08)',
-            boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
-          }}
-          variants={imageVariants}
+          className="mt-12 flex flex-wrap justify-center gap-6 lg:gap-10 lg:justify-start"
+          variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <Image
-            src={images[0]}
-            alt="Hand prüft technische Konstruktionszeichnung mit markierten Prüfstellen"
-            fill
-            sizes="100vw"
-            className="object-cover object-top"
-            priority
-          />
+          {trustElements.map((item, index) => (
+            <motion.div key={index} variants={itemVariants} className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-magenta/10 flex-shrink-0">
+                {item.icon}
+              </div>
+              <div>
+                <p className="font-bold text-[#071013] font-heading text-lg">
+                  {item.hasCounter ? (
+                    <AnimatedCounter
+                      target={item.target!}
+                      suffix={item.suffix}
+                      duration={2.5}
+                      separator={true}
+                      delay={0.5 + index * 0.2}
+                    />
+                  ) : (
+                    item.value
+                  )}
+                </p>
+                <p className="text-sm text-gray-600 font-body">{item.label}</p>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
+
       </div>
 
       {/* Lead Form Modal */}
