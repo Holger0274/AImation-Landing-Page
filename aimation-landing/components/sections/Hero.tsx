@@ -133,8 +133,8 @@ export default function Hero() {
       {/* Fade-Overlay: Grid läuft nach unten aus */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ zIndex: -9 }}
         style={{
+          zIndex: -9,
           background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, #faf9f7 85%)',
         }}
       />
