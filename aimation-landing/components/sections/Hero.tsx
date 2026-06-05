@@ -117,18 +117,25 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-warm-white pt-20 pb-10 sm:pt-28 sm:pb-16 min-h-[90vh] lg:min-h-screen flex flex-col justify-center max-w-full" style={{ position: 'relative', isolation: 'isolate' }}>
+    <section className="w-full overflow-hidden pt-20 pb-10 sm:pt-28 sm:pb-16 min-h-[90vh] lg:min-h-screen flex flex-col justify-center max-w-full relative">
 
-      {/* Subtiles Grid-Hintergrundmuster — läuft nach unten aus */}
+      {/* Hintergrund + subtiles Grid-Muster — läuft nach unten aus */}
       <div
-        className="absolute inset-0 -z-10 pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
+          backgroundColor: '#faf9f7',
           backgroundImage: `
-            linear-gradient(rgba(7,16,19,0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(7,16,19,0.08) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(250,249,247,0) 0%, rgba(250,249,247,0) 55%, rgba(250,249,247,1) 90%)
+            linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)
           `,
-          backgroundSize: '72px 72px, 72px 72px, 100% 100%',
+          backgroundSize: '72px 72px',
+        }}
+      />
+      {/* Fade nach unten */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom, transparent 50%, #faf9f7 90%)',
         }}
       />
 
