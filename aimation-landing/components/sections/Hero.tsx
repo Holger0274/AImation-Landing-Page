@@ -152,37 +152,6 @@ export default function Hero() {
               </span>
               {headlineEnd}
             </motion.h1>
-
-            {/* Subtitle */}
-            <motion.p
-              className="mt-6 max-w-md text-gray-600 font-body leading-relaxed"
-              style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}
-              variants={itemVariants}
-            >
-              {subtitle}
-            </motion.p>
-
-            {/* CTA Button */}
-            <motion.div
-              className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start"
-              variants={itemVariants}
-            >
-              <Button
-                onClick={() => setIsModalOpen(true)}
-                size="lg"
-                className="bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold hover:shadow-[0_0_30px_rgba(249,0,147,0.4)] transition-all duration-300"
-              >
-                {t('cta')}
-              </Button>
-            </motion.div>
-
-            {/* CTA Microcopy */}
-            <motion.p
-              className="mt-2 text-sm text-gray-500 font-body text-center lg:text-left"
-              variants={itemVariants}
-            >
-              {t('ctaMicrocopy')}
-            </motion.p>
           </motion.div>
 
         {/* Right Column: Scattered photo stack — desktop only */}
@@ -322,6 +291,42 @@ export default function Hero() {
           </motion.div>
 
         </div>{/* end grid */}
+
+        {/* Subline + CTA — volle Breite, linksbündig */}
+        <motion.div
+          className="mt-8 flex flex-col items-center text-center lg:items-start lg:text-left"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.p
+            className="max-w-2xl text-gray-600 font-body leading-relaxed"
+            style={{ fontSize: 'clamp(0.95rem, 2vw, 1.125rem)' }}
+            variants={itemVariants}
+          >
+            {subtitle}
+          </motion.p>
+
+          <motion.div
+            className="mt-6 flex flex-wrap justify-center gap-4 lg:justify-start"
+            variants={itemVariants}
+          >
+            <Button
+              onClick={() => setIsModalOpen(true)}
+              size="lg"
+              className="bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold hover:shadow-[0_0_30px_rgba(249,0,147,0.4)] transition-all duration-300"
+            >
+              {t('cta')}
+            </Button>
+          </motion.div>
+
+          <motion.p
+            className="mt-2 text-sm text-gray-500 font-body"
+            variants={itemVariants}
+          >
+            {t('ctaMicrocopy')}
+          </motion.p>
+        </motion.div>
 
         {/* Trust Elements — volle Breite unter dem Grid */}
         <motion.div
