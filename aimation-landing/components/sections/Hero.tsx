@@ -188,7 +188,7 @@ export default function Hero() {
         {/* Right Column: Scattered photo stack — desktop only */}
         <motion.div
           className="relative hidden lg:block w-full"
-          style={{ height: '420px', alignSelf: 'center' }}
+          style={{ height: '420px', alignSelf: 'flex-start', marginTop: '40px' }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
