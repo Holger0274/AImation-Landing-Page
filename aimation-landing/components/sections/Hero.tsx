@@ -117,7 +117,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-warm-white pt-24 pb-12 sm:pt-28 sm:pb-16 min-h-screen flex flex-col justify-center max-w-full" style={{ position: 'relative', isolation: 'isolate' }}>
+    <section className="w-full overflow-hidden bg-warm-white pt-20 pb-10 sm:pt-28 sm:pb-16 min-h-[90vh] lg:min-h-screen flex flex-col justify-center max-w-full" style={{ position: 'relative', isolation: 'isolate' }}>
 
       {/* Subtiles Grid-Hintergrundmuster — läuft nach unten aus */}
       <div
@@ -150,7 +150,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Zweispaltiges Grid: Headline links + Foto-Stack rechts — vertikal zentriert */}
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-16">
 
           {/* Left Column: H1 */}
           <motion.div
@@ -290,21 +290,21 @@ export default function Hero() {
           <motion.div
             className="relative w-full lg:hidden overflow-hidden"
             style={{
-              height: '260px',
-              borderRadius: '20px',
+              height: '220px',
+              borderRadius: '16px',
               border: '1px solid rgba(7,16,19,0.08)',
-              boxShadow: '0 20px 50px rgba(7,16,19,0.10)',
+              boxShadow: '0 12px 32px rgba(7,16,19,0.10)',
             }}
             variants={imageVariants}
             initial="hidden"
             animate="visible"
           >
             <Image
-              src={images[0]}
-              alt="Hand prüft technische Konstruktionszeichnung mit markierten Prüfstellen"
+              src={images[2]}
+              alt="Laptop mit KI-Interface auf dem Schreibtisch"
               fill
               sizes="100vw"
-              className="object-cover object-top"
+              className="object-cover"
               priority
             />
           </motion.div>
@@ -313,14 +313,14 @@ export default function Hero() {
 
         {/* Subline + CTA — volle Breite, linksbündig */}
         <motion.div
-          className="mt-10 w-full flex flex-col items-center text-center lg:items-start lg:text-left"
+          className="mt-8 lg:mt-10 w-full flex flex-col items-center text-center lg:items-start lg:text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.p
-            className="w-full text-gray-600 font-body leading-relaxed"
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}
+            className="w-full max-w-xl lg:max-w-none text-gray-600 font-body leading-relaxed"
+            style={{ fontSize: 'clamp(0.95rem, 2vw, 1.2rem)' }}
             variants={itemVariants}
           >
             {subtitle}
@@ -349,7 +349,7 @@ export default function Hero() {
 
         {/* Trust Elements — volle Breite unter dem Grid */}
         <motion.div
-          className="mt-8 flex flex-wrap justify-center gap-6 lg:gap-10 lg:justify-start"
+          className="mt-6 lg:mt-8 flex flex-wrap justify-center gap-4 lg:gap-10 lg:justify-start"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
