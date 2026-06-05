@@ -213,8 +213,8 @@ export default function Hero() {
             whileHover={{ scale: 1.06, zIndex: 20, transition: { duration: 0.2 } }}
             style={{
               position: 'absolute',
-              top: '10px',
-              left: '-10px',
+              top: '20px',
+              left: '20px',
               width: '240px',
               height: '160px',
               borderRadius: '14px',
@@ -243,8 +243,8 @@ export default function Hero() {
             whileHover={{ scale: 1.06, zIndex: 20, transition: { duration: 0.2 } }}
             style={{
               position: 'absolute',
-              top: '0px',
-              left: '160px',
+              top: '20px',
+              left: '200px',
               width: '300px',
               height: '200px',
               borderRadius: '14px',
@@ -273,8 +273,8 @@ export default function Hero() {
             whileHover={{ scale: 1.04, zIndex: 20, transition: { duration: 0.2 } }}
             style={{
               position: 'absolute',
-              top: '150px',
-              left: '30px',
+              top: '160px',
+              left: '60px',
               width: '380px',
               height: '250px',
               borderRadius: '14px',
