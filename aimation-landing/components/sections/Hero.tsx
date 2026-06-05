@@ -117,7 +117,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-warm-white pt-24 pb-16 sm:pt-32 sm:pb-20 min-h-screen flex flex-col justify-center max-w-full">
+    <section className="w-full overflow-hidden bg-warm-white pt-24 pb-12 sm:pt-28 sm:pb-16 min-h-screen flex flex-col justify-center max-w-full">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
         {/* Zweispaltiges Grid: nur Text oben + Bilder — gleiche Höhe */}
@@ -294,7 +294,7 @@ export default function Hero() {
 
         {/* Subline + CTA — volle Breite, linksbündig */}
         <motion.div
-          className="mt-8 flex flex-col items-center text-center lg:items-start lg:text-left"
+          className="mt-10 flex flex-col items-center text-center lg:items-start lg:text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -330,7 +330,7 @@ export default function Hero() {
 
         {/* Trust Elements — volle Breite unter dem Grid */}
         <motion.div
-          className="mt-12 flex flex-wrap justify-center gap-6 lg:gap-10 lg:justify-start"
+          className="mt-8 flex flex-wrap justify-center gap-6 lg:gap-10 lg:justify-start"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
