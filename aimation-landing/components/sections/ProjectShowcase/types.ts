@@ -35,7 +35,7 @@ export const SOLUTION_WORLD_LABELS: Record<SolutionWorld, string> = {
 
 export const STATUS_CONFIG = {
   completed: {
-    label: 'PoC abgeschlossen',
+    label: 'Live-Demo im Erstgespräch verfügbar',
     color: 'text-green-600',
     dotColor: 'bg-green-500',
   },

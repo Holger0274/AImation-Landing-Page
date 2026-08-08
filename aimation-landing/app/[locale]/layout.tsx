@@ -98,8 +98,8 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: isDE ? 'KI-Beratung für KMUs | AImation' : 'AI Consulting for SMEs | AImation',
       description: isDE
-        ? '40% Zeitersparnis durch KI-Automatisierung. Ehrliche Einschätzung, ob KI für Ihr KMU sinnvoll ist. Kostenloses Erstgespräch.'
-        : '40% time savings through AI automation. Honest assessment of whether AI makes sense for your business. Free initial consultation.',
+        ? '40% der Arbeitszeit geht für Aufgaben drauf, die niemand vermissen würde. Ehrliche Einschätzung, ob KI die Lösung ist. Kostenloses Erstgespräch.'
+        : '40% of working time goes on tasks no one would miss. Honest assessment of whether AI is the right solution. Free initial consultation.',
       images: ['/images/og-image.png'],
       creator: '@holgerpeschke',
       site: '@aimation_de',

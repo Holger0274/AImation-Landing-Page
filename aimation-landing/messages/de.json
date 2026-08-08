@@ -247,36 +247,36 @@
         {
           "title": "2-Tages-Workshop: Prompt Engineering für Engineering-Teams",
           "description": "2-Tages-Workshop für Engineering-Teams und angrenzende Bereiche: Teilnehmer lernen den Umgang mit LLMs wie ChatGPT, Claude, Microsoft Copilot und Perplexity AI. Von den Grundlagen bis zu fortgeschrittenen Prompt-Techniken, um sofort Ergebnisse zu erzielen. Inklusive konkreter Use Cases aus dem Engineering-Alltag.",
-          "result": "80% der Teilnehmer nutzen KI-Tools täglich im Arbeitsalltag"
+          "result": "Jeder Teilnehmer verlässt den Workshop mit einem eigenen Prompt-Baukasten für den Arbeitsalltag"
         },
         {
           "title": "Workshop: Automatisierung und KI-Automatisierung",
           "description": "Praktischer Workshop für Prozessverantwortliche und Teams: Was sind Automatisierungen? Wie unterscheiden sich klassische Workflows von KI-gestützten Automatisierungen? Teilnehmer lernen, Automatisierungspotenziale zu erkennen und KI gezielt einzubringen, von einfachen Workflows bis zu intelligenten Multi-Agent-Systemen.",
-          "result": "85% der Teilnehmer identifizieren mindestens 3 Automatisierungs-Use-Cases"
+          "result": "Jedes Team erarbeitet im Workshop mindestens 3 eigene Automatisierungs-Use-Cases"
         }
       ],
       "beratung": [
         {
           "title": "AI-Tool-Audit für Maschinenbauer: Schatten-KI aufdecken & Kosten senken",
           "description": "Systematisches Audit aller KI-Tools im Unternehmen: Welche Tools nutzen Mitarbeiter (ChatGPT, Copilot, andere)? DSGVO-Risiken identifiziert, Lizenzkosten analysiert, Tool-Wildwuchs gestoppt. Konsolidierung auf 3 freigegebene Enterprise-Lösungen mit zentraler Verwaltung.",
-          "result": "12 Tools auf 3 reduziert, 3.200€/Monat gespart, DSGVO-konforme Lösung"
+          "result": "Tool-Wildwuchs gestoppt, DSGVO-konforme Lösung mit klarer Kostenkontrolle"
         },
         {
           "title": "Tool-Auswahl Workshop: Die richtige KI-Plattform für Online-Händler",
           "description": "2-Tages-Workshop zur Entscheidungsfindung: Microsoft Copilot, Google Workspace AI oder eigenständige Lösung? Requirements definiert, 5 Anbieter verglichen (Kosten, Datenschutz, Integration), klare Empfehlung mit Begründung. Vertragsverhandlung begleitet.",
-          "result": "Entscheidung in 2 Tagen statt 3 Monaten, 40% Kosten gespart"
+          "result": "Entscheidung in 2 Tagen statt monatelanger Grundsatzdiskussion, mit dokumentierter Begründung"
         }
       ],
       "umsetzung": [
         {
           "title": "Chatbot für technische Dokumentation (Maschinenbau)",
           "description": "Chatbot durchsucht 5000 Seiten technische Dokumentation und antwortet in 3 Sekunden, mit Quellenangabe. Service-Techniker finden Antworten, ohne Experten zu fragen.",
-          "result": "70% weniger Support-Anfragen, 95% korrekte Antworten"
+          "result": "Service-Techniker finden Antworten selbst, mit Quellenangabe direkt aus der Dokumentation"
         },
         {
           "title": "E-Mail-Automatisierung mit n8n für Vertriebsteam",
           "description": "Intelligenter E-Mail-Workflow mit n8n: Eingehende E-Mails werden automatisch analysiert, kategorisiert (Anfrage, Beschwerde, Bestellung), mit CRM-Daten angereichert und an zuständige Mitarbeiter geroutet. Tickets werden automatisch erstellt.",
-          "result": "2 Stunden pro Tag gespart, keine E-Mail geht mehr verloren"
+          "result": "Jede E-Mail automatisch kategorisiert und geroutet, keine Anfrage bleibt liegen"
         }
       ]
     }
@@ -462,6 +462,27 @@
       }
     }
   },
+  "selfBuilt": {
+    "headline": "Jedes Versprechen hier habe ich",
+    "headlineHighlight": "zuerst selbst gebaut",
+    "body": "AImation verkauft nichts, was nicht bei mir selbst im Einsatz ist: Der Wissens-Graph beantwortet meine Fragen zu alten Projekten. Der Recherche-Agent liefert mir wöchentlich Technologie-Updates. Die Anfragen-Klassifizierung sortiert meinen Posteingang. Im Erstgespräch zeige ich Ihnen diese Systeme live, an echten Daten, nicht auf Folien.",
+    "ctaButton": "Live-Demo im Erstgespräch ansehen",
+    "demoTiles": {
+      "badge": "Demo folgt",
+      "knowledgeGraph": {
+        "title": "Wissens-Graph: Frage rein, Antwort mit Quelle raus",
+        "note": "Screencast folgt. Im Erstgespräch zeige ich Ihnen, wie der Wissens-Graph auf meine eigenen Projektfragen antwortet, mit Quellenangabe."
+      },
+      "requestAgent": {
+        "title": "Anfragen-Agent: vom Posteingang zum Antwortentwurf",
+        "note": "Screencast folgt. Im Erstgespräch zeige ich Ihnen, wie eine eingehende technische Anfrage klassifiziert und ein Antwortentwurf erstellt wird."
+      },
+      "patentResearch": {
+        "title": "Patentrecherche: strukturierter Bericht statt Trefferliste",
+        "note": "Screencast folgt. Im Erstgespräch zeige ich Ihnen den strukturierten Bericht, den der Recherche-Agent aus einer Patentanfrage erstellt."
+      }
+    }
+  },
   "socialProof": {
     "headline": "Vertrauen durch",
     "headlineHighlight": "Erfahrung",
@@ -471,7 +492,7 @@
     "stats": {
       "linkedin": "LinkedIn-Follower",
       "experience": "Jahre Engineering-Erfahrung",
-      "employees": "Use Cases als PoC abgeschlossen, weitere in Arbeit"
+      "employees": "Use Cases als Live-Demo im Erstgespräch verfügbar, weitere in Arbeit"
     }
   },
   "about": {

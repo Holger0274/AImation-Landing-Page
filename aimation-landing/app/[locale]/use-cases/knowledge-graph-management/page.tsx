@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
+import DemoTile from '@/components/ui/DemoTile';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -48,7 +49,7 @@ export default async function KnowledgeGraphPage({
               KNOW · Wissensmanagement
             </div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 text-green-700 text-xs font-heading font-semibold">
-              ✓ PoC abgeschlossen
+              ✓ Live-Demo im Erstgespräch verfügbar
             </div>
           </div>
 
@@ -93,6 +94,17 @@ export default async function KnowledgeGraphPage({
             <p className="text-gray-700 font-inter leading-relaxed italic">
               Was das im Alltag bedeutet: Ein neuer Mitarbeiter stellt eine Frage und bekommt nicht nur das passende Dokument, sondern den Kontext dazu. Wer hat daran gearbeitet, welche Entscheidungen wurden getroffen, welche Probleme sind aufgetaucht. Oder ein Ingenieur fragt nach einer technischen Lösung und das System zeigt ihm, dass ein Kollege im Nachbarwerk vor zwei Jahren daran gearbeitet hat. Wir haben das in einem PoC aufgebaut. Im Erstgespräch zeigen wir, wie das aussieht.
             </p>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="font-heading font-bold text-[#071013] mb-4">So sieht das aus</h2>
+            <div className="max-w-sm">
+              <DemoTile
+                title="Wissens-Graph: Frage rein, Antwort mit Quelle raus"
+                badge="Demo folgt"
+                placeholderNote="Screencast folgt. Im Erstgespräch zeige ich Ihnen, wie der Wissens-Graph auf meine eigenen Projektfragen antwortet, mit Quellenangabe."
+              />
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 mb-10">
@@ -150,6 +162,13 @@ export default async function KnowledgeGraphPage({
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="bg-[#faf9f7] border border-gray-200 rounded-2xl p-6 mb-10">
+            <h2 className="font-heading font-bold text-[#071013] mb-3">Ehrliche Einordnung</h2>
+            <p className="text-gray-600 font-inter leading-relaxed">
+              Der PoC läuft bei AImation intern mit eigenen Notizen und Projektunterlagen. Was er kann: Dokumente semantisch verknüpfen und Zusammenhänge sichtbar machen, die eine Stichwortsuche übersieht. Was er nicht kann: beurteilen, welche Information im Streitfall rechtlich belastbar ist. Diese Einschätzung bleibt bei den Fachleuten im Unternehmen.
+            </p>
           </div>
 
           <div className="text-center">

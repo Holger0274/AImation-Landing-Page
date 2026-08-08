@@ -8,7 +8,7 @@ import Services from '@/components/sections/Services';
 import ProjectShowcase from '@/components/sections/ProjectShowcase/ProjectShowcase';
 import Process from '@/components/sections/Process';
 import { PilotSection } from '@/components/sections/PilotSection';
-import SocialProof from '@/components/sections/SocialProof';
+import SelfBuilt from '@/components/sections/SelfBuilt';
 import EuAiActNotice from '@/components/sections/EuAiActNotice';
 import About from '@/components/sections/About';
 import FAQ from '@/components/sections/FAQ';
@@ -63,7 +63,7 @@ export default async function Home({
         <PilotSection />
         <Services />
         <ProjectShowcase />
-        <SocialProof />
+        <SelfBuilt />
         <EuAiActNotice />
         <About />
         <FAQ />

@@ -12,6 +12,8 @@ import {
 } from '@lobehub/icons';
 import { SupabaseIcon } from '@/components/icons/SupabaseIcon';
 import { ObsidianIcon } from '@/components/icons/ObsidianIcon';
+import { useLeadForm } from '@/components/LeadFormProvider';
+import DemoTile from '@/components/ui/DemoTile';
 
 interface ToolPill {
   name: string;
@@ -60,11 +62,9 @@ function ToolPillItem({ tool, delay }: { tool: ToolPill; delay: number }) {
       whileHover={{ y: -3, transition: { duration: 0.2 } }}
       className="group flex items-center gap-3 bg-white border border-gray-200 rounded-2xl px-4 py-3 shadow-sm cursor-default select-none hover:border-[#f90093]/30 hover:shadow-md transition-shadow duration-300"
     >
-      {/* Icon */}
       <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center group-hover:bg-[#f90093]/5 transition-colors duration-300">
         {tool.icon}
       </div>
-      {/* Text */}
       <div className="flex flex-col min-w-0">
         <span className="text-sm font-heading font-semibold text-[#071013] whitespace-nowrap leading-tight">
           {tool.name}
@@ -79,51 +79,89 @@ function ToolPillItem({ tool, delay }: { tool: ToolPill; delay: number }) {
   );
 }
 
-export default function SocialProof() {
-  const t = useTranslations('socialProof');
+export default function SelfBuilt() {
+  const t = useTranslations('selfBuilt');
+  const tTools = useTranslations('socialProof');
+  const { openLeadForm } = useLeadForm();
 
   return (
     <section
       className="py-20 md:py-32"
       style={{
         backgroundColor: '#faf9f7',
-        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+        backgroundImage:
+          'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
         backgroundSize: '72px 72px',
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Tools Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-14"
+        >
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-5 text-[#071013] leading-tight">
+            {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span>
+          </h2>
+          <p className="text-gray-600 font-inter leading-relaxed">{t('body')}</p>
+        </motion.div>
+
+        {/* Demo-Kacheln. Screencasts liefert Holger, siehe TODO-assets.md */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 max-w-5xl mx-auto">
+          <DemoTile
+            title={t('demoTiles.knowledgeGraph.title')}
+            badge={t('demoTiles.badge')}
+            placeholderNote={t('demoTiles.knowledgeGraph.note')}
+          />
+          <DemoTile
+            title={t('demoTiles.requestAgent.title')}
+            badge={t('demoTiles.badge')}
+            placeholderNote={t('demoTiles.requestAgent.note')}
+          />
+          <DemoTile
+            title={t('demoTiles.patentResearch.title')}
+            badge={t('demoTiles.badge')}
+            placeholderNote={t('demoTiles.patentResearch.note')}
+          />
+        </div>
+
+        <div className="text-center mb-20">
+          <button
+            type="button"
+            onClick={openLeadForm}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-bold text-white"
+            style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
+          >
+            {t('ctaButton')}
+          </button>
+        </div>
+
+        {/* Tool-Wand aus Spec 01, hier in die neue Sektion umgezogen */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-3">
-            {t('toolsHeadline')} <span className="gradient-text">{t('toolsHighlight')}</span>
-          </h2>
-          <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto">
-            {t('toolsSubline')}
-          </p>
+          <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 text-[#071013]">
+            {tTools('toolsHeadline')} <span className="gradient-text">{tTools('toolsHighlight')}</span>
+          </h3>
+          <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto">{tTools('toolsSubline')}</p>
         </motion.div>
 
-        {/* Floating Pills – 3 versetzte Reihen */}
         <div className="space-y-4 overflow-hidden">
-          {/* Reihe 1 – zentriert */}
           <div className="flex flex-wrap justify-center gap-3">
             {ROW_1.map((tool, i) => (
               <ToolPillItem key={tool.name} tool={tool} delay={i * 0.07} />
             ))}
           </div>
-
-          {/* Reihe 2 – leicht nach rechts versetzt */}
           <div className="flex flex-wrap justify-center gap-3 md:translate-x-8">
             {ROW_2.map((tool, i) => (
               <ToolPillItem key={tool.name} tool={tool} delay={0.1 + i * 0.07} />
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

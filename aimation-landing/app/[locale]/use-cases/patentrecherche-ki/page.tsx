@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
+import DemoTile from '@/components/ui/DemoTile';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -13,7 +14,7 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: { absolute: 'Patentrecherche automatisieren mit KI | Use Case | AImation' },
-  description: 'Wie AImation Patentrecherche automatisiert: Prior-Art-Analyse in Stunden statt Tagen mit Perplexity AI und Claude. PoC abgeschlossen.',
+  description: 'Wie AImation Patentrecherche automatisiert: Prior-Art-Analyse in Stunden statt Tagen mit Perplexity AI und Claude. Live-Demo im Erstgespräch verfügbar.',
   alternates: { canonical: `${siteUrl}/use-cases/patentrecherche-ki` },
   robots: { index: true, follow: true },
 };
@@ -48,7 +49,7 @@ export default async function PatentrechercheKiPage({
               KNOW · Wissensmanagement
             </div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 text-green-700 text-xs font-heading font-semibold">
-              ✓ PoC abgeschlossen
+              ✓ Live-Demo im Erstgespräch verfügbar
             </div>
           </div>
 
@@ -93,6 +94,17 @@ export default async function PatentrechercheKiPage({
             <p className="text-gray-700 font-inter leading-relaxed italic">
               Der nächste Schritt wäre ein Chatbot, mit dem Ingenieure direkt mit den Patenten sprechen: Fragen stellen, Claims verstehen, Zusammenhänge erklären lassen, angereichert mit dem technischen Wissen Ihres Unternehmens. Oder ein autonomer Agent, der die komplette Vorrecherche übernimmt und morgens einen Bericht liefert. Beides haben wir in Projekten aufgebaut. Wer das live sehen möchte, kann das im Erstgespräch tun.
             </p>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="font-heading font-bold text-[#071013] mb-4">So sieht das aus</h2>
+            <div className="max-w-sm">
+              <DemoTile
+                title="Patentrecherche: strukturierter Bericht statt Trefferliste"
+                badge="Demo folgt"
+                placeholderNote="Screencast folgt. Im Erstgespräch zeige ich Ihnen den strukturierten Bericht, den der Recherche-Agent aus einer Patentanfrage erstellt."
+              />
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 mb-10">
@@ -150,6 +162,13 @@ export default async function PatentrechercheKiPage({
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="bg-[#faf9f7] border border-gray-200 rounded-2xl p-6 mb-10">
+            <h2 className="font-heading font-bold text-[#071013] mb-3">Ehrliche Einordnung</h2>
+            <p className="text-gray-600 font-inter leading-relaxed">
+              Der PoC läuft bei AImation intern. Was er kann: parallele Abfrage von EPA, USPTO, WIPO und Google Patents, strukturierte Berichte in Stunden statt Tagen. Was er nicht kann: die Bewertung durch einen Patentanwalt ersetzen. Die letzte Einschätzung bleibt beim Menschen.
+            </p>
           </div>
 
           <div className="text-center">

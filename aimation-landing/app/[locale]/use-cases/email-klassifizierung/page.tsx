@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
+import DemoTile from '@/components/ui/DemoTile';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -13,7 +14,7 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: { absolute: 'E-Mail Klassifizierung mit KI | Use Case | AImation' },
-  description: 'Wie AImation E-Mails automatisch klassifiziert und ans richtige Team routet, mit OpenAI und n8n. PoC abgeschlossen, weniger Sortieraufwand.',
+  description: 'Wie AImation E-Mails automatisch klassifiziert und ans richtige Team routet, mit OpenAI und n8n. Live-Demo im Erstgespräch verfügbar.',
   alternates: { canonical: `${siteUrl}/use-cases/email-klassifizierung` },
   robots: { index: true, follow: true },
 };
@@ -48,7 +49,7 @@ export default async function EmailKlassifizierungPage({
               FLOW · Workflow-Automatisierung
             </div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 text-green-700 text-xs font-heading font-semibold">
-              ✓ PoC abgeschlossen
+              ✓ Live-Demo im Erstgespräch verfügbar
             </div>
           </div>
 
@@ -90,6 +91,17 @@ export default async function EmailKlassifizierungPage({
             <p className="text-gray-700 font-inter leading-relaxed italic">
               Was das konkret bedeutet: Die dringende Angebotsanfrage landet ohne Umweg beim Vertrieb, mit Vorschlag für die Antwort und den passenden Unterlagen aus dem Knowledge Graph. Die Beschwerde geht direkt an den Service, inklusive Hinweis auf den letzten Kontakt mit dem Kunden. Der Newsletter wird stumm archiviert. In einem unserer Projekte haben wir das so aufgebaut. Wer sehen möchte, wie es aussieht, kann das im Erstgespräch tun.
             </p>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="font-heading font-bold text-[#071013] mb-4">So sieht das aus</h2>
+            <div className="max-w-sm">
+              <DemoTile
+                title="Anfragen-Agent: vom Posteingang zum Antwortentwurf"
+                badge="Demo folgt"
+                placeholderNote="Screencast folgt. Im Erstgespräch zeige ich Ihnen, wie eine eingehende technische Anfrage klassifiziert und ein Antwortentwurf erstellt wird."
+              />
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 mb-10">
@@ -147,6 +159,13 @@ export default async function EmailKlassifizierungPage({
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="bg-[#faf9f7] border border-gray-200 rounded-2xl p-6 mb-10">
+            <h2 className="font-heading font-bold text-[#071013] mb-3">Ehrliche Einordnung</h2>
+            <p className="text-gray-600 font-inter leading-relaxed">
+              Der PoC läuft bei AImation intern am eigenen Posteingang. Was er kann: E-Mails nach Themengebiet sortieren, Dringlichkeit einschätzen und automatisch weiterleiten. Was er nicht kann: eine fachlich komplexe Kundenanfrage eigenständig beantworten. Die Antwort bleibt Aufgabe des zuständigen Kollegen, der Agent liefert nur den sortierten Ausgangspunkt.
+            </p>
           </div>
 
           <div className="text-center">

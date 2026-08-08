@@ -247,36 +247,36 @@
         {
           "title": "2-day workshop: Prompt engineering for engineering teams",
           "description": "2-day workshop for engineering teams and adjacent departments. Participants learn to work with LLMs such as ChatGPT, Claude, Microsoft Copilot, and Perplexity AI. From the basics to advanced prompt techniques for immediate results. Includes concrete use cases from the engineering day-to-day.",
-          "result": "80% of participants use AI tools daily in their work"
+          "result": "Every participant leaves with their own prompt toolkit for daily work"
         },
         {
           "title": "Workshop: Automation and AI automation",
           "description": "Hands-on workshop for process owners and teams. What is automation? How do classic workflows differ from AI-driven automation? Participants learn to spot automation potential and apply AI deliberately, from simple workflows to intelligent multi-agent systems.",
-          "result": "85% of participants identify at least 3 automation use cases"
+          "result": "Every team leaves the workshop with at least 3 automation use cases of its own"
         }
       ],
       "beratung": [
         {
           "title": "AI tool audit for a mechanical engineering firm: uncover shadow AI and cut costs",
           "description": "Systematic audit of all AI tools in the company. Which tools are employees using (ChatGPT, Copilot, others)? GDPR risks identified, licence costs analysed, tool sprawl stopped. Consolidated to 3 approved enterprise solutions with central management.",
-          "result": "12 tools reduced to 3, 3,200€/month saved, GDPR-compliant solution"
+          "result": "Tool sprawl stopped, a GDPR-compliant setup with clear cost control"
         },
         {
           "title": "Tool selection workshop: the right AI platform for an online retailer",
           "description": "2-day decision workshop. Microsoft Copilot, Google Workspace AI, or a standalone solution? Requirements defined, 5 providers compared (cost, data protection, integration), clear recommendation with rationale. Contract negotiation supported.",
-          "result": "Decision made in 2 days instead of 3 months, 40% cost savings"
+          "result": "A decision in 2 days instead of months of back-and-forth, with a documented rationale"
         }
       ],
       "umsetzung": [
         {
           "title": "Chatbot for technical documentation (mechanical engineering)",
           "description": "Chatbot searches 5,000 pages of technical documentation and responds within 3 seconds, with source references. Service technicians find answers without having to ask an expert.",
-          "result": "70% fewer support requests, 95% correct answers"
+          "result": "Service technicians find answers themselves, with sources straight from the documentation"
         },
         {
           "title": "Email automation with n8n for a sales team",
           "description": "Intelligent email workflow with n8n. Incoming emails are automatically analysed, categorised (enquiry, complaint, order), enriched with CRM data, and routed to the right employee. Tickets are created automatically.",
-          "result": "2 hours saved per day, no email gets lost anymore"
+          "result": "Every email categorised and routed automatically, no enquiry is left sitting"
         }
       ]
     }
@@ -462,6 +462,27 @@
       }
     }
   },
+  "selfBuilt": {
+    "headline": "Every promise here",
+    "headlineHighlight": "I built for myself first",
+    "body": "AImation does not sell anything that is not in daily use at AImation itself: the knowledge graph answers my questions about old projects. The research agent delivers weekly technology updates. The request classifier sorts my inbox. In the initial consultation, I show you these systems live, on real data, not on slides.",
+    "ctaButton": "See the live demo in the initial consultation",
+    "demoTiles": {
+      "badge": "Demo coming soon",
+      "knowledgeGraph": {
+        "title": "Knowledge graph: ask a question, get an answer with a source",
+        "note": "Screencast coming soon. In the initial consultation, I show you how the knowledge graph answers questions about my own projects, with sources."
+      },
+      "requestAgent": {
+        "title": "Request agent: from inbox to draft reply",
+        "note": "Screencast coming soon. In the initial consultation, I show you how an incoming technical request gets classified and a draft reply gets created."
+      },
+      "patentResearch": {
+        "title": "Patent research: a structured report instead of a hit list",
+        "note": "Screencast coming soon. In the initial consultation, I show you the structured report the research agent creates from a patent question."
+      }
+    }
+  },
   "socialProof": {
     "headline": "Trust built on",
     "headlineHighlight": "experience",
@@ -471,7 +492,7 @@
     "stats": {
       "linkedin": "LinkedIn followers",
       "experience": "years of engineering experience",
-      "employees": "Use cases completed as PoC, more in progress"
+      "employees": "Use cases with a live demo available in the initial consultation, more in progress"
     }
   },
   "about": {

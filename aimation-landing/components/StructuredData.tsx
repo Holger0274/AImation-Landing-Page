@@ -379,7 +379,7 @@ export function WebSiteSchema({ siteUrl = 'https://www.aimation.de' }: Organizat
     "@id": `${siteUrl}/#website`,
     "name": "AImation",
     "url": siteUrl,
-    "description": "KI-Beratung, Schulungen und Automatisierung für den Mittelstand. 40% Zeitersparnis durch intelligente KI-Implementierung.",
+    "description": "KI-Beratung, Schulungen und Automatisierung für den Mittelstand. 40% der Arbeitszeit geht für Aufgaben drauf, die niemand vermissen würde.",
     "inLanguage": "de-DE",
     "publisher": {
       "@type": "Organization",

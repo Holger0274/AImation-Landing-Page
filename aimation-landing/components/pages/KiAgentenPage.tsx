@@ -310,10 +310,10 @@ export default function KiAgentenPage() {
               },
               {
                 title: 'Der Patent-Recherche-Agent',
-                status: 'PoC abgeschlossen',
+                status: 'Live-Demo im Erstgespräch verfügbar',
                 statusColor: '#f90093',
                 problem: 'Patentrecherchen dauern Wochen und kosten zwischen 5.000 und 15.000 Euro pro Recherche. Trotzdem werden relevante Patente übersehen, weil die Datenmengen zu groß sind.',
-                solution: 'Ein Agent, der automatisiert Patentdatenbanken durchsucht, relevante Prior Art identifiziert, Wettbewerber-Patente erkennt und strukturierte Übersichten erstellt. Der Mensch prüft und bewertet, aber die Recherche-Arbeit schrumpft um 80%.',
+                solution: 'Ein Agent, der automatisiert Patentdatenbanken durchsucht, relevante Prior Art identifiziert, Wettbewerber-Patente erkennt und strukturierte Übersichten erstellt. Der Mensch prüft und bewertet, aber aus tagelanger Recherche werden Stunden.',
                 link: { href: '/use-cases/patentrecherche-ki', label: 'Use Case im Detail ansehen' },
               },
               {
