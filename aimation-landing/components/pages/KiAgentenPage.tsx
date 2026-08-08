@@ -5,6 +5,7 @@ import { Link } from '@/i18n/navigation';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import { UMSETZUNG_LEVELS, UMSETZUNG_LAUFENDE_KOSTEN } from '@/lib/data/pricing';
+import AgentHumanLoop from '@/components/diagrams/AgentHumanLoop';
 
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
 
@@ -138,6 +139,10 @@ export default function KiAgentenPage() {
             Der Unterschied ist wie zwischen einem Taschenrechner und einem Buchhalter. Beide rechnen.
             Aber nur einer weiß, wann er rechnen muss.
           </p>
+
+          <div className="flex justify-center mb-10">
+            <AgentHumanLoop variant="light" className="w-full max-w-2xl h-auto" />
+          </div>
 
           {/* Comparison Table */}
           <div className="overflow-x-auto rounded-xl border border-gray-200">
@@ -311,7 +316,7 @@ export default function KiAgentenPage() {
               {
                 title: 'Der Patent-Recherche-Agent',
                 status: 'Live-Demo im Erstgespräch verfügbar',
-                statusColor: '#f90093',
+                statusColor: '#16a34a',
                 problem: 'Patentrecherchen dauern Wochen und kosten zwischen 5.000 und 15.000 Euro pro Recherche. Trotzdem werden relevante Patente übersehen, weil die Datenmengen zu groß sind.',
                 solution: 'Ein Agent, der automatisiert Patentdatenbanken durchsucht, relevante Prior Art identifiziert, Wettbewerber-Patente erkennt und strukturierte Übersichten erstellt. Der Mensch prüft und bewertet, aber aus tagelanger Recherche werden Stunden.',
                 link: { href: '/use-cases/patentrecherche-ki', label: 'Use Case im Detail ansehen' },

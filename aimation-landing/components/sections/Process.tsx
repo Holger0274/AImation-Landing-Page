@@ -5,6 +5,7 @@ import { Calendar, FileText, Rocket, Headphones, CheckCircle, Clock, Euro, Searc
 import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import AngebotsTreppe from '@/components/diagrams/AngebotsTreppe';
 
 // Static config (numbers, icons, mockup types) — text comes from translations
 const stepsConfig = [
@@ -128,6 +129,16 @@ export default function Process() {
           </p>
         </motion.div>
 
+        {/* Angebots-Treppe */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="hidden md:flex justify-center mb-16 md:mb-20"
+        >
+          <AngebotsTreppe variant="light" className="w-full max-w-2xl h-auto" />
+        </motion.div>
+
         {/* Timeline - Desktop Horizontal */}
         <div className="hidden lg:block relative">
           {/* Connecting Line */}
@@ -163,7 +174,7 @@ export default function Process() {
                       className={`
                         absolute inset-0 rounded-full transition-all duration-300
                         ${isActive
-                          ? 'bg-gradient-to-r from-magenta to-magenta-light scale-110'
+                          ? 'bg-[#60AFFF] scale-110'
                           : 'bg-white border-2 border-gray-200'
                         }
                       `}
@@ -176,7 +187,7 @@ export default function Process() {
                         absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center
                         font-heading font-bold text-sm transition-all
                         ${isActive
-                          ? 'bg-magenta text-white scale-110'
+                          ? 'bg-[#60AFFF] text-white scale-110'
                           : 'bg-gray-200 text-gray-600'
                         }
                       `}
@@ -218,7 +229,7 @@ export default function Process() {
                       <div className="space-y-2 pt-3">
                         {step.details.map((detail, i) => (
                           <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-magenta flex-shrink-0" />
+                            <CheckCircle className="w-4 h-4 text-[#60AFFF] flex-shrink-0" />
                             <span>{detail}</span>
                           </div>
                         ))}
@@ -272,10 +283,10 @@ export default function Process() {
 
                 {/* Icon */}
                 <div className="relative flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-magenta to-magenta-light flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-[#60AFFF] flex items-center justify-center">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-magenta text-white flex items-center justify-center text-xs font-heading font-bold">
+                  <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-[#60AFFF] text-white flex items-center justify-center text-xs font-heading font-bold">
                     {step.number}
                   </div>
                 </div>
@@ -295,7 +306,7 @@ export default function Process() {
                   <div className="mt-4 space-y-2">
                     {step.details.map((detail, i) => (
                       <div key={i} className="flex items-center gap-2 text-xs text-gray-600">
-                        <CheckCircle className="w-3 h-3 text-magenta flex-shrink-0" />
+                        <CheckCircle className="w-3 h-3 text-[#60AFFF] flex-shrink-0" />
                         <span>{detail}</span>
                       </div>
                     ))}

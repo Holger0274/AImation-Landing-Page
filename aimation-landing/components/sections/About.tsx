@@ -14,10 +14,10 @@ function DifferentiatorCard({ text, icon: Icon, index }: { text: string; icon: t
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08 }}
-      className="flex items-start gap-4 bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-[0_8px_32px_rgba(249,0,147,0.13)] hover:-translate-y-1 transition-all duration-200"
+      className="flex items-start gap-4 bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-[0_8px_32px_rgba(96,175,255,0.18)] hover:-translate-y-1 transition-all duration-200"
     >
-      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-magenta/10 flex items-center justify-center">
-        <Icon className="w-5 h-5 text-magenta" />
+      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#60AFFF]/10 flex items-center justify-center">
+        <Icon className="w-5 h-5 text-[#60AFFF]" />
       </div>
       <p className="text-sm text-gray-600 leading-relaxed">{text}</p>
     </motion.div>
@@ -52,7 +52,7 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-xs font-heading font-bold tracking-[2px] uppercase text-magenta mb-3">{t('overline')}</p>
+          <p className="text-xs font-heading font-bold tracking-[2px] uppercase text-[#60AFFF] mb-3">{t('overline')}</p>
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-soft-black">
             {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span>
           </h2>
@@ -81,8 +81,8 @@ export default function About() {
                 }}
               />
             </div>
-            {/* Magenta Akzentrahmen */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-magenta/50 rounded-2xl -z-10" />
+            {/* Akzentrahmen */}
+            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-[#60AFFF]/50 rounded-2xl -z-10" />
           </motion.div>
 
           {/* Intro-Text */}

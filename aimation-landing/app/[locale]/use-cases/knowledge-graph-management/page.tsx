@@ -6,6 +6,8 @@ import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
 import DemoTile from '@/components/ui/DemoTile';
+import WissenVorherNachher from '@/components/diagrams/WissenVorherNachher';
+import QktTriangle from '@/components/diagrams/QktTriangle';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -17,6 +19,14 @@ export const metadata: Metadata = {
   description: 'Wie AImation Wissen vernetzt: Knowledge Graph mit Obsidian, Claude Code und semantischer Suche. Wissen das lebt, statt in Silos stirbt.',
   alternates: { canonical: `${siteUrl}/use-cases/knowledge-graph-management` },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Knowledge Graph Management mit KI | AImation',
+    description: 'Knowledge Graph mit Obsidian, Claude Code und semantischer Suche. Wissen das lebt, statt in Silos stirbt.',
+    url: `${siteUrl}/use-cases/knowledge-graph-management`,
+    type: 'article',
+    locale: 'de_DE',
+    images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
+  },
 };
 
 export default async function KnowledgeGraphPage({
@@ -107,6 +117,10 @@ export default async function KnowledgeGraphPage({
             </div>
           </div>
 
+          <div className="flex justify-center mb-10">
+            <WissenVorherNachher variant="light" className="w-full max-w-2xl h-auto" />
+          </div>
+
           <div className="grid sm:grid-cols-2 gap-6 mb-10">
             <div className="bg-red-50 rounded-2xl p-6 border border-red-100">
               <h2 className="font-heading font-bold text-[#071013] mb-3">Das Problem</h2>
@@ -149,7 +163,10 @@ export default async function KnowledgeGraphPage({
           </div>
 
           <div className="bg-[#071013] rounded-2xl p-6 mb-10 text-white">
-            <h2 className="font-heading font-bold mb-4">Was sich verändert</h2>
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+              <h2 className="font-heading font-bold">Was sich verändert</h2>
+              <QktTriangle variant="dark" className="w-16 h-16 flex-shrink-0" />
+            </div>
             <div className="grid sm:grid-cols-3 gap-4">
               {[
                 { metric: 'sichtbar', label: 'Zusammenhänge die bisher verborgen waren' },

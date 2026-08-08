@@ -5,6 +5,8 @@ import { X, Check, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useLeadForm } from '@/components/LeadFormProvider';
+import QktTriangle from '@/components/diagrams/QktTriangle';
+import WissenVorherNachher from '@/components/diagrams/WissenVorherNachher';
 
 const transformationIds = ['knowledge', 'workflow', 'research'] as const;
 
@@ -16,20 +18,20 @@ function BeforeCard({ data, type, labelProblem, labelLoesung }: { data: any; typ
       className={`
         relative h-full rounded-2xl p-8
         ${isBefore
-          ? 'bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-[#f90093]/30'
-          : 'bg-gradient-to-br from-[#071013] to-[#0a1419] border-2 border-[#f90093]/50'
+          ? 'bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-red-500/30'
+          : 'bg-gradient-to-br from-[#071013] to-[#0a1419] border-2 border-[#60AFFF]/50'
         }
       `}
       style={
         isBefore
           ? {}
-          : { boxShadow: '0 0 40px rgba(249, 0, 147, 0.3)' }
+          : { boxShadow: '0 0 40px rgba(96, 175, 255, 0.3)' }
       }
     >
       {/* Header */}
       <div className="mb-6">
         <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-heading font-bold mb-3
-          ${isBefore ? 'bg-[#f90093]/20 text-[#f90093]' : 'bg-[#f90093]/20 text-[#f90093]'}
+          ${isBefore ? 'bg-red-500/20 text-red-400' : 'bg-[#60AFFF]/20 text-[#60AFFF]'}
         `}
           style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}
         >
@@ -39,10 +41,10 @@ function BeforeCard({ data, type, labelProblem, labelLoesung }: { data: any; typ
         <h4 className="font-heading font-bold text-white mb-2" style={{ fontSize: 'clamp(1.25rem, 4vw, 1.875rem)' }}>
           {data.title}
         </h4>
-        <p className={`font-heading font-semibold text-[#f90093]`}
+        <p className={`font-heading font-semibold ${isBefore ? 'text-red-400' : 'text-[#60AFFF]'}`}
           style={{
             fontSize: 'clamp(1rem, 3vw, 1.5rem)',
-            textShadow: '0 0 20px rgba(249, 0, 147, 0.5)'
+            textShadow: isBefore ? '0 0 20px rgba(248, 113, 113, 0.4)' : '0 0 20px rgba(96, 175, 255, 0.5)'
           }}
         >
           {data.pain || data.gain}
@@ -60,11 +62,11 @@ function BeforeCard({ data, type, labelProblem, labelLoesung }: { data: any; typ
             transition={{ delay: index * 0.1 }}
             className="flex items-start gap-3"
           >
-            <div className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 bg-[#f90093]/20">
+            <div className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${isBefore ? 'bg-red-500/20' : 'bg-[#60AFFF]/20'}`}>
               {isBefore ? (
-                <X className="w-3 h-3 text-[#f90093]" />
+                <X className="w-3 h-3 text-red-400" />
               ) : (
-                <Check className="w-3 h-3 text-[#f90093]" />
+                <Check className="w-3 h-3 text-[#60AFFF]" />
               )}
             </div>
             <span className={`${isBefore ? 'text-gray-300' : 'text-gray-200'}`} style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1.125rem)' }}>
@@ -77,8 +79,8 @@ function BeforeCard({ data, type, labelProblem, labelLoesung }: { data: any; typ
       {/* ROI Badge (nur bei "after") */}
       {!isBefore && data.roi && (
         <div className="mt-auto pt-4 border-t border-white/10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#f90093]/20 rounded-lg">
-            <span className="font-heading font-bold text-[#f90093]" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1.125rem)' }}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#60AFFF]/20 rounded-lg">
+            <span className="font-heading font-bold text-[#60AFFF]" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1.125rem)' }}>
               ✓ {data.roi}
             </span>
           </div>
@@ -146,6 +148,9 @@ export default function BeforeAfter() {
           <p className="text-gray-500 max-w-2xl mx-auto mb-2" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1.05rem)' }}>
             {t('qktIntro')}
           </p>
+          <div className="flex justify-center my-4">
+            <QktTriangle variant="light" className="w-28 h-28" />
+          </div>
           <p className="font-semibold text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.5rem)' }}>
             {t('subline')}
           </p>
@@ -174,6 +179,12 @@ export default function BeforeAfter() {
             </button>
           ))}
         </div>
+
+        {transformations[activeTransformation].id === 'knowledge' && (
+          <div className="flex justify-center mb-10">
+            <WissenVorherNachher variant="dark" className="w-full max-w-2xl h-auto" />
+          </div>
+        )}
 
         {/* Before/After Split View */}
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">

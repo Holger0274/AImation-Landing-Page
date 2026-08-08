@@ -94,7 +94,9 @@ export default function Hero() {
     }
   };
 
-  // Custom generated images with AImation brand colors
+  // TODO: replace with real product screenshot (Wissens-Graph, Frage/Antwort mit Quelle,
+  // siehe aimation-website-specs/2026-07-18_spec-08-visualisierung.md Punkt 2 und
+  // TODO-assets.md). Bis das Asset da ist, bleibt die generierte Foto-Collage bestehen.
   const images = [
     '/images/hero-engineering-desk.jpg', // Engineering desk with magenta highlights — main hero image
     '/images/hero-project-room-kanban.jpg', // Project room kanban board
@@ -198,7 +200,6 @@ export default function Hero() {
                 fill
                 sizes="240px"
                 className="object-cover object-top"
-                priority
               />
             </motion.div>
           </motion.div>
@@ -228,7 +229,6 @@ export default function Hero() {
                 fill
                 sizes="300px"
                 className="object-cover"
-                priority
               />
             </motion.div>
           </motion.div>

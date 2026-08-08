@@ -8,8 +8,10 @@ import { useReducedMotion } from '@/lib/hooks/useReducedMotion';
 import { useIsMobile } from '@/lib/hooks/useIsMobile';
 import { throttle } from '@/lib/utils/throttle';
 import { useTranslations } from 'next-intl';
+import AgentHumanLoop from '@/components/diagrams/AgentHumanLoop';
 
 type ServiceData = {
+  id: string;
   icon: any;
   title: string;
   subtitle: string;
@@ -403,6 +405,12 @@ function FlipCard({ service, index, onSelect, labels }: { service: ServiceData; 
               {service.title}
             </h3>
 
+            {service.id === 'umsetzung' && (
+              <div className="mb-4 md:mb-6 -mx-2 overflow-hidden">
+                <AgentHumanLoop variant="dark" className="w-full h-auto" />
+              </div>
+            )}
+
             <ul className="space-y-2 md:space-y-3 mb-4 md:mb-6 flex-grow">
               {(service.backFeatures ?? service.features).map((feature, i) => (
                 <motion.li
@@ -448,6 +456,7 @@ export default function Services() {
   const services: ServiceData[] = servicesConfig.map((cfg) => {
     const rawItem = t.raw(`items.${cfg.id}`) as Record<string, unknown>;
     return {
+      id: cfg.id,
       icon: cfg.icon,
       gradientFrom: cfg.gradientFrom,
       gradientTo: cfg.gradientTo,

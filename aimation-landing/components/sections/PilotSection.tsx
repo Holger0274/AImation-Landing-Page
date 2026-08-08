@@ -36,7 +36,7 @@ export function PilotSection() {
           <ul className="space-y-4 mb-10">
             {(['point1', 'point2', 'point3'] as const).map((key) => (
               <li key={key} className="flex items-start gap-3 text-gray-200">
-                <span className="mt-1 flex-shrink-0" style={{ color: '#f90093' }}>✓</span>
+                <span className="mt-1 flex-shrink-0" style={{ color: '#60AFFF' }}>✓</span>
                 <span>{t(key)}</span>
               </li>
             ))}

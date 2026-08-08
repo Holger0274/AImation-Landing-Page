@@ -108,7 +108,7 @@ export async function generateMetadata({
     icons: {
       icon: '/favicon.svg',
       shortcut: '/favicon.svg',
-      apple: '/favicon.svg',
+      apple: '/apple-touch-icon.png',
     },
 
     robots: {

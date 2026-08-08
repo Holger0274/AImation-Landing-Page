@@ -60,9 +60,9 @@ function ToolPillItem({ tool, delay }: { tool: ToolPill; delay: number }) {
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay }}
       whileHover={{ y: -3, transition: { duration: 0.2 } }}
-      className="group flex items-center gap-3 bg-white border border-gray-200 rounded-2xl px-4 py-3 shadow-sm cursor-default select-none hover:border-[#f90093]/30 hover:shadow-md transition-shadow duration-300"
+      className="group flex items-center gap-3 bg-white border border-gray-200 rounded-2xl px-4 py-3 shadow-sm cursor-default select-none hover:border-[#60AFFF]/40 hover:shadow-md transition-shadow duration-300"
     >
-      <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center group-hover:bg-[#f90093]/5 transition-colors duration-300">
+      <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center group-hover:bg-[#60AFFF]/10 transition-colors duration-300">
         {tool.icon}
       </div>
       <div className="flex flex-col min-w-0">

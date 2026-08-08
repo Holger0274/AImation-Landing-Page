@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Check, ArrowRight, Map } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useLeadForm } from '@/components/LeadFormProvider';
+import AngebotsTreppe from '@/components/diagrams/AngebotsTreppe';
 
 export default function KiLandkarte() {
   const t = useTranslations('kiLandkarte');
@@ -29,8 +30,8 @@ export default function KiLandkarte() {
           viewport={{ once: true }}
           className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 md:p-12"
         >
-          <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(249, 0, 147, 0.1)' }}>
-            <Map className="w-7 h-7 text-[#f90093]" />
+          <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(96, 175, 255, 0.12)' }}>
+            <Map className="w-7 h-7 text-[#60AFFF]" />
           </div>
 
           <h2 className="font-heading font-bold text-[#071013] mb-6" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)' }}>
@@ -41,11 +42,15 @@ export default function KiLandkarte() {
             {t('body')}
           </p>
 
+          <div className="hidden sm:flex justify-center mb-10 -mx-4 overflow-x-auto">
+            <AngebotsTreppe variant="light" className="w-full max-w-xl h-auto" />
+          </div>
+
           <div className="space-y-3 mb-10">
             {checks.map((check, i) => (
               <div key={i} className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#f90093]/10 flex items-center justify-center mt-0.5">
-                  <Check className="w-3.5 h-3.5 text-[#f90093]" />
+                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#60AFFF]/10 flex items-center justify-center mt-0.5">
+                  <Check className="w-3.5 h-3.5 text-[#60AFFF]" />
                 </div>
                 <span className="text-[#071013] font-medium">{check}</span>
               </div>
