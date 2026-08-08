@@ -3,19 +3,25 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## ⚠️ Active Relaunch Project (seit 2026-07-18)
+
+Das Verzeichnis `aimation-website-specs/` enthält den aktuell laufenden Relaunch (Master-Brief + Specs 01-09) und ist **die führende Quelle**, wo sie diesem Dokument widerspricht. Insbesondere: Zielgruppe (technische Produktentwicklung im DACH-Mittelstand statt breite KMU-Zielgruppe), Preistreppe (siehe unten, ersetzt "Auf Anfrage"), die Sprachregeln in `2026-07-18_00-master-brief.md` Abschnitt 4 (u.a. Schreibweise **AImation** im Fließtext, nicht AI.mation; keine Em-Dashes; durchgehend Sie-Form), und der Hero-Lock weiter unten (wird durch Spec 03 ersetzt, sobald umgesetzt).
+
+Restliche Abschnitte dieses Dokuments (Design-System, Farben, Komponentenstruktur, Tech-Stack) bleiben gültig und werden nicht durch die Specs berührt. Nach Abschluss aller Specs wird dieses Dokument final aktualisiert.
+
 ## Project Overview
 
-**AI.mation Landing Page** - A landing page for AI automation consultancy targeting German SMEs (small and medium enterprises).
+**AImation Landing Page** - KI-Beratung, Schulung und Umsetzung für die technische Produktentwicklung im DACH-Mittelstand (Fertigung, Maschinenbau, Automotive, Luft- und Raumfahrt).
 
-- **Brand**: AI.mation
+- **Brand**: AImation (Fließtext/Text immer "AImation", nur das Logo-Grafikelement darf "AI.mation" zeigen)
 - **Claim**: Automatisierung mit Intelligenz
-- **Owner**: Holger (20+ years engineering leadership experience)
-- **Target Audience**: KMU decision makers in DACH region (10-1000 employees) - Geschäftsführer, Bereichsleiter, Abteilungsleiter
-- **Target Market**: Small and medium enterprises - produzierendes Gewerbe, Dienstleister, größere Handwerksbetriebe, mittelständische Industrieunternehmen
-- **Language**: German (all content must be in German)
-- **Tone**: Modern, competent, accessible, innovative - Professional but approachable, NEVER conservative or "bank-like", NO buzzwords
-- **USP**: 20 Jahre Engineering-Erfahrung kombiniert mit tiefem Prozessverständnis
-- **Pricing**: Auf Anfrage (prices on request)
+- **Owner**: Holger Peschke (20+ Jahre Automobilentwicklung, Führungserfahrung, kein IT-Berater)
+- **Target Audience**: Entwicklungsleiter (Haupt-Buyer, denkt in Qualität/Kosten/Timing) und Technischer Geschäftsführer (Schnell-Buyer) in technischen Mittelstandsunternehmen, 10-1000 Mitarbeiter, DACH
+- **Target Market**: Technische Produktentwicklung im Mittelstand - Fertigung, Maschinenbau, Automotive, Luft- und Raumfahrt
+- **Language**: German (all content must be in German), durchgehend Sie-Form
+- **Tone**: Erfahrener Ingenieur, der erklärt statt verkauft. Konkret, kurze Sätze, keine Buzzwords, keine Em-Dashes
+- **USP**: 20 Jahre Automobilentwicklung, bringt KI dorthin, wo wirklich entwickelt wird. DSGVO-first. Mit Versprechen, die zuerst selbst gebaut wurden
+- **Pricing**: Feste Angebots-Treppe, einzige gültige Struktur (siehe `aimation-website-specs/2026-07-18_00-master-brief.md` Abschnitt 3): Erstgespräch kostenlos (30 Min) → KI-Landkarte ab 1.900 EUR Festpreis → Pilot 4.900 EUR (4 Wochen) → Umsetzung 5.000-30.000 EUR Setup + 200-800 EUR/Monat → Begleitung nach Aufwand. Parallel buchbar: Schulung, 1.800 EUR/Tag Inhouse. Jede Zahl existiert genau einmal als zentrale Quelle der Wahrheit im Code, keine Seite hardcodet eigene Preise
 - **Anti-KI-Text-Spec**: See `docs/spec-anti-ki.md` — ALL content must pass this spec before use
 
 ### Target Personas
@@ -369,7 +375,9 @@ Full spec: `docs/spec-anti-ki.md`. When writing ANY text for the landing page, c
 - ✅ Subtext: leave one thing unexplained per section — trust the reader
 - ✅ Small imperfections: contractions, colloquial turns, sentence fragments where they fit the voice
 
-### Hero Section Content (FINAL - DO NOT CHANGE)
+### Hero Section Content (SUPERSEDED by Spec 03)
+
+⚠️ Dieser Lock ist überholt: `aimation-website-specs/2026-07-18_spec-03-startseite.md` definiert den neuen Hero mit Anker-Use-Case Wissenssicherung und ersetzt den Text unten, sobald Spec 03 umgesetzt ist. Bis dahin gilt der alte Lock als Referenz für den aktuellen Live-Zustand:
 
 The hero section content is **locked and finalized** in `docs/AI-mation_Hero-Headline.md`. These texts must be used exactly as specified:
 
@@ -564,6 +572,8 @@ The landing page consists of 11 carefully orchestrated sections. Full technical 
 - Reduced glow effects
 
 ## Content Strategy & SEO
+
+⚠️ Veraltet: Die Site hat inzwischen einen Blog (`app/[locale]/blog/`) mit mehreren Artikeln. Spec 06 (`aimation-website-specs/2026-07-18_spec-06-blog.md`) behandelt Quellen, CTA-Vereinheitlichung und FAQ-Rendering für den bestehenden Blog. Die "kein Blog"-Empfehlung unten ist historisch und nicht mehr aktuell.
 
 ### LinkedIn-First Approach
 

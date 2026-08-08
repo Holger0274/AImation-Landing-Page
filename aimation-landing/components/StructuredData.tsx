@@ -22,7 +22,7 @@ export function OrganizationSchema({ siteUrl = 'https://www.aimation.de' }: Orga
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${siteUrl}/#organization`,
-    "name": "AI.mation",
+    "name": "AImation",
     "alternateName": ["AImation", "AImation UG"],
     "legalName": "AImation UG (haftungsbeschränkt)",
     "url": siteUrl,
@@ -135,7 +135,7 @@ export function LocalBusinessSchema({ siteUrl = 'https://www.aimation.de' }: Org
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ProfessionalService"],
     "@id": `${siteUrl}/#localbusiness`,
-    "name": "AI.mation",
+    "name": "AImation",
     "legalName": "AImation UG (haftungsbeschränkt)",
     "description": "KI-Beratung, Schulungen und Automatisierung für kleine und mittlere Unternehmen im DACH-Raum. 20 Jahre Engineering-Erfahrung.",
     "url": siteUrl,
@@ -171,7 +171,7 @@ export function LocalBusinessSchema({ siteUrl = 'https://www.aimation.de' }: Org
       "KI-Beratung",
       "KI-Schulungen",
       "KI-Automatisierung",
-      "AI Readiness Assessment"
+      "KI-Landkarte"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -255,7 +255,7 @@ export function ServiceSchema({ siteUrl = 'https://www.aimation.de' }: Organizat
           "@type": "Service",
           "@id": `${siteUrl}/#service-beratung`,
           "name": "KI-Beratung für KMUs",
-          "description": "3-Phasen-Modell: Analyse (Wo stehen wir?), Strategie (Wo wollen wir hin?), Begleitung (Wie kommen wir dahin?). Module: AI Readiness Assessment, Use Case Identification, AI Roadmap, Change Management, KI-Governance.",
+          "description": "KI-Landkarte (Wo stehen wir, wo wollen wir hin?) und Begleitung (Wie kommen wir dahin?). Module: Use Case Identification, ROI-Schätzung, Change Management, KI-Governance.",
           "provider": {
             "@type": "Organization",
             "@id": `${siteUrl}/#organization`
@@ -326,13 +326,13 @@ export function PersonSchema({ siteUrl = 'https://www.aimation.de' }: Organizati
     "givenName": "Holger",
     "familyName": "Peschke",
     "jobTitle": "KI-Berater & Gründer",
-    "description": "20+ Jahre Engineering-Erfahrung in produzierenden Unternehmen. Spezialisiert auf KI-Automatisierung und -Beratung für den Mittelstand. 18.000+ LinkedIn-Follower. Gründer von AI.mation.",
+    "description": "20+ Jahre Engineering-Erfahrung in produzierenden Unternehmen. Spezialisiert auf KI-Automatisierung und -Beratung für den Mittelstand. 18.000+ LinkedIn-Follower. Gründer von AImation.",
     "image": `${siteUrl}/images/holger-consulting.png`,
     "url": `${siteUrl}/#ueber-mich`,
     "worksFor": {
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
-      "name": "AI.mation"
+      "name": "AImation"
     },
     "sameAs": [
       "https://www.linkedin.com/in/holgerpeschke/"
@@ -377,7 +377,7 @@ export function WebSiteSchema({ siteUrl = 'https://www.aimation.de' }: Organizat
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
-    "name": "AI.mation",
+    "name": "AImation",
     "url": siteUrl,
     "description": "KI-Beratung, Schulungen und Automatisierung für den Mittelstand. 40% Zeitersparnis durch intelligente KI-Implementierung.",
     "inLanguage": "de-DE",
@@ -471,6 +471,62 @@ export function FAQPageSchema({ faqs }: FAQPageSchemaProps) {
         "text": faq.answer
       }
     }))
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+interface BlogPostingSchemaProps {
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+  url: string;
+  image?: string;
+  siteUrl?: string;
+}
+
+/**
+ * BlogPosting Schema - fuer alle Blog-Artikel.
+ *
+ * author/publisher referenzieren die bestehenden Person- und Organization-
+ * Schemas ueber @id (kein Duplikat), siehe
+ * aimation-website-specs/2026-08-08_spec-09-ki-sichtbarkeit.md Punkt 4.
+ */
+export function BlogPostingSchema({
+  headline,
+  description,
+  datePublished,
+  dateModified,
+  url,
+  image,
+  siteUrl = 'https://www.aimation.de',
+}: BlogPostingSchemaProps) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": headline,
+    "description": description,
+    "datePublished": datePublished,
+    "dateModified": dateModified || datePublished,
+    "url": url.startsWith('http') ? url : `${siteUrl}${url}`,
+    "image": image || `${siteUrl}/images/og-image.png`,
+    "inLanguage": "de-DE",
+    "author": {
+      "@id": `${siteUrl}/#holger-peschke`
+    },
+    "publisher": {
+      "@id": `${siteUrl}/#organization`
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": url.startsWith('http') ? url : `${siteUrl}${url}`
+    }
   };
 
   return (

@@ -12,13 +12,13 @@ export const dynamic = 'force-static';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Blog: KI für den Mittelstand | Praxis statt leeren Versprechen | AI.mation' },
+  title: { absolute: 'Blog: KI für den Mittelstand | Praxis statt leeren Versprechen | AImation' },
   description: 'Ehrliche Einschätzungen zu KI im Mittelstand. Keine Hochglanzbroschüren, sondern Artikel, die Sie morgen anwenden können.',
   alternates: {
     canonical: `${siteUrl}/blog`,
   },
   openGraph: {
-    title: 'Blog: KI für den Mittelstand | AI.mation',
+    title: 'Blog: KI für den Mittelstand | AImation',
     description: 'Ehrliche Einschätzungen zu KI im Mittelstand. Keine Hochglanzbroschüren, sondern Artikel, die Sie morgen anwenden können.',
     url: `${siteUrl}/blog`,
     type: 'website',

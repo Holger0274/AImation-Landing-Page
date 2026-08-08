@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
 import FaqAccordion from './FaqAccordion';
+import { BlogPostingSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -14,8 +15,8 @@ const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-a
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: 'KI-Projekte scheitern nicht am Modell – sondern am Fundament | AI.mation' },
-  description: 'Warum KI-Einführungen im Mittelstand still im Sand verlaufen: schmutzige Daten, Compliance-Wände, Faktor Mensch. Und warum ein kleiner PoC mehr liefert als jede Strategie.',
+  title: { absolute: 'KI-Projekte scheitern nicht am Modell – sondern am Fundament | AImation' },
+  description: 'Warum KI-Einführungen im Mittelstand im Sand verlaufen: schmutzige Daten, Compliance-Wände, Faktor Mensch. Ein kleiner PoC liefert mehr als jede Strategie.',
   alternates: { canonical: `${siteUrl}/blog/ki-projekte-scheitern-fundament` },
   openGraph: {
     title: 'KI-Projekte scheitern nicht am Modell – sondern am Fundament',
@@ -42,6 +43,12 @@ export default async function KiProjekteScheiternPage({
 
   return (
     <>
+      <BlogPostingSchema
+        headline="KI-Projekte scheitern nicht am Modell. Sie scheitern an dem, was darunter liegt."
+        description={metadata.description as string}
+        datePublished="2026-04-20"
+        url="/blog/ki-projekte-scheitern-fundament"
+      />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
 

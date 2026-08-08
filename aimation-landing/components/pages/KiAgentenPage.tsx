@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Link } from '@/i18n/navigation';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight } from 'lucide-react';
+import { UMSETZUNG_LEVELS, UMSETZUNG_LAUFENDE_KOSTEN } from '@/lib/data/pricing';
 
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
 
@@ -270,7 +271,7 @@ export default function KiAgentenPage() {
               <strong className="text-[#071013]">Wo stehen Sie?</strong> Die meisten Mittelständler befinden sich auf Stufe 1 bis 2.
               Der größte Produktivitätssprung liegt oft zwischen Stufe 3 und 5.{' '}
               <Link href="/ki-beratung-kmu" className="text-[#f90093] hover:underline">
-                AI Readiness Check: Finden Sie es heraus
+                Mit der KI-Landkarte finden Sie es heraus
               </Link>
             </p>
           </div>
@@ -411,11 +412,8 @@ export default function KiAgentenPage() {
               </thead>
               <tbody>
                 {[
-                  { type: 'Einfacher Agent (z.B. E-Mail-Routing)', cost: 'ab 5.000 €', timeline: '2 bis 4 Wochen' },
-                  { type: 'Spezialisierter Agent (z.B. Dokumentenanalyse)', cost: 'ab 10.000 €', timeline: '4 bis 8 Wochen' },
-                  { type: 'Multi-System-Agent (z.B. Lessons-Learned)', cost: 'ab 20.000 €', timeline: '6 bis 12 Wochen' },
-                  { type: 'Multi-Agenten-System (z.B. Debattiersystem)', cost: 'ab 30.000 €', timeline: '8 bis 16 Wochen' },
-                  { type: 'Laufende Kosten (API, Hosting, Wartung)', cost: '200 bis 800 €/Monat', timeline: '' },
+                  ...UMSETZUNG_LEVELS.map((level) => ({ type: level.type, cost: level.setupLabel, timeline: level.timeline })),
+                  { type: UMSETZUNG_LAUFENDE_KOSTEN.type, cost: UMSETZUNG_LAUFENDE_KOSTEN.label, timeline: '' },
                 ].map((row, i) => (
                   <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-[#faf9f7]'}>
                     <td className="px-4 py-3 text-[#071013]">{row.type}</td>

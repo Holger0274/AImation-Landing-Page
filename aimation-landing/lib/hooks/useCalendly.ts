@@ -98,8 +98,8 @@ export function useCalendly(options: UseCalendlyOptions = {}): UseCalendlyReturn
           backgroundColor: 'ffffff',
           hideEventTypeDetails: false,
           hideLandingPageDetails: false,
-          primaryColor: 'f90093', // AI.mation Magenta
-          textColor: '071013', // AI.mation Soft Black
+          primaryColor: 'f90093', // AImation Magenta
+          textColor: '071013', // AImation Soft Black
         },
       });
     },

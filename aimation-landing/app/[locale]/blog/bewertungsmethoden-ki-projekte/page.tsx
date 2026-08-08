@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
+import { BlogPostingSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -13,8 +14,8 @@ const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-a
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Wenn RICE nicht reicht: Vier Methoden zur Bewertung von KI-Projekten | AI.mation' },
-  description: 'Die RICE-Formel hat blinde Flecken. Vier ergänzende Bewertungsmethoden für KI-Projekte und wann welche passt – erklärt an denselben Engineering-Beispielen wie Teil 1.',
+  title: { absolute: 'Wenn RICE nicht reicht: Vier Methoden zur Bewertung von KI-Projekten | AImation' },
+  description: 'Die RICE-Formel hat blinde Flecken. Vier ergänzende Methoden zur Bewertung von KI-Projekten, erklärt an denselben Engineering-Beispielen wie Teil 1.',
   alternates: { canonical: `${siteUrl}/blog/bewertungsmethoden-ki-projekte` },
   openGraph: {
     title: 'Wenn RICE nicht reicht: Vier Methoden zur Bewertung von KI-Projekten',
@@ -76,6 +77,12 @@ export default async function BewertungsmethodenPage({
 
   return (
     <>
+      <BlogPostingSchema
+        headline="Wenn RICE nicht reicht: Vier Methoden zur Bewertung von KI-Projekten"
+        description={metadata.description as string}
+        datePublished="2026-05-02"
+        url="/blog/bewertungsmethoden-ki-projekte"
+      />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
 

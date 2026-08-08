@@ -222,7 +222,7 @@ function ImageModal({ painPoint, onClose }: { painPoint: PainStat; onClose: () =
 }
 
 // Compact Stat Card Component (NOW CLICKABLE)
-function CompactStatCard({ stat, index, onClick, clickHint }: { stat: PainStat; index: number; onClick: () => void; clickHint: string }) {
+function CompactStatCard({ stat, index, onClick, clickHint, isAnchor, anchorBadge }: { stat: PainStat; index: number; onClick: () => void; clickHint: string; isAnchor?: boolean; anchorBadge?: string }) {
   const Icon = stat.icon;
 
   return (
@@ -233,8 +233,17 @@ function CompactStatCard({ stat, index, onClick, clickHint }: { stat: PainStat; 
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ scale: 1.02, borderColor: 'rgba(249, 0, 147, 0.3)' }}
       onClick={onClick}
-      className="relative p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#f90093]/30 transition-all duration-300 group cursor-pointer"
+      className={`relative p-6 rounded-xl bg-white/5 transition-all duration-300 group cursor-pointer ${
+        isAnchor ? 'border-2 border-[#f90093]/50' : 'border border-white/10 hover:border-[#f90093]/30'
+      }`}
     >
+      {/* Anchor Badge */}
+      {isAnchor && anchorBadge && (
+        <div className="absolute -top-3 left-6 px-3 py-1 rounded-full bg-[#f90093] text-white text-[11px] font-heading font-semibold">
+          {anchorBadge}
+        </div>
+      )}
+
       {/* Icon */}
       <div className="mb-4">
         <Icon className="w-8 h-8 text-[#60AFFF]" />
@@ -417,6 +426,8 @@ export default function PainPoints() {
                   index={index}
                   onClick={() => setModalPainPoint(stat)}
                   clickHint={t('clickHint')}
+                  isAnchor={stat.id === 'knowledge'}
+                  anchorBadge={t('anchorBadge')}
                 />
               ))}
             </div>

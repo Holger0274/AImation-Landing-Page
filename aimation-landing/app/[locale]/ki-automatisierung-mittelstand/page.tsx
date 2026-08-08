@@ -9,13 +9,13 @@ export const dynamic = 'force-static';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
 export const metadata: Metadata = {
-  title: { absolute: 'KI-Automatisierung für den Mittelstand | Workflows & Agenten | AI.mation' },
+  title: { absolute: 'KI-Automatisierung für den Mittelstand | Workflows & Agenten | AImation' },
   description: 'KI-Automatisierung für KMUs: Workflows, RAG-Systeme, KI-Agenten. FLOW, KNOW, THINK, WORK – 4 Lösungswelten, modular kombinierbar. PoC-First-Ansatz.',
   alternates: {
     canonical: `${siteUrl}/ki-automatisierung-mittelstand`,
   },
   openGraph: {
-    title: 'KI-Automatisierung für den Mittelstand | AI.mation',
+    title: 'KI-Automatisierung für den Mittelstand | AImation',
     description: 'KI-Automatisierung für KMUs: Workflows, RAG-Systeme, KI-Agenten. 4 Lösungswelten, modular kombinierbar.',
     url: `${siteUrl}/ki-automatisierung-mittelstand`,
     type: 'website',

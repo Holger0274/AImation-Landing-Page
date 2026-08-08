@@ -257,12 +257,14 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
               </p>
               <div className="grid gap-3">
                 {[
-                  { value: 'production', label: 'Produktion / Fertigung' },
-                  { value: 'service', label: 'Dienstleistung' },
-                  { value: 'trade', label: 'Handel' },
-                  { value: 'it', label: 'IT / Software' },
-                  { value: 'craft', label: 'Handwerk' },
-                  { value: 'other', label: 'Sonstige' },
+                  { value: 'maschinenbau', label: 'Maschinenbau' },
+                  { value: 'automotive', label: 'Automotive' },
+                  { value: 'luft-raumfahrt', label: 'Luft- und Raumfahrt' },
+                  { value: 'elektrotechnik', label: 'Elektrotechnik und Elektronik' },
+                  { value: 'medizintechnik', label: 'Medizintechnik' },
+                  { value: 'entwicklungsdienstleistung', label: 'Ingenieur- und Entwicklungsdienstleistung' },
+                  { value: 'sonstige-fertigung', label: 'Sonstige Fertigung' },
+                  { value: 'sonstige', label: 'Sonstige' },
                 ].map((industry) => (
                   <button
                     key={industry.value}
@@ -307,7 +309,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
                 Für typische Szenarien haben wir Voreinstellungen vorbereitet. Alle Werte können Sie später anpassen.
               </p>
               <div className="grid gap-4">
-                {(['research', 'documentation', 'meetings', 'custom'] as UseCaseType[]).map((useCase) => (
+                {(['knowledge', 'requests', 'research', 'documentation', 'custom'] as UseCaseType[]).map((useCase) => (
                   <button
                     key={useCase}
                     onClick={() => {
@@ -554,7 +556,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
                 Ihre Berechnung ist fast <span className="text-magenta">fertig</span>!
               </h3>
               <p className="text-xl text-gray-400 font-body mb-8 text-center">
-                Wohin sollen wir Ihr persönliches ROI-Ergebnis senden?
+                Fast geschafft: Wohin dürfen wir Ihr Ergebnis senden?
               </p>
               <div className="space-y-4">
                 <div>
@@ -650,7 +652,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
             size="lg"
             className="flex-1 bg-gradient-to-r from-magenta to-[#ff4ecd] hover:opacity-90 text-white font-heading glow-magenta"
           >
-            {currentStep === 8 ? 'Ergebnis anzeigen' : 'Weiter'}
+            {currentStep === 8 ? 'Ergebnis per E-Mail erhalten' : 'Weiter'}
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>

@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
+import { BlogPostingSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -13,8 +14,8 @@ const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-a
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Warum Ihr spannendstes KI-Projekt nicht zuerst kommt | AI.mation' },
-  description: 'Fünf KI-Ideen, Budget für zwei: Die RICE-Formel aus dem Produktmanagement hilft bei der Priorisierung, wenn man ihre Grenzen kennt. Mit konkretem Beispiel aus einer Entwicklungsabteilung.',
+  title: { absolute: 'Warum Ihr spannendstes KI-Projekt nicht zuerst kommt | AImation' },
+  description: 'Fünf KI-Ideen, Budget für zwei. Die RICE-Formel aus dem Produktmanagement hilft bei der Priorisierung, wenn man ihre Grenzen kennt.',
   alternates: { canonical: `${siteUrl}/blog/ki-projekte-priorisierung-rice` },
   openGraph: {
     title: 'Warum Ihr spannendstes KI-Projekt nicht zuerst kommt',
@@ -41,6 +42,12 @@ export default async function RicePriorisierungPage({
 
   return (
     <>
+      <BlogPostingSchema
+        headline="Warum Ihr spannendstes KI-Projekt nicht zuerst kommt"
+        description={metadata.description as string}
+        datePublished="2026-04-24"
+        url="/blog/ki-projekte-priorisierung-rice"
+      />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
 

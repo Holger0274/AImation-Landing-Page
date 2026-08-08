@@ -21,16 +21,14 @@
   },
   "hero": {
     "badge": "AI · Product Development · SME",
-    "headlineStart": "Requests sort themselves. Knowledge stays in-house. Your products reach maturity ",
-    "headlineHighlight": "faster",
-    "headlineEnd": ".",
-    "subline": "AImation automates the routine work in engineering departments: reports, research, requests, knowledge retention. GDPR-compliant, processed in the EU, your data stays yours. And if AI brings nothing for your case, we will tell you exactly that.",
-    "cta": "Find out where your engineering is losing time",
+    "headlineStart": "Your most experienced engineer is retiring. Their ",
+    "headlineHighlight": "knowledge",
+    "headlineEnd": " does not have to leave with them.",
+    "subline": "AImation brings AI where real engineering happens: knowledge stays in-house, requests sort themselves, reports write themselves almost automatically. GDPR-compliant, processed in the EU.",
+    "cta": "Free initial consultation",
+    "ctaSecondary": "What is this costing you per year? Calculate ROI",
     "ctaMicrocopy": "Free, 30 minutes, no sales pitch.",
-    "trust1Label": "Years of product development and leadership in industry",
-    "trust2Label": "LinkedIn followers",
-    "trust3Value": "GDPR-compliant",
-    "trust3Label": "Processed in the EU, your data is never used for AI training"
+    "trustLine": "20+ years of product development and leadership in industry · 18,000+ LinkedIn followers · GDPR-first"
   },
   "painPoints": {
     "badge": "",
@@ -46,7 +44,8 @@
     "futureEndText": "",
     "roiLink": "What is this costing you per year? Calculate ROI",
     "modalClose": "Close modal",
-    "clickHint": "Click for image and details →",
+    "clickHint": "See what the solution looks like →",
+    "anchorBadge": "The costliest pain point",
     "quellePrafix": "Source:",
     "stats": {
       "knowledge": {
@@ -93,11 +92,26 @@
       }
     }
   },
+  "euAiAct": {
+    "headline": "By the way: the EU AI Act already applies",
+    "body": "Since February 2025, Article 4 requires demonstrable AI literacy from employees who use AI. Since August 2026, penalties are enforceable. No reason to panic, but a good reason not to push training into next year.",
+    "cta": "See training courses"
+  },
+  "kiLandkarte": {
+    "headline": "The first step: your",
+    "headlineHighlight": "AI Landscape Map",
+    "body": "One workshop day with your team. We collect your engineering pain points, check your data and systems landscape, and prioritize the 2 to 3 use cases with the best ratio of effort to impact, each with an ROI estimate. You can present the result to your management. Fixed price, one day, no project commitment.",
+    "check1": "Prioritized use cases with ROI estimate",
+    "check2": "Reality check: what data and systems do you actually have?",
+    "check3": "Fixed price from 1,900 EUR, one workshop day",
+    "cta": "Get your AI Landscape Map"
+  },
   "beforeAfter": {
     "headline": "From",
     "headlineChao": "Chaos",
     "headlineMid": "to",
     "headlineHighlight": "Control",
+    "qktIntro": "QCT, quality, cost, timing: the steering triangle of every engineering department.",
     "subline": "Every solution pays into the three accounts by which engineering is measured: quality, cost, timing.",
     "labelProblem": "Before",
     "labelLoesung": "After",
@@ -133,21 +147,21 @@
           "title": "Before: Knowledge in people's heads",
           "pain": "When someone leaves, they take what was never written down",
           "problems": [
-            "Knowledge lives in people's heads, folder structures, and inboxes.",
-            "Anyone who needs something has to ask around.",
-            "When someone leaves, they take what was never written down.",
-            "Mistakes from old projects resurface in new ones."
+            "Three decades of project experience sit in one person.",
+            "Reports and minutes are scattered across five systems.",
+            "Retirement is when the great reconstruction begins, or old mistakes repeat."
           ]
         },
         "after": {
-          "title": "After: Knowledge systematically retained",
+          "title": "After: Knowledge in the system",
           "gain": "Mistakes do not repeat themselves",
           "benefits": [
-            "Reports, minutes, and documents are automatically tagged and linked.",
+            "Reports, minutes, and decisions are automatically tagged and linked.",
             "Every question answered in seconds, with a source reference.",
-            "The expertise of departing colleagues is captured in a structured way before it leaves the building."
+            "The expert reviews and adds to it, instead of documenting everything themselves.",
+            "Every answered question makes the knowledge base better."
           ],
-          "roi": "Mistakes do not repeat themselves, new colleagues become productive faster. Account: quality and timing."
+          "roi": "Knowledge stays in-house, findable in seconds instead of in people's heads. Account: quality and cost."
         }
       },
       "research": {
@@ -181,7 +195,7 @@
     "flipHintDesktop": "Hover to flip",
     "flipHintMobile": "Tap to flip",
     "moreInfo": "Learn more",
-    "useCasesButton": "View use cases →",
+    "useCasesButton": "Click for practice examples",
     "practiceExamples": "PRACTICAL EXAMPLES",
     "inPractice": "in practice",
     "close": "Close ✕",
@@ -210,11 +224,11 @@
         "subtitle": "You know where AI saves money in your engineering. Before you invest.",
         "description": "We determine your starting point and show you the path, instead of selling you the next tool.",
         "features": [
-          "A clear picture of your biggest levers, in weeks rather than months.",
+          "Your AI Landscape Map: the biggest levers prioritized, with an ROI estimate, in one day instead of months.",
           "A decision based on your processes and data, not on hype.",
           "A roadmap that your team also understands and supports."
         ],
-        "detail": "Get your AI roadmap"
+        "detail": "Get your AI Landscape Map"
       },
       "umsetzung": {
         "title": "Implementation",
@@ -280,10 +294,11 @@
     "detailsView": "View details",
     "comingSoon": "Planned",
     "status": {
-      "completed": "PoC completed",
-      "in-progress": "In development",
+      "completed": "Live demo available in initial call",
+      "in-progress": "In build at AImation",
       "coming-soon": "Planned"
     },
+    "allUseCasesLink": "See all use cases →",
     "cards": {
       "patent-research": {
         "title": "Patent Research and Prior Art",
@@ -359,10 +374,18 @@
       }
     }
   },
+  "useCasesPage": {
+    "h1": "What AI in product development looks like, concretely",
+    "intro": "Use cases from everyday engineering work, from patent research to knowledge retention. Each case shows the problem, the solution, and the effect on quality, cost, and timing.",
+    "filterAll": "All",
+    "ctaHeadline": "Your use case is not listed?",
+    "ctaText": "The list grows with every project. Let us talk about your process, no obligation, no cost.",
+    "ctaButton": "Book a free initial consultation"
+  },
   "pilot": {
     "headline": "The smallest sensible start:",
     "headlineHighlight": "a pilot",
-    "body": "You do not need to believe in a large project to get started. We take one single process that costs you time every week and automate it. Fixed price, clear timeline, defined outcome. Then you decide whether more follows. And if the pilot shows that AI brings nothing for your case, you will know that too. Then this insight cost you exactly one pilot, not an annual budget.",
+    "body": "You already know exactly which process costs you time every week? Then you can skip the landscape map and start directly with a pilot. We take that one process and automate it. Fixed price, clear timeline, defined outcome. Then you decide whether more follows. And if the pilot shows that AI brings nothing for your case, you will know that too. Then this insight cost you exactly one pilot, not an annual budget.",
     "point1": "One process, chosen by you",
     "point2": "Fixed price 4,900 euros, 4-week timeline",
     "point3": "Your data stays in the EU, GDPR-compliant",
@@ -380,7 +403,7 @@
       "erstgespraech": {
         "title": "Initial call",
         "subtitle": "30 minutes, free",
-        "description": "We get to know each other. You tell us where the friction is. We tell you honestly whether we can help.",
+        "description": "You tell me where the friction is. I tell you honestly whether AI helps, and if not, that too.",
         "details": [
           "Where is your engineering losing time?",
           "Which process is a weekly frustration?",
@@ -390,49 +413,49 @@
         "cost": "Free"
       },
       "analyse": {
-        "title": "Analysis",
-        "subtitle": "Identify potential",
-        "description": "We look at how your engineering works today. Where are the bottlenecks? Where is time lost? And what can realistically be automated?",
+        "title": "AI Landscape Map",
+        "subtitle": "1 workshop day",
+        "description": "One workshop day with your team. Result: 2 to 3 prioritized use cases with an ROI estimate, ready to present internally. \"We should do something with AI\" becomes a plan with a price tag.",
         "details": [
-          "Conduct AI readiness assessment",
-          "AI audit of existing tools and processes",
-          "Calculate AI ROI potential"
+          "2 to 3 prioritized use cases",
+          "ROI estimate per use case",
+          "Report you can present internally"
         ],
-        "duration": "2-4 weeks",
-        "cost": "By effort"
+        "duration": "1 day, report in 3 to 5 days",
+        "cost": "Fixed price from 1,900 EUR"
       },
       "konzept": {
-        "title": "Proposal",
-        "subtitle": "Transparent offer",
-        "description": "You receive a concrete offer: what do we build? What does it cost? What does it deliver? In black and white.",
+        "title": "Pilot",
+        "subtitle": "One process gets automated",
+        "description": "One process, chosen by you, gets automated. Fixed price, clear timeframe, defined outcome. Afterwards you decide whether to build on it.",
         "details": [
-          "Solution architecture and implementation plan",
-          "Timeline and milestones",
-          "ROI calculation"
+          "One process of your choice",
+          "Fixed price, clear timeframe",
+          "Defined outcome"
         ],
-        "duration": "3-5 days",
-        "cost": "Transparent"
+        "duration": "4 weeks",
+        "cost": "Fixed price 4,900 EUR"
       },
       "umsetzung": {
-        "title": "Delivery",
-        "subtitle": "Build it together",
-        "description": "Training, consulting, or implementation: we deliver your project together.",
+        "title": "Implementation",
+        "subtitle": "Agent systems",
+        "description": "From a single workflow to a multi-agent system built on your company knowledge. Final sign-off always stays with your engineer.",
         "details": [
-          "Practice-oriented",
-          "Iterative",
-          "Hands-on support"
+          "From workflow to multi-agent system",
+          "Your company knowledge, built in",
+          "Final sign-off stays with your engineer"
         ],
-        "duration": "2-12 weeks",
-        "cost": "By effort"
+        "duration": "2 to 12 weeks",
+        "cost": "From 5,000 EUR, transparent by proposal"
       },
       "begleitung": {
         "title": "Ongoing support",
         "subtitle": "Long-term partnership",
-        "description": "After go-live we remain your contact for questions, adjustments, and further development.",
+        "description": "After go-live I remain your contact for questions, adjustments, and new ideas.",
         "details": [
-          "Support on demand",
-          "Optimisations",
-          "New features"
+          "Direct contact for questions",
+          "Adjustments ongoing",
+          "Room for new ideas"
         ],
         "duration": "Ongoing",
         "cost": "Optional"
@@ -444,7 +467,7 @@
     "headlineHighlight": "experience",
     "toolsHeadline": "We work with the",
     "toolsHighlight": "best tools",
-    "toolsSubline": "We are not tied to any vendor. We find what fits your situation because we know all the relevant tools and use them every day. In choosing them, performance always goes hand in hand with whether a tool can be operated in a GDPR-compliant way.",
+    "toolsSubline": "We are not tied to any vendor. We find what fits your situation because we know all the relevant tools and use them every day. When choosing, performance always matters, but so does whether a tool can be operated in a GDPR-compliant way. When in doubt, the EU-capable option wins.",
     "stats": {
       "linkedin": "LinkedIn followers",
       "experience": "years of engineering experience",
@@ -459,44 +482,28 @@
     "introHighlight": "No translation needed.",
     "introText": "You know the problem with consultants: some understand AI but not your development processes. Others know your world but bring someone else in for AI. With me you get both in one person.",
     "mainText": "For 20 years I worked in product development myself and led teams. I know where time is really lost in an engineering department, because I sat in exactly those places myself: in project reviews, in change loops, searching for that one report from three years ago. And AI has been my passion for years, not just since the hype. That combination is AImation: I translate between your engineering world and the AI world. You do not need an interpreter in between.",
-    "quotesLabel": "Who I am in 5 sentences",
+    "differentiatorsLabel": "Who I am in 4 sentences",
     "ctaPrimary": "Book a free initial consultation",
     "ctaLinkedIn": "Follow on LinkedIn. 18,000 followers",
-    "quotes": [
-      {
-        "text": "20 years as an engineering leader in industry.",
-        "highlight": null
-      },
-      {
-        "text": "I know [your processes], not from books, but because I lived them myself.",
-        "highlight": "your processes"
-      },
-      {
-        "text": "If AI does not make sense for you, I will tell you that. Even if it costs me the project.",
-        "highlight": null
-      },
-      {
-        "text": "[Doing instead of talking]: solutions that run next week, not next quarter.",
-        "highlight": "Doing instead of talking"
-      },
-      {
-        "text": "20 years have taught me one thing: [the simplest solution] that actually works is always the best.",
-        "highlight": "the simplest solution"
-      }
+    "differentiators": [
+      "I know your processes, not from books, but because I lived them myself for 20 years.",
+      "If AI does not make sense for you, I will tell you that. Even if it costs me the project.",
+      "Built for the Mittelstand: fixed prices, short timelines, running next week instead of next quarter.",
+      "Training, consulting, implementation from one hand. One contact, one call."
     ]
   },
   "whyAImation": {
-    "badge": "Why AI.mation?",
+    "badge": "Why AImation?",
     "headline": "Not yet another",
     "headlineHighlight": "AI consultancy",
     "subline": "We build AI solutions. And we tell you when you do not need one.",
     "readinessHeadline": "Starts with an",
-    "readinessHighlight": "AI Readiness Check",
-    "readinessText": "In 2 days you will know where you stand. We look at your engineering processes, assess what is already working, and calculate what can realistically be achieved. No sales pitch, no filler.",
+    "readinessHighlight": "AI Landscape Map",
+    "readinessText": "One workshop day, and you know where you stand. We look at your engineering processes, assess what is already working, and prioritize the use cases with the best ratio of effort to impact. No sales pitch, no filler.",
     "readinessBadge1": "✓ Analyse processes",
-    "readinessBadge2": "✓ Evaluate potential",
+    "readinessBadge2": "✓ Prioritize use cases",
     "readinessBadge3": "✓ Calculate ROI",
-    "readinessCta": "Request AI Readiness Check now",
+    "readinessCta": "Get your AI Landscape Map",
     "differentiators": [
       {
         "title": "Shop floor to boardroom",
@@ -526,7 +533,7 @@
     "trustLine": "Scientifically grounded methods for measurable results",
     "methods": [
       {
-        "label": "AI Readiness Assessment",
+        "label": "AI Landscape Map",
         "description": "Is your company ready for AI?"
       },
       {
@@ -534,14 +541,14 @@
         "description": "What value does AI actually deliver?"
       },
       {
-        "label": "AI Audit",
+        "label": "Tool Audit",
         "description": "Which tools are genuinely useful?"
       }
     ]
   },
   "solution": {
     "headline": "Why",
-    "headlineHighlight": "AI.mation",
+    "headlineHighlight": "AImation",
     "headlineEnd": "?",
     "subline": "20 years of engineering. Deep inside processes nobody fully understands anymore. That background is our advantage when we build AI solutions today.",
     "badge1": "20+ years engineering experience",
@@ -598,16 +605,14 @@
     "closeAriaLabel": "Close",
     "headline": "Your path to a",
     "headlineHighlight": "free AI consultation",
-    "subline": "Fill in the form and book your free consultation directly.",
-    "vornameLabel": "First name *",
-    "vornamePlaceholder": "John",
-    "nachnameLabel": "Last name *",
-    "nachnamePlaceholder": "Smith",
+    "subline": "Fill in a few fields, pick a time, done. Reply comes from me personally, not from a sales team.",
+    "nameLabel": "Name *",
+    "namePlaceholder": "John Smith",
     "emailLabel": "Email address *",
     "emailPlaceholder": "john.smith@company.com",
-    "firmaLabel": "Company name *",
+    "firmaLabel": "Company name (optional)",
     "firmaPlaceholder": "Acme Ltd",
-    "unternehmensgroesseLabel": "Company size *",
+    "unternehmensgroesseLabel": "Company size (optional)",
     "unternehmensgroessePlaceholder": "Please select",
     "sizeOption1": "10-50 employees",
     "sizeOption2": "50-250 employees",
@@ -615,9 +620,9 @@
     "sizeOption4": "1000+ employees",
     "telefonLabel": "Phone (optional)",
     "telefonPlaceholder": "+44 20 1234 5678",
-    "herausforderungLabel": "Your biggest challenge *",
+    "herausforderungLabel": "What is on your mind? (optional)",
     "herausforderungPlaceholder": "Briefly describe where AI could help you (e.g. 'Too many manual steps in order processing' or 'We want to use AI but do not know where to start')...",
-    "herausforderungHint": "Min. 10 characters, max. 500 characters",
+    "herausforderungHint": "One sentence is enough, it helps me prepare for our conversation.",
     "datenschutzLabel": "I have read the",
     "datenschutzLink": "privacy policy",
     "datenschutzEnd": "and agree to the processing of my data. *",
@@ -626,12 +631,8 @@
     "submitNote": "After submitting you will be redirected directly to our calendar.",
     "errorGeneric": "An error occurred. Please try again.",
     "validation": {
-      "vornameRequired": "First name is required",
-      "nachnameRequired": "Last name is required",
+      "nameRequired": "Name is required",
       "emailInvalid": "Please enter a valid email address",
-      "firmaRequired": "Company name is required",
-      "groesseRequired": "Please select a company size",
-      "herausforderungMin": "Please briefly describe your challenge (min. 10 characters)",
       "herausforderungMax": "Maximum 500 characters",
       "datenschutzRequired": "You must agree to the privacy policy"
     }
@@ -639,7 +640,7 @@
   "footer": {
     "tagline": "More time for what",
     "taglineHighlight": "matters",
-    "subtagline": "20 years of engineering. No buzzword bingo.",
+    "subtagline": "Engineering experience. No buzzword bingo.",
     "colLeistungen": "Services",
     "linkSchulungen": "Training",
     "linkBeratung": "Consulting",
@@ -652,7 +653,7 @@
     "colKontakt": "Contact",
     "linkErstgespraech": "Book a consultation",
     "lastUpdated": "Last updated:",
-    "copyright": "© {year} AI.mation. All rights reserved.",
+    "copyright": "© {year} AImation. All rights reserved.",
     "impressum": "Legal notice",
     "datenschutz": "Privacy policy",
     "groundingPage": "AImation Facts"

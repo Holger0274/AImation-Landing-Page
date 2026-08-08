@@ -1,8 +1,8 @@
 import React from 'react';
 
 export const metadata = {
-  title: { absolute: 'Impressum | AI.mation' },
-  description: 'Impressum und rechtliche Angaben von AI.mation - Holger Peschke, KI-Beratung und Automatisierung für den Mittelstand. Kontakt, Anbieterinformationen gemäß § 5 DDG.',
+  title: { absolute: 'Impressum | AImation' },
+  description: 'Impressum und rechtliche Angaben von AImation - Holger Peschke, KI-Beratung und Automatisierung für den Mittelstand. Kontakt, Anbieterinformationen gemäß § 5 DDG.',
   robots: {
     index: false, // Impressum sollte nicht indexiert werden
     follow: true,

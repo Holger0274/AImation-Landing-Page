@@ -4,8 +4,9 @@ import { motion } from 'framer-motion';
 import { X, Check, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useLeadForm } from '@/components/LeadFormProvider';
 
-const transformationIds = ['workflow', 'knowledge', 'research'] as const;
+const transformationIds = ['knowledge', 'workflow', 'research'] as const;
 
 function BeforeCard({ data, type, labelProblem, labelLoesung }: { data: any; type: 'before' | 'after'; labelProblem: string; labelLoesung: string }) {
   const isBefore = type === 'before';
@@ -90,6 +91,7 @@ function BeforeCard({ data, type, labelProblem, labelLoesung }: { data: any; typ
 export default function BeforeAfter() {
   const [activeTransformation, setActiveTransformation] = useState(0);
   const t = useTranslations('beforeAfter');
+  const { openLeadForm } = useLeadForm();
 
   const transformations = transformationIds.map((id) => ({
     id,
@@ -141,6 +143,9 @@ export default function BeforeAfter() {
             {t('headline')} <span className="text-gray-600">{t('headlineChao')}</span> {t('headlineMid')}{' '}
             <span className="gradient-text">{t('headlineHighlight')}</span>
           </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto mb-2" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1.05rem)' }}>
+            {t('qktIntro')}
+          </p>
           <p className="font-semibold text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.5rem)' }}>
             {t('subline')}
           </p>
@@ -232,7 +237,7 @@ export default function BeforeAfter() {
             {t('ctaText')}
           </p>
           <button
-            onClick={() => (window.location.href = '#kontakt')}
+            onClick={openLeadForm}
             className="px-8 py-4 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
             style={{ boxShadow: '0 0 30px rgba(249, 0, 147, 0.2)' }}
           >

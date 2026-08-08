@@ -21,16 +21,14 @@
   },
   "hero": {
     "badge": "KI · Produktentwicklung · Mittelstand",
-    "headlineStart": "Anfragen sortieren sich selbst. Wissen bleibt im Haus. Ihre Produkte werden ",
-    "headlineHighlight": "schneller reif",
-    "headlineEnd": ".",
-    "subline": "AImation automatisiert die Fleißarbeit in Entwicklungsabteilungen: Berichte, Recherchen, Anfragen, Wissenssicherung. DSGVO-konform, Verarbeitung in der EU, Ihre Daten bleiben Ihre Daten. Und wenn KI für Ihren Fall nichts bringt, sagen wir Ihnen genau das.",
-    "cta": "Finden Sie heraus, wo Ihre Entwicklung Zeit verliert",
+    "headlineStart": "Ihr erfahrenster Entwickler geht in Rente. Sein ",
+    "headlineHighlight": "Wissen",
+    "headlineEnd": " muss nicht mitgehen.",
+    "subline": "AImation bringt KI dorthin, wo wirklich entwickelt wird: Wissen bleibt im Haus, Anfragen sortieren sich selbst, Berichte schreiben sich fast von allein. DSGVO-konform, Verarbeitung in der EU.",
+    "cta": "Kostenloses Erstgespräch",
+    "ctaSecondary": "Was kostet Sie das pro Jahr? ROI berechnen",
     "ctaMicrocopy": "Kostenlos, 30 Minuten, kein Verkaufsgespräch.",
-    "trust1Label": "Jahre Produktentwicklung und Führung in der Industrie",
-    "trust2Label": "LinkedIn-Follower",
-    "trust3Value": "DSGVO-konform",
-    "trust3Label": "Verarbeitung in der EU, keine Nutzung Ihrer Daten zum KI-Training"
+    "trustLine": "20+ Jahre Produktentwicklung und Führung in der Industrie · 18.000+ LinkedIn-Follower · DSGVO-first"
   },
   "painPoints": {
     "badge": "",
@@ -46,7 +44,8 @@
     "futureEndText": "",
     "roiLink": "Was kostet Sie das pro Jahr? ROI berechnen",
     "modalClose": "Modal schließen",
-    "clickHint": "Klicken für Bild & Details →",
+    "clickHint": "Ansehen, wie die Lösung aussieht →",
+    "anchorBadge": "Der teuerste Schmerz",
     "quellePrafix": "Quelle:",
     "stats": {
       "knowledge": {
@@ -93,11 +92,26 @@
       }
     }
   },
+  "euAiAct": {
+    "headline": "Nebenbei: Der EU AI Act gilt schon",
+    "body": "Seit Februar 2025 verlangt Artikel 4 nachweisbare KI-Kompetenz von Mitarbeitern, die KI einsetzen. Seit August 2026 sind Sanktionen anwendbar. Kein Grund zur Panik, aber ein guter Grund, Schulung nicht auf nächstes Jahr zu schieben.",
+    "cta": "Schulungen ansehen"
+  },
+  "kiLandkarte": {
+    "headline": "Der erste Schritt: Ihre",
+    "headlineHighlight": "KI-Landkarte",
+    "body": "Ein Workshop-Tag mit Ihrem Team. Wir sammeln die Schmerzen Ihrer Entwicklung, prüfen Ihre Daten- und Systemlage und priorisieren die 2 bis 3 Use Cases mit dem besten Verhältnis aus Aufwand und Wirkung, jeweils mit ROI-Schätzung. Das Ergebnis können Sie Ihrer Geschäftsführung vorlegen. Festpreis, ein Tag, kein Projekt.",
+    "check1": "Priorisierte Use Cases mit ROI-Schätzung",
+    "check2": "Realitäts-Check: Welche Daten und Systeme haben Sie wirklich?",
+    "check3": "Festpreis ab 1.900 EUR, ein Workshop-Tag",
+    "cta": "Holen Sie sich Ihre KI-Landkarte"
+  },
   "beforeAfter": {
     "headline": "Von",
     "headlineChao": "Chaos",
     "headlineMid": "zu",
     "headlineHighlight": "Kontrolle",
+    "qktIntro": "QKT, Qualität, Kosten, Timing: das Steuerungsdreieck jeder Entwicklungsabteilung.",
     "subline": "Jede Lösung zahlt auf die drei Konten ein, an denen Entwicklung gemessen wird: Qualität, Kosten, Timing.",
     "labelProblem": "Vorher",
     "labelLoesung": "Nachher",
@@ -133,21 +147,21 @@
           "title": "Vorher: Wissen in Köpfen",
           "pain": "Wer geht, nimmt mit, was nie aufgeschrieben wurde",
           "problems": [
-            "Das Wissen liegt in Köpfen, Ordnerstrukturen und Postfächern.",
-            "Wer etwas sucht, fragt herum.",
-            "Wer geht, nimmt mit, was nie aufgeschrieben wurde.",
-            "Fehler aus alten Projekten tauchen in neuen wieder auf."
+            "Drei Jahrzehnte Projekterfahrung stecken in einer Person.",
+            "Berichte und Protokolle liegen verteilt über fünf Systeme.",
+            "Beim Renteneintritt beginnt das große Rekonstruieren, oder das Wiederholen alter Fehler."
           ]
         },
         "after": {
-          "title": "Nachher: Wissen strukturiert gesichert",
+          "title": "Nachher: Wissen im System",
           "gain": "Fehler wiederholen sich nicht",
           "benefits": [
-            "Berichte, Protokolle und Dokumente werden automatisch verschlagwortet und vernetzt.",
+            "Berichte, Protokolle und Entscheidungen werden automatisch verschlagwortet und vernetzt.",
             "Jede Frage wird in Sekunden beantwortet, mit Quellenangabe.",
-            "Das Erfahrungswissen ausscheidender Kollegen wird strukturiert erfasst, bevor es das Haus verlässt."
+            "Der Experte prüft und ergänzt, statt alles selbst zu dokumentieren.",
+            "Jede beantwortete Frage macht die Wissensbasis besser."
           ],
-          "roi": "Fehler wiederholen sich nicht, neue Kollegen sind schneller produktiv. Konto: Qualität und Timing."
+          "roi": "Wissen bleibt im Haus, auffindbar in Sekunden statt in Köpfen. Konto: Qualität und Kosten."
         }
       },
       "research": {
@@ -181,7 +195,7 @@
     "flipHintDesktop": "Hover zum Umdrehen",
     "flipHintMobile": "Tippen zum Umdrehen",
     "moreInfo": "Mehr erfahren",
-    "useCasesButton": "Use Cases ansehen →",
+    "useCasesButton": "Klicken für Praxis-Beispiele",
     "practiceExamples": "PRAXIS-BEISPIELE",
     "inPractice": "in der Praxis",
     "close": "Schließen ✕",
@@ -210,11 +224,11 @@
         "subtitle": "Sie wissen, wo KI in Ihrer Entwicklung Geld spart. Bevor Sie investieren.",
         "description": "Wir bestimmen Ihren Standort und zeigen den Weg, statt Ihnen das nächste Tool zu verkaufen.",
         "features": [
-          "Ein klares Bild Ihrer größten Hebel, in Wochen statt Monaten.",
+          "Ihre KI-Landkarte: die größten Hebel priorisiert, mit ROI-Schätzung, in einem Tag statt in Monaten.",
           "Eine Entscheidung auf Basis Ihrer Abläufe und Daten, nicht auf Basis von Hype.",
           "Ein Fahrplan, den auch Ihr Team versteht und mitträgt."
         ],
-        "detail": "Holen Sie sich Ihren KI-Fahrplan"
+        "detail": "Holen Sie sich Ihre KI-Landkarte"
       },
       "umsetzung": {
         "title": "Umsetzung",
@@ -280,10 +294,11 @@
     "detailsView": "Details ansehen",
     "comingSoon": "In Planung",
     "status": {
-      "completed": "PoC abgeschlossen",
-      "in-progress": "In Entwicklung",
+      "completed": "Live-Demo im Erstgespräch verfügbar",
+      "in-progress": "Bei AImation im Aufbau",
       "coming-soon": "In Planung"
     },
+    "allUseCasesLink": "Alle Use Cases ansehen →",
     "cards": {
       "patent-research": {
         "title": "Patentrecherche und Prior Art",
@@ -359,10 +374,18 @@
       }
     }
   },
+  "useCasesPage": {
+    "h1": "So sieht KI in der Produktentwicklung konkret aus",
+    "intro": "Anwendungsfälle aus dem Entwicklungsalltag, von der Patentrecherche bis zur Wissenssicherung. Jeder Fall zeigt Problem, Lösung und den Effekt auf Qualität, Kosten und Timing.",
+    "filterAll": "Alle",
+    "ctaHeadline": "Ihr Anwendungsfall steht nicht dabei?",
+    "ctaText": "Die Liste wächst mit jedem Projekt. Sprechen wir über Ihren Prozess, unverbindlich und kostenlos.",
+    "ctaButton": "Kostenloses Erstgespräch vereinbaren"
+  },
   "pilot": {
     "headline": "Der kleinste sinnvolle Start:",
     "headlineHighlight": "ein Pilot",
-    "body": "Sie müssen an kein Großprojekt glauben, um anzufangen. Wir nehmen einen einzigen Prozess, der bei Ihnen jede Woche Zeit kostet, und automatisieren ihn. Festpreis, klarer Zeitrahmen, definiertes Ergebnis. Danach entscheiden Sie, ob mehr daraus wird. Und falls der Pilot zeigt, dass KI für Ihren Fall nichts bringt, wissen Sie auch das. Dann hat Sie diese Erkenntnis genau einen Piloten gekostet, nicht ein Jahresbudget.",
+    "body": "Sie wissen schon genau, welcher Prozess Sie jede Woche Zeit kostet? Dann können Sie die Landkarte überspringen und direkt mit einem Piloten starten. Wir nehmen diesen einen Prozess und automatisieren ihn. Festpreis, klarer Zeitrahmen, definiertes Ergebnis. Danach entscheiden Sie, ob mehr daraus wird. Und falls der Pilot zeigt, dass KI für Ihren Fall nichts bringt, wissen Sie auch das. Dann hat Sie diese Erkenntnis genau einen Piloten gekostet, nicht ein Jahresbudget.",
     "point1": "Ein Prozess, von Ihnen gewählt",
     "point2": "Festpreis 4.900 Euro, Laufzeit 4 Wochen",
     "point3": "Ihre Daten bleiben in der EU, DSGVO-konform",
@@ -380,7 +403,7 @@
       "erstgespraech": {
         "title": "Erstgespräch",
         "subtitle": "30 Minuten, kostenlos",
-        "description": "Wir lernen uns kennen. Sie erzählen uns, wo der Schuh drückt. Wir sagen Ihnen ehrlich, ob wir helfen können.",
+        "description": "Sie erzählen, wo der Schuh drückt. Ich sage Ihnen ehrlich, ob KI hilft, und wenn nein, auch das.",
         "details": [
           "Wo verliert Ihre Entwicklung Zeit?",
           "Welcher Prozess nervt jede Woche?",
@@ -390,52 +413,52 @@
         "cost": "Kostenlos"
       },
       "analyse": {
-        "title": "Analyse",
-        "subtitle": "Potenziale erkennen",
-        "description": "Wir schauen uns an, wie Ihre Entwicklung heute arbeitet. Wo hakt es? Wo geht Zeit verloren? Und was lässt sich realistisch automatisieren?",
+        "title": "KI-Landkarte",
+        "subtitle": "1 Workshop-Tag",
+        "description": "Ein Workshop-Tag mit Ihrem Team. Ergebnis: 2 bis 3 priorisierte Use Cases mit ROI-Schätzung, intern vorzeigbar. Aus \"wir müssten mal was mit KI machen\" wird ein Plan mit Preisschild.",
         "details": [
-          "AI Readiness Assessment durchführen",
-          "AI Audit bestehender Tools und Prozesse",
-          "AI ROI-Potenziale kalkulieren"
+          "2 bis 3 priorisierte Use Cases",
+          "ROI-Schätzung je Use Case",
+          "Intern vorzeigbarer Bericht"
         ],
-        "duration": "2-4 Wochen",
-        "cost": "Nach Aufwand"
+        "duration": "1 Tag + Bericht in 3 bis 5 Tagen",
+        "cost": "Festpreis ab 1.900 EUR"
       },
       "konzept": {
-        "title": "Konzept",
-        "subtitle": "Transparenter Vorschlag",
-        "description": "Sie bekommen ein konkretes Angebot: Was bauen wir? Was kostet das? Was bringt es? Schwarz auf weiß.",
+        "title": "Pilot",
+        "subtitle": "Ein Prozess wird automatisiert",
+        "description": "Ein Prozess, von Ihnen gewählt, wird automatisiert. Festpreis, klarer Zeitrahmen, definiertes Ergebnis. Danach entscheiden Sie, ob mehr daraus wird.",
         "details": [
-          "Lösungsarchitektur & Umsetzungsplan",
-          "Timeline & Meilensteine",
-          "ROI-Kalkulation"
+          "Ein Prozess Ihrer Wahl",
+          "Festpreis, klarer Zeitrahmen",
+          "Definiertes Ergebnis"
         ],
-        "duration": "3-5 Tage",
-        "cost": "Transparent"
+        "duration": "4 Wochen",
+        "cost": "Festpreis 4.900 EUR"
       },
       "umsetzung": {
         "title": "Umsetzung",
-        "subtitle": "Gemeinsam umsetzen",
-        "description": "Schulung, Beratung oder Implementierung: Wir setzen Ihr Projekt gemeinsam um.",
+        "subtitle": "Agenten-Systeme",
+        "description": "Vom einzelnen Workflow bis zum Multi-Agent-System mit Ihrem Firmenwissen. Die letzte Freigabe bleibt immer bei Ihrem Ingenieur.",
         "details": [
-          "Praxisorientiert",
-          "Iterativ",
-          "Hands-On Support"
+          "Vom Workflow bis zum Multi-Agent-System",
+          "Ihr Firmenwissen im System",
+          "Letzte Freigabe bei Ihrem Ingenieur"
         ],
-        "duration": "2-12 Wochen",
-        "cost": "Nach Aufwand"
+        "duration": "2 bis 12 Wochen",
+        "cost": "ab 5.000 EUR, transparent nach Angebot"
       },
       "begleitung": {
         "title": "Begleitung",
         "subtitle": "Langfristige Begleitung",
-        "description": "Auch nach Go-Live bleiben wir Ihr Ansprechpartner für Fragen, Anpassungen und Weiterentwicklung.",
+        "description": "Nach Go-Live bleibe ich Ansprechpartner für Fragen, Anpassungen und neue Ideen.",
         "details": [
-          "Support on Demand",
-          "Optimierungen",
-          "Neue Features"
+          "Ansprechpartner für Fragen",
+          "Anpassungen laufend möglich",
+          "Raum für neue Ideen"
         ],
-        "duration": "Ongoing",
-        "cost": "Optional"
+        "duration": "laufend",
+        "cost": "optional"
       }
     }
   },
@@ -444,7 +467,7 @@
     "headlineHighlight": "Erfahrung",
     "toolsHeadline": "Wir arbeiten mit den",
     "toolsHighlight": "besten Tools",
-    "toolsSubline": "Wir binden uns an keinen Hersteller. Was für Ihren Fall passt, finden wir, weil wir alle relevanten Tools kennen und täglich nutzen. Bei der Auswahl zählt für uns neben der Leistung immer, ob ein Tool DSGVO-konform betrieben werden kann.",
+    "toolsSubline": "Wir binden uns an keinen Hersteller. Was für Ihren Fall passt, finden wir, weil wir alle relevanten Tools kennen und täglich nutzen. Bei der Auswahl zählt neben der Leistung immer, ob ein Tool DSGVO-konform betrieben werden kann. Im Zweifel gewinnt die EU-taugliche Option.",
     "stats": {
       "linkedin": "LinkedIn-Follower",
       "experience": "Jahre Engineering-Erfahrung",
@@ -459,44 +482,28 @@
     "introHighlight": "Keine Übersetzung nötig.",
     "introText": "Sie kennen das Problem mit Beratern: Die einen verstehen KI, aber nicht Ihre Entwicklungsprozesse. Die anderen kennen Ihre Welt, holen für KI aber jemanden dazu. Bei mir bekommen Sie beides in einer Person.",
     "mainText": "20 Jahre habe ich selbst in der Produktentwicklung gearbeitet und Teams geführt. Ich weiß, wo in einer Entwicklungsabteilung die Zeit wirklich verloren geht, weil ich an genau diesen Stellen gesessen habe: in Projektreviews, in Änderungsschleifen, in der Suche nach dem einen Bericht von vor drei Jahren. Und KI ist seit Jahren meine Leidenschaft, nicht erst seit dem Hype. Diese Kombination ist AImation: Ich übersetze zwischen Ihrer Entwicklungswelt und der KI-Welt. Sie brauchen keinen Dolmetscher dazwischen.",
-    "quotesLabel": "Das bin ich in 5 Sätzen",
+    "differentiatorsLabel": "Das bin ich in 4 Sätzen",
     "ctaPrimary": "Kostenloses Erstgespräch vereinbaren",
     "ctaLinkedIn": "LinkedIn folgen. 18.000 Follower",
-    "quotes": [
-      {
-        "text": "20 Jahre Führungskraft in der Produktentwicklung der Industrie.",
-        "highlight": null
-      },
-      {
-        "text": "Ich kenne [Ihre Prozesse] nicht aus Büchern, sondern weil ich sie selbst gelebt habe.",
-        "highlight": "Ihre Prozesse"
-      },
-      {
-        "text": "Wenn KI für Sie keinen Sinn ergibt, sage ich Ihnen das. Auch wenn mich das einen Auftrag kostet.",
-        "highlight": null
-      },
-      {
-        "text": "[Machen statt reden]: Lösungen, die nächste Woche laufen, nicht nächstes Quartal.",
-        "highlight": "Machen statt reden"
-      },
-      {
-        "text": "20 Jahre haben mich eines gelehrt: [Die einfachste Lösung], die wirklich funktioniert, ist immer die beste.",
-        "highlight": "Die einfachste Lösung"
-      }
+    "differentiators": [
+      "Ich kenne Ihre Prozesse nicht aus Büchern, sondern weil ich sie 20 Jahre selbst gelebt habe.",
+      "Wenn KI für Sie keinen Sinn ergibt, sage ich Ihnen das. Auch wenn es mich einen Auftrag kostet.",
+      "Für den Mittelstand gebaut: Festpreise, kurze Laufzeiten, läuft nächste Woche statt nächstes Quartal.",
+      "Schulung, Beratung, Umsetzung aus einer Hand. Ein Ansprechpartner, ein Anruf."
     ]
   },
   "whyAImation": {
-    "badge": "Warum AI.mation?",
+    "badge": "Warum AImation?",
     "headline": "Nicht noch eine",
     "headlineHighlight": "KI-Beratung",
     "subline": "Wir bauen KI-Lösungen. Und sagen Ihnen, wenn Sie keine brauchen.",
-    "readinessHeadline": "Startet mit einem",
-    "readinessHighlight": "AI Readiness Check",
-    "readinessText": "In 2 Tagen wissen Sie, wo Sie stehen. Wir schauen uns Ihre Entwicklungsprozesse an, bewerten was schon läuft, und rechnen durch, was realistisch herauszuholen ist. Kein Verkaufsgespräch, kein Blabla.",
+    "readinessHeadline": "Startet mit einer",
+    "readinessHighlight": "KI-Landkarte",
+    "readinessText": "Ein Workshop-Tag, und Sie wissen, wo Sie stehen. Wir schauen uns Ihre Entwicklungsprozesse an, bewerten was schon läuft, und priorisieren die Use Cases mit dem besten Verhältnis aus Aufwand und Wirkung. Kein Verkaufsgespräch, kein Blabla.",
     "readinessBadge1": "✓ Prozesse analysieren",
-    "readinessBadge2": "✓ Potenziale bewerten",
+    "readinessBadge2": "✓ Use Cases priorisieren",
     "readinessBadge3": "✓ ROI durchrechnen",
-    "readinessCta": "Jetzt AI Readiness Check anfragen",
+    "readinessCta": "Holen Sie sich Ihre KI-Landkarte",
     "differentiators": [
       {
         "title": "Shopfloor bis Führungsebene",
@@ -526,7 +533,7 @@
     "trustLine": "Wissenschaftlich fundierte Methoden für messbare Ergebnisse",
     "methods": [
       {
-        "label": "AI Readiness Assessment",
+        "label": "KI-Landkarte",
         "description": "Ist Ihr Unternehmen bereit für KI?"
       },
       {
@@ -534,14 +541,14 @@
         "description": "Welchen Mehrwert bringt KI konkret?"
       },
       {
-        "label": "AI Audit",
+        "label": "Tool-Audit",
         "description": "Welche Tools bringen wirklich Nutzen?"
       }
     ]
   },
   "solution": {
     "headline": "Warum",
-    "headlineHighlight": "AI.mation",
+    "headlineHighlight": "AImation",
     "headlineEnd": "?",
     "subline": "20 Jahre Engineering. Tief drin in Prozessen, die keiner mehr versteht. Das ist unser Vorteil, wenn wir heute KI-Lösungen bauen.",
     "badge1": "20+ Jahre Engineering-Erfahrung",
@@ -598,16 +605,14 @@
     "closeAriaLabel": "Schließen",
     "headline": "Ihr Weg zum",
     "headlineHighlight": "KI-Erstgespräch",
-    "subline": "Füllen Sie das Formular aus und buchen Sie direkt Ihren kostenlosen Beratungstermin.",
-    "vornameLabel": "Vorname *",
-    "vornamePlaceholder": "Max",
-    "nachnameLabel": "Nachname *",
-    "nachnamePlaceholder": "Mustermann",
+    "subline": "Kurz eintragen, Termin wählen, fertig. Antwort kommt von mir persönlich, nicht von einem Vertriebsteam.",
+    "nameLabel": "Name *",
+    "namePlaceholder": "Max Mustermann",
     "emailLabel": "E-Mail-Adresse *",
     "emailPlaceholder": "max.mustermann@firma.de",
-    "firmaLabel": "Firmenname *",
+    "firmaLabel": "Firmenname (optional)",
     "firmaPlaceholder": "Musterfirma GmbH",
-    "unternehmensgroesseLabel": "Unternehmensgröße *",
+    "unternehmensgroesseLabel": "Unternehmensgröße (optional)",
     "unternehmensgroessePlaceholder": "Bitte wählen",
     "sizeOption1": "10-50 Mitarbeiter",
     "sizeOption2": "50-250 Mitarbeiter",
@@ -615,9 +620,9 @@
     "sizeOption4": "1000+ Mitarbeiter",
     "telefonLabel": "Telefon (optional)",
     "telefonPlaceholder": "+49 123 456789",
-    "herausforderungLabel": "Ihre größte Herausforderung *",
-    "herausforderungPlaceholder": "Beschreiben Sie kurz, wobei KI Ihnen helfen könnte (z.B. 'Zu viele manuelle Prozesse in der Auftragsabwicklung' oder 'Wir wollen AI einsetzen, wissen aber nicht wo anfangen')...",
-    "herausforderungHint": "Min. 10 Zeichen, max. 500 Zeichen",
+    "herausforderungLabel": "Woran denken Sie gerade? (optional)",
+    "herausforderungPlaceholder": "Beschreiben Sie kurz, wobei KI Ihnen helfen könnte (z.B. 'Zu viele manuelle Prozesse in der Auftragsabwicklung' oder 'Wir wollen KI einsetzen, wissen aber nicht wo anfangen')...",
+    "herausforderungHint": "Ein Satz reicht und hilft mir, mich auf unser Gespräch vorzubereiten.",
     "datenschutzLabel": "Ich habe die",
     "datenschutzLink": "Datenschutzerklärung",
     "datenschutzEnd": "gelesen und stimme der Verarbeitung meiner Daten zu. *",
@@ -626,12 +631,8 @@
     "submitNote": "Nach dem Absenden werden Sie direkt zu unserem Kalender weitergeleitet.",
     "errorGeneric": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
     "validation": {
-      "vornameRequired": "Vorname ist erforderlich",
-      "nachnameRequired": "Nachname ist erforderlich",
+      "nameRequired": "Name ist erforderlich",
       "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
-      "firmaRequired": "Firmenname ist erforderlich",
-      "groesseRequired": "Bitte wählen Sie eine Unternehmensgröße aus",
-      "herausforderungMin": "Bitte beschreiben Sie kurz Ihre Herausforderung (min. 10 Zeichen)",
       "herausforderungMax": "Maximal 500 Zeichen",
       "datenschutzRequired": "Sie müssen der Datenschutzerklärung zustimmen"
     }
@@ -639,7 +640,7 @@
   "footer": {
     "tagline": "Mehr Zeit für das",
     "taglineHighlight": "Wesentliche",
-    "subtagline": "20 Jahre Engineering. Kein Buzzword-Bingo.",
+    "subtagline": "Engineering-Erfahrung. Kein Buzzword-Bingo.",
     "colLeistungen": "Leistungen",
     "linkSchulungen": "Schulungen",
     "linkBeratung": "Beratung",
@@ -652,7 +653,7 @@
     "colKontakt": "Kontakt",
     "linkErstgespraech": "Erstgespräch buchen",
     "lastUpdated": "Zuletzt aktualisiert:",
-    "copyright": "© {year} AI.mation. Alle Rechte vorbehalten.",
+    "copyright": "© {year} AImation. Alle Rechte vorbehalten.",
     "impressum": "Impressum",
     "datenschutz": "Datenschutz",
     "groundingPage": "Fakten zu AImation"

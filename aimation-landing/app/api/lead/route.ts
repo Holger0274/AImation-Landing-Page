@@ -3,14 +3,15 @@ import { z } from 'zod';
 import { createServerClient } from '@/lib/supabase';
 
 // Validation schema matching the form
+// Nur Name, E-Mail, Datenschutz sind Pflicht, siehe
+// aimation-website-specs/2026-07-18_spec-05-formulare-rechner.md Punkt 1.
 const leadSchema = z.object({
-  vorname: z.string().min(2),
-  nachname: z.string().min(2),
+  name: z.string().min(1),
   email: z.string().email(),
-  firma: z.string().min(2),
-  unternehmensgroesse: z.enum(['10-50', '50-250', '250-1000', '1000+']),
+  firma: z.string().optional(),
+  unternehmensgroesse: z.string().optional(),
   telefon: z.string().optional(),
-  herausforderung: z.string().min(10).max(500),
+  herausforderung: z.string().max(500).optional(),
   datenschutz: z.boolean(),
 });
 
@@ -20,6 +21,11 @@ export async function POST(request: Request) {
     const body = await request.json();
     const validatedData = leadSchema.parse(body);
 
+    // Formular fragt nur noch ein Namensfeld ab, DB-Schema behaelt vorname/nachname
+    // (keine Migration noetig), daher hier serverseitig aufteilen.
+    const [vorname, ...rest] = validatedData.name.trim().split(/\s+/);
+    const nachname = rest.join(' ') || '';
+
     // Get n8n webhook URL from environment variable
     const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL;
 
@@ -27,13 +33,13 @@ export async function POST(request: Request) {
     try {
       const supabase = createServerClient();
       const { error: dbError } = await supabase.from('leads').insert({
-        vorname: validatedData.vorname,
-        nachname: validatedData.nachname,
+        vorname,
+        nachname,
         email: validatedData.email,
-        firma: validatedData.firma,
-        unternehmensgroesse: validatedData.unternehmensgroesse,
+        firma: validatedData.firma || null,
+        unternehmensgroesse: validatedData.unternehmensgroesse || null,
         telefon: validatedData.telefon || null,
-        herausforderung: validatedData.herausforderung,
+        herausforderung: validatedData.herausforderung || null,
         datenschutz_zugestimmt: validatedData.datenschutz,
       });
 
@@ -59,6 +65,8 @@ export async function POST(request: Request) {
     // Prepare payload for n8n
     const payload = {
       ...validatedData,
+      vorname,
+      nachname,
       timestamp: new Date().toISOString(),
       source: 'landing-page-form',
       ip: request.headers.get('x-forwarded-for') || 'unknown',

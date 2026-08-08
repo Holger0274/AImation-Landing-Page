@@ -28,13 +28,13 @@ function StepMockup({ type }: { type: string }) {
       icon: Search,
       color: '#60AFFF',
       imageUrl: '/images/process-step-2-analyse.png',
-      imageAlt: 'Analyse - Business Analytics Dashboard',
+      imageAlt: 'KI-Landkarte - Workshop und priorisierte Use Cases',
     },
     'proposal': {
       icon: FileText,
       color: '#f90093',
       imageUrl: '/images/process-step-3-konzept.png',
-      imageAlt: 'Konzept - Strategisches Proposal Dokument',
+      imageAlt: 'Pilot - Klar definiertes Projektergebnis',
     },
     'implementation': {
       icon: Rocket,

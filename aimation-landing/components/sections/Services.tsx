@@ -332,9 +332,12 @@ function FlipCard({ service, index, onSelect, labels }: { service: ServiceData; 
           </div>
         </div>
 
-        {/* Back Side - Enhanced Dark */}
+        {/* Back Side - Enhanced Dark, als Ganzes klickbar (Praxis-Beispiele) */}
         <div
-          className="absolute inset-0 rounded-2xl p-6 md:p-8"
+          onClick={onSelect}
+          role="button"
+          tabIndex={0}
+          className="absolute inset-0 rounded-2xl p-6 md:p-8 cursor-pointer"
           style={{
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
@@ -427,19 +430,9 @@ function FlipCard({ service, index, onSelect, labels }: { service: ServiceData; 
               ))}
             </ul>
 
-            <button
-              onClick={onSelect}
-              className="w-full text-center py-3 font-heading font-semibold cursor-pointer transition-all"
-              style={{
-                color: service.gradientFrom,
-                textDecoration: 'underline',
-                textUnderlineOffset: '4px',
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'none'}
-              onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'underline'}
-            >
+            <p className="w-full text-center py-3 text-xs text-gray-500 font-body">
               {labels.useCasesButton}
-            </button>
+            </p>
           </div>
         </div>
       </motion.div>

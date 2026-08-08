@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
 import FaqAccordion from './FaqAccordion';
+import { BlogPostingSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -14,8 +15,8 @@ const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-a
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: 'KI kennt keinen Halt: Warum CAD-Teams jetzt starten müssen | AI.mation' },
-  description: 'Claude Opus 4.7 verdreifacht die Bildauflösung – ein Kategoriesprung für Konstruktionsabteilungen. Warum das für CAD so relevant ist. Und warum Abwarten die teuerste Strategie ist.',
+  title: { absolute: 'KI kennt keinen Halt: Warum CAD-Teams jetzt starten müssen | AImation' },
+  description: 'Claude Opus 4.7 verdreifacht die Bildauflösung, ein Kategoriesprung für Konstruktionsabteilungen. Warum Abwarten für CAD-Teams die teuerste Strategie ist.',
   alternates: { canonical: `${siteUrl}/blog/ki-cad-zukunft-jetzt-starten` },
   openGraph: {
     title: 'KI kennt keinen Halt: Warum CAD-Teams jetzt starten müssen',
@@ -42,6 +43,12 @@ export default async function KiCadZukunftPage({
 
   return (
     <>
+      <BlogPostingSchema
+        headline="KI kennt keinen Halt: warum wir bei CAD jetzt starten müssen, auch wenn es noch nicht ausgereift ist"
+        description={metadata.description as string}
+        datePublished="2026-04-19"
+        url="/blog/ki-cad-zukunft-jetzt-starten"
+      />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
         {/* ── HERO ── */}

@@ -2,14 +2,15 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import PainPoints from '@/components/sections/PainPoints';
+import KiLandkarte from '@/components/sections/KiLandkarte';
 import BeforeAfter from '@/components/sections/BeforeAfter';
 import Services from '@/components/sections/Services';
 import ProjectShowcase from '@/components/sections/ProjectShowcase/ProjectShowcase';
 import Process from '@/components/sections/Process';
 import { PilotSection } from '@/components/sections/PilotSection';
 import SocialProof from '@/components/sections/SocialProof';
+import EuAiActNotice from '@/components/sections/EuAiActNotice';
 import About from '@/components/sections/About';
-import WhyAImation from '@/components/sections/WhyAImation';
 import FAQ from '@/components/sections/FAQ';
 import { faqs } from '@/lib/data/faqs';
 import FinalCTA from '@/components/sections/FinalCTA';
@@ -56,14 +57,15 @@ export default async function Home({
       <main id="main-content">
         <Hero />
         <PainPoints />
+        <KiLandkarte />
         <BeforeAfter />
         <Process />
         <PilotSection />
         <Services />
         <ProjectShowcase />
         <SocialProof />
+        <EuAiActNotice />
         <About />
-        <WhyAImation />
         <FAQ />
         <FinalCTA />
       </main>

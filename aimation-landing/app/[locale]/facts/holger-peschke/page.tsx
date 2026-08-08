@@ -23,8 +23,8 @@ export async function generateMetadata({
     ? 'Holger Peschke: Founder AImation UG (Grounding Page)'
     : 'Holger Peschke: Gründer AImation UG (Grounding Page)';
   const description = isEn
-    ? 'Holger Peschke is founder and managing director of AImation UG (haftungsbeschränkt) in Bamberg. More than 20 years of experience in product development and management in industry.'
-    : 'Holger Peschke ist Gründer und Geschäftsführer der AImation UG (haftungsbeschränkt) in Bamberg. Mehr als 20 Jahre Erfahrung in der Produktentwicklung und Führung in der Industrie.';
+    ? 'Holger Peschke is founder and managing director of AImation UG in Bamberg, with over 20 years of experience in product development and management.'
+    : 'Holger Peschke ist Gründer und Geschäftsführer der AImation UG in Bamberg, mit über 20 Jahren Erfahrung in Produktentwicklung und Führung.';
 
   const canonicalUrl = isEn
     ? `${siteUrl}/en/facts/holger-peschke`

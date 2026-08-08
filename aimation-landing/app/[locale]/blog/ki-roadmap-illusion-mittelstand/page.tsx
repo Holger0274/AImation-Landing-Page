@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
 import FaqAccordion from './FaqAccordion';
+import { BlogPostingSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -14,8 +15,8 @@ const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-a
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Die KI-Lüge im Mittelstand: Warum der gerade Strich auf der Roadmap eine Illusion ist | AI.mation' },
-  description: 'Warum KI-Projekte im Mittelstand nicht am Modell scheitern, sondern an der Roadmap-Illusion. Mit einem echten Beispiel aus dem Maschinenbau und der Landkarten-Methodik als Gegenmittel.',
+  title: { absolute: 'Die KI-Lüge im Mittelstand: Warum der gerade Strich auf der Roadmap eine Illusion ist | AImation' },
+  description: 'Warum der Weg von der ersten KI-Idee zur produktiven Lösung selten geradeaus verläuft. Beispiel aus dem Maschinenbau, Landkarten-Methodik als Gegenmittel.',
   alternates: { canonical: `${siteUrl}/blog/ki-roadmap-illusion-mittelstand` },
   openGraph: {
     title: 'Die KI-Lüge im Mittelstand: Warum der gerade Strich auf der Roadmap eine Illusion ist',
@@ -42,6 +43,12 @@ export default async function KiRoadmapIllusionPage({
 
   return (
     <>
+      <BlogPostingSchema
+        headline="Die KI-Lüge im Mittelstand: Warum der gerade Strich auf der Roadmap eine Illusion ist."
+        description={metadata.description as string}
+        datePublished="2026-05-08"
+        url="/blog/ki-roadmap-illusion-mittelstand"
+      />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
 
@@ -392,10 +399,10 @@ export default async function KiRoadmapIllusionPage({
               className="font-heading font-bold text-white mb-4 leading-tight"
               style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}
             >
-              Use Case Workshop für Ihr Engineering-Team
+              Die KI-Landkarte für Ihr Engineering-Team
             </h2>
             <p className="text-gray-300 font-inter mb-8" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)' }}>
-              In einem Use Case Workshop erarbeiten wir gemeinsam die drei bis fünf Workflows, bei denen KI bei Ihnen realistisch Wirkung zeigt. Mit einer ehrlichen Einschätzung, wo Ihre Roadmap geradeaus geht und wo sie Umwege braucht. Sie gehen nicht mit Folien raus, sondern mit einer priorisierten Roadmap.
+              In einem Workshop-Tag erarbeiten wir gemeinsam die 2 bis 3 Use Cases, bei denen KI bei Ihnen realistisch Wirkung zeigt, jeweils mit ROI-Schätzung. Mit einer ehrlichen Einschätzung, wo Ihre Roadmap geradeaus geht und wo sie Umwege braucht. Sie gehen nicht mit Folien raus, sondern mit einer priorisierten Landkarte.
             </p>
             <a
               href={CALENDLY_URL}
@@ -408,7 +415,7 @@ export default async function KiRoadmapIllusionPage({
                 fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
               }}
             >
-              Use Case Workshop buchen
+              Holen Sie sich Ihre KI-Landkarte
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>

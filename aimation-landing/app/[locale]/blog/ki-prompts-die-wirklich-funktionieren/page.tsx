@@ -7,13 +7,14 @@ import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
 import FaqAccordion from './FaqAccordion';
+import { BlogPostingSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
 
 export const metadata: Metadata = {
-  title: { absolute: 'KI-Prompts die wirklich funktionieren: 7 Muster für den Mittelstand | AI.mation' },
-  description: 'Vague In, Vague Out. Diese 7 Prompt-Muster liefern sofort brauchbare Ergebnisse – in Vertrieb, HR und Produktion. Prompt Engineering für den Arbeitsalltag.',
+  title: { absolute: 'KI-Prompts die wirklich funktionieren: 7 Muster für den Mittelstand | AImation' },
+  description: 'Vague In, Vague Out. Diese 7 Prompt-Muster liefern sofort brauchbare Ergebnisse, in Vertrieb, HR und Produktion. Prompt Engineering für den Arbeitsalltag.',
   alternates: { canonical: `${siteUrl}/blog/ki-prompts-die-wirklich-funktionieren` },
   openGraph: {
     title: 'KI-Prompts die wirklich funktionieren: 7 Muster für den Mittelstand',
@@ -91,6 +92,12 @@ export default async function KiPromptsPage({
 
   return (
     <>
+      <BlogPostingSchema
+        headline="KI-Prompts, die wirklich funktionieren: 7 Muster für den Arbeitsalltag im Mittelstand"
+        description={metadata.description as string}
+        datePublished="2026-04-01"
+        url="/blog/ki-prompts-die-wirklich-funktionieren"
+      />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
         {/* ── HERO ── */}

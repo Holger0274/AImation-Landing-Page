@@ -37,7 +37,7 @@ export default function Solution() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-heading font-semibold text-gray-700 mb-4" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.25rem)' }}>
-            Warum <span className="gradient-text">AI.mation</span>?
+            Warum <span className="gradient-text">AImation</span>?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-10" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.05rem)' }}>
             20 Jahre Engineering. Tief drin in Prozessen, die keiner mehr versteht. Das ist unser Vorteil, wenn wir heute KI-Lösungen bauen.

@@ -1,5 +1,5 @@
 /**
- * Test Data Fixtures for AI.mation Landing Page
+ * Test Data Fixtures for AImation Landing Page
  *
  * Centralized test data for form submissions, validation scenarios,
  * and expected values throughout the test suite.

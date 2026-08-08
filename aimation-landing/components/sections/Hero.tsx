@@ -4,9 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
-import { cn } from '@/lib/utils';
-import { Check, Users, Award, TrendingUp } from 'lucide-react';
+import { Calculator } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import LeadFormModal from '@/components/LeadFormModal';
 
@@ -85,31 +83,18 @@ export default function Hero() {
 
   const subtitle = t('subline');
 
-  // Trust Elements with animated counters
-  const trustElements = [
-    {
-      icon: <Award className="h-5 w-5 text-magenta" />,
-      target: 20,
-      suffix: '+',
-      label: t('trust1Label'),
-      hasCounter: true,
-    },
-    {
-      icon: <Users className="h-5 w-5 text-magenta" />,
-      target: 18000,
-      suffix: '+',
-      label: t('trust2Label'),
-      hasCounter: true,
-    },
-    {
-      icon: <TrendingUp className="h-5 w-5 text-magenta" />,
-      value: t('trust3Value'),
-      label: t('trust3Label'),
-      hasCounter: false,
-    },
-  ];
+  const openROICalculator = () => {
+    const kontaktSection = document.getElementById('kontakt');
+    if (kontaktSection) {
+      kontaktSection.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        const roiButton = document.querySelector('[data-roi-calculator-trigger]') as HTMLButtonElement;
+        if (roiButton) roiButton.click();
+      }, 800);
+    }
+  };
 
-  // Custom generated images with AI.mation brand colors
+  // Custom generated images with AImation brand colors
   const images = [
     '/images/hero-engineering-desk.jpg', // Engineering desk with magenta highlights — main hero image
     '/images/hero-project-room-kanban.jpg', // Project room kanban board
@@ -330,6 +315,13 @@ export default function Hero() {
             >
               {t('cta')}
             </Button>
+            <button
+              onClick={openROICalculator}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-[#071013] text-[#071013] font-heading font-semibold hover:bg-[#071013] hover:text-white transition-all duration-300"
+            >
+              <Calculator className="h-5 w-5" />
+              {t('ctaSecondary')}
+            </button>
           </motion.div>
 
           <motion.p
@@ -340,37 +332,15 @@ export default function Hero() {
           </motion.p>
         </motion.div>
 
-        {/* Trust Elements — volle Breite unter dem Grid */}
-        <motion.div
-          className="mt-8 flex flex-wrap justify-center gap-6 lg:gap-10 lg:justify-start"
-          variants={containerVariants}
+        {/* Trust-Zeile — einmalig, volle Breite unter dem Grid */}
+        <motion.p
+          className="mt-8 text-center text-sm text-gray-500 font-body lg:text-left"
+          variants={itemVariants}
           initial="hidden"
           animate="visible"
         >
-          {trustElements.map((item, index) => (
-            <motion.div key={index} variants={itemVariants} className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-magenta/10 flex-shrink-0">
-                {item.icon}
-              </div>
-              <div>
-                <p className="font-bold text-[#071013] font-heading text-lg">
-                  {item.hasCounter ? (
-                    <AnimatedCounter
-                      target={item.target!}
-                      suffix={item.suffix}
-                      duration={2.5}
-                      separator={true}
-                      delay={0.5 + index * 0.2}
-                    />
-                  ) : (
-                    item.value
-                  )}
-                </p>
-                <p className="text-sm text-gray-600 font-body">{item.label}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+          {t('trustLine')}
+        </motion.p>
 
       </div>
 

@@ -6,7 +6,7 @@ import Footer from '@/components/layout/Footer';
 import { FACTS_VERIFIED_DATE } from '@/lib/config/facts';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
-const SERVICES_STAND = 'Stand: Juni 2026';
+const SERVICES_STAND = 'Stand: August 2026';
 
 export function generateStaticParams() {
   return [{ locale: 'de' }, { locale: 'en' }];
@@ -22,8 +22,8 @@ export async function generateMetadata({
 
   const title = isEn ? 'AImation UG: Grounding Page (English)' : 'AImation UG: Grounding Page';
   const description = isEn
-    ? 'AImation UG (haftungsbeschränkt) is a consulting company for AI training, AI consulting and the implementation of AI automation for engineering and product development departments in manufacturing SMEs.'
-    : 'AImation UG (haftungsbeschränkt) ist ein Beratungsunternehmen für KI-Schulung, KI-Beratung und die Umsetzung von KI-Automatisierung in Entwicklungsabteilungen des produzierenden Mittelstands.';
+    ? 'AImation UG (haftungsbeschränkt) advises on AI training, AI consulting and AI automation for engineering departments in manufacturing SMEs.'
+    : 'AImation UG (haftungsbeschränkt) berät zu KI-Schulung, KI-Beratung und KI-Automatisierung in Entwicklungsabteilungen des produzierenden Mittelstands.';
 
   const canonicalUrl = isEn
     ? `${siteUrl}/en/facts/aimation`
@@ -269,14 +269,26 @@ export default async function GroundingPage({
                   </li>
                   <li>
                     {isEn
-                      ? 'Consulting: AI readiness assessment, use case identification for product development, strategy and roadmap, ROI and business case, change management'
-                      : 'Beratung: AI Readiness Assessment, Use-Case-Identifikation für die Produktentwicklung, Strategie und Roadmap, ROI und Business Case, Change Management'}
+                      ? 'Consulting: AI Landscape Map (use case identification for product development, ROI estimate), strategy and roadmap, change management'
+                      : 'Beratung: KI-Landkarte (Use-Case-Identifikation für die Produktentwicklung, ROI-Schätzung), Strategie und Roadmap, Change Management'}
                   </li>
                   <li>
                     {isEn
                       ? 'Implementation: technical request automation, knowledge management and lessons learned systems, RAG systems for technical documentation, AI agents for engineering tasks, GDPR-compliant, processed in the EU'
                       : 'Umsetzung: Technische Anfragenautomatisierung, Wissenssicherung und Lessons-Learned-Systeme, RAG-Systeme für technische Dokumentation, KI-Agenten für Engineering-Aufgaben, DSGVO-konform, Verarbeitung in der EU'}
                   </li>
+                </ol>
+                <p className="mt-2 text-gray-500 text-xs">{SERVICES_STAND}</p>
+              </dd>
+
+              <dt className="font-semibold text-[#071013]">{isEn ? 'Pricing (fixed prices)' : 'Preise (Festpreise)'}</dt>
+              <dd className="text-gray-700">
+                <ol className="list-decimal list-inside space-y-1">
+                  <li>{isEn ? 'Initial call: free, 30 minutes' : 'Erstgespräch: kostenlos, 30 Minuten'}</li>
+                  <li>{isEn ? 'AI Landscape Map (entry offer): fixed price from 1,900 EUR, one workshop day. Formerly labeled "AI Readiness Check" or "AI Potential Check", these names are retired.' : 'KI-Landkarte (Einstiegsangebot): Festpreis ab 1.900 EUR, ein Workshop-Tag. Früherer Name: "AI Readiness Check" bzw. "KI-Potenzial-Check", diese Bezeichnungen sind nicht mehr aktuell.'}</li>
+                  <li>{isEn ? 'Pilot: fixed price 4,900 EUR, 4 weeks' : 'Pilot: Festpreis 4.900 EUR, 4 Wochen'}</li>
+                  <li>{isEn ? 'Implementation: from 5,000 to 30,000 EUR setup plus 200 to 800 EUR/month, depending on agent type' : 'Umsetzung: 5.000 bis 30.000 EUR Setup plus 200 bis 800 EUR/Monat, je nach Agenten-Typ'}</li>
+                  <li>{isEn ? 'Training: 1,800 EUR per day inhouse, half-day formats from 990 EUR' : 'Schulung: 1.800 EUR pro Tag Inhouse, Halbtags-Formate ab 990 EUR'}</li>
                 </ol>
                 <p className="mt-2 text-gray-500 text-xs">{SERVICES_STAND}</p>
               </dd>

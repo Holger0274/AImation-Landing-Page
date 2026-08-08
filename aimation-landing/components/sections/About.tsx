@@ -3,41 +3,30 @@
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { Target, Heart, Zap, Users } from 'lucide-react';
 
-function QuoteCard({ text, highlight, index }: { text: string; highlight: string | null; index: number }) {
-  let content: React.ReactNode = text;
+const differentiatorIcons = [Target, Heart, Zap, Users];
 
-  if (highlight) {
-    const parts = text.split(`[${highlight}]`);
-    content = (
-      <>
-        {parts[0]}
-        <strong className="text-magenta not-italic underline decoration-magenta/40 underline-offset-[3px]">
-          {highlight}
-        </strong>
-        {parts[1]}
-      </>
-    );
-  }
-
+function DifferentiatorCard({ text, icon: Icon, index }: { text: string; icon: typeof Target; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08 }}
-      className="relative bg-white rounded-2xl border border-gray-100 px-5 pt-7 pb-5 shadow-sm hover:shadow-[0_8px_32px_rgba(249,0,147,0.13)] hover:-translate-y-1 transition-all duration-200"
+      className="flex items-start gap-4 bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-[0_8px_32px_rgba(249,0,147,0.13)] hover:-translate-y-1 transition-all duration-200"
     >
-      <span className="absolute -top-4 left-4 text-5xl text-magenta font-serif leading-none">&ldquo;</span>
-      <p className="text-sm text-gray-600 italic leading-relaxed">{content}</p>
-      <span className="absolute -bottom-3 right-4 text-5xl text-magenta font-serif leading-none rotate-180">&ldquo;</span>
+      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-magenta/10 flex items-center justify-center">
+        <Icon className="w-5 h-5 text-magenta" />
+      </div>
+      <p className="text-sm text-gray-600 leading-relaxed">{text}</p>
     </motion.div>
   );
 }
 
 export default function About() {
   const t = useTranslations('about');
-  const quotes = (t.raw('quotes') as { text: string; highlight: string | null }[]);
+  const differentiators = (t.raw('differentiators') as string[]);
 
   return (
     <section
@@ -83,7 +72,7 @@ export default function About() {
             <div className="aspect-[4/5] relative rounded-2xl overflow-hidden border border-gray-200">
               <Image
                 src="/images/about-holger.png"
-                alt="Holger Peschke, Gründer AI.mation"
+                alt="Holger Peschke, Gründer AImation"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -118,19 +107,19 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* Zitat-Karten */}
+        {/* Differenzierungs-Punkte */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="text-center text-[11px] font-heading font-bold tracking-[2.5px] uppercase text-gray-300 mb-7"
         >
-          {t('quotesLabel')}
+          {t('differentiatorsLabel')}
         </motion.p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-          {quotes.map((q, i) => (
-            <QuoteCard key={i} text={q.text} highlight={q.highlight} index={i} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {differentiators.map((text, i) => (
+            <DifferentiatorCard key={i} text={text} icon={differentiatorIcons[i]} index={i} />
           ))}
         </div>
 

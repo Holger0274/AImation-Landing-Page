@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 /**
- * Playwright Configuration for AI.mation Landing Page
+ * Playwright Configuration for AImation Landing Page
  *
  * Tests all interactive elements across 3 browsers and 4 viewports
  * with comprehensive mocking of external services.
@@ -49,7 +49,7 @@ export default defineConfig({
     // Maximum time each action (click, fill, etc.) can take
     actionTimeout: 10 * 1000,
 
-    // Emulate user locale (German for AI.mation)
+    // Emulate user locale (German for AImation)
     locale: 'de-DE',
 
     // Timezone

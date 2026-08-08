@@ -1,7 +1,7 @@
 import { Page, Route } from '@playwright/test';
 
 /**
- * API Mocks for AI.mation Landing Page Tests
+ * API Mocks for AImation Landing Page Tests
  *
  * Intercepts and mocks all external API calls to ensure
  * deterministic, fast, and reliable tests.

@@ -3,9 +3,18 @@
 import { useState } from 'react';
 import { Link } from '@/i18n/navigation';
 import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ArrowRight } from 'lucide-react';
+import { PRICING } from '@/lib/data/pricing';
+import EuAiActNotice from '@/components/sections/EuAiActNotice';
 
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
+
+const ROLLEN_MATRIX = [
+  { rolle: 'Ingenieure, Konstrukteure, Berechner', einstieg: 'Einstieg generative KI im Engineering, danach Copilot im Entwicklungsalltag' },
+  { rolle: 'Entwicklungsleiter, Teamleiter', einstieg: 'KI im Leadership, danach KI-Agenten in der Produktentwicklung' },
+  { rolle: 'Geschäftsführung', einstieg: 'KI im Leadership (Kompaktformat), danach KI-Landkarte als nächster Schritt' },
+  { rolle: 'Skeptiker im Team', einstieg: 'Einstieg generative KI, an eigenen Aufgaben, keine Folienschlacht' },
+];
 
 const SCHULUNGEN_LEVELS = [
   {
@@ -44,7 +53,7 @@ const FAQ_ITEMS = [
   { q: 'Für wen sind die Schulungen geeignet?', a: 'Für alle Unternehmensgrößen und Rollen. Wir starten mit einer Bedarfsanalyse und empfehlen dann den passenden Einstiegspunkt. Einsteiger ohne Vorkenntnisse starten mit Ebene 1, Teams die schon KI nutzen profitieren direkt von Ebene 2 oder 3.' },
   { q: 'Wie lange dauern die Schulungen?', a: 'Je nach Modul zwischen einem halben und zwei Tagen. Viele Unternehmen kombinieren mehrere Module zu einem Schulungstag. Wir passen Dauer und Format an Ihre Bedürfnisse an.' },
   { q: 'Können Schulungen auch online stattfinden?', a: 'Ja. Alle Module sind für Präsenz, Online oder Hybrid konzipiert. Bei Online-Schulungen arbeiten wir mit Live-Übungen, Breakout-Räumen und praktischen Demos – kein PowerPoint-Marathon.' },
-  { q: 'Was kostet eine Schulung?', a: 'Die Preise richten sich nach Modul, Teilnehmerzahl und Format. Wir erstellen gerne ein individuelles Angebot. Als Orientierung: Ein halbtägiges Modul für eine Gruppe von 10 Personen liegt in einer anderen Preisklasse als ein zweitägiges Spezialprogramm.' },
+  { q: 'Was kostet eine Schulung?', a: 'Inhouse-Schulung: 1.800 Euro pro Tag, unabhängig von der Teilnehmerzahl. Halbtags-Formate ab 990 Euro. Keine versteckten Zusatzkosten pro Kopf.' },
   { q: 'Gibt es Train-the-Trainer-Formate?', a: 'Ja. Für Unternehmen, die KI-Wissen intern multiplizieren möchten, bieten wir Train-the-Trainer-Programme. Ihre internen Multiplikatoren lernen nicht nur die Inhalte, sondern auch wie sie diese weitervermitteln.' },
   { q: 'Bekommt jeder Teilnehmer Unterlagen?', a: 'Ja. Alle Teilnehmer erhalten praxisnahe Unterlagen, Prompt-Bibliotheken und Checklisten. Kein Lehrbuch-Material, sondern Werkzeuge die am nächsten Tag einsetzbar sind.' },
 ];
@@ -128,7 +137,7 @@ export default function KiSchulungenPage() {
               href="/#kontakt"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold border-2 border-[#071013] text-[#071013] hover:bg-[#071013] hover:text-white transition-all"
             >
-              KI-Potenzial-Check anfragen
+              Holen Sie sich Ihre KI-Landkarte
             </Link>
           </motion.div>
         </div>
@@ -166,6 +175,52 @@ export default function KiSchulungenPage() {
               </div>
             ))}
           </div>
+
+          {/* Preis */}
+          <div className="mt-10 rounded-2xl border border-gray-200 bg-[#faf9f7] p-6 md:p-8 text-center">
+            <p className="font-heading font-semibold text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
+              Inhouse-Schulung: {PRICING.schulung.priceLabel}, unabhängig von der Teilnehmerzahl. {PRICING.schulung.priceHalfDayLabel}.
+            </p>
+          </div>
+
+          {/* Rollen-Matrix */}
+          <div className="mt-10">
+            <h3 className="font-heading font-bold text-[#071013] text-center mb-6" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.5rem)' }}>
+              Welche Schulung <span className="text-[#f90093]">für wen</span>?
+            </h3>
+            <div className="overflow-x-auto rounded-xl border border-gray-200">
+              <table className="w-full text-sm font-inter">
+                <thead>
+                  <tr className="bg-[#071013] text-white">
+                    <th className="text-left px-4 py-3 font-heading font-semibold">Rolle</th>
+                    <th className="text-left px-4 py-3 font-heading font-semibold">Empfohlener Einstieg</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ROLLEN_MATRIX.map((row, i) => (
+                    <tr key={row.rolle} className={i % 2 === 0 ? 'bg-white' : 'bg-[#faf9f7]'}>
+                      <td className="px-4 py-3 text-[#071013] font-medium">{row.rolle}</td>
+                      <td className="px-4 py-3 text-gray-600">{row.einstieg}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Bruecke zur Landkarte */}
+          <div className="mt-10 rounded-2xl border border-[#f90093]/30 bg-white p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-4 justify-between">
+            <p className="text-gray-600 text-sm md:text-base">
+              Nicht sicher, ob Schulung der richtige erste Schritt ist? Die KI-Landkarte beantwortet genau das: ein Workshop-Tag, der zeigt, wo Schulung reicht und wo Automatisierung mehr bringt.
+            </p>
+            <Link
+              href="/#kontakt"
+              className="flex-shrink-0 inline-flex items-center gap-1.5 text-[#f90093] font-heading font-semibold whitespace-nowrap hover:underline"
+            >
+              Holen Sie sich Ihre KI-Landkarte
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -173,7 +228,7 @@ export default function KiSchulungenPage() {
       <section className="py-16 px-4 bg-[#071013]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-heading font-bold text-white mb-8" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-            Warum Schulungen von <span className="text-[#f90093]">AI.mation</span>?
+            Warum Schulungen von <span className="text-[#f90093]">AImation</span>?
           </h2>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
@@ -199,6 +254,8 @@ export default function KiSchulungenPage() {
           <FaqAccordion />
         </div>
       </section>
+
+      <EuAiActNotice />
 
       {/* CTA */}
       <section className="py-16 px-4 bg-[#071013]">

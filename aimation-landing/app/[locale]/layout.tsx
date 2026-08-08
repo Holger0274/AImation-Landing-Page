@@ -10,6 +10,7 @@ import {
   WebSiteSchema,
   PersonSchema,
 } from '@/components/StructuredData';
+import LeadFormProvider from '@/components/LeadFormProvider';
 
 export async function generateMetadata({
   params,
@@ -26,13 +27,13 @@ export async function generateMetadata({
     title: {
       default: isDE
         ? 'KI in der Produktentwicklung: Beratung, Schulung, Umsetzung | AImation'
-        : 'AI Consulting & Automation for SMEs | AI.mation',
-      template: '%s | AI.mation',
+        : 'AI Consulting & Automation for SMEs | AImation',
+      template: '%s | AImation',
     },
 
     description: isDE
-      ? 'AImation automatisiert die Fleißarbeit in Entwicklungsabteilungen: Anfragen, Berichte, Recherche, Wissenssicherung. DSGVO-konform, aus 20 Jahren Engineering-Praxis. Für den produzierenden Mittelstand.'
-      : 'AI consulting, training & automation for mid-sized businesses. Honest assessment of whether AI helps. 20 years engineering experience. Free initial consultation.',
+      ? 'KI für die technische Produktentwicklung im Mittelstand: Wissenssicherung, Anfragen-Automatisierung, Recherche. DSGVO-konform, aus 20 Jahren Entwicklungspraxis. Einstieg mit der KI-Landkarte zum Festpreis.'
+      : 'AI for technical product development in the German Mittelstand: knowledge retention, request automation, research. GDPR-compliant, built on 20 years of engineering practice. Start with the KI-Landkarte at a fixed price.',
 
     keywords: isDE
       ? [
@@ -40,7 +41,7 @@ export async function generateMetadata({
           'KI-Automatisierung Mittelstand',
           'KI-Schulungen Unternehmen',
           'Prozessautomatisierung',
-          'AI Readiness Assessment',
+          'KI-Landkarte',
           'RAG-Systeme',
           'n8n Automatisierung',
           'Multi-Agent-Systeme',
@@ -53,7 +54,7 @@ export async function generateMetadata({
           'AI automation business',
           'AI training companies',
           'process automation',
-          'AI readiness assessment',
+          'AI Landscape Map',
           'RAG systems',
           'AI consulting Germany',
         ],
@@ -73,10 +74,10 @@ export async function generateMetadata({
       locale: isDE ? 'de_DE' : 'en_US',
       alternateLocale: isDE ? ['en_US'] : ['de_DE'],
       url: isDE ? '/' : '/en/',
-      siteName: 'AI.mation',
+      siteName: 'AImation',
       title: isDE
-        ? 'KI-Beratung für KMUs: Klartext, Praxis, bezahlbar | AI.mation'
-        : 'AI Consulting for SMEs: Clarity, Practice, Affordable | AI.mation',
+        ? 'KI-Beratung für KMUs: Klartext, Praxis, bezahlbar | AImation'
+        : 'AI Consulting for SMEs: Clarity, Practice, Affordable | AImation',
       description: isDE
         ? '40% der Arbeitszeit geht für Aufgaben drauf, die niemand vermissen würde. KI-Beratung, Schulungen & Automatisierung für den Mittelstand. Ohne leere Versprechen.'
         : '40% of working time goes on tasks no one would miss. AI consulting, training & automation for SMEs. No empty promises.',
@@ -86,8 +87,8 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: isDE
-            ? 'AI.mation - KI-Beratung und Automatisierung für den Mittelstand'
-            : 'AI.mation - AI Consulting and Automation for SMEs',
+            ? 'AImation - KI-Beratung und Automatisierung für den Mittelstand'
+            : 'AImation - AI Consulting and Automation for SMEs',
           type: 'image/png',
         },
       ],
@@ -95,7 +96,7 @@ export async function generateMetadata({
 
     twitter: {
       card: 'summary_large_image',
-      title: isDE ? 'KI-Beratung für KMUs | AI.mation' : 'AI Consulting for SMEs | AI.mation',
+      title: isDE ? 'KI-Beratung für KMUs | AImation' : 'AI Consulting for SMEs | AImation',
       description: isDE
         ? '40% Zeitersparnis durch KI-Automatisierung. Ehrliche Einschätzung, ob KI für Ihr KMU sinnvoll ist. Kostenloses Erstgespräch.'
         : '40% time savings through AI automation. Honest assessment of whether AI makes sense for your business. Free initial consultation.',
@@ -178,7 +179,9 @@ export default async function LocaleLayout({
         Die LeadFormModal und FinalCTA Komponenten laden Calendly bei Bedarf.
       */}
       <NextIntlClientProvider locale={locale} messages={messages}>
-        {children}
+        <LeadFormProvider>
+          {children}
+        </LeadFormProvider>
       </NextIntlClientProvider>
     </>
   );

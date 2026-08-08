@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
 import FaqAccordion from './FaqAccordion';
+import { BlogPostingSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -14,8 +15,8 @@ const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-a
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Die 6 Stufen der KI-Nutzung: Von Prompting bis autonome Agenten | AI.mation' },
-  description: '82% der KMUs haben Kompetenzlücken bei KI. Wo steht Ihr Unternehmen? Die 6 Stufen von Prompting bis Multi-Agenten-Systeme – mit konkreten Beispielen und nächsten Schritten.',
+  title: { absolute: 'Die 6 Stufen der KI-Nutzung: Von Prompting bis autonome Agenten | AImation' },
+  description: '82% der KMUs haben Kompetenzlücken bei KI. Die 6 Stufen von Prompting bis Multi-Agenten-Systeme, mit konkreten Beispielen und nächsten Schritten.',
   alternates: { canonical: `${siteUrl}/blog/6-stufen-ki-nutzung` },
   openGraph: {
     title: 'Die 6 Stufen der KI-Nutzung: Von Prompting bis autonome Agenten',
@@ -100,6 +101,12 @@ export default async function SechsStufenPage({
 
   return (
     <>
+      <BlogPostingSchema
+        headline="Wo steht Ihr Unternehmen bei KI? Die 6 Stufen von Prompting bis autonome Agenten."
+        description={metadata.description as string}
+        datePublished="2026-03-30"
+        url="/blog/6-stufen-ki-nutzung"
+      />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
         {/* ── HERO ── */}
@@ -294,9 +301,9 @@ export default async function SechsStufenPage({
               ))}
             </div>
             <p className="mt-6 font-inter text-gray-600 text-sm leading-relaxed">
-              Für eine fundierte Einordnung gibt es den{' '}
-              <Link href="/ki-beratung-kmu" className="text-[#f90093] hover:underline">AI Readiness Check</Link>
-              : In zwei Tagen wissen Sie, wo Sie stehen und was der nächste sinnvolle Schritt ist.
+              Für eine fundierte Einordnung gibt es die{' '}
+              <Link href="/ki-beratung-kmu" className="text-[#f90093] hover:underline">KI-Landkarte</Link>
+              : In einem Workshop-Tag wissen Sie, wo Sie stehen und was der nächste sinnvolle Schritt ist.
             </p>
           </div>
         </section>

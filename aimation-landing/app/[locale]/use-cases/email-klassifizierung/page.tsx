@@ -12,8 +12,8 @@ const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-a
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: 'E-Mail Klassifizierung mit KI | Use Case | AI.mation' },
-  description: 'Wie AI.mation E-Mails automatisch klassifiziert und ans richtige Team routet – mit OpenAI und n8n. PoC abgeschlossen, weniger Sortieraufwand, keine Fehlweiterleitungen.',
+  title: { absolute: 'E-Mail Klassifizierung mit KI | Use Case | AImation' },
+  description: 'Wie AImation E-Mails automatisch klassifiziert und ans richtige Team routet, mit OpenAI und n8n. PoC abgeschlossen, weniger Sortieraufwand.',
   alternates: { canonical: `${siteUrl}/use-cases/email-klassifizierung` },
   robots: { index: true, follow: true },
 };

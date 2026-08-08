@@ -1,6 +1,8 @@
 // ROI Calculator - Business Logic
 
-export type UseCaseType = 'research' | 'documentation' | 'meetings' | 'custom';
+import { ROI_PACKAGES } from '@/lib/data/pricing';
+
+export type UseCaseType = 'knowledge' | 'requests' | 'research' | 'documentation' | 'custom';
 export type PackageType = 'starter' | 'professional' | 'enterprise';
 
 export interface CalculatorInput {
@@ -28,31 +30,36 @@ export interface ROIResults {
 /**
  * Package presets for cost estimation
  */
-export const PACKAGE_PRESETS: Record<PackageType, { setupCost: number; monthlyCost: number }> = {
-  starter: {
-    setupCost: 6500,
-    monthlyCost: 200,
-  },
-  professional: {
-    setupCost: 9500,
-    monthlyCost: 400,
-  },
-  enterprise: {
-    setupCost: 18000,
-    monthlyCost: 600,
-  },
-};
+export const PACKAGE_PRESETS: Record<PackageType, { setupCost: number; monthlyCost: number }> = ROI_PACKAGES;
 
 /**
  * Use case presets for quick calculations (using Professional package as default)
  */
 export const USE_CASE_PRESETS: Record<UseCaseType, Omit<CalculatorInput, 'useCase'>> = {
+  knowledge: {
+    weeklyHours: 3,
+    hourlyWage: 50,
+    numEmployees: 5,
+    setupCost: ROI_PACKAGES.professional.setupCost,
+    monthlyCost: ROI_PACKAGES.professional.monthlyCost,
+    timeframMonths: 12,
+    rampUpMonths: 1,
+  },
+  requests: {
+    weeklyHours: 2,
+    hourlyWage: 45,
+    numEmployees: 10,
+    setupCost: ROI_PACKAGES.professional.setupCost,
+    monthlyCost: ROI_PACKAGES.professional.monthlyCost,
+    timeframMonths: 12,
+    rampUpMonths: 1,
+  },
   research: {
     weeklyHours: 3,
     hourlyWage: 50,
     numEmployees: 5,
-    setupCost: 9500,
-    monthlyCost: 400,
+    setupCost: ROI_PACKAGES.professional.setupCost,
+    monthlyCost: ROI_PACKAGES.professional.monthlyCost,
     timeframMonths: 12,
     rampUpMonths: 1,
   },
@@ -60,26 +67,17 @@ export const USE_CASE_PRESETS: Record<UseCaseType, Omit<CalculatorInput, 'useCas
     weeklyHours: 4,
     hourlyWage: 35,
     numEmployees: 5,
-    setupCost: 9500,
-    monthlyCost: 400,
+    setupCost: ROI_PACKAGES.professional.setupCost,
+    monthlyCost: ROI_PACKAGES.professional.monthlyCost,
     timeframMonths: 12,
     rampUpMonths: 2,
-  },
-  meetings: {
-    weeklyHours: 2,
-    hourlyWage: 45,
-    numEmployees: 10,
-    setupCost: 9500,
-    monthlyCost: 400,
-    timeframMonths: 12,
-    rampUpMonths: 1,
   },
   custom: {
     weeklyHours: 2,
     hourlyWage: 35,
     numEmployees: 10,
-    setupCost: 9500,
-    monthlyCost: 400,
+    setupCost: ROI_PACKAGES.professional.setupCost,
+    monthlyCost: ROI_PACKAGES.professional.monthlyCost,
     timeframMonths: 12,
     rampUpMonths: 2,
   },
@@ -140,9 +138,10 @@ export function calculateROI(input: CalculatorInput): ROIResults {
  */
 export function getUseCaseLabel(useCase: UseCaseType): string {
   const labels: Record<UseCaseType, string> = {
-    research: 'Recherche & Analyse',
-    documentation: 'Dokumentenverarbeitung',
-    meetings: 'Meeting-Automatisierung',
+    knowledge: 'Wissenssicherung',
+    requests: 'Technische Anfragen und Änderungsanträge',
+    research: 'Recherche: Patente, Normen, Markt',
+    documentation: 'Berichte und Dokumentation',
     custom: 'Eigene Werte',
   };
   return labels[useCase] || useCase;
@@ -153,10 +152,11 @@ export function getUseCaseLabel(useCase: UseCaseType): string {
  */
 export function getUseCaseDescription(useCase: UseCaseType): string {
   const descriptions: Record<UseCaseType, string> = {
-    research: 'Automatisierte Marktanalysen, Wettbewerbsrecherche, Technologie-Scouting',
-    documentation: 'Automatische Dokumentenerstellung, Protokolle, Berichte',
-    meetings: 'Meeting-Transkription, automatische Zusammenfassungen, Follow-up-Generierung',
-    custom: 'Individuelle Konfiguration für Ihren spezifischen Use Case',
+    knowledge: 'Berichte, Protokolle und Erfahrungswissen auffindbar machen, bevor es das Haus verlässt',
+    requests: 'Eingehende Anfragen klassifizieren, Kontext sammeln, Antwortentwurf erstellen',
+    research: 'Systematische Recherchen in Stunden statt Tagen',
+    documentation: 'Statusberichte, Protokolle und Doku automatisch erstellen',
+    custom: 'Individuelle Konfiguration für Ihren Fall',
   };
   return descriptions[useCase] || '';
 }

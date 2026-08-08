@@ -4,32 +4,23 @@ import { useState } from 'react';
 import { Link } from '@/i18n/navigation';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+import { PRICING } from '@/lib/data/pricing';
 
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
 
 const BERATUNG_PHASES = [
   {
     phase: '1',
-    name: 'Analyse',
-    subtitle: 'Wo stehen wir?',
+    name: 'KI-Landkarte',
+    subtitle: 'Wo stehen wir, wo wollen wir hin?',
     modules: [
-      { title: 'AI Readiness Assessment', desc: 'Wie bereit ist Ihr Unternehmen für KI? Prozesse, Daten, Kultur.' },
-      { title: 'AI Audit', desc: 'Bewertung bestehender KI-Initiativen und Tools auf Nutzen und Risiken.' },
-      { title: 'Data Readiness Check', desc: 'Sind Ihre Daten qualitativ und strukturell fit für KI-Anwendungen?' },
+      { title: 'Priorisierte Use Cases', desc: '2 bis 3 priorisierte Use Cases mit ROI-Schätzung, intern vorzeigbar.' },
+      { title: 'Realitäts-Check', desc: 'Welche Daten und Systeme haben Sie wirklich? Wir prüfen die Lage vor Ort.' },
+      { title: 'Festpreis, ein Tag', desc: `${PRICING.kiLandkarte.priceLabel}, ${PRICING.kiLandkarte.duration}.` },
     ],
   },
   {
     phase: '2',
-    name: 'Strategie',
-    subtitle: 'Wo wollen wir hin?',
-    modules: [
-      { title: 'Use Case Identifikation', desc: 'Welche KI-Anwendungsfälle bringen tatsächlich ROI?' },
-      { title: 'KI-Strategie & Roadmap', desc: 'Priorisierter Plan mit klaren Meilensteinen und Quick Wins.' },
-      { title: 'ROI & Business Case', desc: 'Zahlen auf den Tisch: Was kostet es, was bringt es?' },
-    ],
-  },
-  {
-    phase: '3',
     name: 'Begleitung',
     subtitle: 'Wie kommen wir dahin?',
     modules: [
@@ -41,8 +32,8 @@ const BERATUNG_PHASES = [
 ];
 
 const FAQ_ITEMS = [
-  { q: 'Was kostet ein AI Readiness Assessment?', a: 'Das hängt von der Unternehmensgröße und Tiefe der Analyse ab. Ein Quick Check für ein KMU ist in 1-2 Tagen machbar. Wir erstellen gerne ein transparentes Angebot nach dem ersten Gespräch.' },
-  { q: 'Müssen wir alle drei Phasen durchlaufen?', a: 'Nein. Alle Module sind einzeln buchbar. Wer bereits eine klare Strategie hat, startet direkt mit Begleitung. Wer Use Cases identifizieren möchte, braucht nicht zwingend einen vollständigen Audit.' },
+  { q: 'Was kostet die KI-Landkarte?', a: `Festpreis ${PRICING.kiLandkarte.priceLabel}, ${PRICING.kiLandkarte.duration}. Kein Stundensatz, keine Überraschung. Das Ergebnis: 2 bis 3 priorisierte Use Cases mit ROI-Schätzung.` },
+  { q: 'Müssen wir beide Phasen durchlaufen?', a: 'Nein. Beide Phasen sind einzeln buchbar. Wer bereits eine klare Priorisierung hat, startet direkt mit Begleitung. Wer erst wissen will, wo er steht, startet mit der KI-Landkarte.' },
   { q: 'Was ist der Unterschied zu einer klassischen Unternehmensberatung?', a: 'Wir sind selbst Praktiker. 20 Jahre Engineering bedeutet: Wir verstehen Ihre Prozesse, nicht nur Ihre Kennzahlen. Und wir empfehlen keine Lösung, wenn KI nicht die richtige Antwort ist – auch wenn es uns einen Auftrag kostet.' },
   { q: 'Wie lange dauert eine typische Beratung?', a: 'Ein Quick Check dauert 1-2 Tage. Ein vollständiges Strategy Package typischerweise 4-6 Wochen. Wir richten uns nach Ihrem Tempo, nicht umgekehrt.' },
   { q: 'Was passiert nach der Beratung?', a: 'Sie entscheiden. Wir können die Umsetzung begleiten, Schulungen für Ihr Team anbieten – oder Sie setzen die Roadmap mit Ihren eigenen Ressourcen um. Kein Lock-in.' },
@@ -127,7 +118,7 @@ export default function KiBeratungPage() {
               href="/#kontakt"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold border-2 border-[#071013] text-[#071013] hover:bg-[#071013] hover:text-white transition-all"
             >
-              AI Readiness Check anfragen
+              Holen Sie sich Ihre KI-Landkarte
             </Link>
           </motion.div>
         </div>
@@ -137,10 +128,10 @@ export default function KiBeratungPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-heading font-bold text-[#071013] text-center mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}>
-            Drei Phasen. <span className="text-[#f90093]">Ein roter Faden.</span>
+            Zwei Phasen. <span className="text-[#f90093]">Ein roter Faden.</span>
           </h2>
           <p className="text-gray-600 font-inter text-center mb-12 max-w-2xl mx-auto">
-            Jede Phase ist einzeln buchbar. Oder wir begleiten Sie durch alle drei.
+            Jede Phase ist einzeln buchbar. Oder wir begleiten Sie durch beide.
           </p>
           <div className="space-y-8">
             {BERATUNG_PHASES.map((phase) => (

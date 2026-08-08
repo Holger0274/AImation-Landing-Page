@@ -12,8 +12,8 @@ const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-a
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Knowledge Graph Management mit KI | Use Case | AI.mation' },
-  description: 'Wie AI.mation Wissen vernetzt: Knowledge Graph mit Obsidian, Claude Code und semantischer Suche. Wissen das lebt, statt in Silos stirbt.',
+  title: { absolute: 'Knowledge Graph Management mit KI | Use Case | AImation' },
+  description: 'Wie AImation Wissen vernetzt: Knowledge Graph mit Obsidian, Claude Code und semantischer Suche. Wissen das lebt, statt in Silos stirbt.',
   alternates: { canonical: `${siteUrl}/use-cases/knowledge-graph-management` },
   robots: { index: true, follow: true },
 };

@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
 import FaqAccordion from './FaqAccordion';
+import { BlogPostingSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -14,12 +15,12 @@ const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-a
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Schatten-KI im Unternehmen: Warum Verbieten nicht funktioniert | AI.mation' },
-  description: 'Drei von vier Mitarbeitern nutzen KI ohne IT-Freigabe. Warum Verbote das Problem verschlimmern – und welche 4 Schritte wirklich helfen.',
+  title: { absolute: 'Schatten-KI im Unternehmen: Warum Verbieten nicht funktioniert | AImation' },
+  description: 'Drei von vier Mitarbeitern nutzen KI ohne IT-Freigabe. Warum Verbote das Problem verschlimmern, und welche 4 Schritte wirklich helfen.',
   alternates: { canonical: `${siteUrl}/blog/schatten-ki-unternehmen` },
   openGraph: {
     title: 'Schatten-KI im Unternehmen: Warum Verbieten nicht funktioniert',
-    description: 'Drei von vier Mitarbeitern nutzen KI ohne IT-Freigabe. Warum Verbote das Problem verschlimmern – und welche 4 Schritte wirklich helfen.',
+    description: 'Drei von vier Mitarbeitern nutzen KI ohne IT-Freigabe. Warum Verbote das Problem verschlimmern, und welche 4 Schritte wirklich helfen.',
     url: `${siteUrl}/blog/schatten-ki-unternehmen`,
     type: 'article',
     locale: 'de_DE',
@@ -42,6 +43,12 @@ export default async function SchattenKiPage({
 
   return (
     <>
+      <BlogPostingSchema
+        headline="Schatten-KI in Ihrem Unternehmen: Warum Verbieten nicht funktioniert. Und was stattdessen hilft."
+        description={metadata.description as string}
+        datePublished="2026-03-16"
+        url="/blog/schatten-ki-unternehmen"
+      />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
         {/* ── HERO ── */}

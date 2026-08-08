@@ -1,5 +1,5 @@
 /**
- * AI.mation Tools Configuration
+ * AImation Tools Configuration
  * Centralized configuration for all AI tools and platforms we work with.
  * Icons are automatically managed via @lobehub/icons and custom components.
  */
@@ -33,7 +33,7 @@ export interface Tool {
 }
 
 /**
- * Complete list of AI tools and platforms AI.mation works with.
+ * Complete list of AI tools and platforms AImation works with.
  * Organized by category for easy filtering and display.
  */
 export const AI_TOOLS: Tool[] = [

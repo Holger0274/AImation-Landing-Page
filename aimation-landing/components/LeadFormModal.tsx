@@ -9,19 +9,12 @@ import { X, Loader2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 const leadFormSchema = z.object({
-  vorname: z.string().min(2, 'Vorname ist erforderlich'),
-  nachname: z.string().min(2, 'Nachname ist erforderlich'),
+  name: z.string().min(1, 'Name ist erforderlich'),
   email: z.string().email('Bitte geben Sie eine gültige E-Mail-Adresse ein'),
-  firma: z.string().min(2, 'Firmenname ist erforderlich'),
-  unternehmensgroesse: z.string().refine(
-    (val) => ['10-50', '50-250', '250-1000', '1000+'].includes(val),
-    { message: 'Bitte wählen Sie eine Unternehmensgröße aus' }
-  ),
+  firma: z.string().optional(),
+  unternehmensgroesse: z.string().optional(),
   telefon: z.string().optional(),
-  herausforderung: z
-    .string()
-    .min(10, 'Bitte beschreiben Sie kurz Ihre Herausforderung (min. 10 Zeichen)')
-    .max(500, 'Maximal 500 Zeichen'),
+  herausforderung: z.string().max(500, 'Maximal 500 Zeichen').optional(),
   datenschutz: z.boolean().refine((val) => val === true, {
     message: 'Sie müssen der Datenschutzerklärung zustimmen',
   }),
@@ -83,7 +76,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
       const calendlyUrl = new URL(
         process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/your-link'
       );
-      calendlyUrl.searchParams.append('name', `${data.vorname} ${data.nachname}`);
+      calendlyUrl.searchParams.append('name', data.name);
       calendlyUrl.searchParams.append('email', data.email);
       if (data.telefon) {
         calendlyUrl.searchParams.append('a1', data.telefon); // Custom field
@@ -109,17 +102,8 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           onClick={onClose}
         >
-          {/* Background overlay with image */}
-          <div className="absolute inset-0 bg-[#071013]/80 backdrop-blur-sm">
-            <div
-              className="absolute inset-0 opacity-30"
-              style={{
-                backgroundImage: 'url(/images/form-background-consultation.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            />
-          </div>
+          {/* Background overlay, neutral (kein Stockfoto) */}
+          <div className="absolute inset-0 bg-[#071013]/80 backdrop-blur-sm" />
 
           {/* Modal content */}
           <motion.div
@@ -155,45 +139,24 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
               </div>
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                {/* Name fields */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label
-                      htmlFor="vorname"
-                      className="block text-sm font-medium text-[#071013] mb-2"
-                    >
-                      {t('vornameLabel')}
-                    </label>
-                    <input
-                      id="vorname"
-                      type="text"
-                      {...register('vorname')}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all text-[#071013] bg-white"
-                      placeholder={t('vornamePlaceholder')}
-                    />
-                    {errors.vorname && (
-                      <p className="mt-1 text-sm text-red-600">{errors.vorname.message}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="nachname"
-                      className="block text-sm font-medium text-[#071013] mb-2"
-                    >
-                      {t('nachnameLabel')}
-                    </label>
-                    <input
-                      id="nachname"
-                      type="text"
-                      {...register('nachname')}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all text-[#071013] bg-white"
-                      placeholder={t('nachnamePlaceholder')}
-                    />
-                    {errors.nachname && (
-                      <p className="mt-1 text-sm text-red-600">{errors.nachname.message}</p>
-                    )}
-                  </div>
+                {/* Name */}
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-[#071013] mb-2"
+                  >
+                    {t('nameLabel')}
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    {...register('name')}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all text-[#071013] bg-white"
+                    placeholder={t('namePlaceholder')}
+                  />
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+                  )}
                 </div>
 
                 {/* Email */}

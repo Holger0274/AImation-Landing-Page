@@ -12,8 +12,8 @@ const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-a
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Patentrecherche automatisieren mit KI | Use Case | AI.mation' },
-  description: 'Wie AI.mation Patentrecherche automatisiert: Prior-Art-Analyse in Stunden statt Tagen mit Perplexity AI und Claude. PoC abgeschlossen.',
+  title: { absolute: 'Patentrecherche automatisieren mit KI | Use Case | AImation' },
+  description: 'Wie AImation Patentrecherche automatisiert: Prior-Art-Analyse in Stunden statt Tagen mit Perplexity AI und Claude. PoC abgeschlossen.',
   alternates: { canonical: `${siteUrl}/use-cases/patentrecherche-ki` },
   robots: { index: true, follow: true },
 };
