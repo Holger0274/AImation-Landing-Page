@@ -392,46 +392,55 @@ export default function PainPoints() {
             </motion.div>
           </div>
 
-          {/* Diagonal Divider (visible on desktop only) */}
-          <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#faf9f7] to-transparent z-20 pointer-events-none"
-            style={{
-              clipPath: 'polygon(0 0, 100% 0, 50% 100%, 0% 100%)',
-            }}
-          />
         </div>
 
-        {/* RIGHT SIDE - DARK (Soft Black Background with Cards) */}
+        {/* RIGHT SIDE - LIGHT column matching the left, holding a floating dark card */}
         <div
           className="relative py-12 md:py-16 px-6 md:px-12 flex items-center justify-center order-2"
           style={{
-            backgroundColor: '#071013',
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+            backgroundColor: '#faf9f7',
+            backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
             backgroundSize: '72px 72px',
           }}
         >
-          {/* Glow Background */}
-          <div className="absolute inset-0 mesh-gradient opacity-30" />
+          {/* Floating Dark Card (Soft Black, nestled with margin instead of a hard-edged block) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative w-full max-w-3xl mx-auto lg:mx-0 rounded-2xl overflow-hidden p-6 md:p-8"
+            style={{
+              backgroundColor: '#071013',
+              backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+              backgroundSize: '72px 72px',
+              boxShadow: '0 25px 50px -12px rgba(7,16,19,0.3), 0 0 50px rgba(249,0,147,0.08)',
+            }}
+          >
+            {/* Glow Background */}
+            <div className="absolute inset-0 mesh-gradient opacity-30 pointer-events-none" />
 
-          {/* Radial Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f90093]/10 rounded-full blur-[120px] pointer-events-none" />
+            {/* Radial Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f90093]/10 rounded-full blur-[120px] pointer-events-none" />
 
-          {/* Grid of Compact Stats */}
-          <div className="relative z-10 w-full max-w-3xl mx-auto lg:mx-0">
-            {/* 3-Column Grid for 6 Compact Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {compactStats.map((stat, index) => (
-                <CompactStatCard
-                  key={stat.id}
-                  stat={stat}
-                  index={index}
-                  onClick={() => setModalPainPoint(stat)}
-                  clickHint={t('clickHint')}
-                  isAnchor={stat.id === 'knowledge'}
-                  anchorBadge={t('anchorBadge')}
-                />
-              ))}
+            {/* Grid of Compact Stats */}
+            <div className="relative z-10">
+              {/* 3-Column Grid for 6 Compact Stats */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {compactStats.map((stat, index) => (
+                  <CompactStatCard
+                    key={stat.id}
+                    stat={stat}
+                    index={index}
+                    onClick={() => setModalPainPoint(stat)}
+                    clickHint={t('clickHint')}
+                    isAnchor={stat.id === 'knowledge'}
+                    anchorBadge={t('anchorBadge')}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
