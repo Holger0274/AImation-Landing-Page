@@ -3,23 +3,30 @@ interface WissenVorherNachherProps {
   className?: string;
 }
 
-const BEFORE_PANEL = { x: 16, y: 42, width: 232, height: 152 };
-const AFTER_PANEL = { x: 312, y: 42, width: 232, height: 152 };
+const BEFORE_PANEL = { x: 16, y: 48, width: 260, height: 250 };
+const AFTER_PANEL = { x: 324, y: 48, width: 260, height: 250 };
 
 const BEFORE_NODES = [
-  { x: 60, y: 86, label: 'E-Mail' },
-  { x: 146, y: 66, label: 'SharePoint' },
-  { x: 206, y: 108, label: 'Kopf' },
-  { x: 78, y: 148, label: 'Ordner' },
-  { x: 164, y: 158, label: 'Wiki' },
+  { x: 79, y: 108, label: 'E-Mail' },
+  { x: 148, y: 96, label: 'SharePoint' },
+  { x: 213, y: 122, label: 'Kopf' },
+  { x: 72, y: 182, label: 'PDF' },
+  { x: 152, y: 176, label: 'OneNote' },
+  { x: 210, y: 196, label: 'Ordner' },
+  { x: 128, y: 246, label: 'Wiki' },
 ];
 
-const AFTER_HUB = { x: 428, y: 118, label: 'Ingenieur prüft' };
+// Hub-and-Spoke: sechs Silos hexagonal um den zentralen Pruef-Knoten angeordnet.
+// labelDy steuert die Textposition entlang des Radius (weg vom Knotenmittelpunkt),
+// damit kein Label auf einer Verbindungslinie liegt.
+const AFTER_HUB = { x: 454, y: 173, label: 'Ingenieur prüft' };
 const AFTER_SPOKES = [
-  { x: 428, y: 64, label: 'SharePoint' },
-  { x: 372, y: 96, label: 'E-Mail' },
-  { x: 484, y: 96, label: 'Wiki' },
-  { x: 428, y: 172, label: 'Ordner' },
+  { x: 454, y: 101, label: 'SharePoint', labelDy: -18 },
+  { x: 516, y: 137, label: 'Wiki', labelDy: 24 },
+  { x: 516, y: 209, label: 'PDF', labelDy: 24 },
+  { x: 454, y: 245, label: 'Ordner', labelDy: 24 },
+  { x: 392, y: 209, label: 'OneNote', labelDy: 24 },
+  { x: 392, y: 137, label: 'E-Mail', labelDy: 24 },
 ];
 
 export default function WissenVorherNachher({ variant = 'light', className }: WissenVorherNachherProps) {
@@ -36,10 +43,10 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
 
   return (
     <svg
-      viewBox="0 0 560 224"
+      viewBox="0 0 600 316"
       className={className}
       role="img"
-      aria-label="Wissen vorher und nachher: links fünf unverbundene Wissenssilos wie E-Mail, SharePoint und Kopf, rechts ein Wissens-Netzwerk mit dem Knoten Ingenieur prüft im Zentrum"
+      aria-label="Wissen vorher und nachher: links sieben unverbundene Wissenssilos wie E-Mail, SharePoint, PDF und OneNote, rechts ein Wissens-Netzwerk mit dem Knoten Ingenieur prüft im Zentrum"
     >
       <title>Wissen vorher unverbunden, nachher vernetzt</title>
       <defs>
@@ -51,7 +58,7 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
       {/* Captions */}
       <text
         x={BEFORE_PANEL.x + BEFORE_PANEL.width / 2}
-        y={24}
+        y={28}
         textAnchor="middle"
         fontFamily="Space Grotesk, sans-serif"
         fontWeight={700}
@@ -62,7 +69,7 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
       </text>
       <text
         x={AFTER_PANEL.x + AFTER_PANEL.width / 2}
-        y={24}
+        y={28}
         textAnchor="middle"
         fontFamily="Space Grotesk, sans-serif"
         fontWeight={700}
@@ -77,8 +84,8 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
       <rect {...AFTER_PANEL} rx={16} fill={panelFill} stroke={panelStroke} strokeWidth={1.5} filter="url(#wvnShadow)" />
 
       {/* Transformation Arrow */}
-      <circle cx={280} cy={118} r={18} fill={focus} filter="url(#wvnShadow)" />
-      <text x={280} y={125} textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight={700} fontSize={18} fill="#ffffff">
+      <circle cx={300} cy={173} r={18} fill={focus} filter="url(#wvnShadow)" />
+      <text x={300} y={180} textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight={700} fontSize={18} fill="#ffffff">
         &#8594;
       </text>
 
@@ -108,7 +115,7 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
       {AFTER_SPOKES.map((n) => (
         <g key={`after-${n.label}`}>
           <circle cx={n.x} cy={n.y} r={10} fill="rgba(96,175,255,0.14)" stroke={accent} strokeWidth={1.8} />
-          <text x={n.x} y={n.y + 24} textAnchor="middle" fontFamily="Inter, sans-serif" fontSize={10.5} fontWeight={500} fill={labelColor}>
+          <text x={n.x} y={n.y + n.labelDy} textAnchor="middle" fontFamily="Inter, sans-serif" fontSize={10.5} fontWeight={500} fill={labelColor}>
             {n.label}
           </text>
         </g>
