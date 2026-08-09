@@ -149,7 +149,7 @@ export default async function KiPromptsPage({
               <p>
                 "Schreib mir eine E-Mail." Wer so einen Prompt eingibt, bekommt eine generische E-Mail. "Schreib mir eine Nachfass-E-Mail an einen Kunden, der seit zwei Wochen nicht geantwortet hat, für ein Angebot über eine neue Fertigungslinie, sachlich, nicht aufdringlich, max. 6 Sätze." Wer das eingibt, bekommt etwas, das er fast unverändert verschicken kann.
               </p>
-              <p className="font-semibold text-[#071013]">Der Unterschied liegt im Prompt. Nicht im Modell.</p>
+              <p className="font-semibold text-[#071013]">Der Unterschied liegt im Prompt, nicht im Modell.</p>
               <p>
                 Viele Mittelständler testen KI, sind enttäuscht und schließen den Tab wieder. Nicht weil die KI schlecht ist. Sondern weil niemand erklärt hat, wie man mit ihr spricht. Diese 7 Muster nutze ich selbst täglich. Sie sind das, was ich in KI-Schulungen immer zuerst zeige, weil sie sofort einen Unterschied machen.
               </p>
@@ -217,7 +217,7 @@ export default async function KiPromptsPage({
                 Auch der beste Prompt ersetzt kein kritisches Denken. KI-Modelle halluzinieren. Sie erfinden Fakten, die plausibel klingen. Sie übernehmen Bias aus ihren Trainingsdaten. Und sie kennen Ihr Unternehmen so gut wie Sie es ihnen erklären.
               </p>
               <p>
-                Das ist kein Argument gegen KI. Es ist ein Argument dafür, KI mit dem richtigen Rahmen einzusetzen: mit klaren Regeln, welche Outputs geprüft werden müssen, und mit einem Team, das weiß, wann man KI vertraut und wann nicht. Das ist genau das, was wir in unserer{' '}
+                Genau deshalb braucht KI im Unternehmen einen Rahmen: klare Regeln, welche Outputs geprüft werden müssen, und ein Team, das weiß, wann man KI vertraut und wann nicht. Das ist genau das, was wir in unserer{' '}
                 <Link href="/ki-beratung-kmu" className="text-[#c2007a] hover:underline">KI-Beratung</Link>
                 {' '}erarbeiten.
               </p>

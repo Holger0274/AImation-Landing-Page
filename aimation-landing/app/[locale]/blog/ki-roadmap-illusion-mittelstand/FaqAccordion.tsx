@@ -19,7 +19,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: 'Wann sollte IT-Sicherheit eingebunden werden?',
-    answer: 'Von Tag eins. Nicht als Bremse, sondern als Co-Architekt. Was später nachgeschoben wird, kostet das Vielfache. DSGVO, Auftragsverarbeitungsverträge, Datenresidenz, Audit-Fähigkeit, branchenspezifische Anforderungen wie IATF 16949 oder MDR: Diese Themen verschwinden nicht dadurch, dass man sie ignoriert. Sie tauchen später wieder auf, zu einem viel ungünstigeren Zeitpunkt.',
+    answer: 'Von Tag eins. Als Co-Architekt, nicht als Bremse. Was später nachgeschoben wird, kostet das Vielfache. DSGVO, Auftragsverarbeitungsverträge, Datenresidenz, Audit-Fähigkeit, branchenspezifische Anforderungen wie IATF 16949 oder MDR: Diese Themen verschwinden nicht dadurch, dass man sie ignoriert. Sie tauchen später wieder auf, zu einem viel ungünstigeren Zeitpunkt.',
   },
 ];
 

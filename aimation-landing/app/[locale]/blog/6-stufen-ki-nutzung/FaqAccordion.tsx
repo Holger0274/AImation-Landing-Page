@@ -15,7 +15,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: 'Können wir auf mehreren Stufen gleichzeitig sein?',
-    answer: 'Ja, das ist häufig so. Ihre Marketing-Abteilung ist vielleicht auf Stufe 4, Ihre Produktion noch auf Stufe 1. Das ist normal. Das Ziel ist nicht, überall gleichzeitig auf Stufe 6 zu sein, sondern die richtigen Bereiche systematisch zu entwickeln.',
+    answer: 'Ja, das ist häufig so. Ihre Marketing-Abteilung ist vielleicht auf Stufe 4, Ihre Produktion noch auf Stufe 1. Das ist normal. Wichtiger als überall gleichzeitig auf Stufe 6 zu sein: die richtigen Bereiche systematisch entwickeln.',
   },
   {
     question: 'Was ist der häufigste Fehler beim KI-Einstieg?',

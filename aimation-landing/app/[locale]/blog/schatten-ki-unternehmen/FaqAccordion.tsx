@@ -3,7 +3,7 @@ import SharedFaqAccordion from '@/components/ui/FaqAccordion';
 export const FAQ_ITEMS = [
   {
     question: 'Ist Schatten-KI wirklich so verbreitet?',
-    answer: 'Ja. Studien zeigen, dass drei von vier Wissensarbeitern KI-Tools nutzen, oft ohne Wissen oder Freigabe ihrer IT-Abteilung. Das ist kein Randphänomen, sondern Alltag in deutschen Unternehmen.',
+    answer: 'Ja. Studien zeigen, dass drei von vier Wissensarbeitern KI-Tools nutzen, oft ohne Wissen oder Freigabe ihrer IT-Abteilung. Das ist längst Alltag in deutschen Unternehmen, kein Randphänomen.',
   },
   {
     question: 'Was ist der Unterschied zu Schatten-IT?',

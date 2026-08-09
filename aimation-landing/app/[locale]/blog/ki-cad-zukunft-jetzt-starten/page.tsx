@@ -132,7 +132,7 @@ export default async function KiCadZukunftPage({
                 Opus 4.7 ist so ein Schwellenmoment. Die maximale Bildauflösung stieg von rund 1,15 auf 3,75 Megapixel. Was das für einen Konstrukteur bedeutet: Das Modell kann dichte technische Zeichnungen, Bemaßungen, Schraffuren und Symbolbibliotheken jetzt erstmals in einer Qualität auflösen, die verlässliche Arbeit erlaubt. Dazu kommt eine deutlich bessere Fähigkeit, direkt mit Software zu interagieren und komplexen Code zu schreiben.
               </p>
               <p className="mb-5">
-                In der Summe entsteht eine neue Klasse: Modelle, die Konstruktionsartefakte nicht nur „sehen", sondern auch strukturiert damit arbeiten können.
+                In der Summe entsteht eine neue Klasse: Modelle, die Konstruktionsartefakte sehen und strukturiert damit arbeiten können.
               </p>
               <p className="mb-5">
                 Das Wichtige dabei: Die nächste Schwelle kommt bestimmt. Und sie wird wieder schneller kommen, als wir erwarten.
@@ -223,19 +223,19 @@ export default async function KiCadZukunftPage({
                 Dieses Wissen lässt sich nicht kaufen. Es wird über Monate aufgebaut. Oder eben nicht.
               </p>
               <p className="mb-5">
-                Unternehmen, die jetzt starten, sind in drei Jahren nicht einfach „ein bisschen weiter". Sie sind in einer anderen Liga. Nicht wegen der Technik, sondern wegen des Teamwissens und der eingespielten Workflows.
+                Unternehmen, die jetzt starten, sind in drei Jahren nicht einfach „ein bisschen weiter". Sie sind in einer anderen Liga, weil ihr Team gelernt hat, mit der Technik zu arbeiten, und weil sich eingespielte Workflows entwickelt haben.
               </p>
 
               <hr className="border-gray-200 my-8" />
 
               <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
-                Die Antwort ist kein Strategiepapier, sondern ein PoC
+                Die Antwort heißt PoC, nicht Strategiepapier
               </h2>
               <p className="mb-5">
                 Klassische Digitalisierungsstrategien mit 18-Monats-Roadmap funktionieren bei KI nicht. Die Technologie entwickelt sich während der Planungsphase weiter. Wer mit großen Papieren arbeitet, ist bei der Umsetzung immer einen Schritt hinter dem, was schon möglich wäre.
               </p>
               <p className="mb-5">
-                Die Antwort heißt Proof of Concept. Klein, konkret, zeitlich begrenzt, mit einem klaren Lernziel. Zum Beispiel:
+                Die Antwort heißt Proof of Concept: klein, zeitlich begrenzt und mit einem klaren Lernziel. Zum Beispiel:
               </p>
               <ul className="mb-6 space-y-2 pl-5 list-disc">
                 <li>eine Variante einer Halteranwendung, die automatisiert aus Parametern generiert wird</li>
@@ -277,7 +277,7 @@ export default async function KiCadZukunftPage({
                 KI entwickelt sich weiter. Sie macht keine Pause, während Unternehmen noch überlegen, ob sie bereit sind.
               </p>
               <p className="mb-5">
-                Der entscheidende Vorteil entsteht nicht beim Werkzeug, sondern beim Team: bei den Menschen, die gelernt haben, damit umzugehen.
+                Der entscheidende Vorteil entsteht beim Team: bei den Menschen, die gelernt haben, mit dem Werkzeug umzugehen.
               </p>
               <p className="mb-5">
                 Wer jetzt einen konkreten Usecase auswählt, einen kleinen PoC startet und das dabei entstehende Wissen im Team verankert, baut etwas auf, das sich nicht kaufen lässt. Keine Beraterpräsentation liefert das. Kein Whitepaper. Nur das eigene Tun.

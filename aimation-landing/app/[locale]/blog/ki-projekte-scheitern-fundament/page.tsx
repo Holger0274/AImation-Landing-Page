@@ -106,7 +106,7 @@ export default async function KiProjekteScheiternPage({
                 Die Erzählung lautet dann: „Wir haben das mal probiert, war irgendwie noch nicht so weit." Oder: „Der Anbieter hat uns was verkauft, das in der Demo lief, aber bei uns nicht." Oder einfach Schweigen.
               </p>
               <p className="mb-5">
-                Ich möchte hier eine These ausformulieren, die sich aus zwei Dekaden in Konzernstrukturen und inzwischen etlichen Proof-of-Concepts mit Mittelständlern für mich verfestigt hat: KI-Projekte scheitern im Mittelstand selten am Modell oder an der Rechenleistung. Sie scheitern an dem, was darunter liegt. Und genau deshalb ist der kleine, ehrliche Proof of Concept kein Nice-to-have, sondern der einzige sinnvolle Einstieg.
+                Ich möchte hier eine These ausformulieren, die sich aus zwei Dekaden in Konzernstrukturen und inzwischen etlichen Proof-of-Concepts mit Mittelständlern für mich verfestigt hat: KI-Projekte scheitern im Mittelstand selten am Modell oder an der Rechenleistung. Sie scheitern an dem, was darunter liegt. Genau deshalb halte ich den kleinen, ehrlichen Proof of Concept für den einzig sinnvollen Einstieg.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -145,7 +145,7 @@ export default async function KiProjekteScheiternPage({
                     <p className="font-heading font-semibold text-[#071013] text-sm">Compliance-Wand</p>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    DSGVO, EU AI Act, interne IT-Security, Haftungsfragen. Sicherheit und Recht sind keine Bremsen, die man später noch schnell umfährt. Sie sind Teil der eigentlichen Konstruktionsaufgabe. Wer das nicht von Tag eins mitdenkt, baut ein Luftschloss.
+                    DSGVO, EU AI Act, interne IT-Security, Haftungsfragen. Sicherheit und Recht gehören von Tag eins zur eigentlichen Konstruktionsaufgabe, nicht zum Feinschliff am Ende. Wer das ignoriert, baut ein Luftschloss.
                   </p>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
@@ -154,7 +154,7 @@ export default async function KiProjekteScheiternPage({
                     <p className="font-heading font-semibold text-[#071013] text-sm">Faktor Mensch</p>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Das technisch beste Werkzeug bleibt ungenutzt, wenn das Team nicht mitgenommen wurde. Widerstand kommt selten aus Bosheit. Er kommt aus Unsicherheit. Die berechtigte Sorge, den eigenen Arbeitsplatz oder das vertraute Selbstverständnis zu verlieren.
+                    Das technisch beste Werkzeug bleibt ungenutzt, wenn das Team nicht mitgenommen wurde. Widerstand hat selten mit bösem Willen zu tun. Meistens steckt Unsicherheit dahinter, die berechtigte Sorge, den eigenen Arbeitsplatz oder das vertraute Selbstverständnis zu verlieren.
                   </p>
                 </div>
               </div>
@@ -233,7 +233,7 @@ export default async function KiProjekteScheiternPage({
                 Warum der PoC das richtige Werkzeug ist
               </h2>
               <p className="mb-5">
-                Beide Geschichten haben dieselbe Pointe. Der PoC ist nicht in erster Linie ein technisches Bauprojekt. Er ist ein Diagnose-Instrument: für den Zustand der Daten, die Belastbarkeit der Prozesse, die Haltung des Teams und die Compliance-Realität.
+                Beide Geschichten haben dieselbe Pointe. Der PoC funktioniert vor allem als Diagnose-Instrument: für den Zustand der Daten, die Belastbarkeit der Prozesse, die Haltung des Teams und die Compliance-Realität.
               </p>
               <p className="mb-5">
                 Genau das ist der Grund, warum ich bei AImation konsequent vom PoC ausgehe, statt mit einer großen Strategie zu starten. Eine Strategie, die auf ungeprüften Annahmen über die eigenen Daten, Prozesse und Menschen aufsetzt, ist in einem sich monatlich verändernden KI-Umfeld bestenfalls Theater.
@@ -267,7 +267,7 @@ export default async function KiProjekteScheiternPage({
                     <span className="text-[#c2007a]">02</span> Planen Sie ein, dass die ersten zwei Wochen Überraschungen bringen.
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Datenprobleme, Zuständigkeitslücken, Compliance-Fragen, Skepsis im Team. Das ist kein Zeichen, dass Sie den falschen Anbieter gewählt haben. Das ist der Wert des PoCs. Er zeigt Ihnen das Haus, bevor Sie es umbauen.
+                    Datenprobleme, Zuständigkeitslücken, Compliance-Fragen, Skepsis im Team: Genau das ist der Wert des PoCs, kein Zeichen für den falschen Anbieter. Er zeigt Ihnen das Haus, bevor Sie es umbauen.
                   </p>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
@@ -287,10 +287,10 @@ export default async function KiProjekteScheiternPage({
                 Was bleibt
               </h2>
               <p className="mb-5">
-                KI im Mittelstand gewinnt am Ende nicht, wer das modernste Modell hat. Sondern wer das Fundament sauber gebaut hat, auf dem diese Modelle arbeiten können.
+                Am Ende gewinnt im Mittelstand, wer das Fundament sauber gebaut hat, auf dem die Modelle arbeiten können. Das modernste Modell allein reicht dafür nicht.
               </p>
               <p className="mb-5">
-                Wer jetzt einen konkreten Usecase auswählt, einen kleinen PoC startet und das dabei entstehende Wissen im Team verankert, baut etwas auf, das sich nicht kaufen lässt. Keine Beraterpräsentation liefert das. Kein Whitepaper. Nur das eigene Tun.
+                Wer jetzt einen konkreten Usecase auswählt, einen kleinen PoC startet und das dabei entstehende Wissen im Team verankert, baut etwas auf, das sich nicht kaufen lässt. Das leistet keine Beraterpräsentation und kein Whitepaper, nur das eigene Tun.
               </p>
               <p className="mb-5">
                 Alles andere ist ein teures Luftschloss.

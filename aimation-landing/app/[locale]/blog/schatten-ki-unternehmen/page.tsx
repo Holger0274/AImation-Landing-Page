@@ -131,13 +131,13 @@ export default async function SchattenKiPage({
                 Warum Ihre Mitarbeiter das tun
               </h2>
               <p>
-                Nicht aus Bosheit. Nicht aus Nachlässigkeit. Sondern weil KI-Tools Probleme in Sekunden lösen, für die man vorher Stunden brauchte.
+                Böswillig ist da niemand, nachlässig auch nicht. KI-Tools lösen Probleme in Sekunden, für die man vorher Stunden brauchte.
               </p>
               <p>
                 Der Vertriebsmitarbeiter schreibt sein Angebot in 10 Minuten statt in einer Stunde. Die Personalabteilung arbeitet 50 Bewerbungen in einem Nachmittag durch statt in einer Woche. Der Entwickler findet seinen Bug in 5 Minuten statt in 2 Stunden.
               </p>
               <p>
-                Die Motivation ist Produktivität. Der Antrieb ist Frust über langsame, umständliche oder fehlende offizielle Alternativen. Wenn Ihr Unternehmen keine freigegebene KI-Lösung bietet, schaffen sich Ihre Mitarbeiter selbst eine. Das ist kein IT-Problem. Es ist ein Signal, dass Bedürfnisse nicht gedeckt werden.
+                Die Motivation ist Produktivität. Der Antrieb ist Frust über langsame, umständliche oder fehlende offizielle Alternativen. Wenn Ihr Unternehmen keine freigegebene KI-Lösung bietet, schaffen sich Ihre Mitarbeiter selbst eine. Die IT ist da nur der Nebenschauplatz. Eigentlich zeigt es: Bedürfnisse werden nicht gedeckt.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -160,15 +160,15 @@ export default async function SchattenKiPage({
               <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Die echten Risiken von Schatten-KI
               </h2>
-              <p>Das Problem ist nicht, dass Ihre Mitarbeiter KI nutzen. Das Problem ist, dass sie es unkontrolliert tun.</p>
+              <p>Dass Ihre Mitarbeiter KI nutzen, ist an sich kein Problem. Problematisch wird es, weil niemand die Nutzung kontrolliert.</p>
 
-              <p><strong>Datenabfluss:</strong> Jede Eingabe in ein öffentliches KI-Modell kann gespeichert, für Modelltraining verwendet oder von Dritten eingesehen werden. Wenn Ihr Controller Finanzdaten in ChatGPT eingibt, verlassen vertrauliche Informationen Ihr Unternehmen. Unwiderruflich.</p>
+              <p><strong>Datenabfluss</strong> ist die unmittelbarste Gefahr. Jede Eingabe in ein öffentliches KI-Modell kann gespeichert, für Modelltraining verwendet oder von Dritten eingesehen werden. Wenn Ihr Controller Finanzdaten in ChatGPT eingibt, verlassen vertrauliche Informationen Ihr Unternehmen. Unwiderruflich.</p>
 
-              <p><strong>DSGVO-Verstöße:</strong> Unter der DSGVO ist jede Verarbeitung personenbezogener Daten durch Dritte genehmigungspflichtig. Wenn Ihr HR-Team Bewerberdaten durch ein nicht freigegebenes KI-Tool schickt, ist das ein Compliance-Verstoß. Ohne dass jemand davon weiß.</p>
+              <p>Dazu kommen mögliche <strong>DSGVO-Verstöße</strong>. Unter der DSGVO ist jede Verarbeitung personenbezogener Daten durch Dritte genehmigungspflichtig. Wenn Ihr HR-Team Bewerberdaten durch ein nicht freigegebenes KI-Tool schickt, ist das ein Compliance-Verstoß. Ohne dass jemand davon weiß.</p>
 
-              <p><strong>Qualitätsrisiken:</strong> KI-Ergebnisse können fehlerhaft, verzerrt oder halluziniert sein. Wenn niemand die Nutzung kennt, prüft auch niemand die Ergebnisse. Ein Angebot mit falschen Spezifikationen, ein Vertragsentwurf mit erfundenen Klauseln, eine Kundenantwort mit falschen Fakten.</p>
+              <p>Auch <strong>Qualitätsrisiken</strong> gehören dazu. KI-Ergebnisse können fehlerhaft, verzerrt oder halluziniert sein. Wenn niemand die Nutzung kennt, prüft auch niemand die Ergebnisse. Ein Angebot mit falschen Spezifikationen, ein Vertragsentwurf mit erfundenen Klauseln, eine Kundenantwort mit falschen Fakten.</p>
 
-              <p><strong>EU AI Act:</strong> Seit Februar 2025 gilt die Pflicht zur KI-Kompetenz (<a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">Art. 4 der Verordnung (EU) 2024/1689</a>). Unternehmen müssen ihr Personal zu KI schulen und wissen, welche Systeme im Einsatz sind. Die vollständigen Dokumentationspflichten für Hochrisiko-Anwendungen wie Recruiting oder Kreditvergabe wurden im Zuge des EU-Digital-Omnibus auf Dezember 2027 verschoben, die Pflicht zur KI-Kompetenz gilt aber schon jetzt. Schatten-KI macht beides schwerer.</p>
+              <p>Seit Februar 2025 kommt der <strong>EU AI Act</strong> hinzu, mit der Pflicht zur KI-Kompetenz (<a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">Art. 4 der Verordnung (EU) 2024/1689</a>). Unternehmen müssen ihr Personal zu KI schulen und wissen, welche Systeme im Einsatz sind. Die vollständigen Dokumentationspflichten für Hochrisiko-Anwendungen wie Recruiting oder Kreditvergabe wurden im Zuge des EU-Digital-Omnibus auf Dezember 2027 verschoben, die Pflicht zur KI-Kompetenz gilt aber schon jetzt. Schatten-KI macht beides schwerer.</p>
 
               <hr className="border-gray-200 my-8" />
 
@@ -180,17 +180,17 @@ export default async function SchattenKiPage({
                 1. Sichtbarkeit schaffen
               </h3>
               <p>
-                Sie können nur regeln, was Sie kennen. Der erste Schritt ist eine Bestandsaufnahme: Welche KI-Tools werden in welchen Abteilungen genutzt? Welche Daten fließen wohin? Keine Hexenjagd. Sondern ein offenes Gespräch. Niedrigschwellige Umfragen oder Workshops helfen, ein realistisches Bild zu bekommen.
+                Sie können nur regeln, was Sie kennen. Der erste Schritt ist eine Bestandsaufnahme: Welche KI-Tools werden in welchen Abteilungen genutzt? Welche Daten fließen wohin? Am besten gelingt das im offenen Gespräch, nicht mit erhobenem Zeigefinger. Niedrigschwellige Umfragen oder Workshops helfen, ein realistisches Bild zu bekommen.
               </p>
               <p>
-                Wenn Sie dabei feststellen, dass 80% Ihres Teams bereits KI nutzt, ist das kein Alarmsignal. Es ist ein Zeichen, dass Ihr Team vorbereitet ist. Es braucht nur den richtigen Rahmen.
+                Wenn Sie dabei feststellen, dass 80% Ihres Teams bereits KI nutzt, ist das gut so. Es zeigt: Ihr Team ist bereit und braucht nur den richtigen Rahmen.
               </p>
 
               <h3 className="font-heading font-semibold text-[#071013] mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                 2. KI-Richtlinien aufsetzen (und zwar verständliche)
               </h3>
               <p>
-                Keine 50-seitigen Compliance-Dokumente, die niemand liest. Sondern klare, einfache Regeln: Welche Tools sind freigegeben? Welche Daten dürfen eingegeben werden, welche nicht? Wer prüft KI-generierte Ergebnisse vor der Verwendung? Was passiert bei Unsicherheit?
+                50-seitige Compliance-Dokumente, die niemand liest, bringen nichts. Gefragt sind klare, einfache Regeln: Welche Tools sind freigegeben? Welche Daten dürfen eingegeben werden, welche nicht? Wer prüft KI-generierte Ergebnisse vor der Verwendung? Was passiert bei Unsicherheit?
               </p>
               <p>Eine KI-Richtlinie muss so einfach sein, dass sie auf eine Seite passt. Und sie muss leben, nicht in der Schublade liegen.</p>
 
@@ -208,7 +208,7 @@ export default async function SchattenKiPage({
                 4. Schulen, schulen, schulen
               </h3>
               <p>
-                Ihre Mitarbeiter müssen wissen: Was kann KI? Was kann sie nicht? Welche Daten darf ich eingeben? Wann muss ich Ergebnisse prüfen? Wie erkenne ich Halluzinationen? Das ist kein Einmal-Event, sondern ein laufender Prozess.{' '}
+                Ihre Mitarbeiter müssen wissen: Was kann KI? Was kann sie nicht? Welche Daten darf ich eingeben? Wann muss ich Ergebnisse prüfen? Wie erkenne ich Halluzinationen? Ein einmaliger Workshop reicht dafür nicht, das ist ein laufender Prozess.{' '}
                 <Link href="/ki-schulungen-mittelstand" className="text-[#c2007a] hover:underline">Unsere KI-Schulungen für den Mittelstand</Link>
                 {' '}zeigen, wie das gelingt.
               </p>
@@ -224,7 +224,7 @@ export default async function SchattenKiPage({
               <p>
                 Unternehmen, die Schatten-KI in geordnete Bahnen lenken statt sie zu verbieten, berichten von höherer Mitarbeiterzufriedenheit, weniger Sicherheitsvorfällen und messbaren Produktivitätsgewinnen.
               </p>
-              <p>Der Weg dahin ist kein Zwei-Jahres-Projekt. Er beginnt mit einem Gespräch.</p>
+              <p>Der Weg dahin ist kürzer, als Sie denken. Er beginnt mit einem Gespräch.</p>
             </div>
 
             {/* ── INTERNE LINKS ── */}

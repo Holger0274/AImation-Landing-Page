@@ -51,8 +51,8 @@ const STUFEN = [
   {
     nr: '03',
     titel: 'Automatisierung (Workflows)',
-    wasPassiert: 'KI wird nicht mehr manuell bedient, sondern in automatisierte Abläufe eingebaut. E-Mails werden automatisch sortiert und weitergeleitet. Daten fließen von System A nach System B. Reports werden zu festen Zeiten generiert.',
-    wasBringt: 'Messbare Zeitersparnis. Nicht für Einzelpersonen, sondern für ganze Teams. Prozesse laufen rund um die Uhr, auch nachts und am Wochenende.',
+    wasPassiert: 'Die KI steckt jetzt in automatisierten Abläufen, statt manuell bedient zu werden. E-Mails werden automatisch sortiert und weitergeleitet. Daten fließen von System A nach System B. Reports werden zu festen Zeiten generiert.',
+    wasBringt: 'Messbare Zeitersparnis, für ganze Teams statt nur für Einzelpersonen. Prozesse laufen rund um die Uhr, auch nachts und am Wochenende.',
     wasFehlt: null,
     werkzeuge: 'n8n, Make.com, Power Automate. In Kombination mit KI-Modellen für intelligente Entscheidungen im Workflow.',
     zeichen: '"Wir haben erste Automatisierungen laufen, aber noch keine KI drin."',
@@ -61,11 +61,11 @@ const STUFEN = [
   {
     nr: '04',
     titel: 'KI-Automatisierung (KI in Workflows)',
-    wasPassiert: 'Die Automatisierung trifft auf KI. Nicht nur "wenn Feld A = X, dann tue Y", sondern: Die KI liest eine E-Mail, versteht den Inhalt, erkennt ob es eine Beschwerde oder Bestellung ist und routet sie an die richtige Stelle. Technische Zeichnungen werden gelesen, Daten extrahiert, Normen automatisch geprüft.',
+    wasPassiert: 'Die Automatisierung trifft auf KI. Statt starrer Regeln wie "wenn Feld A = X, dann tue Y" liest die KI eine E-Mail, versteht den Inhalt, erkennt ob es eine Beschwerde oder Bestellung ist und routet sie an die richtige Stelle. Technische Zeichnungen werden gelesen, Daten extrahiert, Normen automatisch geprüft.',
     wasBringt: 'Prozesse, die vorher manuell sortiert, geprüft oder bewertet werden mussten, laufen automatisch. Auch bei unstrukturierten Daten: Freitext-E-Mails, gescannte Dokumente, handschriftliche Notizen.',
     beispiel: 'KI liest eine technische Zeichnung (PDF, TIFF, DXF oder Scan), extrahiert Maße, Toleranzen, Werkstoffangaben und Normenverweise. Füllt Tabellen für Fertigung, QM und Einkauf. Pro Bauteil spart das Stunden.',
     zeichen: '"Unsere Automatisierungen funktionieren, aber bei unstrukturierten Daten müssen wir immer noch manuell ran."',
-    naechsterSchritt: { text: null, href: null, suffix: 'Wenn die KI nicht nur in Workflows reagiert, sondern eigenständig plant und handelt, sind Sie bei Stufe 5.' },
+    naechsterSchritt: { text: null, href: null, suffix: 'Plant und handelt die KI eigenständig, statt nur in Workflows zu reagieren, sind Sie bei Stufe 5.' },
   },
   {
     nr: '05',

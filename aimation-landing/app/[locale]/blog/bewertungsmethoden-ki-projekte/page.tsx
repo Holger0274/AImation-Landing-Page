@@ -152,7 +152,7 @@ export default async function BewertungsmethodenPage({
                 Das Multi-Agent-System als strategisch wichtigstes Projekt landete auf dem letzten Platz. Der Norm-Checker wurde trotz Compliance-Relevanz niedrig bewertet. Die Formel sieht nur operative Durchschlagkraft pro investiertem Aufwand.
               </p>
               <p className="mb-5">
-                Wenn man dieselben fünf Projekte mit anderen Methoden bewertet, verschiebt sich das Bild. Das ist kein Widerspruch, sondern ein Hinweis: Jede Methode beantwortet eine andere Frage. Hier sind vier, die RICE sinnvoll ergänzen.
+                Wenn man dieselben fünf Projekte mit anderen Methoden bewertet, verschiebt sich das Bild. Das zeigt vor allem eines: Jede Methode beantwortet eine andere Frage. Hier sind vier, die RICE sinnvoll ergänzen.
               </p>
 
               {/* ── METHODEN-ÜBERSICHT ── */}

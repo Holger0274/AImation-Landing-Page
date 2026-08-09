@@ -82,7 +82,7 @@ export default async function KiRoadmapIllusionPage({
             </h1>
 
             <p className="font-inter text-gray-600 mb-8 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
-              Die größte Lüge über KI im Mittelstand ist nicht das Versprechen, dass sie alles kann. Es ist der gerade Strich auf der Roadmap.
+              Die größte Lüge über KI im Mittelstand ist selten das große Versprechen, dass sie alles kann. Meistens ist es der gerade Strich auf der Roadmap.
             </p>
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
@@ -119,7 +119,7 @@ export default async function KiRoadmapIllusionPage({
                 Auf der Folie sieht es immer gleich aus. Pfeil von links nach rechts. &bdquo;Idee&ldquo;, &bdquo;Pilot&ldquo;, &bdquo;Rollout&ldquo;, &bdquo;Skalierung&ldquo;. Vier Boxen, drei Pfeile, ein gerader Kurs. Auf einem Whiteboard im Vorstandszimmer wirkt das logisch und überzeugend.
               </p>
               <p className="mb-5">
-                Im echten Leben sieht der Pfeil aus, als hätte man ihn fünf Mal verknotet, dreimal stecken bleiben lassen und nach vier neuen Hindernissen wieder abgesetzt. Das ist kein Versagen. Das ist das Normale.
+                Im echten Leben sieht der Pfeil aus, als hätte man ihn fünf Mal verknotet, dreimal stecken bleiben lassen und nach vier neuen Hindernissen wieder abgesetzt. Das ist normal, kein Versagen.
               </p>
 
               <div className="bg-[#071013] rounded-xl p-6 my-8 text-white">
@@ -185,7 +185,7 @@ export default async function KiRoadmapIllusionPage({
                 Die Antwort ist im Mittelstand fast immer: niemandem so richtig. Stücklisten leben in vier Systemen parallel. Bauteilstände kennt nur ein bestimmter Mensch im Kopf. Reviews kommen per E-Mail-Anhang in Outlook und landen in einem persönlichen Ordner, den niemand außer dem Empfänger kennt. Die Excel-Datei, die als Wahrheit gilt, hat seit 2019 keiner mehr versioniert.
               </p>
               <p className="mb-5">
-                Das ist kein Vorwurf. Das ist die normale Datenrealität in Unternehmen, die in den letzten 30 Jahren organisch gewachsen sind. Aber es ist auch der Grund, warum eine KI-Anwendung, die auf diesen Daten ansetzt, von Tag eins an gegen die eigene Datenbasis kämpft.
+                Das ist die normale Datenrealität in Unternehmen, die in den letzten 30 Jahren organisch gewachsen sind, kein Grund für Vorwürfe. Aber es ist auch der Grund, warum eine KI-Anwendung, die auf diesen Daten ansetzt, von Tag eins an gegen die eigene Datenbasis kämpft.
               </p>
               <p className="mb-5">
                 Was als &bdquo;Data Lake&ldquo; geplant wird, entpuppt sich oft als Sumpf, der erst Trockenlegung braucht. Drei Monate. Manchmal sechs.
@@ -202,7 +202,7 @@ export default async function KiRoadmapIllusionPage({
                 Dann kommt die Realität. Das Modell halluziniert eine DIN-Norm, die es so nie gegeben hat. Es erfindet eine Materialeigenschaft, weil im Trainingsdatensatz eine Lücke war. Es verwechselt zwei Bauteilversionen, weil die Bezeichnungen sich nur durch eine Endung unterscheiden, die der Vorlieferant intern nutzt, aber nicht der Hersteller.
               </p>
               <p className="mb-5">
-                Jeder gelöste Sonderfall produziert zwei neue. Das ist keine Fehlfunktion. Das ist die statistische Natur generativer Modelle. Sie interpolieren plausibel, sie garantieren nichts.
+                Jeder gelöste Sonderfall produziert zwei neue. Grund dafür ist die statistische Natur generativer Modelle, keine Fehlfunktion. Sie interpolieren plausibel, sie garantieren nichts.
               </p>
 
               <div className="bg-white border-l-4 border-[#f90093] rounded-r-xl p-5 my-8">
@@ -216,7 +216,7 @@ export default async function KiRoadmapIllusionPage({
                 3. Die Compliance-Wand
               </h3>
               <p className="mb-5">
-                IT-Sicherheit und Recht sind keine Bremsen. Sie sind der Kern der Arbeit. Wer das ignoriert, baut ein technisches Luftschloss, das die erste Sicherheitsprüfung nicht überlebt.
+                IT-Sicherheit und Recht sind der Kern der Arbeit, keine Bremse. Wer das ignoriert, baut ein technisches Luftschloss, das die erste Sicherheitsprüfung nicht überlebt.
               </p>
               <p className="mb-5">
                 Im Mittelstand kommt erschwerend hinzu, dass die IT-Sicherheits-Funktion oft halbtags besetzt ist oder fehlt. Compliance-Anforderungen sind aber dieselben wie im Konzern. DSGVO, Auftragsverarbeitungsverträge, Datenresidenz, Audit-Fähigkeit. Bei manchen Branchen kommen Spezifika dazu: IATF&nbsp;16949 in der Automotive-Zulieferindustrie, Medical Device Regulation in der Medizintechnik, Geheimschutz in der Verteidigungsbranche.
@@ -233,7 +233,7 @@ export default async function KiRoadmapIllusionPage({
                 Das Tool ist fertig, aber das Team wurde nicht mitgenommen. Die Nutzungsrate bleibt bei null. Drei Monate später wird das Projekt eingestampft, weil &bdquo;es niemand verwendet&ldquo;.
               </p>
               <p className="mb-5">
-                Change-Management ist im Mittelstand das am häufigsten unterschätzte Risiko. Es ist nicht der nachgelagerte Roll-out-Workshop. Es ist der Kern. Wenn Mitarbeiter Angst haben, ihren Job an die KI zu verlieren, oder wenn sie nicht wissen, wie sie das Werkzeug sinnvoll einsetzen, oder wenn die Führung kein klares Signal gibt, dass Lernzeit erlaubt ist, passiert nichts. Egal wie gut das Modell ist.
+                Change-Management ist im Mittelstand das am häufigsten unterschätzte Risiko. Es ist der Kern, nicht der nachgelagerte Roll-out-Workshop. Wenn Mitarbeiter Angst haben, ihren Job an die KI zu verlieren, oder wenn sie nicht wissen, wie sie das Werkzeug sinnvoll einsetzen, oder wenn die Führung kein klares Signal gibt, dass Lernzeit erlaubt ist, passiert nichts. Egal wie gut das Modell ist.
               </p>
               <p className="mb-5">
                 Das löst sich nicht durch eine Schulung. Es löst sich durch Co-Training: Mensch und Maschine arbeiten gemeinsam, lernen gemeinsam, machen gemeinsam Fehler. Wer das nicht plant, hat ein Tool ohne Nutzer.
@@ -249,7 +249,7 @@ export default async function KiRoadmapIllusionPage({
                 In allen vier Hindernissen taucht dasselbe Problem auf: Technische Teams bauen isoliert. Die organisatorische Reibung tötet den Rollout. Niemand integriert die Bestandsaufnahme von Daten, Compliance, Tools und Menschen miteinander. Jeder Bereich macht sein Ding, und das Ergebnis ist ein Pilotprojekt, das auf isolierten Annahmen basiert.
               </p>
               <p className="mb-5">
-                Wenn diese Reibung nicht in die Roadmap eingebaut wird, entsteht nicht KI im Mittelstand. Es entsteht eine teure Demo.
+                Wenn diese Reibung nicht in die Roadmap eingebaut wird, entsteht keine KI im Mittelstand, nur eine teure Demo.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -259,7 +259,7 @@ export default async function KiRoadmapIllusionPage({
                 Was wirklich hilft: die ehrliche Methodik
               </h2>
               <p className="mb-5">
-                Ich habe AImation genau aus diesem Grund um eine klare Vorabphase aufgebaut, bevor das erste Modell zum Einsatz kommt. Wir nennen das Landkarten-Erstellung. Vier Bestandsaufnahmen, die zusammen ergeben, ob ein KI-Projekt überhaupt lebensfähig ist.
+                Ich habe AImation genau aus diesem Grund um eine klare Vorabphase aufgebaut, bevor das erste Modell zum Einsatz kommt. Ich nenne das Landkarten-Erstellung. Vier Bestandsaufnahmen, die zusammen ergeben, ob ein KI-Projekt überhaupt lebensfähig ist.
               </p>
 
               {/* Vier Landkarten als Cards */}
@@ -327,12 +327,12 @@ export default async function KiRoadmapIllusionPage({
                     <span className="text-[#c2007a]">02</span> Hol IT-Sicherheit und Recht von Tag eins an den Tisch.
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Nicht als Bremsklotz, sondern als Co-Architekt. Was später nachgeschoben wird, kostet das Vielfache.
+                    Als Co-Architekt, nicht als Bremsklotz. Was später nachgeschoben wird, kostet das Vielfache.
                   </p>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#c2007a]">03</span> Plane Change-Management nicht ans Ende, sondern an den Anfang.
+                    <span className="text-[#c2007a]">03</span> Plane Change-Management an den Anfang, nicht ans Ende.
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Die Frage &bdquo;Wie nehme ich mein Team mit?&ldquo; gehört in den ersten Strategieworkshop, nicht in den Roll-out-Plan.
@@ -348,7 +348,7 @@ export default async function KiRoadmapIllusionPage({
 
               {/* ── ABSCHNITT 7: Was danach kommt ── */}
               <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
-                Wenn du wissen willst, wie das produktive Setup danach aussieht
+                Wenn Sie wissen wollen, wie das produktive Setup danach aussieht
               </h2>
               <p className="mb-5">
                 Diese Diagnose ist die eine Hälfte der Geschichte. Die andere ist: Was kommt nach dem Audit? Wie sieht ein Setup aus, das tatsächlich produktiv läuft?
@@ -403,7 +403,7 @@ export default async function KiRoadmapIllusionPage({
               Die KI-Landkarte für Ihr Engineering-Team
             </h2>
             <p className="text-gray-300 font-inter mb-8" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)' }}>
-              In einem Workshop-Tag erarbeiten wir gemeinsam die 2 bis 3 Use Cases, bei denen KI bei Ihnen realistisch Wirkung zeigt, jeweils mit ROI-Schätzung. Mit einer ehrlichen Einschätzung, wo Ihre Roadmap geradeaus geht und wo sie Umwege braucht. Sie gehen nicht mit Folien raus, sondern mit einer priorisierten Landkarte.
+              In einem Workshop-Tag erarbeiten wir gemeinsam die 2 bis 3 Use Cases, bei denen KI bei Ihnen realistisch Wirkung zeigt, jeweils mit ROI-Schätzung. Mit einer ehrlichen Einschätzung, wo Ihre Roadmap geradeaus geht und wo sie Umwege braucht. Sie gehen mit einer priorisierten Landkarte raus, nicht mit Folien.
             </p>
             <a
               href={CALENDLY_URL}

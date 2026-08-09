@@ -105,7 +105,7 @@ export default async function RicePriorisierungPage({
                 Wer schon einmal in einem Priorisierungs-Meeting saß, kennt den Ablauf. Fünf Projektvorschläge, fünf Fürsprecher, fünf Folienpräsentationen. Jede Idee klingt sinnvoll. Am Ende entscheidet entweder der Lauteste oder der Ranghöchste. Manchmal beides in Personalunion.
               </p>
               <p className="mb-5">
-                Dass dabei nicht zwangsläufig die besten Projekte gewinnen, ist ein offenes Geheimnis. Es liegt nicht an fehlender Kompetenz, sondern an fehlender Struktur. Wo kein gemeinsamer Maßstab existiert, setzt sich Rhetorik durch.
+                Dass dabei nicht zwangsläufig die besten Projekte gewinnen, ist ein offenes Geheimnis. Die Ursache ist selten fehlende Kompetenz. Meistens fehlt schlicht die Struktur. Wo kein gemeinsamer Maßstab existiert, setzt sich Rhetorik durch.
               </p>
               <p className="mb-5">
                 Eine Formel kann das ändern. Sie heißt RICE und ist seit etwa zehn Jahren im Produktmanagement etabliert. Für die Priorisierung von KI-Projekten funktioniert sie genauso gut.
@@ -155,7 +155,7 @@ export default async function RicePriorisierungPage({
                     <p className="font-heading font-semibold text-[#071013] text-sm">Effort: Aufwand</p>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Gesamtaufwand in Person-Monaten. Nicht nur Entwicklung, sondern alles: Datenaufbereitung, Integration, Schulung, Einführung.
+                    Gesamtaufwand in Person-Monaten für das komplette Paket: Datenaufbereitung, Integration, Schulung, Einführung. Die reine Entwicklungszeit ist nur ein Bruchteil davon.
                   </p>
                 </div>
               </div>
@@ -261,7 +261,7 @@ export default async function RicePriorisierungPage({
                 Multi-Agent Innovation-Scout
               </h3>
               <p className="mb-5">
-                Das strategische Projekt. Nicht für einzelne Konstruktionen, sondern für Weichenstellungen. Sollen wir auf additive Fertigung umstellen? Lohnt sich das neue Simulations-Tool? Make-or-Buy für diese Baugruppe?
+                Das strategische Projekt, für Weichenstellungen statt für einzelne Konstruktionen. Sollen wir auf additive Fertigung umstellen? Lohnt sich das neue Simulations-Tool? Make-or-Buy für diese Baugruppe?
               </p>
               <p className="mb-5">
                 Vier spezialisierte Software-Agenten für Markt, Technik, Kosten und Risiko bekommen denselben Briefing-Input und diskutieren untereinander. Der Mensch entscheidet am Ende. Aber mit einer Datenbasis, die sich ein kleines Team allein kaum erarbeiten kann. Jede einzelne Fehlentscheidung dieser Art kostet sechs- oder siebenstellig.
@@ -407,7 +407,7 @@ export default async function RicePriorisierungPage({
                 Beide Siegerprojekte folgen übrigens demselben Muster. Sie nehmen Wissen aus einem Silo und machen es für viele zugänglich. Aus einem Patentingenieur werden dreißig Konstrukteure mit Patentzugang. Aus einer halbstündigen Suche wird ein Reflex.
               </p>
               <p className="mb-5">
-                Die meisten KI-Projekte, die in mittelständischen Entwicklungsabteilungen wirklich funktionieren, folgen diesem Prinzip: nicht "Software macht den Spezialisten schneller", sondern "Software gibt dem Laien Zugriff auf Spezialistenwissen". Wer seine Projektliste unter dieser Brille prüft, findet oft versteckte Gewinner.
+                Die meisten KI-Projekte, die in mittelständischen Entwicklungsabteilungen wirklich funktionieren, folgen diesem Prinzip: Sie geben dem Laien Zugriff auf Spezialistenwissen, statt nur den Spezialisten selbst schneller zu machen. Wer seine Projektliste unter dieser Brille prüft, findet oft versteckte Gewinner.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -501,7 +501,7 @@ export default async function RicePriorisierungPage({
                     <span className="text-[#c2007a]">02</span> Effort vollständig schätzen.
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Nicht nur die Entwicklung, sondern alles: Datenvorbereitung, Integration, Schulung der Nutzer, Einführungsbegleitung. Wer nur die Coding-Zeit zählt, unterschätzt systematisch.
+                    Zählen Sie alles mit: Datenvorbereitung, Integration, Schulung der Nutzer, Einführungsbegleitung. Wer nur die Coding-Zeit zählt, unterschätzt systematisch.
                   </p>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
@@ -518,7 +518,7 @@ export default async function RicePriorisierungPage({
                 Am Ende des Workshops werden Sie überrascht sein. Laute Projekte rutschen nach hinten. Unscheinbare tauchen vorne auf. Das Meeting, das sonst folgenlos blieb, endet mit einer klaren Reihenfolge.
               </p>
               <p className="mb-5">
-                Das ist der eigentliche Gewinn. Nicht die Zahlen, sondern die Diskussion, die dahin führt.
+                Das ist der eigentliche Gewinn: Die Zahlen sind nur der Anlass. Den Wert liefert die Diskussion, die daraus entsteht.
               </p>
             </div>
 
