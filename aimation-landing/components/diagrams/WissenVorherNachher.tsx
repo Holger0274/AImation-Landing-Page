@@ -120,9 +120,11 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
           </text>
         </g>
       ))}
-      <circle cx={AFTER_HUB.x} cy={AFTER_HUB.y} r={14} fill="rgba(249,0,147,0.16)" stroke={focus} strokeWidth={2.5} filter="url(#wvnShadow)" />
-      {/* Label-Chip: deckt die Linie zum unteren Spoke ab, damit Text nicht auf der Linie liegt */}
-      <rect x={AFTER_HUB.x - 62} y={AFTER_HUB.y + 19} width={124} height={20} rx={6} fill={panelFill} />
+      {/* Blickdichte Fuellung: verdeckt die 6 im Zentrum zusammenlaufenden Linien vollstaendig */}
+      <circle cx={AFTER_HUB.x} cy={AFTER_HUB.y} r={14} fill={isDark ? '#3d0a24' : '#fde7f3'} stroke={focus} strokeWidth={2.5} filter="url(#wvnShadow)" />
+      {/* Label-Chip: deckt die Linie zum unteren Spoke ab, damit Text nicht auf der Linie liegt.
+          Bewusst schmal (94px) gehalten, damit er die benachbarten OneNote/PDF-Knoten nicht anschneidet. */}
+      <rect x={AFTER_HUB.x - 47} y={AFTER_HUB.y + 19} width={94} height={20} rx={6} fill={panelFill} />
       <text
         x={AFTER_HUB.x}
         y={AFTER_HUB.y + 32}
