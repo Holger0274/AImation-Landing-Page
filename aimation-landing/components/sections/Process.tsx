@@ -5,7 +5,6 @@ import { Calendar, FileText, Rocket, Headphones, CheckCircle, Clock, Euro, Searc
 import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import AngebotsTreppe from '@/components/diagrams/AngebotsTreppe';
 
 // Static config (numbers, icons, mockup types) — text comes from translations
 const stepsConfig = [
@@ -127,16 +126,6 @@ export default function Process() {
           <p className="text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)' }}>
             {t('subline')}
           </p>
-        </motion.div>
-
-        {/* Angebots-Treppe */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="hidden md:flex justify-center mb-16 md:mb-20"
-        >
-          <AngebotsTreppe variant="light" className="w-full max-w-2xl h-auto" />
         </motion.div>
 
         {/* Timeline - Desktop Horizontal */}
