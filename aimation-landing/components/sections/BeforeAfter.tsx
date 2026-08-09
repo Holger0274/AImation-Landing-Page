@@ -148,8 +148,8 @@ export default function BeforeAfter() {
           <p className="text-gray-500 max-w-2xl mx-auto mb-2" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1.05rem)' }}>
             {t('qktIntro')}
           </p>
-          <div className="flex justify-center my-4">
-            <QktTriangle variant="light" className="w-28 h-28" />
+          <div className="flex justify-center my-6 md:my-8">
+            <QktTriangle variant="light" className="w-44 h-44 md:w-56 md:h-56" />
           </div>
           <p className="font-semibold text-gray-600 max-w-2xl mx-auto" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.5rem)' }}>
             {t('subline')}
