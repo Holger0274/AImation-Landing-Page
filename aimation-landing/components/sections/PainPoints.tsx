@@ -233,7 +233,7 @@ function CompactStatCard({ stat, index, onClick, clickHint, isAnchor, anchorBadg
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ scale: 1.02, borderColor: 'rgba(249, 0, 147, 0.3)' }}
       onClick={onClick}
-      className={`relative p-6 rounded-xl bg-white/5 transition-all duration-300 group cursor-pointer ${
+      className={`relative p-4 sm:p-6 rounded-xl bg-white/5 transition-all duration-300 group cursor-pointer ${
         isAnchor ? 'border-2 border-[#f90093]/50' : 'border border-white/10 hover:border-[#f90093]/30'
       }`}
     >
@@ -293,155 +293,137 @@ export default function PainPoints() {
   }));
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Hybrid Split Container - SYNCHRONIZED HEIGHTS */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-
-        {/* LEFT SIDE - LIGHT (Warm White Background) */}
-        <div
-          className="relative py-12 md:py-16 px-6 md:px-12 flex items-center justify-center order-1"
-          style={{
-            backgroundColor: '#faf9f7',
-            backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
-            backgroundSize: '72px 72px',
-          }}
+    <section
+      className="relative overflow-hidden py-20 md:py-28"
+      style={{
+        backgroundColor: '#faf9f7',
+        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+        backgroundSize: '72px 72px',
+      }}
+    >
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        {/* Text Intro - full width, centered */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl mx-auto text-center mb-10"
         >
-          {/* Content */}
-          <div className="relative z-10 max-w-xl mx-auto lg:mx-0 w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              {/* Overline Badge */}
-              {t('badge') && (
-                <div className="inline-block mb-6">
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#60AFFF]/10 border border-[#60AFFF]/20">
-                    <span className="text-sm font-medium text-[#071013]">
-                      {t('badge')}
-                    </span>
-                  </span>
-                </div>
-              )}
+          {/* Overline Badge */}
+          {t('badge') && (
+            <div className="inline-block mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#60AFFF]/10 border border-[#60AFFF]/20">
+                <span className="text-sm font-medium text-[#071013]">
+                  {t('badge')}
+                </span>
+              </span>
+            </div>
+          )}
 
-              {/* Main Headline */}
-              <h2 className="font-heading font-bold text-[#071013] mb-4 break-words" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)', lineHeight: 1.35 }}>
-                {t('headline')}{' '}
-                <span className="text-[#f90093]">{t('headlineHighlight')}</span>{' '}
-                {t('headlineEnd')}
-              </h2>
+          {/* Main Headline */}
+          <h2 className="font-heading font-bold text-[#071013] mb-4 break-words" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)', lineHeight: 1.35 }}>
+            {t('headline')}{' '}
+            <span className="text-[#f90093]">{t('headlineHighlight')}</span>{' '}
+            {t('headlineEnd')}
+          </h2>
 
-              {/* Supporting Text */}
-              <div className="space-y-4 text-[#071013]/80 mb-8 break-words" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
-                <p className="leading-relaxed break-words">
-                  {t('body1')}
-                </p>
-                {t('body2') && (
-                  <p className="leading-relaxed font-medium text-[#071013] break-words">
-                    {t('body2')}
-                  </p>
-                )}
-              </div>
-            </motion.div>
-
-            {/* Future Perspective - Positive Outlook (only shown when content is set) */}
-            {t('futureText') && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="mb-10 p-6 rounded-xl bg-gradient-to-r from-[#60AFFF]/10 to-[#f90093]/5 border-l-4 border-[#60AFFF]"
-              >
-                <p className="text-[#071013] font-medium leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
-                  {t('futureText')}{' '}
-                  <span className="text-[#c2007a] font-bold">{t('futureHighlight')}</span>{' '}
-                  {t('futureEnd')}{' '}
-                  <span className="font-bold text-[#071013]">{t('futureStrong')}</span> {t('futureEndText')}
-                </p>
-              </motion.div>
+          {/* Supporting Text */}
+          <div className="space-y-4 text-[#071013]/80 break-words" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
+            <p className="leading-relaxed break-words">
+              {t('body1')}
+            </p>
+            {t('body2') && (
+              <p className="leading-relaxed font-medium text-[#071013] break-words">
+                {t('body2')}
+              </p>
             )}
-
-            {/* ROI Calculator Link */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-4"
-            >
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  const kontaktSection = document.getElementById('kontakt');
-                  if (kontaktSection) {
-                    kontaktSection.scrollIntoView({ behavior: 'smooth' });
-                    setTimeout(() => {
-                      const roiButton = document.querySelector('[data-roi-calculator-trigger]') as HTMLButtonElement;
-                      if (roiButton) roiButton.click();
-                    }, 800);
-                  }
-                }}
-                className="inline-flex items-center gap-2 text-[#c2007a] font-heading font-semibold hover:underline transition-all group"
-              >
-                <Calculator className="w-5 h-5" />
-                {t('roiLink')}
-                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-              </button>
-            </motion.div>
           </div>
+        </motion.div>
 
-        </div>
-
-        {/* RIGHT SIDE - LIGHT column matching the left, holding a floating dark card */}
-        <div
-          className="relative py-12 md:py-16 px-6 md:px-12 flex items-center justify-center order-2"
-          style={{
-            backgroundColor: '#faf9f7',
-            backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
-            backgroundSize: '72px 72px',
-          }}
-        >
-          {/* Floating Dark Card (Soft Black, nestled with margin instead of a hard-edged block) */}
+        {/* Future Perspective - Positive Outlook (only shown when content is set) */}
+        {t('futureText') && (
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative w-full max-w-3xl mx-auto lg:mx-0 rounded-2xl overflow-hidden p-6 md:p-8"
-            style={{
-              backgroundColor: '#071013',
-              backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
-              backgroundSize: '72px 72px',
-              boxShadow: '0 25px 50px -12px rgba(7,16,19,0.3), 0 0 50px rgba(249,0,147,0.08)',
-            }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="max-w-2xl mx-auto mb-8 p-6 rounded-xl bg-gradient-to-r from-[#60AFFF]/10 to-[#f90093]/5 border-l-4 border-[#60AFFF]"
           >
-            {/* Glow Background */}
-            <div className="absolute inset-0 mesh-gradient opacity-30 pointer-events-none" />
-
-            {/* Radial Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f90093]/10 rounded-full blur-[120px] pointer-events-none" />
-
-            {/* Grid of Compact Stats */}
-            <div className="relative z-10">
-              {/* 3-Column Grid for 6 Compact Stats */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {compactStats.map((stat, index) => (
-                  <CompactStatCard
-                    key={stat.id}
-                    stat={stat}
-                    index={index}
-                    onClick={() => setModalPainPoint(stat)}
-                    clickHint={t('clickHint')}
-                    isAnchor={stat.id === 'knowledge'}
-                    anchorBadge={t('anchorBadge')}
-                  />
-                ))}
-              </div>
-            </div>
+            <p className="text-[#071013] font-medium leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
+              {t('futureText')}{' '}
+              <span className="text-[#c2007a] font-bold">{t('futureHighlight')}</span>{' '}
+              {t('futureEnd')}{' '}
+              <span className="font-bold text-[#071013]">{t('futureStrong')}</span> {t('futureEndText')}
+            </p>
           </motion.div>
-        </div>
+        )}
+
+        {/* ROI Calculator Link */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex justify-center mb-12 md:mb-16"
+        >
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              const kontaktSection = document.getElementById('kontakt');
+              if (kontaktSection) {
+                kontaktSection.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => {
+                  const roiButton = document.querySelector('[data-roi-calculator-trigger]') as HTMLButtonElement;
+                  if (roiButton) roiButton.click();
+                }, 800);
+              }
+            }}
+            className="inline-flex items-center gap-2 text-[#c2007a] font-heading font-semibold hover:underline transition-all group"
+          >
+            <Calculator className="w-5 h-5" />
+            {t('roiLink')}
+            <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </button>
+        </motion.div>
+
+        {/* Dark Card with the 6 Compact Stats, full section width */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="relative w-full rounded-2xl overflow-hidden p-4 sm:p-6 md:p-10"
+          style={{
+            backgroundColor: '#071013',
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+            backgroundSize: '72px 72px',
+            boxShadow: '0 25px 50px -12px rgba(7,16,19,0.3), 0 0 50px rgba(249,0,147,0.08)',
+          }}
+        >
+          {/* Glow Background */}
+          <div className="absolute inset-0 mesh-gradient opacity-30 pointer-events-none" />
+
+          {/* Radial Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f90093]/10 rounded-full blur-[120px] pointer-events-none" />
+
+          {/* Grid of Compact Stats - 2 columns even on mobile to keep the section short */}
+          <div className="relative z-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+              {compactStats.map((stat, index) => (
+                <CompactStatCard
+                  key={stat.id}
+                  stat={stat}
+                  index={index}
+                  onClick={() => setModalPainPoint(stat)}
+                  clickHint={t('clickHint')}
+                  isAnchor={stat.id === 'knowledge'}
+                  anchorBadge={t('anchorBadge')}
+                />
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* Image Modal */}
