@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import KiAgentenPage from '@/components/pages/KiAgentenPage';
 import { FAQPageSchema, BreadcrumbSchema } from '@/components/StructuredData';
+import { FAQ_ITEMS as pageFaqs } from '@/lib/data/faqs-ki-agenten';
 
 export const dynamic = 'force-static';
 
@@ -24,33 +25,6 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
 };
-
-const pageFaqs = [
-  {
-    question: 'Ersetzen KI-Agenten Mitarbeiter?',
-    answer: 'Nein. Sie ersetzen Routineaufgaben. Der QS-Leiter mit 28 Jahren Erfahrung wird nicht durch einen Agenten ersetzt. Aber sein Wissen wird digital verfügbar, und seine Routineprüfungen kann der Agent übernehmen.',
-  },
-  {
-    question: 'Wie zuverlässig sind KI-Agenten?',
-    answer: 'Moderne Agenten erreichen bei gut definierten Aufgaben Genauigkeitsraten von über 95%. Deshalb gibt es menschliche Kontrolle: bei kritischen Entscheidungen prüft ein Mensch. Bei Routinetätigkeiten läuft der Agent eigenständig, mit Logging und Eskalation bei Unsicherheit.',
-  },
-  {
-    question: 'Was passiert mit unseren Daten?',
-    answer: 'Das bestimmen Sie. Wir bieten Lösungen, die komplett auf Ihren Servern laufen: lokale Sprachmodelle (Ollama), selbst gehostete Orchestrierung (n8n), europäische Cloud-Anbieter. Keine Daten verlassen Ihr Unternehmen, wenn Sie das nicht wollen.',
-  },
-  {
-    question: 'Brauchen wir dafür ein großes IT-Team?',
-    answer: 'Für den Aufbau: Nein, das machen wir. Für den Betrieb: Eine technisch affine Person sollte die Systeme im Blick haben. Bei einfacheren Agenten reicht auch ein Power User ohne IT-Hintergrund.',
-  },
-  {
-    question: 'Wie lange dauert es, bis ein Agent produktiv läuft?',
-    answer: 'Einen einfachen Agenten haben wir in 2 bis 4 Wochen live. Die erste Woche ist Analyse und Setup, die zweite Implementierung, dann folgen Test und Parallelbetrieb. Bei komplexeren Systemen rechnen Sie mit 8 bis 16 Wochen.',
-  },
-  {
-    question: 'Können wir klein anfangen?',
-    answer: 'Sollten Sie sogar. Wir empfehlen: einen Prozess identifizieren, einen PoC bauen, messen, lernen, dann skalieren. Nicht fünf Agenten gleichzeitig in die Produktion drücken.',
-  },
-];
 
 const breadcrumbs = [
   { name: 'Startseite', url: '/' },

@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
 import { Link } from '@/i18n/navigation';
 import { motion } from 'framer-motion';
 import { ChevronRight, ArrowRight } from 'lucide-react';
 import { PRICING } from '@/lib/data/pricing';
 import EuAiActNotice from '@/components/sections/EuAiActNotice';
+import SharedFaqAccordion from '@/components/ui/FaqAccordion';
+import { FAQ_ITEMS } from '@/lib/data/faqs-ki-schulungen';
 
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
 
@@ -49,39 +50,8 @@ const SCHULUNGEN_LEVELS = [
   },
 ];
 
-const FAQ_ITEMS = [
-  { q: 'Für wen sind die Schulungen geeignet?', a: 'Für alle Unternehmensgrößen und Rollen. Wir starten mit einer Bedarfsanalyse und empfehlen dann den passenden Einstiegspunkt. Einsteiger ohne Vorkenntnisse starten mit Ebene 1, Teams die schon KI nutzen profitieren direkt von Ebene 2 oder 3.' },
-  { q: 'Wie lange dauern die Schulungen?', a: 'Je nach Modul zwischen einem halben und zwei Tagen. Viele Unternehmen kombinieren mehrere Module zu einem Schulungstag. Wir passen Dauer und Format an Ihre Bedürfnisse an.' },
-  { q: 'Können Schulungen auch online stattfinden?', a: 'Ja. Alle Module sind für Präsenz, Online oder Hybrid konzipiert. Bei Online-Schulungen arbeiten wir mit Live-Übungen, Breakout-Räumen und praktischen Demos – kein PowerPoint-Marathon.' },
-  { q: 'Was kostet eine Schulung?', a: 'Inhouse-Schulung: 1.800 Euro pro Tag, unabhängig von der Teilnehmerzahl. Halbtags-Formate ab 990 Euro. Keine versteckten Zusatzkosten pro Kopf.' },
-  { q: 'Gibt es Train-the-Trainer-Formate?', a: 'Ja. Für Unternehmen, die KI-Wissen intern multiplizieren möchten, bieten wir Train-the-Trainer-Programme. Ihre internen Multiplikatoren lernen nicht nur die Inhalte, sondern auch wie sie diese weitervermitteln.' },
-  { q: 'Bekommt jeder Teilnehmer Unterlagen?', a: 'Ja. Alle Teilnehmer erhalten praxisnahe Unterlagen, Prompt-Bibliotheken und Checklisten. Kein Lehrbuch-Material, sondern Werkzeuge die am nächsten Tag einsetzbar sind.' },
-];
-
 function FaqAccordion() {
-  const [open, setOpen] = useState<number | null>(null);
-  return (
-    <div className="space-y-2">
-      {FAQ_ITEMS.map((item, i) => (
-        <div key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <button
-            onClick={() => setOpen(open === i ? null : i)}
-            className="w-full flex items-center justify-between px-6 py-4 text-left font-heading font-semibold text-[#071013] hover:bg-[#faf9f7] transition-colors"
-            aria-expanded={open === i}
-            style={{ fontSize: 'clamp(0.875rem, 2.2vw, 1rem)' }}
-          >
-            {item.q}
-            <span className={`ml-4 flex-shrink-0 text-[#f90093] transition-transform duration-200 ${open === i ? 'rotate-45' : ''}`}>+</span>
-          </button>
-          {open === i && (
-            <div className="px-6 pb-4">
-              <p className="text-gray-600 font-inter text-sm leading-relaxed">{item.a}</p>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  );
+  return <SharedFaqAccordion items={FAQ_ITEMS} />;
 }
 
 export default function KiSchulungenPage() {

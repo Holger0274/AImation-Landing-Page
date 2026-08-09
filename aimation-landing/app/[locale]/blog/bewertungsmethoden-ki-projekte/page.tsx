@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteUrl}/blog/bewertungsmethoden-ki-projekte` },
   openGraph: {
     title: 'Wenn RICE nicht reicht: Vier Methoden zur Bewertung von KI-Projekten',
-    description: 'Impact-Effort-Matrix, WSJF, AI-Feasibility und Weighted Scoring im direkten Vergleich – mit denselben fünf Projekten aus dem Maschinenbau.',
+    description: 'Impact-Effort-Matrix, WSJF, AI-Feasibility und Weighted Scoring im direkten Vergleich, mit denselben fünf Projekten aus dem Maschinenbau.',
     url: `${siteUrl}/blog/bewertungsmethoden-ki-projekte`,
     type: 'article',
     locale: 'de_DE',
@@ -33,7 +33,7 @@ const METHODS = [
     id: '01',
     name: 'Impact-Effort-Matrix',
     tagline: 'Workshop-Einstieg',
-    description: 'Zwei Achsen, vier Quadranten. In zehn Minuten ein gemeinsames Bild – kein gemeinsames Urteil.',
+    description: 'Zwei Achsen, vier Quadranten. In zehn Minuten ein gemeinsames Bild. Kein gemeinsames Urteil.',
   },
   {
     id: '02',
@@ -51,7 +51,7 @@ const METHODS = [
     id: '04',
     name: 'Weighted Scoring',
     tagline: 'C-Level-Entscheidungen',
-    description: 'Frei wählbare Kriterien, explizite Gewichte. Flexibel und angreifbar zugleich – das ist die Stärke.',
+    description: 'Frei wählbare Kriterien, explizite Gewichte. Flexibel und angreifbar zugleich. Das ist die Stärke.',
   },
 ];
 
@@ -123,14 +123,14 @@ export default async function BewertungsmethodenPage({
             </h1>
 
             <p className="text-gray-600 font-inter leading-relaxed mb-8" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
-              Die RICE-Formel ist ein guter Filter – aber sie hat blinde Flecken. Vier ergänzende Methoden und wann welche passt, erklärt an denselben fünf Projekten aus der Entwicklungsabteilung.
+              Die RICE-Formel ist ein guter Filter, aber sie hat blinde Flecken. Vier ergänzende Methoden und wann welche passt, erklärt an denselben fünf Projekten aus der Entwicklungsabteilung.
             </p>
 
             {/* Hero-Bild */}
             <div className="relative w-full rounded-2xl overflow-hidden mb-2" style={{ aspectRatio: '3/2' }}>
               <Image
                 src="/images/blog/bewertungsmethoden-hero.jpg"
-                alt="Team bespricht gemeinsam eine Impact-Effort-Matrix am hellen Whiteboard – strukturierte Priorisierung von KI-Projekten"
+                alt="Team bespricht gemeinsam eine Impact-Effort-Matrix am hellen Whiteboard: strukturierte Priorisierung von KI-Projekten"
                 fill
                 className="object-cover object-center"
                 priority
@@ -146,7 +146,7 @@ export default async function BewertungsmethodenPage({
 
               {/* ── INTRO ── */}
               <p className="mb-5">
-                Im ersten Teil dieser Serie haben wir fünf KI-Projektvorschläge mit der RICE-Formel durchgerechnet: Patent-Intelligence für Konstrukteure, ein digitales Zeichnungs-Archiv, ein Multi-Agent Innovation-Scout, ein Norm-Checker und ein Datenblatt-Extractor. RICE hat klar entschieden – aber auch Grenzen gezeigt.
+                Im ersten Teil dieser Serie haben wir fünf KI-Projektvorschläge mit der RICE-Formel durchgerechnet: Patent-Intelligence für Konstrukteure, ein digitales Zeichnungs-Archiv, ein Multi-Agent Innovation-Scout, ein Norm-Checker und ein Datenblatt-Extractor. RICE hat klar entschieden, aber auch Grenzen gezeigt.
               </p>
               <p className="mb-5">
                 Das Multi-Agent-System als strategisch wichtigstes Projekt landete auf dem letzten Platz. Der Norm-Checker wurde trotz Compliance-Relevanz niedrig bewertet. Die Formel sieht nur operative Durchschlagkraft pro investiertem Aufwand.
@@ -183,7 +183,7 @@ export default async function BewertungsmethodenPage({
                 Methode 1: Impact-Effort-Matrix
               </h2>
               <p className="mb-5">
-                Die einfachste aller Methoden – und oft der beste Workshop-Einstieg. Zwei Achsen, vier Quadranten. Auf der X-Achse der Aufwand, auf der Y-Achse der geschäftliche Nutzen. Jedes Projekt wird als Punkt eingetragen.
+                Die einfachste aller Methoden. Und oft der beste Workshop-Einstieg. Zwei Achsen, vier Quadranten. Auf der X-Achse der Aufwand, auf der Y-Achse der geschäftliche Nutzen. Jedes Projekt wird als Punkt eingetragen.
               </p>
               <p className="mb-5">
                 Quick Wins sitzen oben links (hoher Nutzen, geringer Aufwand). Big Bets oben rechts (hoher Nutzen, hoher Aufwand). Fill-Ins unten links (geringer Nutzen, geringer Aufwand). Der Quadrant unten rechts heißt je nach Autor „Money Pit" oder schlicht „nicht machen".
@@ -286,10 +286,14 @@ export default async function BewertungsmethodenPage({
                 Der entscheidende Unterschied zu RICE: Zeitliche Dringlichkeit ist eine eigene Dimension. Ein Projekt mit Deadline wird anders bewertet als eines ohne.
               </p>
               <p className="mb-5">
-                Beim Norm-Checker wirkt sich das sofort aus. Der EU AI Act ist seit August 2026 vollständig in Kraft – Hochrisiko-KI-Systeme brauchen seither nachweisbare Compliance. Ein KI-gestützter Norm-Checker, der Konstruktionen gegen DIN-, ISO- und VDI-Normen prüft, fällt potenziell in diesen Bereich. Das erzeugt echten, messbaren Zeitdruck. User-Business Value 5, Time Criticality 9, Risk Reduction/Opportunity Enablement 9, Job Size 8 – WSJF-Score: 2,88. Bei RICE lag dasselbe Projekt auf Platz 4. In der WSJF-Bewertung rückt es in die obere Hälfte.
+                Beim Norm-Checker wirkt sich das sofort aus. Der{' '}
+                <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=OJ%3AL_202401689" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">
+                  EU AI Act
+                </a>{' '}
+                gilt seit August 2024, die Pflichten für Hochrisiko-Anwendungen wie Norm-Checks wurden durch den EU-Digital-Omnibus zwar auf Dezember 2027 verschoben, die Vorarbeit lohnt sich trotzdem schon jetzt. Ein KI-gestützter Norm-Checker, der Konstruktionen gegen DIN-, ISO- und VDI-Normen prüft, fällt potenziell in diesen Bereich. Das erzeugt echten, messbaren Zeitdruck. User-Business Value 5, Time Criticality 9, Risk Reduction/Opportunity Enablement 9, Job Size 8, WSJF-Score: 2,88. Bei RICE lag dasselbe Projekt auf Platz 4. In der WSJF-Bewertung rückt es in die obere Hälfte.
               </p>
               <p className="mb-5">
-                Beim Multi-Agent-System ist der Effekt geringer. User-Business Value 9, Time Criticality 5 (kein akuter Zeitdruck, aber mittelfristig strategisch wichtig), Risk Reduction/Opportunity Enablement 8, Job Size 8 – WSJF-Score: 2,75. Besser als bei RICE, aber nicht dramatisch anders, weil die akute Dringlichkeit fehlt.
+                Beim Multi-Agent-System ist der Effekt geringer. User-Business Value 9, Time Criticality 5 (kein akuter Zeitdruck, aber mittelfristig strategisch wichtig), Risk Reduction/Opportunity Enablement 8, Job Size 8, WSJF-Score: 2,75. Besser als bei RICE, aber nicht dramatisch anders, weil die akute Dringlichkeit fehlt.
               </p>
 
               <div className="bg-[#071013] rounded-xl p-5 my-6 text-white">
@@ -309,7 +313,7 @@ export default async function BewertungsmethodenPage({
                 Dieser Ansatz ist speziell für KI-Projekte gedacht und wird in Varianten von Gartner, McKinsey und anderen Beratungen genutzt. Wieder eine Zwei-Achsen-Matrix, diesmal mit einer KI-spezifischen Dimension.
               </p>
               <p className="mb-5">
-                Auf der X-Achse steht die AI Feasibility – zusammengesetzt aus Datenverfügbarkeit, Reifegrad der Modelle, Integrationsaufwand und interner Expertise. Auf der Y-Achse der Business Value. Das Ergebnis für unsere fünf Projekte:
+                Auf der X-Achse steht die AI Feasibility, zusammengesetzt aus Datenverfügbarkeit, Reifegrad der Modelle, Integrationsaufwand und interner Expertise. Auf der Y-Achse der Business Value. Das Ergebnis für unsere fünf Projekte:
               </p>
 
               {/* Feasibility-Tabelle */}
@@ -320,7 +324,7 @@ export default async function BewertungsmethodenPage({
                 {[
                   { name: 'Patent-Intelligence', value: 'Hoch', feasibility: 'Hoch', action: 'Jetzt starten', top: true },
                   { name: 'Zeichnungs-Archiv', value: 'Hoch', feasibility: 'Mittel', action: 'Direkt parallel starten', top: true },
-                  { name: 'Datenblatt-Extractor', value: 'Mittel', feasibility: 'Sehr hoch', action: 'Quick Win – sofort', top: true },
+                  { name: 'Datenblatt-Extractor', value: 'Mittel', feasibility: 'Sehr hoch', action: 'Quick Win: sofort', top: true },
                   { name: 'Multi-Agent Scout', value: 'Hoch', feasibility: 'Niedrig', action: 'Monitor & prepare', top: false },
                   { name: 'Norm-Checker', value: 'Mittel', feasibility: 'Niedrig', action: 'Neu zuschneiden', top: false },
                 ].map((item, i) => (
@@ -372,7 +376,7 @@ export default async function BewertungsmethodenPage({
                 Methode 4: Weighted Scoring Model
               </h2>
               <p className="mb-5">
-                Wenn die drei bisherigen Methoden nicht passen, bleibt das flexibelste Werkzeug: ein gewichtetes Bewertungsmodell mit selbst definierten Kriterien. Fünf bis sieben Kriterien, jedes mit einem Gewicht, jedes Projekt auf einer Skala von 1 bis 5 – der gewichtete Mittelwert entscheidet.
+                Wenn die drei bisherigen Methoden nicht passen, bleibt das flexibelste Werkzeug: ein gewichtetes Bewertungsmodell mit selbst definierten Kriterien. Fünf bis sieben Kriterien, jedes mit einem Gewicht, jedes Projekt auf einer Skala von 1 bis 5. Der gewichtete Mittelwert entscheidet.
               </p>
               <p className="mb-5">
                 Für die fünf Beispielprojekte könnten die Kriterien so aussehen: Compliance-Relevanz (25 %), Business Value (25 %), technische Machbarkeit (20 %), Datenverfügbarkeit (15 %), strategischer Fit (15 %).
@@ -445,14 +449,14 @@ export default async function BewertungsmethodenPage({
                   <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">MoSCoW</p>
                   <p className="text-xs text-[#f90093] font-inter mb-3">Must · Should · Could · Won't</p>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Entwickelt 1994 von Dai Clegg bei Oracle, heute fester Bestandteil agiler Methoden. Für die Priorisierung zwischen strategischen Projekten zu grob, aber hervorragend geeignet, um im ersten Schritt Muss-Projekte von Kann-Projekten zu trennen. Ein Norm-Checker mit EU-AI-Act-Deadline ist ein klares „Must have" – und wandert gar nicht erst in RICE.
+                    Entwickelt 1994 von Dai Clegg bei Oracle, heute fester Bestandteil agiler Methoden. Für die Priorisierung zwischen strategischen Projekten zu grob, aber hervorragend geeignet, um im ersten Schritt Muss-Projekte von Kann-Projekten zu trennen. Ein Norm-Checker mit EU-AI-Act-Deadline ist ein klares „Must have". Er wandert gar nicht erst in RICE.
                   </p>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">ICE</p>
                   <p className="text-xs text-[#f90093] font-inter mb-3">Impact · Confidence · Ease</p>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Von Sean Ellis entwickelt, dem Begründer des Growth Hacking. ICE ist der Vorläufer von RICE – RICE ergänzt es um die Reach-Dimension. Für schnelle Experiment-Entscheidungen in kleinen Teams ideal. Für Mittelstands-Budgetentscheidungen fehlt genau dieser Reach-Faktor: Wie viele Vorgänge oder Personen sind betroffen? Das ist oft der Unterschied zwischen Platz 1 und Platz 4.
+                    Von Sean Ellis entwickelt, dem Begründer des Growth Hacking. ICE ist der Vorläufer von RICE. RICE ergänzt es um die Reach-Dimension. Für schnelle Experiment-Entscheidungen in kleinen Teams ideal. Für Mittelstands-Budgetentscheidungen fehlt genau dieser Reach-Faktor: Wie viele Vorgänge oder Personen sind betroffen? Das ist oft der Unterschied zwischen Platz 1 und Platz 4.
                   </p>
                 </div>
               </div>
@@ -461,13 +465,13 @@ export default async function BewertungsmethodenPage({
               <div className="relative w-full rounded-2xl overflow-hidden my-10" style={{ aspectRatio: '3/2' }}>
                 <Image
                   src="/images/blog/bewertungsmethoden-infografik.png"
-                  alt="Managerin bewertet Scoring-Modelle am Laptop – Entscheidungsunterstützung für die richtige Bewertungsmethode"
+                  alt="Managerin bewertet Scoring-Modelle am Laptop: Entscheidungsunterstützung für die richtige Bewertungsmethode"
                   fill
                   className="object-cover object-center"
                 />
               </div>
               <p className="text-xs text-gray-400 font-inter text-center -mt-6 mb-10">
-                Die richtige Methode hängt von der Entscheidungssituation ab – nicht vom persönlichen Favoriten.
+                Die richtige Methode hängt von der Entscheidungssituation ab, nicht vom persönlichen Favoriten.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -505,7 +509,7 @@ export default async function BewertungsmethodenPage({
                 Die beste Praxis: Zwei bis drei kombinieren
               </h2>
               <p className="mb-5">
-                Impact-Effort-Matrix zur visuellen Filterung, danach RICE oder AI-Feasibility-Matrix für die Top-Kandidaten, ergänzt durch WSJF bei Compliance-Themen – und die 70/30-Regel aus dem ersten Artikel für strategische Lerninvestitionen.
+                Impact-Effort-Matrix zur visuellen Filterung, danach RICE oder AI-Feasibility-Matrix für die Top-Kandidaten, ergänzt durch WSJF bei Compliance-Themen, und die 70/30-Regel aus dem ersten Artikel für strategische Lerninvestitionen.
               </p>
 
               <div className="bg-[#071013] rounded-xl p-6 my-8 text-white">
@@ -569,7 +573,7 @@ export default async function BewertungsmethodenPage({
               Welche Ihrer KI-Projekte kommt zuerst?
             </h2>
             <p className="text-gray-300 font-inter mb-8" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)' }}>
-              Methoden sind ein Werkzeug, kein Selbstzweck. Die eigentliche Arbeit beginnt mit der ehrlichen Bewertung konkreter Vorschläge in Ihrer Organisation – mit Ihren Daten, Ihren Kriterien, Ihren strategischen Zielen. Im Use-Case-Workshop kombinieren wir die Methoden, die für Ihre Entscheidungen wirklich relevant sind.
+              Methoden sind ein Werkzeug, kein Selbstzweck. Die eigentliche Arbeit beginnt mit der ehrlichen Bewertung konkreter Vorschläge in Ihrer Organisation, mit Ihren Daten, Ihren Kriterien, Ihren strategischen Zielen. In der KI-Landkarte kombinieren wir die Methoden, die für Ihre Entscheidungen wirklich relevant sind.
             </p>
             <a
               href={CALENDLY_URL}
@@ -582,7 +586,7 @@ export default async function BewertungsmethodenPage({
                 fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
               }}
             >
-              Discovery-Gespräch vereinbaren
+              Holen Sie sich Ihre KI-Landkarte
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>

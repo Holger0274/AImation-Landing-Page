@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
 import { Link } from '@/i18n/navigation';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import { PRICING } from '@/lib/data/pricing';
+import SharedFaqAccordion from '@/components/ui/FaqAccordion';
+import { FAQ_ITEMS } from '@/lib/data/faqs-ki-beratung';
 
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
 
@@ -31,38 +32,8 @@ const BERATUNG_PHASES = [
   },
 ];
 
-const FAQ_ITEMS = [
-  { q: 'Was kostet die KI-Landkarte?', a: `Festpreis ${PRICING.kiLandkarte.priceLabel}, ${PRICING.kiLandkarte.duration}. Kein Stundensatz, keine Überraschung. Das Ergebnis: 2 bis 3 priorisierte Use Cases mit ROI-Schätzung.` },
-  { q: 'Müssen wir beide Phasen durchlaufen?', a: 'Nein. Beide Phasen sind einzeln buchbar. Wer bereits eine klare Priorisierung hat, startet direkt mit Begleitung. Wer erst wissen will, wo er steht, startet mit der KI-Landkarte.' },
-  { q: 'Was ist der Unterschied zu einer klassischen Unternehmensberatung?', a: 'Wir sind selbst Praktiker. 20 Jahre Engineering bedeutet: Wir verstehen Ihre Prozesse, nicht nur Ihre Kennzahlen. Und wir empfehlen keine Lösung, wenn KI nicht die richtige Antwort ist – auch wenn es uns einen Auftrag kostet.' },
-  { q: 'Wie lange dauert eine typische Beratung?', a: 'Ein Quick Check dauert 1-2 Tage. Ein vollständiges Strategy Package typischerweise 4-6 Wochen. Wir richten uns nach Ihrem Tempo, nicht umgekehrt.' },
-  { q: 'Was passiert nach der Beratung?', a: 'Sie entscheiden. Wir können die Umsetzung begleiten, Schulungen für Ihr Team anbieten – oder Sie setzen die Roadmap mit Ihren eigenen Ressourcen um. Kein Lock-in.' },
-];
-
 function FaqAccordion() {
-  const [open, setOpen] = useState<number | null>(null);
-  return (
-    <div className="space-y-2">
-      {FAQ_ITEMS.map((item, i) => (
-        <div key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <button
-            onClick={() => setOpen(open === i ? null : i)}
-            className="w-full flex items-center justify-between px-6 py-4 text-left font-heading font-semibold text-[#071013] hover:bg-[#faf9f7] transition-colors"
-            aria-expanded={open === i}
-            style={{ fontSize: 'clamp(0.875rem, 2.2vw, 1rem)' }}
-          >
-            {item.q}
-            <span className={`ml-4 flex-shrink-0 text-[#f90093] transition-transform duration-200 ${open === i ? 'rotate-45' : ''}`}>+</span>
-          </button>
-          {open === i && (
-            <div className="px-6 pb-4">
-              <p className="text-gray-600 font-inter text-sm leading-relaxed">{item.a}</p>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  );
+  return <SharedFaqAccordion items={FAQ_ITEMS} />;
 }
 
 export default function KiBeratungPage() {

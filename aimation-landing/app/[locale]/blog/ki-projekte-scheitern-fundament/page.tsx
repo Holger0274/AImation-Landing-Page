@@ -6,8 +6,8 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
-import FaqAccordion from './FaqAccordion';
-import { BlogPostingSchema } from '@/components/StructuredData';
+import FaqAccordion, { FAQ_ITEMS } from './FaqAccordion';
+import { BlogPostingSchema, FAQPageSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -15,12 +15,12 @@ const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-a
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: 'KI-Projekte scheitern nicht am Modell – sondern am Fundament | AImation' },
+  title: { absolute: 'KI-Projekte scheitern am Fundament: Daten, Compliance, Menschen | AImation' },
   description: 'Warum KI-Einführungen im Mittelstand im Sand verlaufen: schmutzige Daten, Compliance-Wände, Faktor Mensch. Ein kleiner PoC liefert mehr als jede Strategie.',
   alternates: { canonical: `${siteUrl}/blog/ki-projekte-scheitern-fundament` },
   openGraph: {
-    title: 'KI-Projekte scheitern nicht am Modell – sondern am Fundament',
-    description: 'Warum KI-Einführungen im Mittelstand still im Sand verlaufen – und wie ein Proof of Concept mehr liefert als jede Strategie.',
+    title: 'KI-Projekte scheitern am Fundament: Daten, Compliance, Menschen',
+    description: 'Warum KI-Einführungen im Mittelstand still im Sand verlaufen. Und wie ein Proof of Concept mehr liefert als jede Strategie.',
     url: `${siteUrl}/blog/ki-projekte-scheitern-fundament`,
     type: 'article',
     locale: 'de_DE',
@@ -49,6 +49,7 @@ export default async function KiProjekteScheiternPage({
         datePublished="2026-04-20"
         url="/blog/ki-projekte-scheitern-fundament"
       />
+      <FAQPageSchema faqs={FAQ_ITEMS} />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
 
@@ -84,7 +85,7 @@ export default async function KiProjekteScheiternPage({
             <div className="relative w-full rounded-2xl overflow-hidden mb-2" style={{ aspectRatio: '2/3', maxHeight: '520px' }}>
               <Image
                 src="/images/blog/ki-projekte-scheitern-infografik.png"
-                alt="Infografik: Die 4 häufigsten Gründe warum KI-Projekte im Mittelstand scheitern – Daten, Demo vs. Realität, Compliance, Faktor Mensch"
+                alt="Infografik: Die 4 häufigsten Gründe warum KI-Projekte im Mittelstand scheitern, Daten, Demo vs. Realität, Compliance, Faktor Mensch"
                 fill
                 className="object-contain object-top"
                 priority

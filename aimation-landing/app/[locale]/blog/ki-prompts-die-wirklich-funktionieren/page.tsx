@@ -6,8 +6,8 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
-import FaqAccordion from './FaqAccordion';
-import { BlogPostingSchema } from '@/components/StructuredData';
+import FaqAccordion, { FAQ_ITEMS } from './FaqAccordion';
+import { BlogPostingSchema, FAQPageSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -98,6 +98,7 @@ export default async function KiPromptsPage({
         datePublished="2026-04-01"
         url="/blog/ki-prompts-die-wirklich-funktionieren"
       />
+      <FAQPageSchema faqs={FAQ_ITEMS} />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
         {/* ── HERO ── */}
@@ -131,7 +132,7 @@ export default async function KiPromptsPage({
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
               <Image
                 src="/images/blog/ki-prompts-hero.jpg"
-                alt="Prompt Engineering – präzise KI-Befehle die sofort funktionierende Ergebnisse liefern"
+                alt="Prompt Engineering: präzise KI-Befehle die sofort funktionierende Ergebnisse liefern"
                 fill
                 className="object-cover"
                 priority
@@ -146,11 +147,11 @@ export default async function KiPromptsPage({
             <div className="prose prose-gray max-w-none font-inter text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
 
               <p>
-                "Schreib mir eine E-Mail." Wer so einen Prompt eingibt, bekommt eine generische E-Mail. "Schreib mir eine Nachfass-E-Mail an einen Kunden, der seit zwei Wochen nicht geantwortet hat, für ein Angebot über eine neue Fertigungslinie – sachlich, nicht aufdringlich, max. 6 Sätze." Wer das eingibt, bekommt etwas, das er fast unverändert verschicken kann.
+                "Schreib mir eine E-Mail." Wer so einen Prompt eingibt, bekommt eine generische E-Mail. "Schreib mir eine Nachfass-E-Mail an einen Kunden, der seit zwei Wochen nicht geantwortet hat, für ein Angebot über eine neue Fertigungslinie, sachlich, nicht aufdringlich, max. 6 Sätze." Wer das eingibt, bekommt etwas, das er fast unverändert verschicken kann.
               </p>
               <p className="font-semibold text-[#071013]">Der Unterschied liegt im Prompt. Nicht im Modell.</p>
               <p>
-                Viele Mittelständler testen KI, sind enttäuscht und schließen den Tab wieder. Nicht weil die KI schlecht ist. Sondern weil niemand erklärt hat, wie man mit ihr spricht. Diese 7 Muster nutze ich selbst täglich — und sie sind das, was ich in KI-Schulungen immer zuerst zeige, weil sie sofort einen Unterschied machen.
+                Viele Mittelständler testen KI, sind enttäuscht und schließen den Tab wieder. Nicht weil die KI schlecht ist. Sondern weil niemand erklärt hat, wie man mit ihr spricht. Diese 7 Muster nutze ich selbst täglich. Sie sind das, was ich in KI-Schulungen immer zuerst zeige, weil sie sofort einen Unterschied machen.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -199,7 +200,7 @@ export default async function KiPromptsPage({
                 Vom einzelnen Prompt zur Prompt-Bibliothek
               </h2>
               <p>
-                Diese 7 Muster sind ein Anfang. Das Ziel für Ihr Unternehmen sollte eine eigene Prompt-Bibliothek sein: eine Sammlung getesteter, rollenspezifischer Vorlagen, die das ganze Team nutzt – für Vertrieb, HR, Produktion, Marketing und Führung.
+                Diese 7 Muster sind ein Anfang. Das Ziel für Ihr Unternehmen sollte eine eigene Prompt-Bibliothek sein: eine Sammlung getesteter, rollenspezifischer Vorlagen, die das ganze Team nutzt: für Vertrieb, HR, Produktion, Marketing und Führung.
               </p>
               <p>
                 Der Unterschied zwischen Einzelprompts und einer Prompt-Bibliothek ist der Unterschied zwischen einem Mitarbeiter, der gelegentlich KI nutzt, und einem Team, das systematisch davon profitiert. In unseren{' '}
@@ -265,7 +266,7 @@ export default async function KiPromptsPage({
             KI-Schulung für Ihr Team. Halber Tag, direkt anwendbar.
             </h2>
             <p className="text-gray-300 font-inter mb-8" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)' }}>
-              In einem halben Tag zeigen wir Ihrem Team, wie sie KI wirklich produktiv einsetzen – mit konkreten Prompts für Ihre Aufgaben. 30 Minuten Erstgespräch. Kostenlos.
+              In einem halben Tag zeigen wir Ihrem Team, wie sie KI wirklich produktiv einsetzen, mit konkreten Prompts für Ihre Aufgaben. 30 Minuten Erstgespräch. Kostenlos.
             </p>
             <a
               href={CALENDLY_URL}

@@ -6,8 +6,8 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
-import FaqAccordion from './FaqAccordion';
-import { BlogPostingSchema } from '@/components/StructuredData';
+import FaqAccordion, { FAQ_ITEMS } from './FaqAccordion';
+import { BlogPostingSchema, FAQPageSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteUrl}/blog/ki-roadmap-illusion-mittelstand` },
   openGraph: {
     title: 'Die KI-Lüge im Mittelstand: Warum der gerade Strich auf der Roadmap eine Illusion ist',
-    description: 'Warum der Weg von der ersten KI-Idee zum produktiven Einsatz nie geradeaus verläuft – und was das für Ihre Planung bedeutet.',
+    description: 'Warum der Weg von der ersten KI-Idee zum produktiven Einsatz nie geradeaus verläuft. Und was das für Ihre Planung bedeutet.',
     url: `${siteUrl}/blog/ki-roadmap-illusion-mittelstand`,
     type: 'article',
     locale: 'de_DE',
@@ -49,6 +49,7 @@ export default async function KiRoadmapIllusionPage({
         datePublished="2026-05-08"
         url="/blog/ki-roadmap-illusion-mittelstand"
       />
+      <FAQPageSchema faqs={FAQ_ITEMS} />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
 
@@ -87,7 +88,7 @@ export default async function KiRoadmapIllusionPage({
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
               <Image
                 src="/images/blog/ki-roadmap-illusion-hero.jpg"
-                alt="Mittelstand-Manager hält einen Projektplan mit geradem Pfeil – dahinter zeigt ein Whiteboard die chaotische Realität von KI-Implementierungen"
+                alt="Mittelstand-Manager hält einen Projektplan mit geradem Pfeil: dahinter zeigt ein Whiteboard die chaotische Realität von KI-Implementierungen"
                 fill
                 className="object-cover"
                 priority

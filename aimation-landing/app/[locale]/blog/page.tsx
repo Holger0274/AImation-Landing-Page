@@ -46,7 +46,7 @@ const ARTICLES = [
   {
     slug: 'bewertungsmethoden-ki-projekte',
     title: 'Wenn RICE nicht reicht: Vier Methoden zur Bewertung von KI-Projekten',
-    excerpt: 'Die RICE-Formel hat blinde Flecken. Vier ergänzende Bewertungsmethoden – Impact-Effort-Matrix, WSJF, AI-Feasibility und Weighted Scoring – im direkten Vergleich an denselben fünf Engineering-Projekten.',
+    excerpt: 'Die RICE-Formel hat blinde Flecken. Vier ergänzende Bewertungsmethoden (Impact-Effort-Matrix, WSJF, AI-Feasibility und Weighted Scoring) im direkten Vergleich an denselben fünf Engineering-Projekten.',
     tag: 'KI-Strategie',
     date: '2026-05-02',
     readingTime: '10 Min.',
@@ -55,7 +55,7 @@ const ARTICLES = [
   {
     slug: 'ki-projekte-priorisierung-rice',
     title: 'Warum Ihr spannendstes KI-Projekt nicht zuerst kommt',
-    excerpt: 'Fünf Ideen, Budget für zwei. Die RICE-Formel aus dem Produktmanagement hilft bei der KI-Priorisierung – wenn man ihre Grenzen kennt. Mit einem konkreten Beispiel aus einer Entwicklungsabteilung.',
+    excerpt: 'Fünf Ideen, Budget für zwei. Die RICE-Formel aus dem Produktmanagement hilft bei der KI-Priorisierung, wenn man ihre Grenzen kennt. Mit einem konkreten Beispiel aus einer Entwicklungsabteilung.',
     tag: 'KI-Strategie',
     date: '2026-04-24',
     readingTime: '11 Min.',
@@ -64,7 +64,7 @@ const ARTICLES = [
   {
     slug: 'ki-projekte-scheitern-fundament',
     title: 'KI-Projekte scheitern nicht am Modell. Sie scheitern an dem, was darunter liegt.',
-    excerpt: 'Warum KI-Einführungen im Mittelstand still im Sand verlaufen – und was zwei echte PoC-Beispiele über Daten, Compliance und Teamwiderstand zeigen. Mit konkreten Schritten für den richtigen Einstieg.',
+    excerpt: 'Warum KI-Einführungen im Mittelstand still im Sand verlaufen. Und was zwei echte PoC-Beispiele über Daten, Compliance und Teamwiderstand zeigen. Mit konkreten Schritten für den richtigen Einstieg.',
     tag: 'KI-Strategie',
     date: '2026-04-20',
     readingTime: '10 Min.',
@@ -73,7 +73,7 @@ const ARTICLES = [
   {
     slug: 'ki-cad-zukunft-jetzt-starten',
     title: 'KI kennt keinen Halt: warum wir bei CAD jetzt starten müssen, auch wenn es noch nicht ausgereift ist.',
-    excerpt: 'Claude Opus 4.7 liest technische Zeichnungen mit 98,5 % Genauigkeit. Ein Kategoriesprung. Warum Konstruktionsabteilungen trotzdem nicht auf Reife warten sollten, und was ein PoC konkret bringt.',
+    excerpt: 'Claude Opus 4.7 verdreifacht die unterstützte Bildauflösung. Ein Kategoriesprung. Warum Konstruktionsabteilungen trotzdem nicht auf Reife warten sollten, und was ein PoC konkret bringt.',
     tag: 'KI-Umsetzung',
     date: '2026-04-19',
     readingTime: '9 Min.',
@@ -100,7 +100,7 @@ const ARTICLES = [
   {
     slug: 'schatten-ki-unternehmen',
     title: 'Schatten-KI in Ihrem Unternehmen: Warum Verbieten nicht funktioniert. Und was stattdessen hilft.',
-    excerpt: '78% Ihrer Mitarbeiter nutzen KI-Tools ohne IT-Freigabe. Verbieten macht es schlimmer. Was Mittelständler stattdessen tun sollten.',
+    excerpt: 'Drei von vier Mitarbeitern nutzen KI-Tools, oft ohne IT-Freigabe. Verbieten macht es schlimmer. Was Mittelständler stattdessen tun sollten.',
     tag: 'KI-Governance',
     date: '2026-03-16',
     readingTime: '7 Min.',

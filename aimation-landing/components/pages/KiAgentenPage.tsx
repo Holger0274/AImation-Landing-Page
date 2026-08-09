@@ -1,47 +1,17 @@
 'use client';
 
-import { useState } from 'react';
 import { Link } from '@/i18n/navigation';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import { UMSETZUNG_LEVELS, UMSETZUNG_LAUFENDE_KOSTEN } from '@/lib/data/pricing';
 import AgentHumanLoop from '@/components/diagrams/AgentHumanLoop';
+import SharedFaqAccordion from '@/components/ui/FaqAccordion';
+import { FAQ_ITEMS } from '@/lib/data/faqs-ki-agenten';
 
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
 
-const FAQ_ITEMS = [
-  { q: 'Ersetzen KI-Agenten Mitarbeiter?', a: 'Nein. Sie ersetzen Routineaufgaben. Der QS-Leiter mit 28 Jahren Erfahrung wird nicht durch einen Agenten ersetzt. Aber sein Wissen wird digital verfügbar, und seine Routineprüfungen kann der Agent übernehmen. Das Ergebnis: Ihr QS-Leiter hat mehr Zeit für die Aufgaben, für die Sie ihn eigentlich eingestellt haben.' },
-  { q: 'Wie zuverlässig sind KI-Agenten?', a: 'Moderne Agenten erreichen bei gut definierten Aufgaben Genauigkeitsraten von über 95%. Aber 95% ist nicht 100%. Deshalb gibt es menschliche Kontrolle: bei kritischen Entscheidungen prüft ein Mensch. Bei Routinetätigkeiten läuft der Agent eigenständig, mit Logging und Eskalation bei Unsicherheit.' },
-  { q: 'Was passiert mit unseren Daten?', a: 'Das bestimmen Sie. Wir bieten Lösungen, die komplett auf Ihren Servern laufen: lokale Sprachmodelle (Ollama), selbst gehostete Orchestrierung (n8n), europäische Cloud-Anbieter. Keine Daten verlassen Ihr Unternehmen, wenn Sie das nicht wollen.' },
-  { q: 'Brauchen wir dafür ein großes IT-Team?', a: 'Für den Aufbau: Nein, das machen wir. Für den Betrieb: Eine technisch affine Person sollte die Systeme im Blick haben. Bei einfacheren Agenten reicht auch ein Power User ohne IT-Hintergrund.' },
-  { q: 'Wie lange dauert es, bis ein Agent produktiv läuft?', a: 'Einen einfachen Agenten haben wir in 2 bis 4 Wochen live. Die erste Woche ist Analyse und Setup, die zweite Implementierung, dann folgen Test und Parallelbetrieb. Bei komplexeren Systemen rechnen Sie mit 8 bis 16 Wochen.' },
-  { q: 'Können wir klein anfangen?', a: 'Sollten Sie sogar. Wir empfehlen: einen Prozess identifizieren, einen PoC bauen, messen, lernen, dann skalieren. Nicht fünf Agenten gleichzeitig in die Produktion drücken.' },
-];
-
 function FaqAccordion() {
-  const [open, setOpen] = useState<number | null>(null);
-  return (
-    <div className="space-y-2">
-      {FAQ_ITEMS.map((item, i) => (
-        <div key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <button
-            onClick={() => setOpen(open === i ? null : i)}
-            className="w-full flex items-center justify-between px-6 py-4 text-left font-heading font-semibold text-[#071013] hover:bg-[#faf9f7] transition-colors"
-            aria-expanded={open === i}
-            style={{ fontSize: 'clamp(0.875rem, 2.2vw, 1rem)' }}
-          >
-            {item.q}
-            <span className={`ml-4 flex-shrink-0 text-[#f90093] transition-transform duration-200 ${open === i ? 'rotate-45' : ''}`}>+</span>
-          </button>
-          {open === i && (
-            <div className="px-6 pb-4">
-              <p className="text-gray-600 font-inter text-sm leading-relaxed">{item.a}</p>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  );
+  return <SharedFaqAccordion items={FAQ_ITEMS} />;
 }
 
 export default function KiAgentenPage() {

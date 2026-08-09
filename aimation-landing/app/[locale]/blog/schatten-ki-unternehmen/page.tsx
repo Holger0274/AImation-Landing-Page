@@ -6,8 +6,8 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
-import FaqAccordion from './FaqAccordion';
-import { BlogPostingSchema } from '@/components/StructuredData';
+import FaqAccordion, { FAQ_ITEMS } from './FaqAccordion';
+import { BlogPostingSchema, FAQPageSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -49,6 +49,7 @@ export default async function SchattenKiPage({
         datePublished="2026-03-16"
         url="/blog/schatten-ki-unternehmen"
       />
+      <FAQPageSchema faqs={FAQ_ITEMS} />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
         {/* ── HERO ── */}
@@ -82,7 +83,7 @@ export default async function SchattenKiPage({
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
               <Image
                 src="/images/blog/schatten-ki-hero.jpg"
-                alt="Schatten-KI im Unternehmen – Mitarbeiter nutzen KI-Tools ohne IT-Freigabe"
+                alt="Schatten-KI im Unternehmen: Mitarbeiter nutzen KI-Tools ohne IT-Freigabe"
                 fill
                 className="object-cover"
                 priority
@@ -110,7 +111,18 @@ export default async function SchattenKiPage({
                 Schatten-KI (englisch: Shadow AI) beschreibt die Nutzung von KI-Tools am Arbeitsplatz ohne offizielle Genehmigung der IT-Abteilung oder Geschäftsführung. Es ist die Weiterentwicklung der bekannten Schatten-IT, aber mit einer völlig neuen Dimension: Während Schatten-IT Infrastruktur betraf (jemand nutzt Dropbox statt des Firmen-Servers), betrifft Schatten-KI die Verarbeitung von Unternehmensdaten und die Qualität von Entscheidungen.
               </p>
               <p>
-                Die Zahlen sind eindeutig: Laut Microsoft-Bericht nutzen weltweit drei von vier Wissensarbeitern KI-Tools am Arbeitsplatz – in Deutschland berichten BCG und ZEW von 60–67 %. In vielen Unternehmen passiert das ohne jede Richtlinie, ohne Freigabe, ohne Dokumentation.
+                Die Zahlen sind eindeutig: Weltweit nutzen drei von vier Wissensarbeitern KI-Tools am Arbeitsplatz, so der{' '}
+                <a href="https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">
+                  Microsoft &amp; LinkedIn Work Trend Index 2024
+                </a>. In Deutschland nutzen laut{' '}
+                <a href="https://www.zew.de/das-zew/aktuelles/beschaeftigte-nutzen-ki-auch-ohne-betriebliche-einfuehrung" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">
+                  ZEW Mannheim
+                </a>{' '}
+                mehr als 60 Prozent der Beschäftigten KI am Arbeitsplatz, laut{' '}
+                <a href="https://www.bcg.com/press/26june2025-bcg-studie-zeigt-zwei-drittel-der-deutschen-nutzen-ki-am-arbeitsplatz" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">
+                  BCG
+                </a>{' '}
+                sind es rund zwei Drittel. In vielen Unternehmen passiert das ohne jede Richtlinie, ohne Freigabe, ohne Dokumentation.
               </p>
 
               <hr className="border-gray-200 my-8" />
@@ -156,7 +168,7 @@ export default async function SchattenKiPage({
 
               <p><strong>Qualitätsrisiken:</strong> KI-Ergebnisse können fehlerhaft, verzerrt oder halluziniert sein. Wenn niemand die Nutzung kennt, prüft auch niemand die Ergebnisse. Ein Angebot mit falschen Spezifikationen, ein Vertragsentwurf mit erfundenen Klauseln, eine Kundenantwort mit falschen Fakten.</p>
 
-              <p><strong>EU AI Act:</strong> Seit Februar 2025 gilt die Pflicht zur KI-Kompetenz (Art. 4) – Unternehmen müssen ihr Personal zu KI schulen und wissen, welche Systeme im Einsatz sind. Vollständige Dokumentationspflichten für Hochrisiko-Anwendungen wie Recruiting oder Kreditvergabe folgen ab 2026. Schatten-KI macht beides unmöglich.</p>
+              <p><strong>EU AI Act:</strong> Seit Februar 2025 gilt die Pflicht zur KI-Kompetenz (<a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">Art. 4 der Verordnung (EU) 2024/1689</a>). Unternehmen müssen ihr Personal zu KI schulen und wissen, welche Systeme im Einsatz sind. Die vollständigen Dokumentationspflichten für Hochrisiko-Anwendungen wie Recruiting oder Kreditvergabe wurden im Zuge des EU-Digital-Omnibus auf Dezember 2027 verschoben, die Pflicht zur KI-Kompetenz gilt aber schon jetzt. Schatten-KI macht beides schwerer.</p>
 
               <hr className="border-gray-200 my-8" />
 

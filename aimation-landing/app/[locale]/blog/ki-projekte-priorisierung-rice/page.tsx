@@ -125,7 +125,7 @@ export default async function RicePriorisierungPage({
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-sm text-white" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>R</span>
-                    <p className="font-heading font-semibold text-[#071013] text-sm">Reach – Reichweite</p>
+                    <p className="font-heading font-semibold text-[#071013] text-sm">Reach: Reichweite</p>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Wie viele Menschen oder Vorgänge sind pro Quartal betroffen? Eine konkrete Zahl, keine vage Andeutung.
@@ -134,7 +134,7 @@ export default async function RicePriorisierungPage({
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-sm text-white" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>I</span>
-                    <p className="font-heading font-semibold text-[#071013] text-sm">Impact – Wirkung</p>
+                    <p className="font-heading font-semibold text-[#071013] text-sm">Impact: Wirkung</p>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Wie stark wirkt die Lösung pro betroffener Einheit? Skala von 3 (massiv) bis 0,25 (minimal).
@@ -143,7 +143,7 @@ export default async function RicePriorisierungPage({
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-sm text-white" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>C</span>
-                    <p className="font-heading font-semibold text-[#071013] text-sm">Confidence – Sicherheit</p>
+                    <p className="font-heading font-semibold text-[#071013] text-sm">Confidence: Sicherheit</p>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Wie sicher sind Sie bei Ihren Schätzungen? 100 % nur bei harten Daten, 50 % oder weniger bei Bauchgefühl. Dieser Faktor ist der heimliche Held der Formel.
@@ -152,7 +152,7 @@ export default async function RicePriorisierungPage({
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-sm text-white" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>E</span>
-                    <p className="font-heading font-semibold text-[#071013] text-sm">Effort – Aufwand</p>
+                    <p className="font-heading font-semibold text-[#071013] text-sm">Effort: Aufwand</p>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Gesamtaufwand in Person-Monaten. Nicht nur Entwicklung, sondern alles: Datenaufbereitung, Integration, Schulung, Einführung.
@@ -556,7 +556,7 @@ export default async function RicePriorisierungPage({
               Welche Ihrer KI-Projekte kommt zuerst?
             </h2>
             <p className="text-gray-300 font-inter mb-8" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)' }}>
-              Ein Use-Case-Workshop mit strukturierter Priorisierung bringt in zwei halben Tagen die Reihenfolge, die Ihnen sonst Monate an Diskussion kostet. Kein Framework-Verkauf, sondern eine ehrliche Landkarte Ihrer Projektlandschaft.
+              Eine KI-Landkarte mit strukturierter Priorisierung bringt in einem Workshop-Tag die Reihenfolge, die Ihnen sonst Monate an Diskussion kostet. Kein Framework-Verkauf, eine ehrliche, priorisierte Landkarte Ihrer Projektlandschaft mit ROI-Schätzung.
             </p>
             <a
               href={CALENDLY_URL}
@@ -569,7 +569,7 @@ export default async function RicePriorisierungPage({
                 fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
               }}
             >
-              Discovery-Gespräch vereinbaren
+              Holen Sie sich Ihre KI-Landkarte
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>

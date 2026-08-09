@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import { Link } from '@/i18n/navigation';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+import SharedFaqAccordion from '@/components/ui/FaqAccordion';
+import { FAQ_ITEMS } from '@/lib/data/faqs-ki-umsetzung';
 
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
 
@@ -66,38 +67,8 @@ const SOLUTION_WORLDS = [
   },
 ];
 
-const FAQ_ITEMS = [
-  { q: 'Was ist der Unterschied zwischen einem Workflow und einem KI-Agenten?', a: 'Ein Workflow folgt festen Regeln: Wenn A, dann B. Ein KI-Agent kann eigenständig entscheiden, Informationen recherchieren und Aufgaben planen, ohne dass jeder Schritt vorprogrammiert ist. Für strukturierte Prozesse reicht oft ein Workflow. Für komplexe Aufgaben mit variablen Inputs brauchen Sie einen Agenten.' },
-  { q: 'Wie lange dauert die Implementierung?', a: 'Ein einfacher Workflow ist in 1-2 Wochen live. Ein RAG-System auf Ihren Dokumenten in 3-6 Wochen. Komplexe Multi-Agent-Systeme in 8-16 Wochen. Wir starten immer mit einem PoC – dann entscheiden Sie, ob Sie skalieren.' },
-  { q: 'Welche Systeme können integriert werden?', a: 'Wir integrieren mit praktisch allem, das eine API hat: SAP, Salesforce, Microsoft 365, Google Workspace, Slack, E-Mail-Server, ERP-Systeme, Produktionsdaten. Und wenn es keine API gibt, bauen wir eine Brücke.' },
-  { q: 'Bleiben unsere Daten in Deutschland?', a: 'Das entscheiden Sie. Wir bieten Lösungen mit deutschen Cloud-Providern, europäischen Modellen (Mistral) oder komplett On-Premise-Setups. DSGVO-Konformität ist Standard, keine Option.' },
-  { q: 'Was kostet ein typisches Implementierungsprojekt?', a: 'Das variiert stark je nach Komplexität. Ein E-Mail-Klassifizierungs-Workflow kostet weniger als ein vollständiges RAG-System mit 50.000 Dokumenten. Wir erstellen nach dem Erstgespräch ein transparentes Angebot mit klarem Scope.' },
-];
-
 function FaqAccordion() {
-  const [open, setOpen] = useState<number | null>(null);
-  return (
-    <div className="space-y-2">
-      {FAQ_ITEMS.map((item, i) => (
-        <div key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <button
-            onClick={() => setOpen(open === i ? null : i)}
-            className="w-full flex items-center justify-between px-6 py-4 text-left font-heading font-semibold text-[#071013] hover:bg-[#faf9f7] transition-colors"
-            aria-expanded={open === i}
-            style={{ fontSize: 'clamp(0.875rem, 2.2vw, 1rem)' }}
-          >
-            {item.q}
-            <span className={`ml-4 flex-shrink-0 text-[#f90093] transition-transform duration-200 ${open === i ? 'rotate-45' : ''}`}>+</span>
-          </button>
-          {open === i && (
-            <div className="px-6 pb-4">
-              <p className="text-gray-600 font-inter text-sm leading-relaxed">{item.a}</p>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  );
+  return <SharedFaqAccordion items={FAQ_ITEMS} />;
 }
 
 export default function KiUmsetzungPage() {

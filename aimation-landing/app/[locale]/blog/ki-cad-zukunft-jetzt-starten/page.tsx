@@ -6,8 +6,8 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
-import FaqAccordion from './FaqAccordion';
-import { BlogPostingSchema } from '@/components/StructuredData';
+import FaqAccordion, { FAQ_ITEMS } from './FaqAccordion';
+import { BlogPostingSchema, FAQPageSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteUrl}/blog/ki-cad-zukunft-jetzt-starten` },
   openGraph: {
     title: 'KI kennt keinen Halt: Warum CAD-Teams jetzt starten müssen',
-    description: 'Claude Opus 4.7 verdreifacht die Bildauflösung – ein Kategoriesprung für Konstruktionsabteilungen. Warum Abwarten die teuerste Strategie ist.',
+    description: 'Claude Opus 4.7 verdreifacht die Bildauflösung. Ein Kategoriesprung für Konstruktionsabteilungen. Warum Abwarten die teuerste Strategie ist.',
     url: `${siteUrl}/blog/ki-cad-zukunft-jetzt-starten`,
     type: 'article',
     locale: 'de_DE',
@@ -49,6 +49,7 @@ export default async function KiCadZukunftPage({
         datePublished="2026-04-19"
         url="/blog/ki-cad-zukunft-jetzt-starten"
       />
+      <FAQPageSchema faqs={FAQ_ITEMS} />
       <Header />
       <main id="main-content" className="bg-[#faf9f7]">
         {/* ── HERO ── */}
@@ -106,7 +107,11 @@ export default async function KiCadZukunftPage({
                 Zwischen dem Release von Claude Opus 4.6 und 4.7 lagen gerade einmal ein paar Monate. Und doch hat sich an einer Sache etwas verschoben, das für die Konstruktionswelt weitreichender ist, als die meisten Ingenieurabteilungen gerade realisieren.
               </p>
               <p className="mb-5">
-                Die unterstützte Bildauflösung wurde mehr als verdreifacht: auf bis zu 3,75 Megapixel. Was das bedeutet: Das Modell kann dichte technische Zeichnungen, enge Bemaßungsketten und Symbolbibliotheken erstmals so auflösen, dass verlässliche Extraktion möglich wird. Das ist kein Inkrement. Das ist ein Kategoriesprung.
+                Laut{' '}
+                <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">
+                  Anthropics Ankündigung zu Claude Opus 4.7
+                </a>{' '}
+                wurde die unterstützte Bildauflösung mehr als verdreifacht: auf bis zu 3,75 Megapixel. Was das bedeutet: Das Modell kann dichte technische Zeichnungen, enge Bemaßungsketten und Symbolbibliotheken erstmals so auflösen, dass verlässliche Extraktion möglich wird. Das ist kein Inkrement. Das ist ein Kategoriesprung.
               </p>
               <p className="mb-5">
                 In diesem Beitrag bringe ich drei Dinge nüchtern zusammen: Was sich konkret verändert hat. Warum das für CAD noch nicht ausgereift ist, aber dennoch ein riesiges Potential bedeutet. Und warum genau das der Grund ist, heute mit Proof of Concepts zu starten. Nicht in einem Jahr.
