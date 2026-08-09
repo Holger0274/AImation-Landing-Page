@@ -10,7 +10,7 @@ const trustBadges = [
   },
   {
     icon: Users,
-    text: '18.000+ LinkedIn-Follower',
+    text: '20.000+ LinkedIn-Follower',
   },
   {
     icon: Factory,

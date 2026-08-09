@@ -397,7 +397,7 @@ Kostenloses Erstgespräch vereinbaren
 ```
 
 **Trust Elements (below CTA):**
-- ✓ 18.000+ LinkedIn-Follower
+- ✓ 20.000+ LinkedIn-Follower
 - ✓ 20 Jahre Engineering-Erfahrung
 - ✓ Für Unternehmen von 10-1000 Mitarbeitern
 
@@ -529,7 +529,7 @@ The landing page consists of 11 carefully orchestrated sections. Full technical 
 7. **Social Proof Section**
    - Goal: Build trust through third parties
    - Tool logos (make.com, n8n, Microsoft)
-   - Animated counters: "20+ Jahre Erfahrung", "18.000+ LinkedIn-Follower"
+   - Animated counters: "20+ Jahre Erfahrung", "20.000+ LinkedIn-Follower"
    - Infinite scroll logo slider
 
 8. **About Section**

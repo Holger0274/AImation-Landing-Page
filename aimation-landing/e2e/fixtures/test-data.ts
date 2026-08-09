@@ -157,7 +157,7 @@ export const heroContent = {
   primaryCTA: 'Kostenloses Erstgespräch vereinbaren',
   secondaryCTA: 'Mehr erfahren',
   trustElements: [
-    '18.000+ LinkedIn-Follower',
+    '20.000+ LinkedIn-Follower',
     '20 Jahre Engineering-Erfahrung',
     'Für Unternehmen von 10-1000 Mitarbeitern',
   ],
@@ -168,7 +168,7 @@ export const heroContent = {
 // ============================================================
 
 export const socialProofCounters = {
-  linkedinFollowers: 18000,
+  linkedinFollowers: 20000,
   yearsExperience: 20,
   minCompanySize: 10,
   maxCompanySize: 1000,

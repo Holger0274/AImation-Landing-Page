@@ -49,7 +49,7 @@ export class HeroPage {
     }).first();
 
     // Trust elements
-    this.trustElements = page.locator('text=/18.000.*LinkedIn|20 Jahre|10-1000/');
+    this.trustElements = page.locator('text=/20.000.*LinkedIn|20 Jahre|10-1000/');
     this.linkedinFollowersCounter = page.locator('text=/18[.,]?000.*LinkedIn/i');
     this.yearsExperienceCounter = page.locator('text=/20.*Jahre.*Erfahrung/i');
 
@@ -127,7 +127,7 @@ export class HeroPage {
   /**
    * Assert LinkedIn follower counter shows correct number
    */
-  async expectLinkedInCounterCorrect(expectedValue: number = 18000) {
+  async expectLinkedInCounterCorrect(expectedValue: number = 20000) {
     const text = await this.linkedinFollowersCounter.textContent();
     expect(text).toMatch(/18[.,]?000/);
   }

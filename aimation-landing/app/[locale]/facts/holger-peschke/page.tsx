@@ -211,7 +211,7 @@ export default async function HolgerPeschkePage({
                 >
                   linkedin.com/in/holgerpeschke
                 </a>
-                {' '}(18.000+ {isEn ? 'Followers' : 'Follower'})
+                {' '}(20.000+ {isEn ? 'Followers' : 'Follower'})
               </dd>
 
               <dt className="font-semibold text-[#071013]">{isEn ? 'Company' : 'Unternehmen'}</dt>

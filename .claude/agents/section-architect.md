@@ -167,7 +167,7 @@ When tasked with building or reviewing a section:
 ### Social Proof (Section 7)
 - Goal: Build trust
 - Tool logos (make.com, n8n, Microsoft, Claude, etc.)
-- Animated counters: "20+ Jahre", "18.000+ Follower"
+- Animated counters: "20+ Jahre", "20.000+ Follower"
 - Infinite scroll logo slider
 
 ### About (Section 8)

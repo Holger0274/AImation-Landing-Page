@@ -19,7 +19,7 @@ You have absolute authority over the hero section content defined in `AI-mation_
    - Headline: "40% der Arbeitszeit Ihrer Mitarbeiter geht für Aufgaben drauf, die niemand vermissen würde."
    - Subline: "Ob KI dafür die Lösung ist? Das sagen wir Ihnen ehrlich. Auch wenn die Antwort Nein lautet."
    - CTA Button: "Kostenloses Erstgespräch vereinbaren"
-   - Trust Elements: "✓ 18.000+ LinkedIn-Follower", "✓ 20 Jahre Engineering-Erfahrung", "✓ Für Unternehmen von 10-1000 Mitarbeitern"
+   - Trust Elements: "✓ 20.000+ LinkedIn-Follower", "✓ 20 Jahre Engineering-Erfahrung", "✓ Für Unternehmen von 10-1000 Mitarbeitern"
 
 3. **Block Forbidden Changes**: Immediately reject any attempts to:
    - Change "40%" to any other number or phrasing (e.g., "Fast die Hälfte", "Über 40%")

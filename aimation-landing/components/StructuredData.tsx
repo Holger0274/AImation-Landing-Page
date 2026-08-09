@@ -62,7 +62,7 @@ export function OrganizationSchema({ siteUrl = 'https://www.aimation.de' }: Orga
       "@id": `${siteUrl}/#holger-peschke`,
       "name": "Holger Peschke",
       "jobTitle": "Gründer & KI-Berater",
-      "description": "20+ Jahre Engineering-Erfahrung in produzierenden Unternehmen. Spezialisiert auf KI-Automatisierung und -Beratung für den Mittelstand. 18.000+ LinkedIn-Follower.",
+      "description": "20+ Jahre Engineering-Erfahrung in produzierenden Unternehmen. Spezialisiert auf KI-Automatisierung und -Beratung für den Mittelstand. 20.000+ LinkedIn-Follower.",
       "image": `${siteUrl}/images/holger-consulting.png`,
       "url": `${siteUrl}/#ueber-mich`,
       "sameAs": ["https://www.linkedin.com/in/holgerpeschke/"],
@@ -326,7 +326,7 @@ export function PersonSchema({ siteUrl = 'https://www.aimation.de' }: Organizati
     "givenName": "Holger",
     "familyName": "Peschke",
     "jobTitle": "KI-Berater & Gründer",
-    "description": "20+ Jahre Engineering-Erfahrung in produzierenden Unternehmen. Spezialisiert auf KI-Automatisierung und -Beratung für den Mittelstand. 18.000+ LinkedIn-Follower. Gründer von AImation.",
+    "description": "20+ Jahre Engineering-Erfahrung in produzierenden Unternehmen. Spezialisiert auf KI-Automatisierung und -Beratung für den Mittelstand. 20.000+ LinkedIn-Follower. Gründer von AImation.",
     "image": `${siteUrl}/images/holger-consulting.png`,
     "url": `${siteUrl}/#ueber-mich`,
     "worksFor": {
@@ -358,7 +358,7 @@ export function PersonSchema({ siteUrl = 'https://www.aimation.de' }: Organizati
       "description": "Beratung, Schulung und Umsetzung von KI-Projekten für kleine und mittlere Unternehmen im DACH-Raum"
     },
     "alumniOf": [],
-    "award": "18.000+ LinkedIn-Follower im Bereich KI und Automatisierung"
+    "award": "20.000+ LinkedIn-Follower im Bereich KI und Automatisierung"
   };
 
   return (

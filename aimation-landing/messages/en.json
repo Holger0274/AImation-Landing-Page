@@ -28,7 +28,7 @@
     "cta": "Free initial consultation",
     "ctaSecondary": "What is this costing you per year? Calculate ROI",
     "ctaMicrocopy": "Free, 30 minutes, no sales pitch.",
-    "trustLine": "20+ years of product development and leadership in industry · 18,000+ LinkedIn followers · GDPR-first"
+    "trustLine": "20+ years of product development and leadership in industry · 20,000+ LinkedIn followers · GDPR-first"
   },
   "painPoints": {
     "badge": "",
@@ -505,7 +505,7 @@
     "mainText": "For 20 years I worked in product development myself and led teams. I know where time is really lost in an engineering department, because I sat in exactly those places myself: in project reviews, in change loops, searching for that one report from three years ago. And AI has been my passion for years, not just since the hype. That combination is AImation: I translate between your engineering world and the AI world. You do not need an interpreter in between.",
     "differentiatorsLabel": "Who I am in 4 sentences",
     "ctaPrimary": "Book a free initial consultation",
-    "ctaLinkedIn": "Follow on LinkedIn. 18,000 followers",
+    "ctaLinkedIn": "Follow on LinkedIn. 20,000 followers",
     "differentiators": [
       "I know your processes, not from books, but because I lived them myself for 20 years.",
       "If AI does not make sense for you, I will tell you that. Even if it costs me the project.",
@@ -578,7 +578,7 @@
     "headlineEnd": "?",
     "subline": "20 years of engineering. Deep inside processes nobody fully understands anymore. That background is our advantage when we build AI solutions today.",
     "badge1": "20+ years engineering experience",
-    "badge2": "18,000+ LinkedIn followers",
+    "badge2": "20,000+ LinkedIn followers",
     "badge3": "Focused on SMEs (10-1000 employees)"
   },
   "faq": {
