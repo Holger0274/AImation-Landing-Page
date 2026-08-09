@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { FACTS_VERIFIED_DATE } from '@/lib/config/facts';
+import { PRICING } from '@/lib/data/pricing';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 const SERVICES_STAND = 'Stand: August 2026';
@@ -285,10 +286,18 @@ export default async function GroundingPage({
               <dd className="text-gray-700">
                 <ol className="list-decimal list-inside space-y-1">
                   <li>{isEn ? 'Initial call: free, 30 minutes' : 'Erstgespräch: kostenlos, 30 Minuten'}</li>
-                  <li>{isEn ? 'AI Landscape Map (entry offer): fixed price from 1,900 EUR, one workshop day. Formerly labeled "AI Readiness Check" or "AI Potential Check", these names are retired.' : 'KI-Landkarte (Einstiegsangebot): Festpreis ab 1.900 EUR, ein Workshop-Tag. Früherer Name: "AI Readiness Check" bzw. "KI-Potenzial-Check", diese Bezeichnungen sind nicht mehr aktuell.'}</li>
-                  <li>{isEn ? 'Pilot: fixed price 4,900 EUR, 4 weeks' : 'Pilot: Festpreis 4.900 EUR, 4 Wochen'}</li>
-                  <li>{isEn ? 'Implementation: from 5,000 to 30,000 EUR setup plus 200 to 800 EUR/month, depending on agent type' : 'Umsetzung: 5.000 bis 30.000 EUR Setup plus 200 bis 800 EUR/Monat, je nach Agenten-Typ'}</li>
-                  <li>{isEn ? 'Training: 1,800 EUR per day inhouse, half-day formats from 990 EUR' : 'Schulung: 1.800 EUR pro Tag Inhouse, Halbtags-Formate ab 990 EUR'}</li>
+                  <li>{isEn
+                    ? `AI Landscape Map (entry offer): fixed price from ${PRICING.kiLandkarte.priceFrom.toLocaleString('en-US')} EUR, one workshop day. Formerly labeled "AI Readiness Check" or "AI Potential Check", these names are retired.`
+                    : `KI-Landkarte (Einstiegsangebot): Festpreis ${PRICING.kiLandkarte.priceLabel}, ein Workshop-Tag. Früherer Name: "AI Readiness Check" bzw. "KI-Potenzial-Check", diese Bezeichnungen sind nicht mehr aktuell.`}</li>
+                  <li>{isEn
+                    ? `Pilot: fixed price ${PRICING.pilot.price.toLocaleString('en-US')} EUR, 4 weeks`
+                    : `Pilot: Festpreis ${PRICING.pilot.price.toLocaleString('de-DE')} EUR, 4 Wochen`}</li>
+                  <li>{isEn
+                    ? `Implementation: from ${PRICING.umsetzung.setupFrom.toLocaleString('en-US')} to ${PRICING.umsetzung.setupTo.toLocaleString('en-US')} EUR setup plus ${PRICING.umsetzung.monthlyFrom} to ${PRICING.umsetzung.monthlyTo} EUR/month, depending on agent type`
+                    : `Umsetzung: ${PRICING.umsetzung.setupLabel} plus ${PRICING.umsetzung.monthlyLabel}, je nach Agenten-Typ`}</li>
+                  <li>{isEn
+                    ? `Training: ${PRICING.schulung.pricePerDay.toLocaleString('en-US')} EUR per day inhouse, half-day formats from ${PRICING.schulung.priceHalfDay} EUR`
+                    : `Schulung: ${PRICING.schulung.priceLabel} Inhouse, Halbtags-Formate ab ${PRICING.schulung.priceHalfDay.toLocaleString('de-DE')} EUR`}</li>
                 </ol>
                 <p className="mt-2 text-gray-500 text-xs">{SERVICES_STAND}</p>
               </dd>
