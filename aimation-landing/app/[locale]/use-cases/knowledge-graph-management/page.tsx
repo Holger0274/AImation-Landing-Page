@@ -118,7 +118,7 @@ export default async function KnowledgeGraphPage({
           </div>
 
           <div className="flex justify-center mb-10">
-            <WissenVorherNachher variant="light" className="w-full max-w-2xl h-auto" />
+            <WissenVorherNachher variant="light" className="w-full max-w-3xl h-auto" />
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 mb-10">

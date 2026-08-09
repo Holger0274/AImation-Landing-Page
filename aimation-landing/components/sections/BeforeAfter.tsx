@@ -182,7 +182,7 @@ export default function BeforeAfter() {
 
         {transformations[activeTransformation].id === 'knowledge' && (
           <div className="flex justify-center mb-10">
-            <WissenVorherNachher variant="light" className="w-full max-w-2xl h-auto" />
+            <WissenVorherNachher variant="light" className="w-full max-w-3xl h-auto" />
           </div>
         )}
 
