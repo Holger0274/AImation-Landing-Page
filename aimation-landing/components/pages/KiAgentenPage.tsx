@@ -28,7 +28,7 @@ export default function KiAgentenPage() {
           </nav>
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-[#f90093] text-xs font-heading font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold mb-6">
             KI-Agenten
           </div>
 
@@ -227,12 +227,12 @@ export default function KiAgentenPage() {
                   <h3 className="font-heading font-semibold text-[#071013] mb-1" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
                     {stufe.title}
                     {stufe.highlight && (
-                      <span className="ml-2 text-xs font-normal text-[#f90093] font-inter">(Sie sind hier)</span>
+                      <span className="ml-2 text-xs font-normal text-[#c2007a] font-inter">(Sie sind hier)</span>
                     )}
                   </h3>
                   <p className="text-gray-600 font-inter text-sm leading-relaxed">{stufe.text}</p>
                   {stufe.link && (
-                    <Link href={stufe.link.href} className="text-[#f90093] text-sm font-inter hover:underline mt-1 inline-block">
+                    <Link href={stufe.link.href} className="text-[#c2007a] text-sm font-inter hover:underline mt-1 inline-block">
                       {stufe.link.label} →
                     </Link>
                   )}
@@ -245,7 +245,7 @@ export default function KiAgentenPage() {
             <p className="text-gray-600 font-inter text-sm">
               <strong className="text-[#071013]">Wo stehen Sie?</strong> Die meisten Mittelständler befinden sich auf Stufe 1 bis 2.
               Der größte Produktivitätssprung liegt oft zwischen Stufe 3 und 5.{' '}
-              <Link href="/ki-beratung-kmu" className="text-[#f90093] hover:underline">
+              <Link href="/ki-beratung-kmu" className="text-[#c2007a] hover:underline">
                 Mit der KI-Landkarte finden Sie es heraus
               </Link>
             </p>
@@ -330,7 +330,7 @@ export default function KiAgentenPage() {
                     <p className="text-gray-600 font-inter text-sm leading-relaxed">{uc.solution}</p>
                   </div>
                   {uc.link && (
-                    <Link href={uc.link.href} className="inline-flex items-center gap-1 text-[#f90093] text-sm font-inter hover:underline mt-2">
+                    <Link href={uc.link.href} className="inline-flex items-center gap-1 text-[#c2007a] text-sm font-inter hover:underline mt-2">
                       {uc.link.label} <ArrowRight className="w-3 h-3" />
                     </Link>
                   )}
@@ -360,7 +360,7 @@ export default function KiAgentenPage() {
               { title: 'Menschliche Kontrolle', role: 'Der "Auftraggeber"', text: 'Jeder Agent arbeitet in einem definierten Rahmen. Entscheidungen ab einer bestimmten Tragweite landen beim Menschen.' },
             ].map((item, i) => (
               <div key={i} className={`bg-white rounded-xl border border-gray-200 p-5 ${i === 4 ? 'sm:col-span-2' : ''}`}>
-                <p className="text-xs font-heading font-semibold text-[#f90093] mb-1">{item.role}</p>
+                <p className="text-xs font-heading font-semibold text-[#c2007a] mb-1">{item.role}</p>
                 <h3 className="font-heading font-semibold text-[#071013] mb-2" style={{ fontSize: 'clamp(0.9rem, 2vw, 1rem)' }}>{item.title}</h3>
                 <p className="text-gray-600 font-inter text-sm leading-relaxed">{item.text}</p>
               </div>
@@ -402,7 +402,7 @@ export default function KiAgentenPage() {
           <div className="p-4 bg-[#faf9f7] rounded-xl border border-gray-200">
             <p className="text-gray-600 font-inter text-sm leading-relaxed">
               <strong className="text-[#071013]">Faustregel:</strong> Ein KI-Agent rechnet sich, wenn er mindestens 20 Stunden manuelle Routinearbeit pro Woche ersetzt oder ab 1.000 wiederkehrende Vorgänge pro Monat automatisiert. Darunter ist eine einfachere Automatisierung oft die bessere Wahl.{' '}
-              <Link href="/ki-automatisierung-mittelstand" className="text-[#f90093] hover:underline">
+              <Link href="/ki-automatisierung-mittelstand" className="text-[#c2007a] hover:underline">
                 Mehr zu Workflow-Automatisierung
               </Link>
             </p>
@@ -455,9 +455,9 @@ export default function KiAgentenPage() {
               </ul>
               <p className="text-gray-500 font-inter text-xs mt-4">
                 In diesen Fällen reicht oft eine{' '}
-                <Link href="/ki-automatisierung-mittelstand" className="text-[#f90093] hover:underline">einfache Automatisierung</Link>
+                <Link href="/ki-automatisierung-mittelstand" className="text-[#c2007a] hover:underline">einfache Automatisierung</Link>
                 {' '}oder eine{' '}
-                <Link href="/ki-schulungen-mittelstand" className="text-[#f90093] hover:underline">Schulung</Link>.
+                <Link href="/ki-schulungen-mittelstand" className="text-[#c2007a] hover:underline">Schulung</Link>.
               </p>
             </div>
           </div>

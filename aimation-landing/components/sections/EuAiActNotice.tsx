@@ -30,7 +30,7 @@ export default function EuAiActNotice() {
           </div>
           <Link
             href="/ki-schulungen-mittelstand"
-            className="flex-shrink-0 inline-flex items-center gap-1.5 text-[#f90093] font-heading font-semibold text-sm hover:underline whitespace-nowrap"
+            className="flex-shrink-0 inline-flex items-center gap-1.5 text-[#c2007a] font-heading font-semibold text-sm hover:underline whitespace-nowrap"
           >
             {t('cta')}
             <ArrowRight className="w-4 h-4" />

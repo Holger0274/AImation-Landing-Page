@@ -18,80 +18,68 @@ interface ROICalculatorProps {
   calendlyUrl?: string;
 }
 
+interface EmailOptInData {
+  email: string;
+  name?: string;
+  company?: string;
+  position?: string;
+}
+
 export default function ROICalculator({
   isOpen,
   onClose,
   calendlyUrl = "https://calendly.com" // Fallback URL
 }: ROICalculatorProps) {
   const [results, setResults] = useState<ROIResults | null>(null);
-  const [inputData, setInputData] = useState<CalculatorInput | null>(null);
-  const [emailData, setEmailData] = useState<{
-    email: string;
-    name?: string;
-    company?: string;
-    position?: string;
-    industry?: string;
-  } | null>(null);
+  const [inputData, setInputData] = useState<(CalculatorInput & { industry?: string }) | null>(null);
 
-  const handleComplete = async (data: CalculatorInput & {
-    email: string;
-    name?: string;
-    company?: string;
-    position?: string;
-    industry?: string;
-  }) => {
-    const { email, name, company, position, industry, ...calculatorInput } = data;
-
-    // Calculate ROI
+  // Das Ergebnis wird sofort nach Abschluss der Eingaben berechnet und angezeigt.
+  // Kein E-Mail-Pflichtfeld davor.
+  const handleCalculatorComplete = (data: CalculatorInput & { industry?: string }) => {
+    const { industry, ...calculatorInput } = data;
     const calculatedResults = calculateROI(calculatorInput);
 
-    // Store data
     setResults(calculatedResults);
-    setInputData(calculatorInput);
-    setEmailData({ email, name, company, position, industry });
+    setInputData({ ...calculatorInput, industry });
+  };
 
-    // Save to database (always, regardless of email)
+  // Optionale Zusatzfunktion auf der Ergebnisseite: Nutzer kann das Ergebnis
+  // freiwillig per E-Mail zugeschickt bekommen. Speichern und Versenden
+  // passieren ausschließlich bei diesem expliziten Opt-in.
+  const handleEmailOptIn = async (leadData: EmailOptInData) => {
+    if (!results || !inputData) return;
+
+    const { industry, ...calculatorInput } = inputData;
+    const payload = {
+      email: leadData.email,
+      name: leadData.name,
+      company: leadData.company,
+      position: leadData.position,
+      industry,
+      input: calculatorInput,
+      results,
+    };
+
+    // Speichern in der Datenbank ist ein Nebeneffekt für den Lead-Datensatz.
+    // Ein Fehler hier soll den Versand der E-Mail an den Nutzer nicht verhindern.
     try {
       await fetch('/api/save-roi-calculation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email,
-          name,
-          company,
-          position,
-          industry,
-          input: calculatorInput,
-          results: calculatedResults,
-        }),
+        body: JSON.stringify(payload),
       });
     } catch (error) {
       console.error('Error saving to database:', error);
     }
 
-    // Send email (only if email provided)
-    if (email) {
-      try {
-        const response = await fetch('/api/send-roi-results', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email,
-            name,
-            company,
-            position,
-            industry,
-            input: calculatorInput,
-            results: calculatedResults,
-          }),
-        });
+    const response = await fetch('/api/send-roi-results', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
 
-        if (!response.ok) {
-          console.error('Failed to send email');
-        }
-      } catch (error) {
-        console.error('Error sending email:', error);
-      }
+    if (!response.ok) {
+      throw new Error('Failed to send email');
     }
   };
 
@@ -104,7 +92,6 @@ export default function ROICalculator({
     // Reset state when closing
     setResults(null);
     setInputData(null);
-    setEmailData(null);
     onClose();
   };
 
@@ -122,7 +109,7 @@ export default function ROICalculator({
         )}
 
         {!results ? (
-          <CalculatorSteps onComplete={handleComplete} />
+          <CalculatorSteps onComplete={handleCalculatorComplete} />
         ) : (
           <ResultsDisplay
             results={results}
@@ -132,6 +119,7 @@ export default function ROICalculator({
               timeframMonths: inputData!.timeframMonths,
             }}
             onBookCall={handleBookCall}
+            onSendEmail={handleEmailOptIn}
           />
         )}
       </DialogContent>

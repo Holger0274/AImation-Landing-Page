@@ -130,7 +130,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               </span>
             </div>
             {project.detailUrl && project.status === 'completed' && (
-              <span className="flex items-center gap-1 text-xs font-medium text-[#f90093] group-hover:gap-2 transition-all duration-200">
+              <span className="flex items-center gap-1 text-xs font-medium text-[#c2007a] group-hover:gap-2 transition-all duration-200">
                 {t('detailsView')}
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />

@@ -122,7 +122,7 @@ export default async function SechsStufenPage({
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#f90093] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
                 KI-Strategie
               </span>
               <span className="text-xs text-gray-400 font-inter">15. März 2025</span>
@@ -140,9 +140,9 @@ export default async function SechsStufenPage({
 
             <p className="text-gray-600 font-inter leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)' }}>
               41% der deutschen Unternehmen setzen KI mittlerweile aktiv ein, im Vorjahr waren es erst 17% ({' '}
-              <a href="https://www.bitkom.org/Presse/Presseinformation/Digitalisierung-der-Wirtschaft-Unternehmen-beschaeftigen-sich-mit-KI" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">Bitkom 2026</a>
+              <a href="https://www.bitkom.org/Presse/Presseinformation/Digitalisierung-der-Wirtschaft-Unternehmen-beschaeftigen-sich-mit-KI" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">Bitkom 2026</a>
               ). Die meisten, die KI nutzen, stecken bei Stufe 1: jemand tippt eine Frage in ChatGPT. Oft ohne dass die IT davon weiß.{' '}
-              <Link href="/blog/schatten-ki-unternehmen" className="text-[#f90093] hover:underline">Warum das ein Problem ist.</Link>
+              <Link href="/blog/schatten-ki-unternehmen" className="text-[#c2007a] hover:underline">Warum das ein Problem ist.</Link>
             </p>
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mt-8">
@@ -239,7 +239,7 @@ export default async function SechsStufenPage({
                       <span className="font-semibold">Nächster Schritt: </span>
                       {stufe.naechsterSchritt.text && stufe.naechsterSchritt.href ? (
                         <>
-                          <Link href={stufe.naechsterSchritt.href} className="text-[#f90093] hover:underline">
+                          <Link href={stufe.naechsterSchritt.href} className="text-[#c2007a] hover:underline">
                             {stufe.naechsterSchritt.text}
                           </Link>
                           {stufe.naechsterSchritt.suffix}
@@ -307,7 +307,7 @@ export default async function SechsStufenPage({
             </div>
             <p className="mt-6 font-inter text-gray-600 text-sm leading-relaxed">
               Für eine fundierte Einordnung gibt es die{' '}
-              <Link href="/ki-beratung-kmu" className="text-[#f90093] hover:underline">KI-Landkarte</Link>
+              <Link href="/ki-beratung-kmu" className="text-[#c2007a] hover:underline">KI-Landkarte</Link>
               : In einem Workshop-Tag wissen Sie, wo Sie stehen und was der nächste sinnvolle Schritt ist.
             </p>
           </div>
@@ -329,7 +329,7 @@ export default async function SechsStufenPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#f90093] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>

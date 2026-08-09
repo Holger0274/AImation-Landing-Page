@@ -53,7 +53,7 @@ export default function ImpressumPage() {
               Kontaktaufnahme
             </h2>
             <p className="text-soft-black leading-relaxed">
-              <strong>E-Mail:</strong> <a href="mailto:kontakt@aimation.de" className="text-magenta hover:underline">kontakt@aimation.de</a><br />
+              <strong>E-Mail:</strong> <a href="mailto:kontakt@aimation.de" className="text-[#c2007a] hover:underline">kontakt@aimation.de</a><br />
               <strong>Telefon:</strong> [Wird ergänzt]
             </p>
           </section>
@@ -63,7 +63,7 @@ export default function ImpressumPage() {
               Weitere Unternehmensinformationen
             </h2>
             <p className="text-soft-black leading-relaxed">
-              Strukturierte Unternehmensdaten, FAQ und Abgrenzung: <a href="/facts/aimation" className="text-magenta hover:underline">Fakten zu AImation UG</a>
+              Strukturierte Unternehmensdaten, FAQ und Abgrenzung: <a href="/facts/aimation" className="text-[#c2007a] hover:underline">Fakten zu AImation UG</a>
             </p>
           </section>
 
@@ -125,7 +125,7 @@ export default function ImpressumPage() {
                 href="https://ec.europa.eu/consumers/odr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-magenta hover:underline"
+                className="text-[#c2007a] hover:underline"
               >
                 https://ec.europa.eu/consumers/odr/
               </a>

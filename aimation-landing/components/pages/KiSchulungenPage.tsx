@@ -65,7 +65,7 @@ export default function KiSchulungenPage() {
             <ChevronRight className="w-4 h-4" />
             <span className="text-[#071013] font-medium">KI-Schulungen für Unternehmen</span>
           </nav>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-[#f90093] text-xs font-heading font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold mb-6">
             Säule 1: Schulungen
           </div>
           <motion.h1
@@ -156,7 +156,7 @@ export default function KiSchulungenPage() {
           {/* Rollen-Matrix */}
           <div className="mt-10">
             <h3 className="font-heading font-bold text-[#071013] text-center mb-6" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.5rem)' }}>
-              Welche Schulung <span className="text-[#f90093]">für wen</span>?
+              Welche Schulung <span className="text-[#c2007a]">für wen</span>?
             </h3>
             <div className="overflow-x-auto rounded-xl border border-gray-200">
               <table className="w-full text-sm font-inter">
@@ -185,7 +185,7 @@ export default function KiSchulungenPage() {
             </p>
             <Link
               href="/#kontakt"
-              className="flex-shrink-0 inline-flex items-center gap-1.5 text-[#f90093] font-heading font-semibold whitespace-nowrap hover:underline"
+              className="flex-shrink-0 inline-flex items-center gap-1.5 text-[#c2007a] font-heading font-semibold whitespace-nowrap hover:underline"
             >
               Holen Sie sich Ihre KI-Landkarte
               <ArrowRight className="w-4 h-4" />

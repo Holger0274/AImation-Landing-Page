@@ -82,7 +82,7 @@ export default function KiUmsetzungPage() {
             <ChevronRight className="w-4 h-4" />
             <span className="text-[#071013] font-medium">KI-Automatisierung für den Mittelstand</span>
           </nav>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-[#f90093] text-xs font-heading font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold mb-6">
             Säule 3: Umsetzung
           </div>
           <motion.h1

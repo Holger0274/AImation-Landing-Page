@@ -65,7 +65,7 @@ export default async function KiProjekteScheiternPage({
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#f90093] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
                 KI-Strategie
               </span>
               <span className="text-xs text-gray-400 font-inter">20. April 2026</span>
@@ -256,7 +256,7 @@ export default async function KiProjekteScheiternPage({
               <div className="space-y-4 mb-8">
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#f90093]">01</span> Widerstehen Sie der Versuchung, mit einer großen Strategie zu starten.
+                    <span className="text-[#c2007a]">01</span> Widerstehen Sie der Versuchung, mit einer großen Strategie zu starten.
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Das ist der teuerste und langsamste Weg zu scheitern. Wählen Sie eine konkrete, begrenzte Frage aus, die heute Zeit oder Geld frisst, und setzen Sie einen PoC dazu auf.
@@ -264,7 +264,7 @@ export default async function KiProjekteScheiternPage({
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#f90093]">02</span> Planen Sie ein, dass die ersten zwei Wochen Überraschungen bringen.
+                    <span className="text-[#c2007a]">02</span> Planen Sie ein, dass die ersten zwei Wochen Überraschungen bringen.
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Datenprobleme, Zuständigkeitslücken, Compliance-Fragen, Skepsis im Team. Das ist kein Zeichen, dass Sie den falschen Anbieter gewählt haben. Das ist der Wert des PoCs. Er zeigt Ihnen das Haus, bevor Sie es umbauen.
@@ -272,7 +272,7 @@ export default async function KiProjekteScheiternPage({
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#f90093]">03</span> Rechnen Sie mit schmutzigen Daten, sich ändernden Anforderungen und langsamer Compliance.
+                    <span className="text-[#c2007a]">03</span> Rechnen Sie mit schmutzigen Daten, sich ändernden Anforderungen und langsamer Compliance.
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Ein ehrliches KI-Audit am Anfang spart am Ende sechsstellige Fehlbeträge. Das gilt für den Mittelständler genauso wie für den Konzern. Ich habe die Abkürzungsversuche über viele Jahre aus der Nähe erlebt.
@@ -311,7 +311,7 @@ export default async function KiProjekteScheiternPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#f90093] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>

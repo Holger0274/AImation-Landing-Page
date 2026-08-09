@@ -98,7 +98,7 @@ export default async function BewertungsmethodenPage({
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#f90093] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
                 KI-Strategie
               </span>
               <span className="text-xs text-gray-400 font-inter">2. Mai 2026</span>
@@ -107,7 +107,7 @@ export default async function BewertungsmethodenPage({
               <span className="text-xs text-gray-400 font-inter">·</span>
               <Link
                 href="/blog/ki-projekte-priorisierung-rice"
-                className="text-xs text-[#f90093] font-inter hover:underline"
+                className="text-xs text-[#c2007a] font-inter hover:underline"
               >
                 Teil 1 lesen →
               </Link>
@@ -168,7 +168,7 @@ export default async function BewertungsmethodenPage({
                       </span>
                       <div>
                         <p className="font-heading font-semibold text-[#071013] text-sm leading-tight">{m.name}</p>
-                        <p className="text-xs text-[#f90093] font-inter mt-0.5">{m.tagline}</p>
+                        <p className="text-xs text-[#c2007a] font-inter mt-0.5">{m.tagline}</p>
                       </div>
                     </div>
                     <p className="text-sm text-gray-600 leading-relaxed">{m.description}</p>
@@ -287,7 +287,7 @@ export default async function BewertungsmethodenPage({
               </p>
               <p className="mb-5">
                 Beim Norm-Checker wirkt sich das sofort aus. Der{' '}
-                <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=OJ%3AL_202401689" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">
+                <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=OJ%3AL_202401689" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">
                   EU AI Act
                 </a>{' '}
                 gilt seit August 2024, die Pflichten für Hochrisiko-Anwendungen wie Norm-Checks wurden durch den EU-Digital-Omnibus zwar auf Dezember 2027 verschoben, die Vorarbeit lohnt sich trotzdem schon jetzt. Ein KI-gestützter Norm-Checker, der Konstruktionen gegen DIN-, ISO- und VDI-Normen prüft, fällt potenziell in diesen Bereich. Das erzeugt echten, messbaren Zeitdruck. User-Business Value 5, Time Criticality 9, Risk Reduction/Opportunity Enablement 9, Job Size 8, WSJF-Score: 2,88. Bei RICE lag dasselbe Projekt auf Platz 4. In der WSJF-Bewertung rückt es in die obere Hälfte.
@@ -415,7 +415,7 @@ export default async function BewertungsmethodenPage({
                           }}
                         />
                       </div>
-                      <span className={`font-heading font-bold text-sm w-10 text-right ${item.top ? 'text-[#f90093]' : 'text-gray-400'}`}>
+                      <span className={`font-heading font-bold text-sm w-10 text-right ${item.top ? 'text-[#c2007a]' : 'text-gray-400'}`}>
                         {item.score.toFixed(2)}
                       </span>
                     </div>
@@ -447,14 +447,14 @@ export default async function BewertungsmethodenPage({
               <div className="grid sm:grid-cols-2 gap-4 my-8">
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">MoSCoW</p>
-                  <p className="text-xs text-[#f90093] font-inter mb-3">Must · Should · Could · Won't</p>
+                  <p className="text-xs text-[#c2007a] font-inter mb-3">Must · Should · Could · Won't</p>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Entwickelt 1994 von Dai Clegg bei Oracle, heute fester Bestandteil agiler Methoden. Für die Priorisierung zwischen strategischen Projekten zu grob, aber hervorragend geeignet, um im ersten Schritt Muss-Projekte von Kann-Projekten zu trennen. Ein Norm-Checker mit EU-AI-Act-Deadline ist ein klares „Must have". Er wandert gar nicht erst in RICE.
                   </p>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">ICE</p>
-                  <p className="text-xs text-[#f90093] font-inter mb-3">Impact · Confidence · Ease</p>
+                  <p className="text-xs text-[#c2007a] font-inter mb-3">Impact · Confidence · Ease</p>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Von Sean Ellis entwickelt, dem Begründer des Growth Hacking. ICE ist der Vorläufer von RICE. RICE ergänzt es um die Reach-Dimension. Für schnelle Experiment-Entscheidungen in kleinen Teams ideal. Für Mittelstands-Budgetentscheidungen fehlt genau dieser Reach-Faktor: Wie viele Vorgänge oder Personen sind betroffen? Das ist oft der Unterschied zwischen Platz 1 und Platz 4.
                   </p>
@@ -553,7 +553,7 @@ export default async function BewertungsmethodenPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#f90093] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>

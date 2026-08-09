@@ -210,7 +210,7 @@ export default async function KnowledgeGraphPage({
             </Link>
             <Link
               href="/#use-cases"
-              className="text-sm font-inter text-[#f90093] hover:underline"
+              className="text-sm font-inter text-[#c2007a] hover:underline"
             >
               Alle Use Cases ansehen →
             </Link>

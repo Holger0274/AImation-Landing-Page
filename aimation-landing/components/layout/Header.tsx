@@ -125,7 +125,7 @@ export default function Header() {
               <button
                 onClick={() => setIsLeistungenOpen(p => !p)}
                 className={`flex items-center gap-1.5 text-sm font-heading font-medium transition-colors focus:outline-none ${
-                  isLeistungenOpen ? 'text-[#f90093]' : 'text-[#071013]/70 hover:text-[#071013]'
+                  isLeistungenOpen ? 'text-[#c2007a]' : 'text-[#071013]/70 hover:text-[#071013]'
                 }`}
                 aria-expanded={isLeistungenOpen}
                 aria-haspopup="true"
@@ -342,7 +342,7 @@ export default function Header() {
                                 <Icon size={15} className="text-[#f90093]" />
                               </div>
                               <div>
-                                <div className="text-sm font-heading font-semibold text-[#071013] group-hover:text-[#f90093] transition-colors">
+                                <div className="text-sm font-heading font-semibold text-[#071013] group-hover:text-[#c2007a] transition-colors">
                                   {item.label}
                                 </div>
                                 <div className="text-[11px] text-[#071013]/45 leading-tight">{item.description}</div>
@@ -359,7 +359,7 @@ export default function Header() {
               <a
                 href={useCasesHref}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#f90093] transition-colors"
+                className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#c2007a] transition-colors"
               >
                 {t('useCases')}
               </a>
@@ -367,7 +367,7 @@ export default function Header() {
               <Link
                 href="/blog"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#f90093] transition-colors"
+                className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#c2007a] transition-colors"
               >
                 {t('blog')}
               </Link>
@@ -375,7 +375,7 @@ export default function Header() {
               <a
                 href="#ueber-mich"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#f90093] transition-colors"
+                className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#c2007a] transition-colors"
               >
                 {t('ueberUns')}
               </a>

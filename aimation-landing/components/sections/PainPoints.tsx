@@ -356,7 +356,7 @@ export default function PainPoints() {
               >
                 <p className="text-[#071013] font-medium leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
                   {t('futureText')}{' '}
-                  <span className="text-[#f90093] font-bold">{t('futureHighlight')}</span>{' '}
+                  <span className="text-[#c2007a] font-bold">{t('futureHighlight')}</span>{' '}
                   {t('futureEnd')}{' '}
                   <span className="font-bold text-[#071013]">{t('futureStrong')}</span> {t('futureEndText')}
                 </p>
@@ -383,7 +383,7 @@ export default function PainPoints() {
                     }, 800);
                   }
                 }}
-                className="inline-flex items-center gap-2 text-[#f90093] font-heading font-semibold hover:underline transition-all group"
+                className="inline-flex items-center gap-2 text-[#c2007a] font-heading font-semibold hover:underline transition-all group"
               >
                 <Calculator className="w-5 h-5" />
                 {t('roiLink')}

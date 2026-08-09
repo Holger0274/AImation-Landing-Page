@@ -113,7 +113,7 @@ export default async function KiPromptsPage({
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#f90093] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
                 Prompt Engineering
               </span>
               <span className="text-xs text-gray-400 font-inter">1. April 2025</span>
@@ -204,7 +204,7 @@ export default async function KiPromptsPage({
               </p>
               <p>
                 Der Unterschied zwischen Einzelprompts und einer Prompt-Bibliothek ist der Unterschied zwischen einem Mitarbeiter, der gelegentlich KI nutzt, und einem Team, das systematisch davon profitiert. In unseren{' '}
-                <Link href="/ki-schulungen-mittelstand" className="text-[#f90093] hover:underline">KI-Schulungen</Link>
+                <Link href="/ki-schulungen-mittelstand" className="text-[#c2007a] hover:underline">KI-Schulungen</Link>
                 {' '}bauen wir genau das gemeinsam auf.
               </p>
 
@@ -218,7 +218,7 @@ export default async function KiPromptsPage({
               </p>
               <p>
                 Das ist kein Argument gegen KI. Es ist ein Argument dafür, KI mit dem richtigen Rahmen einzusetzen: mit klaren Regeln, welche Outputs geprüft werden müssen, und mit einem Team, das weiß, wann man KI vertraut und wann nicht. Das ist genau das, was wir in unserer{' '}
-                <Link href="/ki-beratung-kmu" className="text-[#f90093] hover:underline">KI-Beratung</Link>
+                <Link href="/ki-beratung-kmu" className="text-[#c2007a] hover:underline">KI-Beratung</Link>
                 {' '}erarbeiten.
               </p>
             </div>
@@ -236,7 +236,7 @@ export default async function KiPromptsPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#f90093] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>

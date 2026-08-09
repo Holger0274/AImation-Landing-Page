@@ -40,7 +40,7 @@ export default function DatenschutzPage() {
               Deutschland
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>E-Mail:</strong> <a href="mailto:kontakt@aimation.de" className="text-magenta hover:underline">kontakt@aimation.de</a><br />
+              <strong>E-Mail:</strong> <a href="mailto:kontakt@aimation.de" className="text-[#c2007a] hover:underline">kontakt@aimation.de</a><br />
               <strong>Telefon:</strong> [Wird ergänzt]
             </p>
             <p className="text-soft-black leading-relaxed">
@@ -132,7 +132,7 @@ export default function DatenschutzPage() {
               <strong>Auftragsverarbeitung:</strong> Wir haben mit Supabase einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO abgeschlossen.
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Weitere Informationen:</strong> <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="text-magenta hover:underline">Datenschutzerklärung von Supabase</a>
+              <strong>Weitere Informationen:</strong> <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#c2007a] hover:underline">Datenschutzerklärung von Supabase</a>
             </p>
 
             <h3 className="text-xl font-semibold text-soft-black mb-2 mt-6">
@@ -166,7 +166,7 @@ export default function DatenschutzPage() {
               <strong>Speicherdauer:</strong> Termindaten werden so lange gespeichert, wie der Termin aktiv ist, zuzüglich 3 Jahre für geschäftliche Nachvollziehbarkeit, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Weitere Informationen:</strong> Details zu Calendlys Datenschutzpraktiken finden Sie in der <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer" className="text-magenta hover:underline">Datenschutzerklärung von Calendly</a>.
+              <strong>Weitere Informationen:</strong> Details zu Calendlys Datenschutzpraktiken finden Sie in der <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#c2007a] hover:underline">Datenschutzerklärung von Calendly</a>.
             </p>
 
             <h3 className="text-xl font-semibold text-soft-black mb-2 mt-6">
@@ -211,7 +211,7 @@ export default function DatenschutzPage() {
               <strong>Speicherdauer:</strong> Aggregierte Statistiken werden unbegrenzt gespeichert, enthalten aber keine personenbezogenen Daten mehr.
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Weitere Informationen:</strong> <a href="https://plausible.io/data-policy" target="_blank" rel="noopener noreferrer" className="text-magenta hover:underline">Plausible Data Policy</a>
+              <strong>Weitere Informationen:</strong> <a href="https://plausible.io/data-policy" target="_blank" rel="noopener noreferrer" className="text-[#c2007a] hover:underline">Plausible Data Policy</a>
             </p>
           </section>
 
@@ -310,7 +310,7 @@ export default function DatenschutzPage() {
               91522 Ansbach<br />
               Telefon: 0981 180093-0<br />
               E-Mail: poststelle@lda.bayern.de<br />
-              Website: <a href="https://www.lda.bayern.de" target="_blank" rel="noopener noreferrer" className="text-magenta hover:underline">www.lda.bayern.de</a>
+              Website: <a href="https://www.lda.bayern.de" target="_blank" rel="noopener noreferrer" className="text-[#c2007a] hover:underline">www.lda.bayern.de</a>
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
               Alternativ können Sie sich auch an die Datenschutzbehörde Ihres gewöhnlichen Aufenthaltsortes oder Arbeitsplatzes wenden.
@@ -416,7 +416,7 @@ export default function DatenschutzPage() {
               Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten, bei Auskünften, Berichtigung, Sperrung oder Löschung von Daten sowie Widerruf erteilter Einwilligungen wenden Sie sich bitte an:
             </p>
             <p className="text-soft-black leading-relaxed mt-3">
-              <strong>E-Mail:</strong> <a href="mailto:kontakt@aimation.de" className="text-magenta hover:underline">kontakt@aimation.de</a>
+              <strong>E-Mail:</strong> <a href="mailto:kontakt@aimation.de" className="text-[#c2007a] hover:underline">kontakt@aimation.de</a>
             </p>
           </div>
 

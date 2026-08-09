@@ -230,7 +230,7 @@ export default function ProjectShowcase() {
         <div className="text-center mt-2 mb-8">
           <Link
             href="/use-cases"
-            className="inline-flex items-center gap-1.5 text-[#f90093] font-heading font-semibold hover:underline"
+            className="inline-flex items-center gap-1.5 text-[#c2007a] font-heading font-semibold hover:underline"
           >
             {t('allUseCasesLink')}
             <ArrowRight className="w-4 h-4" />

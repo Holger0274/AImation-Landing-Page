@@ -63,7 +63,7 @@ export default async function RicePriorisierungPage({
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#f90093] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
                 KI-Strategie
               </span>
               <span className="text-xs text-gray-400 font-inter">24. April 2026</span>
@@ -214,7 +214,7 @@ export default async function RicePriorisierungPage({
                 </div>
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <p className="text-xs text-gray-500 font-inter">300 × 3 × 0,75 ÷ 4</p>
-                  <p className="font-heading font-bold text-[#f90093] text-lg">RICE = 168,75</p>
+                  <p className="font-heading font-bold text-[#c2007a] text-lg">RICE = 168,75</p>
                 </div>
               </div>
 
@@ -250,7 +250,7 @@ export default async function RicePriorisierungPage({
                 </div>
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <p className="text-xs text-gray-500 font-inter">400 × 2 × 0,70 ÷ 5</p>
-                  <p className="font-heading font-bold text-[#f90093] text-lg">RICE = 112</p>
+                  <p className="font-heading font-bold text-[#c2007a] text-lg">RICE = 112</p>
                 </div>
               </div>
 
@@ -392,7 +392,7 @@ export default async function RicePriorisierungPage({
                           }}
                         />
                       </div>
-                      <span className={`font-heading font-bold text-sm w-12 text-right ${item.top ? 'text-[#f90093]' : 'text-gray-400'}`}>
+                      <span className={`font-heading font-bold text-sm w-12 text-right ${item.top ? 'text-[#c2007a]' : 'text-gray-400'}`}>
                         {item.score}
                       </span>
                     </div>
@@ -457,7 +457,7 @@ export default async function RicePriorisierungPage({
               <div className="space-y-4 mb-8">
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#f90093]">70 %</span> Operative Quick Wins
+                    <span className="text-[#c2007a]">70 %</span> Operative Quick Wins
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Sie liefern messbare Ergebnisse, bauen Vertrauen auf und finanzieren sich oft selbst. Hier ist RICE der richtige Filter. Diese Projekte rechtfertigen das Budget für die nächste Runde.
@@ -465,7 +465,7 @@ export default async function RicePriorisierungPage({
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#f90093]">30 %</span> Strategische Reserve
+                    <span className="text-[#c2007a]">30 %</span> Strategische Reserve
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Projekte, die RICE niedrig bewertet, die aber Zukunftsfähigkeit schaffen. Kein schneller Ertrag erwartet. Dafür weiß das Team in zwei Jahren, was es tut. Während der Wettbewerb noch Grundlagen lernt.
@@ -490,7 +490,7 @@ export default async function RicePriorisierungPage({
               <div className="space-y-4 mb-8">
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#f90093]">01</span> Bei Confidence besonders ehrlich sein.
+                    <span className="text-[#c2007a]">01</span> Bei Confidence besonders ehrlich sein.
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Das ist der Faktor, der am meisten schiefgeht. Niemand gibt gern zu, sich nicht sicher zu sein. 100 % Confidence ist nur bei harten Daten gerechtfertigt. Bauchgefühl: maximal 50 %.
@@ -498,7 +498,7 @@ export default async function RicePriorisierungPage({
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#f90093]">02</span> Effort vollständig schätzen.
+                    <span className="text-[#c2007a]">02</span> Effort vollständig schätzen.
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Nicht nur die Entwicklung, sondern alles: Datenvorbereitung, Integration, Schulung der Nutzer, Einführungsbegleitung. Wer nur die Coding-Zeit zählt, unterschätzt systematisch.
@@ -506,7 +506,7 @@ export default async function RicePriorisierungPage({
                 </div>
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#f90093]">03</span> Einen Strategie-Slot bewusst reservieren.
+                    <span className="text-[#c2007a]">03</span> Einen Strategie-Slot bewusst reservieren.
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Benennen Sie vor der Priorisierung explizit: "Wir reservieren 30 % für ein Projekt, das RICE niedrig bewertet, das wir aber trotzdem brauchen." Dann die Diskussion führen, welches das ist.
@@ -536,7 +536,7 @@ export default async function RicePriorisierungPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#f90093] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>

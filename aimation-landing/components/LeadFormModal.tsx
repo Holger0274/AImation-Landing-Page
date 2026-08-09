@@ -282,7 +282,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                       href="/datenschutz"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#f90093] underline hover:no-underline"
+                      className="text-[#c2007a] underline hover:no-underline"
                     >
                       {t('datenschutzLink')}
                     </a>{' '}

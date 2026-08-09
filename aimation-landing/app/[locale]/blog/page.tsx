@@ -138,7 +138,7 @@ export default async function BlogOverviewPage({
               <span className="text-[#071013] font-medium">Blog</span>
             </nav>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-[#f90093] text-xs font-heading font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold mb-6">
               Praxiswissen
             </div>
 
@@ -173,7 +173,7 @@ export default async function BlogOverviewPage({
                 </div>
 
                 <h2
-                  className="font-heading font-bold text-[#071013] mb-3 leading-snug group-hover:text-[#f90093] transition-colors"
+                  className="font-heading font-bold text-[#071013] mb-3 leading-snug group-hover:text-[#c2007a] transition-colors"
                   style={{ fontSize: 'clamp(1.1rem, 3vw, 1.375rem)' }}
                 >
                   <Link href={`/blog/${article.slug}`} className="hover:underline focus:outline-none focus-visible:underline">
@@ -188,7 +188,7 @@ export default async function BlogOverviewPage({
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <Link
                     href={`/blog/${article.slug}`}
-                    className="inline-flex items-center gap-2 text-[#f90093] font-heading font-semibold text-sm hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-[#c2007a] font-heading font-semibold text-sm hover:gap-3 transition-all"
                   >
                     Artikel lesen <ArrowRight className="w-4 h-4" />
                   </Link>

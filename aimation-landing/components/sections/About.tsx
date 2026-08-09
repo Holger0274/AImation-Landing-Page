@@ -135,7 +135,7 @@ export default function About() {
             href="https://linkedin.com/in/holgerpeschke"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-heading font-semibold text-magenta underline underline-offset-4"
+            className="text-sm font-heading font-semibold text-[#c2007a] underline underline-offset-4"
           >
             {t('ctaLinkedIn')}
           </a>

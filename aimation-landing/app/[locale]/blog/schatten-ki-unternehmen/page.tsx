@@ -64,7 +64,7 @@ export default async function SchattenKiPage({
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#f90093] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
                 KI-Governance
               </span>
               <span className="text-xs text-gray-400 font-inter">1. März 2025</span>
@@ -112,14 +112,14 @@ export default async function SchattenKiPage({
               </p>
               <p>
                 Die Zahlen sind eindeutig: Weltweit nutzen drei von vier Wissensarbeitern KI-Tools am Arbeitsplatz, so der{' '}
-                <a href="https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">
+                <a href="https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">
                   Microsoft &amp; LinkedIn Work Trend Index 2024
                 </a>. In Deutschland nutzen laut{' '}
-                <a href="https://www.zew.de/das-zew/aktuelles/beschaeftigte-nutzen-ki-auch-ohne-betriebliche-einfuehrung" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">
+                <a href="https://www.zew.de/das-zew/aktuelles/beschaeftigte-nutzen-ki-auch-ohne-betriebliche-einfuehrung" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">
                   ZEW Mannheim
                 </a>{' '}
                 mehr als 60 Prozent der Beschäftigten KI am Arbeitsplatz, laut{' '}
-                <a href="https://www.bcg.com/press/26june2025-bcg-studie-zeigt-zwei-drittel-der-deutschen-nutzen-ki-am-arbeitsplatz" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">
+                <a href="https://www.bcg.com/press/26june2025-bcg-studie-zeigt-zwei-drittel-der-deutschen-nutzen-ki-am-arbeitsplatz" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">
                   BCG
                 </a>{' '}
                 sind es rund zwei Drittel. In vielen Unternehmen passiert das ohne jede Richtlinie, ohne Freigabe, ohne Dokumentation.
@@ -168,7 +168,7 @@ export default async function SchattenKiPage({
 
               <p><strong>Qualitätsrisiken:</strong> KI-Ergebnisse können fehlerhaft, verzerrt oder halluziniert sein. Wenn niemand die Nutzung kennt, prüft auch niemand die Ergebnisse. Ein Angebot mit falschen Spezifikationen, ein Vertragsentwurf mit erfundenen Klauseln, eine Kundenantwort mit falschen Fakten.</p>
 
-              <p><strong>EU AI Act:</strong> Seit Februar 2025 gilt die Pflicht zur KI-Kompetenz (<a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">Art. 4 der Verordnung (EU) 2024/1689</a>). Unternehmen müssen ihr Personal zu KI schulen und wissen, welche Systeme im Einsatz sind. Die vollständigen Dokumentationspflichten für Hochrisiko-Anwendungen wie Recruiting oder Kreditvergabe wurden im Zuge des EU-Digital-Omnibus auf Dezember 2027 verschoben, die Pflicht zur KI-Kompetenz gilt aber schon jetzt. Schatten-KI macht beides schwerer.</p>
+              <p><strong>EU AI Act:</strong> Seit Februar 2025 gilt die Pflicht zur KI-Kompetenz (<a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">Art. 4 der Verordnung (EU) 2024/1689</a>). Unternehmen müssen ihr Personal zu KI schulen und wissen, welche Systeme im Einsatz sind. Die vollständigen Dokumentationspflichten für Hochrisiko-Anwendungen wie Recruiting oder Kreditvergabe wurden im Zuge des EU-Digital-Omnibus auf Dezember 2027 verschoben, die Pflicht zur KI-Kompetenz gilt aber schon jetzt. Schatten-KI macht beides schwerer.</p>
 
               <hr className="border-gray-200 my-8" />
 
@@ -199,7 +199,7 @@ export default async function SchattenKiPage({
               </h3>
               <p>
                 Der wichtigste Schritt: Geben Sie Ihrem Team freigegebene KI-Tools, die genauso bequem sind wie die Schatten-Alternativen. Das kann ein Unternehmens-ChatGPT-Account mit AVV (Auftragsverarbeitungsvertrag) sein. Oder eine{' '}
-                <Link href="/ki-automatisierung-mittelstand" className="text-[#f90093] hover:underline">selbst gehostete Lösung</Link>
+                <Link href="/ki-automatisierung-mittelstand" className="text-[#c2007a] hover:underline">selbst gehostete Lösung</Link>
                 {' '}mit lokalen Modellen, bei der keine Daten Ihr Unternehmen verlassen.
               </p>
               <p>Die offizielle Alternative muss einfacher und besser sein als die Schatten-Lösung. Sonst gewinnt immer der Schatten.</p>
@@ -209,7 +209,7 @@ export default async function SchattenKiPage({
               </h3>
               <p>
                 Ihre Mitarbeiter müssen wissen: Was kann KI? Was kann sie nicht? Welche Daten darf ich eingeben? Wann muss ich Ergebnisse prüfen? Wie erkenne ich Halluzinationen? Das ist kein Einmal-Event, sondern ein laufender Prozess.{' '}
-                <Link href="/ki-schulungen-mittelstand" className="text-[#f90093] hover:underline">Unsere KI-Schulungen für den Mittelstand</Link>
+                <Link href="/ki-schulungen-mittelstand" className="text-[#c2007a] hover:underline">Unsere KI-Schulungen für den Mittelstand</Link>
                 {' '}zeigen, wie das gelingt.
               </p>
 
@@ -240,7 +240,7 @@ export default async function SchattenKiPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#f90093] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>

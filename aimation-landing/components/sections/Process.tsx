@@ -211,7 +211,7 @@ export default function Process() {
                       <h3 className="font-heading font-bold mb-2 text-[#071013]" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
                         {step.title}
                       </h3>
-                      <p className="text-magenta font-heading font-semibold mb-3 line-clamp-1" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
+                      <p className="text-[#c2007a] font-heading font-semibold mb-3 line-clamp-1" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                         {step.subtitle}
                       </p>
                       <p className="text-gray-600 leading-relaxed line-clamp-4" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
@@ -294,7 +294,7 @@ export default function Process() {
                 {/* Content */}
                 <div className="flex-1 bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-heading font-bold mb-1" style={{ fontSize: 'clamp(1rem, 3vw, 1.125rem)' }}>{step.title}</h3>
-                  <p className="text-magenta font-heading font-semibold mb-3" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
+                  <p className="text-[#c2007a] font-heading font-semibold mb-3" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>
                     {step.subtitle}
                   </p>
                   <p className="text-gray-600 mb-4" style={{ fontSize: 'clamp(0.8rem, 2.2vw, 0.875rem)' }}>{step.description}</p>

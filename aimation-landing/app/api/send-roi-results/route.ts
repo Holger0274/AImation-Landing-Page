@@ -9,7 +9,7 @@ interface ROIResultsRequest {
   industry?: string;
   input: {
     useCase: string;
-    package: string;
+    package?: string;
     numEmployees: number;
     hourlyWage: number;
     weeklyHours: number;
@@ -20,13 +20,13 @@ interface ROIResultsRequest {
     priority?: string;
   };
   results: {
-    annualSavings: number;
-    hoursSaved: number;
-    costReduction: number;
-    roiMonths: number;
-    weeklyHoursSaved: number;
-    totalSavings?: number;
-    totalCosts?: number;
+    weeklySavings: number;
+    totalSavings: number;
+    totalInvestment: number;
+    netBenefit: number;
+    roiPercent: number;
+    amortizationMonths: number;
+    productiveWeeks: number;
   };
 }
 
@@ -39,18 +39,15 @@ function formatCurrency(amount: number): string {
   }).format(amount);
 }
 
-function formatNumber(num: number): string {
-  return new Intl.NumberFormat('de-DE').format(num);
-}
-
-function getPriorityLabel(priority: string): string {
+function getUseCaseLabel(useCase: string): string {
   const labels: Record<string, string> = {
-    documentation: 'Dokumentation',
-    email: 'E-Mail-Kommunikation',
-    research: 'Recherche',
-    reporting: 'Reporting',
+    knowledge: 'Wissenssicherung',
+    requests: 'Technische Anfragen und Änderungsanträge',
+    research: 'Recherche: Patente, Normen, Markt',
+    documentation: 'Berichte und Dokumentation',
+    custom: 'Eigene Werte',
   };
-  return labels[priority] || priority;
+  return labels[useCase] || useCase;
 }
 
 function createEmailHTML(data: ROIResultsRequest): string {
@@ -87,13 +84,13 @@ function createEmailHTML(data: ROIResultsRequest): string {
               <tr>
                 <td style="padding: 40px 30px; text-align: center; background: linear-gradient(to bottom, #f3f4f6, #ffffff);">
                   <p style="color: #6b7280; font-size: 14px; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 1px;">
-                    🎯 Jährliches Einsparpotenzial
+                    Netto-Nutzen im Betrachtungszeitraum
                   </p>
                   <p style="color: #f90093; font-size: 56px; font-weight: bold; margin: 0 0 10px 0; line-height: 1;">
-                    ${formatCurrency(results.annualSavings)}
+                    ${results.netBenefit >= 0 ? '+' : ''}${formatCurrency(results.netBenefit)}
                   </p>
                   <p style="color: #6b7280; font-size: 14px; margin: 0;">
-                    pro Jahr durch KI-Automatisierung
+                    über ${input.timeframMonths} Monate, nach Abzug aller Kosten
                   </p>
                 </td>
               </tr>
@@ -104,25 +101,22 @@ function createEmailHTML(data: ROIResultsRequest): string {
                   <table width="100%" cellpadding="0" cellspacing="0">
                     <tr>
                       <td width="33%" style="padding: 20px; text-align: center; border-right: 1px solid #e5e7eb;">
-                        <p style="color: #f90093; font-size: 14px; margin: 0 0 5px 0;">⏱</p>
                         <p style="color: #071013; font-size: 28px; font-weight: bold; margin: 0 0 5px 0;">
-                          ${formatNumber(results.hoursSaved)}
+                          ${formatCurrency(results.weeklySavings)}
                         </p>
-                        <p style="color: #6b7280; font-size: 12px; margin: 0;">Stunden/Jahr</p>
+                        <p style="color: #6b7280; font-size: 12px; margin: 0;">Einsparung/Woche</p>
                       </td>
                       <td width="33%" style="padding: 20px; text-align: center; border-right: 1px solid #e5e7eb;">
-                        <p style="color: #f90093; font-size: 14px; margin: 0 0 5px 0;">💰</p>
                         <p style="color: #071013; font-size: 28px; font-weight: bold; margin: 0 0 5px 0;">
-                          ${results.costReduction}%
+                          ${results.roiPercent >= 0 ? '+' : ''}${results.roiPercent}%
                         </p>
-                        <p style="color: #6b7280; font-size: 12px; margin: 0;">Kostenreduktion</p>
+                        <p style="color: #6b7280; font-size: 12px; margin: 0;">Return on Investment</p>
                       </td>
                       <td width="33%" style="padding: 20px; text-align: center;">
-                        <p style="color: #f90093; font-size: 14px; margin: 0 0 5px 0;">📈</p>
                         <p style="color: #071013; font-size: 28px; font-weight: bold; margin: 0 0 5px 0;">
-                          ${results.roiMonths}
+                          ${results.amortizationMonths < 999 ? results.amortizationMonths : '∞'}
                         </p>
-                        <p style="color: #6b7280; font-size: 12px; margin: 0;">Monate bis ROI</p>
+                        <p style="color: #6b7280; font-size: 12px; margin: 0;">Monate bis Amortisation</p>
                       </td>
                     </tr>
                   </table>
@@ -138,7 +132,7 @@ function createEmailHTML(data: ROIResultsRequest): string {
                     </p>
                     <ul style="color: #6b7280; font-size: 14px; margin: 0; padding-left: 20px;">
                       <li style="margin-bottom: 8px;">${input.numEmployees} Mitarbeiter im Unternehmen</li>
-                      <li style="margin-bottom: 8px;">Schwerpunkt: ${getPriorityLabel(input.priority ?? input.useCase ?? '')}</li>
+                      <li style="margin-bottom: 8px;">Use Case: ${getUseCaseLabel(input.useCase)}</li>
                       <li>Durchschnittlicher Stundenlohn: ${formatCurrency(input.hourlyWage)}</li>
                     </ul>
                   </div>
@@ -164,7 +158,7 @@ function createEmailHTML(data: ROIResultsRequest): string {
               <tr>
                 <td style="background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
                   <p style="color: #071013; font-size: 18px; font-weight: bold; margin: 0 0 10px 0;">
-                    AI<span style="color: #f90093;">.</span>mation
+                    AI<span style="color: #c2007a;">.</span>mation
                   </p>
                   <p style="color: #6b7280; font-size: 12px; margin: 0 0 15px 0;">
                     Automatisierung mit Intelligenz
@@ -214,7 +208,7 @@ export async function POST(request: NextRequest) {
     const emailResult = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'noreply@ai-mation.de',
       to: data.email,
-      subject: `Ihr KI-Potenzial: ${formatCurrency(data.results.annualSavings)} Einsparpotenzial`,
+      subject: `Ihre ROI-Berechnung: ${data.results.netBenefit >= 0 ? '+' : ''}${formatCurrency(data.results.netBenefit)} Netto-Nutzen`,
       html: emailHtml,
     });
 
@@ -229,8 +223,8 @@ export async function POST(request: NextRequest) {
           <p><strong>E-Mail:</strong> ${data.email}</p>
           <p><strong>Name:</strong> ${data.name || 'Nicht angegeben'}</p>
           <p><strong>Mitarbeiter:</strong> ${data.input.numEmployees}</p>
-          <p><strong>Schwerpunkt:</strong> ${getPriorityLabel(data.input.priority || data.input.useCase || '')}</p>
-          <p><strong>Berechnetes Potenzial:</strong> ${formatCurrency(data.results.annualSavings)}/Jahr</p>
+          <p><strong>Use Case:</strong> ${getUseCaseLabel(data.input.useCase)}</p>
+          <p><strong>Netto-Nutzen:</strong> ${formatCurrency(data.results.netBenefit)}</p>
         `,
       });
     }

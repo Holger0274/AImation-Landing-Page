@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Check, Calculator, Mail, Sparkles, Tag } from "lucide-react";
+import { ArrowRight, Check, Calculator, Tag } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,10 +21,6 @@ import {
 
 interface CalculatorStepsProps {
   onComplete: (data: CalculatorInput & {
-    email: string;
-    name?: string;
-    company?: string;
-    position?: string;
     industry?: string;
   }) => void;
 }
@@ -42,10 +38,6 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
     monthlyCost: "",
     timeframMonths: "",
     rampUpMonths: "",
-    email: "",
-    name: "",
-    company: "",
-    position: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -117,13 +109,6 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
           newErrors.rampUpMonths = "Anlaufzeit muss kürzer als Gesamtzeitraum sein";
         }
         break;
-
-      case 8: // Email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!formData.email || !emailRegex.test(formData.email)) {
-          newErrors.email = "Bitte geben Sie eine gültige E-Mail-Adresse ein";
-        }
-        break;
     }
 
     setErrors(newErrors);
@@ -132,8 +117,8 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
 
   const handleNext = () => {
     if (validateStep(currentStep)) {
-      if (currentStep === 8) {
-        // Last step - submit
+      if (currentStep === totalSteps) {
+        // Last input step - calculation happens immediately, no email required
         onComplete({
           useCase: formData.useCase,
           package: formData.package,
@@ -144,10 +129,6 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
           monthlyCost: Number(formData.monthlyCost),
           timeframMonths: Number(formData.timeframMonths),
           rampUpMonths: Number(formData.rampUpMonths),
-          email: formData.email,
-          name: formData.name,
-          company: formData.company,
-          position: formData.position,
           industry: formData.industry,
         });
       } else {
@@ -169,7 +150,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
     }
   };
 
-  const totalSteps = 8;
+  const totalSteps = 7;
 
   return (
     <div className="w-full max-w-2xl mx-auto">
@@ -546,93 +527,6 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
             </div>
           )}
 
-          {/* Step 8: Email Gate */}
-          {currentStep === 8 && (
-            <div className="py-8">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-magenta/20 flex items-center justify-center">
-                <Mail className="w-8 h-8 text-magenta" />
-              </div>
-              <h3 className="text-3xl font-bold font-heading text-white mb-3 text-center">
-                Ihre Berechnung ist fast <span className="text-magenta">fertig</span>!
-              </h3>
-              <p className="text-xl text-gray-400 font-body mb-8 text-center">
-                Fast geschafft: Wohin dürfen wir Ihr Ergebnis senden?
-              </p>
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2 font-body">
-                    E-Mail-Adresse <span className="text-magenta">*</span>
-                  </label>
-                  <Input
-                    type="email"
-                    placeholder="ihre.email@firma.de"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    onKeyPress={handleKeyPress}
-                    error={!!errors.email}
-                    errorMessage={errors.email}
-                    autoFocus
-                    className="text-lg"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2 font-body">
-                    Name <span className="text-gray-500">(optional)</span>
-                  </label>
-                  <Input
-                    type="text"
-                    placeholder="Ihr Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    onKeyPress={handleKeyPress}
-                    className="text-lg"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2 font-body">
-                    Firmenname <span className="text-gray-500">(optional)</span>
-                  </label>
-                  <Input
-                    type="text"
-                    placeholder="z.B. Mustermann GmbH"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    onKeyPress={handleKeyPress}
-                    className="text-lg"
-                  />
-                  <p className="text-xs text-gray-400 font-body mt-1">
-                    Hilft uns, bessere Empfehlungen zu geben
-                  </p>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2 font-body">
-                    Position / Rolle <span className="text-gray-500">(optional)</span>
-                  </label>
-                  <select
-                    value={formData.position}
-                    onChange={(e) => setFormData({ ...formData, position: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white font-body text-lg focus:outline-none focus:ring-2 focus:ring-magenta focus:border-transparent transition-all"
-                  >
-                    <option value="">Bitte wählen...</option>
-                    <option value="ceo">Geschäftsführer / Inhaber</option>
-                    <option value="department_head">Abteilungsleiter</option>
-                    <option value="it_head">IT-Leiter</option>
-                    <option value="process_owner">Prozessverantwortlicher</option>
-                    <option value="other">Sonstige</option>
-                  </select>
-                  <p className="text-xs text-gray-400 font-body mt-1">
-                    Hilft uns, relevante Informationen bereitzustellen
-                  </p>
-                </div>
-              </div>
-              <div className="mt-6 flex items-start gap-3 p-4 bg-gray-900/50 rounded-lg border border-gray-800">
-                <Sparkles className="w-5 h-5 text-magenta flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-gray-400 font-body">
-                  <strong className="text-white">Ihre Daten sind sicher.</strong> Wir verwenden Ihre E-Mail nur, um Ihnen das Ergebnis zu senden. DSGVO-konform, kein Spam.
-                </p>
-              </div>
-            </div>
-          )}
         </motion.div>
       </AnimatePresence>
 
@@ -652,7 +546,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
             size="lg"
             className="flex-1 bg-gradient-to-r from-magenta to-[#ff4ecd] hover:opacity-90 text-white font-heading glow-magenta"
           >
-            {currentStep === 8 ? 'Ergebnis per E-Mail erhalten' : 'Weiter'}
+            {currentStep === totalSteps ? 'Ergebnis anzeigen' : 'Weiter'}
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>

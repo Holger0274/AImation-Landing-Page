@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { TrendingUp, Clock, Euro, Target, Calendar, Percent, ExternalLink, TrendingDown } from "lucide-react";
+import { TrendingUp, Clock, Euro, Calendar, Percent, ExternalLink, TrendingDown, Mail, Loader2, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
-import { ROIResults, formatCurrency, formatNumber, getUseCaseLabel, UseCaseType } from "./calculations";
+import { ROIResults, formatCurrency, getUseCaseLabel, UseCaseType } from "./calculations";
 
 interface ResultsDisplayProps {
   results: ROIResults;
@@ -16,67 +17,33 @@ interface ResultsDisplayProps {
     timeframMonths: number;
   };
   onBookCall: () => void;
+  onSendEmail: (data: { email: string }) => Promise<void>;
 }
 
-export default function ResultsDisplay({ results, inputData, onBookCall }: ResultsDisplayProps) {
-  const [showAnimation, setShowAnimation] = useState(true);
+type EmailStatus = 'idle' | 'submitting' | 'success' | 'error';
 
-  useEffect(() => {
-    // Show loading animation for 5 seconds
-    const timer = setTimeout(() => {
-      setShowAnimation(false);
-    }, 5000);
+export default function ResultsDisplay({ results, inputData, onBookCall, onSendEmail }: ResultsDisplayProps) {
+  const [email, setEmail] = useState("");
+  const [emailStatus, setEmailStatus] = useState<EmailStatus>('idle');
+  const [emailError, setEmailError] = useState("");
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (showAnimation) {
-    return (
-      <div className="flex flex-col items-center justify-center py-16">
-        <motion.div
-          className="w-24 h-24 rounded-full bg-gradient-to-br from-magenta to-[#ff4ecd] flex items-center justify-center mb-8"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <TrendingUp className="w-12 h-12 text-white" />
-        </motion.div>
-
-        <div className="text-center space-y-4">
-          <motion.h3
-            className="text-2xl font-bold font-heading text-white"
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            Wir berechnen Ihr ROI...
-          </motion.h3>
-
-          <div className="space-y-2 text-gray-400 font-body">
-            {[
-              "Use Case analysieren...",
-              "Kostenstruktur berechnen...",
-              "ROI ermitteln...",
-            ].map((text, index) => (
-              <motion.p
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: index * 1.5, duration: 0.5 }}
-              >
-                {text}
-              </motion.p>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      setEmailError("Bitte geben Sie eine gültige E-Mail-Adresse ein");
+      return;
+    }
+    setEmailError("");
+    setEmailStatus('submitting');
+    try {
+      await onSendEmail({ email });
+      setEmailStatus('success');
+    } catch (error) {
+      console.error('Error sending ROI results by email:', error);
+      setEmailStatus('error');
+    }
+  };
 
   const isPositiveROI = results.netBenefit > 0;
 
@@ -226,6 +193,67 @@ export default function ResultsDisplay({ results, inputData, onBookCall }: Resul
               </span>
             </div>
           </div>
+        </CardContent>
+      </Card>
+
+      {/* Optionaler Zusatz: Ergebnis per E-Mail. Kein Pflichtfeld, das Ergebnis oben steht bereits fest. */}
+      <Card className="bg-gray-900/30 border-gray-800 mb-8">
+        <CardContent className="pt-6 pb-6">
+          {emailStatus === 'success' ? (
+            <div className="flex items-center gap-3 text-green-400">
+              <CheckCircle2 className="w-6 h-6 flex-shrink-0" />
+              <p className="font-body text-sm">
+                Gesendet. Die Berechnung liegt gleich in Ihrem Postfach.
+              </p>
+            </div>
+          ) : (
+            <>
+              <div className="flex items-center gap-2 mb-2">
+                <Mail className="w-5 h-5 text-magenta flex-shrink-0" />
+                <h4 className="text-lg font-bold font-heading text-white">
+                  Ergebnis als PDF erhalten?
+                </h4>
+              </div>
+              <p className="text-sm text-gray-300 font-body mb-4">
+                Tragen Sie Ihre E-Mail ein, ich schicke Ihnen die Berechnung mit einer kurzen persönlichen Einordnung.
+              </p>
+              <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3">
+                <Input
+                  type="email"
+                  placeholder="ihre.email@firma.de"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  error={!!emailError}
+                  errorMessage={emailError}
+                  disabled={emailStatus === 'submitting'}
+                  className="flex-1"
+                />
+                <Button
+                  type="submit"
+                  variant="outline"
+                  disabled={emailStatus === 'submitting'}
+                  className="border-gray-700 text-white hover:bg-gray-800 whitespace-nowrap"
+                >
+                  {emailStatus === 'submitting' ? (
+                    <>
+                      <Loader2 className="mr-2 w-4 h-4 animate-spin" />
+                      Wird gesendet
+                    </>
+                  ) : (
+                    'Ergebnis zusenden'
+                  )}
+                </Button>
+              </form>
+              {emailStatus === 'error' && (
+                <p className="text-sm text-red-400 font-body mt-2">
+                  Das hat leider nicht funktioniert. Versuchen Sie es später noch einmal oder buchen Sie direkt ein Erstgespräch.
+                </p>
+              )}
+              <p className="text-xs text-gray-500 font-body mt-3">
+                Ihre Daten sind sicher. Wir verwenden Ihre E-Mail nur für diesen Versand. DSGVO-konform, kein Spam.
+              </p>
+            </>
+          )}
         </CardContent>
       </Card>
 

@@ -64,7 +64,7 @@ export default async function KiCadZukunftPage({
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#f90093] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
                 KI-Umsetzung
               </span>
               <span className="text-xs text-gray-400 font-inter">19. April 2026</span>
@@ -108,7 +108,7 @@ export default async function KiCadZukunftPage({
               </p>
               <p className="mb-5">
                 Laut{' '}
-                <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">
+                <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">
                   Anthropics Ankündigung zu Claude Opus 4.7
                 </a>{' '}
                 wurde die unterstützte Bildauflösung mehr als verdreifacht: auf bis zu 3,75 Megapixel. Was das bedeutet: Das Modell kann dichte technische Zeichnungen, enge Bemaßungsketten und Symbolbibliotheken erstmals so auflösen, dass verlässliche Extraktion möglich wird. Das ist kein Inkrement. Das ist ein Kategoriesprung.
@@ -300,7 +300,7 @@ export default async function KiCadZukunftPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#f90093] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
