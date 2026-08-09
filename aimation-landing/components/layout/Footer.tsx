@@ -6,7 +6,7 @@ import { getTranslations } from 'next-intl/server';
 export default async function Footer() {
   const t = await getTranslations('footer');
   const currentYear = new Date().getFullYear();
-  const lastUpdated = new Date('2026-06-04'); // Update dieses Datum bei Content-Änderungen
+  const lastUpdated = new Date('2026-08-09'); // Update dieses Datum bei Content-Änderungen
   const formattedDate = lastUpdated.toLocaleDateString('de-DE', {
     year: 'numeric',
     month: 'long',
