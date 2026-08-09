@@ -11,6 +11,7 @@ import { PilotSection } from '@/components/sections/PilotSection';
 import SelfBuilt from '@/components/sections/SelfBuilt';
 import EuAiActNotice from '@/components/sections/EuAiActNotice';
 import About from '@/components/sections/About';
+import Partnership from '@/components/sections/Partnership';
 import FAQ from '@/components/sections/FAQ';
 import { faqs } from '@/lib/data/faqs';
 import FinalCTA from '@/components/sections/FinalCTA';
@@ -66,6 +67,7 @@ export default async function Home({
         <SelfBuilt />
         <EuAiActNotice />
         <About />
+        <Partnership />
         <FAQ />
         <FinalCTA />
       </main>

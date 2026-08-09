@@ -513,6 +513,11 @@
       "Training, consulting, implementation from one hand. One contact, one call."
     ]
   },
+  "partnership": {
+    "kicker": "In partnership with",
+    "body": "For knowledge management projects, we use the U-KNOW.AI platform. It prepares company data in stages before the AI accesses it: answers with source citations instead of hallucinations, GDPR-compliant, available on-premises too.",
+    "link": "Visit U-KNOW.AI"
+  },
   "whyAImation": {
     "badge": "Why AImation?",
     "headline": "Not yet another",

@@ -513,6 +513,11 @@
       "Schulung, Beratung, Umsetzung aus einer Hand. Ein Ansprechpartner, ein Anruf."
     ]
   },
+  "partnership": {
+    "kicker": "In Partnerschaft mit",
+    "body": "Für Wissensmanagement-Projekte setzen wir die Plattform von U-KNOW.AI ein. Sie bereitet Unternehmensdaten stufenweise auf, bevor die KI darauf zugreift: Antworten mit Quellenangabe statt Halluzinationen, DSGVO-konform, auch On-Premises.",
+    "link": "Zu U-KNOW.AI"
+  },
   "whyAImation": {
     "badge": "Warum AImation?",
     "headline": "Nicht noch eine",
