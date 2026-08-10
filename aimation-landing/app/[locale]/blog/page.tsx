@@ -35,6 +35,15 @@ const breadcrumbs = [
 
 const ARTICLES = [
   {
+    slug: 'prozessdokumentation-ki-transkript',
+    title: 'Prozessdokumentation ohne Wochen Vorlauf: aus einem Gespräch wird in Stunden eine Verfahrensanweisung',
+    excerpt: 'Ein 45-Minuten-Gespräch, KI-gestützt strukturiert, ergibt rund 80 Prozent einer fertigen Verfahrensanweisung. Die restlichen 20 Prozent kommen aus einem zweiten, kürzeren Gespräch. Ein Arbeitstag statt drei Wochen.',
+    tag: 'KI-Umsetzung',
+    date: '2026-08-10',
+    readingTime: '8 Min.',
+    relatedPillar: { label: 'KI-Umsetzung', href: '/ki-automatisierung-mittelstand' },
+  },
+  {
     slug: 'ki-roadmap-illusion-mittelstand',
     title: 'Die KI-Lüge im Mittelstand: Warum der gerade Strich auf der Roadmap eine Illusion ist.',
     excerpt: 'Vier Boxen, drei Pfeile, ein gerader Kurs. Auf dem Whiteboard wirkt das überzeugend. Ein Maschinenbauer mit 350 Mitarbeitern und vier veralteten Lastenheft-Versionen zeigt, wie der Pfeil in der Realität aussieht.',
