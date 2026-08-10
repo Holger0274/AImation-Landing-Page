@@ -105,14 +105,44 @@ export default function Hero() {
 
   return (
     <section
-      className="w-full overflow-hidden pt-20 pb-10 sm:pt-28 sm:pb-16 min-h-[90vh] lg:min-h-screen flex flex-col justify-center max-w-full"
-      style={{
-        backgroundColor: '#faf9f7',
-        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
-        backgroundSize: '72px 72px',
-      }}
+      className="relative w-full overflow-hidden pt-20 pb-10 sm:pt-28 sm:pb-16 min-h-[90vh] lg:min-h-screen flex flex-col justify-center max-w-full"
+      style={{ backgroundColor: '#faf9f7' }}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      {/* Layer 1: dekoratives Hintergrundbild, technische Zeichnung/CAD/Bauteile-Szene (KI-generiert, siehe Spec 08 Update 2026-08-10) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "url('/images/hero-bg-technical.webp')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center right',
+          opacity: 0.22,
+          zIndex: 0,
+        }}
+      />
+
+      {/* Layer 2: Fade zurück zu Warm White auf der Textseite, sichert Lesbarkeit von H1/Subline */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(90deg, #faf9f7 0%, #faf9f7 12%, rgba(250,249,247,0.35) 30%, rgba(250,249,247,0) 50%)',
+          zIndex: 1,
+        }}
+      />
+
+      {/* Layer 3: Punkte-Raster, liegt über dem Hintergrundbild */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+          backgroundSize: '72px 72px',
+          zIndex: 2,
+        }}
+      />
+
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
         {/* Badge — volle Breite, über dem Grid */}
         <motion.div

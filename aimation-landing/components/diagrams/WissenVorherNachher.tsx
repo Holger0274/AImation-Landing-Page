@@ -1,32 +1,70 @@
+import {
+  Mail,
+  Cloud,
+  Brain,
+  FileText,
+  NotebookText,
+  Folder,
+  BookOpen,
+  Database,
+  Boxes,
+  BrainCircuit,
+  UserCheck,
+  type LucideIcon,
+} from 'lucide-react';
+
 interface WissenVorherNachherProps {
   variant?: 'light' | 'dark';
   className?: string;
 }
 
-const BEFORE_PANEL = { x: 16, y: 48, width: 260, height: 250 };
-const AFTER_PANEL = { x: 324, y: 48, width: 260, height: 250 };
+const ICONS: Record<string, LucideIcon> = {
+  'E-Mail': Mail,
+  SharePoint: Cloud,
+  Kopf: Brain,
+  PDF: FileText,
+  OneNote: NotebookText,
+  Ordner: Folder,
+  Wiki: BookOpen,
+  ERP: Database,
+  PDM: Boxes,
+};
 
+const BEFORE_PANEL = { x: 16, y: 48, width: 290, height: 340 };
+const AFTER_PANEL = { x: 374, y: 48, width: 290, height: 340 };
+
+// Vorher: organisches 3x3-Raster mit Jitter und leichter Rotation je Knoten,
+// verstärkt den "verstreut/unsortiert"-Eindruck, ohne dass Icons oder Labels sich berühren.
 const BEFORE_NODES = [
-  { x: 79, y: 108, label: 'E-Mail' },
-  { x: 148, y: 96, label: 'SharePoint' },
-  { x: 213, y: 122, label: 'Kopf' },
-  { x: 72, y: 182, label: 'PDF' },
-  { x: 152, y: 176, label: 'OneNote' },
-  { x: 210, y: 196, label: 'Ordner' },
-  { x: 128, y: 246, label: 'Wiki' },
+  { x: 62, y: 84, label: 'E-Mail', rotate: -7 },
+  { x: 155, y: 94, label: 'SharePoint', rotate: 5 },
+  { x: 266, y: 86, label: 'ERP', rotate: -5 },
+  { x: 54, y: 220, label: 'Kopf', rotate: -4 },
+  { x: 166, y: 209, label: 'OneNote', rotate: -6 },
+  { x: 261, y: 217, label: 'PDM', rotate: 6 },
+  { x: 61, y: 312, label: 'PDF', rotate: 6 },
+  { x: 157, y: 322, label: 'Ordner', rotate: 4 },
+  { x: 268, y: 315, label: 'Wiki', rotate: -3 },
 ];
 
-// Hub-and-Spoke: sechs Silos hexagonal um den zentralen Pruef-Knoten angeordnet.
-// labelDy steuert die Textposition entlang des Radius (weg vom Knotenmittelpunkt),
-// damit kein Label auf einer Verbindungslinie liegt.
-const AFTER_HUB = { x: 454, y: 173, label: 'Ingenieur prüft' };
+// KI-Betriebssystem als zentraler Struktur-Layer: acht Datenquellen speisen den Hub,
+// der Hub wiederum ist über eine einzelne, deutlich abgesetzte Leitung mit dem Ingenieur
+// verbunden (kein Direktzugriff auf Rohdaten). Oktagon um 22.5° gedreht, damit oben und
+// unten je eine freie Schneise entsteht (Label oben, Ingenieur-Leitung unten). Radius und
+// Abstand zum Ingenieur-Knoten sind bewusst großzügig (siehe Kommentar bei ENGINEER_NODE).
+const AFTER_HUB = { x: 519, y: 165, label: 'KI-Betriebssystem' };
+// 160px Leitung zum Hub, 68px Kantenabstand zum nächsten Spoke: liest sich als eigene,
+// klar abgesetzte zweite Ebene statt als neunter Spoke im selben Cluster.
+const ENGINEER_NODE = { x: 519, y: 325, label: 'Ingenieur' };
 const AFTER_SPOKES = [
-  { x: 454, y: 101, label: 'SharePoint', labelDy: -18 },
-  { x: 516, y: 137, label: 'Wiki', labelDy: 24 },
-  { x: 516, y: 209, label: 'PDF', labelDy: 24 },
-  { x: 454, y: 245, label: 'Ordner', labelDy: 24 },
-  { x: 392, y: 209, label: 'OneNote', labelDy: 24 },
-  { x: 392, y: 137, label: 'E-Mail', labelDy: 24 },
+  { x: 591, y: 195, label: 'PDF', labelDy: 26 },
+  { x: 549, y: 237, label: 'Ordner', labelDy: 26 },
+  { x: 489, y: 237, label: 'OneNote', labelDy: 26 },
+  { x: 447, y: 195, label: 'E-Mail', labelDy: 26 },
+  { x: 447, y: 135, label: 'Wiki', labelDy: -20 },
+  { x: 489, y: 93, label: 'SharePoint', labelDy: -20 },
+  { x: 549, y: 93, label: 'ERP', labelDy: -20 },
+  { x: 591, y: 135, label: 'PDM', labelDy: -20 },
 ];
 
 export default function WissenVorherNachher({ variant = 'light', className }: WissenVorherNachherProps) {
@@ -36,6 +74,7 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
   const shadowColor = isDark ? 'rgba(0,0,0,0.45)' : 'rgba(7,16,19,0.12)';
   const nodeFill = isDark ? 'rgba(255,255,255,0.10)' : '#eef0f2';
   const nodeStroke = isDark ? 'rgba(255,255,255,0.45)' : 'rgba(7,16,19,0.4)';
+  const iconColorBefore = isDark ? 'rgba(255,255,255,0.6)' : '#6b7280';
   const labelColor = isDark ? 'rgba(255,255,255,0.7)' : '#4b5563';
   const beforeCaption = isDark ? 'rgba(255,255,255,0.5)' : '#9ca3af';
   const accent = '#60AFFF';
@@ -43,12 +82,12 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
 
   return (
     <svg
-      viewBox="0 0 600 316"
+      viewBox="0 0 680 410"
       className={className}
       role="img"
-      aria-label="Wissen vorher und nachher: links sieben unverbundene Wissenssilos wie E-Mail, SharePoint, PDF und OneNote, rechts ein Wissens-Netzwerk mit dem Knoten Ingenieur prüft im Zentrum"
+      aria-label="Wissen vorher und nachher: links neun unverbundene Wissenssilos wie E-Mail, SharePoint, ERP und PDM, rechts ein KI-Betriebssystem, das alle Datenquellen strukturiert und den Ingenieur darüber anbindet"
     >
-      <title>Wissen vorher unverbunden, nachher vernetzt</title>
+      <title>Wissen vorher unverbunden, nachher über ein KI-Betriebssystem strukturiert</title>
       <defs>
         <filter id="wvnShadow" x="-30%" y="-30%" width="160%" height="160%">
           <feDropShadow dx="0" dy="3" stdDeviation="4" floodColor={shadowColor} />
@@ -82,55 +121,163 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
       {/* Panels */}
       <rect {...BEFORE_PANEL} rx={16} fill={panelFill} stroke={panelStroke} strokeWidth={1.5} filter="url(#wvnShadow)" />
       <rect {...AFTER_PANEL} rx={16} fill={panelFill} stroke={panelStroke} strokeWidth={1.5} filter="url(#wvnShadow)" />
+      {/* Farbcodierter Panel-Akzent: grau = unsortiert, magenta = strukturiert */}
+      <rect x={BEFORE_PANEL.x} y={BEFORE_PANEL.y} width={BEFORE_PANEL.width} height={4} rx={2} fill={beforeCaption} opacity={0.5} />
+      <rect x={AFTER_PANEL.x} y={AFTER_PANEL.y} width={AFTER_PANEL.width} height={4} rx={2} fill={focus} />
 
       {/* Transformation Arrow */}
-      <circle cx={300} cy={173} r={18} fill={focus} filter="url(#wvnShadow)" />
-      <text x={300} y={180} textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight={700} fontSize={18} fill="#ffffff">
+      <circle cx={340} cy={218} r={18} fill={focus} filter="url(#wvnShadow)" />
+      <text x={340} y={225} textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight={700} fontSize={18} fill="#ffffff">
         &#8594;
       </text>
 
-      {/* Vorher: isolierte Knoten, keine Verbindungen */}
-      {BEFORE_NODES.map((n) => (
-        <g key={`before-${n.label}`}>
-          <circle cx={n.x} cy={n.y} r={10} fill={nodeFill} stroke={nodeStroke} strokeWidth={1.5} />
-          <text x={n.x} y={n.y + 24} textAnchor="middle" fontFamily="Inter, sans-serif" fontSize={10.5} fill={labelColor}>
-            {n.label}
-          </text>
-        </g>
+      {/* Vorher: isolierte, leicht verdrehte Knoten, keine Verbindungen */}
+      {BEFORE_NODES.map((n) => {
+        const Icon = ICONS[n.label];
+        return (
+          <g key={`before-${n.label}`} transform={`rotate(${n.rotate} ${n.x} ${n.y})`}>
+            <circle cx={n.x} cy={n.y} r={12} fill={nodeFill} stroke={nodeStroke} strokeWidth={1.5} filter="url(#wvnShadow)" />
+            <foreignObject x={n.x - 7.5} y={n.y - 7.5} width={15} height={15}>
+              <Icon size={15} color={iconColorBefore} strokeWidth={1.75} />
+            </foreignObject>
+            <text x={n.x} y={n.y + 27} textAnchor="middle" fontFamily="Inter, sans-serif" fontSize={10.5} fill={labelColor}>
+              {n.label}
+            </text>
+          </g>
+        );
+      })}
+
+      {/* Nachher: Hub-and-Spoke Netzwerk, zeichnet sich beim Laden ein */}
+      {AFTER_SPOKES.map((n, i) => {
+        const length = Math.hypot(n.x - AFTER_HUB.x, n.y - AFTER_HUB.y);
+        return (
+          <line
+            key={`edge-${n.label}`}
+            x1={AFTER_HUB.x}
+            y1={AFTER_HUB.y}
+            x2={n.x}
+            y2={n.y}
+            stroke={accent}
+            strokeWidth={2}
+            opacity={0.6}
+            strokeDasharray={length}
+            strokeDashoffset={length}
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              from={length}
+              to={0}
+              dur="0.8s"
+              begin={`${0.15 * i}s`}
+              fill="freeze"
+            />
+          </line>
+        );
+      })}
+
+      {/* Wissens-Impulse: laufen dauerhaft von jeder Datenquelle zum KI-Betriebssystem */}
+      {AFTER_SPOKES.map((n, i) => (
+        <circle key={`pulse-${n.label}`} r={3} fill={focus} opacity={0.85}>
+          <animateMotion
+            dur="2.4s"
+            begin={`${1 + i * 0.35}s`}
+            repeatCount="indefinite"
+            path={`M${n.x},${n.y} L${AFTER_HUB.x},${AFTER_HUB.y}`}
+          />
+          <animate
+            attributeName="opacity"
+            values="0;0.9;0"
+            dur="2.4s"
+            begin={`${1 + i * 0.35}s`}
+            repeatCount="indefinite"
+          />
+        </circle>
       ))}
 
-      {/* Nachher: Hub-and-Spoke Netzwerk */}
-      {AFTER_SPOKES.map((n) => (
-        <line
-          key={`edge-${n.label}`}
-          x1={AFTER_HUB.x}
-          y1={AFTER_HUB.y}
-          x2={n.x}
-          y2={n.y}
-          stroke={accent}
-          strokeWidth={2}
-          opacity={0.6}
+      {AFTER_SPOKES.map((n) => {
+        const Icon = ICONS[n.label];
+        return (
+          <g key={`after-${n.label}`}>
+            <circle cx={n.x} cy={n.y} r={12} fill="rgba(96,175,255,0.14)" stroke={accent} strokeWidth={1.8} filter="url(#wvnShadow)" />
+            <foreignObject x={n.x - 7.5} y={n.y - 7.5} width={15} height={15}>
+              <Icon size={15} color={accent} strokeWidth={1.9} />
+            </foreignObject>
+            <text x={n.x} y={n.y + n.labelDy} textAnchor="middle" fontFamily="Inter, sans-serif" fontSize={10.5} fontWeight={500} fill={labelColor}>
+              {n.label}
+            </text>
+          </g>
+        );
+      })}
+
+      {/* Verbindung Hub zu Ingenieur: einzige Leitung nach außen, kein Direktzugriff auf Rohdaten.
+          Läuft exakt senkrecht (x=519) durch die freie Schneise des Oktagons, kreuzt keine Spoke-Linie. */}
+      {(() => {
+        const length = Math.hypot(ENGINEER_NODE.x - AFTER_HUB.x, ENGINEER_NODE.y - AFTER_HUB.y);
+        return (
+          <line
+            x1={AFTER_HUB.x}
+            y1={AFTER_HUB.y}
+            x2={ENGINEER_NODE.x}
+            y2={ENGINEER_NODE.y}
+            stroke={isDark ? 'rgba(255,255,255,0.55)' : '#071013'}
+            strokeWidth={2.5}
+            opacity={0.7}
+            strokeDasharray={length}
+            strokeDashoffset={length}
+          >
+            <animate attributeName="stroke-dashoffset" from={length} to={0} dur="0.8s" begin="1.2s" fill="freeze" />
+          </line>
+        );
+      })()}
+      {/* Antwort-Impuls: läuft dauerhaft vom KI-Betriebssystem zum Ingenieur, Gegenrichtung zu den Daten-Impulsen */}
+      <circle r={3.5} fill={isDark ? '#ffffff' : '#071013'} opacity={0.85}>
+        <animateMotion
+          dur="2.4s"
+          begin="2s"
+          repeatCount="indefinite"
+          path={`M${AFTER_HUB.x},${AFTER_HUB.y} L${ENGINEER_NODE.x},${ENGINEER_NODE.y}`}
         />
-      ))}
-      {AFTER_SPOKES.map((n) => (
-        <g key={`after-${n.label}`}>
-          <circle cx={n.x} cy={n.y} r={10} fill="rgba(96,175,255,0.14)" stroke={accent} strokeWidth={1.8} />
-          <text x={n.x} y={n.y + n.labelDy} textAnchor="middle" fontFamily="Inter, sans-serif" fontSize={10.5} fontWeight={500} fill={labelColor}>
-            {n.label}
-          </text>
-        </g>
-      ))}
-      {/* Blickdichte Fuellung: verdeckt die 6 im Zentrum zusammenlaufenden Linien vollstaendig */}
-      <circle cx={AFTER_HUB.x} cy={AFTER_HUB.y} r={14} fill={isDark ? '#3d0a24' : '#fde7f3'} stroke={focus} strokeWidth={2.5} filter="url(#wvnShadow)" />
-      {/* Label-Chip: deckt die Linie zum unteren Spoke ab, damit Text nicht auf der Linie liegt.
-          Bewusst schmal (94px) gehalten, damit er die benachbarten OneNote/PDF-Knoten nicht anschneidet. */}
-      <rect x={AFTER_HUB.x - 47} y={AFTER_HUB.y + 19} width={94} height={20} rx={6} fill={panelFill} />
+        <animate attributeName="opacity" values="0;0.9;0" dur="2.4s" begin="2s" repeatCount="indefinite" />
+      </circle>
+
+      {/* Ingenieur: einziger Zugang, verbunden über das KI-Betriebssystem statt direkt mit den Rohdaten.
+          Deutlich abgesetzt vom Ring (siehe Kommentar bei ENGINEER_NODE), damit er als eigene Ebene liest. */}
+      <circle cx={ENGINEER_NODE.x} cy={ENGINEER_NODE.y} r={14} fill={nodeFill} stroke={isDark ? 'rgba(255,255,255,0.6)' : '#071013'} strokeWidth={1.8} filter="url(#wvnShadow)" />
+      <foreignObject x={ENGINEER_NODE.x - 8.5} y={ENGINEER_NODE.y - 8.5} width={17} height={17}>
+        <UserCheck size={17} color={isDark ? '#ffffff' : '#071013'} strokeWidth={1.9} />
+      </foreignObject>
       <text
-        x={AFTER_HUB.x}
-        y={AFTER_HUB.y + 32}
+        x={ENGINEER_NODE.x}
+        y={ENGINEER_NODE.y + 30}
         textAnchor="middle"
         fontFamily="Space Grotesk, sans-serif"
-        fontSize={11}
+        fontSize={11.5}
+        fontWeight={700}
+        fill={isDark ? '#ffffff' : '#071013'}
+      >
+        {ENGINEER_NODE.label}
+      </text>
+
+      {/* Radar-Ping: pulsierender Ring um das KI-Betriebssystem, signalisiert eingehende Synthese */}
+      <circle cx={AFTER_HUB.x} cy={AFTER_HUB.y} r={16} fill="none" stroke={focus} strokeWidth={2}>
+        <animate attributeName="r" values="16;28;16" dur="2.4s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite" />
+      </circle>
+      {/* Blickdichte Fuellung: verdeckt die acht im Zentrum zusammenlaufenden Linien vollstaendig */}
+      <circle cx={AFTER_HUB.x} cy={AFTER_HUB.y} r={16} fill={isDark ? '#3d0a24' : '#fde7f3'} stroke={focus} strokeWidth={2.5} filter="url(#wvnShadow)" />
+      <foreignObject x={AFTER_HUB.x - 8.5} y={AFTER_HUB.y - 8.5} width={17} height={17}>
+        <BrainCircuit size={17} color={focus} strokeWidth={1.9} />
+      </foreignObject>
+
+      {/* Label-Chip oberhalb des Hubs: sitzt in der schmalen Lücke zwischen Hub und den beiden
+          oberen Spokes (rechnerisch geprüft, min. 9px Abstand zu jedem Knoten), kreuzt keine Linie. */}
+      <rect x={AFTER_HUB.x - 50} y={AFTER_HUB.y - 37} width={100} height={14} rx={6} fill={panelFill} />
+      <text
+        x={AFTER_HUB.x}
+        y={AFTER_HUB.y - 26}
+        textAnchor="middle"
+        fontFamily="Space Grotesk, sans-serif"
+        fontSize={10}
         fontWeight={700}
         fill={focus}
       >

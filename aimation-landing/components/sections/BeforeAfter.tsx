@@ -7,6 +7,8 @@ import { useTranslations } from 'next-intl';
 import { useLeadForm } from '@/components/LeadFormProvider';
 import QktTriangle from '@/components/diagrams/QktTriangle';
 import WissenVorherNachher from '@/components/diagrams/WissenVorherNachher';
+import AgentHumanLoop from '@/components/diagrams/AgentHumanLoop';
+import ResearchRadar from '@/components/diagrams/ResearchRadar';
 
 const transformationIds = ['knowledge', 'workflow', 'research'] as const;
 
@@ -183,6 +185,18 @@ export default function BeforeAfter() {
         {transformations[activeTransformation].id === 'knowledge' && (
           <div className="flex justify-center mb-10">
             <WissenVorherNachher variant="light" className="w-full max-w-3xl h-auto" />
+          </div>
+        )}
+
+        {transformations[activeTransformation].id === 'workflow' && (
+          <div className="flex justify-center mb-10 overflow-x-auto">
+            <AgentHumanLoop variant="light" className="w-full max-w-2xl h-auto" />
+          </div>
+        )}
+
+        {transformations[activeTransformation].id === 'research' && (
+          <div className="flex justify-center mb-10">
+            <ResearchRadar variant="light" className="w-full max-w-xl h-auto" />
           </div>
         )}
 

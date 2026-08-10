@@ -35,7 +35,11 @@ Quelle: AImation Design System v3 / Visual Identity. Die Website folgt diesem Sy
 
 **Ist:** Der Hero zeigt eine Collage generischer Fotos (Engineering-Schreibtisch, Laptop, Mann am Projektboard mit pinken Post-its). Wirkt austauschbar und beweist nichts. Widerspricht der Build-in-Public-Positionierung.
 
-**Soll:** Die Collage wird ersetzt durch **einen** echten Produkt-Screenshot im Browser-Rahmen (Wissens-Graph: Frage oben, Antwort mit Quellenangabe darunter, passend zum Anker Wissenssicherung aus Spec 03). Asset kommt aus der TODO-Liste von Spec 04 (Holger liefert). Übergangsregel bis das Asset da ist: aktuelle Collage bleibt, aber im Code als `TODO: replace with real product screenshot` markiert. **Keine neuen Stock- oder KI-generierten Agentur-Fotos, nirgends auf der Site.** Erlaubte Bildtypen ab jetzt: echte System-Screenshots, echte Fotos von Holger, Diagramme nach Punkt 3.
+**Soll:** Die Collage wird als **Beweis-Element** ersetzt durch **einen** echten Produkt-Screenshot im Browser-Rahmen (Wissens-Graph: Frage oben, Antwort mit Quellenangabe darunter, passend zum Anker Wissenssicherung aus Spec 03). Asset kommt aus der TODO-Liste von Spec 04 (Holger liefert). Übergangsregel bis das Asset da ist: aktuelle Collage bleibt, aber im Code als `TODO: replace with real product screenshot` markiert.
+
+**Update 2026-08-10:** Unterscheidung zwischen Beweis-Bildern und Atmosphäre-Bildern eingeführt. **Beweis-Bilder** (Screenshots, die etwas über die Arbeit von AImation behaupten) müssen echt sein: echte System-Screenshots oder echte Fotos von Holger, nie Stock oder KI-generiert. **Ein rein atmosphärisches Hintergrundbild** im Hero (z.B. technische Zeichnung, Blueprint, Bauteil, Code-Ausschnitt), das erkennbar Stimmung erzeugt und nicht als Beweis oder Systemabbildung ausgegeben wird, darf KI-generiert sein, sofern es fotorealistisch, hochwertig und klar dem Brand-Farbsystem (Soft Black/Warm White/Magenta-Akzent, siehe Tabelle oben) untergeordnet ist, insbesondere transparent/niedrige Deckkraft, damit Warm White dominant bleibt und Text lesbar. Weiterhin verboten: generische Stock-/KI-Fotos, die als Beweis präsentiert werden (Menschen am Whiteboard, Handshake-Motive, generische Büroszenen als "so arbeiten wir"-Aussage).
+
+Erlaubte Bildtypen ab jetzt: echte System-Screenshots (Beweis), echte Fotos von Holger (Beweis), Diagramme nach Punkt 3, ein dekoratives KI-generiertes Hero-Hintergrundbild (Atmosphäre, siehe oben).
 
 ## 3. Diagramm-System einführen
 
@@ -70,7 +74,7 @@ Umsetzungshinweis: Es existieren Bestands-SVGs im Brand-Kontext (Customer Journe
 
 1. Magenta-Audit abgeschlossen, keine dekorativen Magenta-Elemente mehr (außer den zwei definierten Ausnahmen).
 2. Vier Diagramme (D1 bis D4) sind gebaut, im Brand-Stil, responsive, mit aria-Labels, und an den definierten Orten eingebunden.
-3. Hero-Collage ist ersetzt oder als TODO markiert; keine neuen Stock-Fotos im gesamten Diff.
+3. Hero-Collage (Beweis-Screenshot) ist ersetzt oder als TODO markiert; keine neuen Stock-/KI-Fotos als Beweis im gesamten Diff. Ein dekoratives, KI-generiertes Hero-Hintergrundbild (Atmosphäre) ist davon ausgenommen, siehe Punkt 2.
 4. LinkedIn-Preview (OG-Tags + Bild) funktioniert für Startseite, alle Leistungsseiten und mindestens einen Blog-Artikel (mit einem OG-Debugger oder manuellem Meta-Check verifiziert).
 5. Alle Bilder haben alt-Texte, Lazy Loading und Dimensionen; Bild-Budget dokumentiert.
 6. `18.000+` statt `17,998+`, keine englischen Zahlenformate mehr in Textknoten.

@@ -9,11 +9,17 @@ export default function QktTriangle({ variant = 'light', className }: QktTriangl
   const mutedFill = isDark ? 'rgba(255,255,255,0.08)' : '#eef0f2';
   const shadowColor = isDark ? 'rgba(0,0,0,0.45)' : 'rgba(7,16,19,0.16)';
   const accent = '#60AFFF';
+  const focus = '#f90093';
 
   const top = { x: 100, y: 30, label: 'Qualität' };
   const left = { x: 26, y: 176, label: 'Kosten' };
   const right = { x: 174, y: 176, label: 'Timing' };
   const points = [top, left, right];
+  const centroid = {
+    x: (top.x + left.x + right.x) / 3,
+    y: (top.y + left.y + right.y) / 3,
+  };
+  const motionPath = `M${top.x},${top.y} L${right.x},${right.y} L${left.x},${left.y} Z`;
 
   return (
     <svg
@@ -32,6 +38,7 @@ export default function QktTriangle({ variant = 'light', className }: QktTriangl
           <feDropShadow dx="0" dy="3" stdDeviation="4" floodColor={shadowColor} />
         </filter>
       </defs>
+
       <polygon
         points={`${top.x},${top.y} ${left.x},${left.y} ${right.x},${right.y}`}
         fill="url(#qktFill)"
@@ -40,7 +47,24 @@ export default function QktTriangle({ variant = 'light', className }: QktTriangl
         strokeLinejoin="round"
         filter="url(#qktShadow)"
       />
+
+      {/* Blueprint-Guides: Zentrum zu den drei Ecken, dezent gestrichelt */}
       {points.map((p) => (
+        <line
+          key={`guide-${p.label}`}
+          x1={centroid.x}
+          y1={centroid.y}
+          x2={p.x}
+          y2={p.y}
+          stroke={accent}
+          strokeWidth={1}
+          strokeDasharray="2.5 4"
+          opacity={isDark ? 0.35 : 0.4}
+        />
+      ))}
+      <circle cx={centroid.x} cy={centroid.y} r={2.5} fill={accent} opacity={0.6} />
+
+      {points.map((p, i) => (
         <g key={p.label}>
           <circle
             cx={p.x}
@@ -49,7 +73,15 @@ export default function QktTriangle({ variant = 'light', className }: QktTriangl
             fill={accent}
             stroke={isDark ? 'none' : '#ffffff'}
             strokeWidth={isDark ? 0 : 3}
-          />
+          >
+            <animate
+              attributeName="r"
+              values="7.5;9;7.5"
+              dur="3s"
+              begin={`${i * 0.4}s`}
+              repeatCount="indefinite"
+            />
+          </circle>
           <text
             x={p.x}
             y={p === top ? p.y - 18 : p.y + 28}
@@ -63,6 +95,14 @@ export default function QktTriangle({ variant = 'light', className }: QktTriangl
           </text>
         </g>
       ))}
+
+      {/* Wanderpunkt: läuft dauerhaft die drei Konten ab, einzige Magenta-Fokus-Ausnahme im Diagramm */}
+      <circle r={6.5} fill={isDark ? '#071013' : '#ffffff'}>
+        <animateMotion dur="6s" repeatCount="indefinite" path={motionPath} />
+      </circle>
+      <circle r={4.5} fill={focus}>
+        <animateMotion dur="6s" repeatCount="indefinite" path={motionPath} />
+      </circle>
     </svg>
   );
 }
