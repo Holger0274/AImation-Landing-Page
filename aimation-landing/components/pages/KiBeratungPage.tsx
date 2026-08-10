@@ -7,7 +7,7 @@ import { PRICING } from '@/lib/data/pricing';
 import SharedFaqAccordion from '@/components/ui/FaqAccordion';
 import { FAQ_ITEMS } from '@/lib/data/faqs-ki-beratung';
 
-const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
+const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/erstgespraech';
 
 const BERATUNG_PHASES = [
   {

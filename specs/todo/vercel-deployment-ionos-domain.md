@@ -44,7 +44,7 @@ Bevor du auf **Deploy** klickst, scrolle zu **Environment Variables** und füge 
 | `RESEND_API_KEY` | Dein Resend API Key | Production, Preview |
 | `RESEND_FROM_EMAIL` | `noreply@aimation.de` | Production, Preview |
 | `RESEND_TO_EMAIL` | Deine E-Mail-Adresse | Production, Preview |
-| `NEXT_PUBLIC_CALENDLY_URL` | `https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai` | Production, Preview |
+| `NEXT_PUBLIC_CALENDLY_URL` | `https://calendly.com/holgerpeschke-hp/erstgespraech` | Production, Preview |
 | `N8N_WEBHOOK_URL` | Deine n8n Webhook URL | Production |
 
 **Hinweis**: Werte findest du in `aimation-landing/.env.local` (diese Datei ist lokal vorhanden, wird aber nicht ins Git eingecheckt).

@@ -8,7 +8,7 @@ import AgentHumanLoop from '@/components/diagrams/AgentHumanLoop';
 import SharedFaqAccordion from '@/components/ui/FaqAccordion';
 import { FAQ_ITEMS } from '@/lib/data/faqs-ki-agenten';
 
-const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
+const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/erstgespraech';
 
 function FaqAccordion() {
   return <SharedFaqAccordion items={FAQ_ITEMS} />;

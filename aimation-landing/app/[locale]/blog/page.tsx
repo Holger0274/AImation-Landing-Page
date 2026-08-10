@@ -226,7 +226,7 @@ export default async function BlogOverviewPage({
               30 Minuten Erstgespräch. Kostenlos. Wir sagen Ihnen ehrlich, ob und wo KI bei Ihnen Sinn ergibt.
             </p>
             <a
-              href="https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai"
+              href="https://calendly.com/holgerpeschke-hp/erstgespraech"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95"

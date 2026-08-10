@@ -888,7 +888,7 @@ RESEND_FROM_EMAIL=noreply@ai-mation.de
 RESEND_TO_EMAIL=...           # Holgers E-Mail für Lead-Benachrichtigungen
 
 # Calendly
-NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai
+NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/holgerpeschke-hp/erstgespraech
 
 # n8n Webhook (Lead-Formular)
 N8N_WEBHOOK_URL=...

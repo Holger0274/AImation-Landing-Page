@@ -9,7 +9,7 @@ import GermanOnlyNotice from '@/components/GermanOnlyNotice';
 import { BlogPostingSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
-const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
+const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/erstgespraech';
 
 export const dynamic = 'force-static';
 

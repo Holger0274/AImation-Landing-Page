@@ -8,7 +8,7 @@ import EuAiActNotice from '@/components/sections/EuAiActNotice';
 import SharedFaqAccordion from '@/components/ui/FaqAccordion';
 import { FAQ_ITEMS } from '@/lib/data/faqs-ki-schulungen';
 
-const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
+const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/erstgespraech';
 
 const ROLLEN_MATRIX = [
   { rolle: 'Ingenieure, Konstrukteure, Berechner', einstieg: 'Einstieg generative KI im Engineering, danach Copilot im Entwicklungsalltag' },

@@ -10,7 +10,7 @@ import FaqAccordion, { FAQ_ITEMS } from './FaqAccordion';
 import { BlogPostingSchema, FAQPageSchema } from '@/components/StructuredData';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
-const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai';
+const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/erstgespraech';
 
 export const metadata: Metadata = {
   title: { absolute: 'KI-Prompts die wirklich funktionieren: 7 Muster für den Mittelstand | AImation' },

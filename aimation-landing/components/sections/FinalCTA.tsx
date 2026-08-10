@@ -102,7 +102,7 @@ export default function FinalCTA() {
       <ROICalculator
         isOpen={isCalculatorOpen}
         onClose={() => setIsCalculatorOpen(false)}
-        calendlyUrl="https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai"
+        calendlyUrl="https://calendly.com/holgerpeschke-hp/erstgespraech"
       />
 
       {/* Lead Form Modal */}

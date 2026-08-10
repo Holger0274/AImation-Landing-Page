@@ -74,7 +74,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
 
       // Redirect to Calendly with pre-filled data
       const calendlyUrl = new URL(
-        process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/your-link'
+        process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/holgerpeschke-hp/erstgespraech'
       );
       calendlyUrl.searchParams.append('name', data.name);
       calendlyUrl.searchParams.append('email', data.email);

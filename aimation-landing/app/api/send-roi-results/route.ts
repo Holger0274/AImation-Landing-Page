@@ -145,7 +145,7 @@ function createEmailHTML(data: ROIResultsRequest): string {
                   <p style="color: #071013; font-size: 16px; margin: 0 0 20px 0;">
                     Möchten Sie besprechen, wie wir das umsetzen?
                   </p>
-                  <a href="https://calendly.com" style="display: inline-block; background: linear-gradient(135deg, #f90093, #ff4ecd); color: #ffffff; text-decoration: none; padding: 16px 32px; border-radius: 6px; font-weight: bold; font-size: 16px;">
+                  <a href="https://calendly.com/holgerpeschke-hp/erstgespraech" style="display: inline-block; background: linear-gradient(135deg, #f90093, #ff4ecd); color: #ffffff; text-decoration: none; padding: 16px 32px; border-radius: 6px; font-weight: bold; font-size: 16px;">
                     Kostenloses Erstgespräch buchen
                   </a>
                   <p style="color: #9ca3af; font-size: 12px; margin: 15px 0 0 0;">

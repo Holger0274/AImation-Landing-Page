@@ -231,7 +231,7 @@ export default function Header() {
                           {t('dropdownFooter')}
                         </span>
                         <a
-                          href="https://calendly.com/holgerpeschke-hp/starter-15-minuten-ai"
+                          href="https://calendly.com/holgerpeschke-hp/erstgespraech"
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => setIsLeistungenOpen(false)}
