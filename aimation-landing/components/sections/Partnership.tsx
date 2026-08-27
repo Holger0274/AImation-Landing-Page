@@ -130,7 +130,7 @@ export default function Partnership() {
 
           <div
             ref={carouselRef}
-            className="flex items-start gap-6 overflow-x-auto snap-x snap-mandatory pb-2 scrollbar-hide scroll-smooth"
+            className="flex items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-2 scrollbar-hide scroll-smooth"
           >
             {PARTNERS.map((partner, index) => (
               <motion.div
@@ -161,7 +161,7 @@ export default function Partnership() {
                   </h3>
                 </div>
 
-                <p className="text-gray-600 leading-relaxed mb-5" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1rem)' }}>
+                <p className="text-gray-600 leading-relaxed mb-5 flex-1" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1rem)' }}>
                   {t(`${partner.key}.body`)}
                 </p>
 
@@ -169,7 +169,7 @@ export default function Partnership() {
                   href={t(`${partner.key}.href`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 mt-auto text-[#c2007a] font-heading font-semibold hover:underline transition-all group"
+                  className="inline-flex items-center justify-center gap-1.5 text-[#c2007a] font-heading font-semibold hover:underline transition-all group"
                 >
                   {t(`${partner.key}.link`)}
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
