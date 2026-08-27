@@ -514,9 +514,20 @@
     ]
   },
   "partnership": {
-    "kicker": "In Partnerschaft mit",
-    "body": "Für Wissensmanagement-Projekte setzen wir die Plattform von U-KNOW.AI ein. Sie bereitet Unternehmensdaten stufenweise auf, bevor die KI darauf zugreift: Antworten mit Quellenangabe statt Halluzinationen, DSGVO-konform, auch On-Premises.",
-    "link": "Zu U-KNOW.AI"
+    "sectionLabel": "Netzwerk & Partnerschaften",
+    "uknow": {
+      "kicker": "Technologiepartner",
+      "body": "Für Wissensmanagement-Projekte setzen wir die Plattform von U-KNOW.AI ein. Sie bereitet Unternehmensdaten stufenweise auf, bevor die KI darauf zugreift: Antworten mit Quellenangabe statt Halluzinationen, DSGVO-konform, auch On-Premises.",
+      "link": "Zu U-KNOW.AI",
+      "href": "https://www.u-know.ai"
+    },
+    "kibv": {
+      "kicker": "Mitglied",
+      "title": "KI Bundesverband",
+      "body": "Holger Peschke ist Mitglied im KI Bundesverband e.V., dem Netzwerk für Unternehmen und Experten im Bereich Künstliche Intelligenz in Deutschland. Der Verband bündelt Praxiswissen aus der Branche und sorgt für den direkten Austausch mit anderen KI-Anwendern und Anbietern.",
+      "link": "Zum KI Bundesverband",
+      "href": "https://ki-bundesverband.de"
+    }
   },
   "whyAImation": {
     "badge": "Warum AImation?",
