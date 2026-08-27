@@ -515,23 +515,25 @@
   },
   "partnership": {
     "sectionLabel": "Netzwerk & Partnerschaften",
+    "scrollLeft": "Nach links scrollen",
+    "scrollRight": "Nach rechts scrollen",
     "uknow": {
       "kicker": "Technologiepartner",
-      "body": "Für Wissensmanagement-Projekte setzen wir die Plattform von U-KNOW.AI ein. Sie bereitet Unternehmensdaten stufenweise auf, bevor die KI darauf zugreift: Antworten mit Quellenangabe statt Halluzinationen, DSGVO-konform, auch On-Premises.",
+      "body": "Für Wissensmanagement-Projekte setzen wir die Plattform von U-KNOW.AI ein: Antworten mit Quellenangabe statt Halluzinationen, DSGVO-konform, auch On-Premises.",
       "link": "Zu U-KNOW.AI",
       "href": "https://www.u-know.ai"
     },
     "kibv": {
       "kicker": "Mitglied",
       "title": "KI Bundesverband",
-      "body": "Holger Peschke ist Mitglied im KI Bundesverband e.V., dem Netzwerk für Unternehmen und Experten im Bereich Künstliche Intelligenz in Deutschland. Der Verband bündelt Praxiswissen aus der Branche und sorgt für den direkten Austausch mit anderen KI-Anwendern und Anbietern.",
+      "body": "Holger Peschke ist Mitglied im KI Bundesverband e.V., dem Netzwerk für Unternehmen und Experten im Bereich Künstliche Intelligenz in Deutschland.",
       "link": "Zum KI Bundesverband",
       "href": "https://ki-bundesverband.de"
     },
     "bko": {
       "kicker": "Mitglied",
       "title": "Beraterkompetenz Oberfranken",
-      "body": "Holger Peschke ist Mitglied bei Beraterkompetenz Oberfranken e.V., dem Netzwerk selbstständiger Berater in der Region Oberfranken. Der Verein bündelt Fachwissen aus unterschiedlichen Beratungsfeldern und vermittelt Unternehmen an den passenden Ansprechpartner vor Ort.",
+      "body": "Holger Peschke ist Mitglied bei Beraterkompetenz Oberfranken e.V., dem Netzwerk selbstständiger Berater in der Region Oberfranken.",
       "link": "Zu Beraterkompetenz Oberfranken",
       "href": "https://berater-oberfranken.de"
     }
