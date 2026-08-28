@@ -53,7 +53,7 @@ export default function ImpressumPage() {
               Kontaktaufnahme
             </h2>
             <p className="text-soft-black leading-relaxed">
-              <strong>E-Mail:</strong> <a href="mailto:kontakt@aimation.de" className="text-[#c2007a] hover:underline">kontakt@aimation.de</a><br />
+              <strong>E-Mail:</strong> <a href="mailto:info@aimation.de" className="text-[#c2007a] hover:underline">info@aimation.de</a><br />
               <strong>Telefon:</strong> [Wird ergänzt]
             </p>
           </section>

@@ -164,7 +164,7 @@ AI.mation - Automatisierung mit Intelligenz
 
 **AI.mation**
 Holger Peschke
-E-Mail: kontakt@aimation.de
+E-Mail: info@aimation.de
 LinkedIn: linkedin.com/in/holger-peschke
 Web: www.aimation.de
 

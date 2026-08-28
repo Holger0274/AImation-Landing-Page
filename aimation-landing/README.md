@@ -290,4 +290,4 @@ Proprietary - AI.mation
 
 ## Support
 
-For issues or questions, please contact: kontakt@aimation.de
+For issues or questions, please contact: info@aimation.de

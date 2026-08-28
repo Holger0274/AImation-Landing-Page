@@ -209,7 +209,7 @@ test.describe('Footer Navigation', () => {
   });
 
   test('email link has correct mailto href', async () => {
-    await footerPage.expectEmailLinkCorrect('kontakt@aimation.de');
+    await footerPage.expectEmailLinkCorrect('info@aimation.de');
   });
 
   test('LinkedIn link opens in new tab', async () => {

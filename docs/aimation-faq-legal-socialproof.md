@@ -56,7 +56,7 @@
 |---------------|-------------|
 | Vollständiger Name | Holger [Nachname] |
 | Anschrift | Straße, PLZ, Ort |
-| E-Mail-Adresse | kontakt@aimation.de (o.ä.) |
+| E-Mail-Adresse | info@aimation.de (o.ä.) |
 | Telefonnummer | +49 ... |
 | Rechtsform | Einzelunternehmer / GbR / UG / GmbH? |
 | USt-IdNr. | Falls vorhanden (bei Kleinunternehmer: Hinweis) |

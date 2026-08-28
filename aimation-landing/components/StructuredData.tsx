@@ -46,7 +46,7 @@ export function OrganizationSchema({ siteUrl = 'https://www.aimation.de' }: Orga
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "email": "kontakt@aimation.de",
+      "email": "info@aimation.de",
       "availableLanguage": [
         { "@type": "Language", "name": "German" },
         { "@type": "Language", "name": "English" }
@@ -139,7 +139,7 @@ export function LocalBusinessSchema({ siteUrl = 'https://www.aimation.de' }: Org
     "legalName": "AImation UG (haftungsbeschränkt)",
     "description": "KI-Beratung, Schulungen und Automatisierung für kleine und mittlere Unternehmen im DACH-Raum. 20 Jahre Engineering-Erfahrung.",
     "url": siteUrl,
-    "email": "kontakt@aimation.de",
+    "email": "info@aimation.de",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Sutte 19",

@@ -87,7 +87,7 @@ export default async function GroundingPage({
       addressLocality: 'Bamberg',
       addressCountry: 'DE',
     },
-    email: 'kontakt@aimation.de',
+    email: 'info@aimation.de',
     areaServed: ['DE', 'AT', 'CH'],
     sameAs: [
       'https://www.linkedin.com/company/aimation-ug',
@@ -316,7 +316,7 @@ export default async function GroundingPage({
 
               <dt className="font-semibold text-[#071013]">{isEn ? 'Contact' : 'Kontakt'}</dt>
               <dd className="text-gray-700">
-                <a href="mailto:kontakt@aimation.de" className="text-[#60AFFF] hover:underline">kontakt@aimation.de</a>
+                <a href="mailto:info@aimation.de" className="text-[#60AFFF] hover:underline">info@aimation.de</a>
               </dd>
 
               <dt className="font-semibold text-[#071013]">LinkedIn {isEn ? 'Company' : 'Unternehmen'}</dt>

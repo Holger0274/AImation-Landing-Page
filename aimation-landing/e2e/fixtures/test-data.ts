@@ -207,7 +207,7 @@ export const processSteps = [
 
 export const externalLinks = {
   linkedin: 'https://linkedin.com/in/...',
-  email: 'kontakt@aimation.de',
+  email: 'info@aimation.de',
   calendly: 'https://calendly.com/your-link', // Mock URL
 };
 
