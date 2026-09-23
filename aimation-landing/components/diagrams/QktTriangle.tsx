@@ -1,19 +1,28 @@
+import { useId } from 'react';
+
 interface QktTriangleProps {
   variant?: 'light' | 'dark';
   className?: string;
+  locale?: 'de' | 'en';
+  active?: 'quality' | 'cost' | 'timing';
+  animated?: boolean;
 }
 
-export default function QktTriangle({ variant = 'light', className }: QktTriangleProps) {
+export default function QktTriangle({ variant = 'light', className, locale = 'de', active, animated = true }: QktTriangleProps) {
+  const instanceId = useId().replace(/:/g, '');
+  const fillId = `qktFill-${instanceId}`;
+  const shadowId = `qktShadow-${instanceId}`;
+  const en = locale === 'en';
   const isDark = variant === 'dark';
   const lineColor = isDark ? 'rgba(255,255,255,0.9)' : '#071013';
   const mutedFill = isDark ? 'rgba(255,255,255,0.08)' : '#eef0f2';
   const shadowColor = isDark ? 'rgba(0,0,0,0.45)' : 'rgba(7,16,19,0.16)';
   const accent = '#60AFFF';
-  const focus = '#f90093';
+  const focus = isDark ? '#b8c7d1' : '#4a6573';
 
-  const top = { x: 100, y: 30, label: 'Qualität' };
-  const left = { x: 26, y: 176, label: 'Kosten' };
-  const right = { x: 174, y: 176, label: 'Timing' };
+  const top = { x: 100, y: 30, label: en ? 'Quality' : 'Qualität', id: 'quality' };
+  const left = { x: 26, y: 176, label: en ? 'Cost' : 'Kosten', id: 'cost' };
+  const right = { x: 174, y: 176, label: 'Timing', id: 'timing' };
   const points = [top, left, right];
   const centroid = {
     x: (top.x + left.x + right.x) / 3,
@@ -23,29 +32,29 @@ export default function QktTriangle({ variant = 'light', className }: QktTriangl
 
   return (
     <svg
-      viewBox="0 0 200 212"
+      viewBox="-15 -8 230 230"
       className={className}
       role="img"
-      aria-label="QKT-Dreieck: Qualität, Kosten und Timing als Steuerungsdreieck jeder Entwicklungsabteilung"
+      aria-label={en ? 'QKT triangle: quality, cost and timing in product development' : 'QKT-Dreieck: Qualität, Kosten und Timing in der Produktentwicklung'}
     >
-      <title>QKT-Dreieck: Qualität, Kosten, Timing</title>
+      <title>{en ? 'QKT triangle: quality, cost, timing' : 'QKT-Dreieck: Qualität, Kosten, Timing'}</title>
       <defs>
-        <linearGradient id="qktFill" x1="0%" y1="0%" x2="0%" y2="100%">
+        <linearGradient id={fillId} x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor={isDark ? 'rgba(255,255,255,0.12)' : '#ffffff'} />
           <stop offset="100%" stopColor={mutedFill} />
         </linearGradient>
-        <filter id="qktShadow" x="-40%" y="-40%" width="180%" height="180%">
+        <filter id={shadowId} x="-40%" y="-40%" width="180%" height="180%">
           <feDropShadow dx="0" dy="3" stdDeviation="4" floodColor={shadowColor} />
         </filter>
       </defs>
 
       <polygon
         points={`${top.x},${top.y} ${left.x},${left.y} ${right.x},${right.y}`}
-        fill="url(#qktFill)"
+        fill={`url(#${fillId})`}
         stroke={lineColor}
-        strokeWidth={3}
+        strokeWidth={active ? 1.3 : 3}
         strokeLinejoin="round"
-        filter="url(#qktShadow)"
+        filter={`url(#${shadowId})`}
       />
 
       {/* Blueprint-Guides: Zentrum zu den drei Ecken, dezent gestrichelt */}
@@ -66,21 +75,22 @@ export default function QktTriangle({ variant = 'light', className }: QktTriangl
 
       {points.map((p, i) => (
         <g key={p.label}>
+          {active === p.id && <circle cx={p.x} cy={p.y} r={14} fill="none" stroke="#ff4ecd" strokeWidth={1} />}
           <circle
             cx={p.x}
             cy={p.y}
             r={7.5}
-            fill={accent}
+            fill={active === p.id ? '#f90093' : accent}
             stroke={isDark ? 'none' : '#ffffff'}
             strokeWidth={isDark ? 0 : 3}
           >
-            <animate
+            {animated && <animate
               attributeName="r"
               values="7.5;9;7.5"
               dur="3s"
               begin={`${i * 0.4}s`}
               repeatCount="indefinite"
-            />
+            />}
           </circle>
           <text
             x={p.x}
@@ -89,7 +99,7 @@ export default function QktTriangle({ variant = 'light', className }: QktTriangl
             fontFamily="Space Grotesk, sans-serif"
             fontWeight={700}
             fontSize={17}
-            fill={lineColor}
+            fill={active === p.id ? '#ff4ecd' : lineColor}
           >
             {p.label}
           </text>
@@ -97,12 +107,14 @@ export default function QktTriangle({ variant = 'light', className }: QktTriangl
       ))}
 
       {/* Wanderpunkt: läuft dauerhaft die drei Konten ab, einzige Magenta-Fokus-Ausnahme im Diagramm */}
+      {animated && <g>
       <circle r={6.5} fill={isDark ? '#071013' : '#ffffff'}>
         <animateMotion dur="6s" repeatCount="indefinite" path={motionPath} />
       </circle>
       <circle r={4.5} fill={focus}>
         <animateMotion dur="6s" repeatCount="indefinite" path={motionPath} />
       </circle>
+      </g>}
     </svg>
   );
 }

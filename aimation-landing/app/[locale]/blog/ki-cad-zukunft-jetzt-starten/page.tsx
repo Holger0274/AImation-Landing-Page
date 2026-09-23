@@ -82,10 +82,11 @@ export default async function KiCadZukunftPage({
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
               <Image
-                src="/images/blog/ki-cad-ingenieur-hero.jpg"
-                alt="Ingenieur analysiert CAD-Modell am Workstation, KI-gestützte Konstruktion im Mittelstand"
+                src="/images/editorial/blog-cad.svg"
+                alt="KI unterstützt Entwurf und Recherche am Bauteil. Ein Ingenieur prüft und verantwortet das Ergebnis."
                 fill
-                className="object-cover"
+              sizes="(max-width: 768px) 92vw, 768px"
+                className="object-contain"
                 priority
               />
             </div>

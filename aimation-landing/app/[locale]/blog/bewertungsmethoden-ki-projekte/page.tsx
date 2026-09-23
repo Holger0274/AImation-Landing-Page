@@ -127,12 +127,13 @@ export default async function BewertungsmethodenPage({
             </p>
 
             {/* Hero-Bild */}
-            <div className="relative w-full rounded-2xl overflow-hidden mb-2" style={{ aspectRatio: '3/2' }}>
+            <div className="relative w-full rounded-2xl overflow-hidden mb-2" style={{ aspectRatio: '16/9' }}>
               <Image
-                src="/images/blog/bewertungsmethoden-hero.jpg"
-                alt="Team bespricht gemeinsam eine Impact-Effort-Matrix am hellen Whiteboard: strukturierte Priorisierung von KI-Projekten"
+                src="/images/editorial/blog-methods.svg"
+                alt="Vier Bewertungsmethoden und ihre Fragestellungen: Impact-Effort, WSJF, AI-Feasibility und Weighted Scoring."
                 fill
-                className="object-cover object-center"
+              sizes="(max-width: 768px) 92vw, 768px"
+                className="object-contain object-center"
                 priority
               />
             </div>
@@ -462,12 +463,13 @@ export default async function BewertungsmethodenPage({
               </div>
 
               {/* Infografik-Bild */}
-              <div className="relative w-full rounded-2xl overflow-hidden my-10" style={{ aspectRatio: '3/2' }}>
+              <div className="relative w-full rounded-2xl overflow-hidden my-10" style={{ aspectRatio: '16/9' }}>
                 <Image
-                  src="/images/blog/bewertungsmethoden-infografik.png"
-                  alt="Managerin bewertet Scoring-Modelle am Laptop: Entscheidungsunterstützung für die richtige Bewertungsmethode"
+                  src="/images/editorial/blog-methods-detail.svg"
+                  alt="Die Entscheidungssituation bestimmt die Methode: Nutzen, Dringlichkeit, Machbarkeit oder mehrere gewichtete Kriterien."
                   fill
-                  className="object-cover object-center"
+              sizes="(max-width: 768px) 92vw, 768px"
+                  className="object-contain object-center"
                 />
               </div>
               <p className="text-xs text-gray-400 font-inter text-center -mt-6 mb-10">

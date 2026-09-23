@@ -74,13 +74,15 @@ export default async function PatentrechercheKiPage({
 
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
             <Image
-              src="/images/use-cases/patentrecherche-hero.jpg"
-              alt="KI-gestützte Patentrecherche – automatische Prior-Art-Analyse mit Wissensgraph"
+              src="/images/editorial/research.webp"
+              alt="Illustration: Technische Merkmale mehrerer Lagerkonstruktionen werden anhand von Patentzeichnungen verglichen."
               fill
+              sizes="(max-width: 768px) 92vw, 768px"
               className="object-cover"
               priority
             />
           </div>
+          <p className="text-xs text-dim -mt-5 mb-8">KI-generierte Illustration des Anwendungsfalls</p>
 
           <p className="text-muted font-inter leading-relaxed mb-4">
             Wochen Konzeptarbeit. Dann die Mail aus der Patentabteilung: Ein Wettbewerber hat genau das bereits geschützt. Projekt zurück auf Null.
@@ -110,6 +112,7 @@ export default async function PatentrechercheKiPage({
             <h2 className="font-heading font-bold text-ink mb-4">So sieht das aus</h2>
             <div className="max-w-sm">
               <DemoTile
+                previewSrc="/images/editorial/patent-research.svg"
                 title="Patentrecherche: strukturierter Bericht statt Trefferliste"
                 badge="Demo folgt"
                 placeholderNote="Screencast folgt. Im Erstgespräch zeige ich Ihnen den strukturierten Bericht, den der Recherche-Agent aus einer Patentanfrage erstellt."
@@ -146,10 +149,11 @@ export default async function PatentrechercheKiPage({
 
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10">
             <Image
-              src="/images/use-cases/patentrecherche-detail.jpg"
-              alt="Holografische Patentanalyse – KI erkennt Wettbewerber-Patente und White-Space-Chancen"
+              src="/images/editorial/patent-detail.svg"
+              alt="Prinzipdarstellung: Technisches Merkmal, belegte Fundstelle und fachliche Einordnung einer Patentrecherche."
               fill
-              className="object-cover"
+              sizes="(max-width: 768px) 92vw, 768px"
+              className="object-contain"
             />
           </div>
 

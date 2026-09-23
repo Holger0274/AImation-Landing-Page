@@ -8,12 +8,30 @@ Der Nutzer hat in der Aufgabe „Website analysieren und umgestalten“ die voll
 
 Referenz: `Kunden/Wieland/Brand/Design-Glaenzendes-Schwarz/DESIGN-GLAENZENDES-SCHWARZ.md` und die dortige HTML-Vorlage. Für diesen Entwurf wurde ausdrücklich die dunkle Fassung gewählt. Die ältere Vorgabe eines überwiegend warmweißen Hintergrunds beschreibt daher nicht diesen beauftragten Stand. Magenta, Space Grotesk und Inter bleiben erhalten. Inhaltliche Relaunch-Spezifikationen gelten weiter.
 
+## Aktuelle Überarbeitung: Tempo, Ablauf und Lesbarkeit
+
+Auf ausdrücklichen Wunsch von Holger führt der Hero jetzt mit dem Nutzen für Entwicklungsleiter: „Schneller entwickeln. Weil KI Ihrem Team Arbeit abnimmt.“ Das ersetzt den Renten-Einstieg aus Spec 03 und die dortige Hero-Festlegung. Wissenssicherung bleibt als Anwendungsfall erhalten. Der bestehende Erklärungstext mit „Wir gehen rein in Ihre Entwicklung und zeigen genau, wo KI wirklich etwas bringt …“ bleibt unverändert. Der Über-uns-Bereich bleibt an seiner bisherigen Position.
+
+- Keine unbelegten Faktoren wie „3× schneller“ oder „5× schneller“ eingebaut. Dafür fehlen konkrete gemessene Ausgangs- und Ergebniszeiten. Das Pilot-Versprechen ist jetzt die Prüfung von Bearbeitungszeit und Qualität vorher/nachher.
+- Prozess direkt nach den Herausforderungen platziert. Alle fünf Stationen sind ohne Aufklappen sichtbar, auf breiten Bildschirmen nebeneinander und sonst als vertikaler Ablauf. Preise kommen weiter aus `PRICING`; laufende Umsetzungskosten und die unabhängig buchbaren Schulungen sind genannt.
+- „Ablauf“ im Desktop- und Mobilmenü, direkter Prozess-Link im Hero. Der ROI-Rechner bleibt in der Hero-Fußzeile erreichbar.
+- Hellerer Neben- und Hinweistexte-Kontrast, größere kleine Beschriftungen, 16-px-Hero-Fließtext auch mobil. SVG-Linien im Hero etwas heller; Motiv und Mausbewegung bleiben erhalten.
+- Änderungen an Hero, Ablauf und Navigation sind in Deutsch und Englisch umgesetzt.
+
+Prüfung dieser Überarbeitung: Produktions-Build inklusive Typprüfung und 51 statischen Seiten erfolgreich, `git diff --check` ohne Befund. Hero und Ablauf bei 390 und 1440 Pixeln visuell geprüft; zusätzlich Desktop-Navigation bei 1024 Pixeln ohne Seitenüberlauf. Mobiler Hero-CTA liegt im ersten Bildschirm. Hero-Link und Menüpunkt führen zum Prozess, das mobile Menü schließt dabei. Kontaktformular aus dem Prozess und ROI-Rechner aus der Hero-Fußzeile lassen sich öffnen und schließen; nichts abgesendet. Englischer Hero gerendert und neue Übersetzungsschlüssel geprüft. Die weitergehende englische Browserprüfung wurde durch eine unterbrochene Browserverbindung beendet. Die abschließende deutsche Vorschau zeigt den neuen Build; Preiszeilen im Desktop-Ablauf sind gleich ausgerichtet. Kein Push oder Deployment für diese Überarbeitung.
+
 ## Umsetzung
+
+Neuester Ergänzungsstand: `docs/2026-09-23-landscape-und-bildvarianz.md`. Enthält Bildvarianz, interaktive Entwicklungslandkarte, Original-Screenshots eigener Projekte, responsive Vorher-/Nachher-Abläufe und den mit dem Lernportal abgeglichenen Schulungskatalog. Diese Ergänzungsrunde ist lokal gespeichert, noch nicht zusätzlich committed.
+
+### Bestätigte Hero-Richtung
+
+Holger hat am 23. September die technische Zeichnung im Hero ausdrücklich positiv bestätigt ("ich finde diese Zeichnung im Hero echt sehr genial"). Das freigestellte SVG `engineering-connector.svg` mit Maßlinien und dezenter Mausbewegung bleibt deshalb das Hero-Motiv. Nicht durch das vorbereitete Editorial-Bild `engineering-knowledge.webp` ersetzen. Diese Entscheidung gilt auch für die Weiterarbeit in Claude Code; andere Bildbereiche bleiben davon unberührt.
 
 - Dunkle Grundflächen mit Lichtreflexen, technischem Raster und zwei SVG-Zeichnungen aus der gelieferten Vorlage.
 - Zeichnungen reagieren dezent auf Mausbewegungen. Touchgeräte und die Einstellung für reduzierte Bewegung deaktivieren diese Reaktion.
 - Neuer Hero mit direkt erreichbarem Gesprächsbutton, technischer Zeichnung und Wissenssicherung als Hauptthema.
-- Glaskarten mit mausabhängigem Licht, gegliederte KI-Landkarte, aufklappbarer Prozess und Leistungszeilen statt Flip-Karten.
+- Glaskarten mit mausabhängigem Licht, gegliederte KI-Landkarte, sichtbarer Fünf-Schritte-Ablauf und Leistungszeilen statt Flip-Karten.
 - Dunkle Farben auch für Leistungsseiten, Blog, Use Cases, Faktenseiten, Formulare und Rechtstexte.
 - Kontaktdialog nutzt Radix für Fokusbegrenzung, Escape, Scrollsperre und Rückkehr zum Auslöser. Fehler werden im Formular angezeigt; Pflichtfeldmeldungen haben `role="alert"`.
 - Desktop-Dropdown öffnet per Klick und schließt außerhalb, beim Verlassen mit Tab oder per Escape. Tablet zeigt das mobile Menü.

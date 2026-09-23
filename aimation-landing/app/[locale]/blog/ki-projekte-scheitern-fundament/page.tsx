@@ -84,9 +84,10 @@ export default async function KiProjekteScheiternPage({
             {/* Infografik */}
             <div className="relative w-full rounded-2xl overflow-hidden mb-2" style={{ aspectRatio: '2/3', maxHeight: '520px' }}>
               <Image
-                src="/images/blog/ki-projekte-scheitern-infografik.png"
-                alt="Infografik: Die 4 häufigsten Gründe warum KI-Projekte im Mittelstand scheitern, Daten, Demo vs. Realität, Compliance, Faktor Mensch"
+                src="/images/editorial/blog-fundament.svg"
+                alt="Eine KI-Anwendung steht auf Prozessen, Verantwortung, Datenqualität und Zugriffsrechten."
                 fill
+              sizes="(max-width: 768px) 92vw, 768px"
                 className="object-contain object-top"
                 priority
               />

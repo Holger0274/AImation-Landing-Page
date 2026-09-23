@@ -147,10 +147,11 @@ export default async function SechsStufenPage({
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mt-8">
               <Image
-                src="/images/blog/6-stufen-hero.jpg"
-                alt="Die 6 Stufen der KI-Nutzung: von Prompting bis autonome Multi-Agenten-Systeme"
+                src="/images/editorial/blog-stages.svg"
+                alt="Sechs Stufen der KI-Nutzung, von Prompting bis zum Zusammenspiel mehrerer Agenten."
                 fill
-                className="object-cover"
+              sizes="(max-width: 768px) 92vw, 768px"
+                className="object-contain"
                 priority
               />
             </div>
@@ -174,8 +175,8 @@ export default async function SechsStufenPage({
           <div className="max-w-3xl mx-auto">
             <div className="relative w-full rounded-2xl overflow-hidden border border-line bg-surface">
               <Image
-                src="/images/blog/6-stufen-diagramm.png"
-                alt="Die 6 Stufen der KI-Nutzung im Überblick: von Prompting (01) über Custom GPTs, Automatisierung, KI-Automatisierung, KI-Agenten bis zur agentischen KI (06), dargestellt nach Komplexität und Wertschöpfung"
+                src="/images/editorial/blog-stages-detail.svg"
+                alt="Sechs Anwendungsstufen mit ihrem jeweiligen Arbeitsprinzip, ohne pauschales Nutzenversprechen."
                 width={1366}
                 height={768}
                 className="w-full h-auto"

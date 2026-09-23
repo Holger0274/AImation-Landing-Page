@@ -1,255 +1,72 @@
 'use client';
 
+import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { motion } from 'framer-motion';
-import { ChevronRight, ArrowRight } from 'lucide-react';
+import { ArrowUpRight, BookOpen, Check, ChevronRight } from 'lucide-react';
 import { PRICING } from '@/lib/data/pricing';
+import { useLeadForm } from '@/components/LeadFormProvider';
 import EuAiActNotice from '@/components/sections/EuAiActNotice';
 import SharedFaqAccordion from '@/components/ui/FaqAccordion';
-import { FAQ_ITEMS } from '@/lib/data/faqs-ki-schulungen';
+import { getTrainingFaqs } from '@/lib/data/faqs-ki-schulungen';
 
-const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/erstgespraech';
-
-const ROLLEN_MATRIX = [
-  { rolle: 'Ingenieure, Konstrukteure, Berechner', einstieg: 'Einstieg generative KI im Engineering, danach Copilot im Entwicklungsalltag' },
-  { rolle: 'Entwicklungsleiter, Teamleiter', einstieg: 'KI im Leadership, danach KI-Agenten in der Produktentwicklung' },
-  { rolle: 'Geschäftsführung', einstieg: 'KI im Leadership (Kompaktformat), danach KI-Landkarte als nächster Schritt' },
-  { rolle: 'Skeptiker im Team', einstieg: 'Einstieg generative KI, an eigenen Aufgaben, keine Folienschlacht' },
-];
-
-const SCHULUNGEN_LEVELS = [
-  {
-    level: '1',
-    name: 'Einstieg & Awareness',
-    subtitle: 'Grundverständnis schaffen',
-    courses: [
-      { title: 'Generative KI verstehen', duration: '½ Tag', audience: 'Alle Mitarbeiter' },
-      { title: 'KI für Führungskräfte', duration: '1 Tag', audience: 'C-Level, Abteilungsleiter' },
-      { title: 'Prompt Engineering Basics', duration: '½ Tag', audience: 'Alle KI-Nutzer' },
-    ],
-  },
-  {
-    level: '2',
-    name: 'Anwendung & Tools',
-    subtitle: 'Konkrete Werkzeuge einsetzen',
-    courses: [
-      { title: 'Microsoft Copilot', duration: '½–1 Tag', audience: 'Office-Nutzer' },
-      { title: 'Prompt Engineering Fortgeschritten', duration: '1 Tag', audience: 'Power User' },
-      { title: 'Automatisierung ohne Code', duration: '1 Tag', audience: 'HR, Marketing, Assistenz, PM' },
-    ],
-  },
-  {
-    level: '3',
-    name: 'Fortgeschritten & Spezialisiert',
-    subtitle: 'Multiplikatoren ausbilden',
-    courses: [
-      { title: 'Multi-Agent-Systeme', duration: '2 Tage', audience: 'Entwickler, Architekten' },
-      { title: 'Vibe Coding', duration: '1–2 Tage', audience: 'Nicht-Entwickler mit Lösungsideen' },
-      { title: 'KI in Engineering', duration: '1–2 Tage', audience: 'Ingenieure, QS-Leiter' },
-    ],
-  },
-];
-
-function FaqAccordion() {
-  return <SharedFaqAccordion items={FAQ_ITEMS} />;
-}
+import { TRAINING_COURSES } from '@/lib/data/training';
+import LearningSample from '@/components/visuals/LearningSample';
 
 export default function KiSchulungenPage() {
-  return (
-    <main id="main-content" className="bg-ground">
-      {/* HERO */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter">
-            <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-ink font-medium">KI-Schulungen für Unternehmen</span>
-          </nav>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold mb-6">
-            Säule 1: Schulungen
-          </div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="font-heading font-bold text-ink mb-6 leading-tight"
-            style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}
-          >
-            KI-Schulungen für den Mittelstand:{' '}
-            <span className="text-magenta-light">Wissen, das am nächsten Tag funktioniert</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-muted font-inter leading-relaxed mb-8"
-            style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}
-          >
-            Keine Theorie-Vorträge, die nach zwei Stunden vergessen sind. Wir vermitteln KI-Kompetenz so,
-            dass Ihr Team es versteht, anwendet und weitermacht. Von der Führungskraft bis zum Sachbearbeiter.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-3"
-          >
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold text-[#071013]"
-              style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
-            >
-              Kostenloses Erstgespräch buchen
-            </a>
-            <Link
-              href="/#kontakt"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold border-2 border-line text-ink hover:bg-[#071013] hover:text-white transition-all"
-            >
-              Holen Sie sich Ihre KI-Landkarte
-            </Link>
-          </motion.div>
+  const en = useLocale() === 'en';
+  const lang = en ? 'en' : 'de';
+  const l = (de: string, english: string) => en ? english : de;
+  const { openLeadForm } = useLeadForm();
+  const money = (value: number) => new Intl.NumberFormat(en ? 'en-GB' : 'de-DE', { maximumFractionDigits: 0 }).format(value);
+  const roles = en ? [
+    ['Engineers and designers', 'AI introduction, then AI tools or Microsoft 365 Copilot.'],
+    ['Development and team leads', 'Managing AI-driven business transformation. Add AI tools for hands-on practice.'],
+    ['Management', 'Management series, with a focus on strategy, integration and success measurement.'],
+    ['Newcomers and sceptics', 'AI introduction for everyone. Start with one of your own tasks.'],
+  ] : [
+    ['Ingenieure und Konstrukteure', 'KI-Einstieg, danach KI-Tools oder Microsoft 365 Copilot.'],
+    ['Entwicklungsleiter und Teamleiter', 'Manager für KI-gestützte Unternehmenstransformation. KI-Tools ergänzen die praktische Anwendung.'],
+    ['Geschäftsführung', 'Die Manager-Reihe mit Fokus auf Strategie, Integration und Erfolgsmessung.'],
+    ['Einsteiger und Skeptiker', 'KI-Einstieg für alle. Der Anfang ist eine eigene Aufgabe.'],
+  ];
+  return <main id="main-content" className="bg-ground">
+    <section className="training-hero engineering-wrap">
+      <nav aria-label={l('Brotkrumennavigation', 'Breadcrumb')} className="training-breadcrumb"><Link href="/">{l('Startseite', 'Home')}</Link><ChevronRight size={14} aria-hidden="true"/><span>{l('KI-Schulungen', 'AI training')}</span></nav>
+      <div className="section-intro">
+        <p className="technical-label">{l('Schulung & Lernmaterial', 'Training & learning materials')}</p>
+        <h1>{l('KI verstehen. An der eigenen Arbeit ', 'Understand AI. Put it to ')}<span className="highlight">{l('anwenden.', 'work.')}</span></h1>
+        <p>{l('Ihr Team lernt an Aufgaben, die auf dem Schreibtisch liegen: einen Bericht vorbereiten, Dokumente auswerten oder Informationen mit Copilot finden. Wir stimmen Inhalt und Tempo auf Ihre Vorkenntnisse ab.', 'Your team learns through real tasks: preparing a report, reviewing documents or finding information with Copilot. We adapt the content and pace to your existing knowledge.')}</p>
+        <button onClick={openLeadForm} className="engineering-button mt-8">{l('Passende Schulung besprechen', 'Discuss the right training')}<ArrowUpRight size={18} aria-hidden="true"/></button>
+        <div className="mt-5"><a href="#lernprobe" className="engineering-text-link">{l('Erst eine Lernprobe ausprobieren', 'Try a learning sample first')} ↓</a></div>
+      </div>
+    </section>
+    <LearningSample />
+    <section className="engineering-section" id="lernreihen">
+      <div className="engineering-wrap">
+        <div className="section-heading-split">
+          <div className="section-intro"><p className="technical-label">{l('Aus unserem Lernportal', 'From our learning portal')}</p><h2>{l('Sechs Lernreihen. Ein ', 'Six learning series. Your ')}<span className="highlight">{l('Einstieg für Sie.', 'starting point.')}</span></h2></div>
+          <div className="section-heading-body"><p>{l('Für diese sechs Reihen liegen Lernmaterialien im Portal vor. Im Inhouse-Workshop wählen wir daraus die Themen, die Ihr Team braucht. Der Umfang einer Lernreihe ist keine Vorgabe für die Dauer Ihrer Schulung.', 'Learning materials for these six series are available in the portal. For an in-house workshop, we select the topics your team needs. The size of a learning series does not determine the length of your training.')}</p></div>
         </div>
-      </section>
-
-      {/* 3 LEVELS */}
-      <section className="py-16 px-4 bg-surface">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-heading font-bold text-ink text-center mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}>
-            Drei Ebenen. <span className="text-magenta-light">Ihr Einstiegspunkt.</span>
-          </h2>
-          <p className="text-muted font-inter text-center mb-12 max-w-2xl mx-auto">
-            Wir starten dort, wo Ihr Team steht. Alle Module sind frei kombinierbar.
-          </p>
-          <div className="space-y-8">
-            {SCHULUNGEN_LEVELS.map((lvl) => (
-              <div key={lvl.level} className="rounded-2xl border border-line p-6 md:p-8">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-[#071013] flex-shrink-0" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>
-                    {lvl.level}
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-ink" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.375rem)' }}>{lvl.name}</h3>
-                    <p className="text-dim font-inter text-sm">{lvl.subtitle}</p>
-                  </div>
-                </div>
-                <div className="grid sm:grid-cols-3 gap-4">
-                  {lvl.courses.map((c) => (
-                    <div key={c.title} className="bg-ground rounded-xl p-4">
-                      <p className="font-heading font-semibold text-ink text-sm mb-1">{c.title}</p>
-                      <p className="text-dim font-inter text-xs">{c.duration} · {c.audience}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Preis */}
-          <div className="mt-10 rounded-2xl border border-line bg-ground p-6 md:p-8 text-center">
-            <p className="font-heading font-semibold text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
-              Inhouse-Schulung: {PRICING.schulung.priceLabel}, unabhängig von der Teilnehmerzahl. {PRICING.schulung.priceHalfDayLabel}.
-            </p>
-          </div>
-
-          {/* Rollen-Matrix */}
-          <div className="mt-10">
-            <h3 className="font-heading font-bold text-ink text-center mb-6" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.5rem)' }}>
-              Welche Schulung <span className="text-magenta-light">für wen</span>?
-            </h3>
-            <div className="overflow-x-auto rounded-xl border border-line">
-              <table className="w-full text-sm font-inter">
-                <thead>
-                  <tr className="bg-[#071013] text-white">
-                    <th className="text-left px-4 py-3 font-heading font-semibold">Rolle</th>
-                    <th className="text-left px-4 py-3 font-heading font-semibold">Empfohlener Einstieg</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ROLLEN_MATRIX.map((row, i) => (
-                    <tr key={row.rolle} className={i % 2 === 0 ? 'bg-surface' : 'bg-ground'}>
-                      <td className="px-4 py-3 text-ink font-medium">{row.rolle}</td>
-                      <td className="px-4 py-3 text-muted">{row.einstieg}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Bruecke zur Landkarte */}
-          <div className="mt-10 rounded-2xl border border-[#f90093]/30 bg-surface p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-4 justify-between">
-            <p className="text-muted text-sm md:text-base">
-              Nicht sicher, ob Schulung der richtige erste Schritt ist? Die KI-Landkarte beantwortet genau das: ein Workshop-Tag, der zeigt, wo Schulung reicht und wo Automatisierung mehr bringt.
-            </p>
-            <Link
-              href="/#kontakt"
-              className="flex-shrink-0 inline-flex items-center gap-1.5 text-magenta-light font-heading font-semibold whitespace-nowrap hover:underline"
-            >
-              Holen Sie sich Ihre KI-Landkarte
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+        <div className="training-course-list">{TRAINING_COURSES.map((course, index) => <article className="training-course" id={`kurs-${course.id}`} key={course.id}>
+          <span className="training-number" aria-hidden="true">0{index + 1}</span>
+          <div><p className="technical-label">{course[lang][1]}</p><h3>{course[lang][0]}</h3><p>{course[lang][2]}</p></div>
+          <div className="training-course-status"><span><Check size={15} aria-hidden="true"/>{l('Lernmaterial vorhanden', 'Learning materials available')}</span><small>{course.modules} {l('Module im Portal', 'portal modules')}</small></div>
+        </article>)}</div>
+        <aside className="training-planned"><BookOpen size={24} aria-hidden="true"/><div><h3>{l('Weitere Lernreihen in Vorbereitung', 'More learning series in preparation')}</h3><p>{l('Automatisierung, Leadership und KI, Claude Code, KI in der technischen Produktentwicklung, Agentic OS sowie Datenstrukturen. Diese Portal-Reihen sind noch nicht abrufbar. Individuelle Workshop-Themen stimmen wir im Gespräch ab.', 'Automation, leadership and AI, Claude Code, AI in technical product development, Agentic OS and data structures. These portal series are not yet accessible. We discuss individual workshop topics with you.')}</p></div></aside>
+      </div>
+    </section>
+    <section className="engineering-section">
+      <div className="engineering-wrap">
+        <div className="training-inhouse">
+          <div className="section-intro"><p className="technical-label">{l('Gemeinsam an Ihren Aufgaben', 'Working on your tasks together')}</p><h2>{l('Ihr ', 'Your ')}<span className="highlight">{l('Inhouse-Workshop.', 'in-house workshop.')}</span></h2><p>{l('Vorab klären wir Zielgruppe, Vorwissen und Aufgaben. In der Schulung arbeitet Ihr Team mit passenden Beispielen. Zugang und Umfang der begleitenden Lernmaterialien vereinbaren wir für Ihr Format.', 'First we clarify the audience, prior knowledge and tasks. During training, your team works on suitable examples. Access to supporting learning materials and their scope are agreed for your format.')}</p></div>
+          <div className="training-price"><span className="technical-label">{l('Pro Schulungstag', 'Per training day')}</span><strong>{money(PRICING.schulung.pricePerDay)} <small>EUR</small></strong><p>{l('Unabhängig von der Teilnehmerzahl.', 'Independent of participant count.')}</p><p>{l('Halbtags-Formate ab ', 'Half-day formats from ')}{money(PRICING.schulung.priceHalfDay)} EUR</p><button className="engineering-text-link" onClick={openLeadForm}>{l('Format und Lernziel abstimmen', 'Discuss format and learning goals')}<ArrowUpRight size={17} aria-hidden="true"/></button></div>
         </div>
-      </section>
-
-      {/* USP STRIP */}
-      <section className="py-16 px-4 bg-[#071013]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-heading font-bold text-white mb-8" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-            Warum Schulungen von <span className="text-magenta-light">AImation</span>?
-          </h2>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              { title: 'Kein Hype, echte Praxis', text: '20 Jahre Engineering. Wir kennen den Alltag in produzierenden Unternehmen. Unsere Beispiele kommen aus der Realität.' },
-              { title: 'Direkt anwendbar', text: 'Jeder Teilnehmer verlässt die Schulung mit Werkzeugen, die er am nächsten Tag einsetzt. Kein Wissen fürs Schubladenschließen.' },
-              { title: 'Maßgeschneidert', text: 'Keine Standardfolien. Wir passen Inhalte, Beispiele und Tempo an Ihre Branche und Ihr Team an.' },
-            ].map((u) => (
-              <div key={u.title} className="bg-white/5 rounded-2xl p-6 text-left">
-                <h3 className="font-heading font-bold text-white mb-2 text-base">{u.title}</h3>
-                <p className="text-gray-400 font-inter text-sm leading-relaxed">{u.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-16 px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-heading font-bold text-ink mb-10 text-center" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-            Häufige Fragen zu <span className="text-magenta-light">KI-Schulungen</span>
-          </h2>
-          <FaqAccordion />
-        </div>
-      </section>
-
-      <EuAiActNotice />
-
-      {/* CTA */}
-      <section className="py-16 px-4 bg-[#071013]">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-heading font-bold text-white mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-            Bereit für die <span className="text-magenta-light">KI-Zukunft</span>?
-          </h2>
-          <p className="text-gray-400 font-inter mb-8">
-            30 Minuten Erstgespräch. Wir zeigen Ihnen, welche Schulung für Ihr Team Sinn ergibt.
-          </p>
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-heading font-bold text-[#071013]"
-            style={{
-              background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
-              boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',
-            }}
-          >
-            Kostenloses Erstgespräch buchen
-          </a>
-        </div>
-      </section>
-    </main>
-  );
+        <div className="training-roles"><h3>{l('Ein sinnvoller Start für Ihre Rolle', 'A useful starting point for your role')}</h3><dl>{roles.map(([role, entry]) => <div key={role}><dt>{role}</dt><dd>{entry}</dd></div>)}</dl></div>
+        <div className="section-footnote"><p>{l('Noch unklar, bei welchem Prozess Ihr Team anfangen sollte? Das klären wir im Workshop KI-Landkarte.', 'Not sure which process your team should start with? The KI-Landkarte workshop helps you choose.')}</p><Link href="/#ki-landkarte" className="engineering-text-link">{l('Zur KI-Landkarte', 'Explore KI-Landkarte')}<ArrowUpRight size={17} aria-hidden="true"/></Link></div>
+      </div>
+    </section>
+    <section className="engineering-section"><div className="engineering-wrap"><div className="section-intro section-intro-wide"><h2>{l('Fragen zu Ihrer ', 'Questions about your ')}<span className="highlight">{l('Schulung.', 'training.')}</span></h2></div><SharedFaqAccordion items={getTrainingFaqs(en)}/></div></section>
+    <EuAiActNotice />
+    <section className="engineering-section"><div className="engineering-wrap"><div className="section-intro section-intro-wide"><h2>{l('Was soll Ihr Team danach ', 'What should your team be able to ')}<span className="highlight">{l('können?', 'do?')}</span></h2><p>{l('Im kostenlosen Erstgespräch besprechen wir Ihre Aufgaben und den passenden Einstieg.', 'In the free initial call, we discuss your tasks and the right starting point.')}</p><button onClick={openLeadForm} className="engineering-button mt-8">{l('Kostenloses Erstgespräch buchen', 'Book a free initial call')}<ArrowUpRight size={18} aria-hidden="true"/></button></div></div></section>
+  </main>;
 }

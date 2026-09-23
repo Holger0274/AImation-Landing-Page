@@ -11,6 +11,7 @@
     "agenten": "AI Agents",
     "agentenDesc": "Intelligent assistants that work for you",
     "useCases": "Use Cases",
+    "ablauf": "Our approach",
     "blog": "Blog",
     "ueberUns": "About",
     "cta": "Get in touch",
@@ -21,12 +22,14 @@
   },
   "hero": {
     "badge": "AI · Product Development · SME",
-    "headlineStart": "Your most experienced engineer is retiring. Their ",
-    "headlineHighlight": "knowledge",
-    "headlineEnd": " does not have to leave with them.",
+    "headlineStart": "Develop ",
+    "headlineHighlight": "faster",
+    "headlineEnd": ". With AI that takes work off your team's hands.",
     "subline": "We go inside your engineering and show you exactly where AI actually makes a difference, even where knowledge lives only in the heads of two or three people. Requests sort themselves, reports write themselves almost automatically. GDPR-compliant, processed in the EU.",
     "cta": "Free initial consultation",
     "ctaSecondary": "What is this costing you per year? Calculate ROI",
+    "processLink": "See how we work together",
+    "promise": "In the pilot, we measure the time saved on one process. We check the quality too.",
     "ctaMicrocopy": "Free, 30 minutes, no sales pitch.",
     "trustLine": "20+ years of product development and leadership in industry · 20,000+ LinkedIn followers · GDPR-first"
   },
@@ -211,13 +214,13 @@
           "Engineers who build their own small analysis tools instead of waiting for IT."
         ],
         "backFeatures": [
-          "AI in Leadership",
-          "Introduction to generative AI in engineering",
-          "Copilot in daily engineering work",
-          "Vibe Coding for engineers",
-          "AI agents in product development"
+          "AI introduction and follow-up for everyone",
+          "Managing AI-driven business transformation",
+          "EU AI Act and data protection",
+          "AI tools for transformation",
+          "Microsoft 365 Copilot"
         ],
-        "detail": "Get your team up to speed in two days"
+        "detail": "Six portal learning series. In-house workshops adapted to your team."
       },
       "beratung": {
         "title": "Consulting",
@@ -304,73 +307,73 @@
         "title": "Patent Research and Prior Art",
         "description": "Automated analysis of patent databases. Finds relevant prior art, identifies competitor patents and produces structured overviews.",
         "metrics": "Prior art fully in view before design work begins. Account: quality and timing.",
-        "alt": "Patent research workflow"
+        "alt": "Compare a technical feature with patent sources and evaluate it."
       },
       "project-review-dashboard": {
         "title": "Project Review Dashboard",
         "description": "Automated analysis of project maturity with a traffic-light system. Spots weak points, assesses release criteria and gives data-based recommendations for the next development steps.",
         "metrics": "Maturity at a glance, weak points visible before the gate rather than after. Account: quality and timing.",
-        "alt": "Project review dashboard with maturity analysis"
+        "alt": "Requirements, evidence and approval reveal open project decisions."
       },
       "email-classification": {
         "title": "Automatically pre-sort technical requests",
         "description": "Classification of incoming technical requests and change orders. Gathers context from your systems and drafts a reply. Every answered request feeds into the lessons-learned base.",
         "metrics": "Replies the same day, and every answer becomes secured knowledge. Account: timing and cost.",
-        "alt": "Email classification flow"
+        "alt": "A request and attachment become a draft for human approval."
       },
       "tech-scouting": {
         "title": "Technology Scouting",
         "description": "Continuous monitoring of technology trends and innovations. Filters relevant developments out of journals, papers and news and flags what affects your products.",
         "metrics": "Relevant developments land on your desk weekly, without any search effort. Account: timing and quality.",
-        "alt": "Tech scouting automation"
+        "alt": "Research connects publications to developments relevant to the product."
       },
       "knowledge-graph-management": {
         "title": "Connect engineering knowledge",
         "description": "Reports, minutes and documents are tagged automatically, linked semantically and networked. Every question answered in seconds, with a source reference. No more lost knowledge or long searches.",
         "metrics": "Every answer findable in seconds, with source. Account: timing and quality.",
-        "alt": "Knowledge graph structure"
+        "alt": "Drawings, test reports and minutes provide an answer with sources."
       },
       "customer-meeting-prep": {
         "title": "Prepare technical client meetings",
         "description": "A briefing before every review round: requirements status, open points, latest minutes, current developments at the client. Compact and complete.",
         "metrics": "Prepared in minutes, no open point gets forgotten. Account: timing and quality.",
-        "alt": "Client preparation dashboard"
+        "alt": "Requirements, open issues and minutes feed a meeting brief."
       },
       "audit-documentation": {
         "title": "Audit and Document Analysis",
         "description": "Smart analysis and categorisation of audit documents. Automatically extracts compliance requirements, risks and recommended actions from audit reports.",
         "metrics": "Requirements and risks from audit documents captured automatically. Account: quality and cost.",
-        "alt": "Audit document analysis dashboard"
+        "alt": "Requirements are linked to evidence and review status."
       },
       "meeting-transcript-analysis": {
         "title": "Meetings without the minutes effort",
         "description": "Meeting transcripts automatically sorted into to-dos, insights and open points. Stored for semantic search.",
         "metrics": "To-dos and insights captured before the room empties. Account: cost and timing.",
-        "alt": "Transcript analysis pipeline"
+        "alt": "A conversation becomes decisions, assigned tasks and open questions."
       },
       "multi-agent-debate": {
         "title": "Review concepts from multiple angles",
         "description": "AI agents examine ideas from different perspectives. Analyses concepts systematically, extendable with the Six Thinking Hats method for thorough idea validation.",
         "metrics": "Weaknesses in an idea surface before budget flows in. Account: quality and cost.",
-        "alt": "Multi-agent debate system"
+        "alt": "Technical feasibility, costs and risks inform a concept decision."
       },
       "competitor-benchmark": {
         "title": "Competitor Benchmark",
         "description": "Automated competitor analysis. Compares prices, features and positioning, and produces regular reports.",
         "metrics": "Competitor prices, features and positioning in regular comparison. Account: quality and timing.",
-        "alt": "Benchmark process"
+        "alt": "Compare products using consistent criteria and documented sources."
       },
       "innovation-assessment-dashboard": {
         "title": "Innovation Assessment Dashboard",
         "description": "Systematic evaluation of technologies and innovation ideas. Analyses technical feasibility, manufacturability and profitability.",
         "metrics": "Feasibility and profitability assessed comparably, not by gut feel. Account: quality and cost.",
-        "alt": "Innovation assessment dashboard"
+        "alt": "Evaluate ideas by value, feasibility and available evidence."
       },
       "analysis-tools-framework": {
         "title": "Understand customer needs systematically",
         "description": "Systematic customer needs analysis with the Jobs-to-be-Done framework and customer journey mapping. AI helps identify requirements and pain points.",
         "metrics": "Customer requirements and pain points structured rather than anecdotal. Account: quality.",
-        "alt": "Business analysis tools"
+        "alt": "Translate customer needs into requirements, criteria and evidence."
       }
     }
   },
@@ -393,10 +396,13 @@
     "ctaMicrocopy": "Free, 15 minutes, no sales pitch."
   },
   "process": {
-    "headline": "How",
-    "headlineHighlight": "straightforward",
-    "headlineEnd": "getting started is",
-    "subline": "From the first call to delivery. Transparent and structured.",
+    "headline": "From the first call to a",
+    "headlineHighlight": "result",
+    "headlineEnd": "",
+    "subline": "At every stage, you know what happens, what you receive and what it costs. You decide whether to take the next step afterwards.",
+    "directPilot": "Already know which process to tackle? You can start directly with the pilot.",
+    "training": "Training is available at any stage or as a standalone service.",
+    "trainingLink": "Explore training",
     "ctaText": "The initial consultation takes 30 minutes and nothing more.",
     "ctaButton": "Book a free initial consultation",
     "steps": {
@@ -427,7 +433,7 @@
       "konzept": {
         "title": "Pilot",
         "subtitle": "One process gets automated",
-        "description": "One process, chosen by you, gets automated. Fixed price, clear timeframe, defined outcome. Afterwards you decide whether to build on it.",
+        "description": "We automate one process and compare the time it takes before and after. We check quality together. Then you decide whether to expand.",
         "details": [
           "One process of your choice",
           "Fixed price, clear timeframe",

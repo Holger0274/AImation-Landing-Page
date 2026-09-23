@@ -131,10 +131,11 @@ export default async function KiPromptsPage({
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
               <Image
-                src="/images/blog/ki-prompts-hero.jpg"
-                alt="Prompt Engineering: präzise KI-Befehle die sofort funktionierende Ergebnisse liefern"
+                src="/images/editorial/blog-prompts.svg"
+                alt="Aufgabe, Kontext, Ausgabeformat und Prüfkriterium führen zu einer prüfbaren KI-Antwort."
                 fill
-                className="object-cover"
+              sizes="(max-width: 768px) 92vw, 768px"
+                className="object-contain"
                 priority
               />
             </div>

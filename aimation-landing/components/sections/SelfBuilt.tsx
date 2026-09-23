@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import {
   OpenAI,
   Claude,
@@ -13,7 +13,7 @@ import {
 import { SupabaseIcon } from '@/components/icons/SupabaseIcon';
 import { ObsidianIcon } from '@/components/icons/ObsidianIcon';
 import { useLeadForm } from '@/components/LeadFormProvider';
-import DemoTile from '@/components/ui/DemoTile';
+import EngineeringProjects from './EngineeringProjects';
 
 interface ToolPill {
   name: string;
@@ -81,6 +81,7 @@ function ToolPillItem({ tool, delay }: { tool: ToolPill; delay: number }) {
 
 export default function SelfBuilt() {
   const t = useTranslations('selfBuilt');
+  const en = useLocale() === 'en';
   const tTools = useTranslations('socialProof');
   const { openLeadForm } = useLeadForm();
 
@@ -102,29 +103,12 @@ export default function SelfBuilt() {
           className="text-center max-w-3xl mx-auto mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-5 text-ink leading-tight">
-            {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span>
+            {en ? 'Built from ' : 'Aus der Entwicklung. '}<span className="gradient-text">{en ? 'experience.' : 'Selbst gebaut.'}</span>
           </h2>
-          <p className="text-muted font-inter leading-relaxed">{t('body')}</p>
+          <p className="text-muted font-inter leading-relaxed">{en ? 'Root-cause analysis, simulation data and idea evaluation: three examples from our own workshop, with actual screenshots and their current status.' : 'Ursachenanalyse, Berechnungsdaten und Ideenbewertung: drei Beispiele aus unserer Werkstatt, mit echten Screenshots und ihrem aktuellen Stand.'}</p>
         </motion.div>
 
-        {/* Demo-Kacheln. Screencasts liefert Holger, siehe TODO-assets.md */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 max-w-5xl mx-auto">
-          <DemoTile
-            title={t('demoTiles.knowledgeGraph.title')}
-            badge={t('demoTiles.badge')}
-            placeholderNote={t('demoTiles.knowledgeGraph.note')}
-          />
-          <DemoTile
-            title={t('demoTiles.requestAgent.title')}
-            badge={t('demoTiles.badge')}
-            placeholderNote={t('demoTiles.requestAgent.note')}
-          />
-          <DemoTile
-            title={t('demoTiles.patentResearch.title')}
-            badge={t('demoTiles.badge')}
-            placeholderNote={t('demoTiles.patentResearch.note')}
-          />
-        </div>
+        <EngineeringProjects />
 
         <div className="text-center mb-20">
           <button

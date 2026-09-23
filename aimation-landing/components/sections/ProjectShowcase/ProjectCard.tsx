@@ -15,7 +15,6 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const t = useTranslations('projectShowcase');
   const statusConfig = STATUS_CONFIG[project.status];
-  const isComingSoon = project.status === 'coming-soon';
 
   const cardContent = (
     <motion.div
@@ -23,7 +22,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         spot-card group relative h-full rounded-xl overflow-hidden
         transition-all duration-300
         hover:shadow-xl
-        ${isComingSoon ? 'opacity-60' : ''}
       `}
       whileHover={{ y: -4 }}
       onPointerMove={trackSpotlight}
@@ -64,7 +62,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               alt={t(`cards.${project.id}.alt`)}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-              className="object-cover"
+              className="object-contain"
             />
           </motion.div>
         ) : null}
@@ -143,14 +141,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
 
-      {/* Coming Soon Overlay */}
-      {isComingSoon && (
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px] flex items-center justify-center pointer-events-none">
-          <div className="bg-surface px-6 py-3 rounded-full shadow-lg border border-line">
-            <span className="text-sm font-semibold text-muted">{t('comingSoon')}</span>
-          </div>
-        </div>
-      )}
     </motion.div>
   );
 

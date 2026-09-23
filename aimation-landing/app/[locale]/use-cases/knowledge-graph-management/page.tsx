@@ -74,13 +74,15 @@ export default async function KnowledgeGraphPage({
 
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
             <Image
-              src="/images/use-cases/knowledge-graph-hero.jpg"
-              alt="Knowledge Graph – 3D-Wissensnetzwerk mit KI-gesteuerten Verbindungen im Unternehmen"
+              src="/images/editorial/engineering-knowledge.webp"
+              alt="Illustration: Ein Gehäuse ist mit Zeichnung, Prüfbericht und Entwicklungsnotizen verknüpft."
               fill
+              sizes="(max-width: 768px) 92vw, 768px"
               className="object-cover"
               priority
             />
           </div>
+          <p className="text-xs text-dim -mt-5 mb-8">KI-generierte Illustration des Anwendungsfalls</p>
 
           <p className="text-muted font-inter leading-relaxed mb-4">
             Ein Ingenieur geht in Rente. 35 Jahre Erfahrung, hunderte gelöste Probleme, unzählige Workarounds, die nirgendwo dokumentiert sind. Abschiedsfeier, Blumen, gute Wünsche. Drei Monate später taucht genau das Problem wieder auf, das er vor acht Jahren einmal gelöst hat. Niemand erinnert sich. Das Wissen ist weg.
@@ -110,6 +112,7 @@ export default async function KnowledgeGraphPage({
             <h2 className="font-heading font-bold text-ink mb-4">So sieht das aus</h2>
             <div className="max-w-sm">
               <DemoTile
+                previewSrc="/images/editorial/knowledge-graph.svg"
                 title="Wissens-Graph: Frage rein, Antwort mit Quelle raus"
                 badge="Demo folgt"
                 placeholderNote="Screencast folgt. Im Erstgespräch zeige ich Ihnen, wie der Wissens-Graph auf meine eigenen Projektfragen antwortet, mit Quellenangabe."
@@ -146,10 +149,11 @@ export default async function KnowledgeGraphPage({
 
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10">
             <Image
-              src="/images/use-cases/knowledge-graph-detail.jpg"
-              alt="Semantische Wissensgraph-Karte – Abteilungen, Dokumente und Expertise vernetzt"
+              src="/images/editorial/knowledge-detail.svg"
+              alt="Prinzipdarstellung: Eine Frage zur Bauteiländerung führt zur Antwort mit Prüfbericht und Freigabeprotokoll."
               fill
-              className="object-cover"
+              sizes="(max-width: 768px) 92vw, 768px"
+              className="object-contain"
             />
           </div>
 

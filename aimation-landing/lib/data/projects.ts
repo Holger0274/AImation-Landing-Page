@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
     detailUrl: '/use-cases/patentrecherche-ki',
     image: {
       type: 'image',
-      src: '/images/use-cases/patent-research.png',
+      src: '/images/editorial/patent-research.svg',
       alt: 'Patent-Recherche Workflow'
     }
   },
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     metrics: 'Reifegrad auf einen Blick, Schwachstellen zeigen sich vor dem Gate statt danach. Konto: Qualität und Timing.',
     image: {
       type: 'image',
-      src: '/images/use-cases/project-review-dashboard.png',
+      src: '/images/editorial/project-review-dashboard.svg',
       alt: 'Projekt Review Dashboard mit Reifegradanalyse'
     }
   },
@@ -47,7 +47,7 @@ export const PROJECTS: Project[] = [
     detailUrl: '/use-cases/email-klassifizierung',
     image: {
       type: 'image',
-      src: '/images/use-cases/email-classification.png',
+      src: '/images/editorial/email-classification.svg',
       alt: 'E-Mail Klassifizierungs-Flow'
     }
   },
@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
     metrics: 'Relevante Entwicklungen landen wöchentlich auf Ihrem Tisch, ohne Suchaufwand. Konto: Timing und Qualität.',
     image: {
       type: 'image',
-      src: '/images/use-cases/tech-scouting.png',
+      src: '/images/editorial/tech-scouting.svg',
       alt: 'Tech-Scouting Automatisierung'
     }
   },
@@ -76,7 +76,7 @@ export const PROJECTS: Project[] = [
     detailUrl: '/use-cases/knowledge-graph-management',
     image: {
       type: 'image',
-      src: '/images/use-cases/knowledge-graph.png',
+      src: '/images/editorial/knowledge-graph.svg',
       alt: 'Knowledge Graph Struktur'
     }
   },
@@ -90,7 +90,7 @@ export const PROJECTS: Project[] = [
     metrics: 'Vorbereitet in Minuten, kein offener Punkt wird vergessen. Konto: Timing und Qualität.',
     image: {
       type: 'image',
-      src: '/images/use-cases/customer-preparation.png',
+      src: '/images/editorial/customer-preparation.svg',
       alt: 'Kundenvorbereitung Dashboard'
     }
   },
@@ -104,7 +104,7 @@ export const PROJECTS: Project[] = [
     metrics: 'Anforderungen und Risiken aus Prüfdokumenten automatisch erfasst. Konto: Qualität und Kosten.',
     image: {
       type: 'image',
-      src: '/images/use-cases/audit-documentation.png',
+      src: '/images/editorial/audit-documentation.svg',
       alt: 'Audit-Dokumentenanalyse Dashboard'
     }
   },
@@ -118,7 +118,7 @@ export const PROJECTS: Project[] = [
     metrics: 'To-dos und Erkenntnisse sind festgehalten, bevor der Raum leer ist. Konto: Kosten und Timing.',
     image: {
       type: 'image',
-      src: '/images/use-cases/meeting-transcript.png',
+      src: '/images/editorial/meeting-transcript.svg',
       alt: 'Transkript-Analyse Pipeline'
     }
   },
@@ -132,7 +132,7 @@ export const PROJECTS: Project[] = [
     metrics: 'Schwächen einer Idee zeigen sich, bevor Budget hineinfließt. Konto: Qualität und Kosten.',
     image: {
       type: 'image',
-      src: '/images/use-cases/multi-agent-debate.png',
+      src: '/images/editorial/multi-agent-debate.svg',
       alt: 'Multi-Agenten-Debattier-System'
     }
   },
@@ -146,7 +146,7 @@ export const PROJECTS: Project[] = [
     metrics: 'Preise, Funktionen und Positionierung der Wettbewerber regelmäßig im Vergleich. Konto: Qualität und Timing.',
     image: {
       type: 'image',
-      src: '/images/use-cases/competitor-benchmark.png',
+      src: '/images/editorial/competitor-benchmark.svg',
       alt: 'Benchmark-Prozess'
     }
   },
@@ -160,7 +160,7 @@ export const PROJECTS: Project[] = [
     metrics: 'Machbarkeit und Wirtschaftlichkeit vergleichbar bewertet, statt nach Bauchgefühl. Konto: Qualität und Kosten.',
     image: {
       type: 'image',
-      src: '/images/use-cases/innovation-dashboard.png',
+      src: '/images/editorial/innovation-dashboard.svg',
       alt: 'Innovations-Assessment Dashboard'
     }
   },
@@ -174,7 +174,7 @@ export const PROJECTS: Project[] = [
     metrics: 'Anforderungen und Schmerzpunkte der Kunden strukturiert statt anekdotisch. Konto: Qualität.',
     image: {
       type: 'image',
-      src: '/images/use-cases/analysis-tools.png',
+      src: '/images/editorial/analysis-tools.svg',
       alt: 'Business Analyse Tools'
     }
   }

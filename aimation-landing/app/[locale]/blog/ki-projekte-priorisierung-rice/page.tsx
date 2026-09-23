@@ -84,12 +84,13 @@ export default async function RicePriorisierungPage({
             </p>
 
             {/* Hero-Bild */}
-            <div className="relative w-full rounded-2xl overflow-hidden mb-2" style={{ aspectRatio: '3/2' }}>
+            <div className="relative w-full rounded-2xl overflow-hidden mb-2" style={{ aspectRatio: '16/9' }}>
               <Image
-                src="/images/blog/rice-priorisierung-hero.jpg"
-                alt="Fünf Projektkarten auf einem Schreibtisch, zwei davon mit Magenta-Highlight als priorisierte KI-Projekte"
+                src="/images/editorial/blog-rice.svg"
+                alt="RICE berechnet Reichweite mal Wirkung mal Zuversicht, geteilt durch Aufwand."
                 fill
-                className="object-cover object-center"
+              sizes="(max-width: 768px) 92vw, 768px"
+                className="object-contain object-center"
                 priority
               />
             </div>

@@ -1,12 +1,11 @@
 'use client';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { useLeadForm } from '@/components/LeadFormProvider';
 import EngineeringDrawing from '@/components/visuals/EngineeringDrawing';
 
 export default function Hero() {
   const t = useTranslations('hero');
-  const en = useLocale() === 'en';
   const { openLeadForm } = useLeadForm();
   return (
     <section className="engineering-hero" aria-labelledby="hero-heading">
@@ -18,15 +17,16 @@ export default function Hero() {
             <p className="hero-description">{t('subline')}</p>
             <div className="hero-actions">
               <button className="engineering-button" onClick={openLeadForm}>{t('cta')}<ArrowUpRight size={19} aria-hidden="true" /></button>
-              <button className="engineering-text-link" onClick={() => document.querySelector<HTMLButtonElement>('[data-roi-calculator-trigger]')?.click()}>{t('ctaSecondary')}<ArrowUpRight size={16} aria-hidden="true" /></button>
+              <a className="engineering-text-link" href="#prozess">{t('processLink')}<ArrowDown size={16} aria-hidden="true" /></a>
             </div>
             <p className="hero-microcopy">{t('ctaMicrocopy')}</p>
+            <p className="hero-promise">{t('promise')}</p>
           </div>
           <EngineeringDrawing />
         </div>
         <div className="hero-footline">
           <p>{t('trustLine')}</p>
-          <a href="#ki-landkarte" className="hero-explore">{en ? 'Discover the approach' : 'Vorgehen entdecken'}<ArrowDown size={16} aria-hidden="true" /></a>
+          <button className="engineering-text-link" onClick={() => document.querySelector<HTMLButtonElement>('[data-roi-calculator-trigger]')?.click()}>{t('ctaSecondary')}<ArrowUpRight size={16} aria-hidden="true" /></button>
         </div>
       </div>
     </section>

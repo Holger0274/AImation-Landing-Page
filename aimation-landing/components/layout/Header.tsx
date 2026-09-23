@@ -109,7 +109,7 @@ export default function Header() {
           </Link>
 
           {/* ── Desktop Nav ── */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
 
             {/* Leistungen Dropdown */}
             <div
@@ -170,7 +170,7 @@ export default function Header() {
 
                       {/* Label */}
                       <div className="px-5 pt-5 pb-2">
-                        <span className="text-[10px] font-heading font-bold uppercase tracking-[0.18em] text-white/25">
+                        <span className="text-xs font-heading font-bold uppercase tracking-[0.12em] text-muted">
                           {t('leistungenLabel')}
                         </span>
                       </div>
@@ -223,7 +223,7 @@ export default function Header() {
                       {/* Footer strip */}
                       <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} className="mx-3" />
                       <div className="flex items-center justify-between px-5 py-3.5">
-                        <span className="text-[11px] text-white/30 font-inter">
+                        <span className="text-sm text-muted font-body">
                           {t('dropdownFooter')}
                         </span>
                         <a
@@ -242,6 +242,10 @@ export default function Header() {
                 )}
               </AnimatePresence>
             </div>
+
+            <a href={`${homeHref}#prozess`} className="text-sm font-heading font-medium text-ink hover:text-magenta-light transition-colors">
+              {t('ablauf')}
+            </a>
 
             {/* Use Cases */}
             <a
@@ -347,7 +351,7 @@ export default function Header() {
                                 <div className="text-sm font-heading font-semibold text-ink group-hover:text-magenta-light transition-colors">
                                   {item.label}
                                 </div>
-                                <div className="text-[11px] text-white/60 leading-tight">{item.description}</div>
+                                <div className="text-[13px] text-muted leading-relaxed">{item.description}</div>
                               </div>
                             </Link>
                           );
@@ -357,6 +361,10 @@ export default function Header() {
                   )}
                 </AnimatePresence>
               </div>
+
+              <a href={`${homeHref}#prozess`} onClick={() => setIsMobileMenuOpen(false)} className="text-[15px] font-heading font-semibold text-ink py-3 px-2 hover:text-magenta-light transition-colors">
+                {t('ablauf')}
+              </a>
 
               <a
                 href={useCasesHref}

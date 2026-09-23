@@ -87,10 +87,11 @@ export default async function KiRoadmapIllusionPage({
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
               <Image
-                src="/images/blog/ki-roadmap-illusion-hero.jpg"
-                alt="Mittelstand-Manager hält einen Projektplan mit geradem Pfeil: dahinter zeigt ein Whiteboard die chaotische Realität von KI-Implementierungen"
+                src="/images/editorial/blog-roadmap.svg"
+                alt="Ein gerader Plan steht einem iterativen Weg mit Pilot, Lernen und Anpassung gegenüber."
                 fill
-                className="object-cover"
+              sizes="(max-width: 768px) 92vw, 768px"
+                className="object-contain"
                 priority
               />
             </div>

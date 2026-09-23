@@ -27,7 +27,7 @@ export default function ResearchRadar({ variant = 'light', className }: Research
   const labelColor = isDark ? 'rgba(255,255,255,0.75)' : '#4b5563';
   const titleColor = isDark ? '#ffffff' : '#071013';
   const accent = '#60AFFF';
-  const focus = '#f90093';
+  const focus = isDark ? '#b8c7d1' : '#4a6573';
 
   // Sweep-Keil: 50°-Segment, wird per animateTransform dauerhaft um das Zentrum rotiert.
   const sweepStart = { x: CENTER.x + RING_R * Math.cos((-25 * Math.PI) / 180), y: CENTER.y + RING_R * Math.sin((-25 * Math.PI) / 180) };

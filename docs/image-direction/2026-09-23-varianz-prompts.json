@@ -1,0 +1,18 @@
+{
+  "generator": "Built-in image_gen",
+  "destination": "aimation-landing/public/images/editorial",
+  "files": [
+    {
+      "file": "reporting-v2.png",
+      "prompt": "Create one premium editorial photograph for a German engineering consultancy website, landscape 16:9. Photorealistic, restrained graphite #071013 and warm paper #faf9f7 palette, sharp silver details, subtle cool daylight, high contrast but readable shadows. Absolutely no people, screens, glowing AI brains, logos, watermarks, readable text or collage. Croppable composition, main subject within central 70%. Use case: photorealistic-natural. Subject: a sculptural towering uneven stack of engineering test reports, curled paper, binder clips and folded test charts on a dark draughting desk. Side-on close shot, paper edges beautifully lit, one unfolded graph sheet in foreground. Communicates time consumed by documentation. Museum-quality industrial editorial still life, tactile paper texture, not office stock photography."
+    },
+    {
+      "file": "requests-v2.png",
+      "prompt": "Create one premium editorial photograph for a German engineering consultancy website, landscape 16:9. Photorealistic, restrained graphite #071013 and warm paper #faf9f7 palette, sharp silver details, subtle cool daylight, high contrast but readable shadows. Absolutely no people, screens, glowing AI brains, logos, watermarks, readable text or collage. Croppable composition, main subject within central 70%. Use case: photorealistic-natural. Subject: overhead macro photograph of a large engineering drawing of a mechanical bracket on warm tracing paper. Two overlapping revision sheets subtly misalign, a mechanical pencil, a small machined aluminum bracket at edge and precise magenta #f90093 pencil circles marking changes. Mainly drawing linework, completely different from office or workshop scenes. No writing or words, only lines and geometric dimension symbols."
+    },
+    {
+      "file": "competition-v2.png",
+      "prompt": "Create one premium editorial photograph for a German engineering consultancy website, landscape 16:9. Photorealistic, restrained graphite #071013 and warm paper #faf9f7 palette, sharp silver details, subtle cool daylight, high contrast but readable shadows. Absolutely no people, screens, glowing AI brains, logos, watermarks, readable text or collage. Croppable composition, main subject within central 70%. Use case: photorealistic-natural. Subject: dramatic low-angle view along an industrial production conveyor carrying unfinished silver precision housings, conveyor motion blur while the closest housing is crisp. Empty automated precision factory softly out of focus. A sense of development time becoming production momentum. Strong diagonal leading lines, silver illuminated edges, no screens and no people."
+    }
+  ]
+}

@@ -12,7 +12,7 @@ export default function About() {
       <div className="engineering-wrap">
         <div className="about-layout">
           <figure className="about-portrait">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-line"><Image src="/images/about-holger.png" alt={en ? 'Holger Peschke, founder of AImation' : 'Holger Peschke, Gründer von AImation'} fill sizes="(max-width: 900px) 90vw, 400px" className="object-cover" /></div>
+            <div className="relative aspect-square overflow-hidden rounded-lg border border-line"><Image src="/images/about-holger.png" alt={en ? 'Holger Peschke and his son working together at a laptop' : 'Holger Peschke mit seinem Sohn bei der gemeinsamen Arbeit am Laptop'} fill sizes="(max-width: 900px) 90vw, 400px" className="object-contain" /></div>
             <figcaption><strong>Holger Peschke</strong><span>{en ? 'Founder · AImation' : 'Gründer · AImation'}</span></figcaption>
           </figure>
           <div className="section-intro">

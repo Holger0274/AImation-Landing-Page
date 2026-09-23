@@ -3,38 +3,49 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import KiSchulungenPage from '@/components/pages/KiSchulungenPage';
 import { FAQPageSchema, BreadcrumbSchema } from '@/components/StructuredData';
-import { FAQ_ITEMS as pageFaqs } from '@/lib/data/faqs-ki-schulungen';
+import { getTrainingFaqs } from '@/lib/data/faqs-ki-schulungen';
+import { setRequestLocale } from 'next-intl/server';
 
 export const dynamic = 'force-static';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
-export const metadata: Metadata = {
-  title: { absolute: 'KI-Schulungen für KMUs und Mittelstand | Praxis, kein Hype | AImation' },
-  description: 'KI-Schulungen für KMUs: Von Grundlagen bis Multi-Agent-Systeme. 3 Ebenen, alle Module kombinierbar. 20 Jahre Engineering-Erfahrung. Direkt anwendbar.',
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const en = locale === 'en';
+  const url = `${siteUrl}${en ? '/en' : ''}/ki-schulungen-mittelstand`;
+  const title = en ? 'AI training for engineering teams | AImation' : 'KI-Schulungen für technische Unternehmen | AImation';
+  const description = en ? 'Six learning series from AI foundations to Microsoft 365 Copilot. In-house workshops based on your tasks, with supporting learning materials.' : 'KI-Schulungen für technische Unternehmen: sechs Lernreihen von Grundlagen bis Copilot. Inhouse-Workshops an Ihren Aufgaben, mit begleitendem Lernmaterial.';
+  return {
+  title: { absolute: title },
+  description,
   alternates: {
-    canonical: `${siteUrl}/ki-schulungen-mittelstand`,
+    canonical: url,
+    languages: { de: `${siteUrl}/ki-schulungen-mittelstand`, en: `${siteUrl}/en/ki-schulungen-mittelstand` },
   },
   openGraph: {
-    title: 'KI-Schulungen für KMUs und Mittelstand | AImation',
-    description: 'KI-Schulungen für KMUs: Von Grundlagen bis Multi-Agent-Systeme. 3 Ebenen, alle Module kombinierbar.',
-    url: `${siteUrl}/ki-schulungen-mittelstand`,
+    title,
+    description,
+    url,
     type: 'website',
-    locale: 'de_DE',
+    locale: en ? 'en_GB' : 'de_DE',
     images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
   },
   robots: { index: true, follow: true },
-};
+  };
+}
 
-const breadcrumbs = [
-  { name: 'Startseite', url: '/' },
-  { name: 'KI-Schulungen für Unternehmen', url: '/ki-schulungen-mittelstand' },
-];
-
-export default function KiSchulungenRoute() {
+export default async function KiSchulungenRoute({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const en = locale === 'en';
+  const breadcrumbs = [
+    { name: en ? 'Home' : 'Startseite', url: en ? '/en' : '/' },
+    { name: en ? 'AI training for businesses' : 'KI-Schulungen für Unternehmen', url: `${en ? '/en' : ''}/ki-schulungen-mittelstand` },
+  ];
   return (
     <>
-      <FAQPageSchema faqs={pageFaqs} />
+      <FAQPageSchema faqs={getTrainingFaqs(locale === 'en')} />
       <BreadcrumbSchema items={breadcrumbs} siteUrl={siteUrl} />
       <Header />
       <KiSchulungenPage />

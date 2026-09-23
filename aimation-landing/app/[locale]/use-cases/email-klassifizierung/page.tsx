@@ -74,13 +74,15 @@ export default async function EmailKlassifizierungPage({
 
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
             <Image
-              src="/images/use-cases/email-klassifizierung-hero.jpg"
-              alt="KI-gestützte E-Mail Klassifizierung – automatisches Routing von Nachrichten"
+              src="/images/editorial/requests.webp"
+              alt="Illustration: Technische Anfragen mit Bauteilzeichnungen warten in einer Eingangsablage."
               fill
+              sizes="(max-width: 768px) 92vw, 768px"
               className="object-cover"
               priority
             />
           </div>
+          <p className="text-xs text-dim -mt-5 mb-8">KI-generierte Illustration des Anwendungsfalls</p>
 
           <p className="text-muted font-inter leading-relaxed mb-4">
             Montagmorgen, halb neun. 80 ungelesene Mails in der zentralen Inbox. Eine Kundenbeschwerde von Freitagnachmittag, die niemand gesehen hat. Eine dringende Angebotsanfrage, die zwischen Newslettern und Rechnungen verschwindet. Und ein Mitarbeiter, der die erste Stunde des Tages damit verbringt, zu sortieren statt zu arbeiten.
@@ -107,6 +109,7 @@ export default async function EmailKlassifizierungPage({
             <h2 className="font-heading font-bold text-ink mb-4">So sieht das aus</h2>
             <div className="max-w-sm">
               <DemoTile
+                previewSrc="/images/editorial/email-classification.svg"
                 title="Anfragen-Agent: vom Posteingang zum Antwortentwurf"
                 badge="Demo folgt"
                 placeholderNote="Screencast folgt. Im Erstgespräch zeige ich Ihnen, wie eine eingehende technische Anfrage klassifiziert und ein Antwortentwurf erstellt wird."
@@ -143,10 +146,11 @@ export default async function EmailKlassifizierungPage({
 
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10">
             <Image
-              src="/images/use-cases/email-klassifizierung-detail.jpg"
-              alt="Vorher/Nachher: Chaotischer Posteingang wird zu strukturiertem KI-Klassifizierungssystem"
+              src="/images/editorial/request-detail.svg"
+              alt="Prinzipdarstellung: Anfrage erfassen, Kontext und Entwurf vorbereiten, durch einen Menschen freigeben."
               fill
-              className="object-cover"
+              sizes="(max-width: 768px) 92vw, 768px"
+              className="object-contain"
             />
           </div>
 

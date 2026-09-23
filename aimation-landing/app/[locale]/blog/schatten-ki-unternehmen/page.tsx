@@ -82,10 +82,11 @@ export default async function SchattenKiPage({
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
               <Image
-                src="/images/blog/schatten-ki-hero.jpg"
-                alt="Schatten-KI im Unternehmen: Mitarbeiter nutzen KI-Tools ohne IT-Freigabe"
+                src="/images/editorial/blog-shadow.svg"
+                alt="Firmendaten können in ungeklärte private Tools oder kontrolliert in freigegebene Anwendungen gelangen."
                 fill
-                className="object-cover"
+              sizes="(max-width: 768px) 92vw, 768px"
+                className="object-contain"
                 priority
               />
             </div>

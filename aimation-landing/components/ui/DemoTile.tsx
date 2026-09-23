@@ -20,9 +20,11 @@ interface DemoTileProps {
   /** Screencast liefert Holger, siehe TODO-assets.md im Repo-Root. */
   videoSrc?: string;
   imageSrc?: string;
+  /** Explanatory illustration only; never presented as a product screenshot. */
+  previewSrc?: string;
 }
 
-export default function DemoTile({ title, badge, placeholderNote, videoSrc, imageSrc }: DemoTileProps) {
+export default function DemoTile({ title, badge, placeholderNote, videoSrc, imageSrc, previewSrc }: DemoTileProps) {
   const [open, setOpen] = useState(false);
   const hasAsset = Boolean(videoSrc || imageSrc);
 
@@ -35,8 +37,8 @@ export default function DemoTile({ title, badge, placeholderNote, videoSrc, imag
           onPointerMove={trackSpotlight}
         >
           <div className="relative aspect-video w-full bg-[#071013] flex items-center justify-center overflow-hidden">
-            {imageSrc ? (
-              <Image src={imageSrc} alt={title} fill className="object-cover" />
+            {imageSrc || previewSrc ? (
+              <Image src={(imageSrc || previewSrc)!} alt={previewSrc && !imageSrc ? `Prinzipdarstellung: ${title}` : title} fill sizes="(max-width: 640px) 90vw, 330px" className="object-contain" />
             ) : (
               <div
                 className="absolute inset-0"
@@ -47,10 +49,10 @@ export default function DemoTile({ title, badge, placeholderNote, videoSrc, imag
                 }}
               />
             )}
-            <div className="relative z-10 w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-[#f90093]/80 transition-colors duration-300">
+            {(!previewSrc || videoSrc) && <div className="relative z-10 w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
               <Play className="w-6 h-6 text-white ml-0.5" fill="currentColor" />
-            </div>
-            <span className="absolute bottom-3 right-3 px-2 py-1 rounded-md bg-black/60 text-white text-xs font-inter">
+            </div>}
+            <span className="absolute top-3 right-3 px-2 py-1 rounded-md bg-black/60 text-white text-xs font-inter">
               {badge}
             </span>
           </div>
@@ -64,6 +66,7 @@ export default function DemoTile({ title, badge, placeholderNote, videoSrc, imag
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{placeholderNote}</DialogDescription>
         </DialogHeader>
+        {!hasAsset && previewSrc && <div className="relative w-full aspect-video rounded-lg overflow-hidden"><Image src={previewSrc} alt={`Prinzipdarstellung: ${title}`} fill sizes="(max-width: 768px) 90vw, 600px" className="object-contain" /></div>}
         {videoSrc ? (
           <video src={videoSrc} controls className="w-full rounded-lg" />
         ) : imageSrc ? (

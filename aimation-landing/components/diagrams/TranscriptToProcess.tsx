@@ -26,7 +26,7 @@ export default function TranscriptToProcess({ variant = 'light', className }: Tr
   const labelColor = isDark ? '#ffffff' : '#071013';
   const iconColor = isDark ? 'rgba(255,255,255,0.75)' : '#4b5563';
   const shadowColor = isDark ? 'rgba(0,0,0,0.45)' : 'rgba(7,16,19,0.12)';
-  const focus = '#f90093';
+  const focus = isDark ? '#b8c7d1' : '#4a6573';
   const accent = '#60AFFF';
 
   const svgWidth = STEPS.length * (BOX_W + GAP) - GAP;
@@ -86,7 +86,7 @@ export default function TranscriptToProcess({ variant = 'light', className }: Tr
               width={BOX_W}
               height={BOX_H}
               rx={10}
-              fill={isFocus ? 'rgba(249,0,147,0.06)' : boxFill}
+              fill={isFocus ? 'rgba(143,166,181,0.06)' : boxFill}
               stroke={isFocus ? focus : boxStroke}
               strokeWidth={isFocus ? 2 : 1.3}
               filter="url(#ttpShadow)"
@@ -119,7 +119,7 @@ export default function TranscriptToProcess({ variant = 'light', className }: Tr
                   fontFamily="Space Grotesk, sans-serif"
                   fontWeight={700}
                   fontSize={10.5}
-                  fill="#ffffff"
+                  fill={isDark ? '#071013' : '#ffffff'}
                 >
                   {step.badge}
                 </text>

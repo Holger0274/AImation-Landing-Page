@@ -16,7 +16,7 @@ export default function AngebotsTreppe({ variant = 'light', className }: Angebot
   const mutedColor = isDark ? 'rgba(255,255,255,0.55)' : '#6b7280';
   const shadowColor = isDark ? 'rgba(0,0,0,0.45)' : 'rgba(7,16,19,0.14)';
   const baselineColor = isDark ? 'rgba(255,255,255,0.15)' : 'rgba(7,16,19,0.1)';
-  const focus = '#f90093';
+  const focus = isDark ? '#b8c7d1' : '#4a6573';
 
   const steps = [
     { label: PRICING.erstgespraech.label, price: PRICING.erstgespraech.price },
@@ -43,8 +43,8 @@ export default function AngebotsTreppe({ variant = 'light', className }: Angebot
           <stop offset="100%" stopColor={isDark ? 'rgba(255,255,255,0.04)' : '#e7e9eb'} />
         </linearGradient>
         <linearGradient id="treppeFocusFill" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="rgba(249,0,147,0.16)" />
-          <stop offset="100%" stopColor="rgba(255,78,205,0.10)" />
+          <stop offset="0%" stopColor="rgba(143,166,181,0.12)" />
+          <stop offset="100%" stopColor="rgba(197,210,218,0.06)" />
         </linearGradient>
         <filter id="treppeShadow" x="-30%" y="-30%" width="160%" height="160%">
           <feDropShadow dx="0" dy="3" stdDeviation="3.5" floodColor={shadowColor} />

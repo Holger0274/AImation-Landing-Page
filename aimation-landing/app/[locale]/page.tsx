@@ -2,10 +2,11 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import PainPoints from '@/components/sections/PainPoints';
+import QktImpact from '@/components/sections/QktImpact';
 import KiLandkarte from '@/components/sections/KiLandkarte';
 import BeforeAfter from '@/components/sections/BeforeAfter';
 import Services from '@/components/sections/Services';
-import ProjectShowcase from '@/components/sections/ProjectShowcase/ProjectShowcase';
+import DevelopmentLandscape from '@/components/sections/DevelopmentLandscape';
 import Process from '@/components/sections/Process';
 import { PilotSection } from '@/components/sections/PilotSection';
 import SelfBuilt from '@/components/sections/SelfBuilt';
@@ -58,12 +59,13 @@ export default async function Home({
       <main id="main-content">
         <Hero />
         <PainPoints />
+        <QktImpact />
+        <Process />
         <KiLandkarte />
         <BeforeAfter />
-        <Process />
         <PilotSection />
         <Services />
-        <ProjectShowcase />
+        <DevelopmentLandscape />
         <SelfBuilt />
         <EuAiActNotice />
         <About />

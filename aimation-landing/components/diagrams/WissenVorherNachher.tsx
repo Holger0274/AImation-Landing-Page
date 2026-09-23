@@ -78,7 +78,7 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
   const labelColor = isDark ? 'rgba(255,255,255,0.7)' : '#4b5563';
   const beforeCaption = isDark ? 'rgba(255,255,255,0.5)' : '#9ca3af';
   const accent = '#60AFFF';
-  const focus = '#f90093';
+  const focus = isDark ? '#b8c7d1' : '#4a6573';
 
   return (
     <svg
@@ -121,13 +121,13 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
       {/* Panels */}
       <rect {...BEFORE_PANEL} rx={16} fill={panelFill} stroke={panelStroke} strokeWidth={1.5} filter="url(#wvnShadow)" />
       <rect {...AFTER_PANEL} rx={16} fill={panelFill} stroke={panelStroke} strokeWidth={1.5} filter="url(#wvnShadow)" />
-      {/* Farbcodierter Panel-Akzent: grau = unsortiert, magenta = strukturiert */}
+      {/* Farbcodierter Panel-Akzent: grau = unsortiert, stahlgrau = strukturiert */}
       <rect x={BEFORE_PANEL.x} y={BEFORE_PANEL.y} width={BEFORE_PANEL.width} height={4} rx={2} fill={beforeCaption} opacity={0.5} />
       <rect x={AFTER_PANEL.x} y={AFTER_PANEL.y} width={AFTER_PANEL.width} height={4} rx={2} fill={focus} />
 
       {/* Transformation Arrow */}
       <circle cx={340} cy={218} r={18} fill={focus} filter="url(#wvnShadow)" />
-      <text x={340} y={225} textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight={700} fontSize={18} fill="#ffffff">
+      <text x={340} y={225} textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight={700} fontSize={18} fill={isDark ? '#071013' : '#ffffff'}>
         &#8594;
       </text>
 
@@ -264,7 +264,7 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
         <animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite" />
       </circle>
       {/* Blickdichte Fuellung: verdeckt die acht im Zentrum zusammenlaufenden Linien vollstaendig */}
-      <circle cx={AFTER_HUB.x} cy={AFTER_HUB.y} r={16} fill={isDark ? '#3d0a24' : '#fde7f3'} stroke={focus} strokeWidth={2.5} filter="url(#wvnShadow)" />
+      <circle cx={AFTER_HUB.x} cy={AFTER_HUB.y} r={16} fill={isDark ? '#18262e' : '#edf1f3'} stroke={focus} strokeWidth={2.5} filter="url(#wvnShadow)" />
       <foreignObject x={AFTER_HUB.x - 8.5} y={AFTER_HUB.y - 8.5} width={17} height={17}>
         <BrainCircuit size={17} color={focus} strokeWidth={1.9} />
       </foreignObject>
