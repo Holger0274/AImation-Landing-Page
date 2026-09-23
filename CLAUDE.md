@@ -21,7 +21,7 @@ Restliche Abschnitte dieses Dokuments (Design-System, Farben, Komponentenstruktu
 - **Language**: German (all content must be in German), durchgehend Sie-Form
 - **Tone**: Erfahrener Ingenieur, der erklärt statt verkauft. Konkret, kurze Sätze, keine Buzzwords, keine Em-Dashes
 - **USP**: 20 Jahre Automobilentwicklung, bringt KI dorthin, wo wirklich entwickelt wird. DSGVO-first. Mit Versprechen, die zuerst selbst gebaut wurden
-- **Pricing**: Feste Angebots-Treppe, einzige gültige Struktur (siehe `aimation-website-specs/2026-07-18_00-master-brief.md` Abschnitt 3): Erstgespräch kostenlos (30 Min) → KI-Landkarte ab 1.900 EUR Festpreis → Pilot 4.900 EUR (4 Wochen) → Umsetzung 5.000-30.000 EUR Setup + 200-800 EUR/Monat → Begleitung nach Aufwand. Parallel buchbar: Schulung, 1.800 EUR/Tag Inhouse. Jede Zahl existiert genau einmal als zentrale Quelle der Wahrheit im Code, keine Seite hardcodet eigene Preise
+- **Pricing**: Feste Angebots-Treppe, einzige gültige Struktur (siehe `aimation-website-specs/2026-07-18_00-master-brief.md` Abschnitt 3): Erstgespräch kostenlos (30 Min) → KI-Landkarte ab 1.900 EUR Festpreis → Pilot 4.900 EUR (4 Wochen) → Umsetzung 5.000-30.000 EUR Setup + 200-800 EUR/Monat → Begleitung nach Aufwand. Parallel buchbar: Schulung Inhouse, Festpreis nach Abstimmung (keine Tages- oder Halbtagspreise auf der Seite nennen, seit 2026-09-23; reale Angebote liegen deutlich über den alten 1.800 EUR/Tag). Jede Zahl existiert genau einmal als zentrale Quelle der Wahrheit im Code, keine Seite hardcodet eigene Preise
 - **Anti-KI-Text-Spec**: See `docs/spec-anti-ki.md` — ALL content must pass this spec before use
 
 ### Target Personas
