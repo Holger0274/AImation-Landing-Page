@@ -296,8 +296,8 @@ export default async function GroundingPage({
                     ? `Implementation: from ${PRICING.umsetzung.setupFrom.toLocaleString('en-US')} to ${PRICING.umsetzung.setupTo.toLocaleString('en-US')} EUR setup plus ${PRICING.umsetzung.monthlyFrom} to ${PRICING.umsetzung.monthlyTo} EUR/month, depending on agent type`
                     : `Umsetzung: ${PRICING.umsetzung.setupLabel} plus ${PRICING.umsetzung.monthlyLabel}, je nach Agenten-Typ`}</li>
                   <li>{isEn
-                    ? `Training: ${PRICING.schulung.pricePerDay.toLocaleString('en-US')} EUR per day inhouse, half-day formats from ${PRICING.schulung.priceHalfDay} EUR`
-                    : `Schulung: ${PRICING.schulung.priceLabel} Inhouse, Halbtags-Formate ab ${PRICING.schulung.priceHalfDay.toLocaleString('de-DE')} EUR`}</li>
+                    ? `Training: in-house, ${PRICING.schulung.priceLabelEn.toLowerCase()}`
+                    : `Schulung: Inhouse, ${PRICING.schulung.priceLabel}`}</li>
                 </ol>
                 <p className="mt-2 text-dim text-xs">{SERVICES_STAND}</p>
               </dd>

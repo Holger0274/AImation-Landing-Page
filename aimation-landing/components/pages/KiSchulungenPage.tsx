@@ -17,7 +17,6 @@ export default function KiSchulungenPage() {
   const lang = en ? 'en' : 'de';
   const l = (de: string, english: string) => en ? english : de;
   const { openLeadForm } = useLeadForm();
-  const money = (value: number) => new Intl.NumberFormat(en ? 'en-GB' : 'de-DE', { maximumFractionDigits: 0 }).format(value);
   const roles = en ? [
     ['Engineers and designers', 'AI introduction, then AI tools or Microsoft 365 Copilot.'],
     ['Development and team leads', 'Managing AI-driven business transformation. Add AI tools for hands-on practice.'],
@@ -59,7 +58,7 @@ export default function KiSchulungenPage() {
       <div className="engineering-wrap">
         <div className="training-inhouse">
           <div className="section-intro"><p className="technical-label">{l('Gemeinsam an Ihren Aufgaben', 'Working on your tasks together')}</p><h2>{l('Ihr ', 'Your ')}<span className="highlight">{l('Inhouse-Workshop.', 'in-house workshop.')}</span></h2><p>{l('Vorab klären wir Zielgruppe, Vorwissen und Aufgaben. In der Schulung arbeitet Ihr Team mit passenden Beispielen. Zugang und Umfang der begleitenden Lernmaterialien vereinbaren wir für Ihr Format.', 'First we clarify the audience, prior knowledge and tasks. During training, your team works on suitable examples. Access to supporting learning materials and their scope are agreed for your format.')}</p></div>
-          <div className="training-price"><span className="technical-label">{l('Pro Schulungstag', 'Per training day')}</span><strong>{money(PRICING.schulung.pricePerDay)} <small>EUR</small></strong><p>{l('Unabhängig von der Teilnehmerzahl.', 'Independent of participant count.')}</p><p>{l('Halbtags-Formate ab ', 'Half-day formats from ')}{money(PRICING.schulung.priceHalfDay)} EUR</p><button className="engineering-text-link" onClick={openLeadForm}>{l('Format und Lernziel abstimmen', 'Discuss format and learning goals')}<ArrowUpRight size={17} aria-hidden="true"/></button></div>
+          <div className="training-price"><span className="technical-label">{l('Inhouse-Schulung', 'In-house training')}</span><strong>{l('Festpreis', 'Fixed price')}</strong><p>{l(PRICING.schulung.priceLabel, PRICING.schulung.priceLabelEn)}.</p><p>{l('Unabhängig von der Teilnehmerzahl.', 'Independent of participant count.')}</p><button className="engineering-text-link" onClick={openLeadForm}>{l('Format und Lernziel abstimmen', 'Discuss format and learning goals')}<ArrowUpRight size={17} aria-hidden="true"/></button></div>
         </div>
         <div className="training-roles"><h3>{l('Ein sinnvoller Start für Ihre Rolle', 'A useful starting point for your role')}</h3><dl>{roles.map(([role, entry]) => <div key={role}><dt>{role}</dt><dd>{entry}</dd></div>)}</dl></div>
         <div className="section-footnote"><p>{l('Noch unklar, bei welchem Prozess Ihr Team anfangen sollte? Das klären wir im Workshop KI-Landkarte.', 'Not sure which process your team should start with? The KI-Landkarte workshop helps you choose.')}</p><Link href="/#ki-landkarte" className="engineering-text-link">{l('Zur KI-Landkarte', 'Explore KI-Landkarte')}<ArrowUpRight size={17} aria-hidden="true"/></Link></div>

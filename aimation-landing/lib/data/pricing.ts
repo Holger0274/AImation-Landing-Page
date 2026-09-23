@@ -43,10 +43,8 @@ export const PRICING = {
   schulung: {
     label: 'Schulung',
     description: 'Inhouse, parallel zur Treppe jederzeit buchbar, unabhängig von der Teilnehmerzahl',
-    pricePerDay: 1800,
-    priceLabel: '1.800 EUR pro Tag',
-    priceHalfDay: 990,
-    priceHalfDayLabel: 'Halbtags-Formate ab 990 EUR',
+    priceLabel: 'Festpreis nach Abstimmung von Inhalt, Dauer und Format',
+    priceLabelEn: 'Fixed price once content, duration and format are agreed',
   },
 } as const;
 
