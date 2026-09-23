@@ -213,6 +213,12 @@ summary::-webkit-details-marker { display: none; }
 .training-price strong small { font-size: 20px; }
 .training-price > p { font-size: 14px; color: var(--muted); margin: 10px 0; }
 .training-price button { margin-top: 20px; }
+.training-steps { margin-top: 60px; }
+.training-steps h3, .training-roles h3 { font: 500 24px var(--font-heading), sans-serif; margin-bottom: 24px; }
+.training-steps ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; border-top: 1px solid var(--line-strong); list-style: none; padding: 0; }
+.training-steps li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding-top: 24px; }
+.training-steps h4 { font: 500 19px var(--font-heading), sans-serif; margin-bottom: 10px; }
+.training-steps p { color: var(--muted); font-size: 15px; line-height: 1.7; }
 .training-roles { margin-top: 50px; }
 .training-roles h3 { font: 500 24px var(--font-heading), sans-serif; margin-bottom: 24px; }
 .training-roles dl > div { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; padding: 20px 0; border-top: 1px solid var(--line); font-size: 15px; line-height: 1.7; }
@@ -223,6 +229,8 @@ summary::-webkit-details-marker { display: none; }
   .training-inhouse { grid-template-columns: 1fr; gap: 30px; }
   .training-price { border-left: 0; border-top: 1px solid var(--line); padding: 26px 0; }
   .training-roles dl > div { grid-template-columns: 1fr; gap: 8px; }
+  .training-steps ol { grid-template-columns: 1fr; gap: 0; }
+  .training-steps li { border-bottom: 1px solid var(--line); padding: 20px 0; }
 }
 
 /* Readable process sheets: real text, never text scaled inside an SVG. */
