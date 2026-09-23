@@ -14,14 +14,14 @@ export const metadata = {
 
 export default function DatenschutzPage() {
   return (
-    <div className="min-h-screen bg-warm-white py-20">
+    <div className="min-h-screen bg-ground py-20">
       <div className="container mx-auto px-4 max-w-4xl" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}>
         <h1 className="text-3xl sm:text-4xl font-bold text-soft-black mb-8 break-words hyphens-auto leading-tight">
           Datenschutzerklärung
         </h1>
 
         <div className="prose prose-lg max-w-none break-words">
-          <p className="text-sm text-gray-600 mb-8">
+          <p className="text-sm text-muted mb-8">
             Stand: {new Date().toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
 
@@ -40,7 +40,7 @@ export default function DatenschutzPage() {
               Deutschland
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>E-Mail:</strong> <a href="mailto:info@aimation.de" className="text-[#c2007a] hover:underline">info@aimation.de</a><br />
+              <strong>E-Mail:</strong> <a href="mailto:info@aimation.de" className="text-magenta-light hover:underline">info@aimation.de</a><br />
               <strong>Telefon:</strong> [Wird ergänzt]
             </p>
             <p className="text-soft-black leading-relaxed">
@@ -132,7 +132,7 @@ export default function DatenschutzPage() {
               <strong>Auftragsverarbeitung:</strong> Wir haben mit Supabase einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO abgeschlossen.
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Weitere Informationen:</strong> <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#c2007a] hover:underline">Datenschutzerklärung von Supabase</a>
+              <strong>Weitere Informationen:</strong> <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="text-magenta-light hover:underline">Datenschutzerklärung von Supabase</a>
             </p>
 
             <h3 className="text-xl font-semibold text-soft-black mb-2 mt-6">
@@ -166,7 +166,7 @@ export default function DatenschutzPage() {
               <strong>Speicherdauer:</strong> Termindaten werden so lange gespeichert, wie der Termin aktiv ist, zuzüglich 3 Jahre für geschäftliche Nachvollziehbarkeit, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Weitere Informationen:</strong> Details zu Calendlys Datenschutzpraktiken finden Sie in der <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#c2007a] hover:underline">Datenschutzerklärung von Calendly</a>.
+              <strong>Weitere Informationen:</strong> Details zu Calendlys Datenschutzpraktiken finden Sie in der <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer" className="text-magenta-light hover:underline">Datenschutzerklärung von Calendly</a>.
             </p>
 
             <h3 className="text-xl font-semibold text-soft-black mb-2 mt-6">
@@ -211,7 +211,7 @@ export default function DatenschutzPage() {
               <strong>Speicherdauer:</strong> Aggregierte Statistiken werden unbegrenzt gespeichert, enthalten aber keine personenbezogenen Daten mehr.
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Weitere Informationen:</strong> <a href="https://plausible.io/data-policy" target="_blank" rel="noopener noreferrer" className="text-[#c2007a] hover:underline">Plausible Data Policy</a>
+              <strong>Weitere Informationen:</strong> <a href="https://plausible.io/data-policy" target="_blank" rel="noopener noreferrer" className="text-magenta-light hover:underline">Plausible Data Policy</a>
             </p>
           </section>
 
@@ -283,7 +283,7 @@ export default function DatenschutzPage() {
             <h3 className="text-xl font-semibold text-soft-black mb-2 mt-6">
               4.6 Widerspruchsrecht (Art. 21 DSGVO)
             </h3>
-            <p className="text-soft-black leading-relaxed mb-4 p-4 bg-gray-100 rounded">
+            <p className="text-soft-black leading-relaxed mb-4 p-4 bg-raised rounded">
               <strong>Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten, die aufgrund von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen.</strong>
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
@@ -310,7 +310,7 @@ export default function DatenschutzPage() {
               91522 Ansbach<br />
               Telefon: 0981 180093-0<br />
               E-Mail: poststelle@lda.bayern.de<br />
-              Website: <a href="https://www.lda.bayern.de" target="_blank" rel="noopener noreferrer" className="text-[#c2007a] hover:underline">www.lda.bayern.de</a>
+              Website: <a href="https://www.lda.bayern.de" target="_blank" rel="noopener noreferrer" className="text-magenta-light hover:underline">www.lda.bayern.de</a>
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
               Alternativ können Sie sich auch an die Datenschutzbehörde Ihres gewöhnlichen Aufenthaltsortes oder Arbeitsplatzes wenden.
@@ -408,7 +408,7 @@ export default function DatenschutzPage() {
             </p>
           </section>
 
-          <div className="mt-12 p-6 bg-gray-100 rounded-lg">
+          <div className="mt-12 p-6 bg-raised rounded-lg">
             <h3 className="text-lg font-semibold text-soft-black mb-3">
               Haben Sie Fragen zum Datenschutz?
             </h3>
@@ -416,11 +416,11 @@ export default function DatenschutzPage() {
               Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten, bei Auskünften, Berichtigung, Sperrung oder Löschung von Daten sowie Widerruf erteilter Einwilligungen wenden Sie sich bitte an:
             </p>
             <p className="text-soft-black leading-relaxed mt-3">
-              <strong>E-Mail:</strong> <a href="mailto:info@aimation.de" className="text-[#c2007a] hover:underline">info@aimation.de</a>
+              <strong>E-Mail:</strong> <a href="mailto:info@aimation.de" className="text-magenta-light hover:underline">info@aimation.de</a>
             </p>
           </div>
 
-          <p className="text-sm text-gray-600 mt-12 pt-8 border-t border-gray-300">
+          <p className="text-sm text-muted mt-12 pt-8 border-t border-line">
             Letzte Aktualisierung: {new Date().toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
         </div>

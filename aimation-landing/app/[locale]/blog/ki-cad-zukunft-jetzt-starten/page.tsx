@@ -51,20 +51,20 @@ export default async function KiCadZukunftPage({
       />
       <FAQPageSchema faqs={FAQ_ITEMS} />
       <Header />
-      <main id="main-content" className="bg-[#faf9f7]">
+      <main id="main-content" className="bg-ground">
         {/* ── HERO ── */}
         <section className="pt-32 pb-12 md:pt-40 md:pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter flex-wrap">
-              <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter flex-wrap">
+              <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
               <ChevronRight className="w-4 h-4" />
-              <Link href="/blog" className="hover:text-[#071013] transition-colors">Blog</Link>
+              <Link href="/blog" className="hover:text-ink transition-colors">Blog</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-[#071013] font-medium">KI + CAD: Jetzt starten</span>
+              <span className="text-ink font-medium">KI + CAD: Jetzt starten</span>
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold">
                 KI-Umsetzung
               </span>
               <span className="text-xs text-gray-400 font-inter">19. April 2026</span>
@@ -73,11 +73,11 @@ export default async function KiCadZukunftPage({
             </div>
 
             <h1
-              className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+              className="font-heading font-bold text-ink mb-6 leading-tight"
               style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)' }}
             >
               KI kennt keinen Halt: warum wir bei CAD jetzt starten müssen,{' '}
-              <span className="text-[#f90093]">auch wenn es noch nicht ausgereift ist</span>
+              <span className="text-magenta-light">auch wenn es noch nicht ausgereift ist</span>
             </h1>
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
@@ -95,7 +95,7 @@ export default async function KiCadZukunftPage({
         {/* ── ARTIKEL ── */}
         <section className="pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="font-inter text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
+            <div className="font-inter text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
 
               <p className="mb-5">
                 Wenn ich Kunden erkläre, wie schnell sich KI entwickelt, fehlt uns meist das richtige Bild. Wir denken Technologiefortschritt in Jahren. Zwischen zwei Windows-Generationen liegen sechs, zwischen zwei CAD-Major-Releases oft acht.
@@ -108,7 +108,7 @@ export default async function KiCadZukunftPage({
               </p>
               <p className="mb-5">
                 Laut{' '}
-                <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">
+                <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener" className="text-magenta-light underline underline-offset-2 hover:no-underline">
                   Anthropics Ankündigung zu Claude Opus 4.7
                 </a>{' '}
                 wurde die unterstützte Bildauflösung mehr als verdreifacht: auf bis zu 3,75 Megapixel. Was das bedeutet: Das Modell kann dichte technische Zeichnungen, enge Bemaßungsketten und Symbolbibliotheken erstmals so auflösen, dass verlässliche Extraktion möglich wird. Das ist kein Inkrement. Das ist ein Kategoriesprung.
@@ -117,9 +117,9 @@ export default async function KiCadZukunftPage({
                 In diesem Beitrag bringe ich drei Dinge nüchtern zusammen: Was sich konkret verändert hat. Warum das für CAD noch nicht ausgereift ist, aber dennoch ein riesiges Potential bedeutet. Und warum genau das der Grund ist, heute mit Proof of Concepts zu starten. Nicht in einem Jahr.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Die Kurve, die wir unterschätzen
               </h2>
               <p className="mb-5">
@@ -138,9 +138,9 @@ export default async function KiCadZukunftPage({
                 Das Wichtige dabei: Die nächste Schwelle kommt bestimmt. Und sie wird wieder schneller kommen, als wir erwarten.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Der ehrliche Stand von KI + CAD
               </h2>
               <p className="mb-5">
@@ -158,27 +158,27 @@ export default async function KiCadZukunftPage({
               </p>
 
               <div className="grid gap-4 my-8 sm:grid-cols-3">
-                <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">Funktioniert heute</p>
-                  <ul className="text-sm text-gray-700 space-y-1">
+                <div className="bg-green-500/10 border border-green-500/25 rounded-xl p-4">
+                  <p className="font-heading font-semibold text-ink mb-2 text-sm">Funktioniert heute</p>
+                  <ul className="text-sm text-muted space-y-1">
                     <li>Einfache parametrische Teile</li>
                     <li>Variantenkonstruktion</li>
                     <li>Altzeichnungen digitalisieren</li>
                     <li>Konzept-Visualisierungen</li>
                   </ul>
                 </div>
-                <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">Noch holprig</p>
-                  <ul className="text-sm text-gray-700 space-y-1">
+                <div className="bg-yellow-500/10 border border-yellow-500/25 rounded-xl p-4">
+                  <p className="font-heading font-semibold text-ink mb-2 text-sm">Noch holprig</p>
+                  <ul className="text-sm text-muted space-y-1">
                     <li>Toleranzketten</li>
                     <li>Normgerechte Konstruktion</li>
                     <li>Komplexe Baugruppen</li>
                     <li>Mehrkörper-Kinematik</li>
                   </ul>
                 </div>
-                <div className="bg-red-50 border border-red-200 rounded-xl p-4">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">Bleibt Marketing</p>
-                  <ul className="text-sm text-gray-700 space-y-1">
+                <div className="bg-red-500/10 border border-red-500/25 rounded-xl p-4">
+                  <p className="font-heading font-semibold text-ink mb-2 text-sm">Bleibt Marketing</p>
+                  <ul className="text-sm text-muted space-y-1">
                     <li>„Ein Satz, fertiges 3D-Modell"</li>
                     <li>Normkonforme Teile per Prompt</li>
                     <li>Vollautomatische Baugruppen</li>
@@ -190,9 +190,9 @@ export default async function KiCadZukunftPage({
                 Diese drei Kategorien sauber zu trennen, ist meine tägliche Arbeit. Wer den Hype für Reife hält, wird enttäuscht. Wer die Unreife als Beweis nimmt, dass man noch nicht anfangen muss, verpasst den eigentlichen Punkt.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Das Potential, das die meisten noch nicht sehen
               </h2>
               <p className="mb-5">
@@ -208,9 +208,9 @@ export default async function KiCadZukunftPage({
                 Wenn ich heute mit Inhabern mittelständischer Konstruktionsbüros spreche, höre ich oft: „Wir warten, bis das ausgereift ist." Ich verstehe die Haltung. Aber sie ist die teuerste Strategie.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Warum Abwarten nicht funktioniert
               </h2>
               <p className="mb-5">
@@ -226,9 +226,9 @@ export default async function KiCadZukunftPage({
                 Unternehmen, die jetzt starten, sind in drei Jahren nicht einfach „ein bisschen weiter". Sie sind in einer anderen Liga, weil ihr Team gelernt hat, mit der Technik zu arbeiten, und weil sich eingespielte Workflows entwickelt haben.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Die Antwort heißt PoC, nicht Strategiepapier
               </h2>
               <p className="mb-5">
@@ -246,31 +246,31 @@ export default async function KiCadZukunftPage({
                 Solche PoCs dauern Wochen, nicht Quartale. Sie dürfen scheitern, denn das ist ihr Zweck. Was sie liefern, steht in keinem Whitepaper: die ehrliche Antwort darauf, was in Ihrem Unternehmen mit Ihren Daten und Ihren Prozessen funktioniert. Und Teamerfahrung, die jedes nächste Projekt schneller macht.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was konkret zu tun ist
               </h2>
               <p className="mb-6">Wenn Sie heute in einer Konstruktions-, Entwicklungs- oder Ingenieurverantwortung sind, sehe ich drei pragmatische Schritte:</p>
 
               <div className="space-y-4 mb-8">
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2">1. Einen einzigen Usecase auswählen</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">Wählen Sie einen Usecase, der heute Zeit frisst und bei dem ein Fehler nicht katastrophal ist. Digitalisierung von Altbestandzeichnungen ist ein Klassiker. Variantenkonstruktion aus Parametertabellen ein anderer. Anforderungsprotokolle automatisiert in CAD-taugliche Spezifikationen überführen ein dritter.</p>
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2">1. Einen einzigen Usecase auswählen</p>
+                  <p className="text-muted text-sm leading-relaxed">Wählen Sie einen Usecase, der heute Zeit frisst und bei dem ein Fehler nicht katastrophal ist. Digitalisierung von Altbestandzeichnungen ist ein Klassiker. Variantenkonstruktion aus Parametertabellen ein anderer. Anforderungsprotokolle automatisiert in CAD-taugliche Spezifikationen überführen ein dritter.</p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2">2. Einen Stack wählen, der Datensouveränität wahrt</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">Für DACH-Mittelstand empfehlen wir self-hosted Werkzeuge: n8n, Claude über AWS Bedrock in Frankfurt, lokale CAD-Systeme wie FreeCAD oder Onshape mit Unternehmenskonto. Keine unkontrollierten Datenflüsse in US-Clouds.</p>
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2">2. Einen Stack wählen, der Datensouveränität wahrt</p>
+                  <p className="text-muted text-sm leading-relaxed">Für DACH-Mittelstand empfehlen wir self-hosted Werkzeuge: n8n, Claude über AWS Bedrock in Frankfurt, lokale CAD-Systeme wie FreeCAD oder Onshape mit Unternehmenskonto. Keine unkontrollierten Datenflüsse in US-Clouds.</p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2">3. Zwei Personen einplanen, nicht eine</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">Einen Konstrukteur mit Domänenwissen, eine Person mit Affinität zu Automatisierung. Beide brauchen Zeit. Nicht nebenher. Wer das als „macht der Praktikant mal" behandelt, bekommt auch Praktikantenergebnisse.</p>
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2">3. Zwei Personen einplanen, nicht eine</p>
+                  <p className="text-muted text-sm leading-relaxed">Einen Konstrukteur mit Domänenwissen, eine Person mit Affinität zu Automatisierung. Beide brauchen Zeit. Nicht nebenher. Wer das als „macht der Praktikant mal" behandelt, bekommt auch Praktikantenergebnisse.</p>
                 </div>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was bleibt
               </h2>
               <p className="mb-5">
@@ -288,7 +288,7 @@ export default async function KiCadZukunftPage({
             </div>
 
             {/* ── INTERNE LINKS ── */}
-            <div className="mt-12 p-6 bg-white rounded-2xl border border-gray-200">
+            <div className="mt-12 p-6 bg-surface rounded-2xl border border-line">
               <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest mb-4">Weiterführende Seiten</p>
               <div className="flex flex-wrap gap-3">
                 {[
@@ -300,7 +300,7 @@ export default async function KiCadZukunftPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-line text-sm font-inter text-ink hover:border-[#f90093] hover:text-magenta-light transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -311,9 +311,9 @@ export default async function KiCadZukunftPage({
         </section>
 
         {/* ── FAQ ── */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-surface">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-heading font-bold text-[#071013] mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+            <h2 className="font-heading font-bold text-ink mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
               Häufige Fragen zu KI + CAD
             </h2>
             <FaqAccordion />
@@ -336,7 +336,7 @@ export default async function KiCadZukunftPage({
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-[#071013] transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
                 boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

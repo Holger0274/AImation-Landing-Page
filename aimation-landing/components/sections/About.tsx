@@ -1,153 +1,35 @@
 'use client';
-
-import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { ArrowUpRight } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { Target, Heart, Zap, Users } from 'lucide-react';
-
-const differentiatorIcons = [Target, Heart, Zap, Users];
-
-function DifferentiatorCard({ text, icon: Icon, index }: { text: string; icon: typeof Target; index: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.08 }}
-      className="flex items-start gap-4 bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-[0_8px_32px_rgba(96,175,255,0.18)] hover:-translate-y-1 transition-all duration-200"
-    >
-      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#60AFFF]/10 flex items-center justify-center">
-        <Icon className="w-5 h-5 text-[#60AFFF]" />
-      </div>
-      <p className="text-sm text-gray-600 leading-relaxed">{text}</p>
-    </motion.div>
-  );
-}
+import { Link } from '@/i18n/navigation';
 
 export default function About() {
   const t = useTranslations('about');
-  const differentiators = (t.raw('differentiators') as string[]);
-
+  const en = useLocale() === 'en';
   return (
-    <section
-      id="ueber-mich"
-      className="py-20 md:py-32"
-      style={{
-        backgroundColor: '#faf9f7',
-        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
-        backgroundSize: '72px 72px',
-      }}
-    >
-      {/*
-        PersonSchema wurde in layout.tsx (Server Component) verlagert.
-        Damit ist es fuer AI-Crawler im initialen HTML sichtbar.
-      */}
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-xs font-heading font-bold tracking-[2px] uppercase text-[#60AFFF] mb-3">{t('overline')}</p>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-soft-black">
-            {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span>
-          </h2>
-        </motion.div>
-
-        {/* Split Layout: Foto + Intro-Text */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
-
-          {/* Foto */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            <div className="aspect-[4/5] relative rounded-2xl overflow-hidden border border-gray-200">
-              <Image
-                src="/images/about-holger.png"
-                alt="Holger Peschke, Gründer AImation"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = 'none';
-                }}
-              />
+    <section id="ueber-mich" className="engineering-section">
+      <div className="engineering-wrap">
+        <div className="about-layout">
+          <figure className="about-portrait">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-line"><Image src="/images/about-holger.png" alt={en ? 'Holger Peschke, founder of AImation' : 'Holger Peschke, Gründer von AImation'} fill sizes="(max-width: 900px) 90vw, 400px" className="object-cover" /></div>
+            <figcaption><strong>Holger Peschke</strong><span>{en ? 'Founder · AImation' : 'Gründer · AImation'}</span></figcaption>
+          </figure>
+          <div className="section-intro">
+            <p className="technical-label">{t('overline')}</p>
+            <h2>{t('headline')} <span className="highlight">{t('headlineHighlight')}</span></h2>
+            <h3 className="about-subheading">{t('introHeadline')} {t('introHighlight')}</h3>
+            <p>{t('introText')}</p>
+            {t('mainText') && <p className="mt-5">{t('mainText')}</p>}
+            <div className="flex flex-wrap gap-x-8 gap-y-4 mt-8">
+              <a href="#kontakt" className="engineering-text-link">{t('ctaPrimary')}<ArrowUpRight size={16} aria-hidden="true" /></a>
+              <a href="https://linkedin.com/in/holgerpeschke" target="_blank" rel="noopener noreferrer" className="engineering-text-link">{t('ctaLinkedIn')}<ArrowUpRight size={16} aria-hidden="true" /></a>
             </div>
-            {/* Akzentrahmen */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-[#60AFFF]/50 rounded-2xl -z-10" />
-          </motion.div>
-
-          {/* Intro-Text */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="text-3xl md:text-4xl font-heading font-bold text-soft-black mb-6 leading-snug">
-              {t('introHeadline')}<br />
-              <span className="gradient-text">{t('introHighlight')}</span>
-            </h3>
-            <p className="text-lg text-gray-500 leading-relaxed">
-              {t('introText')}
-            </p>
-            {t('mainText') && (
-              <p className="text-base text-gray-500 leading-relaxed mt-4">
-                {t('mainText')}
-              </p>
-            )}
-          </motion.div>
+          </div>
         </div>
-
-        {/* Differenzierungs-Punkte */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center text-[11px] font-heading font-bold tracking-[2.5px] uppercase text-gray-300 mb-7"
-        >
-          {t('differentiatorsLabel')}
-        </motion.p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {differentiators.map((text, i) => (
-            <DifferentiatorCard key={i} text={text} icon={differentiatorIcons[i]} index={i} />
-          ))}
-        </div>
-
-        {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-12" />
-
-        {/* CTA */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-          <a href="#kontakt" className="btn-primary text-sm px-8 py-4">
-            {t('ctaPrimary')}
-          </a>
-          <a
-            href="https://linkedin.com/in/holgerpeschke"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-heading font-semibold text-[#c2007a] underline underline-offset-4"
-          >
-            {t('ctaLinkedIn')}
-          </a>
-        </div>
-
-        {/* Grounding Page Link — interne Verlinkung für Google + KI-Systeme */}
-        <p className="text-center mt-6 text-xs text-gray-400 font-inter">
-          <a href="/facts/aimation" className="hover:text-gray-600 transition-colors underline underline-offset-2">
-            Unternehmensdaten und Fakten zu AImation UG
-          </a>
-        </p>
-
+        <p className="technical-label mt-14 mb-5">{t('differentiatorsLabel')}</p>
+        <div className="about-principles">{(t.raw('differentiators') as string[]).map(text => <p key={text}>{text}</p>)}</div>
+        <Link href="/facts/aimation" className="engineering-text-link mt-7">{en ? 'Company facts about AImation UG' : 'Unternehmensdaten und Fakten zu AImation UG'}<ArrowUpRight size={14} aria-hidden="true" /></Link>
       </div>
     </section>
   );

@@ -28,7 +28,7 @@ export default async function Footer() {
               />
             </div>
             <p className="text-gray-300 mb-4 max-w-sm">
-              {t('tagline')} <span className="text-[#f90093]">{t('taglineHighlight')}</span>
+              {t('tagline')} <span className="text-magenta-light">{t('taglineHighlight')}</span>
             </p>
             <p className="text-gray-400 text-sm">
               {t('subtagline')}
@@ -83,28 +83,28 @@ export default async function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#ueber-mich"
+                <Link
+                  href="/#ueber-mich"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   {t('linkUeberUns')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#prozess"
+                <Link
+                  href="/#prozess"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   {t('linkProzess')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#faq"
+                <Link
+                  href="/#faq"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   {t('linkFaq')}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -148,7 +148,7 @@ export default async function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           {/* Last Updated Signal (SEO Content Freshness) */}
-          <p className="text-gray-500 text-xs mb-3 text-center md:text-left">
+          <p className="text-dim text-xs mb-3 text-center md:text-left">
             {t('lastUpdated')} {formattedDate}
           </p>
 
@@ -156,7 +156,7 @@ export default async function Footer() {
             <p className="text-gray-400 text-sm">
               {t('copyright', { year: currentYear })}
             </p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
               {/* Legal-Seiten liegen ausserhalb [locale] (nur /impressum, /datenschutz),
                   daher bewusst plain <a> statt der locale-aware Link. */}
               <a

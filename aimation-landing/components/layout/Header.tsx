@@ -48,13 +48,12 @@ export default function Header() {
   const [isLeistungenOpen, setIsLeistungenOpen] = useState(false);
   const [isMobileLeistungenOpen, setIsMobileLeistungenOpen] = useState(false);
   const leistungenRef = useRef<HTMLDivElement>(null);
-  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const { scrollY } = useScroll();
   const headerBg = useTransform(
     scrollY,
     [0, 50],
-    ['rgba(250, 249, 247, 0.85)', 'rgba(250, 249, 247, 0.97)']
+    ['rgba(4, 6, 7, 0.72)', 'rgba(4, 6, 7, 0.96)']
   );
 
   useEffect(() => {
@@ -70,31 +69,28 @@ export default function Header() {
       }
     };
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsLeistungenOpen(false);
+      if (e.key === 'Escape') {
+        if (leistungenRef.current?.contains(document.activeElement)) {
+          leistungenRef.current.querySelector('button')?.focus();
+        }
+        setIsLeistungenOpen(false);
+        setIsMobileMenuOpen(false);
+      }
     };
     document.addEventListener('mousedown', onClickOutside);
     document.addEventListener('keydown', onKey);
     return () => {
       document.removeEventListener('mousedown', onClickOutside);
       document.removeEventListener('keydown', onKey);
-      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
     };
   }, []);
-
-  const openDropdown = () => {
-    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
-    setIsLeistungenOpen(true);
-  };
-  const scheduleClose = () => {
-    closeTimeoutRef.current = setTimeout(() => setIsLeistungenOpen(false), 180);
-  };
 
   return (
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-colors duration-300"
       style={{
         backgroundColor: headerBg,
-        borderColor: isScrolled ? 'rgba(0,0,0,0.08)' : 'transparent',
+        borderColor: isScrolled ? 'rgba(238,241,243,0.12)' : 'rgba(238,241,243,0.06)',
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,7 +99,7 @@ export default function Header() {
           {/* ── Logo ── */}
           <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
             <Image
-              src="/logos/aimation-logo-transparent-dark.svg"
+              src="/logos/aimation-logo-transparent-light.svg"
               alt="AI.mation Logo"
               width={185}
               height={61}
@@ -113,22 +109,23 @@ export default function Header() {
           </Link>
 
           {/* ── Desktop Nav ── */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
 
             {/* Leistungen Dropdown */}
             <div
               ref={leistungenRef}
               className="relative"
-              onMouseEnter={openDropdown}
-              onMouseLeave={scheduleClose}
+              onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) setIsLeistungenOpen(false);
+              }}
             >
               <button
                 onClick={() => setIsLeistungenOpen(p => !p)}
                 className={`flex items-center gap-1.5 text-sm font-heading font-medium transition-colors focus:outline-none ${
-                  isLeistungenOpen ? 'text-[#c2007a]' : 'text-[#071013]/70 hover:text-[#071013]'
+                  isLeistungenOpen ? 'text-magenta-light' : 'text-white/70 hover:text-ink'
                 }`}
                 aria-expanded={isLeistungenOpen}
-                aria-haspopup="true"
+                aria-controls="desktop-services"
               >
                 {t('leistungen')}
                 <ChevronDown
@@ -145,9 +142,8 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                    id="desktop-services"
                     className="absolute top-full left-0 mt-4 z-[100] w-max"
-                    onMouseEnter={openDropdown}
-                    onMouseLeave={scheduleClose}
                   >
                     {/* Caret */}
                     <div
@@ -200,12 +196,12 @@ export default function Header() {
                                   className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-150 group-hover:bg-[#f90093]/20"
                                   style={{ background: 'rgba(249,0,147,0.1)' }}
                                 >
-                                  <Icon size={18} className="text-[#f90093]" strokeWidth={1.75} />
+                                  <Icon size={18} className="text-magenta-light" strokeWidth={1.75} />
                                 </div>
 
                                 {/* Text */}
                                 <div className="flex-1 min-w-0">
-                                  <div className="text-[14px] font-heading font-semibold text-white/90 group-hover:text-[#f90093] transition-colors leading-tight">
+                                  <div className="text-[14px] font-heading font-semibold text-white/90 group-hover:text-magenta-light transition-colors leading-tight">
                                     {item.label}
                                   </div>
                                   <div className="text-[12px] text-white/65 mt-0.5 leading-snug group-hover:text-white/85 transition-colors">
@@ -216,7 +212,7 @@ export default function Header() {
                                 {/* Chevron */}
                                 <ChevronDown
                                   size={14}
-                                  className="-rotate-90 text-white/20 group-hover:text-[#f90093] transition-colors flex-shrink-0"
+                                  className="-rotate-90 text-white/20 group-hover:text-magenta-light transition-colors flex-shrink-0"
                                 />
                               </Link>
                             </motion.div>
@@ -235,7 +231,7 @@ export default function Header() {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => setIsLeistungenOpen(false)}
-                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-[12px] font-heading font-semibold text-white transition-all duration-150 hover:brightness-110 hover:scale-[1.03]"
+                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-[12px] font-heading font-semibold text-[#071013] transition-all duration-150 hover:brightness-110 hover:scale-[1.03]"
                           style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
                         >
                           {t('dropdownCta')}
@@ -250,7 +246,7 @@ export default function Header() {
             {/* Use Cases */}
             <a
               href={useCasesHref}
-              className="text-sm font-heading font-medium text-[#071013]/70 hover:text-[#071013] transition-colors"
+              className="text-sm font-heading font-medium text-white/70 hover:text-ink transition-colors"
             >
               {t('useCases')}
             </a>
@@ -258,26 +254,26 @@ export default function Header() {
             {/* Blog */}
             <Link
               href="/blog"
-              className="text-sm font-heading font-medium text-[#071013]/70 hover:text-[#071013] transition-colors"
+              className="text-sm font-heading font-medium text-white/70 hover:text-ink transition-colors"
             >
               {t('blog')}
             </Link>
 
             {/* Über uns */}
             <a
-              href="#ueber-mich"
-              className="text-sm font-heading font-medium text-[#071013]/70 hover:text-[#071013] transition-colors"
+              href={`${homeHref}#ueber-mich`}
+              className="text-sm font-heading font-medium text-white/70 hover:text-ink transition-colors"
             >
               {t('ueberUns')}
             </a>
 
             {/* Language Switcher */}
-            <LanguageSwitcher isDark={false} />
+            <LanguageSwitcher isDark={true} />
 
             {/* CTA */}
             <a
               href="#kontakt"
-              className="px-6 py-2.5 border-2 border-[#071013] text-[#071013] font-heading font-semibold text-sm rounded-xl hover:bg-[#071013] hover:text-white transition-all duration-200"
+              className="px-6 py-2.5 border-2 border-line text-ink font-heading font-semibold text-sm rounded-xl hover:bg-[#071013] hover:text-white transition-all duration-200"
             >
               {t('cta')}
             </a>
@@ -286,8 +282,10 @@ export default function Header() {
           {/* ── Mobile Hamburger ── */}
           <button
             onClick={() => setIsMobileMenuOpen(p => !p)}
-            className="md:hidden p-2 text-[#071013]/70 hover:text-[#071013] transition-colors"
-            aria-label={t('menuOpen')}
+            className="lg:hidden p-2 text-white/70 hover:text-ink transition-colors"
+            aria-label={isMobileMenuOpen ? (locale === 'de' ? 'Menü schließen' : 'Close menu') : t('menuOpen')}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -302,7 +300,8 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22 }}
-            className="md:hidden border-t border-black/[0.06] bg-[#faf9f7]"
+            id="mobile-navigation"
+            className="lg:hidden border-t border-line bg-ground max-h-[calc(100dvh-80px)] overflow-y-auto"
           >
             <nav className="flex flex-col p-4 gap-1">
 
@@ -310,12 +309,14 @@ export default function Header() {
               <div>
                 <button
                   onClick={() => setIsMobileLeistungenOpen(p => !p)}
-                  className="flex items-center justify-between w-full text-[15px] font-heading font-semibold text-[#071013] py-3 px-2"
+                  className="flex items-center justify-between w-full text-[15px] font-heading font-semibold text-ink py-3 px-2"
+                  aria-expanded={isMobileLeistungenOpen}
+                  aria-controls="mobile-services"
                 >
                   {t('leistungen')}
                   <ChevronDown
                     size={16}
-                    className={`transition-transform duration-200 text-[#f90093] ${isMobileLeistungenOpen ? 'rotate-180' : ''}`}
+                    className={`transition-transform duration-200 text-magenta-light ${isMobileLeistungenOpen ? 'rotate-180' : ''}`}
                   />
                 </button>
 
@@ -327,6 +328,7 @@ export default function Header() {
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.18 }}
                       className="overflow-hidden"
+                      id="mobile-services"
                     >
                       <div className="flex flex-col gap-0.5 mb-2 ml-2">
                         {leistungenItems.map((item) => {
@@ -339,13 +341,13 @@ export default function Header() {
                               className="group flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#f90093]/5 transition-colors"
                             >
                               <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'rgba(249,0,147,0.1)' }}>
-                                <Icon size={15} className="text-[#f90093]" />
+                                <Icon size={15} className="text-magenta-light" />
                               </div>
                               <div>
-                                <div className="text-sm font-heading font-semibold text-[#071013] group-hover:text-[#c2007a] transition-colors">
+                                <div className="text-sm font-heading font-semibold text-ink group-hover:text-magenta-light transition-colors">
                                   {item.label}
                                 </div>
-                                <div className="text-[11px] text-[#071013]/45 leading-tight">{item.description}</div>
+                                <div className="text-[11px] text-white/60 leading-tight">{item.description}</div>
                               </div>
                             </Link>
                           );
@@ -359,7 +361,7 @@ export default function Header() {
               <a
                 href={useCasesHref}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#c2007a] transition-colors"
+                className="text-[15px] font-heading font-semibold text-ink py-3 px-2 hover:text-magenta-light transition-colors"
               >
                 {t('useCases')}
               </a>
@@ -367,15 +369,15 @@ export default function Header() {
               <Link
                 href="/blog"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#c2007a] transition-colors"
+                className="text-[15px] font-heading font-semibold text-ink py-3 px-2 hover:text-magenta-light transition-colors"
               >
                 {t('blog')}
               </Link>
 
               <a
-                href="#ueber-mich"
+                href={`${homeHref}#ueber-mich`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-[15px] font-heading font-semibold text-[#071013] py-3 px-2 hover:text-[#c2007a] transition-colors"
+                className="text-[15px] font-heading font-semibold text-ink py-3 px-2 hover:text-magenta-light transition-colors"
               >
                 {t('ueberUns')}
               </a>
@@ -384,15 +386,15 @@ export default function Header() {
                 <a
                   href="#kontakt"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-heading font-semibold text-white text-[15px]"
+                  className="flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-heading font-semibold text-[#071013] text-[15px]"
                   style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
                 >
                   {t('ctaMobile')}
                 </a>
               </div>
 
-              <div className="pt-4 border-t border-gray-200">
-                <LanguageSwitcher isDark={false} />
+              <div className="pt-4 border-t border-line">
+                <LanguageSwitcher isDark={true} />
               </div>
             </nav>
           </motion.div>

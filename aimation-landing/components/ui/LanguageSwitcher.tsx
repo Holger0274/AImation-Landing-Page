@@ -30,7 +30,7 @@ export default function LanguageSwitcher({ isDark = false }: LanguageSwitcherPro
     window.location.href = targetPath;
   }
 
-  const pillBg = isDark ? 'bg-[#1a2a2f]' : 'bg-[#e5e7eb]';
+  const pillBg = isDark ? 'bg-surface' : 'bg-[#e5e7eb]';
 
   return (
     <div className={`flex ${pillBg} rounded-full p-0.5 gap-0.5`}>
@@ -38,8 +38,8 @@ export default function LanguageSwitcher({ isDark = false }: LanguageSwitcherPro
         onClick={() => switchLocale('de')}
         className={
           locale === 'de'
-            ? 'bg-[#f90093] text-white px-3 py-1 rounded-full text-xs font-bold transition-colors'
-            : 'text-gray-500 px-3 py-1 rounded-full text-xs hover:text-gray-800 transition-colors cursor-pointer'
+            ? 'bg-raised text-ink px-3 py-1 rounded-full text-xs font-bold transition-colors'
+            : 'text-dim px-3 py-1 rounded-full text-xs hover:text-ink transition-colors cursor-pointer'
         }
         aria-label="Zur deutschen Version wechseln"
       >
@@ -49,8 +49,8 @@ export default function LanguageSwitcher({ isDark = false }: LanguageSwitcherPro
         onClick={() => switchLocale('en')}
         className={
           locale === 'en'
-            ? 'bg-[#f90093] text-white px-3 py-1 rounded-full text-xs font-bold transition-colors'
-            : 'text-gray-500 px-3 py-1 rounded-full text-xs hover:text-gray-800 transition-colors cursor-pointer'
+            ? 'bg-raised text-ink px-3 py-1 rounded-full text-xs font-bold transition-colors'
+            : 'text-dim px-3 py-1 rounded-full text-xs hover:text-ink transition-colors cursor-pointer'
         }
         aria-label="Switch to English version"
       >

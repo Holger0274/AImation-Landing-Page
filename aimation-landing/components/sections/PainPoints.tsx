@@ -1,25 +1,10 @@
 'use client';
-
-import { motion, AnimatePresence } from 'framer-motion';
-import { FileSpreadsheet, Brain, Clock, TrendingDown, AlertTriangle, TrendingUp, X, Calculator } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
+import { FileSpreadsheet, Brain, Clock, TrendingDown, AlertTriangle, TrendingUp, ArrowUpRight } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { trackSpotlight } from '@/components/visuals/SpotlightPanel';
 
-type PainStat = {
-  id: string;
-  icon: typeof Clock;
-  stat: string;
-  title: string;
-  description: string;
-  subtitle?: string;
-  statLabel: string;
-  source: string;
-  imagePath: string;
-  imageAlt: string;
-};
-
-// Static config (icons + images) — text comes from translations
 const compactStatsConfig = [
   { id: 'knowledge', icon: Brain, imagePath: '/images/knowledge-loss.webp', imageAlt: 'Wissensverlust in der Entwicklungsabteilung - Erfahrung geht mit dem Mitarbeiter verloren' },
   { id: 'reporting', icon: FileSpreadsheet, imagePath: '/images/excel-chaos.webp', imageAlt: 'Ingenieure schreiben Berichte und Protokolle statt zu entwickeln' },
@@ -29,412 +14,39 @@ const compactStatsConfig = [
   { id: 'competition', icon: TrendingUp, imagePath: '/images/competition.webp', imageAlt: 'Wettbewerber automatisiert Entwicklungsprozesse während andere noch abwarten' },
 ] as const;
 
-// Image Modal Component
-function ImageModal({ painPoint, onClose }: { painPoint: PainStat; onClose: () => void }) {
-  const t = useTranslations('painPoints');
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, [onClose]);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#071013]/80 backdrop-blur-sm overflow-y-auto"
-      onClick={onClose}
-    >
-      <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-        transition={{ type: 'spring', duration: 0.5 }}
-        className="relative max-w-4xl w-full bg-[#071013] rounded-2xl overflow-hidden border-2 border-[#f90093]/50 my-8"
-        style={{ boxShadow: '0 0 60px rgba(249, 0, 147, 0.4)' }}
-        onClick={(e) => e.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-label={painPoint.title}
-      >
-        {/* Close Button - Fixed position with safe-area support */}
-        <button
-          onClick={onClose}
-          className="fixed top-6 right-6 sm:absolute sm:top-4 sm:right-4 z-[60] w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/30 transition-colors shadow-lg"
-          style={{
-            // Respect safe-area insets on mobile devices (notches, etc.)
-            top: 'max(1.5rem, env(safe-area-inset-top, 1.5rem))',
-          }}
-          aria-label={t('modalClose')}
-        >
-          <X className="w-6 h-6 text-white" strokeWidth={2.5} />
-        </button>
-
-        {/* Mobile: Stacked Layout | Desktop: Image with Overlay */}
-        <div className="block md:hidden">
-          {/* MOBILE: Stacked Layout */}
-          {/* Image */}
-          <div className="relative aspect-[4/3]">
-            <Image
-              src={painPoint.imagePath}
-              alt={painPoint.imageAlt}
-              fill
-              className="object-cover"
-              sizes="100vw"
-            />
-          </div>
-
-          {/* Content Below Image */}
-          <div className="p-6 space-y-4">
-            {/* Stat */}
-            {(painPoint.stat || painPoint.statLabel) && (
-              <motion.div
-                initial={{ scale: 0.5, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="text-center"
-              >
-                {painPoint.stat && (
-                  <div
-                    className="font-heading font-bold text-[#f90093]"
-                    style={{
-                      fontSize: 'clamp(2.5rem, 10vw, 4rem)',
-                      textShadow: '0 0 40px rgba(249, 0, 147, 0.6)'
-                    }}
-                  >
-                    {painPoint.stat}
-                  </div>
-                )}
-                {painPoint.statLabel && (
-                  <div className="text-white/70 font-heading font-semibold text-base">
-                    {painPoint.statLabel}
-                  </div>
-                )}
-              </motion.div>
-            )}
-
-            {/* Title */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3 }}
-            >
-              <h3 className="font-heading font-bold text-white text-xl">
-                {painPoint.title}
-              </h3>
-            </motion.div>
-
-            {/* Description */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              <p className="text-gray-300 text-base leading-relaxed mb-2">
-                {painPoint.description}
-              </p>
-              {painPoint.source && (
-                <p className="text-gray-400 text-sm italic">
-                  {t('quellePrafix')} {painPoint.source}
-                </p>
-              )}
-            </motion.div>
-          </div>
-        </div>
-
-        {/* DESKTOP: Image with Text Overlay */}
-        <div className="hidden md:block relative aspect-[4/3]">
-          <Image
-            src={painPoint.imagePath}
-            alt={painPoint.imageAlt}
-            fill
-            className="object-cover"
-            sizes="(max-width: 1200px) 100vw, 1200px"
-          />
-          {/* Dark Overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/30" />
-
-          {/* Content Overlay */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center overflow-y-auto">
-            {/* Stat */}
-            {(painPoint.stat || painPoint.statLabel) && (
-              <motion.div
-                initial={{ scale: 0.5, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="mb-4"
-              >
-                {painPoint.stat && (
-                  <div
-                    className="font-heading font-bold text-[#f90093]"
-                    style={{
-                      fontSize: 'clamp(3rem, 10vw, 5rem)',
-                      textShadow: '0 0 40px rgba(249, 0, 147, 0.6), 0 0 20px rgba(0, 0, 0, 0.8)'
-                    }}
-                  >
-                    {painPoint.stat}
-                  </div>
-                )}
-                {painPoint.statLabel && (
-                  <div className="text-white/70 font-heading font-semibold text-lg">
-                    {painPoint.statLabel}
-                  </div>
-                )}
-              </motion.div>
-            )}
-
-            {/* Title */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="bg-[#071013]/90 backdrop-blur-md px-6 py-3 rounded-lg mb-4 border border-white/10"
-            >
-              <h3 className="font-heading font-bold text-white text-2xl md:text-3xl drop-shadow-lg">
-                {painPoint.title}
-              </h3>
-            </motion.div>
-
-            {/* Description */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="max-w-2xl bg-[#071013]/90 backdrop-blur-md px-6 py-4 rounded-lg border border-white/10"
-            >
-              <p className="text-white text-lg mb-2 leading-relaxed drop-shadow-md">
-                {painPoint.description}
-              </p>
-              {painPoint.source && (
-                <p className="text-gray-300 text-sm italic">
-                  {t('quellePrafix')} {painPoint.source}
-                </p>
-              )}
-            </motion.div>
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-}
-
-// Compact Stat Card Component (NOW CLICKABLE)
-function CompactStatCard({ stat, index, onClick, clickHint, isAnchor, anchorBadge }: { stat: PainStat; index: number; onClick: () => void; clickHint: string; isAnchor?: boolean; anchorBadge?: string }) {
-  const Icon = stat.icon;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ scale: 1.02, borderColor: 'rgba(249, 0, 147, 0.3)' }}
-      onClick={onClick}
-      className={`relative p-4 sm:p-6 rounded-xl bg-white/5 transition-all duration-300 group cursor-pointer ${
-        isAnchor ? 'border-2 border-[#f90093]/50' : 'border border-white/10 hover:border-[#f90093]/30'
-      }`}
-    >
-      {/* Anchor Badge */}
-      {isAnchor && anchorBadge && (
-        <div className="absolute -top-3 left-6 px-3 py-1 rounded-full bg-[#f90093] text-white text-[11px] font-heading font-semibold">
-          {anchorBadge}
-        </div>
-      )}
-
-      {/* Icon */}
-      <div className="mb-4">
-        <Icon className="w-8 h-8 text-[#60AFFF]" />
-      </div>
-
-      {/* Stat */}
-      {stat.stat && (
-        <div className="mb-2">
-          <div
-            className="font-heading font-bold text-[#f90093] leading-none"
-            style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}
-          >
-            {stat.stat}
-          </div>
-        </div>
-      )}
-
-      {/* Title */}
-      <h3 className="font-heading font-semibold text-[#faf9f7] text-sm md:text-base leading-tight mb-2">
-        {stat.title}
-      </h3>
-
-      {/* Description — always visible */}
-      <p className="text-xs text-gray-300 leading-relaxed mb-3">
-        {stat.description}
-      </p>
-
-      {/* Click hint */}
-      <p className="text-xs text-gray-500 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
-        {clickHint}
-      </p>
-    </motion.div>
-  );
-}
 
 export default function PainPoints() {
-  const [modalPainPoint, setModalPainPoint] = useState<PainStat | null>(null);
   const t = useTranslations('painPoints');
-
-  const compactStats: PainStat[] = compactStatsConfig.map((c) => ({
-    ...c,
-    stat: t(`stats.${c.id}.stat`),
-    title: t(`stats.${c.id}.title`),
-    description: t(`stats.${c.id}.description`),
-    statLabel: t(`stats.${c.id}.statLabel`),
-    source: t(`stats.${c.id}.source`),
-  }));
-
+  const en = useLocale() === 'en';
   return (
-    <section
-      className="relative overflow-hidden py-20 md:py-28"
-      style={{
-        backgroundColor: '#faf9f7',
-        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
-        backgroundSize: '72px 72px',
-      }}
-    >
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        {/* Text Intro - full width, centered */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto text-center mb-10"
-        >
-          {/* Overline Badge */}
-          {t('badge') && (
-            <div className="inline-block mb-6">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#60AFFF]/10 border border-[#60AFFF]/20">
-                <span className="text-sm font-medium text-[#071013]">
-                  {t('badge')}
-                </span>
-              </span>
-            </div>
-          )}
-
-          {/* Main Headline */}
-          <h2 className="font-heading font-bold text-[#071013] mb-4 break-words" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)', lineHeight: 1.35 }}>
-            {t('headline')}{' '}
-            <span className="text-[#f90093]">{t('headlineHighlight')}</span>{' '}
-            {t('headlineEnd')}
-          </h2>
-
-          {/* Supporting Text */}
-          <div className="space-y-4 text-[#071013]/80 break-words" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
-            <p className="leading-relaxed break-words">
-              {t('body1')}
-            </p>
-            {t('body2') && (
-              <p className="leading-relaxed font-medium text-[#071013] break-words">
-                {t('body2')}
-              </p>
-            )}
-          </div>
-        </motion.div>
-
-        {/* Future Perspective - Positive Outlook (only shown when content is set) */}
-        {t('futureText') && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-2xl mx-auto mb-8 p-6 rounded-xl bg-gradient-to-r from-[#60AFFF]/10 to-[#f90093]/5 border-l-4 border-[#60AFFF]"
-          >
-            <p className="text-[#071013] font-medium leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
-              {t('futureText')}{' '}
-              <span className="text-[#c2007a] font-bold">{t('futureHighlight')}</span>{' '}
-              {t('futureEnd')}{' '}
-              <span className="font-bold text-[#071013]">{t('futureStrong')}</span> {t('futureEndText')}
-            </p>
-          </motion.div>
-        )}
-
-        {/* ROI Calculator Link */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex justify-center mb-12 md:mb-16"
-        >
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              const kontaktSection = document.getElementById('kontakt');
-              if (kontaktSection) {
-                kontaktSection.scrollIntoView({ behavior: 'smooth' });
-                setTimeout(() => {
-                  const roiButton = document.querySelector('[data-roi-calculator-trigger]') as HTMLButtonElement;
-                  if (roiButton) roiButton.click();
-                }, 800);
-              }
-            }}
-            className="inline-flex items-center gap-2 text-[#c2007a] font-heading font-semibold hover:underline transition-all group"
-          >
-            <Calculator className="w-5 h-5" />
-            {t('roiLink')}
-            <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-          </button>
-        </motion.div>
-
-        {/* Dark Card with the 6 Compact Stats, full section width */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="relative w-full rounded-2xl overflow-hidden p-4 sm:p-6 md:p-10"
-          style={{
-            backgroundColor: '#071013',
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
-            backgroundSize: '72px 72px',
-            boxShadow: '0 25px 50px -12px rgba(7,16,19,0.3), 0 0 50px rgba(249,0,147,0.08)',
-          }}
-        >
-          {/* Glow Background */}
-          <div className="absolute inset-0 mesh-gradient opacity-30 pointer-events-none" />
-
-          {/* Radial Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f90093]/10 rounded-full blur-[120px] pointer-events-none" />
-
-          {/* Grid of Compact Stats - 2 columns even on mobile to keep the section short */}
-          <div className="relative z-10">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-              {compactStats.map((stat, index) => (
-                <CompactStatCard
-                  key={stat.id}
-                  stat={stat}
-                  index={index}
-                  onClick={() => setModalPainPoint(stat)}
-                  clickHint={t('clickHint')}
-                  isAnchor={stat.id === 'knowledge'}
-                  anchorBadge={t('anchorBadge')}
-                />
-              ))}
-            </div>
-          </div>
-        </motion.div>
+    <section className="engineering-section" id="herausforderungen">
+      <div className="engineering-wrap">
+        <div className="section-heading-split">
+          <div className="section-intro"><p className="technical-label">{en ? 'The engineering day-to-day' : 'Alltag in der Entwicklung'}</p><h2>{t('headline')} <span className="highlight">{t('headlineHighlight')}</span> {t('headlineEnd')}</h2></div>
+          <div className="section-heading-body"><p>{t('body1')}</p><p>{t('body2')}</p><button className="engineering-text-link mt-4" onClick={() => document.querySelector<HTMLButtonElement>('[data-roi-calculator-trigger]')?.click()}>{t('roiLink')}<ArrowUpRight size={16} aria-hidden="true" /></button></div>
+        </div>
+        <div className="pain-grid">
+          {compactStatsConfig.map(({ id, icon: Icon, imagePath, imageAlt }) => (
+            <Dialog key={id}>
+              <DialogTrigger asChild>
+                <button className={`spot-card pain-card ${id === 'knowledge' ? 'pain-card-featured' : ''}`} onPointerMove={trackSpotlight}>
+                  <span className="pain-card-top"><Icon size={22} strokeWidth={1.5} aria-hidden="true" />{id === 'knowledge' && <span>{t('anchorBadge')}</span>}<ArrowUpRight size={17} className="pain-card-arrow" aria-hidden="true" /></span>
+                  <span className="pain-title">{t(`stats.${id}.title`)}</span>
+                  <span className="pain-description">{t(`stats.${id}.description`)}</span>
+                  <span className="pain-hint">{t('clickHint')}</span>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="w-[calc(100%-32px)] max-w-3xl p-6 md:p-8">
+                <DialogTitle className="pr-10">{t(`stats.${id}.title`)}</DialogTitle>
+                <div className="relative aspect-[16/9] rounded-lg overflow-hidden"><Image src={imagePath} alt={imageAlt} fill sizes="(max-width: 768px) 90vw, 700px" className="object-cover" /></div>
+                <p className="technical-label">{en ? 'Illustration' : 'Illustration'}</p>
+                <DialogDescription>{t(`stats.${id}.description`)}</DialogDescription>
+                {t(`stats.${id}.source`) && <p className="text-xs text-dim">{t('quellePrafix')} {t(`stats.${id}.source`)}</p>}
+              </DialogContent>
+            </Dialog>
+          ))}
+        </div>
       </div>
-
-      {/* Image Modal */}
-      <AnimatePresence>
-        {modalPainPoint && (
-          <ImageModal
-            painPoint={modalPainPoint}
-            onClose={() => setModalPainPoint(null)}
-          />
-        )}
-      </AnimatePresence>
     </section>
   );
 }

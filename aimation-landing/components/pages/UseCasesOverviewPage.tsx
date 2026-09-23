@@ -27,9 +27,9 @@ export default function UseCasesOverviewPage() {
       <section
         className="pt-32 pb-16 md:pt-40 md:pb-20"
         style={{
-          backgroundColor: '#faf9f7',
+          backgroundColor: 'transparent',
           backgroundImage:
-            'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+            'none',
           backgroundSize: '72px 72px',
         }}
       >
@@ -38,7 +38,7 @@ export default function UseCasesOverviewPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-heading font-bold text-[#071013] mb-6"
+            className="text-3xl md:text-5xl font-heading font-bold text-ink mb-6"
           >
             {t('h1')}
           </motion.h1>
@@ -46,7 +46,7 @@ export default function UseCasesOverviewPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg text-gray-600 font-inter"
+            className="text-lg text-muted font-inter"
           >
             {t('intro')}
           </motion.p>
@@ -54,16 +54,17 @@ export default function UseCasesOverviewPage() {
       </section>
 
       {/* Filter + Grid */}
-      <section className="py-16 md:py-24" style={{ backgroundColor: '#faf9f7' }}>
+      <section className="py-16 md:py-24" style={{ backgroundColor: 'transparent' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Kategorie-Filter */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             <button
               onClick={() => setActiveFilter('ALL')}
+              aria-pressed={activeFilter === 'ALL'}
               className={`px-4 py-2 rounded-full text-sm font-heading font-semibold border transition-colors ${
                 activeFilter === 'ALL'
-                  ? 'bg-[#071013] text-white border-[#071013]'
-                  : 'bg-white text-[#071013] border-gray-200 hover:border-[#071013]/30'
+                  ? 'bg-[#071013] text-white border-line'
+                  : 'bg-surface text-ink border-line hover:border-line/30'
               }`}
             >
               {t('filterAll')}
@@ -72,11 +73,12 @@ export default function UseCasesOverviewPage() {
               <button
                 key={world}
                 onClick={() => setActiveFilter(world)}
+                aria-pressed={activeFilter === world}
                 className="px-4 py-2 rounded-full text-sm font-heading font-semibold border transition-colors"
                 style={
                   activeFilter === world
-                    ? { backgroundColor: SOLUTION_WORLD_COLORS[world], borderColor: SOLUTION_WORLD_COLORS[world], color: '#fff' }
-                    : { backgroundColor: '#fff', borderColor: '#e5e7eb', color: '#071013' }
+                    ? { backgroundColor: SOLUTION_WORLD_COLORS[world], borderColor: SOLUTION_WORLD_COLORS[world], color: world === 'WORK' || world === 'THINK' ? '#071013' : '#ffffff' }
+                    : { backgroundColor: 'var(--surface)', borderColor: 'var(--line)', color: 'var(--ink)' }
                 }
               >
                 {world}
@@ -103,7 +105,7 @@ export default function UseCasesOverviewPage() {
           <p className="text-gray-400 mb-10">{t('ctaText')}</p>
           <button
             onClick={openLeadForm}
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#f90093] to-[#ff4ecd] text-white font-heading font-semibold rounded-lg hover:shadow-[0_0_30px_rgba(249,0,147,0.4)] transition-all duration-300"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#f90093] to-[#ff4ecd] text-[#071013] font-heading font-semibold rounded-lg hover:shadow-[0_0_30px_rgba(249,0,147,0.4)] transition-all duration-300"
           >
             {t('ctaButton')}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

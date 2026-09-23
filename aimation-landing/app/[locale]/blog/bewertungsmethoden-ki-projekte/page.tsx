@@ -84,21 +84,21 @@ export default async function BewertungsmethodenPage({
         url="/blog/bewertungsmethoden-ki-projekte"
       />
       <Header />
-      <main id="main-content" className="bg-[#faf9f7]">
+      <main id="main-content" className="bg-ground">
 
         {/* ── HERO ── */}
         <section className="pt-32 pb-12 md:pt-40 md:pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter flex-wrap">
-              <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter flex-wrap">
+              <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
               <ChevronRight className="w-4 h-4" />
-              <Link href="/blog" className="hover:text-[#071013] transition-colors">Blog</Link>
+              <Link href="/blog" className="hover:text-ink transition-colors">Blog</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-[#071013] font-medium">Wenn RICE nicht reicht</span>
+              <span className="text-ink font-medium">Wenn RICE nicht reicht</span>
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold">
                 KI-Strategie
               </span>
               <span className="text-xs text-gray-400 font-inter">2. Mai 2026</span>
@@ -107,22 +107,22 @@ export default async function BewertungsmethodenPage({
               <span className="text-xs text-gray-400 font-inter">·</span>
               <Link
                 href="/blog/ki-projekte-priorisierung-rice"
-                className="text-xs text-[#c2007a] font-inter hover:underline"
+                className="text-xs text-magenta-light font-inter hover:underline"
               >
                 Teil 1 lesen →
               </Link>
             </div>
 
             <h1
-              className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+              className="font-heading font-bold text-ink mb-6 leading-tight"
               style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)' }}
             >
               Wenn RICE nicht reicht:{' '}
-              <span className="text-[#f90093]">Vier Methoden</span>{' '}
+              <span className="text-magenta-light">Vier Methoden</span>{' '}
               zur Bewertung von KI-Projekten
             </h1>
 
-            <p className="text-gray-600 font-inter leading-relaxed mb-8" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
+            <p className="text-muted font-inter leading-relaxed mb-8" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
               Die RICE-Formel ist ein guter Filter, aber sie hat blinde Flecken. Vier ergänzende Methoden und wann welche passt, erklärt an denselben fünf Projekten aus der Entwicklungsabteilung.
             </p>
 
@@ -142,7 +142,7 @@ export default async function BewertungsmethodenPage({
         {/* ── ARTIKEL ── */}
         <section className="pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="font-inter text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.8' }}>
+            <div className="font-inter text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.8' }}>
 
               {/* ── INTRO ── */}
               <p className="mb-5">
@@ -158,28 +158,28 @@ export default async function BewertungsmethodenPage({
               {/* ── METHODEN-ÜBERSICHT ── */}
               <div className="grid gap-4 my-10 sm:grid-cols-2">
                 {METHODS.map((m) => (
-                  <div key={m.id} className="bg-white border border-gray-200 rounded-xl p-5">
+                  <div key={m.id} className="bg-surface border border-line rounded-xl p-5">
                     <div className="flex items-start gap-3 mb-2">
                       <span
-                        className="flex-shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-xs text-white"
+                        className="flex-shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-xs text-[#071013]"
                         style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
                       >
                         {m.id}
                       </span>
                       <div>
-                        <p className="font-heading font-semibold text-[#071013] text-sm leading-tight">{m.name}</p>
-                        <p className="text-xs text-[#c2007a] font-inter mt-0.5">{m.tagline}</p>
+                        <p className="font-heading font-semibold text-ink text-sm leading-tight">{m.name}</p>
+                        <p className="text-xs text-magenta-light font-inter mt-0.5">{m.tagline}</p>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-600 leading-relaxed">{m.description}</p>
+                    <p className="text-sm text-muted leading-relaxed">{m.description}</p>
                   </div>
                 ))}
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── METHODE 1 ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Methode 1: Impact-Effort-Matrix
               </h2>
               <p className="mb-5">
@@ -190,16 +190,16 @@ export default async function BewertungsmethodenPage({
               </p>
 
               {/* Matrix-Visualisierung */}
-              <div className="my-8 rounded-2xl overflow-hidden border border-gray-200">
+              <div className="my-8 rounded-2xl overflow-hidden border border-line">
                 <div className="bg-[#071013] px-5 py-3">
                   <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest">Impact-Effort-Matrix: Unsere fünf Use Cases</p>
                 </div>
-                <div className="bg-white p-5">
+                <div className="bg-surface p-5">
                   <div className="grid grid-cols-2 gap-3">
                     {[
                       {
                         label: 'Quick Wins',
-                        color: 'border-[#f90093] bg-pink-50',
+                        color: 'border-[#f90093] bg-pink-500/10',
                         badge: 'Sofort starten',
                         badgeColor: 'bg-[#f90093] text-white',
                         items: ['Datenblatt-Extractor'],
@@ -207,7 +207,7 @@ export default async function BewertungsmethodenPage({
                       },
                       {
                         label: 'Big Bets',
-                        color: 'border-gray-300 bg-gray-50',
+                        color: 'border-line bg-surface',
                         badge: 'Planen & starten',
                         badgeColor: 'bg-gray-700 text-white',
                         items: ['Patent-Intelligence', 'Zeichnungs-Archiv', 'Multi-Agent Scout'],
@@ -215,7 +215,7 @@ export default async function BewertungsmethodenPage({
                       },
                       {
                         label: 'Money Pit',
-                        color: 'border-red-200 bg-red-50',
+                        color: 'border-red-500/25 bg-red-500/10',
                         badge: 'Überdenken',
                         badgeColor: 'bg-red-500 text-white',
                         items: ['Norm-Checker'],
@@ -223,7 +223,7 @@ export default async function BewertungsmethodenPage({
                       },
                       {
                         label: 'Fill-Ins',
-                        color: 'border-gray-200 bg-gray-50',
+                        color: 'border-line bg-surface',
                         badge: 'Wann Zeit ist',
                         badgeColor: 'bg-gray-400 text-white',
                         items: ['–'],
@@ -232,13 +232,13 @@ export default async function BewertungsmethodenPage({
                     ].map((q) => (
                       <div key={q.label} className={`rounded-xl border p-4 ${q.color}`}>
                         <div className="flex items-center justify-between mb-2">
-                          <p className="font-heading font-semibold text-[#071013] text-xs">{q.label}</p>
+                          <p className="font-heading font-semibold text-ink text-xs">{q.label}</p>
                           <span className={`text-xs px-2 py-0.5 rounded-full font-inter ${q.badgeColor}`}>{q.badge}</span>
                         </div>
                         <p className="text-xs text-gray-400 font-inter mb-2">{q.desc}</p>
                         <ul className="space-y-1">
                           {q.items.map((item) => (
-                            <li key={item} className="text-sm font-inter text-[#071013]">• {item}</li>
+                            <li key={item} className="text-sm font-inter text-ink">• {item}</li>
                           ))}
                         </ul>
                       </div>
@@ -258,10 +258,10 @@ export default async function BewertungsmethodenPage({
                 </p>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── METHODE 2 ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Methode 2: WSJF (Weighted Shortest Job First)
               </h2>
               <p className="mb-5">
@@ -275,7 +275,7 @@ export default async function BewertungsmethodenPage({
                   <span className="text-gray-400">=</span>
                   <div className="flex flex-col items-center gap-0">
                     <span className="pb-1.5" style={{ color: '#f90093' }}>Cost of Delay</span>
-                    <div className="w-full h-px bg-white" />
+                    <div className="w-full h-px bg-surface" />
                     <span className="pt-1.5 text-gray-300">Job Size</span>
                   </div>
                 </div>
@@ -287,7 +287,7 @@ export default async function BewertungsmethodenPage({
               </p>
               <p className="mb-5">
                 Beim Norm-Checker wirkt sich das sofort aus. Der{' '}
-                <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=OJ%3AL_202401689" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">
+                <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=OJ%3AL_202401689" target="_blank" rel="noopener" className="text-magenta-light underline underline-offset-2 hover:no-underline">
                   EU AI Act
                 </a>{' '}
                 gilt seit August 2024, die Pflichten für Hochrisiko-Anwendungen wie Norm-Checks wurden durch den EU-Digital-Omnibus zwar auf Dezember 2027 verschoben, die Vorarbeit lohnt sich trotzdem schon jetzt. Ein KI-gestützter Norm-Checker, der Konstruktionen gegen DIN-, ISO- und VDI-Normen prüft, fällt potenziell in diesen Bereich. Das erzeugt echten, messbaren Zeitdruck. User-Business Value 5, Time Criticality 9, Risk Reduction/Opportunity Enablement 9, Job Size 8, WSJF-Score: 2,88. Bei RICE lag dasselbe Projekt auf Platz 4. In der WSJF-Bewertung rückt es in die obere Hälfte.
@@ -303,10 +303,10 @@ export default async function BewertungsmethodenPage({
                 </p>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── METHODE 3 ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Methode 3: Business Value vs. AI Feasibility Matrix
               </h2>
               <p className="mb-5">
@@ -317,7 +317,7 @@ export default async function BewertungsmethodenPage({
               </p>
 
               {/* Feasibility-Tabelle */}
-              <div className="my-8 rounded-2xl overflow-hidden border border-gray-200">
+              <div className="my-8 rounded-2xl overflow-hidden border border-line">
                 <div className="bg-[#071013] px-5 py-3">
                   <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest">AI Feasibility Matrix: Einordnung der fünf Projekte</p>
                 </div>
@@ -328,24 +328,24 @@ export default async function BewertungsmethodenPage({
                   { name: 'Multi-Agent Scout', value: 'Hoch', feasibility: 'Niedrig', action: 'Monitor & prepare', top: false },
                   { name: 'Norm-Checker', value: 'Mittel', feasibility: 'Niedrig', action: 'Neu zuschneiden', top: false },
                 ].map((item, i) => (
-                  <div key={i} className={`flex flex-wrap items-center gap-3 px-5 py-4 border-b border-gray-100 last:border-0 ${item.top ? 'bg-white' : 'bg-[#faf9f7]'}`}>
+                  <div key={i} className={`flex flex-wrap items-center gap-3 px-5 py-4 border-b border-line last:border-0 ${item.top ? 'bg-surface' : 'bg-ground'}`}>
                     <div className="flex-1 min-w-0">
-                      <p className={`font-heading font-semibold text-sm ${item.top ? 'text-[#071013]' : 'text-gray-500'}`}>{item.name}</p>
+                      <p className={`font-heading font-semibold text-sm ${item.top ? 'text-ink' : 'text-dim'}`}>{item.name}</p>
                     </div>
                     <div className="flex items-center gap-4 flex-shrink-0">
                       <div className="text-center">
                         <p className="text-xs text-gray-400 font-inter mb-0.5">Wert</p>
-                        <p className="font-heading font-semibold text-xs text-[#071013]">{item.value}</p>
+                        <p className="font-heading font-semibold text-xs text-ink">{item.value}</p>
                       </div>
                       <div className="text-center">
                         <p className="text-xs text-gray-400 font-inter mb-0.5">Machbarkeit</p>
-                        <p className="font-heading font-semibold text-xs text-[#071013]">{item.feasibility}</p>
+                        <p className="font-heading font-semibold text-xs text-ink">{item.feasibility}</p>
                       </div>
                       <span
                         className="inline-flex px-3 py-1 rounded-full text-xs font-inter"
                         style={item.top
                           ? { background: 'linear-gradient(135deg, #f90093, #ff4ecd)', color: 'white' }
-                          : { background: '#e5e7eb', color: '#6b7280' }
+                          : { background: 'var(--surface-raised)', color: 'var(--muted)' }
                         }
                       >
                         {item.action}
@@ -369,10 +369,10 @@ export default async function BewertungsmethodenPage({
                 </p>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── METHODE 4 ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Methode 4: Weighted Scoring Model
               </h2>
               <p className="mb-5">
@@ -383,10 +383,10 @@ export default async function BewertungsmethodenPage({
               </p>
 
               {/* Scoring-Tabelle */}
-              <div className="my-8 rounded-2xl overflow-hidden border border-gray-200">
+              <div className="my-8 rounded-2xl overflow-hidden border border-line">
                 <div className="bg-[#071013] px-5 py-3 flex items-center justify-between">
                   <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest">Weighted Scoring: Ergebnisse</p>
-                  <p className="text-xs text-gray-500 font-inter">Skala 1–5</p>
+                  <p className="text-xs text-dim font-inter">Skala 1–5</p>
                 </div>
                 {[
                   { name: 'Patent-Intelligence', score: 3.75, top: true },
@@ -395,18 +395,18 @@ export default async function BewertungsmethodenPage({
                   { name: 'Datenblatt-Extractor', score: 3.05, top: false },
                   { name: 'Zeichnungs-Archiv', score: 2.90, top: false },
                 ].map((item, i) => (
-                  <div key={i} className={`flex items-center gap-4 px-5 py-4 border-b border-gray-100 last:border-0 ${item.top ? 'bg-white' : 'bg-[#faf9f7]'}`}>
+                  <div key={i} className={`flex items-center gap-4 px-5 py-4 border-b border-line last:border-0 ${item.top ? 'bg-surface' : 'bg-ground'}`}>
                     <span
                       className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-heading font-bold"
-                      style={item.top ? { background: 'linear-gradient(135deg, #f90093, #ff4ecd)', color: 'white' } : { background: '#e5e7eb', color: '#6b7280' }}
+                      style={item.top ? { background: 'linear-gradient(135deg, #f90093, #ff4ecd)', color: 'white' } : { background: 'var(--surface-raised)', color: 'var(--muted)' }}
                     >
                       {i + 1}
                     </span>
                     <div className="flex-1 min-w-0">
-                      <p className={`font-heading font-semibold text-sm truncate ${item.top ? 'text-[#071013]' : 'text-gray-500'}`}>{item.name}</p>
+                      <p className={`font-heading font-semibold text-sm truncate ${item.top ? 'text-ink' : 'text-dim'}`}>{item.name}</p>
                     </div>
                     <div className="flex items-center gap-3 flex-shrink-0">
-                      <div className="hidden sm:block w-24 bg-gray-100 rounded-full h-1.5">
+                      <div className="hidden sm:block w-24 bg-raised rounded-full h-1.5">
                         <div
                           className="h-1.5 rounded-full"
                           style={{
@@ -415,7 +415,7 @@ export default async function BewertungsmethodenPage({
                           }}
                         />
                       </div>
-                      <span className={`font-heading font-bold text-sm w-10 text-right ${item.top ? 'text-[#c2007a]' : 'text-gray-400'}`}>
+                      <span className={`font-heading font-bold text-sm w-10 text-right ${item.top ? 'text-magenta-light' : 'text-gray-400'}`}>
                         {item.score.toFixed(2)}
                       </span>
                     </div>
@@ -437,25 +437,25 @@ export default async function BewertungsmethodenPage({
                 </p>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── INFOGRAFIK ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Zwei weitere, kurz eingeordnet
               </h2>
 
               <div className="grid sm:grid-cols-2 gap-4 my-8">
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">MoSCoW</p>
-                  <p className="text-xs text-[#c2007a] font-inter mb-3">Must · Should · Could · Won't</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 text-sm">MoSCoW</p>
+                  <p className="text-xs text-magenta-light font-inter mb-3">Must · Should · Could · Won't</p>
+                  <p className="text-sm text-muted leading-relaxed">
                     Entwickelt 1994 von Dai Clegg bei Oracle, heute fester Bestandteil agiler Methoden. Für die Priorisierung zwischen strategischen Projekten zu grob, aber hervorragend geeignet, um im ersten Schritt Muss-Projekte von Kann-Projekten zu trennen. Ein Norm-Checker mit EU-AI-Act-Deadline ist ein klares „Must have". Er wandert gar nicht erst in RICE.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">ICE</p>
-                  <p className="text-xs text-[#c2007a] font-inter mb-3">Impact · Confidence · Ease</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 text-sm">ICE</p>
+                  <p className="text-xs text-magenta-light font-inter mb-3">Impact · Confidence · Ease</p>
+                  <p className="text-sm text-muted leading-relaxed">
                     Von Sean Ellis entwickelt, dem Begründer des Growth Hacking. ICE ist der Vorläufer von RICE. RICE ergänzt es um die Reach-Dimension. Für schnelle Experiment-Entscheidungen in kleinen Teams ideal. Für Mittelstands-Budgetentscheidungen fehlt genau dieser Reach-Faktor: Wie viele Vorgänge oder Personen sind betroffen? Das ist oft der Unterschied zwischen Platz 1 und Platz 4.
                   </p>
                 </div>
@@ -474,10 +474,10 @@ export default async function BewertungsmethodenPage({
                 Die richtige Methode hängt von der Entscheidungssituation ab, nicht vom persönlichen Favoriten.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── WELCHE METHODE WANN ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Welche Methode wann?
               </h2>
               <p className="mb-5">
@@ -492,20 +492,20 @@ export default async function BewertungsmethodenPage({
                   { context: 'KI-spezifische Priorisierung', method: 'AI-Feasibility-Matrix', reason: 'Nimmt technische Machbarkeit als eigene Achse ernst' },
                   { context: 'C-Level-Entscheidungen mit vielen Kriterien', method: 'Weighted Scoring', reason: 'Flexibel genug für komplexe Interessenlagen' },
                 ].map((item) => (
-                  <div key={item.context} className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col sm:flex-row sm:items-start gap-3">
+                  <div key={item.context} className="bg-surface border border-line rounded-xl p-4 flex flex-col sm:flex-row sm:items-start gap-3">
                     <div className="flex-1">
                       <p className="text-xs text-gray-400 font-inter mb-0.5">{item.context}</p>
-                      <p className="font-heading font-semibold text-[#071013] text-sm">{item.method}</p>
+                      <p className="font-heading font-semibold text-ink text-sm">{item.method}</p>
                     </div>
-                    <p className="text-xs text-gray-500 font-inter sm:text-right sm:max-w-[200px] leading-relaxed">{item.reason}</p>
+                    <p className="text-xs text-dim font-inter sm:text-right sm:max-w-[200px] leading-relaxed">{item.reason}</p>
                   </div>
                 ))}
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── KOMBINATION ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Die beste Praxis: Zwei bis drei kombinieren
               </h2>
               <p className="mb-5">
@@ -516,15 +516,15 @@ export default async function BewertungsmethodenPage({
                 <p className="font-heading font-semibold mb-4 text-sm uppercase tracking-widest" style={{ color: '#f90093' }}>Der Sweet Spot</p>
                 <div className="space-y-3 text-sm leading-relaxed text-gray-200">
                   <p className="flex items-start gap-2">
-                    <span className="text-[#f90093] mt-1 flex-shrink-0">→</span>
+                    <span className="text-magenta-light mt-1 flex-shrink-0">→</span>
                     Wer nur eine Methode wählt, wird unvollständig priorisieren.
                   </p>
                   <p className="flex items-start gap-2">
-                    <span className="text-[#f90093] mt-1 flex-shrink-0">→</span>
+                    <span className="text-magenta-light mt-1 flex-shrink-0">→</span>
                     Wer alle gleichzeitig einsetzt, diskutiert nur noch Methoden statt Projekte.
                   </p>
                   <p className="flex items-start gap-2">
-                    <span className="text-[#f90093] mt-1 flex-shrink-0">→</span>
+                    <span className="text-magenta-light mt-1 flex-shrink-0">→</span>
                     Der Sweet Spot liegt bei zwei bis drei passenden Werkzeugen, bewusst kombiniert auf Basis der eigenen Entscheidungssituation.
                   </p>
                 </div>
@@ -540,7 +540,7 @@ export default async function BewertungsmethodenPage({
             </div>
 
             {/* ── INTERNE LINKS ── */}
-            <div className="mt-12 p-6 bg-white rounded-2xl border border-gray-200">
+            <div className="mt-12 p-6 bg-surface rounded-2xl border border-line">
               <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest mb-4">Weiterführende Seiten</p>
               <div className="flex flex-wrap gap-3">
                 {[
@@ -553,7 +553,7 @@ export default async function BewertungsmethodenPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-line text-sm font-inter text-ink hover:border-[#f90093] hover:text-magenta-light transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -579,7 +579,7 @@ export default async function BewertungsmethodenPage({
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-[#071013] transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
                 boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

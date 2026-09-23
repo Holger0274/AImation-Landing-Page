@@ -14,14 +14,14 @@ export const metadata = {
 
 export default function ImpressumPage() {
   return (
-    <div className="min-h-screen bg-warm-white py-20">
+    <div className="min-h-screen bg-ground py-20">
       <div className="container mx-auto px-4 max-w-4xl">
         <h1 className="text-4xl font-bold text-soft-black mb-8">
           Impressum
         </h1>
 
         <div className="prose prose-lg max-w-none">
-          <p className="text-sm text-gray-600 mb-8">
+          <p className="text-sm text-muted mb-8">
             Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)
           </p>
 
@@ -53,7 +53,7 @@ export default function ImpressumPage() {
               Kontaktaufnahme
             </h2>
             <p className="text-soft-black leading-relaxed">
-              <strong>E-Mail:</strong> <a href="mailto:info@aimation.de" className="text-[#c2007a] hover:underline">info@aimation.de</a><br />
+              <strong>E-Mail:</strong> <a href="mailto:info@aimation.de" className="text-magenta-light hover:underline">info@aimation.de</a><br />
               <strong>Telefon:</strong> [Wird ergänzt]
             </p>
           </section>
@@ -63,7 +63,7 @@ export default function ImpressumPage() {
               Weitere Unternehmensinformationen
             </h2>
             <p className="text-soft-black leading-relaxed">
-              Strukturierte Unternehmensdaten, FAQ und Abgrenzung: <a href="/facts/aimation" className="text-[#c2007a] hover:underline">Fakten zu AImation UG</a>
+              Strukturierte Unternehmensdaten, FAQ und Abgrenzung: <a href="/facts/aimation" className="text-magenta-light hover:underline">Fakten zu AImation UG</a>
             </p>
           </section>
 
@@ -74,7 +74,7 @@ export default function ImpressumPage() {
             <p className="text-soft-black leading-relaxed">
               <strong>Umsatzsteuer-Identifikationsnummer (USt-IdNr.):</strong> [Wird nach Erteilung durch das Bundeszentralamt für Steuern ergänzt]
             </p>
-            <p className="text-sm text-gray-600 italic mt-2">
+            <p className="text-sm text-muted italic mt-2">
               Hinweis: Die USt-IdNr. wird nach Erteilung unverzüglich ergänzt.
             </p>
           </section>
@@ -125,7 +125,7 @@ export default function ImpressumPage() {
                 href="https://ec.europa.eu/consumers/odr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#c2007a] hover:underline"
+                className="text-magenta-light hover:underline"
               >
                 https://ec.europa.eu/consumers/odr/
               </a>
@@ -144,7 +144,7 @@ export default function ImpressumPage() {
             </p>
           </section>
 
-          <p className="text-sm text-gray-600 mt-12 pt-8 border-t border-gray-300">
+          <p className="text-sm text-muted mt-12 pt-8 border-t border-line">
             Stand: {new Date().toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
         </div>

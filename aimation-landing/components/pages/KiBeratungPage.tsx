@@ -38,33 +38,33 @@ function FaqAccordion() {
 
 export default function KiBeratungPage() {
   return (
-    <main id="main-content" className="bg-[#faf9f7]">
+    <main id="main-content" className="bg-ground">
       {/* HERO */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter">
-            <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter">
+            <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-[#071013] font-medium">KI-Beratung für KMUs</span>
+            <span className="text-ink font-medium">KI-Beratung für KMUs</span>
           </nav>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold mb-6">
             Säule 2: Beratung
           </div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+            className="font-heading font-bold text-ink mb-6 leading-tight"
             style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}
           >
             KI-Beratung für KMUs:{' '}
-            <span className="text-[#f90093]">Klarheit statt Hype</span>
+            <span className="text-magenta-light">Klarheit statt Hype</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-gray-600 font-inter leading-relaxed mb-8"
+            className="text-muted font-inter leading-relaxed mb-8"
             style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}
           >
             Wo stehen Sie wirklich? Welche KI-Investitionen lohnen sich? Was kostet zu viel, was bringt zu wenig?
@@ -80,14 +80,14 @@ export default function KiBeratungPage() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold text-white"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold text-[#071013]"
               style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
             >
               Kostenloses Erstgespräch buchen
             </a>
             <Link
               href="/#kontakt"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold border-2 border-[#071013] text-[#071013] hover:bg-[#071013] hover:text-white transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold border-2 border-line text-ink hover:bg-[#071013] hover:text-white transition-all"
             >
               Holen Sie sich Ihre KI-Landkarte
             </Link>
@@ -96,31 +96,31 @@ export default function KiBeratungPage() {
       </section>
 
       {/* 3 PHASES */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-surface">
         <div className="max-w-5xl mx-auto">
-          <h2 className="font-heading font-bold text-[#071013] text-center mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}>
-            Zwei Phasen. <span className="text-[#f90093]">Ein roter Faden.</span>
+          <h2 className="font-heading font-bold text-ink text-center mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}>
+            Zwei Phasen. <span className="text-magenta-light">Ein roter Faden.</span>
           </h2>
-          <p className="text-gray-600 font-inter text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-muted font-inter text-center mb-12 max-w-2xl mx-auto">
             Jede Phase ist einzeln buchbar. Oder wir begleiten Sie durch beide.
           </p>
           <div className="space-y-8">
             {BERATUNG_PHASES.map((phase) => (
-              <div key={phase.phase} className="rounded-2xl border border-gray-200 p-6 md:p-8">
+              <div key={phase.phase} className="rounded-2xl border border-line p-6 md:p-8">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-white flex-shrink-0" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-[#071013] flex-shrink-0" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>
                     {phase.phase}
                   </div>
                   <div>
-                    <h3 className="font-heading font-bold text-[#071013]" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.375rem)' }}>{phase.name}</h3>
-                    <p className="text-gray-500 font-inter text-sm">{phase.subtitle}</p>
+                    <h3 className="font-heading font-bold text-ink" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.375rem)' }}>{phase.name}</h3>
+                    <p className="text-dim font-inter text-sm">{phase.subtitle}</p>
                   </div>
                 </div>
                 <div className="grid sm:grid-cols-3 gap-4">
                   {phase.modules.map((m) => (
-                    <div key={m.title} className="bg-[#faf9f7] rounded-xl p-4">
-                      <p className="font-heading font-semibold text-[#071013] text-sm mb-1">{m.title}</p>
-                      <p className="text-gray-500 font-inter text-xs leading-relaxed">{m.desc}</p>
+                    <div key={m.title} className="bg-ground rounded-xl p-4">
+                      <p className="font-heading font-semibold text-ink text-sm mb-1">{m.title}</p>
+                      <p className="text-dim font-inter text-xs leading-relaxed">{m.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -134,7 +134,7 @@ export default function KiBeratungPage() {
       <section className="py-16 px-4 bg-[#071013]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-heading font-bold text-white mb-8" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-            Beratung, die <span className="text-[#f90093]">unbequeme Wahrheiten</span> ausspricht
+            Beratung, die <span className="text-magenta-light">unbequeme Wahrheiten</span> ausspricht
           </h2>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
@@ -154,8 +154,8 @@ export default function KiBeratungPage() {
       {/* FAQ */}
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-heading font-bold text-[#071013] mb-10 text-center" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-            Häufige Fragen zur <span className="text-[#f90093]">KI-Beratung</span>
+          <h2 className="font-heading font-bold text-ink mb-10 text-center" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
+            Häufige Fragen zur <span className="text-magenta-light">KI-Beratung</span>
           </h2>
           <FaqAccordion />
         </div>
@@ -165,7 +165,7 @@ export default function KiBeratungPage() {
       <section className="py-16 px-4 bg-[#071013]">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-heading font-bold text-white mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-            Bereit für den <span className="text-[#f90093]">nächsten Schritt</span>?
+            Bereit für den <span className="text-magenta-light">nächsten Schritt</span>?
           </h2>
           <p className="text-gray-400 font-inter mb-8">
             30 Minuten. Wir schauen gemeinsam, ob und wo KI-Beratung für Sie Sinn ergibt.
@@ -174,7 +174,7 @@ export default function KiBeratungPage() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-bold text-white"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-bold text-[#071013]"
             style={{
               background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
               boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

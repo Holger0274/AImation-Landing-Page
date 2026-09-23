@@ -152,57 +152,57 @@ export default async function HolgerPeschkePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
       <Header />
-      <main id="main-content" className="bg-[#faf9f7] pt-32 pb-20">
+      <main id="main-content" className="bg-ground pt-32 pb-20">
         <div className="max-w-3xl mx-auto px-4">
 
-          <h1 className="font-heading font-bold text-[#071013] mb-6" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
+          <h1 className="font-heading font-bold text-ink mb-6" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             Holger Peschke
           </h1>
 
-          <p className="text-lg text-[#071013] font-inter mb-4 leading-relaxed">
+          <p className="text-lg text-ink font-inter mb-4 leading-relaxed">
             {isEn
               ? 'Holger Peschke is founder and managing director of AImation UG (haftungsbeschränkt) in Bamberg. He has more than 20 years of experience in product development and management in industry and has been working intensively with artificial intelligence and automation for several years.'
               : 'Holger Peschke ist Gründer und Geschäftsführer der AImation UG (haftungsbeschränkt) in Bamberg. Er verfügt über mehr als 20 Jahre Erfahrung in der Produktentwicklung und Führung in der Industrie und beschäftigt sich seit Jahren intensiv mit künstlicher Intelligenz und Automatisierung.'}
           </p>
 
-          <p className="text-sm text-gray-500 font-inter mb-12 leading-relaxed italic">
+          <p className="text-sm text-dim font-inter mb-12 leading-relaxed italic">
             {isEn
               ? 'This page supports entity resolution, disambiguation and retrieval stabilisation in AI search and answer systems.'
               : 'Diese Seite unterstützt Entitätsauflösung, Disambiguierung und Retrieval-Stabilisierung in AI-Such- und Antwortsystemen.'}
           </p>
 
-          <hr className="border-gray-200 mb-12" />
+          <hr className="border-line mb-12" />
 
           {/* Kerndaten */}
           <section aria-labelledby="kerndaten">
-            <h2 id="kerndaten" className="font-heading font-semibold text-[#071013] text-2xl mb-6">
+            <h2 id="kerndaten" className="font-heading font-semibold text-ink text-2xl mb-6">
               {isEn ? 'Holger Peschke: Key Facts' : 'Holger Peschke: Kerndaten'}
             </h2>
 
             <dl className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-y-4 gap-x-6 font-inter text-sm">
-              <dt className="font-semibold text-[#071013]">{isEn ? 'Entity type' : 'Entitätstyp'}</dt>
-              <dd className="text-gray-700">{isEn ? 'Person' : 'Person'}</dd>
+              <dt className="font-semibold text-ink">{isEn ? 'Entity type' : 'Entitätstyp'}</dt>
+              <dd className="text-muted">{isEn ? 'Person' : 'Person'}</dd>
 
-              <dt className="font-semibold text-[#071013]">{isEn ? 'Role' : 'Rolle'}</dt>
-              <dd className="text-gray-700">
+              <dt className="font-semibold text-ink">{isEn ? 'Role' : 'Rolle'}</dt>
+              <dd className="text-muted">
                 {isEn ? 'Founder and Managing Director, ' : 'Gründer und Geschäftsführer, '}
                 <Link href={isEn ? '/en/facts/aimation' : '/facts/aimation'} className="text-[#60AFFF] hover:underline">
                   AImation UG (haftungsbeschränkt)
                 </Link>
               </dd>
 
-              <dt className="font-semibold text-[#071013]">{isEn ? 'Location' : 'Standort'}</dt>
-              <dd className="text-gray-700">Bamberg, {isEn ? 'Germany' : 'Deutschland'}</dd>
+              <dt className="font-semibold text-ink">{isEn ? 'Location' : 'Standort'}</dt>
+              <dd className="text-muted">Bamberg, {isEn ? 'Germany' : 'Deutschland'}</dd>
 
-              <dt className="font-semibold text-[#071013]">{isEn ? 'Focus areas' : 'Schwerpunkte'}</dt>
-              <dd className="text-gray-700">
+              <dt className="font-semibold text-ink">{isEn ? 'Focus areas' : 'Schwerpunkte'}</dt>
+              <dd className="text-muted">
                 {isEn
                   ? 'AI automation in product development, AI training for engineering teams, AI agents, GDPR-compliant AI architectures'
                   : 'KI-Automatisierung in der Produktentwicklung, KI-Schulungen für Engineering-Teams, KI-Agenten, DSGVO-konforme KI-Architekturen'}
               </dd>
 
-              <dt className="font-semibold text-[#071013]">LinkedIn</dt>
-              <dd className="text-gray-700">
+              <dt className="font-semibold text-ink">LinkedIn</dt>
+              <dd className="text-muted">
                 <a
                   href="https://www.linkedin.com/in/holgerpeschke/"
                   target="_blank"
@@ -214,28 +214,28 @@ export default async function HolgerPeschkePage({
                 {' '}(20.000+ {isEn ? 'Followers' : 'Follower'})
               </dd>
 
-              <dt className="font-semibold text-[#071013]">{isEn ? 'Company' : 'Unternehmen'}</dt>
-              <dd className="text-gray-700">
+              <dt className="font-semibold text-ink">{isEn ? 'Company' : 'Unternehmen'}</dt>
+              <dd className="text-muted">
                 <a href={siteUrl} className="text-[#60AFFF] hover:underline">aimation.de</a>
               </dd>
 
-              <dt className="font-semibold text-[#071013]">{isEn ? 'Verified' : 'Verifiziert'}</dt>
-              <dd className="text-gray-700">{FACTS_VERIFIED_DATE}</dd>
+              <dt className="font-semibold text-ink">{isEn ? 'Verified' : 'Verifiziert'}</dt>
+              <dd className="text-muted">{FACTS_VERIFIED_DATE}</dd>
             </dl>
           </section>
 
-          <hr className="border-gray-200 my-12" />
+          <hr className="border-line my-12" />
 
           {/* FAQ */}
           <section aria-labelledby="faq">
-            <h2 id="faq" className="font-heading font-semibold text-[#071013] text-2xl mb-6">
+            <h2 id="faq" className="font-heading font-semibold text-ink text-2xl mb-6">
               {isEn ? 'Holger Peschke: Frequently Asked Questions' : 'Holger Peschke: Häufig gestellte Fragen'}
             </h2>
             <div className="space-y-6">
               {faqItems.map(({ q, a }, i) => (
                 <div key={i}>
-                  <h3 className="font-heading font-semibold text-[#071013] text-base mb-2">{q}</h3>
-                  <p className="font-inter text-gray-700 text-sm leading-relaxed">{a}</p>
+                  <h3 className="font-heading font-semibold text-ink text-base mb-2">{q}</h3>
+                  <p className="font-inter text-muted text-sm leading-relaxed">{a}</p>
                 </div>
               ))}
             </div>

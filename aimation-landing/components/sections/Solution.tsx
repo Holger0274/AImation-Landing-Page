@@ -23,30 +23,30 @@ export default function Solution() {
     <section
       className="py-12 md:py-16"
       style={{
-        backgroundColor: '#faf9f7',
-        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+        backgroundColor: 'transparent',
+        backgroundImage: 'none',
         backgroundSize: '72px 72px',
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Headline */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading font-semibold text-gray-700 mb-4" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.25rem)' }}>
+          <h2 className="font-heading font-semibold text-muted mb-4" style={{ fontSize: 'clamp(1.125rem, 3vw, 1.25rem)' }}>
             Warum <span className="gradient-text">AImation</span>?
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-10" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.05rem)' }}>
+          <p className="text-muted max-w-2xl mx-auto mb-10" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.05rem)' }}>
             20 Jahre Engineering. Tief drin in Prozessen, die keiner mehr versteht. Das ist unser Vorteil, wenn wir heute KI-Lösungen bauen.
           </p>
         </motion.div>
 
         {/* Trust Badges - Horizontal Bar */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -57,7 +57,7 @@ export default function Solution() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
+                initial={false}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
@@ -66,7 +66,7 @@ export default function Solution() {
                 <div className="w-10 h-10 rounded-lg bg-lightblue/10 flex items-center justify-center flex-shrink-0">
                   <Icon className="w-5 h-5 text-lightblue" />
                 </div>
-                <span className="font-body text-gray-700 font-medium text-sm md:text-base">
+                <span className="font-body text-muted font-medium text-sm md:text-base">
                   {badge.text}
                 </span>
               </motion.div>

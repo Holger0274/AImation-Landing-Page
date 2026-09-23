@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
 import LeadFormModal from '@/components/LeadFormModal';
+import { MotionConfig } from 'framer-motion';
 
 interface LeadFormContextValue {
   openLeadForm: () => void;
@@ -42,8 +43,10 @@ export default function LeadFormProvider({ children }: { children: ReactNode }) 
 
   return (
     <LeadFormContext.Provider value={{ openLeadForm }}>
+      <MotionConfig reducedMotion="user">
       {children}
       <LeadFormModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      </MotionConfig>
     </LeadFormContext.Provider>
   );
 }

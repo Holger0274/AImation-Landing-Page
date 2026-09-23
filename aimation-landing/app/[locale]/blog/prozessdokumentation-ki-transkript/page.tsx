@@ -51,20 +51,20 @@ export default async function ProzessdokumentationPage({
       />
       <FAQPageSchema faqs={FAQ_ITEMS} />
       <Header />
-      <main id="main-content" className="bg-[#faf9f7]">
+      <main id="main-content" className="bg-ground">
         {/* ── HERO ── */}
         <section className="pt-32 pb-12 md:pt-40 md:pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter flex-wrap">
-              <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter flex-wrap">
+              <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
               <ChevronRight className="w-4 h-4" />
-              <Link href="/blog" className="hover:text-[#071013] transition-colors">Blog</Link>
+              <Link href="/blog" className="hover:text-ink transition-colors">Blog</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-[#071013] font-medium">Prozessdokumentation aus Transkript</span>
+              <span className="text-ink font-medium">Prozessdokumentation aus Transkript</span>
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold">
                 KI-Umsetzung
               </span>
               <span className="text-xs text-gray-400 font-inter">10. August 2026</span>
@@ -73,15 +73,15 @@ export default async function ProzessdokumentationPage({
             </div>
 
             <h1
-              className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+              className="font-heading font-bold text-ink mb-6 leading-tight"
               style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)' }}
             >
               Prozessdokumentation ohne Wochen Vorlauf:{' '}
-              <span className="text-[#f90093]">aus einem Gespräch wird in Stunden eine Verfahrensanweisung</span>
+              <span className="text-magenta-light">aus einem Gespräch wird in Stunden eine Verfahrensanweisung</span>
             </h1>
 
-            <div className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8 mb-2 overflow-x-auto">
-              <TranscriptToProcess variant="light" className="w-full min-w-[560px] h-auto" />
+            <div className="rounded-2xl border border-line bg-surface p-6 md:p-8 mb-2 overflow-x-auto">
+              <TranscriptToProcess variant="dark" className="w-full min-w-[560px] h-auto" />
             </div>
           </div>
         </section>
@@ -89,7 +89,7 @@ export default async function ProzessdokumentationPage({
         {/* ── ARTIKEL ── */}
         <section className="pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="font-inter text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
+            <div className="font-inter text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
 
               <p className="mb-5">
                 Eine Verfahrensanweisung für eine Wareneingangsprüfung braucht bei den meisten Mittelständlern zwei bis drei Wochen, bis sie als fertiges Dokument vorliegt. Nicht, weil der Ablauf kompliziert wäre. Weil der Ingenieur, der ihn im Kopf hat, in dieser Zeit keinen zusammenhängenden Nachmittag findet, sich hinzusetzen und ihn aufzuschreiben.
@@ -101,9 +101,9 @@ export default async function ProzessdokumentationPage({
                 Der Ablauf: ein 45-minütiges Gespräch, ein Transkript, mehrere KI-Schritte dazwischen. Am Ende stand ein Dokument, das zu rund 80 Prozent fertig war. Die restlichen 20 Prozent kamen aus einem zweiten, kürzeren Gespräch. Insgesamt: ein Arbeitstag statt drei Wochen.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Der alte Weg: Schreiben statt sprechen
               </h2>
               <p className="mb-5">
@@ -113,9 +113,9 @@ export default async function ProzessdokumentationPage({
                 Das Ergebnis kennt jeder, der schon einmal in einem produzierenden Unternehmen gearbeitet hat: Verfahrensanweisungen, die drei Jahre alt sind und nicht mehr zur echten Arbeitsweise passen. Oder gar keine, weil der Ablauf nur einer Person im Kopf existiert. Genau das Problem, das wir an anderer Stelle unter dem Stichwort Wissenssicherung beschreiben, wenn ein erfahrener Entwickler in Rente geht.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was in dem Gespräch wirklich passiert
               </h2>
               <p className="mb-5">
@@ -125,18 +125,18 @@ export default async function ProzessdokumentationPage({
                 Das Gespräch wird aufgenommen und automatisch transkribiert. Für den Ingenieur ändert sich dabei nichts an seiner Arbeit, er beschreibt einen Ablauf, den er sowieso im Kopf hat. Die Übersetzung in ein strukturiertes Dokument passiert danach, nicht während des Gesprächs.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Vom Transkript zum ersten Entwurf
               </h2>
               <p className="mb-5">
                 Aus dem rohen Transkript, Füllwörtern und Gedankensprüngen inklusive, entsteht in mehreren KI-Schritten ein strukturierter Entwurf: nummerierte Prozessschritte in der richtigen Reihenfolge, Verantwortlichkeiten pro Schritt, erkannte Entscheidungspunkte, und eine Liste der Stellen, an denen das Gespräch unklar blieb. Diese letzte Liste ist der eigentliche Wert des Schritts, sie sagt genau, wo im zweiten Gespräch nachgehakt werden muss, statt dass jemand das ganze Dokument noch einmal von vorne liest.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Die 80-Prozent-Grenze, ehrlich betrachtet
               </h2>
               <p className="mb-5">
@@ -144,25 +144,25 @@ export default async function ProzessdokumentationPage({
               </p>
 
               <div className="grid gap-4 my-8 sm:grid-cols-3">
-                <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">Sitzt im ersten Entwurf</p>
-                  <ul className="text-sm text-gray-700 space-y-1">
+                <div className="bg-green-500/10 border border-green-500/25 rounded-xl p-4">
+                  <p className="font-heading font-semibold text-ink mb-2 text-sm">Sitzt im ersten Entwurf</p>
+                  <ul className="text-sm text-muted space-y-1">
                     <li>Hauptablauf in richtiger Reihenfolge</li>
                     <li>Der Standardfall, den man zuerst erzählt</li>
                     <li>Grobe Verantwortlichkeiten</li>
                   </ul>
                 </div>
-                <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">Braucht Nachschärfen</p>
-                  <ul className="text-sm text-gray-700 space-y-1">
+                <div className="bg-yellow-500/10 border border-yellow-500/25 rounded-xl p-4">
+                  <p className="font-heading font-semibold text-ink mb-2 text-sm">Braucht Nachschärfen</p>
+                  <ul className="text-sm text-muted space-y-1">
                     <li>Selten genutzte Ausnahmefälle</li>
                     <li>Exakte Grenzwerte und Toleranzen</li>
                     <li>Formulierung für Normkonformität</li>
                   </ul>
                 </div>
-                <div className="bg-red-50 border border-red-200 rounded-xl p-4">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 text-sm">Bleibt Handarbeit</p>
-                  <ul className="text-sm text-gray-700 space-y-1">
+                <div className="bg-red-500/10 border border-red-500/25 rounded-xl p-4">
+                  <p className="font-heading font-semibold text-ink mb-2 text-sm">Bleibt Handarbeit</p>
+                  <ul className="text-sm text-muted space-y-1">
                     <li>Fachliche Freigabe</li>
                     <li>Abgleich mit aktuellen Normen</li>
                     <li>Alles sicherheitsrelevante</li>
@@ -170,18 +170,18 @@ export default async function ProzessdokumentationPage({
                 </div>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Die zweite Runde: das fehlende Fünftel
               </h2>
               <p className="mb-5">
                 Das zweite Gespräch dauert meistens 15 bis 20 Minuten, nicht noch einmal 45. Es geht ausschließlich um die Liste offener Punkte aus dem ersten Entwurf: „Bei Schritt 4 ist unklar, was passiert, wenn die Messung außerhalb der Toleranz liegt." Der Ingenieur beantwortet gezielt diese Fragen, das Dokument wird aktualisiert, fertig. Wer diesen Schritt überspringt, weil der erste Entwurf schon gut aussieht, handelt sich genau die Fehler ein, die eine Verfahrensanweisung eigentlich verhindern soll.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Wo das auf Ihr Zeit- und Kostenkonto einzahlt
               </h2>
               <p className="mb-5">
@@ -191,40 +191,40 @@ export default async function ProzessdokumentationPage({
                 Beim klassischen Weg sind es nicht nur mehr Stunden am Dokument selbst, es sind vor allem die zwei bis drei Wochen Kalenderzeit dazwischen, in denen der Prozess weder dokumentiert noch für neue Kollegen nutzbar ist. Auf dem Steuerungsdreieck aus Qualität, Kosten und Timing zahlt das doppelt ein: auf Timing, weil das Dokument Tage statt Wochen braucht, und auf Kosten, weil teure Ingenieurstunden nicht fürs Formatieren draufgehen.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Wo das nicht funktioniert
               </h2>
               <p className="mb-5">
                 Für rein handwerkliche Abläufe, bei denen das Entscheidende ein Handgriff oder ein Gefühl ist, zum Beispiel das richtige Anzugsdrehmoment „nach Erfahrung" statt nach Tabelle, ist ein gesprochenes Interview das falsche Werkzeug. Da hilft ein Video mit Kommentar mehr als jede noch so gute Transkription. Und wer nach dem ersten Entwurf direkt freigibt, statt die zweite Interview-Runde zu machen, spart genau die falschen 20 Prozent Zeit. Das ist keine Ausnahme, das ist der häufigste Fehler, den ich bei diesem Ansatz sehe.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was konkret zu tun ist
               </h2>
               <p className="mb-6">Wenn Sie das in Ihrem Team ausprobieren wollen, sehe ich drei pragmatische Schritte:</p>
 
               <div className="space-y-4 mb-8">
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2">1. Einen Prozess auswählen, der nur in einem Kopf steckt</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">Am meisten bringt es dort, wo aktuell gar keine Dokumentation existiert, oder wo eine Person kurz vor dem Ruhestand oder Wechsel steht. Ein mittelkomplexer Prozess eignet sich besser als der Extremfall: nicht die einfachste Routine, aber auch nicht der Prozess mit den meisten Sonderfällen im Haus.</p>
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2">1. Einen Prozess auswählen, der nur in einem Kopf steckt</p>
+                  <p className="text-muted text-sm leading-relaxed">Am meisten bringt es dort, wo aktuell gar keine Dokumentation existiert, oder wo eine Person kurz vor dem Ruhestand oder Wechsel steht. Ein mittelkomplexer Prozess eignet sich besser als der Extremfall: nicht die einfachste Routine, aber auch nicht der Prozess mit den meisten Sonderfällen im Haus.</p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2">2. Das Gespräch aufnehmen, nicht das Meeting</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">Ein Vier-Augen-Gespräch funktioniert deutlich besser als eine Gruppenrunde. In der Gruppe entstehen Diskussionen über den Prozess, im Einzelgespräch wird der Prozess einfach erzählt. Das macht die Transkription sauberer und den ersten Entwurf brauchbarer.</p>
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2">2. Das Gespräch aufnehmen, nicht das Meeting</p>
+                  <p className="text-muted text-sm leading-relaxed">Ein Vier-Augen-Gespräch funktioniert deutlich besser als eine Gruppenrunde. In der Gruppe entstehen Diskussionen über den Prozess, im Einzelgespräch wird der Prozess einfach erzählt. Das macht die Transkription sauberer und den ersten Entwurf brauchbarer.</p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2">3. Die zweite Runde nicht überspringen</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">Blocken Sie die 20 Minuten für das Nachschärfen von vornherein ein, nicht als optionalen Zusatz. Genau dieser Schritt trennt eine brauchbare Verfahrensanweisung von einer, die nur plausibel klingt.</p>
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2">3. Die zweite Runde nicht überspringen</p>
+                  <p className="text-muted text-sm leading-relaxed">Blocken Sie die 20 Minuten für das Nachschärfen von vornherein ein, nicht als optionalen Zusatz. Genau dieser Schritt trennt eine brauchbare Verfahrensanweisung von einer, die nur plausibel klingt.</p>
                 </div>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was bleibt
               </h2>
               <p className="mb-5">
@@ -239,7 +239,7 @@ export default async function ProzessdokumentationPage({
             </div>
 
             {/* ── INTERNE LINKS ── */}
-            <div className="mt-12 p-6 bg-white rounded-2xl border border-gray-200">
+            <div className="mt-12 p-6 bg-surface rounded-2xl border border-line">
               <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest mb-4">Weiterführende Seiten</p>
               <div className="flex flex-wrap gap-3">
                 {[
@@ -251,7 +251,7 @@ export default async function ProzessdokumentationPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-line text-sm font-inter text-ink hover:border-[#f90093] hover:text-magenta-light transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -262,9 +262,9 @@ export default async function ProzessdokumentationPage({
         </section>
 
         {/* ── FAQ ── */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-surface">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-heading font-bold text-[#071013] mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+            <h2 className="font-heading font-bold text-ink mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
               Häufige Fragen zur Prozessdokumentation mit KI
             </h2>
             <FaqAccordion />
@@ -287,7 +287,7 @@ export default async function ProzessdokumentationPage({
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-[#071013] transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
                 boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export interface FaqAccordionItem {
@@ -19,6 +19,7 @@ interface FaqAccordionProps {
  * Ohne das sehen AI-Crawler und Featured-Snippet-Bots nur die Fragen.
  */
 export default function FaqAccordion({ items, className }: FaqAccordionProps) {
+  const id = useId();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -28,32 +29,35 @@ export default function FaqAccordion({ items, className }: FaqAccordionProps) {
         return (
           <motion.div
             key={item.question}
-            initial={{ opacity: 0, y: 12 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.05 }}
-            className="bg-white rounded-xl border border-gray-200 overflow-hidden"
+            className="bg-surface rounded-xl border border-line overflow-hidden"
           >
             <button
               type="button"
               onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left font-heading font-semibold text-[#071013] hover:bg-[#faf9f7] transition-colors"
+              className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left font-heading font-semibold text-ink hover:bg-ground transition-colors"
               aria-expanded={isOpen}
+              aria-controls={`${id}-${i}`}
             >
               <span style={{ fontSize: 'clamp(0.875rem, 2.2vw, 1rem)' }}>{item.question}</span>
               <span
-                className={`flex-shrink-0 text-[#f90093] text-lg transition-transform duration-200 ${isOpen ? 'rotate-45' : ''}`}
+                className={`flex-shrink-0 text-magenta-light text-lg transition-transform duration-200 ${isOpen ? 'rotate-45' : ''}`}
                 aria-hidden="true"
               >
                 +
               </span>
             </button>
             <div
+              id={`${id}-${i}`}
+              aria-hidden={!isOpen}
               className="grid transition-all duration-300 ease-in-out"
               style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
             >
               <div className="overflow-hidden">
-                <p className="px-6 pb-4 text-gray-600 font-inter text-sm leading-relaxed">{item.answer}</p>
+                <p className="px-6 pb-4 text-muted font-inter text-sm leading-relaxed">{item.answer}</p>
               </div>
             </div>
           </motion.div>

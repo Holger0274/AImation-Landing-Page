@@ -73,33 +73,33 @@ function FaqAccordion() {
 
 export default function KiUmsetzungPage() {
   return (
-    <main id="main-content" className="bg-[#faf9f7]">
+    <main id="main-content" className="bg-ground">
       {/* HERO */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter">
-            <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter">
+            <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-[#071013] font-medium">KI-Automatisierung für den Mittelstand</span>
+            <span className="text-ink font-medium">KI-Automatisierung für den Mittelstand</span>
           </nav>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold mb-6">
             Säule 3: Umsetzung
           </div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+            className="font-heading font-bold text-ink mb-6 leading-tight"
             style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}
           >
             KI-Automatisierung für den Mittelstand:{' '}
-            <span className="text-[#f90093]">Lösungen, die morgen funktionieren</span>
+            <span className="text-magenta-light">Lösungen, die morgen funktionieren</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-gray-600 font-inter leading-relaxed mb-8"
+            className="text-muted font-inter leading-relaxed mb-8"
             style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}
           >
             Von einfachen Workflows bis zu KI-Agenten, die eigenständig recherchieren, entscheiden und handeln.
@@ -115,14 +115,14 @@ export default function KiUmsetzungPage() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold text-white"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold text-[#071013]"
               style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
             >
               Kostenloses Erstgespräch buchen
             </a>
             <Link
               href="/#use-cases"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold border-2 border-[#071013] text-[#071013] hover:bg-[#071013] hover:text-white transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold border-2 border-line text-ink hover:bg-[#071013] hover:text-white transition-all"
             >
               Use Cases ansehen
             </Link>
@@ -131,12 +131,12 @@ export default function KiUmsetzungPage() {
       </section>
 
       {/* 4 SOLUTION WORLDS */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-surface">
         <div className="max-w-5xl mx-auto">
-          <h2 className="font-heading font-bold text-[#071013] text-center mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}>
-            Vier Lösungswelten. <span className="text-[#f90093]">Ein Anbieter.</span>
+          <h2 className="font-heading font-bold text-ink text-center mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}>
+            Vier Lösungswelten. <span className="text-magenta-light">Ein Anbieter.</span>
           </h2>
-          <p className="text-gray-600 font-inter text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-muted font-inter text-center mb-12 max-w-2xl mx-auto">
             Alle Lösungen sind modular und kombinierbar. Wir starten dort, wo der größte Hebel liegt.
           </p>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -146,12 +146,12 @@ export default function KiUmsetzungPage() {
                   <div className="px-3 py-1 rounded-full text-white text-xs font-heading font-bold" style={{ backgroundColor: world.color }}>
                     {world.name}
                   </div>
-                  <span className="text-gray-500 font-inter text-sm">{world.type}</span>
+                  <span className="text-dim font-inter text-sm">{world.type}</span>
                 </div>
-                <h3 className="font-heading font-bold text-[#071013] mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>{world.subtitle}</h3>
+                <h3 className="font-heading font-bold text-ink mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>{world.subtitle}</h3>
                 <ul className="space-y-2">
                   {world.solutions.map((s) => (
-                    <li key={s} className="flex items-start gap-2 text-sm font-inter text-gray-600">
+                    <li key={s} className="flex items-start gap-2 text-sm font-inter text-muted">
                       <span className="mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: world.color }}></span>
                       {s}
                     </li>
@@ -167,7 +167,7 @@ export default function KiUmsetzungPage() {
       <section className="py-16 px-4 bg-[#071013]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-heading font-bold text-white mb-8" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-            Umsetzung, die <span className="text-[#f90093]">in der Praxis besteht</span>
+            Umsetzung, die <span className="text-magenta-light">in der Praxis besteht</span>
           </h2>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
@@ -187,8 +187,8 @@ export default function KiUmsetzungPage() {
       {/* FAQ */}
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-heading font-bold text-[#071013] mb-10 text-center" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-            Häufige Fragen zur <span className="text-[#f90093]">KI-Automatisierung</span>
+          <h2 className="font-heading font-bold text-ink mb-10 text-center" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
+            Häufige Fragen zur <span className="text-magenta-light">KI-Automatisierung</span>
           </h2>
           <FaqAccordion />
         </div>
@@ -198,7 +198,7 @@ export default function KiUmsetzungPage() {
       <section className="py-16 px-4 bg-[#071013]">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-heading font-bold text-white mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-            Bereit für die <span className="text-[#f90093]">Umsetzung</span>?
+            Bereit für die <span className="text-magenta-light">Umsetzung</span>?
           </h2>
           <p className="text-gray-400 font-inter mb-8">
             30 Minuten. Wir schauen gemeinsam, welche Lösung in Ihrem Unternehmen den größten Hebel hat.
@@ -207,7 +207,7 @@ export default function KiUmsetzungPage() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-bold text-white"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-bold text-[#071013]"
             style={{
               background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
               boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

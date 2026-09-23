@@ -51,21 +51,21 @@ export default async function KiProjekteScheiternPage({
       />
       <FAQPageSchema faqs={FAQ_ITEMS} />
       <Header />
-      <main id="main-content" className="bg-[#faf9f7]">
+      <main id="main-content" className="bg-ground">
 
         {/* ── HERO ── */}
         <section className="pt-32 pb-12 md:pt-40 md:pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter flex-wrap">
-              <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter flex-wrap">
+              <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
               <ChevronRight className="w-4 h-4" />
-              <Link href="/blog" className="hover:text-[#071013] transition-colors">Blog</Link>
+              <Link href="/blog" className="hover:text-ink transition-colors">Blog</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-[#071013] font-medium">KI-Projekte: Das Fundament entscheidet</span>
+              <span className="text-ink font-medium">KI-Projekte: Das Fundament entscheidet</span>
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold">
                 KI-Strategie
               </span>
               <span className="text-xs text-gray-400 font-inter">20. April 2026</span>
@@ -74,11 +74,11 @@ export default async function KiProjekteScheiternPage({
             </div>
 
             <h1
-              className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+              className="font-heading font-bold text-ink mb-6 leading-tight"
               style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)' }}
             >
               KI-Projekte scheitern nicht am Modell.{' '}
-              <span className="text-[#f90093]">Sie scheitern an dem, was darunter liegt.</span>
+              <span className="text-magenta-light">Sie scheitern an dem, was darunter liegt.</span>
             </h1>
 
             {/* Infografik */}
@@ -97,7 +97,7 @@ export default async function KiProjekteScheiternPage({
         {/* ── ARTIKEL ── */}
         <section className="pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="font-inter text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.8' }}>
+            <div className="font-inter text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.8' }}>
 
               <p className="mb-5">
                 In den letzten Monaten habe ich mit einer ganzen Reihe mittelständischer Unternehmen über KI-Einführungen gesprochen. Produktionsbetriebe, Ingenieurbüros, spezialisierte Dienstleister. Was alle gemeinsam haben: Sie wissen, dass sie handeln müssen. Was keiner offen sagt: Die meisten haben schon einen ersten Versuch hinter sich, der still und leise im Sand verlaufen ist.
@@ -109,10 +109,10 @@ export default async function KiProjekteScheiternPage({
                 Ich möchte hier eine These ausformulieren, die sich aus zwei Dekaden in Konzernstrukturen und inzwischen etlichen Proof-of-Concepts mit Mittelständlern für mich verfestigt hat: KI-Projekte scheitern im Mittelstand selten am Modell oder an der Rechenleistung. Sie scheitern an dem, was darunter liegt. Genau deshalb halte ich den kleinen, ehrlichen Proof of Concept für den einzig sinnvollen Einstieg.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── ABSCHNITT 1: Was bremst ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was wirklich bremst
               </h2>
               <p className="mb-5">
@@ -121,39 +121,39 @@ export default async function KiProjekteScheiternPage({
 
               {/* 4 Reibungspunkte als Cards */}
               <div className="grid gap-4 my-8 sm:grid-cols-2">
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                <div className="bg-surface border border-line rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[#f90093] text-lg">●</span>
-                    <p className="font-heading font-semibold text-[#071013] text-sm">Datenzustand</p>
+                    <span className="text-magenta-light text-lg">●</span>
+                    <p className="font-heading font-semibold text-ink text-sm">Datenzustand</p>
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted leading-relaxed">
                     Was auf PowerPoint-Folien als sauberer „Data Lake" steht, ist in der Realität oft eine gewachsene Landschaft aus SharePoint-Ablagen, Netzlaufwerken, veralteten Excel-Listen und mehreren Versionen derselben Wahrheit. Niemand ist offiziell zuständig.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                <div className="bg-surface border border-line rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[#f90093] text-lg">●</span>
-                    <p className="font-heading font-semibold text-[#071013] text-sm">Demo versus Skalierung</p>
+                    <span className="text-magenta-light text-lg">●</span>
+                    <p className="font-heading font-semibold text-ink text-sm">Demo versus Skalierung</p>
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted leading-relaxed">
                     Im kleinen Pilot-Chat wirkt das Modell souverän. Im produktiven Betrieb tauchen Halluzinationen dort auf, wo vorher keine waren, weil plötzlich Sonderfälle kommen, die in der Demo nicht vorkamen. Was auf zehn Testdokumenten funktioniert, stößt auf zehntausend an Grenzen.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                <div className="bg-surface border border-line rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[#f90093] text-lg">●</span>
-                    <p className="font-heading font-semibold text-[#071013] text-sm">Compliance-Wand</p>
+                    <span className="text-magenta-light text-lg">●</span>
+                    <p className="font-heading font-semibold text-ink text-sm">Compliance-Wand</p>
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted leading-relaxed">
                     DSGVO, EU AI Act, interne IT-Security, Haftungsfragen. Sicherheit und Recht gehören von Tag eins zur eigentlichen Konstruktionsaufgabe, nicht zum Feinschliff am Ende. Wer das ignoriert, baut ein Luftschloss.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                <div className="bg-surface border border-line rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[#f90093] text-lg">●</span>
-                    <p className="font-heading font-semibold text-[#071013] text-sm">Faktor Mensch</p>
+                    <span className="text-magenta-light text-lg">●</span>
+                    <p className="font-heading font-semibold text-ink text-sm">Faktor Mensch</p>
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted leading-relaxed">
                     Das technisch beste Werkzeug bleibt ungenutzt, wenn das Team nicht mitgenommen wurde. Widerstand hat selten mit bösem Willen zu tun. Meistens steckt Unsicherheit dahinter, die berechtigte Sorge, den eigenen Arbeitsplatz oder das vertraute Selbstverständnis zu verlieren.
                   </p>
                 </div>
@@ -163,10 +163,10 @@ export default async function KiProjekteScheiternPage({
                 So weit die Diagnose, die sich in fast jedem Discovery-Gespräch bestätigt. Jetzt zu den Beispielen, an denen das konkret wird.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── ABSCHNITT 2: Patent-PoC ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Beispiel 1: Der Patent-PoC, der etwas ganz anderes zeigte als geplant
               </h2>
               <p className="mb-5">
@@ -182,9 +182,9 @@ export default async function KiProjekteScheiternPage({
               <div className="bg-[#071013] rounded-xl p-6 my-8 text-white">
                 <p className="font-heading font-semibold mb-3 text-sm uppercase tracking-widest" style={{ color: '#f90093' }}>Was dieser PoC wirklich lieferte</p>
                 <ul className="space-y-2 text-sm leading-relaxed text-gray-200">
-                  <li className="flex items-start gap-2"><span className="text-[#f90093] mt-1 flex-shrink-0">→</span> Die KI-Komponente war in zwei Wochen lauffähig.</li>
-                  <li className="flex items-start gap-2"><span className="text-[#f90093] mt-1 flex-shrink-0">→</span> Die anderen vier Wochen gingen in Datenhygiene, Abstimmung und ein sauberes Setup mit Claude über AWS Bedrock in Frankfurt.</li>
-                  <li className="flex items-start gap-2"><span className="text-[#f90093] mt-1 flex-shrink-0">→</span> Am Ende lag ein ehrliches Bild vor: welche Datenquelle führend wird, welche Schnittstellen gebraucht werden, wer zuständig ist.</li>
+                  <li className="flex items-start gap-2"><span className="text-magenta-light mt-1 flex-shrink-0">→</span> Die KI-Komponente war in zwei Wochen lauffähig.</li>
+                  <li className="flex items-start gap-2"><span className="text-magenta-light mt-1 flex-shrink-0">→</span> Die anderen vier Wochen gingen in Datenhygiene, Abstimmung und ein sauberes Setup mit Claude über AWS Bedrock in Frankfurt.</li>
+                  <li className="flex items-start gap-2"><span className="text-magenta-light mt-1 flex-shrink-0">→</span> Am Ende lag ein ehrliches Bild vor: welche Datenquelle führend wird, welche Schnittstellen gebraucht werden, wer zuständig ist.</li>
                 </ul>
               </div>
 
@@ -192,10 +192,10 @@ export default async function KiProjekteScheiternPage({
                 Ohne diesen PoC hätte der Kunde ein Budget für ein „Patent-KI-System" freigegeben, das mit hoher Wahrscheinlichkeit in exakt den oben genannten Hürden stecken geblieben wäre. Mit dem PoC weiß er vorher, was zu tun ist. Und was nicht.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── ABSCHNITT 3: Wissensbasis ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Beispiel 2: Die multimodale Ablage, die ein Organisationsproblem offenlegte
               </h2>
               <p className="mb-5">
@@ -217,7 +217,7 @@ export default async function KiProjekteScheiternPage({
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#f90093] text-white text-xs font-heading font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
-                    <span className="text-gray-700">{item}</span>
+                    <span className="text-muted">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -226,10 +226,10 @@ export default async function KiProjekteScheiternPage({
                 Der PoC löst diese Probleme nicht. Aber er bringt sie zum ersten Mal auf einen Tisch, an dem sie bearbeitet werden können. Bevor sechs- oder siebenstellige Budgets auf eine Lösung geworfen werden, die an genau diesen Punkten scheitern würde.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── ABSCHNITT 4: Warum PoC ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Warum der PoC das richtige Werkzeug ist
               </h2>
               <p className="mb-5">
@@ -243,10 +243,10 @@ export default async function KiProjekteScheiternPage({
                 Deshalb wird der Discovery-Schritt bei uns nie übersprungen. Bevor ein PoC aufgesetzt wird, schauen wir uns an, welche Tools tatsächlich im Einsatz sind, wie Daten fließen, wo sie liegen und welche Prozesse betroffen sind. Die Hälfte der späteren Reibung ist damit schon sichtbar, bevor die erste Zeile Code geschrieben wird.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── ABSCHNITT 5: Was das für Sie heißt ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was das für Sie konkret heißt
               </h2>
               <p className="mb-6">
@@ -254,36 +254,36 @@ export default async function KiProjekteScheiternPage({
               </p>
 
               <div className="space-y-4 mb-8">
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#c2007a]">01</span> Widerstehen Sie der Versuchung, mit einer großen Strategie zu starten.
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 flex items-center gap-2">
+                    <span className="text-magenta-light">01</span> Widerstehen Sie der Versuchung, mit einer großen Strategie zu starten.
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     Das ist der teuerste und langsamste Weg zu scheitern. Wählen Sie eine konkrete, begrenzte Frage aus, die heute Zeit oder Geld frisst, und setzen Sie einen PoC dazu auf.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#c2007a]">02</span> Planen Sie ein, dass die ersten zwei Wochen Überraschungen bringen.
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 flex items-center gap-2">
+                    <span className="text-magenta-light">02</span> Planen Sie ein, dass die ersten zwei Wochen Überraschungen bringen.
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     Datenprobleme, Zuständigkeitslücken, Compliance-Fragen, Skepsis im Team: Genau das ist der Wert des PoCs, kein Zeichen für den falschen Anbieter. Er zeigt Ihnen das Haus, bevor Sie es umbauen.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#c2007a]">03</span> Rechnen Sie mit schmutzigen Daten, sich ändernden Anforderungen und langsamer Compliance.
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 flex items-center gap-2">
+                    <span className="text-magenta-light">03</span> Rechnen Sie mit schmutzigen Daten, sich ändernden Anforderungen und langsamer Compliance.
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     Ein ehrliches KI-Audit am Anfang spart am Ende sechsstellige Fehlbeträge. Das gilt für den Mittelständler genauso wie für den Konzern. Ich habe die Abkürzungsversuche über viele Jahre aus der Nähe erlebt.
                   </p>
                 </div>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── FAZIT ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was bleibt
               </h2>
               <p className="mb-5">
@@ -298,7 +298,7 @@ export default async function KiProjekteScheiternPage({
             </div>
 
             {/* ── INTERNE LINKS ── */}
-            <div className="mt-12 p-6 bg-white rounded-2xl border border-gray-200">
+            <div className="mt-12 p-6 bg-surface rounded-2xl border border-line">
               <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest mb-4">Weiterführende Seiten</p>
               <div className="flex flex-wrap gap-3">
                 {[
@@ -311,7 +311,7 @@ export default async function KiProjekteScheiternPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-line text-sm font-inter text-ink hover:border-[#f90093] hover:text-magenta-light transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -322,9 +322,9 @@ export default async function KiProjekteScheiternPage({
         </section>
 
         {/* ── FAQ ── */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-surface">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-heading font-bold text-[#071013] mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+            <h2 className="font-heading font-bold text-ink mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
               Häufige Fragen zu KI-Projekten im Mittelstand
             </h2>
             <FaqAccordion />
@@ -347,7 +347,7 @@ export default async function KiProjekteScheiternPage({
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-[#071013] transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
                 boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

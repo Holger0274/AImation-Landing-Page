@@ -16,7 +16,7 @@ const PARTNERS = [
     badgeClassName: 'bg-[#071013] border border-transparent p-3',
     title: (
       <>
-        U-KNOW<span className="text-[#f90093]">.AI</span>
+        U-KNOW<span className="text-magenta-light">.AI</span>
       </>
     ),
   },
@@ -26,10 +26,10 @@ const PARTNERS = [
     iconAlt: 'KI Bundesverband',
     iconWidth: 40,
     iconHeight: 40,
-    badgeClassName: 'bg-white border border-gray-200 p-2.5',
+    badgeClassName: 'bg-surface border border-line p-2.5',
     title: (
       <>
-        <span className="text-[#f90093]">KI</span> Bundesverband
+        <span className="text-magenta-light">KI</span> Bundesverband
       </>
     ),
   },
@@ -39,10 +39,10 @@ const PARTNERS = [
     iconAlt: 'Beraterkompetenz Oberfranken',
     iconWidth: 40,
     iconHeight: 40,
-    badgeClassName: 'bg-white border border-gray-200 p-2.5',
+    badgeClassName: 'bg-surface border border-line p-2.5',
     title: (
       <>
-        Beraterkompetenz <span className="text-[#f90093]">Oberfranken</span>
+        Beraterkompetenz <span className="text-magenta-light">Oberfranken</span>
       </>
     ),
   },
@@ -87,18 +87,18 @@ export default function Partnership() {
       id="partnerschaften"
       className="py-16 md:py-24"
       style={{
-        backgroundColor: '#faf9f7',
-        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+        backgroundColor: 'transparent',
+        backgroundImage: 'none',
         backgroundSize: '72px 72px',
       }}
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.span
-          initial={{ opacity: 0, y: 10 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="block text-center mb-8 text-xs font-heading font-semibold uppercase tracking-wide text-gray-500"
+          className="block text-center mb-8 text-xs font-heading font-semibold uppercase tracking-wide text-dim"
         >
           {t('sectionLabel')}
         </motion.span>
@@ -107,7 +107,7 @@ export default function Partnership() {
           {canScrollLeft && (
             <button
               onClick={() => scrollByCard(-1)}
-              className="hidden lg:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 items-center justify-center bg-white border border-gray-200 rounded-full shadow-lg text-gray-700 hover:text-[#f90093] hover:border-[#f90093] transition-all duration-300 hover:scale-110"
+              className="hidden lg:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 items-center justify-center bg-surface border border-line rounded-full shadow-lg text-muted hover:text-magenta-light hover:border-[#f90093] transition-all duration-300 hover:scale-110"
               aria-label={t('scrollLeft')}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -119,7 +119,7 @@ export default function Partnership() {
           {canScrollRight && (
             <button
               onClick={() => scrollByCard(1)}
-              className="hidden lg:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 items-center justify-center bg-white border border-gray-200 rounded-full shadow-lg text-gray-700 hover:text-[#f90093] hover:border-[#f90093] transition-all duration-300 hover:scale-110"
+              className="hidden lg:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 items-center justify-center bg-surface border border-line rounded-full shadow-lg text-muted hover:text-magenta-light hover:border-[#f90093] transition-all duration-300 hover:scale-110"
               aria-label={t('scrollRight')}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,13 +136,13 @@ export default function Partnership() {
               <motion.div
                 key={partner.key}
                 data-partner-card
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex-none w-[80%] sm:w-[320px] lg:w-[380px] snap-start bg-white rounded-2xl border border-gray-200 shadow-sm p-8 text-center flex flex-col"
+                className="flex-none w-[80%] sm:w-[320px] lg:w-[380px] snap-start bg-surface rounded-2xl border border-line shadow-sm p-8 text-center flex flex-col"
               >
-                <span className="inline-block mb-5 text-xs font-heading font-semibold uppercase tracking-wide text-[#f90093]">
+                <span className="inline-block mb-5 text-xs font-heading font-semibold uppercase tracking-wide text-magenta-light">
                   {t(`${partner.key}.kicker`)}
                 </span>
 
@@ -156,12 +156,12 @@ export default function Partnership() {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <h3 className="font-heading font-bold text-xl text-[#071013]">
+                  <h3 className="font-heading font-bold text-xl text-ink">
                     {partner.title}
                   </h3>
                 </div>
 
-                <p className="text-gray-600 leading-relaxed mb-5 flex-1" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1rem)' }}>
+                <p className="text-muted leading-relaxed mb-5 flex-1" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1rem)' }}>
                   {t(`${partner.key}.body`)}
                 </p>
 
@@ -169,7 +169,7 @@ export default function Partnership() {
                   href={t(`${partner.key}.href`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 text-[#c2007a] font-heading font-semibold hover:underline transition-all group"
+                  className="inline-flex items-center justify-center gap-1.5 text-magenta-light font-heading font-semibold hover:underline transition-all group"
                 >
                   {t(`${partner.key}.link`)}
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

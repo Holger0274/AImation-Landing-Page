@@ -109,20 +109,20 @@ export default async function SechsStufenPage({
       />
       <FAQPageSchema faqs={FAQ_ITEMS} />
       <Header />
-      <main id="main-content" className="bg-[#faf9f7]">
+      <main id="main-content" className="bg-ground">
         {/* ── HERO ── */}
         <section className="pt-32 pb-12 md:pt-40 md:pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter flex-wrap">
-              <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter flex-wrap">
+              <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
               <ChevronRight className="w-4 h-4" />
-              <Link href="/blog" className="hover:text-[#071013] transition-colors">Blog</Link>
+              <Link href="/blog" className="hover:text-ink transition-colors">Blog</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-[#071013] font-medium">Die 6 Stufen der KI-Nutzung</span>
+              <span className="text-ink font-medium">Die 6 Stufen der KI-Nutzung</span>
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold">
                 KI-Strategie
               </span>
               <span className="text-xs text-gray-400 font-inter">15. März 2025</span>
@@ -131,18 +131,18 @@ export default async function SechsStufenPage({
             </div>
 
             <h1
-              className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+              className="font-heading font-bold text-ink mb-6 leading-tight"
               style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)' }}
             >
               Wo steht Ihr Unternehmen bei KI?{' '}
-              <span className="text-[#f90093]">Die 6 Stufen von Prompting bis autonome Agenten.</span>
+              <span className="text-magenta-light">Die 6 Stufen von Prompting bis autonome Agenten.</span>
             </h1>
 
-            <p className="text-gray-600 font-inter leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)' }}>
+            <p className="text-muted font-inter leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)' }}>
               41% der deutschen Unternehmen setzen KI mittlerweile aktiv ein, im Vorjahr waren es erst 17% ({' '}
-              <a href="https://www.bitkom.org/Presse/Presseinformation/Digitalisierung-der-Wirtschaft-Unternehmen-beschaeftigen-sich-mit-KI" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">Bitkom 2026</a>
+              <a href="https://www.bitkom.org/Presse/Presseinformation/Digitalisierung-der-Wirtschaft-Unternehmen-beschaeftigen-sich-mit-KI" target="_blank" rel="noopener" className="text-magenta-light underline underline-offset-2 hover:no-underline">Bitkom 2026</a>
               ). Die meisten, die KI nutzen, stecken bei Stufe 1: jemand tippt eine Frage in ChatGPT. Oft ohne dass die IT davon weiß.{' '}
-              <Link href="/blog/schatten-ki-unternehmen" className="text-[#c2007a] hover:underline">Warum das ein Problem ist.</Link>
+              <Link href="/blog/schatten-ki-unternehmen" className="text-magenta-light hover:underline">Warum das ein Problem ist.</Link>
             </p>
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mt-8">
@@ -159,7 +159,7 @@ export default async function SechsStufenPage({
 
         {/* ── INTRO ── */}
         <section className="pb-8 px-4">
-          <div className="max-w-3xl mx-auto font-inter text-gray-600 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)' }}>
+          <div className="max-w-3xl mx-auto font-inter text-muted leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)' }}>
             <p>
               Gleichzeitig automatisieren andere Unternehmen bereits ganze Abteilungen mit KI-Agenten, die eigenständig recherchieren, Berichte schreiben und Entscheidungen vorbereiten.
             </p>
@@ -172,7 +172,7 @@ export default async function SechsStufenPage({
         {/* ── DIAGRAMM ── */}
         <section className="pb-8 px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="relative w-full rounded-2xl overflow-hidden border border-gray-200 bg-white">
+            <div className="relative w-full rounded-2xl overflow-hidden border border-line bg-surface">
               <Image
                 src="/images/blog/6-stufen-diagramm.png"
                 alt="Die 6 Stufen der KI-Nutzung im Überblick: von Prompting (01) über Custom GPTs, Automatisierung, KI-Automatisierung, KI-Agenten bis zur agentischen KI (06), dargestellt nach Komplexität und Wertschöpfung"
@@ -190,56 +190,56 @@ export default async function SechsStufenPage({
             {STUFEN.map((stufe) => (
               <article
                 key={stufe.nr}
-                className="bg-white rounded-2xl border border-gray-200 overflow-hidden"
+                className="bg-surface rounded-2xl border border-line overflow-hidden"
               >
-                <div className="flex items-center gap-4 px-6 py-5 border-b border-gray-100">
+                <div className="flex items-center gap-4 px-6 py-5 border-b border-line">
                   <span
-                    className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-white text-sm"
+                    className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-[#071013] text-sm"
                     style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
                   >
                     {stufe.nr}
                   </span>
-                  <h2 className="font-heading font-bold text-[#071013]" style={{ fontSize: 'clamp(1.1rem, 3vw, 1.375rem)' }}>
+                  <h2 className="font-heading font-bold text-ink" style={{ fontSize: 'clamp(1.1rem, 3vw, 1.375rem)' }}>
                     Stufe {parseInt(stufe.nr, 10)}: {stufe.titel}
                   </h2>
                 </div>
-                <div className="px-6 py-5 space-y-4 font-inter text-sm text-gray-600 leading-relaxed">
+                <div className="px-6 py-5 space-y-4 font-inter text-sm text-muted leading-relaxed">
                   <div>
-                    <span className="font-semibold text-[#071013]">Was passiert: </span>
+                    <span className="font-semibold text-ink">Was passiert: </span>
                     {stufe.wasPassiert}
                   </div>
                   <div>
-                    <span className="font-semibold text-[#071013]">Was es bringt: </span>
+                    <span className="font-semibold text-ink">Was es bringt: </span>
                     {stufe.wasBringt}
                   </div>
                   {stufe.wasFehlt && (
                     <div>
-                      <span className="font-semibold text-[#071013]">Was fehlt: </span>
+                      <span className="font-semibold text-ink">Was fehlt: </span>
                       {stufe.wasFehlt}
                     </div>
                   )}
                   {stufe.werkzeuge && (
                     <div>
-                      <span className="font-semibold text-[#071013]">Werkzeuge: </span>
+                      <span className="font-semibold text-ink">Werkzeuge: </span>
                       {stufe.werkzeuge}
                     </div>
                   )}
                   {stufe.beispiel && (
-                    <div className="bg-[#faf9f7] rounded-xl p-4 border border-gray-100">
-                      <span className="font-semibold text-[#071013]">Konkretes Beispiel: </span>
+                    <div className="bg-ground rounded-xl p-4 border border-line">
+                      <span className="font-semibold text-ink">Konkretes Beispiel: </span>
                       {stufe.beispiel}
                     </div>
                   )}
                   <div className="pt-1">
-                    <span className="font-semibold text-[#071013]">Typisches Zeichen: </span>
+                    <span className="font-semibold text-ink">Typisches Zeichen: </span>
                     <span className="italic">{stufe.zeichen}</span>
                   </div>
                   {stufe.naechsterSchritt && (
-                    <div className="pt-1 text-[#071013]">
+                    <div className="pt-1 text-ink">
                       <span className="font-semibold">Nächster Schritt: </span>
                       {stufe.naechsterSchritt.text && stufe.naechsterSchritt.href ? (
                         <>
-                          <Link href={stufe.naechsterSchritt.href} className="text-[#c2007a] hover:underline">
+                          <Link href={stufe.naechsterSchritt.href} className="text-magenta-light hover:underline">
                             {stufe.naechsterSchritt.text}
                           </Link>
                           {stufe.naechsterSchritt.suffix}
@@ -264,9 +264,9 @@ export default async function SechsStufenPage({
               </h2>
               <p className="font-inter text-gray-300 leading-relaxed mb-4" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.0625rem)' }}>
                 Größte Hindernisse bleiben laut{' '}
-                <a href="https://www.bitkom.org/Presse/Presseinformation/Digitalisierung-der-Wirtschaft-Unternehmen-beschaeftigen-sich-mit-KI" target="_blank" rel="noopener" className="text-[#f90093] underline underline-offset-2 hover:no-underline">Bitkom 2026</a>{' '}
+                <a href="https://www.bitkom.org/Presse/Presseinformation/Digitalisierung-der-Wirtschaft-Unternehmen-beschaeftigen-sich-mit-KI" target="_blank" rel="noopener" className="text-magenta-light underline underline-offset-2 hover:no-underline">Bitkom 2026</a>{' '}
                 Datenschutz-Anforderungen (77%) und der Mangel an Fachkräften (70%). Die meisten Unternehmen, die KI nutzen, stecken auf Stufe 1 bis 2, oft als Schatten-KI: Mitarbeiter nutzen ChatGPT auf dem Privathandy, ohne dass die IT davon weiß.{' '}
-                <Link href="/blog/schatten-ki-unternehmen" className="text-[#f90093] hover:underline">Warum das ein Risiko ist.</Link>
+                <Link href="/blog/schatten-ki-unternehmen" className="text-magenta-light hover:underline">Warum das ein Risiko ist.</Link>
               </p>
               <p className="font-inter text-gray-300 leading-relaxed mb-4" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.0625rem)' }}>
                 Der größte Produktivitätssprung liegt zwischen Stufe 2 und 4. Hier wird aus "ein paar Leute nutzen ChatGPT" ein messbarer Wettbewerbsvorteil. Und der Einstieg ist günstiger und schneller als die meisten vermuten.
@@ -281,33 +281,33 @@ export default async function SechsStufenPage({
         {/* ── WIE FINDEN SIE IHRE STUFE ── */}
         <section className="py-8 px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-heading font-bold text-[#071013] mb-6" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+            <h2 className="font-heading font-bold text-ink mb-6" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
               Wie finden Sie Ihre Stufe?
             </h2>
-            <p className="font-inter text-gray-600 mb-6" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)' }}>Drei Fragen reichen:</p>
+            <p className="font-inter text-muted mb-6" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)' }}>Drei Fragen reichen:</p>
             <div className="space-y-4">
               {[
                 { nr: '1', frage: 'Gibt es in Ihrem Unternehmen eine offizielle KI-Richtlinie?', antwort: 'Wenn nein: Stufe 1, vermutlich mit Schatten-KI.' },
                 { nr: '2', frage: 'Laufen KI-gestützte Prozesse automatisch, ohne dass jemand manuell eingreifen muss?', antwort: 'Wenn nein: Stufe 2 oder darunter.' },
                 { nr: '3', frage: 'Können Ihre KI-Systeme eigenständig auf mehrere Datenquellen zugreifen und mehrstufige Aufgaben planen?', antwort: 'Wenn nein: Stufe 3 oder 4.' },
               ].map((q) => (
-                <div key={q.nr} className="bg-white rounded-xl border border-gray-200 p-5 flex gap-4">
+                <div key={q.nr} className="bg-surface rounded-xl border border-line p-5 flex gap-4">
                   <span
-                    className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-heading font-bold text-white text-xs"
+                    className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-heading font-bold text-[#071013] text-xs"
                     style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
                   >
                     {q.nr}
                   </span>
                   <div>
-                    <p className="font-heading font-semibold text-[#071013] text-sm mb-1">{q.frage}</p>
-                    <p className="font-inter text-gray-500 text-sm">{q.antwort}</p>
+                    <p className="font-heading font-semibold text-ink text-sm mb-1">{q.frage}</p>
+                    <p className="font-inter text-dim text-sm">{q.antwort}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="mt-6 font-inter text-gray-600 text-sm leading-relaxed">
+            <p className="mt-6 font-inter text-muted text-sm leading-relaxed">
               Für eine fundierte Einordnung gibt es die{' '}
-              <Link href="/ki-beratung-kmu" className="text-[#c2007a] hover:underline">KI-Landkarte</Link>
+              <Link href="/ki-beratung-kmu" className="text-magenta-light hover:underline">KI-Landkarte</Link>
               : In einem Workshop-Tag wissen Sie, wo Sie stehen und was der nächste sinnvolle Schritt ist.
             </p>
           </div>
@@ -316,7 +316,7 @@ export default async function SechsStufenPage({
         {/* ── INTERNE LINKS ── */}
         <section className="py-8 px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="p-6 bg-white rounded-2xl border border-gray-200">
+            <div className="p-6 bg-surface rounded-2xl border border-line">
               <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest mb-4">Weiterführende Seiten</p>
               <div className="flex flex-wrap gap-3">
                 {[
@@ -329,7 +329,7 @@ export default async function SechsStufenPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-line text-sm font-inter text-ink hover:border-[#f90093] hover:text-magenta-light transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -340,9 +340,9 @@ export default async function SechsStufenPage({
         </section>
 
         {/* ── FAQ ── */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-surface">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-heading font-bold text-[#071013] mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+            <h2 className="font-heading font-bold text-ink mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
               Häufige Fragen zu den KI-Stufen
             </h2>
             <FaqAccordion />
@@ -365,7 +365,7 @@ export default async function SechsStufenPage({
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-[#071013] transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
                 boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

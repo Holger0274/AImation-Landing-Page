@@ -1,6 +1,8 @@
 import { Space_Grotesk, Inter } from 'next/font/google';
 import { headers } from 'next/headers';
 import './globals.css';
+import './engineering.css';
+import EngineeringBackdrop from '@/components/visuals/EngineeringBackdrop';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -41,6 +43,7 @@ export default async function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        <EngineeringBackdrop />
       </body>
     </html>
   );

@@ -51,20 +51,20 @@ export default async function SchattenKiPage({
       />
       <FAQPageSchema faqs={FAQ_ITEMS} />
       <Header />
-      <main id="main-content" className="bg-[#faf9f7]">
+      <main id="main-content" className="bg-ground">
         {/* ── HERO ── */}
         <section className="pt-32 pb-12 md:pt-40 md:pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter flex-wrap">
-              <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter flex-wrap">
+              <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
               <ChevronRight className="w-4 h-4" />
-              <Link href="/blog" className="hover:text-[#071013] transition-colors">Blog</Link>
+              <Link href="/blog" className="hover:text-ink transition-colors">Blog</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-[#071013] font-medium">Schatten-KI im Unternehmen</span>
+              <span className="text-ink font-medium">Schatten-KI im Unternehmen</span>
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold">
                 KI-Governance
               </span>
               <span className="text-xs text-gray-400 font-inter">1. März 2025</span>
@@ -73,11 +73,11 @@ export default async function SchattenKiPage({
             </div>
 
             <h1
-              className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+              className="font-heading font-bold text-ink mb-6 leading-tight"
               style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)' }}
             >
               Schatten-KI in Ihrem Unternehmen: Warum Verbieten nicht funktioniert.{' '}
-              <span className="text-[#f90093]">Und was stattdessen hilft.</span>
+              <span className="text-magenta-light">Und was stattdessen hilft.</span>
             </h1>
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
@@ -95,16 +95,16 @@ export default async function SchattenKiPage({
         {/* ── ARTIKEL ── */}
         <section className="pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="prose prose-gray max-w-none font-inter text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
+            <div className="prose prose-gray max-w-none font-inter text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
 
               <p>
                 Ihr Vertriebsmitarbeiter lässt Angebote von ChatGPT formulieren. Auf dem Privathandy, über seinen persönlichen Account. Die Personalabteilung nutzt Claude, um Bewerbungsunterlagen zusammenzufassen. Ein Entwickler gibt internen Quellcode in einen KI-Assistenten ein, um einen Fehler schneller zu finden. Alle drei handeln mit guter Absicht. Und alle drei lösen ein Problem aus, von dem Ihre IT-Abteilung nichts weiß.
               </p>
-              <p className="font-semibold text-[#071013]">Willkommen in der Welt der Schatten-KI.</p>
+              <p className="font-semibold text-ink">Willkommen in der Welt der Schatten-KI.</p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was ist Schatten-KI?
               </h2>
               <p>
@@ -112,22 +112,22 @@ export default async function SchattenKiPage({
               </p>
               <p>
                 Die Zahlen sind eindeutig: Weltweit nutzen drei von vier Wissensarbeitern KI-Tools am Arbeitsplatz, so der{' '}
-                <a href="https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">
+                <a href="https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part" target="_blank" rel="noopener" className="text-magenta-light underline underline-offset-2 hover:no-underline">
                   Microsoft &amp; LinkedIn Work Trend Index 2024
                 </a>. In Deutschland nutzen laut{' '}
-                <a href="https://www.zew.de/das-zew/aktuelles/beschaeftigte-nutzen-ki-auch-ohne-betriebliche-einfuehrung" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">
+                <a href="https://www.zew.de/das-zew/aktuelles/beschaeftigte-nutzen-ki-auch-ohne-betriebliche-einfuehrung" target="_blank" rel="noopener" className="text-magenta-light underline underline-offset-2 hover:no-underline">
                   ZEW Mannheim
                 </a>{' '}
                 mehr als 60 Prozent der Beschäftigten KI am Arbeitsplatz, laut{' '}
-                <a href="https://www.bcg.com/press/26june2025-bcg-studie-zeigt-zwei-drittel-der-deutschen-nutzen-ki-am-arbeitsplatz" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">
+                <a href="https://www.bcg.com/press/26june2025-bcg-studie-zeigt-zwei-drittel-der-deutschen-nutzen-ki-am-arbeitsplatz" target="_blank" rel="noopener" className="text-magenta-light underline underline-offset-2 hover:no-underline">
                   BCG
                 </a>{' '}
                 sind es rund zwei Drittel. In vielen Unternehmen passiert das ohne jede Richtlinie, ohne Freigabe, ohne Dokumentation.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Warum Ihre Mitarbeiter das tun
               </h2>
               <p>
@@ -140,9 +140,9 @@ export default async function SchattenKiPage({
                 Die Motivation ist Produktivität. Der Antrieb ist Frust über langsame, umständliche oder fehlende offizielle Alternativen. Wenn Ihr Unternehmen keine freigegebene KI-Lösung bietet, schaffen sich Ihre Mitarbeiter selbst eine. Die IT ist da nur der Nebenschauplatz. Eigentlich zeigt es: Bedürfnisse werden nicht gedeckt.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Warum Verbieten das Problem verschlimmert
               </h2>
               <p>
@@ -155,9 +155,9 @@ export default async function SchattenKiPage({
                 Und das ist gefährlicher als die unkontrollierte Nutzung selbst. Denn jetzt gibt es keine Logs, keine Nachverfolgung, keine Möglichkeit zur Schadensbegrenzung. Selbst große Konzerne haben das gelernt: Verbote führen nicht dazu, dass Mitarbeiter aufhören, KI zu nutzen. Sie führen dazu, dass sie es heimlich tun.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Die echten Risiken von Schatten-KI
               </h2>
               <p>Dass Ihre Mitarbeiter KI nutzen, ist an sich kein Problem. Problematisch wird es, weil niemand die Nutzung kontrolliert.</p>
@@ -168,15 +168,15 @@ export default async function SchattenKiPage({
 
               <p>Auch <strong>Qualitätsrisiken</strong> gehören dazu. KI-Ergebnisse können fehlerhaft, verzerrt oder halluziniert sein. Wenn niemand die Nutzung kennt, prüft auch niemand die Ergebnisse. Ein Angebot mit falschen Spezifikationen, ein Vertragsentwurf mit erfundenen Klauseln, eine Kundenantwort mit falschen Fakten.</p>
 
-              <p>Seit Februar 2025 kommt der <strong>EU AI Act</strong> hinzu, mit der Pflicht zur KI-Kompetenz (<a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" className="text-[#c2007a] underline underline-offset-2 hover:no-underline">Art. 4 der Verordnung (EU) 2024/1689</a>). Unternehmen müssen ihr Personal zu KI schulen und wissen, welche Systeme im Einsatz sind. Die vollständigen Dokumentationspflichten für Hochrisiko-Anwendungen wie Recruiting oder Kreditvergabe wurden im Zuge des EU-Digital-Omnibus auf Dezember 2027 verschoben, die Pflicht zur KI-Kompetenz gilt aber schon jetzt. Schatten-KI macht beides schwerer.</p>
+              <p>Seit Februar 2025 kommt der <strong>EU AI Act</strong> hinzu, mit der Pflicht zur KI-Kompetenz (<a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" className="text-magenta-light underline underline-offset-2 hover:no-underline">Art. 4 der Verordnung (EU) 2024/1689</a>). Unternehmen müssen ihr Personal zu KI schulen und wissen, welche Systeme im Einsatz sind. Die vollständigen Dokumentationspflichten für Hochrisiko-Anwendungen wie Recruiting oder Kreditvergabe wurden im Zuge des EU-Digital-Omnibus auf Dezember 2027 verschoben, die Pflicht zur KI-Kompetenz gilt aber schon jetzt. Schatten-KI macht beides schwerer.</p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was stattdessen hilft: 4 Schritte
               </h2>
 
-              <h3 className="font-heading font-semibold text-[#071013] mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                 1. Sichtbarkeit schaffen
               </h3>
               <p>
@@ -186,7 +186,7 @@ export default async function SchattenKiPage({
                 Wenn Sie dabei feststellen, dass 80% Ihres Teams bereits KI nutzt, ist das gut so. Es zeigt: Ihr Team ist bereit und braucht nur den richtigen Rahmen.
               </p>
 
-              <h3 className="font-heading font-semibold text-[#071013] mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                 2. KI-Richtlinien aufsetzen (und zwar verständliche)
               </h3>
               <p>
@@ -194,28 +194,28 @@ export default async function SchattenKiPage({
               </p>
               <p>Eine KI-Richtlinie muss so einfach sein, dass sie auf eine Seite passt. Und sie muss leben, nicht in der Schublade liegen.</p>
 
-              <h3 className="font-heading font-semibold text-[#071013] mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                 3. Sichere Alternativen bereitstellen
               </h3>
               <p>
                 Der wichtigste Schritt: Geben Sie Ihrem Team freigegebene KI-Tools, die genauso bequem sind wie die Schatten-Alternativen. Das kann ein Unternehmens-ChatGPT-Account mit AVV (Auftragsverarbeitungsvertrag) sein. Oder eine{' '}
-                <Link href="/ki-automatisierung-mittelstand" className="text-[#c2007a] hover:underline">selbst gehostete Lösung</Link>
+                <Link href="/ki-automatisierung-mittelstand" className="text-magenta-light hover:underline">selbst gehostete Lösung</Link>
                 {' '}mit lokalen Modellen, bei der keine Daten Ihr Unternehmen verlassen.
               </p>
               <p>Die offizielle Alternative muss einfacher und besser sein als die Schatten-Lösung. Sonst gewinnt immer der Schatten.</p>
 
-              <h3 className="font-heading font-semibold text-[#071013] mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-6 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                 4. Schulen, schulen, schulen
               </h3>
               <p>
                 Ihre Mitarbeiter müssen wissen: Was kann KI? Was kann sie nicht? Welche Daten darf ich eingeben? Wann muss ich Ergebnisse prüfen? Wie erkenne ich Halluzinationen? Ein einmaliger Workshop reicht dafür nicht, das ist ein laufender Prozess.{' '}
-                <Link href="/ki-schulungen-mittelstand" className="text-[#c2007a] hover:underline">Unsere KI-Schulungen für den Mittelstand</Link>
+                <Link href="/ki-schulungen-mittelstand" className="text-magenta-light hover:underline">Unsere KI-Schulungen für den Mittelstand</Link>
                 {' '}zeigen, wie das gelingt.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Schatten-KI als Chance
               </h2>
               <p>
@@ -228,7 +228,7 @@ export default async function SchattenKiPage({
             </div>
 
             {/* ── INTERNE LINKS ── */}
-            <div className="mt-12 p-6 bg-white rounded-2xl border border-gray-200">
+            <div className="mt-12 p-6 bg-surface rounded-2xl border border-line">
               <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest mb-4">Weiterführende Seiten</p>
               <div className="flex flex-wrap gap-3">
                 {[
@@ -240,7 +240,7 @@ export default async function SchattenKiPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-line text-sm font-inter text-ink hover:border-[#f90093] hover:text-magenta-light transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -251,9 +251,9 @@ export default async function SchattenKiPage({
         </section>
 
         {/* ── FAQ ── */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-surface">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-heading font-bold text-[#071013] mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+            <h2 className="font-heading font-bold text-ink mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
               Häufige Fragen zu Schatten-KI
             </h2>
             <FaqAccordion />
@@ -276,7 +276,7 @@ export default async function SchattenKiPage({
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-[#071013] transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
                 boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

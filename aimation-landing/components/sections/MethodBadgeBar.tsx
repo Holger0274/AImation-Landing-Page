@@ -13,17 +13,17 @@ export default function MethodBadgeBar() {
   );
 
   return (
-    <section className="py-12 md:py-16 bg-white border-y border-gray-100">
+    <section className="py-12 md:py-16 bg-surface border-y border-line">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center"
         >
           {/* Headline */}
-          <h3 className="font-heading font-semibold text-gray-600 mb-8" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1rem)' }}>
+          <h3 className="font-heading font-semibold text-muted mb-8" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1rem)' }}>
             {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span>
           </h3>
 
@@ -34,7 +34,7 @@ export default function MethodBadgeBar() {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={false}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -43,8 +43,8 @@ export default function MethodBadgeBar() {
                   <div
                     className="
                       relative overflow-hidden
-                      bg-gradient-to-br from-warm-white to-gray-50
-                      border-2 border-gray-200
+                      bg-gradient-to-br from-surface to-raised
+                      border-2 border-line
                       rounded-2xl p-6
                       hover:border-magenta/30
                       hover:shadow-lg
@@ -74,16 +74,16 @@ export default function MethodBadgeBar() {
                           background: 'linear-gradient(135deg, rgba(249, 0, 147, 0.1), rgba(255, 78, 205, 0.05))',
                         }}
                       >
-                        <Icon className="w-6 h-6 text-magenta" />
+                        <Icon className="w-6 h-6 text-magenta-light" />
                       </div>
 
                       {/* Label */}
-                      <h4 className="font-heading font-bold text-[#071013] mb-2" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1rem)' }}>
+                      <h4 className="font-heading font-bold text-ink mb-2" style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1rem)' }}>
                         {method.label}
                       </h4>
 
                       {/* Description */}
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <p className="text-muted text-sm leading-relaxed">
                         {method.description}
                       </p>
                     </div>
@@ -95,11 +95,11 @@ export default function MethodBadgeBar() {
 
           {/* Optional CTA or Trust Element */}
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={false}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-gray-500 text-sm mt-8"
+            className="text-dim text-sm mt-8"
           >
             {t('trustLine')}
           </motion.p>

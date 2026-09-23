@@ -100,20 +100,20 @@ export default async function KiPromptsPage({
       />
       <FAQPageSchema faqs={FAQ_ITEMS} />
       <Header />
-      <main id="main-content" className="bg-[#faf9f7]">
+      <main id="main-content" className="bg-ground">
         {/* ── HERO ── */}
         <section className="pt-32 pb-12 md:pt-40 md:pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter flex-wrap">
-              <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter flex-wrap">
+              <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
               <ChevronRight className="w-4 h-4" />
-              <Link href="/blog" className="hover:text-[#071013] transition-colors">Blog</Link>
+              <Link href="/blog" className="hover:text-ink transition-colors">Blog</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-[#071013] font-medium">KI-Prompts für den Arbeitsalltag</span>
+              <span className="text-ink font-medium">KI-Prompts für den Arbeitsalltag</span>
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold">
                 Prompt Engineering
               </span>
               <span className="text-xs text-gray-400 font-inter">1. April 2025</span>
@@ -122,11 +122,11 @@ export default async function KiPromptsPage({
             </div>
 
             <h1
-              className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+              className="font-heading font-bold text-ink mb-6 leading-tight"
               style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)' }}
             >
               KI-Prompts, die wirklich funktionieren:{' '}
-              <span className="text-[#f90093]">7 Muster für den Arbeitsalltag im Mittelstand</span>
+              <span className="text-magenta-light">7 Muster für den Arbeitsalltag im Mittelstand</span>
             </h1>
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
@@ -144,59 +144,59 @@ export default async function KiPromptsPage({
         {/* ── ARTIKEL ── */}
         <section className="pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="prose prose-gray max-w-none font-inter text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
+            <div className="prose prose-gray max-w-none font-inter text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
 
               <p>
                 "Schreib mir eine E-Mail." Wer so einen Prompt eingibt, bekommt eine generische E-Mail. "Schreib mir eine Nachfass-E-Mail an einen Kunden, der seit zwei Wochen nicht geantwortet hat, für ein Angebot über eine neue Fertigungslinie, sachlich, nicht aufdringlich, max. 6 Sätze." Wer das eingibt, bekommt etwas, das er fast unverändert verschicken kann.
               </p>
-              <p className="font-semibold text-[#071013]">Der Unterschied liegt im Prompt, nicht im Modell.</p>
+              <p className="font-semibold text-ink">Der Unterschied liegt im Prompt, nicht im Modell.</p>
               <p>
                 Viele Mittelständler testen KI, sind enttäuscht und schließen den Tab wieder. Nicht weil die KI schlecht ist. Sondern weil niemand erklärt hat, wie man mit ihr spricht. Diese 7 Muster nutze ich selbst täglich. Sie sind das, was ich in KI-Schulungen immer zuerst zeige, weil sie sofort einen Unterschied machen.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
             </div>
 
             {/* ── MUSTER-CARDS ── */}
             <div className="space-y-6 mb-12">
               {PROMPT_MUSTER.map((muster) => (
-                <div key={muster.nr} className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                <div key={muster.nr} className="bg-surface rounded-2xl border border-line overflow-hidden">
                   <div className="p-6 md:p-8">
                     <div className="flex items-start gap-4 mb-4">
                       <div
-                        className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm"
+                        className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-[#071013] font-heading font-bold text-sm"
                         style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
                       >
                         {muster.nr}
                       </div>
                       <div>
-                        <h2 className="font-heading font-bold text-[#071013] leading-snug" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
+                        <h2 className="font-heading font-bold text-ink leading-snug" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                           {muster.titel}
                         </h2>
                         <p className="text-xs text-gray-400 font-inter mt-1">Einsatz: {muster.anwendung}</p>
                       </div>
                     </div>
 
-                    <div className="bg-[#faf9f7] rounded-xl p-4 mb-4 border border-gray-200">
+                    <div className="bg-ground rounded-xl p-4 mb-4 border border-line">
                       <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest mb-2">Beispiel-Prompt</p>
-                      <p className="font-inter text-sm text-gray-700 leading-relaxed whitespace-pre-line italic">
+                      <p className="font-inter text-sm text-muted leading-relaxed whitespace-pre-line italic">
                         {muster.prompt}
                       </p>
                     </div>
 
-                    <div className="bg-green-50 rounded-xl p-4 border border-green-100">
-                      <p className="text-xs font-heading font-semibold text-green-700 uppercase tracking-widest mb-1">Warum das funktioniert</p>
-                      <p className="font-inter text-sm text-gray-700 leading-relaxed">{muster.warum}</p>
+                    <div className="bg-green-500/10 rounded-xl p-4 border border-green-500/25">
+                      <p className="text-xs font-heading font-semibold text-green-300 uppercase tracking-widest mb-1">Warum das funktioniert</p>
+                      <p className="font-inter text-sm text-muted leading-relaxed">{muster.warum}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="prose prose-gray max-w-none font-inter text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
-              <hr className="border-gray-200 my-8" />
+            <div className="prose prose-gray max-w-none font-inter text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Vom einzelnen Prompt zur Prompt-Bibliothek
               </h2>
               <p>
@@ -204,13 +204,13 @@ export default async function KiPromptsPage({
               </p>
               <p>
                 Der Unterschied zwischen Einzelprompts und einer Prompt-Bibliothek ist der Unterschied zwischen einem Mitarbeiter, der gelegentlich KI nutzt, und einem Team, das systematisch davon profitiert. In unseren{' '}
-                <Link href="/ki-schulungen-mittelstand" className="text-[#c2007a] hover:underline">KI-Schulungen</Link>
+                <Link href="/ki-schulungen-mittelstand" className="text-magenta-light hover:underline">KI-Schulungen</Link>
                 {' '}bauen wir genau das gemeinsam auf.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was gute Prompts nicht ersetzen können
               </h2>
               <p>
@@ -218,13 +218,13 @@ export default async function KiPromptsPage({
               </p>
               <p>
                 Genau deshalb braucht KI im Unternehmen einen Rahmen: klare Regeln, welche Outputs geprüft werden müssen, und ein Team, das weiß, wann man KI vertraut und wann nicht. Das ist genau das, was wir in unserer{' '}
-                <Link href="/ki-beratung-kmu" className="text-[#c2007a] hover:underline">KI-Beratung</Link>
+                <Link href="/ki-beratung-kmu" className="text-magenta-light hover:underline">KI-Beratung</Link>
                 {' '}erarbeiten.
               </p>
             </div>
 
             {/* ── INTERNE LINKS ── */}
-            <div className="mt-12 p-6 bg-white rounded-2xl border border-gray-200">
+            <div className="mt-12 p-6 bg-surface rounded-2xl border border-line">
               <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest mb-4">Weiterführende Seiten</p>
               <div className="flex flex-wrap gap-3">
                 {[
@@ -236,7 +236,7 @@ export default async function KiPromptsPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-line text-sm font-inter text-ink hover:border-[#f90093] hover:text-magenta-light transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -247,9 +247,9 @@ export default async function KiPromptsPage({
         </section>
 
         {/* ── FAQ ── */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-surface">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-heading font-bold text-[#071013] mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+            <h2 className="font-heading font-bold text-ink mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
               Häufige Fragen zu Prompt Engineering
             </h2>
             <FaqAccordion />
@@ -272,7 +272,7 @@ export default async function KiPromptsPage({
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-[#071013] transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
                 boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

@@ -132,7 +132,7 @@ export default function ImagePlaceholder({ type, solutionWorld, alt }: ImagePlac
 
   if (type === 'screenshot') {
     return (
-      <div className="relative w-full h-full bg-white rounded-lg overflow-hidden border border-gray-200">
+      <div className="relative w-full h-full bg-surface rounded-lg overflow-hidden border border-line">
         {/* Screenshot-style UI mockup */}
         <div className="p-4">
           {/* Browser chrome */}
@@ -143,22 +143,22 @@ export default function ImagePlaceholder({ type, solutionWorld, alt }: ImagePlac
           </div>
 
           {/* URL bar */}
-          <div className="h-6 bg-gray-100 rounded mb-6" />
+          <div className="h-6 bg-raised rounded mb-6" />
 
           {/* Content area */}
           <div className="space-y-4">
             <div className="flex gap-3">
-              <div className="w-12 h-12 rounded bg-gray-200" />
+              <div className="w-12 h-12 rounded bg-raised" />
               <div className="flex-1 space-y-2">
-                <div className="h-3 bg-gray-200 rounded w-3/4" />
-                <div className="h-3 bg-gray-100 rounded w-1/2" />
+                <div className="h-3 bg-raised rounded w-3/4" />
+                <div className="h-3 bg-raised rounded w-1/2" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <div className="h-3 bg-gray-200 rounded" />
-              <div className="h-3 bg-gray-100 rounded w-5/6" />
-              <div className="h-3 bg-gray-100 rounded w-4/6" />
+              <div className="h-3 bg-raised rounded" />
+              <div className="h-3 bg-raised rounded w-5/6" />
+              <div className="h-3 bg-raised rounded w-4/6" />
             </div>
 
             {/* Accent element */}
@@ -171,7 +171,7 @@ export default function ImagePlaceholder({ type, solutionWorld, alt }: ImagePlac
 
         {/* Label */}
         <div className="absolute bottom-3 left-0 right-0 text-center">
-          <span className="text-xs text-gray-500 font-inter">UI Screenshot</span>
+          <span className="text-xs text-dim font-inter">UI Screenshot</span>
         </div>
       </div>
     );
@@ -179,7 +179,7 @@ export default function ImagePlaceholder({ type, solutionWorld, alt }: ImagePlac
 
   if (type === 'diagram') {
     return (
-      <div className="relative w-full h-full bg-gray-50 rounded-lg overflow-hidden">
+      <div className="relative w-full h-full bg-surface rounded-lg overflow-hidden">
         {/* Architecture diagram */}
         <svg
           className="w-full h-full p-8"

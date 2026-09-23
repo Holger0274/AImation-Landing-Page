@@ -51,21 +51,21 @@ export default async function KiRoadmapIllusionPage({
       />
       <FAQPageSchema faqs={FAQ_ITEMS} />
       <Header />
-      <main id="main-content" className="bg-[#faf9f7]">
+      <main id="main-content" className="bg-ground">
 
         {/* ── HERO ── */}
         <section className="pt-32 pb-12 md:pt-40 md:pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter flex-wrap">
-              <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter flex-wrap">
+              <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
               <ChevronRight className="w-4 h-4" />
-              <Link href="/blog" className="hover:text-[#071013] transition-colors">Blog</Link>
+              <Link href="/blog" className="hover:text-ink transition-colors">Blog</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-[#071013] font-medium">Die KI-Roadmap-Illusion</span>
+              <span className="text-ink font-medium">Die KI-Roadmap-Illusion</span>
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold">
                 KI-Strategie
               </span>
               <span className="text-xs text-gray-400 font-inter">8. Mai 2026</span>
@@ -74,14 +74,14 @@ export default async function KiRoadmapIllusionPage({
             </div>
 
             <h1
-              className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+              className="font-heading font-bold text-ink mb-6 leading-tight"
               style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)' }}
             >
               Die KI-Lüge im Mittelstand: Warum der gerade Strich auf der{' '}
-              <span className="text-[#f90093]">Roadmap eine Illusion ist.</span>
+              <span className="text-magenta-light">Roadmap eine Illusion ist.</span>
             </h1>
 
-            <p className="font-inter text-gray-600 mb-8 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
+            <p className="font-inter text-muted mb-8 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
               Die größte Lüge über KI im Mittelstand ist selten das große Versprechen, dass sie alles kann. Meistens ist es der gerade Strich auf der Roadmap.
             </p>
 
@@ -100,7 +100,7 @@ export default async function KiRoadmapIllusionPage({
         {/* ── ARTIKEL ── */}
         <section className="pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="font-inter text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.8' }}>
+            <div className="font-inter text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.8' }}>
 
               <p className="mb-5">
                 Wer glaubt, der Weg von der ersten Idee zum produktiven Einsatz verläuft ohne Umweg, hat noch nie ein KI-System in einem deutschen Mittelständler implementiert. Diese Lüge wird nicht aus böser Absicht verbreitet. Sie wird verbreitet von Beratern, die noch nie eine echte Implementierung begleitet haben, von Anbietern, die nur ihre Demo verkaufen wollen, und manchmal auch von uns selbst, weil die Wahrheit unbequem ist.
@@ -109,10 +109,10 @@ export default async function KiRoadmapIllusionPage({
                 Die Wahrheit ist: KI scheitert im Mittelstand selten am Modell oder an der Rechenleistung. Sie scheitert an dem, was darunter liegt.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── ABSCHNITT 1: Wunsch vs Realität ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Wunsch und Realität
               </h2>
               <p className="mb-5">
@@ -131,10 +131,10 @@ export default async function KiRoadmapIllusionPage({
                 </p>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── ABSCHNITT 2: Praxisbeispiel ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Eine Episode aus der Beratungspraxis
               </h2>
               <p className="mb-5">
@@ -146,17 +146,17 @@ export default async function KiRoadmapIllusionPage({
 
               {/* Drei-Spalten-Karten für die Chaos-Situation */}
               <div className="grid gap-4 my-8 sm:grid-cols-3">
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] text-sm mb-2">Vertrieb</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">Arbeitete mit Vorlage A</p>
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink text-sm mb-2">Vertrieb</p>
+                  <p className="text-sm text-muted leading-relaxed">Arbeitete mit Vorlage A</p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] text-sm mb-2">Konstruktion</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">Arbeitete mit Vorlage C</p>
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink text-sm mb-2">Konstruktion</p>
+                  <p className="text-sm text-muted leading-relaxed">Arbeitete mit Vorlage C</p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] text-sm mb-2">Qualitätssicherung</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">Nutzte eine Mischung aus B und einer ISO-Excel-Datei aus 2014</p>
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink text-sm mb-2">Qualitätssicherung</p>
+                  <p className="text-sm text-muted leading-relaxed">Nutzte eine Mischung aus B und einer ISO-Excel-Datei aus 2014</p>
                 </div>
               </div>
 
@@ -167,15 +167,15 @@ export default async function KiRoadmapIllusionPage({
                 Genau diese Geschichte erlebe ich in der einen oder anderen Variante in fast jedem Projekt. Die Details unterscheiden sich. Das Muster nicht.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── ABSCHNITT 3: Vier Hindernisse ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Die vier Hindernisse, an denen KI im Mittelstand wirklich scheitert
               </h2>
 
               {/* Hindernis 1 */}
-              <h3 className="font-heading font-semibold text-[#071013] mt-8 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-8 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                 1. Der Daten-Sumpf
               </h3>
               <p className="mb-5">
@@ -192,7 +192,7 @@ export default async function KiRoadmapIllusionPage({
               </p>
 
               {/* Hindernis 2 */}
-              <h3 className="font-heading font-semibold text-[#071013] mt-8 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-8 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                 2. Die &bdquo;Es funktioniert&ldquo;-Falle
               </h3>
               <p className="mb-5">
@@ -205,14 +205,14 @@ export default async function KiRoadmapIllusionPage({
                 Jeder gelöste Sonderfall produziert zwei neue. Grund dafür ist die statistische Natur generativer Modelle, keine Fehlfunktion. Sie interpolieren plausibel, sie garantieren nichts.
               </p>
 
-              <div className="bg-white border-l-4 border-[#f90093] rounded-r-xl p-5 my-8">
-                <p className="text-gray-700 text-sm leading-relaxed">
+              <div className="bg-surface border-l-4 border-[#f90093] rounded-r-xl p-5 my-8">
+                <p className="text-muted text-sm leading-relaxed">
                   Im Engineering-Kontext sind genau die 5&thinsp;% der Fälle, in denen das Modell irrt, oft die, die zählen. Wer das ignoriert, baut ein Werkzeug, das in 95&thinsp;% der Fälle hilft und in 5&thinsp;% teuren Schaden anrichtet.
                 </p>
               </div>
 
               {/* Hindernis 3 */}
-              <h3 className="font-heading font-semibold text-[#071013] mt-8 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-8 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                 3. Die Compliance-Wand
               </h3>
               <p className="mb-5">
@@ -226,7 +226,7 @@ export default async function KiRoadmapIllusionPage({
               </p>
 
               {/* Hindernis 4 */}
-              <h3 className="font-heading font-semibold text-[#071013] mt-8 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-8 mb-3" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                 4. Der Faktor Mensch
               </h3>
               <p className="mb-5">
@@ -239,10 +239,10 @@ export default async function KiRoadmapIllusionPage({
                 Das löst sich nicht durch eine Schulung. Es löst sich durch Co-Training: Mensch und Maschine arbeiten gemeinsam, lernen gemeinsam, machen gemeinsam Fehler. Wer das nicht plant, hat ein Tool ohne Nutzer.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── ABSCHNITT 4: Das Muster ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Das Muster hinter den vier Hindernissen
               </h2>
               <p className="mb-5">
@@ -252,10 +252,10 @@ export default async function KiRoadmapIllusionPage({
                 Wenn diese Reibung nicht in die Roadmap eingebaut wird, entsteht keine KI im Mittelstand, nur eine teure Demo.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── ABSCHNITT 5: Landkarten-Methodik ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was wirklich hilft: die ehrliche Methodik
               </h2>
               <p className="mb-5">
@@ -286,11 +286,11 @@ export default async function KiRoadmapIllusionPage({
                     desc: 'Welche Workflows sind real, welche sind nur dokumentiert, wo gibt es Schatten-Prozesse?',
                   },
                 ].map((item) => (
-                  <div key={item.number} className="bg-white border border-gray-200 rounded-xl p-5 flex items-start gap-5">
-                    <span className="font-heading font-bold text-[#f90093] text-2xl flex-shrink-0 leading-none mt-0.5">{item.number}</span>
+                  <div key={item.number} className="bg-surface border border-line rounded-xl p-5 flex items-start gap-5">
+                    <span className="font-heading font-bold text-magenta-light text-2xl flex-shrink-0 leading-none mt-0.5">{item.number}</span>
                     <div>
-                      <p className="font-heading font-semibold text-[#071013] mb-1">{item.title}</p>
-                      <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                      <p className="font-heading font-semibold text-ink mb-1">{item.title}</p>
+                      <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -303,10 +303,10 @@ export default async function KiRoadmapIllusionPage({
                 Die Landkarten-Erstellung ist nicht das, was Vorstände hören wollen. Sie hören lieber Demos. Aber sie spart in der Implementierung typisch das Drei- bis Fünffache an Zeit und Budget. Ein Projekt, das ohne Audit für zwölf Monate und 200.000 Euro angesetzt war, läuft mit Audit oft in sechs Monaten und 80.000 Euro durch. Vor allem aber liefert es am Ende, was die Demo versprochen hat.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── ABSCHNITT 6: Drei Empfehlungen ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Plane das Chaos ein
               </h2>
               <p className="mb-6">
@@ -314,27 +314,27 @@ export default async function KiRoadmapIllusionPage({
               </p>
 
               <div className="space-y-4 mb-8">
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#c2007a]">01</span> Rechne mit drei Monaten Datenarbeit, bevor das eigentliche Projekt anfängt.
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 flex items-center gap-2">
+                    <span className="text-magenta-light">01</span> Rechne mit drei Monaten Datenarbeit, bevor das eigentliche Projekt anfängt.
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     Wenn weniger Zeit gebraucht wird, ist das eine schöne Überraschung. Wenn mehr gebraucht wird, fliegt man nicht aus dem Plan.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#c2007a]">02</span> Hol IT-Sicherheit und Recht von Tag eins an den Tisch.
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 flex items-center gap-2">
+                    <span className="text-magenta-light">02</span> Hol IT-Sicherheit und Recht von Tag eins an den Tisch.
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     Als Co-Architekt, nicht als Bremsklotz. Was später nachgeschoben wird, kostet das Vielfache.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#c2007a]">03</span> Plane Change-Management an den Anfang, nicht ans Ende.
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 flex items-center gap-2">
+                    <span className="text-magenta-light">03</span> Plane Change-Management an den Anfang, nicht ans Ende.
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     Die Frage &bdquo;Wie nehme ich mein Team mit?&ldquo; gehört in den ersten Strategieworkshop, nicht in den Roll-out-Plan.
                   </p>
                 </div>
@@ -344,23 +344,23 @@ export default async function KiRoadmapIllusionPage({
                 Ein ehrliches KI-Audit zu Beginn spart am Ende Geld, Nerven und manchmal das ganze Projekt.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── ABSCHNITT 7: Was danach kommt ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Wenn Sie wissen wollen, wie das produktive Setup danach aussieht
               </h2>
               <p className="mb-5">
                 Diese Diagnose ist die eine Hälfte der Geschichte. Die andere ist: Was kommt nach dem Audit? Wie sieht ein Setup aus, das tatsächlich produktiv läuft?
               </p>
               <p className="mb-5">
-                Genau das habe ich im nächsten Beitrag im Detail beschrieben: <Link href="/blog/ki-projekte-scheitern-fundament" className="text-[#c2007a] underline hover:no-underline">KI-Projekte scheitern nicht am Modell. Sie scheitern an dem, was darunter liegt.</Link> Dort geht es konkret um die Werkzeugkette, mit der sich KI im Engineering-Alltag etabliert, und zwei echte PoC-Beispiele zeigen, was ein Audit in der Praxis wirklich bringt.
+                Genau das habe ich im nächsten Beitrag im Detail beschrieben: <Link href="/blog/ki-projekte-scheitern-fundament" className="text-magenta-light underline hover:no-underline">KI-Projekte scheitern nicht am Modell. Sie scheitern an dem, was darunter liegt.</Link> Dort geht es konkret um die Werkzeugkette, mit der sich KI im Engineering-Alltag etabliert, und zwei echte PoC-Beispiele zeigen, was ein Audit in der Praxis wirklich bringt.
               </p>
 
             </div>
 
             {/* ── INTERNE LINKS ── */}
-            <div className="mt-12 p-6 bg-white rounded-2xl border border-gray-200">
+            <div className="mt-12 p-6 bg-surface rounded-2xl border border-line">
               <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest mb-4">Weiterführende Seiten</p>
               <div className="flex flex-wrap gap-3">
                 {[
@@ -373,7 +373,7 @@ export default async function KiRoadmapIllusionPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-line text-sm font-inter text-ink hover:border-[#f90093] hover:text-magenta-light transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -384,9 +384,9 @@ export default async function KiRoadmapIllusionPage({
         </section>
 
         {/* ── FAQ ── */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-surface">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-heading font-bold text-[#071013] mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+            <h2 className="font-heading font-bold text-ink mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
               Häufige Fragen zur KI-Planung im Mittelstand
             </h2>
             <FaqAccordion />
@@ -409,7 +409,7 @@ export default async function KiRoadmapIllusionPage({
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-[#071013] transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
                 boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

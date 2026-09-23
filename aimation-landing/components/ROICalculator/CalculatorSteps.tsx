@@ -189,10 +189,10 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
           {currentStep === 0 && (
             <div className="text-center py-8">
               <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-magenta/20 flex items-center justify-center">
-                <Calculator className="w-10 h-10 text-magenta" />
+                <Calculator className="w-10 h-10 text-magenta-light" />
               </div>
               <h2 className="text-4xl font-bold font-heading text-white mb-4">
-                KI-ROI-Rechner für <span className="text-magenta">KMUs</span>
+                KI-ROI-Rechner für <span className="text-magenta-light">KMUs</span>
               </h2>
               <p className="text-xl text-gray-300 font-body mb-6">
                 Erfahren Sie in 2 Minuten, welches <strong className="text-white">geschätzte</strong> Einsparpotenzial KI in Ihrem Unternehmen hat.
@@ -204,22 +204,22 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
               </div>
               <div className="space-y-3 mb-8 text-left max-w-md mx-auto">
                 <div className="flex items-center gap-3 text-gray-300">
-                  <Check className="w-5 h-5 text-magenta flex-shrink-0" />
+                  <Check className="w-5 h-5 text-magenta-light flex-shrink-0" />
                   <span className="font-body">Keine Vorkenntnisse nötig</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
-                  <Check className="w-5 h-5 text-magenta flex-shrink-0" />
+                  <Check className="w-5 h-5 text-magenta-light flex-shrink-0" />
                   <span className="font-body">Basierend auf Erfahrungswerten</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
-                  <Check className="w-5 h-5 text-magenta flex-shrink-0" />
+                  <Check className="w-5 h-5 text-magenta-light flex-shrink-0" />
                   <span className="font-body">100% kostenlos & unverbindlich</span>
                 </div>
               </div>
               <Button
                 onClick={handleNext}
                 size="lg"
-                className="group bg-gradient-to-r from-magenta to-[#ff4ecd] hover:opacity-90 text-white font-heading text-lg px-8 py-6 glow-magenta"
+                className="group bg-gradient-to-r from-magenta to-[#ff4ecd] hover:opacity-90 text-[#071013] font-heading text-lg px-8 py-6 glow-magenta"
               >
                 Jetzt berechnen
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -231,10 +231,10 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
           {currentStep === 1 && (
             <div className="py-8">
               <h3 className="text-3xl font-bold font-heading text-white mb-3">
-                In welcher <span className="text-magenta">Branche</span> ist Ihr Unternehmen tätig?
+                In welcher <span className="text-magenta-light">Branche</span> ist Ihr Unternehmen tätig?
               </h3>
               <p className="text-gray-300 font-body mb-8">
-                Dies hilft uns, bessere Empfehlungen für Ihre Situation zu geben. <span className="text-gray-500">(Optional)</span>
+                Dies hilft uns, bessere Empfehlungen für Ihre Situation zu geben. <span className="text-dim">(Optional)</span>
               </p>
               <div className="grid gap-3">
                 {[
@@ -262,7 +262,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
                     <div className="flex items-center justify-between">
                       <span className="font-heading text-lg text-white">{industry.label}</span>
                       {formData.industry === industry.value && (
-                        <Check className="w-5 h-5 text-magenta flex-shrink-0" />
+                        <Check className="w-5 h-5 text-magenta-light flex-shrink-0" />
                       )}
                     </div>
                   </button>
@@ -284,7 +284,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
           {currentStep === 2 && (
             <div className="py-8">
               <h3 className="text-3xl font-bold font-heading text-white mb-3">
-                Wählen Sie einen <span className="text-magenta">Use Case</span> oder eigene Werte
+                Wählen Sie einen <span className="text-magenta-light">Use Case</span> oder eigene Werte
               </h3>
               <p className="text-gray-300 font-body mb-8">
                 Für typische Szenarien haben wir Voreinstellungen vorbereitet. Alle Werte können Sie später anpassen.
@@ -297,7 +297,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
                       setFormData({ ...formData, useCase });
                       setErrors({});
                     }}
-                    className={`text-left p-6 rounded-lg border-2 transition-all ${
+                    className={`text-left p-4 sm:p-6 rounded-lg border-2 transition-all ${
                       formData.useCase === useCase
                         ? 'border-magenta bg-magenta/10'
                         : 'border-gray-700 bg-gray-900/50 hover:border-gray-600'
@@ -313,7 +313,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
                         </div>
                       </div>
                       {formData.useCase === useCase && (
-                        <Check className="w-6 h-6 text-magenta flex-shrink-0" />
+                        <Check className="w-6 h-6 text-magenta-light flex-shrink-0" />
                       )}
                     </div>
                   </button>
@@ -326,7 +326,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
           {currentStep === 3 && (
             <div className="py-8">
               <h3 className="text-3xl font-bold font-heading text-white mb-3">
-                Wie viele <span className="text-magenta">Stunden pro Woche</span> könnten eingespart werden?
+                Wie viele <span className="text-magenta-light">Stunden pro Woche</span> könnten eingespart werden?
               </h3>
               <p className="text-gray-300 font-body mb-4">
                 Schätzung pro Mitarbeiter: Zeit für manuelle Aufgaben, die durch KI-Automatisierung eingespart werden könnte.
@@ -334,6 +334,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
               <Input
                 type="number"
                 placeholder="z.B. 3"
+                aria-label="Eingesparte Stunden pro Woche und Mitarbeiter"
                 value={formData.weeklyHours}
                 onChange={(e) => setFormData({ ...formData, weeklyHours: e.target.value })}
                 onKeyPress={handleKeyPress}
@@ -355,7 +356,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
           {currentStep === 4 && (
             <div className="py-8">
               <h3 className="text-3xl font-bold font-heading text-white mb-3">
-                Durchschnittlicher <span className="text-magenta">Stundenlohn</span>?
+                Durchschnittlicher <span className="text-magenta-light">Stundenlohn</span>?
               </h3>
               <p className="text-gray-300 font-body mb-8">
                 Bruttostundenlohn der betroffenen Mitarbeiter in Euro.
@@ -365,6 +366,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
                 <Input
                   type="number"
                   placeholder="z.B. 45"
+                aria-label="Bruttostundenlohn in Euro"
                   value={formData.hourlyWage}
                   onChange={(e) => setFormData({ ...formData, hourlyWage: e.target.value })}
                   onKeyPress={handleKeyPress}
@@ -383,7 +385,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
           {currentStep === 5 && (
             <div className="py-8">
               <h3 className="text-3xl font-bold font-heading text-white mb-3">
-                Wie viele <span className="text-magenta">Mitarbeiter</span> sind betroffen?
+                Wie viele <span className="text-magenta-light">Mitarbeiter</span> sind betroffen?
               </h3>
               <p className="text-gray-300 font-body mb-8">
                 Anzahl der Mitarbeiter, die von dieser Automatisierung profitieren würden.
@@ -391,6 +393,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
               <Input
                 type="number"
                 placeholder="z.B. 10"
+                aria-label="Anzahl betroffener Mitarbeiter"
                 value={formData.numEmployees}
                 onChange={(e) => setFormData({ ...formData, numEmployees: e.target.value })}
                 onKeyPress={handleKeyPress}
@@ -408,7 +411,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
           {currentStep === 6 && (
             <div className="py-8">
               <h3 className="text-3xl font-bold font-heading text-white mb-3">
-                Wählen Sie ein <span className="text-magenta">Paket</span>
+                Wählen Sie ein <span className="text-magenta-light">Paket</span>
               </h3>
               <p className="text-gray-300 font-body mb-6">
                 Basierend auf Ihrer Unternehmensgröße und dem Use Case empfehlen wir diese Pakete. Kosten können Sie anschließend anpassen.
@@ -423,16 +426,16 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
                         setFormData({ ...formData, package: pkg });
                         setErrors({});
                       }}
-                      className={`text-left p-6 rounded-lg border-2 transition-all ${
+                      className={`text-left p-4 sm:p-6 rounded-lg border-2 transition-all ${
                         formData.package === pkg
                           ? 'border-magenta bg-magenta/10'
                           : 'border-gray-700 bg-gray-900/50 hover:border-gray-600'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-4">
-                        <div className="flex-1">
+                        <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-2">
-                            <Tag className="w-5 h-5 text-magenta flex-shrink-0" />
+                            <Tag className="w-5 h-5 text-magenta-light flex-shrink-0" />
                             <div className="font-heading text-xl text-white">
                               {getPackageLabel(pkg)}
                             </div>
@@ -440,10 +443,10 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
                           <div className="text-sm text-gray-300 font-body mb-2">
                             {getPackageDescription(pkg)}
                           </div>
-                          <div className="text-xs text-gray-500 font-body mb-3">
+                          <div className="text-xs text-dim font-body mb-3">
                             {getPackageAudience(pkg)}
                           </div>
-                          <div className="flex items-baseline gap-4">
+                          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
                             <div>
                               <span className="text-2xl font-bold text-white font-heading">
                                 {formatCurrency(preset.setupCost)}
@@ -459,7 +462,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
                           </div>
                         </div>
                         {formData.package === pkg && (
-                          <Check className="w-6 h-6 text-magenta flex-shrink-0" />
+                          <Check className="w-6 h-6 text-magenta-light flex-shrink-0" />
                         )}
                       </div>
                     </button>
@@ -478,7 +481,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
           {currentStep === 7 && (
             <div className="py-8">
               <h3 className="text-3xl font-bold font-heading text-white mb-3">
-                <span className="text-magenta">Betrachtungszeitraum</span>
+                <span className="text-magenta-light">Betrachtungszeitraum</span>
               </h3>
               <p className="text-gray-400 font-body mb-6">
                 Über welchen Zeitraum möchten Sie den ROI berechnen?
@@ -491,6 +494,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
                   <Input
                     type="number"
                     placeholder="z.B. 12"
+                aria-label="Gesamtzeitraum in Monaten"
                     value={formData.timeframMonths}
                     onChange={(e) => setFormData({ ...formData, timeframMonths: e.target.value })}
                     error={!!errors.timeframMonths}
@@ -510,6 +514,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
                   <Input
                     type="number"
                     placeholder="z.B. 2"
+                aria-label="Anlaufzeit in Monaten"
                     value={formData.rampUpMonths}
                     onChange={(e) => setFormData({ ...formData, rampUpMonths: e.target.value })}
                     onKeyPress={handleKeyPress}
@@ -532,19 +537,19 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
 
       {/* Navigation Buttons */}
       {currentStep > 0 && (
-        <div className="flex gap-4 mt-8">
+        <div className="flex flex-wrap gap-3 mt-8">
           <Button
             onClick={handleBack}
             variant="outline"
             size="lg"
-            className="flex-1 border-gray-700 text-white hover:bg-gray-800"
+            className="flex-1 px-4 border-gray-700 text-white hover:bg-gray-800"
           >
             Zurück
           </Button>
           <Button
             onClick={handleNext}
             size="lg"
-            className="flex-1 bg-gradient-to-r from-magenta to-[#ff4ecd] hover:opacity-90 text-white font-heading glow-magenta"
+            className="flex-1 px-4 bg-gradient-to-r from-magenta to-[#ff4ecd] hover:opacity-90 text-[#071013] font-heading glow-magenta"
           >
             {currentStep === totalSteps ? 'Ergebnis anzeigen' : 'Weiter'}
             <ArrowRight className="ml-2 w-5 h-5" />

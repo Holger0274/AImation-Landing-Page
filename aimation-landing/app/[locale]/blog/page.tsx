@@ -137,28 +137,28 @@ export default async function BlogOverviewPage({
     <>
       <BreadcrumbSchema items={breadcrumbs} siteUrl={siteUrl} />
       <Header />
-      <main id="main-content" className="bg-[#faf9f7]">
+      <main id="main-content" className="bg-ground">
         {/* ── HERO ── */}
         <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4">
           <div className="max-w-4xl mx-auto">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter">
-              <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter">
+              <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-[#071013] font-medium">Blog</span>
+              <span className="text-ink font-medium">Blog</span>
             </nav>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold mb-6">
               Praxiswissen
             </div>
 
             <h1
-              className="font-heading font-bold text-[#071013] mb-4 leading-tight"
+              className="font-heading font-bold text-ink mb-4 leading-tight"
               style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}
             >
               KI für den Mittelstand:{' '}
-              <span className="text-[#f90093]">Praxis statt leeren Versprechen</span>
+              <span className="text-magenta-light">Praxis statt leeren Versprechen</span>
             </h1>
-            <p className="text-gray-600 font-inter leading-relaxed max-w-2xl" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
+            <p className="text-muted font-inter leading-relaxed max-w-2xl" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
               Keine Hochglanzbroschüren. Keine Theorie-Vorträge. Artikel, die Sie morgen anwenden können. Mit ehrlichen Einschätzungen, was KI kann und was nicht.
             </p>
           </div>
@@ -170,10 +170,10 @@ export default async function BlogOverviewPage({
             {ARTICLES.map((article) => (
               <article
                 key={article.slug}
-                className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 hover:border-[#f90093] hover:shadow-md transition-all duration-200 group"
+                className="bg-surface rounded-2xl border border-line p-6 md:p-8 hover:border-[#f90093] hover:shadow-md transition-all duration-200 group"
               >
                 <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#faf9f7] border border-gray-200 text-xs font-heading font-semibold text-[#071013]">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-ground border border-line text-xs font-heading font-semibold text-ink">
                     {article.tag}
                   </span>
                   <span className="text-xs text-gray-400 font-inter">{formatDate(article.date)}</span>
@@ -182,7 +182,7 @@ export default async function BlogOverviewPage({
                 </div>
 
                 <h2
-                  className="font-heading font-bold text-[#071013] mb-3 leading-snug group-hover:text-[#c2007a] transition-colors"
+                  className="font-heading font-bold text-ink mb-3 leading-snug group-hover:text-magenta-light transition-colors"
                   style={{ fontSize: 'clamp(1.1rem, 3vw, 1.375rem)' }}
                 >
                   <Link href={`/blog/${article.slug}`} className="hover:underline focus:outline-none focus-visible:underline">
@@ -190,20 +190,20 @@ export default async function BlogOverviewPage({
                   </Link>
                 </h2>
 
-                <p className="text-gray-600 font-inter text-sm leading-relaxed mb-5">
+                <p className="text-muted font-inter text-sm leading-relaxed mb-5">
                   {article.excerpt}
                 </p>
 
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <Link
                     href={`/blog/${article.slug}`}
-                    className="inline-flex items-center gap-2 text-[#c2007a] font-heading font-semibold text-sm hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-magenta-light font-heading font-semibold text-sm hover:gap-3 transition-all"
                   >
                     Artikel lesen <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href={article.relatedPillar.href}
-                    className="text-xs text-gray-400 font-inter hover:text-[#071013] transition-colors"
+                    className="text-xs text-gray-400 font-inter hover:text-ink transition-colors"
                   >
                     Verwandte Seite: {article.relatedPillar.label}
                   </Link>
@@ -229,7 +229,7 @@ export default async function BlogOverviewPage({
               href="https://calendly.com/holgerpeschke-hp/erstgespraech"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-[#071013] transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
                 boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

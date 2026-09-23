@@ -9,6 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        ground: 'var(--ground)',
+        surface: 'var(--surface)',
+        raised: 'var(--surface-raised)',
+        ink: 'var(--ink)',
+        muted: 'var(--muted)',
+        dim: 'var(--dim)',
+        line: 'var(--line)',
+        blueprint: 'var(--blueprint)',
         magenta: {
           DEFAULT: '#f90093',
           hover: '#d1007d',

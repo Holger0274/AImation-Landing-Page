@@ -2,11 +2,12 @@
 
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
+import { useLeadForm } from '@/components/LeadFormProvider'
 
 export function PilotSection() {
   const t = useTranslations('pilot')
 
-  const CALENDLY_URL = process.env.NEXT_PUBLIC_CALENDLY_URL ?? '#'
+  const { openLeadForm } = useLeadForm()
 
   return (
     <section
@@ -19,7 +20,7 @@ export function PilotSection() {
     >
       <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
@@ -42,11 +43,9 @@ export function PilotSection() {
             ))}
           </ul>
 
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-4 rounded-lg font-semibold text-white"
+          <button
+            onClick={openLeadForm}
+            className="inline-block px-8 py-4 rounded-lg font-semibold text-[#071013]"
             style={{
               background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
               boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',
@@ -54,7 +53,7 @@ export function PilotSection() {
             }}
           >
             {t('cta')}
-          </a>
+          </button>
           <p className="mt-3 text-sm text-gray-400">{t('ctaMicrocopy')}</p>
         </motion.div>
       </div>

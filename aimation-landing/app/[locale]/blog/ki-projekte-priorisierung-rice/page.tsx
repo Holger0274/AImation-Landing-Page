@@ -49,21 +49,21 @@ export default async function RicePriorisierungPage({
         url="/blog/ki-projekte-priorisierung-rice"
       />
       <Header />
-      <main id="main-content" className="bg-[#faf9f7]">
+      <main id="main-content" className="bg-ground">
 
         {/* ── HERO ── */}
         <section className="pt-32 pb-12 md:pt-40 md:pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter flex-wrap">
-              <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter flex-wrap">
+              <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
               <ChevronRight className="w-4 h-4" />
-              <Link href="/blog" className="hover:text-[#071013] transition-colors">Blog</Link>
+              <Link href="/blog" className="hover:text-ink transition-colors">Blog</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-[#071013] font-medium">KI-Projekte priorisieren mit RICE</span>
+              <span className="text-ink font-medium">KI-Projekte priorisieren mit RICE</span>
             </nav>
 
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold">
                 KI-Strategie
               </span>
               <span className="text-xs text-gray-400 font-inter">24. April 2026</span>
@@ -72,14 +72,14 @@ export default async function RicePriorisierungPage({
             </div>
 
             <h1
-              className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+              className="font-heading font-bold text-ink mb-6 leading-tight"
               style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)' }}
             >
               Warum Ihr spannendstes KI-Projekt{' '}
-              <span className="text-[#f90093]">nicht zuerst kommt</span>
+              <span className="text-magenta-light">nicht zuerst kommt</span>
             </h1>
 
-            <p className="text-gray-600 font-inter leading-relaxed mb-8" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
+            <p className="text-muted font-inter leading-relaxed mb-8" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
               Fünf Ideen liegen auf dem Tisch, das Budget reicht für zwei. Eine einfache Formel aus dem Produktmanagement hilft bei der Entscheidung. Wenn man ihre Grenzen kennt.
             </p>
 
@@ -99,7 +99,7 @@ export default async function RicePriorisierungPage({
         {/* ── ARTIKEL ── */}
         <section className="pb-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="font-inter text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.8' }}>
+            <div className="font-inter text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.8' }}>
 
               <p className="mb-5">
                 Wer schon einmal in einem Priorisierungs-Meeting saß, kennt den Ablauf. Fünf Projektvorschläge, fünf Fürsprecher, fünf Folienpräsentationen. Jede Idee klingt sinnvoll. Am Ende entscheidet entweder der Lauteste oder der Ranghöchste. Manchmal beides in Personalunion.
@@ -111,10 +111,10 @@ export default async function RicePriorisierungPage({
                 Eine Formel kann das ändern. Sie heißt RICE und ist seit etwa zehn Jahren im Produktmanagement etabliert. Für die Priorisierung von KI-Projekten funktioniert sie genauso gut.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── DAS PRINZIP ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Das Prinzip
               </h2>
               <p className="mb-5">
@@ -122,39 +122,39 @@ export default async function RicePriorisierungPage({
               </p>
 
               <div className="grid gap-4 my-8 sm:grid-cols-2">
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                <div className="bg-surface border border-line rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-sm text-white" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>R</span>
-                    <p className="font-heading font-semibold text-[#071013] text-sm">Reach: Reichweite</p>
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-sm text-[#071013]" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>R</span>
+                    <p className="font-heading font-semibold text-ink text-sm">Reach: Reichweite</p>
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted leading-relaxed">
                     Wie viele Menschen oder Vorgänge sind pro Quartal betroffen? Eine konkrete Zahl, keine vage Andeutung.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                <div className="bg-surface border border-line rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-sm text-white" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>I</span>
-                    <p className="font-heading font-semibold text-[#071013] text-sm">Impact: Wirkung</p>
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-sm text-[#071013]" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>I</span>
+                    <p className="font-heading font-semibold text-ink text-sm">Impact: Wirkung</p>
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted leading-relaxed">
                     Wie stark wirkt die Lösung pro betroffener Einheit? Skala von 3 (massiv) bis 0,25 (minimal).
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                <div className="bg-surface border border-line rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-sm text-white" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>C</span>
-                    <p className="font-heading font-semibold text-[#071013] text-sm">Confidence: Sicherheit</p>
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-sm text-[#071013]" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>C</span>
+                    <p className="font-heading font-semibold text-ink text-sm">Confidence: Sicherheit</p>
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted leading-relaxed">
                     Wie sicher sind Sie bei Ihren Schätzungen? 100 % nur bei harten Daten, 50 % oder weniger bei Bauchgefühl. Dieser Faktor ist der heimliche Held der Formel.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                <div className="bg-surface border border-line rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-sm text-white" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>E</span>
-                    <p className="font-heading font-semibold text-[#071013] text-sm">Effort: Aufwand</p>
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full font-heading font-bold text-sm text-[#071013]" style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}>E</span>
+                    <p className="font-heading font-semibold text-ink text-sm">Effort: Aufwand</p>
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted leading-relaxed">
                     Gesamtaufwand in Person-Monaten für das komplette Paket: Datenaufbereitung, Integration, Schulung, Einführung. Die reine Entwicklungszeit ist nur ein Bruchteil davon.
                   </p>
                 </div>
@@ -167,17 +167,17 @@ export default async function RicePriorisierungPage({
                   <span className="text-gray-400">=</span>
                   <div className="flex flex-col items-center gap-0">
                     <span className="pb-1.5" style={{ color: '#f90093' }}>Reach &times; Impact &times; Confidence</span>
-                    <div className="w-full h-px bg-white" />
+                    <div className="w-full h-px bg-surface" />
                     <span className="pt-1.5 text-gray-300">Effort</span>
                   </div>
                 </div>
                 <p className="text-gray-400 text-sm mt-5 font-inter">Je höher der Score, desto mehr Wert pro investiertem Aufwand</p>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── FÜNF IDEEN ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Fünf Ideen, eine Entwicklungsabteilung
               </h2>
               <p className="mb-5">
@@ -185,7 +185,7 @@ export default async function RicePriorisierungPage({
               </p>
 
               {/* Use Case 1 */}
-              <h3 className="font-heading font-semibold text-[#071013] mt-8 mb-3" style={{ fontSize: 'clamp(1.05rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-8 mb-3" style={{ fontSize: 'clamp(1.05rem, 2.5vw, 1.25rem)' }}>
                 Patent-Intelligence für Konstrukteure
               </h3>
               <p className="mb-5">
@@ -198,7 +198,7 @@ export default async function RicePriorisierungPage({
                 Aus einem Wissen, das heute in einem Kopf verwaltet wird, wird ein Alltagswerkzeug für dreißig. Der Patentingenieur verliert nicht seinen Job. Er gewinnt Zeit für die wirklich komplexen Fragen.
               </p>
 
-              <div className="bg-white border border-gray-200 rounded-xl p-5 my-6">
+              <div className="bg-surface border border-line rounded-xl p-5 my-6">
                 <div className="grid grid-cols-4 gap-3 mb-4">
                   {[
                     { label: 'Reach', value: '300/Q' },
@@ -208,20 +208,20 @@ export default async function RicePriorisierungPage({
                   ].map((item) => (
                     <div key={item.label} className="text-center">
                       <p className="text-xs text-gray-400 font-inter mb-1">{item.label}</p>
-                      <p className="font-heading font-semibold text-[#071013] text-sm">{item.value}</p>
+                      <p className="font-heading font-semibold text-ink text-sm">{item.value}</p>
                     </div>
                   ))}
                 </div>
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <p className="text-xs text-gray-500 font-inter">300 × 3 × 0,75 ÷ 4</p>
-                  <p className="font-heading font-bold text-[#c2007a] text-lg">RICE = 168,75</p>
+                <div className="flex items-center justify-between pt-4 border-t border-line">
+                  <p className="text-xs text-dim font-inter">300 × 3 × 0,75 ÷ 4</p>
+                  <p className="font-heading font-bold text-magenta-light text-lg">RICE = 168,75</p>
                 </div>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* Use Case 2 */}
-              <h3 className="font-heading font-semibold text-[#071013] mt-8 mb-3" style={{ fontSize: 'clamp(1.05rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-8 mb-3" style={{ fontSize: 'clamp(1.05rem, 2.5vw, 1.25rem)' }}>
                 Das digitale Zeichnungs-Archiv
               </h3>
               <p className="mb-5">
@@ -234,7 +234,7 @@ export default async function RicePriorisierungPage({
                 Interessant ist dabei weniger die Zeitersparnis als die Verhaltensänderung. Dreißig Minuten Suche sind eine Hürde, um die man sich herumdrückt. Dreißig Sekunden werden zur Gewohnheit. Plötzlich wird mehr wiederverwendet, weniger doppelt entwickelt.
               </p>
 
-              <div className="bg-white border border-gray-200 rounded-xl p-5 my-6">
+              <div className="bg-surface border border-line rounded-xl p-5 my-6">
                 <div className="grid grid-cols-4 gap-3 mb-4">
                   {[
                     { label: 'Reach', value: '400/Q' },
@@ -244,20 +244,20 @@ export default async function RicePriorisierungPage({
                   ].map((item) => (
                     <div key={item.label} className="text-center">
                       <p className="text-xs text-gray-400 font-inter mb-1">{item.label}</p>
-                      <p className="font-heading font-semibold text-[#071013] text-sm">{item.value}</p>
+                      <p className="font-heading font-semibold text-ink text-sm">{item.value}</p>
                     </div>
                   ))}
                 </div>
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <p className="text-xs text-gray-500 font-inter">400 × 2 × 0,70 ÷ 5</p>
-                  <p className="font-heading font-bold text-[#c2007a] text-lg">RICE = 112</p>
+                <div className="flex items-center justify-between pt-4 border-t border-line">
+                  <p className="text-xs text-dim font-inter">400 × 2 × 0,70 ÷ 5</p>
+                  <p className="font-heading font-bold text-magenta-light text-lg">RICE = 112</p>
                 </div>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* Use Case 3 */}
-              <h3 className="font-heading font-semibold text-[#071013] mt-8 mb-3" style={{ fontSize: 'clamp(1.05rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-8 mb-3" style={{ fontSize: 'clamp(1.05rem, 2.5vw, 1.25rem)' }}>
                 Multi-Agent Innovation-Scout
               </h3>
               <p className="mb-5">
@@ -267,7 +267,7 @@ export default async function RicePriorisierungPage({
                 Vier spezialisierte Software-Agenten für Markt, Technik, Kosten und Risiko bekommen denselben Briefing-Input und diskutieren untereinander. Der Mensch entscheidet am Ende. Aber mit einer Datenbasis, die sich ein kleines Team allein kaum erarbeiten kann. Jede einzelne Fehlentscheidung dieser Art kostet sechs- oder siebenstellig.
               </p>
 
-              <div className="bg-white border border-gray-200 rounded-xl p-5 my-6">
+              <div className="bg-surface border border-line rounded-xl p-5 my-6">
                 <div className="grid grid-cols-4 gap-3 mb-4">
                   {[
                     { label: 'Reach', value: '20/Q' },
@@ -277,27 +277,27 @@ export default async function RicePriorisierungPage({
                   ].map((item) => (
                     <div key={item.label} className="text-center">
                       <p className="text-xs text-gray-400 font-inter mb-1">{item.label}</p>
-                      <p className="font-heading font-semibold text-[#071013] text-sm">{item.value}</p>
+                      <p className="font-heading font-semibold text-ink text-sm">{item.value}</p>
                     </div>
                   ))}
                 </div>
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <p className="text-xs text-gray-500 font-inter">20 × 3 × 0,35 ÷ 8</p>
-                  <p className="font-heading font-bold text-[#071013] text-lg">RICE = 2,6</p>
+                <div className="flex items-center justify-between pt-4 border-t border-line">
+                  <p className="text-xs text-dim font-inter">20 × 3 × 0,35 ÷ 8</p>
+                  <p className="font-heading font-bold text-ink text-lg">RICE = 2,6</p>
                 </div>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* Use Case 4 */}
-              <h3 className="font-heading font-semibold text-[#071013] mt-8 mb-3" style={{ fontSize: 'clamp(1.05rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-8 mb-3" style={{ fontSize: 'clamp(1.05rem, 2.5vw, 1.25rem)' }}>
                 Datenblatt-Extractor
               </h3>
               <p className="mb-5">
                 Lieferanten-Datenblätter kommen als PDFs in tausend verschiedenen Formaten. Eine Software liest sie automatisch aus, extrahiert Kennwerte und baut Vergleichstabellen. Unspektakulär, aber eine der sichersten Wetten in der Liste: hohe Reichweite, hohe Confidence, geringer Aufwand.
               </p>
 
-              <div className="bg-white border border-gray-200 rounded-xl p-5 my-6">
+              <div className="bg-surface border border-line rounded-xl p-5 my-6">
                 <div className="grid grid-cols-4 gap-3 mb-4">
                   {[
                     { label: 'Reach', value: '150/Q' },
@@ -307,27 +307,27 @@ export default async function RicePriorisierungPage({
                   ].map((item) => (
                     <div key={item.label} className="text-center">
                       <p className="text-xs text-gray-400 font-inter mb-1">{item.label}</p>
-                      <p className="font-heading font-semibold text-[#071013] text-sm">{item.value}</p>
+                      <p className="font-heading font-semibold text-ink text-sm">{item.value}</p>
                     </div>
                   ))}
                 </div>
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <p className="text-xs text-gray-500 font-inter">150 × 1 × 0,90 ÷ 2</p>
-                  <p className="font-heading font-bold text-[#071013] text-lg">RICE = 67,5</p>
+                <div className="flex items-center justify-between pt-4 border-t border-line">
+                  <p className="text-xs text-dim font-inter">150 × 1 × 0,90 ÷ 2</p>
+                  <p className="font-heading font-bold text-ink text-lg">RICE = 67,5</p>
                 </div>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* Use Case 5 */}
-              <h3 className="font-heading font-semibold text-[#071013] mt-8 mb-3" style={{ fontSize: 'clamp(1.05rem, 2.5vw, 1.25rem)' }}>
+              <h3 className="font-heading font-semibold text-ink mt-8 mb-3" style={{ fontSize: 'clamp(1.05rem, 2.5vw, 1.25rem)' }}>
                 Norm-Checker
               </h3>
               <p className="mb-5">
                 Konstruktionen automatisch gegen DIN-, ISO- und VDI-Normen prüfen. Klingt wie ein Selbstgänger, ist aber keiner. Normen sind urheberrechtlich geschützt, viele existieren nicht in maschinenlesbarer Form. Die Interpretation erfordert Erfahrung, die ein Sprachmodell nur bedingt mitbringt. Hoher Aufwand, mittlere Confidence.
               </p>
 
-              <div className="bg-white border border-gray-200 rounded-xl p-5 my-6">
+              <div className="bg-surface border border-line rounded-xl p-5 my-6">
                 <div className="grid grid-cols-4 gap-3 mb-4">
                   {[
                     { label: 'Reach', value: '200/Q' },
@@ -337,25 +337,25 @@ export default async function RicePriorisierungPage({
                   ].map((item) => (
                     <div key={item.label} className="text-center">
                       <p className="text-xs text-gray-400 font-inter mb-1">{item.label}</p>
-                      <p className="font-heading font-semibold text-[#071013] text-sm">{item.value}</p>
+                      <p className="font-heading font-semibold text-ink text-sm">{item.value}</p>
                     </div>
                   ))}
                 </div>
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <p className="text-xs text-gray-500 font-inter">200 × 1 × 0,40 ÷ 8</p>
-                  <p className="font-heading font-bold text-[#071013] text-lg">RICE = 10</p>
+                <div className="flex items-center justify-between pt-4 border-t border-line">
+                  <p className="text-xs text-dim font-inter">200 × 1 × 0,40 ÷ 8</p>
+                  <p className="font-heading font-bold text-ink text-lg">RICE = 10</p>
                 </div>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── RANGLISTE ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Die Rangliste
               </h2>
 
               {/* Score-Tabelle */}
-              <div className="my-8 rounded-2xl overflow-hidden border border-gray-200">
+              <div className="my-8 rounded-2xl overflow-hidden border border-line">
                 <div className="bg-[#071013] px-5 py-3">
                   <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest">RICE-Scores im Vergleich</p>
                 </div>
@@ -368,22 +368,22 @@ export default async function RicePriorisierungPage({
                 ].map((item) => (
                   <div
                     key={item.rank}
-                    className={`flex items-center gap-4 px-5 py-4 border-b border-gray-100 last:border-0 ${item.top ? 'bg-white' : 'bg-[#faf9f7]'}`}
+                    className={`flex items-center gap-4 px-5 py-4 border-b border-line last:border-0 ${item.top ? 'bg-surface' : 'bg-ground'}`}
                   >
                     <span
                       className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-heading font-bold"
-                      style={item.top ? { background: 'linear-gradient(135deg, #f90093, #ff4ecd)', color: 'white' } : { background: '#e5e7eb', color: '#6b7280' }}
+                      style={item.top ? { background: 'linear-gradient(135deg, #f90093, #ff4ecd)', color: 'white' } : { background: 'var(--surface-raised)', color: 'var(--muted)' }}
                     >
                       {item.rank}
                     </span>
                     <div className="flex-1 min-w-0">
-                      <p className={`font-heading font-semibold text-sm truncate ${item.top ? 'text-[#071013]' : 'text-gray-500'}`}>{item.name}</p>
+                      <p className={`font-heading font-semibold text-sm truncate ${item.top ? 'text-ink' : 'text-dim'}`}>{item.name}</p>
                       {item.strategic && (
-                        <p className="text-xs text-amber-600 font-inter mt-0.5">Strategische Reserve, trotz niedrigem Score</p>
+                        <p className="text-xs text-amber-300 font-inter mt-0.5">Strategische Reserve, trotz niedrigem Score</p>
                       )}
                     </div>
                     <div className="flex items-center gap-3 flex-shrink-0">
-                      <div className="hidden sm:block w-24 bg-gray-100 rounded-full h-1.5">
+                      <div className="hidden sm:block w-24 bg-raised rounded-full h-1.5">
                         <div
                           className="h-1.5 rounded-full"
                           style={{
@@ -392,7 +392,7 @@ export default async function RicePriorisierungPage({
                           }}
                         />
                       </div>
-                      <span className={`font-heading font-bold text-sm w-12 text-right ${item.top ? 'text-[#c2007a]' : 'text-gray-400'}`}>
+                      <span className={`font-heading font-bold text-sm w-12 text-right ${item.top ? 'text-magenta-light' : 'text-gray-400'}`}>
                         {item.score}
                       </span>
                     </div>
@@ -410,10 +410,10 @@ export default async function RicePriorisierungPage({
                 Die meisten KI-Projekte, die in mittelständischen Entwicklungsabteilungen wirklich funktionieren, folgen diesem Prinzip: Sie geben dem Laien Zugriff auf Spezialistenwissen, statt nur den Spezialisten selbst schneller zu machen. Wer seine Projektliste unter dieser Brille prüft, findet oft versteckte Gewinner.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── DER MULTI-AGENT-FALL ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Was der Score verschweigt
               </h2>
               <p className="mb-5">
@@ -430,24 +430,24 @@ export default async function RicePriorisierungPage({
                 <p className="font-heading font-semibold mb-3 text-sm uppercase tracking-widest" style={{ color: '#f90093' }}>Der entscheidende Unterschied</p>
                 <div className="space-y-3 text-sm leading-relaxed text-gray-200">
                   <p className="flex items-start gap-2">
-                    <span className="text-[#f90093] mt-1 flex-shrink-0">→</span>
+                    <span className="text-magenta-light mt-1 flex-shrink-0">→</span>
                     RICE bewertet operative Wirkung: Was liefert heute mehr Wert als es kostet?
                   </p>
                   <p className="flex items-start gap-2">
-                    <span className="text-[#f90093] mt-1 flex-shrink-0">→</span>
+                    <span className="text-magenta-light mt-1 flex-shrink-0">→</span>
                     RICE bewertet keine Lernkurve: Was brauchen wir als Fähigkeit für übermorgen?
                   </p>
                   <p className="flex items-start gap-2">
-                    <span className="text-[#f90093] mt-1 flex-shrink-0">→</span>
+                    <span className="text-magenta-light mt-1 flex-shrink-0">→</span>
                     Wer heute kein Team hat, das mit Multi-Agent-Systemen arbeitet, startet in drei Jahren bei null. Wenn die Technologie dann reif ist.
                   </p>
                 </div>
               </div>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── 70/30 REGEL ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Die 70/30-Regel
               </h2>
               <p className="mb-5">
@@ -455,19 +455,19 @@ export default async function RicePriorisierungPage({
               </p>
 
               <div className="space-y-4 mb-8">
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#c2007a]">70 %</span> Operative Quick Wins
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 flex items-center gap-2">
+                    <span className="text-magenta-light">70 %</span> Operative Quick Wins
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     Sie liefern messbare Ergebnisse, bauen Vertrauen auf und finanzieren sich oft selbst. Hier ist RICE der richtige Filter. Diese Projekte rechtfertigen das Budget für die nächste Runde.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#c2007a]">30 %</span> Strategische Reserve
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 flex items-center gap-2">
+                    <span className="text-magenta-light">30 %</span> Strategische Reserve
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     Projekte, die RICE niedrig bewertet, die aber Zukunftsfähigkeit schaffen. Kein schneller Ertrag erwartet. Dafür weiß das Team in zwei Jahren, was es tut. Während der Wettbewerb noch Grundlagen lernt.
                   </p>
                 </div>
@@ -477,10 +477,10 @@ export default async function RicePriorisierungPage({
                 Wer RICE als Orakel behandelt, wird innovationsarm. Wer RICE als Filter behandelt und bewusst einen Strategie-Topf daneben stellt, hat das Beste aus beiden Welten.
               </p>
 
-              <hr className="border-gray-200 my-8" />
+              <hr className="border-line my-8" />
 
               {/* ── WIE SIE ANFANGEN ── */}
-              <h2 className="font-heading font-bold text-[#071013] mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
+              <h2 className="font-heading font-bold text-ink mt-10 mb-5" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
                 Wie Sie anfangen
               </h2>
               <p className="mb-6">
@@ -488,27 +488,27 @@ export default async function RicePriorisierungPage({
               </p>
 
               <div className="space-y-4 mb-8">
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#c2007a]">01</span> Bei Confidence besonders ehrlich sein.
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 flex items-center gap-2">
+                    <span className="text-magenta-light">01</span> Bei Confidence besonders ehrlich sein.
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     Das ist der Faktor, der am meisten schiefgeht. Niemand gibt gern zu, sich nicht sicher zu sein. 100 % Confidence ist nur bei harten Daten gerechtfertigt. Bauchgefühl: maximal 50 %.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#c2007a]">02</span> Effort vollständig schätzen.
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 flex items-center gap-2">
+                    <span className="text-magenta-light">02</span> Effort vollständig schätzen.
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     Zählen Sie alles mit: Datenvorbereitung, Integration, Schulung der Nutzer, Einführungsbegleitung. Wer nur die Coding-Zeit zählt, unterschätzt systematisch.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
-                  <p className="font-heading font-semibold text-[#071013] mb-2 flex items-center gap-2">
-                    <span className="text-[#c2007a]">03</span> Einen Strategie-Slot bewusst reservieren.
+                <div className="bg-surface border border-line rounded-xl p-5">
+                  <p className="font-heading font-semibold text-ink mb-2 flex items-center gap-2">
+                    <span className="text-magenta-light">03</span> Einen Strategie-Slot bewusst reservieren.
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     Benennen Sie vor der Priorisierung explizit: "Wir reservieren 30 % für ein Projekt, das RICE niedrig bewertet, das wir aber trotzdem brauchen." Dann die Diskussion führen, welches das ist.
                   </p>
                 </div>
@@ -523,7 +523,7 @@ export default async function RicePriorisierungPage({
             </div>
 
             {/* ── INTERNE LINKS ── */}
-            <div className="mt-12 p-6 bg-white rounded-2xl border border-gray-200">
+            <div className="mt-12 p-6 bg-surface rounded-2xl border border-line">
               <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-widest mb-4">Weiterführende Seiten</p>
               <div className="flex flex-wrap gap-3">
                 {[
@@ -536,7 +536,7 @@ export default async function RicePriorisierungPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-gray-200 text-sm font-inter text-[#071013] hover:border-[#f90093] hover:text-[#c2007a] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-line text-sm font-inter text-ink hover:border-[#f90093] hover:text-magenta-light transition-colors"
                   >
                     {link.label} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -562,7 +562,7 @@ export default async function RicePriorisierungPage({
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-[#071013] transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
                 boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

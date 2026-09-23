@@ -16,19 +16,19 @@ function FaqAccordion() {
 
 export default function KiAgentenPage() {
   return (
-    <main id="main-content" className="bg-[#faf9f7]">
+    <main id="main-content" className="bg-ground">
       {/* ── HERO ── */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4">
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-inter">
-            <Link href="/" className="hover:text-[#071013] transition-colors">Startseite</Link>
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter">
+            <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-[#071013] font-medium">KI-Agenten für Unternehmen</span>
+            <span className="text-ink font-medium">KI-Agenten für Unternehmen</span>
           </nav>
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-[#c2007a] text-xs font-heading font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold mb-6">
             KI-Agenten
           </div>
 
@@ -37,11 +37,11 @@ export default function KiAgentenPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+            className="font-heading font-bold text-ink mb-6 leading-tight"
             style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}
           >
             KI-Agenten für Unternehmen: Was sie können, was sie kosten,{' '}
-            <span className="text-[#f90093]">ob Sie sie brauchen</span>
+            <span className="text-magenta-light">ob Sie sie brauchen</span>
           </motion.h1>
 
           {/* Intro */}
@@ -49,7 +49,7 @@ export default function KiAgentenPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-gray-600 font-inter leading-relaxed mb-8"
+            className="text-muted font-inter leading-relaxed mb-8"
             style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}
           >
             Jeder redet 2026 über KI-Agenten. Die meisten können nicht erklären, was das eigentlich ist.
@@ -60,7 +60,7 @@ export default function KiAgentenPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-gray-600 font-inter leading-relaxed mb-10"
+            className="text-muted font-inter leading-relaxed mb-10"
             style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}
           >
             Diese Seite erklärt den Unterschied. Ohne Buzzwords, ohne Hype, mit konkreten Beispielen
@@ -78,7 +78,7 @@ export default function KiAgentenPage() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#f90093] to-[#ff4ecd] text-white font-heading font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#f90093] to-[#ff4ecd] text-[#071013] font-heading font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
             >
               Erstgespräch buchen
               <ArrowRight className="w-4 h-4" />
@@ -88,34 +88,34 @@ export default function KiAgentenPage() {
       </section>
 
       {/* ── AGENT VS CHATBOT ── */}
-      <section className="py-16 md:py-20 px-4 border-t border-gray-100">
+      <section className="py-16 md:py-20 px-4 border-t border-line">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading font-bold text-[#071013] mb-6" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+          <h2 className="font-heading font-bold text-ink mb-6" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
             KI-Agent vs. Chatbot: Der Unterschied in{' '}
-            <span className="text-[#f90093]">30 Sekunden</span>
+            <span className="text-magenta-light">30 Sekunden</span>
           </h2>
-          <p className="text-gray-600 font-inter leading-relaxed mb-4" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
+          <p className="text-muted font-inter leading-relaxed mb-4" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
             Ein Chatbot antwortet auf Fragen. Sie fragen, er antwortet. Fragen Sie nichts, passiert
             nichts. Er ist reaktiv.
           </p>
-          <p className="text-gray-600 font-inter leading-relaxed mb-10" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
+          <p className="text-muted font-inter leading-relaxed mb-10" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
             Ein KI-Agent handelt eigenständig. Er bekommt ein Ziel, plant die Schritte, greift auf
             Tools zu und liefert ein Ergebnis. Ohne dass Sie jeden Schritt vorgeben müssen. Er liest
             Ihr Postfach, erkennt eine Reklamation, sucht die zugehörige Bestellung, prüft die
             Lieferhistorie und schlägt eine Antwort vor. Alles in Sekunden. Ohne dass ein Mensch
             auch nur eine Taste gedrückt hat.
           </p>
-          <p className="text-gray-500 font-inter italic mb-8" style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
+          <p className="text-dim font-inter italic mb-8" style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
             Der Unterschied ist wie zwischen einem Taschenrechner und einem Buchhalter. Beide rechnen.
             Aber nur einer weiß, wann er rechnen muss.
           </p>
 
           <div className="flex justify-center mb-10">
-            <AgentHumanLoop variant="light" className="w-full max-w-2xl h-auto" />
+            <AgentHumanLoop variant="dark" className="w-full max-w-2xl h-auto" />
           </div>
 
           {/* Comparison Table */}
-          <div className="overflow-x-auto rounded-xl border border-gray-200">
+          <div className="overflow-x-auto rounded-xl border border-line">
             <table className="w-full text-sm font-inter">
               <thead>
                 <tr className="bg-[#071013] text-white">
@@ -134,10 +134,10 @@ export default function KiAgentenPage() {
                   { label: 'Trifft Entscheidungen', chatbot: '✗', agent: 'Im definierten Rahmen' },
                   { label: 'Typischer Einsatz', chatbot: 'FAQ, einfache Auskünfte', agent: 'Prozessautomatisierung, Analyse' },
                 ].map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-[#faf9f7]'}>
-                    <td className="px-4 py-3 text-[#071013] font-medium">{row.label}</td>
-                    <td className="px-4 py-3 text-center text-gray-600">{row.chatbot}</td>
-                    <td className="px-4 py-3 text-center text-[#071013] font-medium">{row.agent}</td>
+                  <tr key={i} className={i % 2 === 0 ? 'bg-surface' : 'bg-ground'}>
+                    <td className="px-4 py-3 text-ink font-medium">{row.label}</td>
+                    <td className="px-4 py-3 text-center text-muted">{row.chatbot}</td>
+                    <td className="px-4 py-3 text-center text-ink font-medium">{row.agent}</td>
                   </tr>
                 ))}
               </tbody>
@@ -147,13 +147,13 @@ export default function KiAgentenPage() {
       </section>
 
       {/* ── 7 REIFESTUFEN ── */}
-      <section className="py-16 md:py-20 px-4 border-t border-gray-100">
+      <section className="py-16 md:py-20 px-4 border-t border-line">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading font-bold text-[#071013] mb-4" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+          <h2 className="font-heading font-bold text-ink mb-4" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
             Die 7 Reifestufen der{' '}
-            <span className="text-[#f90093]">KI-Nutzung</span>
+            <span className="text-magenta-light">KI-Nutzung</span>
           </h2>
-          <p className="text-gray-600 font-inter leading-relaxed mb-10" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
+          <p className="text-muted font-inter leading-relaxed mb-10" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
             Nicht jedes Unternehmen braucht sofort KI-Agenten. Die meisten starten sinnvollerweise
             auf einer niedrigeren Stufe und arbeiten sich hoch. Hier ist der Weg:
           </p>
@@ -212,27 +212,27 @@ export default function KiAgentenPage() {
             ].map((stufe) => (
               <div
                 key={stufe.level}
-                className={`flex gap-4 p-5 rounded-xl border ${stufe.highlight ? 'border-[#f90093] bg-white' : 'border-gray-200 bg-white'}`}
+                className={`flex gap-4 p-5 rounded-xl border ${stufe.highlight ? 'border-[#f90093] bg-surface' : 'border-line bg-surface'}`}
               >
                 <div
                   className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-sm"
                   style={stufe.highlight
-                    ? { background: 'linear-gradient(135deg, #f90093, #ff4ecd)', color: 'white' }
-                    : { backgroundColor: '#f4f4f5', color: '#071013' }
+                    ? { background: 'linear-gradient(135deg, #f90093, #ff4ecd)', color: '#071013' }
+                    : { backgroundColor: 'var(--surface-raised)', color: 'var(--ink)' }
                   }
                 >
                   {stufe.level}
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-heading font-semibold text-[#071013] mb-1" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
+                  <h3 className="font-heading font-semibold text-ink mb-1" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
                     {stufe.title}
                     {stufe.highlight && (
-                      <span className="ml-2 text-xs font-normal text-[#c2007a] font-inter">(Sie sind hier)</span>
+                      <span className="ml-2 text-xs font-normal text-magenta-light font-inter">(Sie sind hier)</span>
                     )}
                   </h3>
-                  <p className="text-gray-600 font-inter text-sm leading-relaxed">{stufe.text}</p>
+                  <p className="text-muted font-inter text-sm leading-relaxed">{stufe.text}</p>
                   {stufe.link && (
-                    <Link href={stufe.link.href} className="text-[#c2007a] text-sm font-inter hover:underline mt-1 inline-block">
+                    <Link href={stufe.link.href} className="text-magenta-light text-sm font-inter hover:underline mt-1 inline-block">
                       {stufe.link.label} →
                     </Link>
                   )}
@@ -241,11 +241,11 @@ export default function KiAgentenPage() {
             ))}
           </div>
 
-          <div className="mt-8 p-4 bg-[#faf9f7] rounded-xl border border-gray-200">
-            <p className="text-gray-600 font-inter text-sm">
-              <strong className="text-[#071013]">Wo stehen Sie?</strong> Die meisten Mittelständler befinden sich auf Stufe 1 bis 2.
+          <div className="mt-8 p-4 bg-ground rounded-xl border border-line">
+            <p className="text-muted font-inter text-sm">
+              <strong className="text-ink">Wo stehen Sie?</strong> Die meisten Mittelständler befinden sich auf Stufe 1 bis 2.
               Der größte Produktivitätssprung liegt oft zwischen Stufe 3 und 5.{' '}
-              <Link href="/ki-beratung-kmu" className="text-[#c2007a] hover:underline">
+              <Link href="/ki-beratung-kmu" className="text-magenta-light hover:underline">
                 Mit der KI-Landkarte finden Sie es heraus
               </Link>
             </p>
@@ -254,13 +254,13 @@ export default function KiAgentenPage() {
       </section>
 
       {/* ── USE CASES ── */}
-      <section className="py-16 md:py-20 px-4 border-t border-gray-100">
+      <section className="py-16 md:py-20 px-4 border-t border-line">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading font-bold text-[#071013] mb-4" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+          <h2 className="font-heading font-bold text-ink mb-4" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
             KI-Agenten im Engineering: Use Cases, die kein generischer Berater{' '}
-            <span className="text-[#f90093]">kennt</span>
+            <span className="text-magenta-light">kennt</span>
           </h2>
-          <p className="text-gray-600 font-inter leading-relaxed mb-10" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
+          <p className="text-muted font-inter leading-relaxed mb-10" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
             Diese Use Cases kommen aus 20 Jahren Erfahrung in der Industrie. Nicht aus
             KI-Marketing-Präsentationen.
           </p>
@@ -308,9 +308,9 @@ export default function KiAgentenPage() {
                 link: null,
               },
             ].map((uc, i) => (
-              <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 md:p-8">
+              <div key={i} className="bg-surface rounded-xl border border-line p-6 md:p-8">
                 <div className="flex items-start justify-between gap-4 mb-4">
-                  <h3 className="font-heading font-semibold text-[#071013]" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
+                  <h3 className="font-heading font-semibold text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
                     {uc.title}
                   </h3>
                   <span
@@ -323,14 +323,14 @@ export default function KiAgentenPage() {
                 <div className="space-y-3">
                   <div>
                     <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-wide mb-1">Das Problem</p>
-                    <p className="text-gray-600 font-inter text-sm leading-relaxed">{uc.problem}</p>
+                    <p className="text-muted font-inter text-sm leading-relaxed">{uc.problem}</p>
                   </div>
                   <div>
                     <p className="text-xs font-heading font-semibold text-gray-400 uppercase tracking-wide mb-1">Die Lösung</p>
-                    <p className="text-gray-600 font-inter text-sm leading-relaxed">{uc.solution}</p>
+                    <p className="text-muted font-inter text-sm leading-relaxed">{uc.solution}</p>
                   </div>
                   {uc.link && (
-                    <Link href={uc.link.href} className="inline-flex items-center gap-1 text-[#c2007a] text-sm font-inter hover:underline mt-2">
+                    <Link href={uc.link.href} className="inline-flex items-center gap-1 text-magenta-light text-sm font-inter hover:underline mt-2">
                       {uc.link.label} <ArrowRight className="w-3 h-3" />
                     </Link>
                   )}
@@ -342,13 +342,13 @@ export default function KiAgentenPage() {
       </section>
 
       {/* ── TECHNISCHE ARCHITEKTUR ── */}
-      <section className="py-16 md:py-20 px-4 border-t border-gray-100">
+      <section className="py-16 md:py-20 px-4 border-t border-line">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading font-bold text-[#071013] mb-4" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+          <h2 className="font-heading font-bold text-ink mb-4" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
             Die technische Architektur{' '}
-            <span className="text-[#f90093]">(vereinfacht)</span>
+            <span className="text-magenta-light">(vereinfacht)</span>
           </h2>
-          <p className="text-gray-600 font-inter leading-relaxed mb-8" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
+          <p className="text-muted font-inter leading-relaxed mb-8" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
             Sie müssen kein Entwickler sein, um das Prinzip zu verstehen:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -359,10 +359,10 @@ export default function KiAgentenPage() {
               { title: 'Orchestrierung', role: 'Der "Projektmanager"', text: 'Steuert, welcher Agent wann was tut. Teilt komplexe Aufgaben in Teilschritte auf. Sorgt dafür, dass Agenten zusammenarbeiten.' },
               { title: 'Menschliche Kontrolle', role: 'Der "Auftraggeber"', text: 'Jeder Agent arbeitet in einem definierten Rahmen. Entscheidungen ab einer bestimmten Tragweite landen beim Menschen.' },
             ].map((item, i) => (
-              <div key={i} className={`bg-white rounded-xl border border-gray-200 p-5 ${i === 4 ? 'sm:col-span-2' : ''}`}>
-                <p className="text-xs font-heading font-semibold text-[#c2007a] mb-1">{item.role}</p>
-                <h3 className="font-heading font-semibold text-[#071013] mb-2" style={{ fontSize: 'clamp(0.9rem, 2vw, 1rem)' }}>{item.title}</h3>
-                <p className="text-gray-600 font-inter text-sm leading-relaxed">{item.text}</p>
+              <div key={i} className={`bg-surface rounded-xl border border-line p-5 ${i === 4 ? 'sm:col-span-2' : ''}`}>
+                <p className="text-xs font-heading font-semibold text-magenta-light mb-1">{item.role}</p>
+                <h3 className="font-heading font-semibold text-ink mb-2" style={{ fontSize: 'clamp(0.9rem, 2vw, 1rem)' }}>{item.title}</h3>
+                <p className="text-muted font-inter text-sm leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>
@@ -370,13 +370,13 @@ export default function KiAgentenPage() {
       </section>
 
       {/* ── KOSTEN ── */}
-      <section className="py-16 md:py-20 px-4 border-t border-gray-100">
+      <section className="py-16 md:py-20 px-4 border-t border-line">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading font-bold text-[#071013] mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+          <h2 className="font-heading font-bold text-ink mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
             Was kosten{' '}
-            <span className="text-[#f90093]">KI-Agenten?</span>
+            <span className="text-magenta-light">KI-Agenten?</span>
           </h2>
-          <div className="overflow-x-auto rounded-xl border border-gray-200 mb-6">
+          <div className="overflow-x-auto rounded-xl border border-line mb-6">
             <table className="w-full text-sm font-inter">
               <thead>
                 <tr className="bg-[#071013] text-white">
@@ -390,19 +390,19 @@ export default function KiAgentenPage() {
                   ...UMSETZUNG_LEVELS.map((level) => ({ type: level.type, cost: level.setupLabel, timeline: level.timeline })),
                   { type: UMSETZUNG_LAUFENDE_KOSTEN.type, cost: UMSETZUNG_LAUFENDE_KOSTEN.label, timeline: '' },
                 ].map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-[#faf9f7]'}>
-                    <td className="px-4 py-3 text-[#071013]">{row.type}</td>
-                    <td className="px-4 py-3 text-[#071013] font-medium">{row.cost}</td>
-                    <td className="px-4 py-3 text-gray-600">{row.timeline}</td>
+                  <tr key={i} className={i % 2 === 0 ? 'bg-surface' : 'bg-ground'}>
+                    <td className="px-4 py-3 text-ink">{row.type}</td>
+                    <td className="px-4 py-3 text-ink font-medium">{row.cost}</td>
+                    <td className="px-4 py-3 text-muted">{row.timeline}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <div className="p-4 bg-[#faf9f7] rounded-xl border border-gray-200">
-            <p className="text-gray-600 font-inter text-sm leading-relaxed">
-              <strong className="text-[#071013]">Faustregel:</strong> Ein KI-Agent rechnet sich, wenn er mindestens 20 Stunden manuelle Routinearbeit pro Woche ersetzt oder ab 1.000 wiederkehrende Vorgänge pro Monat automatisiert. Darunter ist eine einfachere Automatisierung oft die bessere Wahl.{' '}
-              <Link href="/ki-automatisierung-mittelstand" className="text-[#c2007a] hover:underline">
+          <div className="p-4 bg-ground rounded-xl border border-line">
+            <p className="text-muted font-inter text-sm leading-relaxed">
+              <strong className="text-ink">Faustregel:</strong> Ein KI-Agent rechnet sich, wenn er mindestens 20 Stunden manuelle Routinearbeit pro Woche ersetzt oder ab 1.000 wiederkehrende Vorgänge pro Monat automatisiert. Darunter ist eine einfachere Automatisierung oft die bessere Wahl.{' '}
+              <Link href="/ki-automatisierung-mittelstand" className="text-magenta-light hover:underline">
                 Mehr zu Workflow-Automatisierung
               </Link>
             </p>
@@ -411,16 +411,16 @@ export default function KiAgentenPage() {
       </section>
 
       {/* ── WANN / WANN NICHT ── */}
-      <section className="py-16 md:py-20 px-4 border-t border-gray-100">
+      <section className="py-16 md:py-20 px-4 border-t border-line">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading font-bold text-[#071013] mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+          <h2 className="font-heading font-bold text-ink mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
             Wann brauchen Sie einen KI-Agenten?{' '}
-            <span className="text-[#f90093]">Und wann nicht?</span>
+            <span className="text-magenta-light">Und wann nicht?</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
-              <h3 className="font-heading font-semibold text-[#071013] mb-4 flex items-center gap-2">
-                <span className="text-[#f90093]">✓</span> Ein KI-Agent macht Sinn, wenn:
+            <div className="bg-surface rounded-xl border border-line p-6">
+              <h3 className="font-heading font-semibold text-ink mb-4 flex items-center gap-2">
+                <span className="text-magenta-light">✓</span> Ein KI-Agent macht Sinn, wenn:
               </h3>
               <ul className="space-y-2">
                 {[
@@ -429,15 +429,15 @@ export default function KiAgentenPage() {
                   'Das Volumen hoch genug ist (1.000+ Vorgänge/Monat oder 20+ Stunden/Woche)',
                   'Wissen aus verschiedenen Quellen zusammengeführt werden muss',
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-gray-600 font-inter text-sm">
-                    <span className="text-[#f90093] mt-0.5 flex-shrink-0">•</span>
+                  <li key={i} className="flex items-start gap-2 text-muted font-inter text-sm">
+                    <span className="text-magenta-light mt-0.5 flex-shrink-0">•</span>
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-[#faf9f7] rounded-xl border border-gray-200 p-6">
-              <h3 className="font-heading font-semibold text-[#071013] mb-4 flex items-center gap-2">
+            <div className="bg-ground rounded-xl border border-line p-6">
+              <h3 className="font-heading font-semibold text-ink mb-4 flex items-center gap-2">
                 <span className="text-gray-400">✗</span> Ein KI-Agent ist überdimensioniert, wenn:
               </h3>
               <ul className="space-y-2">
@@ -447,17 +447,17 @@ export default function KiAgentenPage() {
                   'Ein Standard-Tool das Problem bereits löst',
                   'Die Datenqualität grundsätzlich nicht stimmt (erst aufräumen, dann automatisieren)',
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-gray-600 font-inter text-sm">
+                  <li key={i} className="flex items-start gap-2 text-muted font-inter text-sm">
                     <span className="text-gray-400 mt-0.5 flex-shrink-0">•</span>
                     {item}
                   </li>
                 ))}
               </ul>
-              <p className="text-gray-500 font-inter text-xs mt-4">
+              <p className="text-dim font-inter text-xs mt-4">
                 In diesen Fällen reicht oft eine{' '}
-                <Link href="/ki-automatisierung-mittelstand" className="text-[#c2007a] hover:underline">einfache Automatisierung</Link>
+                <Link href="/ki-automatisierung-mittelstand" className="text-magenta-light hover:underline">einfache Automatisierung</Link>
                 {' '}oder eine{' '}
-                <Link href="/ki-schulungen-mittelstand" className="text-[#c2007a] hover:underline">Schulung</Link>.
+                <Link href="/ki-schulungen-mittelstand" className="text-magenta-light hover:underline">Schulung</Link>.
               </p>
             </div>
           </div>
@@ -465,10 +465,10 @@ export default function KiAgentenPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-16 md:py-20 px-4 border-t border-gray-100">
+      <section className="py-16 md:py-20 px-4 border-t border-line">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading font-bold text-[#071013] mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
-            Häufige <span className="text-[#f90093]">Fragen</span>
+          <h2 className="font-heading font-bold text-ink mb-8" style={{ fontSize: 'clamp(1.375rem, 4vw, 2rem)' }}>
+            Häufige <span className="text-magenta-light">Fragen</span>
           </h2>
           <FaqAccordion />
         </div>
@@ -478,7 +478,7 @@ export default function KiAgentenPage() {
       <section className="py-20 md:py-28 px-4" style={{ backgroundColor: '#071013' }}>
         <div className="max-w-3xl mx-auto text-center">
           <div
-            className="inline-block px-4 py-1.5 rounded-full border border-[#f90093]/40 text-[#f90093] text-sm font-heading font-semibold mb-6"
+            className="inline-block px-4 py-1.5 rounded-full border border-[#f90093]/40 text-magenta-light text-sm font-heading font-semibold mb-6"
             style={{ boxShadow: '0 0 20px rgba(249, 0, 147, 0.2)' }}
           >
             Kostenloses Erstgespräch
@@ -488,7 +488,7 @@ export default function KiAgentenPage() {
             style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}
           >
             Welcher Prozess in Ihrem Unternehmen wäre der perfekte Kandidat für einen{' '}
-            <span className="text-[#f90093]">KI-Agenten?</span>
+            <span className="text-magenta-light">KI-Agenten?</span>
           </h2>
           <p className="text-gray-300 font-inter mb-10" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1.125rem)' }}>
             Wir finden es gemeinsam heraus. 30 Minuten Erstgespräch, kostenlos. Keine Verkaufsveranstaltung,
@@ -499,7 +499,7 @@ export default function KiAgentenPage() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 font-heading font-semibold text-white rounded-xl transition-all duration-300"
+              className="px-8 py-4 font-heading font-semibold text-[#071013] rounded-xl transition-all duration-300"
               style={{
                 background: 'linear-gradient(135deg, #f90093, #ff4ecd)',
                 boxShadow: '0 0 30px rgba(249, 0, 147, 0.4)',

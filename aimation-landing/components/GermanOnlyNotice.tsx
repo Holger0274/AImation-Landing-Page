@@ -22,18 +22,18 @@ export default async function GermanOnlyNotice({ namespace, href }: Props) {
   return (
     <>
       <Header />
-      <main id="main-content" className="bg-[#faf9f7]">
+      <main id="main-content" className="bg-ground">
         <div className="max-w-4xl mx-auto px-6 py-32 md:py-40 text-center">
           <h1
-            className="font-heading font-bold text-[#071013] mb-6 leading-tight"
+            className="font-heading font-bold text-ink mb-6 leading-tight"
             style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}
           >
             {t('headline')}
           </h1>
-          <p className="text-lg text-gray-600 font-inter mb-8">{t('notice')}</p>
+          <p className="text-lg text-muted font-inter mb-8">{t('notice')}</p>
           <Link
             href={href}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-[#071013] transition-all duration-200 hover:scale-105 active:scale-95"
             style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
           >
             {t('cta')} <ArrowRight className="w-5 h-5" />

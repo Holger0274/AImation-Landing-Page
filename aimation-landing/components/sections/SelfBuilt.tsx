@@ -45,28 +45,28 @@ const ROW_1 = TOOL_PILLS.slice(0, 4);
 const ROW_2 = TOOL_PILLS.slice(4, 8);
 
 const categoryStyles: Record<string, string> = {
-  llm: 'bg-violet-50 text-violet-600 border-violet-100',
-  automation: 'bg-rose-50 text-rose-600 border-rose-100',
-  enterprise: 'bg-blue-50 text-blue-600 border-blue-100',
-  productivity: 'bg-amber-50 text-amber-600 border-amber-100',
-  dev: 'bg-emerald-50 text-emerald-600 border-emerald-100',
+  llm: 'bg-violet-500/10 text-violet-300 border-violet-500/25',
+  automation: 'bg-rose-500/10 text-rose-300 border-rose-500/25',
+  enterprise: 'bg-blue-500/10 text-blue-300 border-blue-500/25',
+  productivity: 'bg-amber-500/10 text-amber-300 border-amber-500/25',
+  dev: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/25',
 };
 
 function ToolPillItem({ tool, delay }: { tool: ToolPill; delay: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay }}
       whileHover={{ y: -3, transition: { duration: 0.2 } }}
-      className="group flex items-center gap-3 bg-white border border-gray-200 rounded-2xl px-4 py-3 shadow-sm cursor-default select-none hover:border-[#60AFFF]/40 hover:shadow-md transition-shadow duration-300"
+      className="group flex items-center gap-3 bg-surface border border-line rounded-2xl px-4 py-3 shadow-sm cursor-default select-none hover:border-[#60AFFF]/40 hover:shadow-md transition-shadow duration-300"
     >
-      <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center group-hover:bg-[#60AFFF]/10 transition-colors duration-300">
+      <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-surface flex items-center justify-center group-hover:bg-[#60AFFF]/10 transition-colors duration-300">
         {tool.icon}
       </div>
       <div className="flex flex-col min-w-0">
-        <span className="text-sm font-heading font-semibold text-[#071013] whitespace-nowrap leading-tight">
+        <span className="text-sm font-heading font-semibold text-ink whitespace-nowrap leading-tight">
           {tool.name}
         </span>
         <span
@@ -88,23 +88,23 @@ export default function SelfBuilt() {
     <section
       className="py-20 md:py-32"
       style={{
-        backgroundColor: '#faf9f7',
+        backgroundColor: 'transparent',
         backgroundImage:
-          'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+          'none',
         backgroundSize: '72px 72px',
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-5 text-[#071013] leading-tight">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-5 text-ink leading-tight">
             {t('headline')} <span className="gradient-text">{t('headlineHighlight')}</span>
           </h2>
-          <p className="text-gray-600 font-inter leading-relaxed">{t('body')}</p>
+          <p className="text-muted font-inter leading-relaxed">{t('body')}</p>
         </motion.div>
 
         {/* Demo-Kacheln. Screencasts liefert Holger, siehe TODO-assets.md */}
@@ -130,7 +130,7 @@ export default function SelfBuilt() {
           <button
             type="button"
             onClick={openLeadForm}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-bold text-white"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-bold text-[#071013]"
             style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
           >
             {t('ctaButton')}
@@ -139,15 +139,15 @@ export default function SelfBuilt() {
 
         {/* Tool-Wand aus Spec 01, hier in die neue Sektion umgezogen */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 text-[#071013]">
+          <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 text-ink">
             {tTools('toolsHeadline')} <span className="gradient-text">{tTools('toolsHighlight')}</span>
           </h3>
-          <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto">{tTools('toolsSubline')}</p>
+          <p className="text-dim text-sm md:text-base max-w-xl mx-auto">{tTools('toolsSubline')}</p>
         </motion.div>
 
         <div className="space-y-4 overflow-hidden">

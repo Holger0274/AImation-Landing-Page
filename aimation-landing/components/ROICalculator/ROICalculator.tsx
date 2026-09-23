@@ -98,15 +98,13 @@ export default function ROICalculator({
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="sm:max-w-4xl max-h-[90vh] overflow-y-auto">
-        {/* Hide default header when showing results */}
-        {!results && (
-          <DialogHeader className="sr-only">
+        {/* Keep the dialog named for screen readers on every step. */}
+        <DialogHeader className="sr-only">
             <DialogTitle>KI-ROI-Rechner</DialogTitle>
             <DialogDescription>
               Berechnen Sie Ihr KI-Einsparpotenzial in 2 Minuten
             </DialogDescription>
-          </DialogHeader>
-        )}
+        </DialogHeader>
 
         {!results ? (
           <CalculatorSteps onComplete={handleCalculatorComplete} />

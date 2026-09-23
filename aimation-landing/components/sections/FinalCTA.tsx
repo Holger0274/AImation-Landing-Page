@@ -1,112 +1,26 @@
 'use client';
-
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Calculator } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { useLeadForm } from '@/components/LeadFormProvider';
 import ROICalculator from '@/components/ROICalculator/ROICalculator';
-import LeadFormModal from '@/components/LeadFormModal';
 
 export default function FinalCTA() {
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
-  const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
+  const { openLeadForm } = useLeadForm();
   const t = useTranslations('finalCta');
-
   return (
-    <section
-      id="kontakt"
-      className="relative py-20 md:py-32 text-white overflow-hidden"
-      style={{
-        backgroundColor: '#071013',
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
-        backgroundSize: '72px 72px',
-      }}
-    >
-      {/* Animated Glow Background - Responsive */}
-      <div className="absolute inset-0">
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
-          style={{
-            width: 'clamp(300px, 80vw, 800px)',
-            height: 'clamp(200px, 50vh, 500px)',
-            background: 'radial-gradient(ellipse, rgba(249, 0, 147, 0.2) 0%, transparent 70%)',
-            filter: 'blur(80px)',
-          }}
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
+    <section id="kontakt" className="engineering-section closing-section">
+      <div className="engineering-wrap closing-layout">
+        <div className="section-intro"><h2>{t('headline')} <span className="highlight">{t('headlineHighlight')}</span> {t('headlineEnd')}</h2><p>{t('subline')}</p></div>
+        <div className="closing-actions">
+          <button onClick={openLeadForm} className="engineering-button">{t('ctaPrimary')}<ArrowUpRight size={18} aria-hidden="true" /></button>
+          <p>{t('microcopy1')}</p>
+          <button onClick={() => setIsCalculatorOpen(true)} data-roi-calculator-trigger className="engineering-text-link">{t('ctaSecondary')}<ArrowUpRight size={16} aria-hidden="true" /></button>
+          <p>{t('microcopy2')}</p>
+        </div>
       </div>
-
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="font-heading font-bold mb-6" style={{ fontSize: 'clamp(2rem, 7vw, 3.75rem)' }}>
-            {t('headline')}{' '}
-            <span className="text-magenta text-glow-magenta">{t('headlineHighlight')}</span>{' '}
-            {t('headlineEnd')}
-          </h2>
-
-          <p className="text-gray-400 max-w-2xl mx-auto mb-12" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>
-            {t('subline')}
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            {/* Primary CTA - Magenta Button (Erstgespräch) */}
-            <motion.button
-              onClick={() => setIsLeadFormOpen(true)}
-              className="group px-8 py-4 bg-gradient-to-r from-magenta to-magenta-light text-white font-heading font-semibold rounded-lg glow-magenta-strong w-full sm:w-auto"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="flex items-center justify-center gap-2">
-                {t('ctaPrimary')}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </motion.button>
-
-            {/* Secondary CTA - Ghost Button (ROI Calculator) */}
-            <motion.button
-              onClick={() => setIsCalculatorOpen(true)}
-              data-roi-calculator-trigger
-              className="group px-8 py-4 border-2 border-white/20 hover:border-white/40 text-white font-heading font-semibold rounded-lg backdrop-blur-sm transition-all w-full sm:w-auto"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="flex items-center justify-center gap-2">
-                <Calculator className="w-5 h-5" />
-                {t('ctaSecondary')}
-              </span>
-            </motion.button>
-          </div>
-
-          {/* Microcopy below CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-300">
-            <p>{t('microcopy1')}</p>
-            <p className="hidden sm:block">|</p>
-            <p>{t('microcopy2')}</p>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* ROI Calculator Modal */}
-      <ROICalculator
-        isOpen={isCalculatorOpen}
-        onClose={() => setIsCalculatorOpen(false)}
-        calendlyUrl="https://calendly.com/holgerpeschke-hp/erstgespraech"
-      />
-
-      {/* Lead Form Modal */}
-      <LeadFormModal isOpen={isLeadFormOpen} onClose={() => setIsLeadFormOpen(false)} />
+      <ROICalculator isOpen={isCalculatorOpen} onClose={() => setIsCalculatorOpen(false)} calendlyUrl="https://calendly.com/holgerpeschke-hp/erstgespraech" />
     </section>
   );
 }

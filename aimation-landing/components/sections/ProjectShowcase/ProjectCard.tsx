@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Project, SOLUTION_WORLD_COLORS, STATUS_CONFIG } from './types';
 import ImagePlaceholder from './ImagePlaceholder';
+import { trackSpotlight } from '@/components/visuals/SpotlightPanel';
 
 interface ProjectCardProps {
   project: Project;
@@ -19,23 +20,24 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const cardContent = (
     <motion.div
       className={`
-        group relative h-full bg-white rounded-xl border border-gray-200 overflow-hidden
+        spot-card group relative h-full rounded-xl overflow-hidden
         transition-all duration-300
         hover:shadow-xl
         ${isComingSoon ? 'opacity-60' : ''}
       `}
       whileHover={{ y: -4 }}
+      onPointerMove={trackSpotlight}
     >
       {/* Image Area */}
-      <div className="relative w-full aspect-video overflow-hidden bg-gray-100">
+      <div className="relative w-full aspect-video overflow-hidden bg-raised">
         {project.detailUrl && project.status === 'completed' && (
           <div className="absolute inset-0 z-10 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center pointer-events-none">
-            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
-              <svg className="w-4 h-4 text-[#f90093]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-surface backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
+              <svg className="w-4 h-4 text-magenta-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
               </svg>
-              <span className="text-sm font-semibold text-[#071013]">{t('detailsView')}</span>
+              <span className="text-sm font-semibold text-ink">{t('detailsView')}</span>
             </div>
           </div>
         )}
@@ -79,20 +81,20 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-semibold text-[#071013] font-space-grotesk">
+        <h3 className="text-xl font-semibold text-ink font-space-grotesk">
           {t(`cards.${project.id}.title`)}
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-gray-600 leading-relaxed font-inter">
+        <p className="text-sm text-muted leading-relaxed font-inter">
           {t(`cards.${project.id}.description`)}
         </p>
 
         {/* Metric (if available) */}
         {project.metrics && (
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#faf9f7] rounded-lg border border-gray-200">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-ground rounded-lg border border-line">
             <svg
-              className="w-4 h-4 text-[#f90093]"
+              className="w-4 h-4 text-magenta-light"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -104,7 +106,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
               />
             </svg>
-            <span className="text-sm font-medium text-[#071013]">{t(`cards.${project.id}.metrics`)}</span>
+            <span className="text-sm font-medium text-ink">{t(`cards.${project.id}.metrics`)}</span>
           </div>
         )}
 
@@ -113,7 +115,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-md"
+              className="px-2.5 py-1 text-xs font-medium text-muted bg-raised rounded-md"
             >
               {tag}
             </span>
@@ -121,7 +123,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Status + Detail Link */}
-        <div className="pt-2 border-t border-gray-100">
+        <div className="pt-2 border-t border-line">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className={`w-2 h-2 rounded-full ${statusConfig.dotColor}`} />
@@ -130,7 +132,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               </span>
             </div>
             {project.detailUrl && project.status === 'completed' && (
-              <span className="flex items-center gap-1 text-xs font-medium text-[#c2007a] group-hover:gap-2 transition-all duration-200">
+              <span className="flex items-center gap-1 text-xs font-medium text-magenta-light group-hover:gap-2 transition-all duration-200">
                 {t('detailsView')}
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -143,9 +145,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Coming Soon Overlay */}
       {isComingSoon && (
-        <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px] flex items-center justify-center pointer-events-none">
-          <div className="bg-white px-6 py-3 rounded-full shadow-lg border border-gray-200">
-            <span className="text-sm font-semibold text-gray-600">{t('comingSoon')}</span>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px] flex items-center justify-center pointer-events-none">
+          <div className="bg-surface px-6 py-3 rounded-full shadow-lg border border-line">
+            <span className="text-sm font-semibold text-muted">{t('comingSoon')}</span>
           </div>
         </div>
       )}

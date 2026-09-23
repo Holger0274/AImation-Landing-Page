@@ -93,8 +93,8 @@ export default function ProjectShowcase() {
       ref={sectionRef}
       className="relative py-20 md:py-32 overflow-hidden"
       style={{
-        backgroundColor: '#faf9f7',
-        backgroundImage: 'linear-gradient(rgba(7,16,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,16,19,0.07) 1px, transparent 1px)',
+        backgroundColor: 'transparent',
+        backgroundImage: 'none',
         backgroundSize: '72px 72px',
       }}
     >
@@ -108,24 +108,24 @@ export default function ProjectShowcase() {
         >
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-surface border border-line rounded-full mb-6"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
           >
             <div className="w-2 h-2 bg-[#f90093] rounded-full" />
-            <span className="text-sm font-medium text-[#071013]">{t('badge')}</span>
+            <span className="text-sm font-medium text-ink">{t('badge')}</span>
           </motion.div>
 
           {/* Headline */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#071013] mb-4 font-space-grotesk">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ink mb-4 font-space-grotesk">
             {t('headline')}{' '}
-            <span className="text-[#f90093]">{t('headlineHighlight')}</span>{' '}
+            <span className="text-magenta-light">{t('headlineHighlight')}</span>{' '}
             {t('headlineEnd')}
           </h2>
 
           {/* Subline */}
-          <p className="text-lg text-gray-600 font-inter">
+          <p className="text-lg text-muted font-inter">
             {t('subline')}
           </p>
         </motion.div>
@@ -145,8 +145,8 @@ export default function ProjectShowcase() {
                 hidden md:flex
                 absolute left-0 top-1/2 -translate-y-1/2 z-10
                 w-12 h-12 items-center justify-center
-                bg-white border border-gray-200 rounded-full shadow-lg
-                text-gray-700 hover:text-[#f90093] hover:border-[#f90093]
+                bg-surface border border-line rounded-full shadow-lg
+                text-muted hover:text-magenta-light hover:border-[#f90093]
                 transition-all duration-300
                 hover:scale-110
               "
@@ -165,8 +165,8 @@ export default function ProjectShowcase() {
                 hidden md:flex
                 absolute right-0 top-1/2 -translate-y-1/2 z-10
                 w-12 h-12 items-center justify-center
-                bg-white border border-gray-200 rounded-full shadow-lg
-                text-gray-700 hover:text-[#f90093] hover:border-[#f90093]
+                bg-surface border border-line rounded-full shadow-lg
+                text-muted hover:text-magenta-light hover:border-[#f90093]
                 transition-all duration-300
                 hover:scale-110
               "
@@ -230,7 +230,7 @@ export default function ProjectShowcase() {
         <div className="text-center mt-2 mb-8">
           <Link
             href="/use-cases"
-            className="inline-flex items-center gap-1.5 text-[#c2007a] font-heading font-semibold hover:underline"
+            className="inline-flex items-center gap-1.5 text-magenta-light font-heading font-semibold hover:underline"
           >
             {t('allUseCasesLink')}
             <ArrowRight className="w-4 h-4" />
@@ -244,7 +244,7 @@ export default function ProjectShowcase() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="text-gray-600 mb-4 font-inter">
+          <p className="text-muted mb-4 font-inter">
             {t('ctaText')}
           </p>
           <a

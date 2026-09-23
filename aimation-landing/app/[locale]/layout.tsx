@@ -167,7 +167,7 @@ export default async function LocaleLayout({
       {/* Skip to content link for accessibility */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-6 focus:py-3 focus:bg-gradient-to-r focus:from-magenta focus:to-magenta-light focus:text-white focus:font-semibold focus:rounded-lg focus:shadow-lg"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-6 focus:py-3 focus:bg-gradient-to-r focus:from-magenta focus:to-magenta-light focus:text-[#071013] focus:font-semibold focus:rounded-lg focus:shadow-lg"
       >
         {locale === 'de' ? 'Zum Hauptinhalt springen' : 'Skip to main content'}
       </a>
