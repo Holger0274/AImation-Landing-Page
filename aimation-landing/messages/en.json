@@ -38,8 +38,8 @@
     "headline": "Does any of this sound",
     "headlineHighlight": "familiar",
     "headlineEnd": "?",
-    "body1": "These six sentences come up in almost every conversation we have with engineering managers. None of them need to be true in 2026.",
-    "body2": "If you are an engineering manager, CTO, or technical CEO: you recognise at least three of them.",
+    "body1": "Collecting figures in Excel, updating status slides in PowerPoint, writing minutes after the meeting. The actual engineering work has to wait.",
+    "body2": "We look at these time-consuming tasks with your team and assess which preparation AI can take on. Figures, statements and decisions must remain verifiable.",
     "futureText": "",
     "futureHighlight": "",
     "futureEnd": "",
@@ -49,6 +49,7 @@
     "modalClose": "Close modal",
     "clickHint": "See what the solution looks like →",
     "anchorBadge": "The costliest pain point",
+    "reportingBadge": "Time lost every day",
     "quellePrafix": "Source:",
     "stats": {
       "knowledge": {
@@ -60,8 +61,8 @@
       },
       "reporting": {
         "stat": "",
-        "title": "Reporting work",
-        "description": "You hired your engineers to engineer. On Fridays they write reports, meeting minutes, and status slides.",
+        "title": "Excel & PowerPoint",
+        "description": "Reconciling Excel spreadsheets, building PowerPoint reports. After the meeting, writing minutes and assigning tasks. Every week. That time is missing from engineering.",
         "statLabel": "",
         "source": ""
       },

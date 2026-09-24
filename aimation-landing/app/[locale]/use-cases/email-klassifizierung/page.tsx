@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import ImageOriginLabel from '@/components/ui/ImageOriginLabel';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
@@ -81,8 +82,8 @@ export default async function EmailKlassifizierungPage({
               className="object-cover"
               priority
             />
+            <ImageOriginLabel src="/images/editorial/requests.webp" />
           </div>
-          <p className="text-xs text-dim -mt-5 mb-8">KI-generierte Illustration des Anwendungsfalls</p>
 
           <p className="text-muted font-inter leading-relaxed mb-4">
             Montagmorgen, halb neun. 80 ungelesene Mails in der zentralen Inbox. Eine Kundenbeschwerde von Freitagnachmittag, die niemand gesehen hat. Eine dringende Angebotsanfrage, die zwischen Newslettern und Rechnungen verschwindet. Und ein Mitarbeiter, der die erste Stunde des Tages damit verbringt, zu sortieren statt zu arbeiten.

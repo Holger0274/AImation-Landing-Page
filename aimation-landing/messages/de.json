@@ -38,8 +38,8 @@
     "headline": "Kommt Ihnen das",
     "headlineHighlight": "bekannt",
     "headlineEnd": "vor?",
-    "body1": "Diese sechs Sätze hören wir in fast jedem Gespräch mit Entwicklungsleitern. Keiner davon muss 2026 noch wahr sein.",
-    "body2": "Wenn Sie Entwicklungsleiter, CTO oder technischer Geschäftsführer sind: Sie kennen mindestens drei davon.",
+    "body1": "Zahlen in Excel zusammentragen, Statusfolien in PowerPoint aktualisieren, nach dem Meeting das Protokoll schreiben. Die eigentliche Entwicklungsarbeit wartet.",
+    "body2": "Wir schauen mit Ihrem Team auf diese Zeitfresser und prüfen, welche Vorarbeit KI übernehmen kann. Zahlen, Aussagen und Entscheidungen müssen überprüfbar bleiben.",
     "futureText": "",
     "futureHighlight": "",
     "futureEnd": "",
@@ -49,6 +49,7 @@
     "modalClose": "Modal schließen",
     "clickHint": "Ansehen, wie die Lösung aussieht →",
     "anchorBadge": "Der teuerste Schmerz",
+    "reportingBadge": "Zeitfresser im Alltag",
     "quellePrafix": "Quelle:",
     "stats": {
       "knowledge": {
@@ -60,8 +61,8 @@
       },
       "reporting": {
         "stat": "",
-        "title": "Berichtsarbeit",
-        "description": "Ihre Ingenieure haben Sie fürs Entwickeln eingestellt. Freitags schreiben sie Berichte, Protokolle und Statusfolien.",
+        "title": "Excel & PowerPoint",
+        "description": "Excel-Tabellen abgleichen, PowerPoint-Berichte bauen. Nach dem Meeting noch das Protokoll schreiben und Aufgaben verteilen. Jede Woche wieder. Diese Zeit fehlt in der Entwicklung.",
         "statLabel": "",
         "source": ""
       },

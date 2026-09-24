@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import ImageOriginLabel from '@/components/ui/ImageOriginLabel';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
@@ -81,8 +82,8 @@ export default async function PatentrechercheKiPage({
               className="object-cover"
               priority
             />
+            <ImageOriginLabel src="/images/editorial/research.webp" />
           </div>
-          <p className="text-xs text-dim -mt-5 mb-8">KI-generierte Illustration des Anwendungsfalls</p>
 
           <p className="text-muted font-inter leading-relaxed mb-4">
             Wochen Konzeptarbeit. Dann die Mail aus der Patentabteilung: Ein Wettbewerber hat genau das bereits geschützt. Projekt zurück auf Null.

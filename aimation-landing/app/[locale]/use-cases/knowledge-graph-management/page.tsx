@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import ImageOriginLabel from '@/components/ui/ImageOriginLabel';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
@@ -81,8 +82,8 @@ export default async function KnowledgeGraphPage({
               className="object-cover"
               priority
             />
+            <ImageOriginLabel src="/images/editorial/engineering-knowledge.webp" />
           </div>
-          <p className="text-xs text-dim -mt-5 mb-8">KI-generierte Illustration des Anwendungsfalls</p>
 
           <p className="text-muted font-inter leading-relaxed mb-4">
             Ein Ingenieur geht in Rente. 35 Jahre Erfahrung, hunderte gelöste Probleme, unzählige Workarounds, die nirgendwo dokumentiert sind. Abschiedsfeier, Blumen, gute Wünsche. Drei Monate später taucht genau das Problem wieder auf, das er vor acht Jahren einmal gelöst hat. Niemand erinnert sich. Das Wissen ist weg.
