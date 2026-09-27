@@ -90,7 +90,7 @@
       "competition": {
         "stat": "",
         "title": "Falling behind",
-        "description": "While you are still checking whether AI is safe with your data, your competitor is already automating their development. The safety question has long been solvable: GDPR-compliant, hosted in the EU.",
+        "description": "Reports, research, documentation: reducing this groundwork with AI frees up time for engineering. Before starting, we establish which data may be used and how it will be protected.",
         "statLabel": "",
         "source": ""
       }
@@ -98,7 +98,8 @@
   },
   "euAiAct": {
     "headline": "By the way: the EU AI Act already applies",
-    "body": "Since February 2025, Article 4 requires demonstrable AI literacy from employees who use AI. Since August 2026, penalties are enforceable. No reason to panic, but a good reason not to push training into next year.",
+    "body": "Article 4 requires AI providers and deployers to support the development of AI literacy. Measures should reflect the systems in use, the tasks and the team's existing knowledge. No specific certificate is required.",
+    "source": "Source: European Commission, questions and answers on Article 4",
     "cta": "See training courses"
   },
   "kiLandkarte": {
@@ -394,7 +395,7 @@
     "point2": "Fixed price 4,900 euros, 4-week timeline",
     "point3": "Your data stays in the EU, GDPR-compliant",
     "cta": "Discuss your pilot with me",
-    "ctaMicrocopy": "Free, 15 minutes, no sales pitch."
+    "ctaMicrocopy": "Free, 30 minutes, no sales pitch."
   },
   "process": {
     "headline": "From the first call to a",
@@ -516,7 +517,7 @@
     "differentiators": [
       "I know your processes, not from books, but because I lived them myself for 20 years.",
       "If AI does not make sense for you, I will tell you that. Even if it costs me the project.",
-      "Built for the Mittelstand: fixed prices, short timelines, running next week instead of next quarter.",
+      "Built for the Mittelstand: clear scope, agreed prices and an initial pilot in four weeks.",
       "Training, consulting, implementation from one hand. One contact, one call."
     ]
   },
@@ -526,7 +527,7 @@
     "scrollRight": "Scroll right",
     "uknow": {
       "kicker": "Technology partner",
-      "body": "For knowledge management projects, we use the U-KNOW.AI platform: answers with source citations instead of hallucinations, GDPR-compliant, available on-premises too.",
+      "body": "For knowledge management projects, we use the U-KNOW.AI platform: answers with source citations your team can check. On-premises deployment is also possible. We establish access rights, data protection requirements and the operating model for your project.",
       "link": "Visit U-KNOW.AI",
       "href": "https://www.u-know.ai"
     },
@@ -631,7 +632,7 @@
       },
       {
         "question": "How quickly do we see results?",
-        "answer": "The fastest path is the pilot: one single process, fixed price, live in weeks rather than quarters. After that you know from direct experience what AI delivers for you, and you decide on that basis."
+        "answer": "For the AI Landscape Map, you receive a report with prioritised use cases 3 to 5 days after the workshop. In the four-week pilot, we test one process with your data for time savings and output quality. Together, we document the steps needed before production use."
       },
       {
         "question": "What does it cost?",

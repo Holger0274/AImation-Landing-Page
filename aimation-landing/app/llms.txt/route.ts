@@ -21,6 +21,7 @@ KI-Beratung, Schulung und Umsetzung für die technische Produktentwicklung im DA
 
 ## Use Cases
 
+- [Excel, PowerPoint und Berichte mit KI vorbereiten](${siteUrl}/use-cases/excel-powerpoint-berichte): Beispielablauf mit Meeting-Nacharbeit, Quellenbezug, festen Rechenregeln und menschlicher Freigabe. Keine garantierten Einsparwerte.
 - [Patentrecherche und Prior Art](${siteUrl}/use-cases/patentrecherche-ki): automatisierte Analyse von Patentdatenbanken, findet relevante Prior Art vor Konstruktionsstart
 - [Technische Anfragen automatisch vorsortieren](${siteUrl}/use-cases/email-klassifizierung): Klassifizierung eingehender technischer Anfragen, Antwortentwurf inklusive
 - [Engineering-Wissen vernetzen](${siteUrl}/use-cases/knowledge-graph-management): Berichte und Dokumente automatisch verschlagwortet und semantisch verknüpft

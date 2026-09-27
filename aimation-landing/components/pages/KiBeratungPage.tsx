@@ -27,7 +27,7 @@ const BERATUNG_PHASES = [
     modules: [
       { title: 'Vendor & Tool Selection', desc: 'Herstellerunabhängige Bewertung der richtigen Tools für Ihren Use Case.' },
       { title: 'Change Management', desc: 'Mitarbeiter mitnehmen. KI-Kultur aufbauen. Widerstand abbauen.' },
-      { title: 'KI-Governance Setup', desc: 'Richtlinien, Datenschutz, AI Act – rechtssicher aufgestellt.' },
+      { title: 'KI-Governance Setup', desc: 'Regeln für den KI-Einsatz und Zuständigkeiten festlegen. Offene Datenschutzfragen mit Ihren Verantwortlichen klären.' },
     ],
   },
 ];
@@ -45,7 +45,7 @@ export default function KiBeratungPage() {
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter">
             <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-ink font-medium">KI-Beratung für KMUs</span>
+            <span className="text-ink font-medium">KI-Beratung für die Produktentwicklung</span>
           </nav>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f90093] text-magenta-light text-xs font-heading font-semibold mb-6">
             Säule 2: Beratung
@@ -57,8 +57,8 @@ export default function KiBeratungPage() {
             className="font-heading font-bold text-ink mb-6 leading-tight"
             style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}
           >
-            KI-Beratung für KMUs:{' '}
-            <span className="text-magenta-light">Klarheit statt Hype</span>
+            KI-Beratung für die{' '}
+            <span className="text-magenta-light">Produktentwicklung</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -67,8 +67,10 @@ export default function KiBeratungPage() {
             className="text-muted font-inter leading-relaxed mb-8"
             style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}
           >
-            Wo stehen Sie wirklich? Welche KI-Investitionen lohnen sich? Was kostet zu viel, was bringt zu wenig?
-            Wir sagen Ihnen die Wahrheit – auch wenn die Antwort lautet: KI ist hier nicht die richtige Lösung.
+            Wir prüfen mit Ihnen, wo Ihre Entwicklung Zeit verliert: bei technischen Anfragen,
+            der Suche nach Wissen oder beim Bericht für das nächste Projektreview.
+            Sie erhalten priorisierte Use Cases, eine ROI-Schätzung und einen Vorschlag für den ersten Pilot.
+            Wo eine Excel-Formel reicht, empfehlen wir keine KI.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -96,6 +98,16 @@ export default function KiBeratungPage() {
       </section>
 
       {/* 3 PHASES */}
+      <section className="px-4 pb-12">
+        <div className="max-w-4xl mx-auto border-t border-line pt-8">
+          <h2 className="font-heading text-2xl mb-4">Drei konkrete Startpunkte für Ihre Entwicklung</h2>
+          <ul className="space-y-4 text-muted">
+            <li><Link href="/use-cases/excel-powerpoint-berichte" className="engineering-text-link">Excel, PowerPoint und Berichte: vom Datenstand zum geprüften Entwurf →</Link></li>
+            <li><Link href="/use-cases/knowledge-graph-management" className="engineering-text-link">Engineering-Wissen: Erfahrungen aus Berichten wiederfinden →</Link></li>
+            <li><Link href="/use-cases/email-klassifizierung" className="engineering-text-link">Technische Anfragen: vorsortieren und Antworten vorbereiten →</Link></li>
+          </ul>
+        </div>
+      </section>
       <section className="py-16 px-4 bg-surface">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-heading font-bold text-ink text-center mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}>

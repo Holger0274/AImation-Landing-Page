@@ -1,62 +1,38 @@
 import { NextResponse } from 'next/server';
+import { readdir } from 'node:fs/promises';
+import path from 'node:path';
+import { ENGLISH_PATHS, localizedPath } from '@/lib/seo/locales';
+import { SITE_URL } from '@/lib/seo/metadata';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
+// Discover static public pages at build time. Dynamic routes need explicit enumeration.
+export const dynamic = 'force-static';
 
-const staticPages = [
-  { path: '/', priority: '1.0', changefreq: 'weekly' },
-  { path: '/ki-beratung-kmu', priority: '0.9', changefreq: 'monthly' },
-  { path: '/ki-schulungen-mittelstand', priority: '0.9', changefreq: 'monthly' },
-  { path: '/ki-automatisierung-mittelstand', priority: '0.9', changefreq: 'monthly' },
-  { path: '/ki-agenten-unternehmen', priority: '0.9', changefreq: 'monthly' },
-  { path: '/blog', priority: '0.8', changefreq: 'weekly' },
-  { path: '/use-cases', priority: '0.7', changefreq: 'monthly' },
-  { path: '/use-cases/patentrecherche-ki', priority: '0.7', changefreq: 'monthly' },
-  { path: '/use-cases/knowledge-graph-management', priority: '0.7', changefreq: 'monthly' },
-  { path: '/use-cases/email-klassifizierung', priority: '0.7', changefreq: 'monthly' },
-  { path: '/facts/aimation', priority: '0.8', changefreq: 'monthly' },
-  { path: '/facts/holger-peschke', priority: '0.8', changefreq: 'monthly' },
-];
+async function discoverPages(directory: string, segments: string[] = []): Promise<string[]> {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const pages = entries.some((entry) => entry.isFile() && entry.name === 'page.tsx')
+    ? ['/' + segments.join('/')] : [];
+  for (const entry of entries) {
+    if (!entry.isDirectory() || /^[\[_@.]/.test(entry.name)) continue;
+    const next = entry.name.startsWith('(') ? segments : [...segments, entry.name];
+    pages.push(...await discoverPages(path.join(directory, entry.name), next));
+  }
+  return pages;
+}
 
-const blogSlugs = [
-  'ki-roadmap-illusion-mittelstand',
-  'bewertungsmethoden-ki-projekte',
-  'ki-projekte-priorisierung-rice',
-  'ki-projekte-scheitern-fundament',
-  'ki-cad-zukunft-jetzt-starten',
-  'ki-prompts-die-wirklich-funktionieren',
-  '6-stufen-ki-nutzung',
-  'schatten-ki-unternehmen',
-];
+const escapeXml = (value: string) => value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 export async function GET() {
-  const allPages = [
-    ...staticPages,
-    ...blogSlugs.map((slug) => ({
-      path: `/blog/${slug}`,
-      priority: '0.7',
-      changefreq: 'monthly',
-    })),
-  ];
-
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${allPages
-  .map(
-    ({ path, priority, changefreq }) => `  <url>
-    <loc>${siteUrl}${path}</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="${siteUrl}${path}"/>
-    <xhtml:link rel="alternate" hreflang="en" href="${siteUrl}/en${path}"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${path}"/>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
-  </url>`
-  )
-  .join('\n')}
-</urlset>`;
-
-  return new NextResponse(xml, {
-    headers: { 'Content-Type': 'application/xml' },
+  const pages = [...new Set(await discoverPages(path.join(process.cwd(), 'app', '[locale]')))].sort();
+  const entries = pages.flatMap((base) => {
+    const translated = ENGLISH_PATHS.has(base);
+    const alternates = translated
+      ? [['de', base], ['en', localizedPath(base, 'en')], ['x-default', base]]
+          .map(([language, url]) => '    <xhtml:link rel="alternate" hreflang="' + language + '" href="' + escapeXml(SITE_URL + url) + '"/>').join('\n')
+      : '';
+    return (translated ? [base, localizedPath(base, 'en')] : [base]).map((url) =>
+      '  <url>\n    <loc>' + escapeXml(SITE_URL + url) + '</loc>\n' + alternates + '\n  </url>');
+  });
+  return new NextResponse('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + entries.join('\n') + '\n</urlset>', {
+    headers: { 'Content-Type': 'application/xml; charset=utf-8' },
   });
 }

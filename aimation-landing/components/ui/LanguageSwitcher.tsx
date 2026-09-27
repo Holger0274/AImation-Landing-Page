@@ -1,6 +1,8 @@
 'use client';
 
 import { useLocale } from 'next-intl';
+import { usePathname } from '@/i18n/navigation';
+import { basePath, ENGLISH_PATHS } from '@/lib/seo/locales';
 
 interface LanguageSwitcherProps {
   isDark?: boolean;
@@ -8,6 +10,8 @@ interface LanguageSwitcherProps {
 
 export default function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
   const locale = useLocale();
+  const pathname = usePathname();
+  if (!ENGLISH_PATHS.has(basePath(pathname))) return null;
 
   function switchLocale(next: string) {
     const path = window.location.pathname;
@@ -27,7 +31,7 @@ export default function LanguageSwitcher({ isDark = false }: LanguageSwitcherPro
       }
     }
 
-    window.location.href = targetPath;
+    window.location.href = targetPath + window.location.search + window.location.hash;
   }
 
   const pillBg = isDark ? 'bg-surface' : 'bg-[#e5e7eb]';

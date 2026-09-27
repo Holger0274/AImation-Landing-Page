@@ -14,17 +14,23 @@ import EuAiActNotice from '@/components/sections/EuAiActNotice';
 import About from '@/components/sections/About';
 import Partnership from '@/components/sections/Partnership';
 import FAQ from '@/components/sections/FAQ';
-import { faqs } from '@/lib/data/faqs';
+import { getHomeFaqs } from '@/lib/data/faqs';
 import FinalCTA from '@/components/sections/FinalCTA';
 import { FAQPageSchema } from '@/components/StructuredData';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import { HOME_COPY, pageMetadata } from '@/lib/seo/metadata';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const copy = HOME_COPY[locale === 'en' ? 'en' : 'de'];
+  return pageMetadata('/', locale, copy.title, copy.description);
+}
 
 /**
  * Static Site Generation (SSG) für SEO & AI-Crawler.
  *
- * KRITISCH: AI-Crawler wie GPTBot, ClaudeBot, PerplexityBot können KEIN
- * JavaScript ausführen. Ohne SSG/SSR sehen sie nur leere HTML-Shells.
+ * Inhalte und strukturierte Daten sind ohne JavaScript-Ausführung lesbar.
  *
  * Statisches Rendering wird über generateStaticParams + setRequestLocale
  * (next-intl) erreicht. KEIN 'force-static': das würde das Root-Layout
@@ -44,6 +50,7 @@ export default async function Home({
   // Locale fuer statisches Rendering setzen, bevor next-intl-Hooks laufen.
   // Layout und Page werden von Next.js unabhaengig gerendert, daher hier erneut noetig.
   setRequestLocale(locale);
+  const faqs = getHomeFaqs(locale);
 
   return (
     <>
@@ -70,7 +77,7 @@ export default async function Home({
         <EuAiActNotice />
         <About />
         <Partnership />
-        <FAQ />
+        <FAQ items={faqs} />
         <FinalCTA />
       </main>
       <Footer />

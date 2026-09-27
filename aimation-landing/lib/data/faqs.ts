@@ -1,3 +1,6 @@
+import enMessages from '@/messages/en.json';
+import { PRICING } from './pricing';
+
 export const faqs = [
   {
     question: 'Was passiert mit unseren Konstruktions- und Projektdaten?',
@@ -22,12 +25,12 @@ export const faqs = [
   {
     question: 'Wie schnell sehen wir Ergebnisse?',
     answer:
-      'Die KI-Landkarte liefert nach einem Workshop-Tag plus 3 bis 5 Tage einen Bericht mit priorisierten Use Cases. Der Pilot ist in 4 Wochen produktiv. Schulungsinhalte sind am nächsten Arbeitstag anwendbar. Sie warten also nie länger als ein paar Tage auf ein erstes greifbares Ergebnis.',
+      'Zur KI-Landkarte erhalten Sie 3 bis 5 Tage nach dem Workshop einen Bericht mit priorisierten Use Cases. Im vierwöchigen Pilot prüfen wir einen Prozess anhand Ihrer Daten auf Zeitgewinn und Ergebnisqualität. Welche Schritte bis zum produktiven Einsatz nötig sind, halten wir gemeinsam fest.',
   },
   {
     question: 'Was kostet das?',
     answer:
-      'Die KI-Landkarte kostet ab 1.900 Euro Festpreis für einen Workshop-Tag. Der Pilot liegt bei 4.900 Euro für vier Wochen. Umsetzung startet ab 5.000 Euro, abhängig vom Agenten-Typ, plus 200 bis 800 Euro laufende Kosten im Monat. Sie erfahren den Preis vorher, nicht hinterher, keine ausweichende Antwort.',
+      `Die KI-Landkarte kostet ab ${PRICING.kiLandkarte.priceFrom.toLocaleString('de-DE')} Euro Festpreis für einen Workshop-Tag. Der Pilot liegt bei ${PRICING.pilot.price.toLocaleString('de-DE')} Euro für vier Wochen. Umsetzung startet ab ${PRICING.umsetzung.setupFrom.toLocaleString('de-DE')} Euro, plus ${PRICING.umsetzung.monthlyFrom} bis ${PRICING.umsetzung.monthlyTo} Euro laufende Kosten im Monat. Den Umfang und den Preis vereinbaren wir vor dem Start.`,
   },
   {
     question: 'Was ist der Unterschied zwischen einer Automatisierung und einem KI-Agenten?',
@@ -35,3 +38,12 @@ export const faqs = [
       'Eine Automatisierung folgt festen Regeln: Wenn A passiert, tue B. Ein KI-Agent kann darüber hinaus selbst recherchieren, bewerten und Vorschläge erarbeiten, etwa eine technische Anfrage lesen, den Kontext aus Ihren Systemen sammeln und einen Antwortentwurf vorlegen. Die Freigabe bleibt bei Ihrem Team. Mehr dazu auf der Seite zu KI-Agenten.',
   },
 ];
+
+// The visible accordion and its structured data must use the same language and prices.
+export function getHomeFaqs(locale: string) {
+  if (locale !== 'en') return faqs;
+  return enMessages.faq.items.map((item, index) => index === 5 ? {
+    ...item,
+    answer: `The AI Landscape Map starts at ${PRICING.kiLandkarte.priceFrom.toLocaleString('en-GB')} euros for one workshop day. The four-week pilot costs ${PRICING.pilot.price.toLocaleString('en-GB')} euros. Implementation starts at ${PRICING.umsetzung.setupFrom.toLocaleString('en-GB')} euros, plus ${PRICING.umsetzung.monthlyFrom} to ${PRICING.umsetzung.monthlyTo} euros per month. We agree the scope and price before starting.`,
+  } : item);
+}

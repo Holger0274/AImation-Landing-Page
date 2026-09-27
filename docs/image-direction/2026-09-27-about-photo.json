@@ -1,0 +1,21 @@
+{
+  "asset": "aimation-landing/public/images/about-holger-office-ai-edited-v2.webp",
+  "section": "About / Über mich",
+  "type": "AI-edited original photograph",
+  "original": "User-provided IMG_9088.jpeg, with IMG_9087.jpeg and IMG_9086.jpeg as initial scene references",
+  "approved_master": "exec-bb97e7cb-f981-4315-b10b-5bdb284be977.png",
+  "generation_method": "Built-in image generation tool, identity-preserving edit with original-photo reference",
+  "changes": [
+    "Kitchen replaced by a restrained bright office",
+    "White printed shirt replaced by a charcoal polo",
+    "Lighting adjusted",
+    "Background decoration reduced, desk plant retained",
+    "Square composition for the existing About image slot"
+  ],
+  "web_export": { "width": 1200, "height": 1200, "format": "webp", "quality": 88 },
+  "disclosure": {
+    "de": "Originalfoto, mit KI bearbeitet",
+    "en": "Original photo, edited with AI"
+  },
+  "notes": "User approved website integration in chat. Do not describe the generated setting as an unaltered photograph of the actual office. Original site asset about-holger.png preserved. No publishing performed."
+}

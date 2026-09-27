@@ -3,10 +3,12 @@
  *
  * WICHTIG: Alle Schema-Komponenten sind Server Components (kein 'use client')
  * damit sie im initialen HTML-Response fuer AI-Crawler sichtbar sind.
- * GPTBot, ClaudeBot, PerplexityBot koennen kein JavaScript ausfuehren!
+ * Das vermeidet die Abhängigkeit von clientseitiger JavaScript-Ausführung.
  *
  * Referenz: https://schema.org/
  */
+
+import { COMPANY_FACTS } from '@/lib/config/facts';
 
 interface OrganizationSchemaProps {
   siteUrl?: string;
@@ -33,9 +35,9 @@ export function OrganizationSchema({ siteUrl = 'https://www.aimation.de' }: Orga
       "height": "61"
     },
     "image": `${siteUrl}/images/og-image.png`,
-    "description": "KI-Beratung, Schulungen und Umsetzung für kleine und mittlere Unternehmen im DACH-Raum. 20 Jahre Engineering-Erfahrung, keine leeren Versprechen, keine Konzernpreise.",
+    "description": COMPANY_FACTS.description,
     "slogan": "Mehr Zeit für das Wesentliche",
-    "foundingDate": "2024",
+    "foundingDate": COMPANY_FACTS.foundingDate,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Sutte 19",
@@ -137,7 +139,7 @@ export function LocalBusinessSchema({ siteUrl = 'https://www.aimation.de' }: Org
     "@id": `${siteUrl}/#localbusiness`,
     "name": "AImation",
     "legalName": "AImation UG (haftungsbeschränkt)",
-    "description": "KI-Beratung, Schulungen und Automatisierung für kleine und mittlere Unternehmen im DACH-Raum. 20 Jahre Engineering-Erfahrung.",
+    "description": COMPANY_FACTS.description,
     "url": siteUrl,
     "email": "info@aimation.de",
     "address": {
@@ -159,7 +161,6 @@ export function LocalBusinessSchema({ siteUrl = 'https://www.aimation.de' }: Org
       "opens": "09:00",
       "closes": "18:00"
     },
-    "priceRange": "Auf Anfrage",
     "currenciesAccepted": "EUR",
     "paymentAccepted": "Rechnung",
     "areaServed": [
@@ -175,7 +176,7 @@ export function LocalBusinessSchema({ siteUrl = 'https://www.aimation.de' }: Org
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "KI-Services für KMUs",
+      "name": "KI für die technische Produktentwicklung",
       "itemListElement": [
         {
           "@type": "Offer",
@@ -220,12 +221,12 @@ export function ServiceSchema({ siteUrl = 'https://www.aimation.de' }: Organizat
           "@type": "Service",
           "@id": `${siteUrl}/#service-schulungen`,
           "name": "KI-Schulungen für Unternehmen",
-          "description": "Von KI-Grundlagen bis zu fortgeschrittenen Techniken. 3 Ebenen: Einstieg & Awareness, Anwendung & Tools, Fortgeschritten & Spezialisiert. Themen: Generative KI, Prompt Engineering, Microsoft Copilot, Multi-Agent-Systeme, Vibe Coding.",
+          "description": "KI-Schulung für Entwicklungsteams: Grundlagen, Recherche, Office-Aufgaben und Automatisierung. Mit Lernpfaden und Übungen für die eigene Arbeit.",
           "provider": {
             "@type": "Organization",
             "@id": `${siteUrl}/#organization`
           },
-          "url": `${siteUrl}/#leistungen`,
+          "url": `${siteUrl}/ki-schulungen-mittelstand`,
           "areaServed": [
             { "@type": "Country", "name": "Deutschland" },
             { "@type": "Country", "name": "Österreich" },
@@ -254,13 +255,13 @@ export function ServiceSchema({ siteUrl = 'https://www.aimation.de' }: Organizat
         "item": {
           "@type": "Service",
           "@id": `${siteUrl}/#service-beratung`,
-          "name": "KI-Beratung für KMUs",
+          "name": "KI-Beratung für die Produktentwicklung",
           "description": "KI-Landkarte (Wo stehen wir, wo wollen wir hin?) und Begleitung (Wie kommen wir dahin?). Module: Use Case Identification, ROI-Schätzung, Change Management, KI-Governance.",
           "provider": {
             "@type": "Organization",
             "@id": `${siteUrl}/#organization`
           },
-          "url": `${siteUrl}/#leistungen`,
+          "url": `${siteUrl}/ki-beratung-kmu`,
           "areaServed": [
             { "@type": "Country", "name": "Deutschland" },
             { "@type": "Country", "name": "Österreich" },
@@ -270,7 +271,7 @@ export function ServiceSchema({ siteUrl = 'https://www.aimation.de' }: Organizat
           "category": "KI-Beratung",
           "audience": {
             "@type": "Audience",
-            "audienceType": "KMU-Entscheider, Geschäftsführer, Bereichsleiter"
+            "audienceType": "Entwicklungsleiter und technische Geschäftsführer im DACH-Mittelstand"
           }
         }
       },
@@ -286,7 +287,7 @@ export function ServiceSchema({ siteUrl = 'https://www.aimation.de' }: Organizat
             "@type": "Organization",
             "@id": `${siteUrl}/#organization`
           },
-          "url": `${siteUrl}/#leistungen`,
+          "url": `${siteUrl}/ki-automatisierung-mittelstand`,
           "areaServed": [
             { "@type": "Country", "name": "Deutschland" },
             { "@type": "Country", "name": "Österreich" },
@@ -356,9 +357,7 @@ export function PersonSchema({ siteUrl = 'https://www.aimation.de' }: Organizati
         "name": "Deutschland"
       },
       "description": "Beratung, Schulung und Umsetzung von KI-Projekten für kleine und mittlere Unternehmen im DACH-Raum"
-    },
-    "alumniOf": [],
-    "award": "20.000+ LinkedIn-Follower im Bereich KI und Automatisierung"
+    }
   };
 
   return (
@@ -379,8 +378,8 @@ export function WebSiteSchema({ siteUrl = 'https://www.aimation.de' }: Organizat
     "@id": `${siteUrl}/#website`,
     "name": "AImation",
     "url": siteUrl,
-    "description": "KI-Beratung, Schulungen und Automatisierung für den Mittelstand. 40% der Arbeitszeit geht für Aufgaben drauf, die niemand vermissen würde.",
-    "inLanguage": "de-DE",
+    "description": COMPANY_FACTS.description,
+    "inLanguage": ["de", "en"],
     "publisher": {
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`

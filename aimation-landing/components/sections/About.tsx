@@ -12,8 +12,23 @@ export default function About() {
       <div className="engineering-wrap">
         <div className="about-layout">
           <figure className="about-portrait">
-            <div className="relative aspect-square overflow-hidden rounded-lg border border-line"><Image src="/images/about-holger.png" alt={en ? 'Holger Peschke and his son working together at a laptop' : 'Holger Peschke mit seinem Sohn bei der gemeinsamen Arbeit am Laptop'} fill sizes="(max-width: 900px) 90vw, 400px" className="object-contain" /></div>
-            <figcaption><strong>Holger Peschke</strong><span>{en ? 'Founder · AImation' : 'Gründer · AImation'}</span></figcaption>
+            <div className="relative aspect-square overflow-hidden rounded-lg border border-line">
+              <Image
+                src="/images/about-holger-office-ai-edited-v2.webp"
+                alt={en ? 'Holger Peschke and his son working together at a laptop' : 'Holger Peschke mit seinem Sohn bei der gemeinsamen Arbeit am Laptop'}
+                aria-describedby="about-photo-origin"
+                fill
+                sizes="(max-width: 480px) calc(100vw - 48px), (max-width: 900px) 430px, 440px"
+                className="object-contain"
+              />
+            </div>
+            <figcaption>
+              <strong>Holger Peschke</strong>
+              <span>{en ? 'Founder · AImation' : 'Gründer · AImation'}</span>
+              <span id="about-photo-origin" className="basis-full" title={en ? 'Setting, clothing and lighting altered with AI.' : 'Umgebung, Kleidung und Beleuchtung mit KI verändert.'}>
+                {en ? 'Original photo, edited with AI' : 'Originalfoto, mit KI bearbeitet'}
+              </span>
+            </figcaption>
           </figure>
           <div className="section-intro">
             <p className="technical-label">{t('overline')}</p>

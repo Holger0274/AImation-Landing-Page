@@ -11,6 +11,7 @@ import {
   PersonSchema,
 } from '@/components/StructuredData';
 import LeadFormProvider from '@/components/LeadFormProvider';
+import { HOME_COPY } from '@/lib/seo/metadata';
 
 export async function generateMetadata({
   params,
@@ -25,15 +26,11 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
 
     title: {
-      default: isDE
-        ? 'KI in der Produktentwicklung: Beratung, Schulung, Umsetzung | AImation'
-        : 'AI Consulting & Automation for SMEs | AImation',
+      default: HOME_COPY[isDE ? 'de' : 'en'].title,
       template: '%s | AImation',
     },
 
-    description: isDE
-      ? 'KI für die technische Produktentwicklung im Mittelstand: Wissenssicherung, Anfragen-Automatisierung, Recherche. DSGVO-konform, aus 20 Jahren Entwicklungspraxis. Einstieg mit der KI-Landkarte zum Festpreis.'
-      : 'AI for technical product development in the German Mittelstand: knowledge retention, request automation, research. GDPR-compliant, built on 20 years of engineering practice. Start with the KI-Landkarte at a fixed price.',
+    description: HOME_COPY[isDE ? 'de' : 'en'].description,
 
     keywords: isDE
       ? [
@@ -61,26 +58,10 @@ export async function generateMetadata({
 
     authors: [{ name: 'Holger Peschke', url: 'https://www.linkedin.com/in/holgerpeschke/' }],
 
-    alternates: {
-      canonical: isDE ? '/' : '/en/',
-      languages: {
-        'de-DE': '/',
-        'en': '/en/',
-      },
-    },
-
     openGraph: {
       type: 'website',
-      locale: isDE ? 'de_DE' : 'en_US',
-      alternateLocale: isDE ? ['en_US'] : ['de_DE'],
-      url: isDE ? '/' : '/en/',
+      locale: isDE ? 'de_DE' : 'en_GB',
       siteName: 'AImation',
-      title: isDE
-        ? 'KI-Beratung für KMUs: Klartext, Praxis, bezahlbar | AImation'
-        : 'AI Consulting for SMEs: Clarity, Practice, Affordable | AImation',
-      description: isDE
-        ? '40% der Arbeitszeit geht für Aufgaben drauf, die niemand vermissen würde. KI-Beratung, Schulungen & Automatisierung für den Mittelstand. Ohne leere Versprechen.'
-        : '40% of working time goes on tasks no one would miss. AI consulting, training & automation for SMEs. No empty promises.',
       images: [
         {
           url: '/images/og-image.png',
@@ -96,13 +77,7 @@ export async function generateMetadata({
 
     twitter: {
       card: 'summary_large_image',
-      title: isDE ? 'KI-Beratung für KMUs | AImation' : 'AI Consulting for SMEs | AImation',
-      description: isDE
-        ? '40% der Arbeitszeit geht für Aufgaben drauf, die niemand vermissen würde. Ehrliche Einschätzung, ob KI die Lösung ist. Kostenloses Erstgespräch.'
-        : '40% of working time goes on tasks no one would miss. Honest assessment of whether AI is the right solution. Free initial consultation.',
       images: ['/images/og-image.png'],
-      creator: '@holgerpeschke',
-      site: '@aimation_de',
     },
 
     icons: {
@@ -156,7 +131,7 @@ export default async function LocaleLayout({
         Structured Data (Schema.org) für SEO & AI-Crawler
         WICHTIG: Alle Schemas hier als Server Components rendern,
         damit sie im initialen HTML sichtbar sind.
-        GPTBot, ClaudeBot, PerplexityBot koennen kein JavaScript ausfuehren.
+        So sind sie auch ohne clientseitige JavaScript-Ausführung lesbar.
       */}
       <OrganizationSchema siteUrl={siteUrl} />
       <LocalBusinessSchema siteUrl={siteUrl} />

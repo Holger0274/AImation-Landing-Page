@@ -6,13 +6,13 @@ import { createServerClient } from '@/lib/supabase';
 // Nur Name, E-Mail, Datenschutz sind Pflicht, siehe
 // aimation-website-specs/2026-07-18_spec-05-formulare-rechner.md Punkt 1.
 const leadSchema = z.object({
-  name: z.string().min(1),
+  name: z.string().trim().min(1),
   email: z.string().email(),
   firma: z.string().optional(),
   unternehmensgroesse: z.string().optional(),
   telefon: z.string().optional(),
   herausforderung: z.string().max(500).optional(),
-  datenschutz: z.boolean(),
+  datenschutz: z.literal(true),
 });
 
 export async function POST(request: Request) {
@@ -29,7 +29,8 @@ export async function POST(request: Request) {
     // Get n8n webhook URL from environment variable
     const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL;
 
-    // Save to Supabase (always)
+    let savedToDatabase = false;
+    // Only acknowledge receipt after at least one destination accepted the lead.
     try {
       const supabase = createServerClient();
       const { error: dbError } = await supabase.from('leads').insert({
@@ -45,6 +46,8 @@ export async function POST(request: Request) {
 
       if (dbError) {
         console.error('Supabase insert error:', dbError);
+      } else {
+        savedToDatabase = true;
       }
     } catch (dbError) {
       console.error('Error saving lead to database:', dbError);
@@ -55,10 +58,10 @@ export async function POST(request: Request) {
 
       return NextResponse.json(
         {
-          success: true,
-          message: 'Lead received (webhook not configured)'
+          success: savedToDatabase,
+          message: savedToDatabase ? 'Lead erfolgreich übermittelt' : 'Anfrage konnte nicht gespeichert werden. Bitte versuchen Sie es erneut.'
         },
-        { status: 200 }
+        { status: savedToDatabase ? 200 : 503 }
       );
     }
 
@@ -74,23 +77,26 @@ export async function POST(request: Request) {
     };
 
     // Send to n8n webhook
-    const webhookResponse = await fetch(n8nWebhookUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-    });
+    let sentToWebhook = false;
+    try {
+      const webhookResponse = await fetch(n8nWebhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(10000),
+      });
 
-    if (!webhookResponse.ok) {
-      throw new Error(`n8n webhook failed with status ${webhookResponse.status}`);
+      sentToWebhook = webhookResponse.ok;
+      if (!sentToWebhook) console.error('n8n webhook failed with status', webhookResponse.status);
+    } catch {
+      console.error('n8n webhook could not be reached');
     }
 
-    console.log('Lead successfully sent to n8n:', {
-      email: validatedData.email,
-      firma: validatedData.firma,
-      timestamp: payload.timestamp,
-    });
+    if (!savedToDatabase && !sentToWebhook) {
+      return NextResponse.json({ success: false, error: 'Anfrage konnte nicht gespeichert werden. Bitte versuchen Sie es erneut.' }, { status: 503 });
+    }
 
     return NextResponse.json(
       {

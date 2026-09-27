@@ -7,4 +7,6 @@ export const routing = defineRouting({
   localePrefix: 'as-needed',
   // Browser-Sprache nicht automatisch erkennen, der User waehlt bewusst per Switcher
   localeDetection: false,
+  // Metadata and sitemap advertise only real translations, not every route.
+  alternateLinks: false,
 });

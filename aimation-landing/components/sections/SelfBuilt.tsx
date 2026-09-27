@@ -14,6 +14,7 @@ import { SupabaseIcon } from '@/components/icons/SupabaseIcon';
 import { ObsidianIcon } from '@/components/icons/ObsidianIcon';
 import { useLeadForm } from '@/components/LeadFormProvider';
 import EngineeringProjects from './EngineeringProjects';
+import ApplicationDemos from './ApplicationDemos';
 
 interface ToolPill {
   name: string;
@@ -87,6 +88,8 @@ export default function SelfBuilt() {
 
   return (
     <section
+      id="selbst-gebaut"
+      aria-labelledby="self-built-heading"
       className="py-20 md:py-32"
       style={{
         backgroundColor: 'transparent',
@@ -102,12 +105,19 @@ export default function SelfBuilt() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-5 text-ink leading-tight">
+          <h2 id="self-built-heading" className="text-3xl md:text-4xl font-heading font-bold mb-5 text-ink leading-tight">
             {en ? 'Built from ' : 'Aus der Entwicklung. '}<span className="gradient-text">{en ? 'experience.' : 'Selbst gebaut.'}</span>
           </h2>
-          <p className="text-muted font-inter leading-relaxed">{en ? 'Root-cause analysis, simulation data and idea evaluation: three examples from our own workshop, with actual screenshots and their current status.' : 'Ursachenanalyse, Berechnungsdaten und Ideenbewertung: drei Beispiele aus unserer Werkstatt, mit echten Screenshots und ihrem aktuellen Stand.'}</p>
+          <p className="text-muted font-inter leading-relaxed">{en ? 'PM Demonstrator, VariantHub and Skillmatrix: see our own applications at work. Followed by AI tools for root-cause analysis, simulation data and idea evaluation.' : 'PM Demonstrator, VariantHub und Skillmatrix: Sehen Sie unsere eigenen Anwendungen im Einsatz. Dazu KI-Werkzeuge für Ursachenanalyse, Berechnungsdaten und Ideenbewertung.'}</p>
         </motion.div>
 
+        <ApplicationDemos />
+
+        <div className="max-w-2xl mb-8">
+          <p className="text-dim text-sm mb-3">{en ? 'More from our workshop' : 'Weitere Einblicke in unsere Werkstatt'}</p>
+          <p className="text-2xl md:text-3xl font-heading font-medium text-ink mb-4">{en ? 'AI tools for specific engineering tasks.' : 'KI-Werkzeuge für konkrete Entwicklungsaufgaben.'}</p>
+          <p className="text-muted leading-relaxed">{en ? '5Why, FEM Visualizer and our idea agent system show how AI supports analysis and technical decisions. Explore the original screenshots.' : '5Why, FEM-Visualizer und unser Ideen-Agentensystem zeigen, wie KI bei Analysen und fachlichen Entscheidungen unterstützt. Entdecken Sie die Original-Screenshots.'}</p>
+        </div>
         <EngineeringProjects />
 
         <div className="text-center mb-20">

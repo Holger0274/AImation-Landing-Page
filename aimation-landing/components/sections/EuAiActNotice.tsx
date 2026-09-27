@@ -27,6 +27,9 @@ export default function EuAiActNotice() {
             <p className="text-muted text-sm leading-relaxed">
               {t('body')}
             </p>
+            <a className="mt-3 inline-block text-xs text-dim underline underline-offset-4 hover:text-ink" href="https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers">
+              {t('source')}
+            </a>
           </div>
           <Link
             href="/ki-schulungen-mittelstand"

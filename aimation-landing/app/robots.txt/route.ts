@@ -1,39 +1,15 @@
 import { NextResponse } from 'next/server';
+import { SITE_URL } from '@/lib/seo/metadata';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
+export const dynamic = 'force-static';
 
 export async function GET() {
-  const content = `User-agent: *
-Allow: /
-Disallow: /api/
-
-# KI-Crawler explizit erlaubt (GEO/AEO), siehe
-# aimation-website-specs/2026-08-08_spec-09-ki-sichtbarkeit.md Punkt 2
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-Sitemap: ${siteUrl}/sitemap.xml
-`;
-
-  return new NextResponse(content, {
+  // Preserve existing training permissions; search access is a separate policy.
+  // Specific groups do not inherit the wildcard group's API exclusion.
+  const agents = ['*', 'OAI-SearchBot', 'GPTBot', 'ChatGPT-User', 'ClaudeBot',
+    'anthropic-ai', 'Google-Extended', 'PerplexityBot', 'Applebot-Extended'];
+  const content = agents.map((agent) => 'User-agent: ' + agent + '\nAllow: /\nDisallow: /api/').join('\n\n');
+  return new NextResponse(content + '\n\nSitemap: ' + SITE_URL + '/sitemap.xml\n', {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },
   });
 }

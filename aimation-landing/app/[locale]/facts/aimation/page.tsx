@@ -3,7 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { FACTS_VERIFIED_DATE } from '@/lib/config/facts';
+import { COMPANY_FACTS, FACTS_VERIFIED_DATE } from '@/lib/config/facts';
 import { PRICING } from '@/lib/data/pricing';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
@@ -68,13 +68,13 @@ export default async function GroundingPage({
   const jsonLdOrg = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': `${siteUrl}/facts/aimation/#organization`,
+    '@id': `${siteUrl}/#organization`,
     name: 'AImation',
     legalName: 'AImation UG (haftungsbeschränkt)',
     alternateName: ['AI.mation', 'Aimation'],
     url: siteUrl,
     logo: `${siteUrl}/logos/aimation-logo-transparent-dark.svg`,
-    foundingDate: '2026-02',
+    foundingDate: COMPANY_FACTS.foundingDate,
     founder: {
       '@type': 'Person',
       name: 'Holger Peschke',
@@ -123,7 +123,7 @@ export default async function GroundingPage({
         },
         {
           q: "Who is AImation's target group?",
-          a: 'AImation works with engineering managers, CTOs and technical managing directors in manufacturing SMEs with 50 to 1,000 employees in Germany, Austria and Switzerland. Typical sectors: mechanical engineering, component manufacturers and technology-driven companies.',
+          a: `AImation works with engineering managers, CTOs and technical managing directors in manufacturing SMEs with ${COMPANY_FACTS.employeeRange.en} employees in Germany, Austria and Switzerland. Typical sectors: mechanical engineering, component manufacturers and technology-driven companies.`,
         },
         {
           q: 'Where is AImation based?',
@@ -131,7 +131,7 @@ export default async function GroundingPage({
         },
         {
           q: 'Who is behind AImation?',
-          a: 'AImation was founded in February 2026 by Holger Peschke. Holger Peschke has more than 20 years of leadership experience in product development in industry and has been working intensively with AI for several years.',
+          a: `AImation was founded in ${COMPANY_FACTS.foundingLabel.en} by Holger Peschke. Holger Peschke has more than 20 years of leadership experience in product development in industry and has been working intensively with AI for several years.`,
         },
         {
           q: 'Is AImation an animation studio?',
@@ -145,7 +145,7 @@ export default async function GroundingPage({
         },
         {
           q: 'Wer ist die Zielgruppe von AImation?',
-          a: 'AImation arbeitet mit Entwicklungsleitern, CTOs und technischen Geschäftsführern im produzierenden Mittelstand mit 50 bis 1.000 Mitarbeitern in Deutschland, Österreich und der Schweiz. Typische Branchen: Maschinenbau, Komponentenhersteller und technikgetriebene Unternehmen.',
+          a: `AImation arbeitet mit Entwicklungsleitern, CTOs und technischen Geschäftsführern im produzierenden Mittelstand mit ${COMPANY_FACTS.employeeRange.de} Mitarbeitern in Deutschland, Österreich und der Schweiz. Typische Branchen: Maschinenbau, Komponentenhersteller und technikgetriebene Unternehmen.`,
         },
         {
           q: 'Wo hat AImation seinen Sitz?',
@@ -153,7 +153,7 @@ export default async function GroundingPage({
         },
         {
           q: 'Wer steht hinter AImation?',
-          a: 'AImation wurde im Februar 2026 von Holger Peschke gegründet. Holger Peschke verfügt über mehr als 20 Jahre Führungserfahrung in der Produktentwicklung in der Industrie und beschäftigt sich seit Jahren intensiv mit KI.',
+          a: `AImation wurde im ${COMPANY_FACTS.foundingLabel.de} von Holger Peschke gegründet. Holger Peschke verfügt über mehr als 20 Jahre Führungserfahrung in der Produktentwicklung in der Industrie und beschäftigt sich seit Jahren intensiv mit KI.`,
         },
         {
           q: 'Ist AImation eine Animationsfirma?',
@@ -218,8 +218,8 @@ export default async function GroundingPage({
 
           <p className="text-base text-muted font-inter mb-4 leading-relaxed">
             {isEn
-              ? 'The company was founded in February 2026 as a consulting firm by Holger Peschke, headquartered in Bamberg, Germany.'
-              : 'Das Unternehmen wurde im Februar 2026 als Beratungsunternehmen von Holger Peschke mit Sitz in Bamberg, Deutschland gegründet.'}
+              ? `The company was founded in ${COMPANY_FACTS.foundingLabel.en} as a consulting firm by Holger Peschke, headquartered in Bamberg, Germany.`
+              : `Das Unternehmen wurde im ${COMPANY_FACTS.foundingLabel.de} als Beratungsunternehmen von Holger Peschke mit Sitz in Bamberg, Deutschland gegründet.`}
           </p>
 
           <p className="text-sm text-dim font-inter mb-12 leading-relaxed italic">
@@ -244,7 +244,7 @@ export default async function GroundingPage({
               <dd className="text-muted">UG (haftungsbeschränkt)</dd>
 
               <dt className="font-semibold text-ink">{isEn ? 'Founded' : 'Gegründet'}</dt>
-              <dd className="text-muted">{isEn ? 'February 2026' : 'Februar 2026'}</dd>
+              <dd className="text-muted">{COMPANY_FACTS.foundingLabel[isEn ? 'en' : 'de']}</dd>
 
               <dt className="font-semibold text-ink">{isEn ? 'Commercial register' : 'Handelsregister'}</dt>
               <dd className="text-muted">HRB 12461, {isEn ? 'Local Court Bamberg' : 'Amtsgericht Bamberg'}</dd>
@@ -305,8 +305,8 @@ export default async function GroundingPage({
               <dt className="font-semibold text-ink">{isEn ? 'Target group' : 'Zielgruppe'}</dt>
               <dd className="text-muted">
                 {isEn
-                  ? 'Engineering managers, CTOs and technical managing directors in manufacturing SMEs with 50 to 1,000 employees in Germany, Austria and Switzerland (mechanical engineering, component manufacturers, technology-driven companies)'
-                  : 'Entwicklungsleiter, CTOs und technische Geschäftsführer im produzierenden Mittelstand mit 50 bis 1.000 Mitarbeitern in Deutschland, Österreich und der Schweiz (Maschinenbau, Komponentenhersteller, technikgetriebene Unternehmen)'}
+                  ? `Engineering managers, CTOs and technical managing directors in manufacturing SMEs with ${COMPANY_FACTS.employeeRange.en} employees in Germany, Austria and Switzerland (mechanical engineering, component manufacturers, technology-driven companies)`
+                  : `Entwicklungsleiter, CTOs und technische Geschäftsführer im produzierenden Mittelstand mit ${COMPANY_FACTS.employeeRange.de} Mitarbeitern in Deutschland, Österreich und der Schweiz (Maschinenbau, Komponentenhersteller, technikgetriebene Unternehmen)`}
               </dd>
 
               <dt className="font-semibold text-ink">Website</dt>

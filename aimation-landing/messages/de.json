@@ -90,7 +90,7 @@
       "competition": {
         "stat": "",
         "title": "Der Anschluss",
-        "description": "Während Sie noch prüfen, ob KI mit Ihren Daten sicher ist, automatisiert Ihr Wettbewerber bereits seine Entwicklung. Dabei ist die Sicherheitsfrage längst lösbar: DSGVO-konform, in der EU.",
+        "description": "Berichte, Recherche, Dokumentation: Wer diese Vorarbeit mit KI verkürzt, gewinnt Zeit für die Entwicklung. Welche Daten dafür genutzt werden dürfen und wie sie geschützt bleiben, klären wir vor dem Start.",
         "statLabel": "",
         "source": ""
       }
@@ -98,7 +98,8 @@
   },
   "euAiAct": {
     "headline": "Nebenbei: Der EU AI Act gilt schon",
-    "body": "Seit Februar 2025 verlangt Artikel 4 nachweisbare KI-Kompetenz von Mitarbeitern, die KI einsetzen. Seit August 2026 sind Sanktionen anwendbar. Kein Grund zur Panik, aber ein guter Grund, Schulung nicht auf nächstes Jahr zu schieben.",
+    "body": "Artikel 4 verpflichtet Anbieter und Betreiber von KI-Systemen, den Aufbau von KI-Kompetenz zu unterstützen. Die Maßnahmen sollen zu den eingesetzten Systemen, den Aufgaben und dem Vorwissen im Team passen. Ein bestimmtes Zertifikat ist dafür nicht vorgeschrieben.",
+    "source": "Quelle: EU-Kommission, Fragen und Antworten zu Artikel 4",
     "cta": "Schulungen ansehen"
   },
   "kiLandkarte": {
@@ -394,7 +395,7 @@
     "point2": "Festpreis 4.900 Euro, Laufzeit 4 Wochen",
     "point3": "Ihre Daten bleiben in der EU, DSGVO-konform",
     "cta": "Besprechen Sie Ihren Piloten mit mir",
-    "ctaMicrocopy": "Kostenlos, 15 Minuten, kein Verkaufsgespräch."
+    "ctaMicrocopy": "Kostenlos, 30 Minuten, kein Verkaufsgespräch."
   },
   "process": {
     "headline": "Vom ersten Gespräch zum",
@@ -516,7 +517,7 @@
     "differentiators": [
       "Ich kenne Ihre Prozesse nicht aus Büchern, sondern weil ich sie 20 Jahre selbst gelebt habe.",
       "Wenn KI für Sie keinen Sinn ergibt, sage ich Ihnen das. Auch wenn es mich einen Auftrag kostet.",
-      "Für den Mittelstand gebaut: Festpreise, kurze Laufzeiten, läuft nächste Woche statt nächstes Quartal.",
+      "Für den Mittelstand gebaut: klarer Umfang, vereinbarte Preise und ein erster Pilot in vier Wochen.",
       "Schulung, Beratung, Umsetzung aus einer Hand. Ein Ansprechpartner, ein Anruf."
     ]
   },
@@ -526,7 +527,7 @@
     "scrollRight": "Nach rechts scrollen",
     "uknow": {
       "kicker": "Technologiepartner",
-      "body": "Für Wissensmanagement-Projekte setzen wir die Plattform von U-KNOW.AI ein: Antworten mit Quellenangabe statt Halluzinationen, DSGVO-konform, auch On-Premises.",
+      "body": "Für Wissensmanagement-Projekte setzen wir die Plattform von U-KNOW.AI ein: Antworten mit Quellenangaben, die Ihr Team prüfen kann. Auch On-Premises möglich. Zugriffsrechte, Datenschutz und Betriebsmodell klären wir für Ihr Projekt.",
       "link": "Zu U-KNOW.AI",
       "href": "https://www.u-know.ai"
     },
@@ -631,7 +632,7 @@
       },
       {
         "question": "Wie schnell sehen wir Ergebnisse?",
-        "answer": "Der schnellste Weg ist der Pilot: ein einzelner Prozess, Festpreis, in Wochen produktiv statt in Quartalen. Danach wissen Sie aus eigener Anschauung, was KI bei Ihnen leistet, und entscheiden auf dieser Basis weiter."
+        "answer": "Zur KI-Landkarte erhalten Sie 3 bis 5 Tage nach dem Workshop einen Bericht mit priorisierten Use Cases. Im vierwöchigen Pilot prüfen wir einen Prozess anhand Ihrer Daten auf Zeitgewinn und Ergebnisqualität. Welche Schritte bis zum produktiven Einsatz nötig sind, halten wir gemeinsam fest."
       },
       {
         "question": "Was kostet das?",

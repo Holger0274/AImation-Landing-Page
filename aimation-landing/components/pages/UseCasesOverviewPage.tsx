@@ -8,6 +8,7 @@ import ProjectCard from '@/components/sections/ProjectShowcase/ProjectCard';
 import { PROJECTS } from '@/lib/data/projects';
 import { SolutionWorld, SOLUTION_WORLD_COLORS } from '@/components/sections/ProjectShowcase/types';
 import { useLeadForm } from '@/components/LeadFormProvider';
+import { Link } from '@/i18n/navigation';
 
 const SOLUTION_WORLDS: SolutionWorld[] = ['KNOW', 'THINK', 'FLOW', 'WORK'];
 
@@ -54,6 +55,14 @@ export default function UseCasesOverviewPage() {
       </section>
 
       {/* Filter + Grid */}
+      <section className="engineering-wrap pb-8" aria-labelledby="praxisleitfaden-title">
+        <div className="border-y border-line py-8">
+          <p className="technical-label mb-3">Praxisleitfaden</p>
+          <h2 id="praxisleitfaden-title" className="font-heading text-2xl md:text-3xl mb-4">Excel, PowerPoint und Berichte mit KI vorbereiten</h2>
+          <p className="max-w-3xl text-muted leading-relaxed">Ein konkreter Ablauf für das Projektreview: Daten zusammenführen, Zahlen prüfen, Statusfolien entwerfen und fachlich freigeben. Mit Voraussetzungen und klaren Grenzen.</p>
+          <Link href="/use-cases/excel-powerpoint-berichte" className="engineering-text-link mt-5">Den Berichtsprozess ansehen →</Link>
+        </div>
+      </section>
       <section className="py-16 md:py-24" style={{ backgroundColor: 'transparent' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Kategorie-Filter */}

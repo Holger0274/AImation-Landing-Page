@@ -68,7 +68,7 @@ export default async function HolgerPeschkePage({
   const jsonLdPerson = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    '@id': `${siteUrl}/facts/holger-peschke/#person`,
+    '@id': `${siteUrl}/#holger-peschke`,
     name: 'Holger Peschke',
     jobTitle: isEn ? 'Founder and Managing Director' : 'Gründer und Geschäftsführer',
     worksFor: {

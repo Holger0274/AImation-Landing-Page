@@ -10,12 +10,12 @@ export const dynamic = 'force-static';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
 export const metadata: Metadata = {
-  title: { absolute: 'KI-Beratung für KMUs | Klarheit statt Hype | AImation' },
-  description: 'KI-Beratung für den Mittelstand: KI-Landkarte, Use Case Identifikation, Strategie und Roadmap. Ehrliche Einschätzung, auch wenn KI nicht die Antwort ist.',
+  title: { absolute: 'KI-Beratung für die Produktentwicklung | AImation' },
+  description: 'KI-Beratung für Entwicklungsleiter im Mittelstand: Prozesse prüfen, Use Cases priorisieren und einen Pilot festlegen. Mit KI-Landkarte und ROI-Schätzung.',
   alternates: { canonical: `${siteUrl}/ki-beratung-kmu` },
   openGraph: {
-    title: 'KI-Beratung für KMUs | AImation',
-    description: 'KI-Beratung für den Mittelstand: KI-Landkarte, Use Case Identifikation, Strategie und Roadmap.',
+    title: 'KI-Beratung für die Produktentwicklung | AImation',
+    description: 'Prozesse prüfen, Use Cases priorisieren und einen Pilot festlegen. KI-Beratung aus 20 Jahren Entwicklungspraxis.',
     url: `${siteUrl}/ki-beratung-kmu`,
     type: 'website',
     locale: 'de_DE',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const breadcrumbs = [
   { name: 'Startseite', url: '/' },
-  { name: 'KI-Beratung für KMUs', url: '/ki-beratung-kmu' },
+  { name: 'KI-Beratung für die Produktentwicklung', url: '/ki-beratung-kmu' },
 ];
 
 export default function KiBeratungRoute() {

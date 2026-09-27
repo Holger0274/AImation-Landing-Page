@@ -6,6 +6,7 @@ import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } 
 import { trackSpotlight } from '@/components/visuals/SpotlightPanel';
 import PainSchematic from '@/components/visuals/PainSchematic';
 import ImageOriginLabel from '@/components/ui/ImageOriginLabel';
+import { Link } from '@/i18n/navigation';
 
 const compactStatsConfig = [
   { id: 'reporting', icon: FileSpreadsheet, imagePath: '/images/editorial/reporting-v2.png', imageAlt: 'Illustration: Stapel technischer Berichte auf einem Zeichentisch' },
@@ -13,7 +14,7 @@ const compactStatsConfig = [
   { id: 'requests', icon: Clock, imagePath: '/images/editorial/requests-v2.png', imageAlt: 'Illustration: Technische Zeichnung mit markierten Änderungen' },
   { id: 'searching', icon: AlertTriangle, imagePath: '/images/editorial/searching.webp', imageAlt: 'Illustration: Abweichende Zeichnungsstände in Ordner, Laptop und Papierablage' },
   { id: 'research', icon: TrendingDown, imagePath: '/images/editorial/research.webp', imageAlt: 'Manuelle Recherche zu Normen und Patenten ist zeitaufwendig und fehleranfällig' },
-  { id: 'competition', icon: TrendingUp, imagePath: '/images/editorial/competition-v2.png', imageAlt: 'Illustration: Präzisionsgehäuse auf einer industriellen Fertigungslinie' },
+  { id: 'competition', icon: TrendingUp, imagePath: '/images/editorial/competition-office-v3.png', imageAlt: 'KI-generierte Beispielszene: Ein Mitarbeiter prüft am Bürobildschirm einen Berichtsentwurf aus einem Dokumenten-Workflow' },
 ] as const;
 
 
@@ -31,7 +32,7 @@ export default function PainPoints() {
           {compactStatsConfig.map(({ id, icon: Icon, imagePath, imageAlt }) => (
             <Dialog key={id}>
               <DialogTrigger asChild>
-                <button className={`spot-card pain-card ${id === 'reporting' ? 'pain-card-featured pain-card-priority' : ''}`} onPointerMove={trackSpotlight}>
+                <button className={`spot-card pain-card ${id === 'reporting' ? 'pain-card-featured' : ''}`} onPointerMove={trackSpotlight}>
                   <span className="pain-card-image">{id === 'searching' || id === 'research' ? <PainSchematic type={id}/> : <><Image src={imagePath} alt="" fill sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw" className="object-cover" /><ImageOriginLabel src={imagePath} en={en}/></>}</span>
                   <span className="pain-card-top"><Icon size={22} strokeWidth={1.5} aria-hidden="true" />{id === 'reporting' && <span>{t('reportingBadge')}</span>}<ArrowUpRight size={17} className="pain-card-arrow" aria-hidden="true" /></span>
                   <span className="pain-title">{t(`stats.${id}.title`)}</span>
@@ -43,12 +44,17 @@ export default function PainPoints() {
                 <DialogTitle className="pr-10">{t(`stats.${id}.title`)}</DialogTitle>
                 <div className="relative aspect-[16/9] rounded-lg overflow-hidden">{id === 'searching' || id === 'research' ? <PainSchematic type={id}/> : <><Image src={imagePath} alt={en ? `Illustration: ${t(`stats.${id}.title`)}` : imageAlt} fill sizes="(max-width: 768px) 90vw, 700px" className="object-cover" /><ImageOriginLabel src={imagePath} en={en}/></>}</div>
                 {(id === 'searching' || id === 'research') && <p className="technical-label">{en ? 'Schematic illustration' : 'Schematische Darstellung'}</p>}
+                {id === 'competition' && <p className="text-xs text-dim">{en ? 'Illustrative software interface, not a screenshot of a real product.' : 'Beispielhafte Softwareoberfläche, kein Screenshot eines realen Produkts.'}</p>}
                 <DialogDescription>{t(`stats.${id}.description`)}</DialogDescription>
                 {t(`stats.${id}.source`) && <p className="text-xs text-dim">{t('quellePrafix')} {t(`stats.${id}.source`)}</p>}
               </DialogContent>
             </Dialog>
           ))}
         </div>
+        <Link href="/use-cases/excel-powerpoint-berichte" className="engineering-text-link mt-7">
+          {en ? 'Excel, PowerPoint and meeting follow-up: explore a practical workflow' : 'Excel, PowerPoint und Meeting-Nacharbeit: So kann der Ablauf aussehen'}
+          <ArrowUpRight size={18} aria-hidden="true" />
+        </Link>
       </div>
     </section>
   );

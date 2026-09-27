@@ -6,8 +6,8 @@ import { FAQPageSchema, BreadcrumbSchema } from '@/components/StructuredData';
 import { getTrainingFaqs } from '@/lib/data/faqs-ki-schulungen';
 import { setRequestLocale } from 'next-intl/server';
 
-export const dynamic = 'force-static';
-
+// Static locale variants come from the parent layout's generateStaticParams.
+// force-static would erase the locale header used by the root <html lang>.
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
