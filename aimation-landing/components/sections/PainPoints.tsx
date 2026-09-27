@@ -28,6 +28,10 @@ export default function PainPoints() {
           <div className="section-intro"><p className="technical-label">{en ? 'The engineering day-to-day' : 'Alltag in der Entwicklung'}</p><h2>{t('headline')} <span className="highlight">{t('headlineHighlight')}</span> {t('headlineEnd')}</h2></div>
           <div className="section-heading-body"><p>{t('body1')}</p><p>{t('body2')}</p><button className="engineering-text-link mt-4" onClick={() => document.querySelector<HTMLButtonElement>('[data-roi-calculator-trigger]')?.click()}>{t('roiLink')}<ArrowUpRight size={16} aria-hidden="true" /></button></div>
         </div>
+        <blockquote className="pain-routine-quote">
+          <p className="pain-routine-quote-line">{t('routineQuote')}</p>
+          <p className="pain-routine-quote-context">{t('routineContext')}</p>
+        </blockquote>
         <div className="pain-grid">
           {compactStatsConfig.map(({ id, icon: Icon, imagePath, imageAlt }) => (
             <Dialog key={id}>

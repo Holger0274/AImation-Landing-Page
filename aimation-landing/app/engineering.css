@@ -92,6 +92,9 @@ section[id] { scroll-margin-top: 100px; }
 .section-heading-split h2 { margin-bottom: 0; }
 .section-heading-body { color: var(--muted); font-size: 16px; line-height: 1.8; }
 .section-heading-body p + p { margin-top: 12px; }
+.pain-routine-quote { margin: 0 0 30px; padding: clamp(22px, 3vw, 34px); border: 1px solid var(--line-strong); border-left: 3px solid var(--blueprint); border-radius: 8px; background: var(--glass), var(--surface); }
+.pain-routine-quote-line { color: var(--ink); font: 500 clamp(1.5rem, 2.5vw, 2.25rem)/1.25 var(--font-heading), sans-serif; letter-spacing: -.035em; }
+.pain-routine-quote-context { max-width: 70ch; margin-top: 14px; color: var(--muted); font-size: 15px; line-height: 1.7; }
 .pain-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .pain-card { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: 27px; border-radius: 8px; transition: border-color .25s, transform .25s; }
 .pain-card:hover { transform: translateY(-3px); }
