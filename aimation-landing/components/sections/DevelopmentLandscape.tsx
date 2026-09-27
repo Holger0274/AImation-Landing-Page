@@ -8,6 +8,7 @@ import { LANDSCAPE_PHASES, LANDSCAPE_SNAPSHOT } from '@/lib/data/engineering-lan
 import { PHASE_PATHS, QKT_CASES } from '@/lib/data/application-paths';
 import { TRAINING_COURSES } from '@/lib/data/training';
 import CaseWalkthrough from '@/components/visuals/CaseWalkthrough';
+import DevelopmentLandscapeVideo from './DevelopmentLandscapeVideo';
 
 export default function DevelopmentLandscape() {
   const en = useLocale() === 'en';
@@ -41,7 +42,8 @@ export default function DevelopmentLandscape() {
         <div className="section-intro"><p className="technical-label">{en ? 'The development landscape' : 'Die Entwicklungslandkarte'}</p><h2>{en ? 'Find where AI can' : 'Finden Sie Ihren'} <span className="highlight">{en ? 'help.' : 'Hebel.'}</span></h2></div>
         <div className="section-heading-body"><p>{en ? 'From the first requirement to a field complaint: explore selected tasks from our use-case catalogue. Start with the work that holds your team back.' : 'Von der ersten Anforderung bis zur Feldbeanstandung: Erkunden Sie ausgewählte Aufgaben aus unserer Use-Case-Sammlung. Fangen Sie dort an, wo Ihr Team heute Zeit verliert.'}</p></div>
       </div>
-      <div className="landscape-console">
+      <DevelopmentLandscapeVideo en={en} />
+      <div id="landscape-entdecken" className="landscape-console" style={{ scrollMarginTop: '110px' }}>
         {LANDSCAPE_PHASES.flatMap(p => p.cases.map(c => <span className="case-anchor" key={c.id} id={`use-case-${c.id}`} aria-hidden="true"/>))}
         <div className="landscape-toolbar"><span className="technical-label">AImation / Development Landscape</span><span>{LANDSCAPE_SNAPSHOT.cases} {en ? 'catalogue entries' : 'Katalogeinträge'} · {LANDSCAPE_SNAPSHOT.areas} {en ? 'areas' : 'Bereiche'}</span></div>
         <div className="landscape-phases" role="group" aria-label={en ? 'Select development area' : 'Entwicklungsbereich wählen'}>

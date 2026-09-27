@@ -25,7 +25,7 @@ export function OrganizationSchema({ siteUrl = 'https://www.aimation.de' }: Orga
     "@type": "Organization",
     "@id": `${siteUrl}/#organization`,
     "name": "AImation",
-    "alternateName": ["AImation", "AImation UG"],
+    "alternateName": ["AImation UG", "AI.mation", "Aimation"],
     "legalName": "AImation UG (haftungsbeschränkt)",
     "url": siteUrl,
     "logo": {
@@ -377,6 +377,7 @@ export function WebSiteSchema({ siteUrl = 'https://www.aimation.de' }: Organizat
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
     "name": "AImation",
+    "alternateName": ["AImation UG", "AI.mation", "Aimation"],
     "url": siteUrl,
     "description": COMPANY_FACTS.description,
     "inLanguage": ["de", "en"],

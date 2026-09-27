@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { ArrowUpRight, Play } from 'lucide-react';
 import { useLeadForm } from '@/components/LeadFormProvider';
+import { pauseOtherVideos } from '@/lib/media/playback';
 import styles from './ApplicationDemos.module.css';
 
 // Source descriptions and original recordings: /Videos, September 2026.
@@ -94,7 +95,7 @@ function DemoPlayer({ id, name, alt, en }: { id: string; name: string; alt: stri
           <span className={styles.playPrompt}><span className={styles.playIcon}><Play size={22} fill="currentColor" aria-hidden="true" /></span><span>{en ? 'Watch demo' : 'Demo ansehen'}<small>01:30 · {en ? 'German' : 'Deutsch'}</small></span></span>
         </button>
       ) : (
-        <video ref={videoRef} src={src} poster={poster} controls playsInline preload="none" tabIndex={0} aria-label={`${name}: ${en ? 'application demo in German' : 'Anwendungsdemo auf Deutsch'}`} aria-describedby={`demo-note-${id}`} onError={() => setFailed(true)}>
+        <video ref={videoRef} src={src} poster={poster} controls playsInline preload="none" tabIndex={0} aria-label={`${name}: ${en ? 'application demo in German' : 'Anwendungsdemo auf Deutsch'}`} aria-describedby={`demo-note-${id}`} onPlay={(event) => pauseOtherVideos(event.currentTarget)} onError={() => setFailed(true)}>
           <a href={src}>{en ? 'Open video' : 'Video öffnen'}</a>
         </video>
       )}

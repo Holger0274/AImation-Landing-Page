@@ -3,8 +3,8 @@ import { ENGLISH_PATHS, basePath, localizedPath } from './locales';
 
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de').replace(/\/$/, '');
 export const HOME_COPY = {
-  de: { title: 'KI in der Produktentwicklung: Beratung, Schulung, Umsetzung | AImation', description: 'KI-Beratung für Entwicklungsleiter: Wissen sichern, Anfragen bearbeiten und Berichte vorbereiten. Schulung und Umsetzung aus 20 Jahren Entwicklungspraxis.' },
-  en: { title: 'AI for product development: consulting, training, implementation | AImation', description: 'AI consulting for engineering teams: retain knowledge, handle requests and prepare reports. Training and implementation built on 20 years of engineering experience.' },
+  de: { title: 'AImation UG | KI für die technische Produktentwicklung', description: 'KI-Beratung für Entwicklungsleiter: Wissen sichern, Anfragen bearbeiten und Berichte vorbereiten. Schulung und Umsetzung aus 20 Jahren Entwicklungspraxis.' },
+  en: { title: 'AImation UG | AI for product development', description: 'AI consulting for engineering teams: retain knowledge, handle requests and prepare reports. Training and implementation built on 20 years of engineering experience.' },
 };
 
 export function pageMetadata(path: string, locale: string, title: string, description: string): Metadata {

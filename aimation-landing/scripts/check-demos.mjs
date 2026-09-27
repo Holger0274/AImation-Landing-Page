@@ -3,7 +3,8 @@ import { readFile } from 'node:fs/promises';
 
 // Read-only checks. Run against a production preview: node scripts/check-demos.mjs
 const base = new URL(process.argv[2] || 'http://localhost:3011');
-const ids = ['pm-demonstrator', 'varianthub', 'skillmatrix'];
+const applicationIds = ['pm-demonstrator', 'varianthub', 'skillmatrix'];
+const ids = [...applicationIds, 'development-landscape'];
 const get = (path, options = {}) => fetch(new URL(path, base), { redirect: 'manual', signal: AbortSignal.timeout(20000), ...options });
 for (const route of ['/', '/en']) {
   const response = await get(route);
@@ -14,7 +15,12 @@ for (const route of ['/', '/en']) {
   assert.equal((html.match(/role="tabpanel"/g) || []).length, 3, 'three application panels');
   assert(!/<video\b|<source\b/.test(html), 'video media must not mount before a play click');
   for (const id of ['5why', 'fem', 'ideas']) assert(html.includes(`id="werkzeug-${id}"`), `existing example ${id} missing`);
-  for (const id of ids) assert(html.includes(`id="demo-tab-${id}"`), `demo ${id} missing`);
+  for (const id of applicationIds) assert(html.includes(`id="demo-tab-${id}"`), `demo ${id} missing`);
+  assert(html.includes('id="development-landscape-video"'), 'landscape video missing');
+  assert(html.includes('id="landscape-entdecken"'), 'interactive landscape anchor missing');
+  assert(html.includes('href="#landscape-entdecken"'), 'video-to-map link missing');
+  assert(html.includes('02:20'), 'landscape duration missing');
+  assert(html.indexOf('id="development-landscape-video"') < html.indexOf('id="landscape-entdecken"'), 'video must precede the interactive map');
   console.log(`OK ${route}: demos, existing projects, no initial video element`);
 }
 for (const id of ids) {
@@ -40,4 +46,4 @@ for (const id of ids) {
   assert(atoms.includes('moov') && atoms.indexOf('moov') < atoms.indexOf('mdat'), `${id}: faststart index`);
   console.log(`OK ${id}: playable delivery, poster, faststart (${(data.length / 1e6).toFixed(1)} MB)`);
 }
-console.log('PASS: DE/EN markup, all six applications, media routes, byte ranges and streaming indexes.');
+console.log('PASS: DE/EN markup, landscape video and map, all six applications, media routes, byte ranges and streaming indexes.');
