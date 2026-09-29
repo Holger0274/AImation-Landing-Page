@@ -21,10 +21,17 @@ KI-Beratung, Schulung und Umsetzung für die technische Produktentwicklung im DA
 
 ## Use Cases
 
-- [Excel, PowerPoint und Berichte mit KI vorbereiten](${siteUrl}/use-cases/excel-powerpoint-berichte): Beispielablauf mit Meeting-Nacharbeit, Quellenbezug, festen Rechenregeln und menschlicher Freigabe. Keine garantierten Einsparwerte.
-- [Patentrecherche und Prior Art](${siteUrl}/use-cases/patentrecherche-ki): automatisierte Analyse von Patentdatenbanken, findet relevante Prior Art vor Konstruktionsstart
-- [Technische Anfragen automatisch vorsortieren](${siteUrl}/use-cases/email-klassifizierung): Klassifizierung eingehender technischer Anfragen, Antwortentwurf inklusive
-- [Engineering-Wissen vernetzen](${siteUrl}/use-cases/knowledge-graph-management): Berichte und Dokumente automatisch verschlagwortet und semantisch verknüpft
+- [KI in der technischen Produktentwicklung](${siteUrl}/ki-produktentwicklung): Aufgaben entlang der Entwicklung, Use-Case-Katalog, Anwendungsdemos und fachliche Prüfschritte.
+- [Microsoft 365 Copilot Schulung](${siteUrl}/schulungen/microsoft-365-copilot): neun Module aus vorhandenen Lernmaterialien, interaktive Lernprobe und Voraussetzungen für ein abgestimmtes Inhouse-Format.
+- [Variantenmanagement mit VariantHub](${siteUrl}/use-cases/variantenmanagement): mit KI entwickelter Prototyp mit deterministischer Regelprüfung. KI-Regelvorschläge sind geplant.
+- [Skillmatrix für Entwicklungsteams](${siteUrl}/use-cases/skillmatrix-entwicklung): Demo zur Kompetenzabdeckung und Wissensplanung mit fiktiven Daten, keine Leistungsbewertung von Personen.
+- [Projektsteuerung mit dem PM Demonstrator](${siteUrl}/use-cases/projektsteuerung-entwicklung): Proof of Concept mit fiktiven Daten, KI-Risiko-Radar und Berichtsentwurf im Video. Produktiver Umfang ist separat zu prüfen.
+- [Excel und PowerPoint durch Dashboards, BI und Apps ablösen](${siteUrl}/use-cases/excel-powerpoint-berichte): Kalkulationstabellen und Excel-Tools in Anwendungen mit gemeinsamer Datenbasis überführen. Interaktiver Zielablauf mit fiktiven Daten, festen Rechenregeln, gezielter KI-Integration, Historie und fachlicher Freigabe. PowerPoint nur als optionaler Export. Keine garantierten Einsparwerte.
+- [Patentrecherche und Prior Art](${siteUrl}/use-cases/patentrecherche-ki): KI-gestützte technische Vorrecherche mit Quellenbezug. Interner Recherche-Prototyp; Datenquellen, Datenbankanbindung und Recherchehistorie werden im Pilot abgestimmt. Keine vollständige Prior-Art-Recherche oder rechtliche Nutzungsfreigabe zugesichert.
+- [Technische Anfragen mit KI bearbeiten](${siteUrl}/use-cases/email-klassifizierung): Technische Anfragen vorsortieren, freigegebene Quellen zuordnen und Antwortentwürfe fachlich prüfen. Interner Workflow-Prototyp; Systemanbindungen, Datenbank und Änderungshistorie werden im Pilot abgestimmt. Kein automatischer Versand im gezeigten Ablauf.
+- [Technologie-Scouting mit KI](${siteUrl}/use-cases/technologie-scouting): Definierte Fachquellen beobachten, Fundstücke mit KI vorstrukturieren und den möglichen Produktbezug fachlich prüfen. Interner Scouting-Prototyp; Suchfelder, Quellenzugang, Datenbank und Änderungshistorie werden im Pilot abgestimmt. Keine automatische Technologieentscheidung.
+- [Meeting-Protokolle mit KI](${siteUrl}/use-cases/meeting-transkript-analyse): Freigegebene Transkripte in Entscheidungen, Aufgaben und offene Punkte strukturieren. Bei AImation im Aufbau; Zielsysteme, Datenbank und Änderungshistorie werden im Pilot abgestimmt. Aufgaben und Entscheidungen werden vor der Übergabe menschlich bestätigt.
+- [Entwicklungswissen mit KI finden](${siteUrl}/use-cases/knowledge-graph-management): Frühere Entscheidungen mit Prüfberichten und Protokollen nachvollziehen. Interner Prototyp mit eigenen Unterlagen; Unternehmensanbindung, Rechteprüfung und Datenhistorie werden für den Pilot abgestimmt. Keine garantierten Antwortzeiten.
 - [Alle Use Cases](${siteUrl}/use-cases)
 
 ## Datenschutz

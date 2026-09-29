@@ -38,7 +38,7 @@ AImation UG: KI-Beratung, Schulung und Umsetzung für die **technische Produkten
 | 4 | Umsetzung (Agenten-Systeme) | ab 5.000 bis 30.000 EUR Setup + 200 bis 800 EUR/Monat | 2 bis 12 Wochen |
 | 5 | Begleitung | optional, nach Aufwand | laufend |
 
-Parallel zur Treppe, jederzeit buchbar: **Schulung** (Inhouse, 1.800 EUR pro Tag, Details in Spec 07).
+Parallel zur Treppe, jederzeit buchbar: **Schulung** (Inhouse-Festpreis nach Abstimmung von Inhalt, Dauer und Format, unabhängig von der Teilnehmerzahl; die Schulung wird aus den konkreten Anwendungsfällen, Rollen und Werkzeugen des Teams zusammengestellt; Details in Spec 07).
 
 **Preis-Regel:** Jede Zahl existiert genau einmal als Quelle der Wahrheit (zentrale Konstante/Config im Code, z. B. `pricing.ts` oder CMS-Feld). Alle Seiten, der ROI-Rechner und alle Modals referenzieren dieselbe Quelle. Keine Seite darf eigene, abweichende Preise hartkodieren.
 

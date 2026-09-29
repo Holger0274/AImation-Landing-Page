@@ -13,6 +13,9 @@
 # Bilder-Ordner (local only)
 Bilder/
 
+# Video-Originale (lokal; optimierte Webversionen liegen unter aimation-landing/public/videos/)
+Videos/*.mp4
+
 # Node modules
 node_modules/
 

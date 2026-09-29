@@ -3,6 +3,7 @@ import { Inbox, Search, FileEdit, UserCheck, Archive, type LucideIcon } from 'lu
 interface AgentHumanLoopProps {
   variant?: 'light' | 'dark';
   className?: string;
+  animated?: boolean;
 }
 
 const STEPS: { lines: string[]; icon: LucideIcon; focus?: boolean }[] = [
@@ -18,7 +19,7 @@ const BOX_H = 78;
 const GAP = 34;
 const Y = 26;
 
-export default function AgentHumanLoop({ variant = 'light', className }: AgentHumanLoopProps) {
+export default function AgentHumanLoop({ variant = 'light', className, animated = true }: AgentHumanLoopProps) {
   const isDark = variant === 'dark';
   const lineColor = isDark ? 'rgba(255,255,255,0.55)' : '#071013';
   const boxFill = isDark ? 'rgba(255,255,255,0.06)' : '#ffffff';
@@ -66,9 +67,9 @@ export default function AgentHumanLoop({ variant = 'light', className }: AgentHu
             strokeWidth={1.5}
             markerEnd={`url(#${markerId})`}
             strokeDasharray={GAP}
-            strokeDashoffset={GAP}
+            strokeDashoffset={animated ? GAP : 0}
           >
-            <animate attributeName="stroke-dashoffset" from={GAP} to={0} dur="0.5s" begin={`${0.5 + i * 0.25}s`} fill="freeze" />
+            {animated && <animate attributeName="stroke-dashoffset" from={GAP} to={0} dur="0.5s" begin={`${0.5 + i * 0.25}s`} fill="freeze" />}
           </line>
         );
       })}
@@ -115,7 +116,7 @@ export default function AgentHumanLoop({ variant = 'light', className }: AgentHu
       })}
 
       {/* Durchlaufender Impuls: zeigt eine Anfrage, die die gesamte Kette durchläuft */}
-      <circle r={4} fill={focus}>
+      {animated && <circle r={4} fill={focus}>
         <animateMotion
           dur="4s"
           begin="1.8s"
@@ -123,7 +124,7 @@ export default function AgentHumanLoop({ variant = 'light', className }: AgentHu
           path={`M6,${centerY} L${svgWidth - 6},${centerY}`}
         />
         <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.92;1" dur="4s" begin="1.8s" repeatCount="indefinite" />
-      </circle>
+      </circle>}
     </svg>
   );
 }

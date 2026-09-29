@@ -42,7 +42,8 @@ export const PRICING = {
   },
   schulung: {
     label: 'Schulung',
-    description: 'Inhouse, parallel zur Treppe jederzeit buchbar, unabhängig von der Teilnehmerzahl',
+    description: 'Inhouse, aus den Anwendungsfällen, Rollen und Werkzeugen des Teams zusammengestellt, unabhängig von der Teilnehmerzahl',
+    // Von Holger am 29.09.2026 bestätigt: kein öffentlicher Tages- oder Halbtagessatz.
     priceLabel: 'Festpreis nach Abstimmung von Inhalt, Dauer und Format',
     priceLabelEn: 'Fixed price once content, duration and format are agreed',
   },

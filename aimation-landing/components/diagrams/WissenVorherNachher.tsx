@@ -16,6 +16,7 @@ import {
 interface WissenVorherNachherProps {
   variant?: 'light' | 'dark';
   className?: string;
+  animated?: boolean;
 }
 
 const ICONS: Record<string, LucideIcon> = {
@@ -67,7 +68,7 @@ const AFTER_SPOKES = [
   { x: 591, y: 135, label: 'PDM', labelDy: -20 },
 ];
 
-export default function WissenVorherNachher({ variant = 'light', className }: WissenVorherNachherProps) {
+export default function WissenVorherNachher({ variant = 'light', className, animated = true }: WissenVorherNachherProps) {
   const isDark = variant === 'dark';
   const panelFill = isDark ? 'rgba(255,255,255,0.04)' : '#ffffff';
   const panelStroke = isDark ? 'rgba(255,255,255,0.12)' : 'rgba(7,16,19,0.08)';
@@ -161,22 +162,22 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
             strokeWidth={2}
             opacity={0.6}
             strokeDasharray={length}
-            strokeDashoffset={length}
+            strokeDashoffset={animated ? length : 0}
           >
-            <animate
+            {animated && <animate
               attributeName="stroke-dashoffset"
               from={length}
               to={0}
               dur="0.8s"
               begin={`${0.15 * i}s`}
               fill="freeze"
-            />
+            />}
           </line>
         );
       })}
 
       {/* Wissens-Impulse: laufen dauerhaft von jeder Datenquelle zum KI-Betriebssystem */}
-      {AFTER_SPOKES.map((n, i) => (
+      {animated && AFTER_SPOKES.map((n, i) => (
         <circle key={`pulse-${n.label}`} r={3} fill={focus} opacity={0.85}>
           <animateMotion
             dur="2.4s"
@@ -223,14 +224,14 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
             strokeWidth={2.5}
             opacity={0.7}
             strokeDasharray={length}
-            strokeDashoffset={length}
+            strokeDashoffset={animated ? length : 0}
           >
-            <animate attributeName="stroke-dashoffset" from={length} to={0} dur="0.8s" begin="1.2s" fill="freeze" />
+            {animated && <animate attributeName="stroke-dashoffset" from={length} to={0} dur="0.8s" begin="1.2s" fill="freeze" />}
           </line>
         );
       })()}
       {/* Antwort-Impuls: läuft dauerhaft vom KI-Betriebssystem zum Ingenieur, Gegenrichtung zu den Daten-Impulsen */}
-      <circle r={3.5} fill={isDark ? '#ffffff' : '#071013'} opacity={0.85}>
+      {animated && <circle r={3.5} fill={isDark ? '#ffffff' : '#071013'} opacity={0.85}>
         <animateMotion
           dur="2.4s"
           begin="2s"
@@ -238,7 +239,7 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
           path={`M${AFTER_HUB.x},${AFTER_HUB.y} L${ENGINEER_NODE.x},${ENGINEER_NODE.y}`}
         />
         <animate attributeName="opacity" values="0;0.9;0" dur="2.4s" begin="2s" repeatCount="indefinite" />
-      </circle>
+      </circle>}
 
       {/* Ingenieur: einziger Zugang, verbunden über das KI-Betriebssystem statt direkt mit den Rohdaten.
           Deutlich abgesetzt vom Ring (siehe Kommentar bei ENGINEER_NODE), damit er als eigene Ebene liest. */}
@@ -259,10 +260,10 @@ export default function WissenVorherNachher({ variant = 'light', className }: Wi
       </text>
 
       {/* Radar-Ping: pulsierender Ring um das KI-Betriebssystem, signalisiert eingehende Synthese */}
-      <circle cx={AFTER_HUB.x} cy={AFTER_HUB.y} r={16} fill="none" stroke={focus} strokeWidth={2}>
+      {animated && <circle cx={AFTER_HUB.x} cy={AFTER_HUB.y} r={16} fill="none" stroke={focus} strokeWidth={2}>
         <animate attributeName="r" values="16;28;16" dur="2.4s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite" />
-      </circle>
+      </circle>}
       {/* Blickdichte Fuellung: verdeckt die acht im Zentrum zusammenlaufenden Linien vollstaendig */}
       <circle cx={AFTER_HUB.x} cy={AFTER_HUB.y} r={16} fill={isDark ? '#18262e' : '#edf1f3'} stroke={focus} strokeWidth={2.5} filter="url(#wvnShadow)" />
       <foreignObject x={AFTER_HUB.x - 8.5} y={AFTER_HUB.y - 8.5} width={17} height={17}>

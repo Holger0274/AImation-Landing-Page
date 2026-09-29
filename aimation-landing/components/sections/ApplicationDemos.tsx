@@ -7,6 +7,13 @@ import { ArrowUpRight, Play } from 'lucide-react';
 import { useLeadForm } from '@/components/LeadFormProvider';
 import { pauseOtherVideos } from '@/lib/media/playback';
 import styles from './ApplicationDemos.module.css';
+import { Link } from '@/i18n/navigation';
+
+export const DEMO_PATHS = {
+  'pm-demonstrator': '/use-cases/projektsteuerung-entwicklung',
+  varianthub: '/use-cases/variantenmanagement',
+  skillmatrix: '/use-cases/skillmatrix-entwicklung',
+} as const;
 
 // Source descriptions and original recordings: /Videos, September 2026.
 // AI shown in a recording is described as such, not as a production guarantee.
@@ -139,10 +146,17 @@ export default function ApplicationDemos() {
             <div><span className={styles.status}>{copy.status}</span><h3>{copy.headline}</h3><p>{copy.description}</p></div>
             <div className={styles.outcomes}><p className={styles.label}>{en ? 'What the demo shows' : 'Das zeigt die Demo'}</p><ul>{copy.features.map((feature, i) => <li key={feature}><span aria-hidden="true">0{i + 1}</span>{feature}</li>)}</ul><button type="button" onClick={openLeadForm} className={styles.contact}>{en ? 'Discuss your application' : 'Ihre Anwendung besprechen'}<ArrowUpRight size={18} aria-hidden="true" /></button></div>
           </div>
-          <p id={`demo-note-${demo.id}`} className={styles.note}>{copy.note}</p>
+          <p id={`demo-note-${demo.id}`} className={styles.note}>{copy.note}<br /><Link href={DEMO_PATHS[demo.id]} className="engineering-text-link mt-3">{en ? `${demo.name}: workflow and prerequisites` : `${demo.name}: Ablauf und Voraussetzungen`} →</Link></p>
         </div>;
       })}
       <p className={styles.footnote}>{en ? 'Own projects with demo data. The recordings show development stages, not customer references. Videos only load when you press play.' : 'Eigene Projekte mit Demodaten. Die Aufnahmen zeigen Entwicklungsstände, keine Kundenreferenzen. Videos laden erst beim Abspielen.'}</p>
     </div>
   );
+}
+
+/** The same on-demand player and factual note used on the homepage. */
+export function ApplicationDemoVideo({ id, en, note }: { id: keyof typeof DEMO_PATHS; en: boolean; note?: string }) {
+  const demo = demos.find(item => item.id === id)!;
+  const copy = demo[en ? 'en' : 'de'];
+  return <figure><DemoPlayer id={id} name={demo.name} alt={copy.poster} en={en} /><figcaption id={`demo-note-${id}`}>{note ?? copy.note}</figcaption></figure>;
 }

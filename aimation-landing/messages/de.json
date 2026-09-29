@@ -309,8 +309,8 @@
     "cards": {
       "patent-research": {
         "title": "Patentrecherche und Prior Art",
-        "description": "Automatisierte Analyse von Patentdatenbanken. Findet relevante Prior Art, identifiziert Wettbewerber-Patente und erstellt strukturierte Übersichten.",
-        "metrics": "Prior Art vollständig im Blick, bevor die Konstruktion startet. Konto: Qualität und Timing.",
+        "description": "KI-gestützte Vorrecherche: technische Merkmale mit Patentfundstellen verbinden und zur fachlichen Prüfung aufbereiten. Interner Recherche-Prototyp, keine rechtliche Nutzungsfreigabe.",
+        "metrics": "Im Pilot prüfen wir Trefferqualität, Quellenbelege und den gesamten Rechercheaufwand. Noch keine gemessenen Kundenergebnisse.",
         "alt": "Technisches Merkmal mit Patentfundstellen vergleichen und fachlich bewerten."
       },
       "project-review-dashboard": {
@@ -321,14 +321,14 @@
       },
       "email-classification": {
         "title": "Technische Anfragen automatisch vorsortieren",
-        "description": "Klassifizierung eingehender technischer Anfragen und Änderungsanträge. Sammelt Kontext aus Ihren Systemen und legt einen Antwortentwurf vor. Jede beantwortete Anfrage fließt in die Lessons-Learned-Basis.",
-        "metrics": "Antworten am selben Tag, und jede Antwort wird zu gesichertem Wissen. Konto: Timing und Kosten.",
+        "description": "Technische Anfragen und Änderungsanträge vorsortieren, freigegebene Quellen zuordnen und einen Antwortentwurf zur fachlichen Prüfung vorbereiten. Interner Workflow-Prototyp.",
+        "metrics": "Im Pilot prüfen wir Zuordnung, Quellenqualität und den Aufwand bis zur Freigabe. Noch keine gemessenen Kundenergebnisse.",
         "alt": "Aus einer Anfrage mit Anhang wird ein Antwortentwurf zur menschlichen Freigabe."
       },
       "tech-scouting": {
         "title": "Technologie-Scouting",
-        "description": "Kontinuierliches Monitoring von Technologie-Trends und Innovationen. Filtert relevante Entwicklungen aus Fachpublikationen, Papers und News und meldet, was Ihre Produkte betrifft.",
-        "metrics": "Relevante Entwicklungen landen wöchentlich auf Ihrem Tisch, ohne Suchaufwand. Konto: Timing und Qualität.",
+        "description": "Definierte Fachquellen beobachten, Fundstücke mit KI vorstrukturieren und ihren möglichen Bezug zum eigenen Produkt fachlich bewerten. Interner Scouting-Prototyp.",
+        "metrics": "Im Pilot prüfen wir Quellenqualität, Produktbezug und Aufwand bis zur fachlichen Einordnung. Noch keine gemessenen Kundenergebnisse.",
         "alt": "Ein Recherche-Radar führt von Fachpublikationen zu relevanten Entwicklungen für das Produkt."
       },
       "knowledge-graph-management": {
@@ -351,8 +351,8 @@
       },
       "meeting-transcript-analysis": {
         "title": "Besprechungen ohne Protokollaufwand",
-        "description": "Transkripte aus Meetings automatisch in To-Dos, Erkenntnisse und offene Punkte kategorisieren. Speicherung für semantische Suche.",
-        "metrics": "To-dos und Erkenntnisse sind festgehalten, bevor der Raum leer ist. Konto: Kosten und Timing.",
+        "description": "Freigegebene Meeting-Transkripte mit KI in Entscheidungen, Aufgaben und offene Punkte strukturieren. Mit Zeitbezug und menschlicher Freigabe. Bei AImation im Aufbau.",
+        "metrics": "Im Pilot prüfen wir Vollständigkeit, Gesprächsbelege und Aufwand bis zum bestätigten Protokoll. Noch keine gemessenen Kundenergebnisse.",
         "alt": "Aus einem Gespräch werden Entscheidungen, Aufgaben und offene Fragen."
       },
       "multi-agent-debate": {
@@ -696,7 +696,10 @@
   "footer": {
     "tagline": "Mehr Zeit für das",
     "taglineHighlight": "Wesentliche",
-    "subtagline": "Engineering-Erfahrung. Kein Buzzword-Bingo.",
+    "subtagline": "KI für die technische Produktentwicklung.",
+    "implementationTitle": "Wie wir KI und Automatisierung einsetzen.",
+    "implementationRules": "Wo feste Regeln eine Aufgabe zuverlässig lösen, hat deterministische Automatisierung Vorrang. KI integrieren wir gezielt, etwa für Dokumentenanalyse, Risikohinweise oder Berichtsentwürfe. Fachliche Prüfung und Freigabe bleiben bei Ihnen.",
+    "implementationHistory": "Für die Umsetzung planen wir Datenbankanbindungen und Änderungshistorien mit ein: Was wurde wann geändert, auf welcher Grundlage und von wem? Datenquellen, Zugriffsrechte und Aufbewahrung stimmen wir mit Ihnen ab. Bei den gezeigten Anwendungen kennzeichnen wir vorhandene Funktionen und geplante Erweiterungen getrennt.",
     "colLeistungen": "Leistungen",
     "linkSchulungen": "Schulungen",
     "linkBeratung": "Beratung",

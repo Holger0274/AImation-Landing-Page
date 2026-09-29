@@ -37,6 +37,7 @@ for (const entry of entries) {
   assert(!/noindex/i.test(response.headers.get('x-robots-tag') || ''), `${pathname}: blocked by header`);
   // SVG <title> is an accessibility label, not the document's SEO title.
   const documentHtml = html.replace(/<svg\b[\s\S]*?<\/svg>/g, '');
+  assert(!/buzzword[-\s]*bingo/i.test(documentHtml), `${pathname}: removed footer slogan returned`);
   const titles = [...documentHtml.matchAll(/<title>([\s\S]*?)<\/title>/g)];
   assert.equal(titles.length, 1, `${pathname}: document title count`);
   const links = [...html.matchAll(/<link\b[^>]*>/g)].map((m) => attrs(m[0]));
@@ -75,16 +76,91 @@ for (const route of ['/', '/en']) {
   assert(!page.meta.some((m) => /40%/.test(m.content || '')), 'obsolete metadata claim');
   assert(/product development|Produktentwicklung/.test(page.title), 'home positioning');
 }
-for (const route of ['/use-cases/excel-powerpoint-berichte', '/en/use-cases/excel-powerpoint-berichte']) {
+const topicRoutes = ['/ki-produktentwicklung', '/schulungen/microsoft-365-copilot', '/use-cases/variantenmanagement', '/use-cases/skillmatrix-entwicklung', '/use-cases/projektsteuerung-entwicklung', '/use-cases/excel-powerpoint-berichte'];
+for (const route of topicRoutes.flatMap(route => [route, '/en' + route])) {
   const page = rendered.get(route);
+  assert(page, `${route}: missing from sitemap`);
+  assert.equal([...page.html.matchAll(/<h1\b/g)].length, 1, `${route}: h1 count`);
   const faq = page.schemas.find((s) => s['@type'] === 'FAQPage');
-  assert.equal(faq.mainEntity.length, 3);
+  assert.equal(faq?.mainEntity.length, route.includes('microsoft-365-copilot') ? 4 : 3, `${route}: FAQ count`);
   const visible = page.html.replace(/<script\b[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, '');
   for (const question of faq.mainEntity) {
     assert(visible.includes(question.name), 'FAQ question is not SSR visible');
     assert(visible.includes(question.acceptedAnswer.text), 'FAQ answer is not SSR visible');
   }
+  assert(page.schemas.some(s => s['@type'] === 'BreadcrumbList'), `${route}: missing breadcrumb schema`);
+  if (/variantenmanagement|skillmatrix-entwicklung|projektsteuerung-entwicklung/.test(route)) {
+    assert.match(page.html, /\/videos\/demos\//, `${route}: missing video poster`);
+    assert(!/<video\b/.test(page.html), `${route}: video must wait for a play click`);
+    assert.match(page.html, /id="praxisvergleich"/, `${route}: missing evaluation plan`);
+    assert.match(page.html, /id="ki-integration"/, `${route}: missing application-specific AI and data explanation`);
+    assert.match(page.html, /noch keine Messergebnisse|results not yet measured/, `${route}: evaluation plan must not imply measured results`);
+  }
+  if (route.includes('projektsteuerung-entwicklung')) {
+    assert.match(page.html, /id="projektbeispiel"/, `${route}: missing project workflow visual`);
+    assert.match(page.html, /kein Kundenfall|not a customer case/, `${route}: illustrative workflow must be labelled`);
+  }
 }
+for (const [route, page] of rendered) {
+  if (page.html.includes('<footer')) {
+    assert.match(page.html, /id="implementation-principle-title"/, `${route}: missing shared implementation principle`);
+    assert.match(page.html, /deterministische Automatisierung Vorrang|deterministic automation takes priority/, `${route}: missing rules-first priority`);
+    assert.match(page.html, /Datenbankanbindungen und Änderungshistorien|database connections and change histories/, `${route}: missing database and history principle`);
+  }
+}
+const knowledge = rendered.get('/use-cases/knowledge-graph-management');
+assert.equal([...knowledge.html.matchAll(/<h1\b/g)].length, 1, 'knowledge page: h1 count');
+assert.equal(knowledge.schemas.find(s => s['@type'] === 'FAQPage')?.mainEntity.length, 3, 'knowledge page: FAQ schema');
+assert(knowledge.schemas.some(s => s['@type'] === 'BreadcrumbList'), 'knowledge page: breadcrumb schema');
+assert.match(knowledge.html, /noch keine Messergebnisse/, 'knowledge page: unmeasured status');
+assert.match(knowledge.html, /Interner Prototyp mit eigenen Unterlagen/, 'knowledge page: prototype scope');
+const knowledgeVisible = knowledge.html.replace(/<script\b[\s\S]*?<\/script>/g, '');
+assert(!/Jede Frage in Sekunden|Nie mehr Wissen verlieren/.test(knowledgeVisible), 'knowledge page: unsupported visible guarantee');
+const patent = rendered.get('/use-cases/patentrecherche-ki');
+assert.equal([...patent.html.matchAll(/<h1\b/g)].length, 1, 'patent page: h1 count');
+assert.equal(patent.schemas.find(s => s['@type'] === 'FAQPage')?.mainEntity.length, 3, 'patent page: FAQ schema');
+assert(patent.schemas.some(s => s['@type'] === 'BreadcrumbList'), 'patent page: breadcrumb schema');
+const patentVisible = patent.html.replace(/<script\b[\s\S]*?<\/script>/g, '');
+assert.match(patentVisible, /Interner Recherche-Prototyp/, 'patent page: prototype scope');
+assert.match(patentVisible, /noch keine Messergebnisse/, 'patent page: unmeasured status');
+assert.match(patentVisible, /Vorrecherche ist keine Nutzungsfreigabe/, 'patent page: scope boundary');
+assert.match(patentVisible, /Änderungshistorie/, 'patent page: history');
+assert(!/Stunden statt Tage|Prior Art vollständig im Blick/.test(patentVisible), 'patent page: unsupported guarantee');
+const requests = rendered.get('/use-cases/email-klassifizierung');
+assert.equal([...requests.html.matchAll(/<h1\b/g)].length, 1, 'requests page: h1 count');
+assert.equal(requests.schemas.find(s => s['@type'] === 'FAQPage')?.mainEntity.length, 3, 'requests page: FAQ schema');
+assert(requests.schemas.some(s => s['@type'] === 'BreadcrumbList'), 'requests page: breadcrumb schema');
+const requestsVisible = requests.html.replace(/<script\b[\s\S]*?<\/script>/g, '');
+assert.match(requestsVisible, /Interner Workflow-Prototyp/, 'requests page: prototype scope');
+assert.match(requestsVisible, /noch keine Messergebnisse/, 'requests page: unmeasured status');
+assert.match(requestsVisible, /Änderungshistorie/, 'requests page: history');
+assert.match(requestsVisible, /Automatischer Versand ist nicht Bestandteil/, 'requests page: human approval boundary');
+assert(!/mehrere Personalstellen|zuverlässiger als manuelle Sortierung|~60%|Antworten am selben Tag/.test(requestsVisible), 'requests page: unsupported guarantee');
+const scouting = rendered.get('/use-cases/technologie-scouting');
+assert.equal([...scouting.html.matchAll(/<h1\b/g)].length, 1, 'scouting page: h1 count');
+assert.equal(scouting.schemas.find(s => s['@type'] === 'FAQPage')?.mainEntity.length, 3, 'scouting page: FAQ schema');
+assert(scouting.schemas.some(s => s['@type'] === 'BreadcrumbList'), 'scouting page: breadcrumb schema');
+const scoutingVisible = scouting.html.replace(/<script\b[\s\S]*?<\/script>/g, '');
+assert.match(scoutingVisible, /Interner Scouting-Prototyp/, 'scouting page: prototype scope');
+assert.match(scoutingVisible, /noch keine Messergebnisse/, 'scouting page: unmeasured status');
+assert.match(scoutingVisible, /Änderungshistorie/, 'scouting page: history');
+assert.match(scoutingVisible, /Die technische Bewertung bleibt bei Ihrem Team/, 'scouting page: human decision boundary');
+assert(!/wöchentlich auf Ihrem Tisch|ohne Suchaufwand|bevor die Konkurrenz/.test(scoutingVisible), 'scouting page: unsupported guarantee');
+const meetings = rendered.get('/use-cases/meeting-transkript-analyse');
+assert.equal([...meetings.html.matchAll(/<h1\b/g)].length, 1, 'meetings page: h1 count');
+assert.equal(meetings.schemas.find(s => s['@type'] === 'FAQPage')?.mainEntity.length, 3, 'meetings page: FAQ schema');
+assert(meetings.schemas.some(s => s['@type'] === 'BreadcrumbList'), 'meetings page: breadcrumb schema');
+const meetingsVisible = meetings.html.replace(/<script\b[\s\S]*?<\/script>/g, '');
+assert.match(meetingsVisible, /Bei AImation im Aufbau/, 'meetings page: build status');
+assert.match(meetingsVisible, /noch keine Messergebnisse/, 'meetings page: unmeasured status');
+assert.match(meetingsVisible, /Änderungshistorie/, 'meetings page: history');
+assert.match(meetingsVisible, /menschlichen Freigabe/, 'meetings page: human approval boundary');
+assert(!/80% davon gehen verloren|bevor der Raum leer ist|Zeitersparnis gegenüber/.test(meetingsVisible), 'meetings page: unsupported guarantee');
+for (const [from, targets] of [
+  ['/', ['/ki-produktentwicklung', '/use-cases/projektsteuerung-entwicklung']],
+  ['/ki-schulungen-mittelstand', ['/schulungen/microsoft-365-copilot']],
+  ['/use-cases', ['/use-cases/variantenmanagement', '/use-cases/skillmatrix-entwicklung', '/use-cases/projektsteuerung-entwicklung', '/use-cases/technologie-scouting', '/use-cases/meeting-transkript-analyse']],
+]) for (const target of targets) assert(rendered.get(from).html.includes(`href="${target}"`), `${from}: missing contextual link to ${target}`);
 const robots = await get('/robots.txt');
 assert.equal(robots.response.status, 200);
 assert.match(robots.html, /User-agent: OAI-SearchBot\nAllow: \/\nDisallow: \/api\//);

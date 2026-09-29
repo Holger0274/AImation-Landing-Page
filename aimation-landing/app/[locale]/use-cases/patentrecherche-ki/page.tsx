@@ -1,228 +1,92 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
-import ImageOriginLabel from '@/components/ui/ImageOriginLabel';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
+import ImageOriginLabel from '@/components/ui/ImageOriginLabel';
 import DemoTile from '@/components/ui/DemoTile';
 import AgentHumanLoop from '@/components/diagrams/AgentHumanLoop';
 import QktTriangle from '@/components/diagrams/QktTriangle';
+import TopicPage, { TopicSteps, topicStyles as s } from '@/components/pages/TopicPage';
+import { pageMetadata } from '@/lib/seo/metadata';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
-const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/erstgespraech';
-
+const PATH = '/use-cases/patentrecherche-ki';
 export const dynamic = 'force-static';
+export const metadata: Metadata = pageMetadata(PATH, 'de', 'Patentrecherche mit KI für die Produktentwicklung | AImation', 'Technische Merkmale recherchieren, Patentfundstellen mit KI aufbereiten und fachlich prüfen. Interner Prototyp für die Vorrecherche, keine FTO-Freigabe.');
 
-export const metadata: Metadata = {
-  title: { absolute: 'Patentrecherche automatisieren mit KI | Use Case | AImation' },
-  description: 'Wie AImation Patentrecherche automatisiert: Prior-Art-Analyse in Stunden statt Tagen mit Perplexity AI und Claude. Live-Demo im Erstgespräch verfügbar.',
-  alternates: { canonical: `${siteUrl}/use-cases/patentrecherche-ki` },
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: 'Patentrecherche automatisieren mit KI | AImation',
-    description: 'Prior-Art-Analyse in Stunden statt Tagen mit Perplexity AI und Claude. Live-Demo im Erstgespräch verfügbar.',
-    url: `${siteUrl}/use-cases/patentrecherche-ki`,
-    type: 'article',
-    locale: 'de_DE',
-    images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
-  },
-};
+const faqs = [
+  { question: 'Ersetzt die KI eine Prüfung durch die Patentabteilung?', answer: 'Nein. Sie unterstützt die technische Vorrecherche und bereitet Fundstellen zur Prüfung auf. Eine Aussage zur Patentierbarkeit oder zur Nutzung einer Lösung ohne Verletzung fremder Schutzrechte gehört nicht zum Leistungsumfang dieses Prototyps. Dafür braucht es eine gesonderte fachliche und rechtliche Prüfung.' },
+  { question: 'Welche Patentdatenbanken werden angebunden?', answer: 'Datenquellen, Länder, Sprachen und Suchumfang werden für Ihren Pilot festgelegt. Öffentliche Recherchemöglichkeiten sind etwa Espacenet und WIPO PATENTSCOPE. Ob eine automatisierte Anbindung verfügbar und zulässig ist, prüfen wir je Quelle. Eine Website mit Suchfunktion ist nicht automatisch eine frei nutzbare API.' },
+  { question: 'Kann die Lösung neue Wettbewerber-Patente beobachten?', answer: 'Ein regelmäßiger Abgleich veröffentlichter Dokumente kann als Erweiterung eingerichtet werden. Suchprofil, Prüftermin und verantwortliche Person werden vereinbart. Noch nicht veröffentlichte Anmeldungen sind darüber nicht auffindbar. Monitoring ersetzt weder eine vollständige Recherche noch eine rechtliche Bewertung.' },
+];
 
-export default async function PatentrechercheKiPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function PatentrechercheKiPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  if (locale === 'en') return <GermanOnlyNotice namespace="enUseCaseNotice" href={PATH} />;
 
-  if (locale === 'en') {
-    return <GermanOnlyNotice namespace="enUseCaseNotice" href="/use-cases/patentrecherche-ki" />;
-  }
+  return <TopicPage locale="de" path={PATH} label="KI-gestützte Patentrecherche"
+    title="Patente gezielt sichten." accent="Fundstellen nachvollziehen."
+    intro="Welche technischen Lösungen sind bereits beschrieben? Wir unterstützen Ihre Vorrecherche mit KI: Suchbegriffe ausarbeiten, Patenttexte aufbereiten und Merkmale mit Fundstellen verbinden. So erhält Ihr Entwicklungsteam eine prüfbare Grundlage für die nächste Konzeptbesprechung."
+    parent={{ href: '/use-cases', label: 'Use Cases' }}
+    facts={['Interner Recherche-Prototyp', 'KI-Auswertung mit Quellenbezug', 'Keine FTO-Freigabe']}
+    visual={<figure className={s.preview}><div className="relative overflow-hidden rounded-md"><Image src="/images/editorial/research.webp" alt="Illustration: Technische Merkmale mehrerer Lagerkonstruktionen werden anhand von Patentzeichnungen verglichen." width={1280} height={720} sizes="(max-width: 900px) 94vw, 46vw" priority/><ImageOriginLabel src="/images/editorial/research.webp"/></div><figcaption className="text-sm text-muted leading-relaxed">Merkmale vergleichen und Fundstellen prüfen. Die Illustration zeigt das Prinzip, keinen realen Patentbefund.</figcaption></figure>}
+    faqs={faqs} cta="Ihre Rechercheaufgabe besprechen"
+    closing={{ title: 'Beginnen wir mit einem technischen Merkmal.', description: 'Im kostenlosen Erstgespräch grenzen wir Ihre Recherchefrage, mögliche Quellen und die fachliche Prüfung ab. Ein bereits öffentliches Beispiel reicht. Vertrauliche Erfindungsdetails müssen Sie dafür nicht hochladen.' }}
+    related={[{ href: '/use-cases/knowledge-graph-management', label: 'Entwicklungswissen mit Quellen verbinden' }, { href: '/use-cases/variantenmanagement', label: 'Varianten und Regeln beherrschbar machen' }, { href: '/ki-produktentwicklung', label: 'KI in der technischen Produktentwicklung' }]}>
+    <div className="engineering-wrap">
+      <section className={s.section + ' ' + s.split}>
+        <div><p className={s.eyebrow}>Vor der nächsten Konzeptentscheidung</p><h2>Viele Treffer. Welche betreffen Ihre Konstruktion?</h2></div>
+        <div><p>Ein Mechanismus taucht unter verschiedenen Begriffen auf. Eine Zeichnung sieht ähnlich aus, beschreibt aber eine andere Funktion. Das Team muss Patenttexte lesen, Merkmale zuordnen und seine Auswahl begründen.</p><p className="mt-5">Hier setzen wir an. Eine vorsortierte Auswahl mit konkreten Textstellen lässt sich gemeinsam prüfen. Eine überzeugend formulierte KI-Zusammenfassung ohne Belege hilft dabei wenig.</p></div>
+      </section>
 
-  return (
-    <>
-      <Header />
-      <main id="main-content" className="bg-ground pt-32 pb-20">
-        <div className="max-w-3xl mx-auto px-4">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter flex-wrap">
-            <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
-            <span>/</span>
-            <Link href="/#use-cases" className="hover:text-ink transition-colors">Use Cases</Link>
-            <span>/</span>
-            <span className="text-ink font-medium">Patentrecherche & Prior Art</span>
-          </nav>
+      <section className={s.section} id="einblick" aria-labelledby="patent-example-title">
+        <div className={s.split}><div><p className={s.eyebrow}>Prinzipdarstellung / kein Kundenfall</p><h2 id="patent-example-title">Vom Merkmal zur belegten Fundstelle.</h2></div><p>Für eine Lagerkonstruktion könnte die Frage lauten: Welche Veröffentlichungen beschreiben einen vergleichbaren Ausgleich von Fertigungstoleranzen? Suchbegriffe, gefundene Dokumente und die fachliche Einordnung bleiben getrennt nachvollziehbar.</p></div>
+        <figure className={s.plate + ' mt-8'}><Image src="/images/editorial/patent-detail.svg" alt="Technisches Merkmal, belegte Fundstelle und fachliche Einordnung einer Patentrecherche." width={960} height={540} sizes="(max-width: 900px) 94vw, 1100px" className="hidden sm:block w-full h-auto"/>
+          <ol className="sm:hidden space-y-6">{[
+            ['Merkmal', 'Welche Funktion oder konstruktive Lösung wird gesucht?'],
+            ['Fundstelle', 'Welche Veröffentlichungsnummer und welcher Absatz oder Anspruch belegen den Treffer?'],
+            ['Einordnung', 'Was passt technisch, was weicht ab und welche Frage bleibt offen?'],
+          ].map(([title, text], i) => <li key={title} className="border-l border-line-strong pl-5"><span className="text-sm text-dim font-mono">0{i + 1}</span><h3 className="mt-2">{title}</h3><p>{text}</p></li>)}</ol>
+          <figcaption className="text-sm text-muted leading-relaxed mt-4">Illustratives Beispiel. Keine echte Patentauswertung und keine Aussage zu bestehenden Schutzrechten.</figcaption>
+        </figure>
+      </section>
 
-          <div className="flex flex-wrap gap-2 mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-white text-xs font-heading font-semibold" style={{ backgroundColor: '#7209B7' }}>
-              KNOW · Wissensmanagement
-            </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 text-green-300 text-xs font-heading font-semibold">
-              ✓ Live-Demo im Erstgespräch verfügbar
-            </div>
-          </div>
+      <section className={s.section + ' ' + s.split}>
+        <div><p className={s.eyebrow}>Der Ablauf für Ihren Pilot</p><h2>Die Suchfrage entscheidet über die Treffer.</h2><p>Am Ende sollen eine begründete Trefferauswahl, ein Merkmalsvergleich und ein Rechercheprotokoll vorliegen. Offene Fragen gehen mit in die Besprechung.</p></div>
+        <TopicSteps steps={[
+          ['Recherche abgrenzen', 'Funktion, Bauteil und technische Merkmale beschreiben. Begriffe, Sprachen, Quellen und Suchzeitraum festlegen. Die zulässige Verarbeitung vertraulicher Angaben vorab klären.'],
+          ['Treffer erfassen und ordnen', 'Suchanfragen und Abrufdatum protokollieren. Veröffentlichungsnummern, Dubletten und Filter nach festen Regeln verarbeiten. Den erfassten Quellenumfang sichtbar halten.'],
+          ['KI-Auswertung prüfen', 'KI schlägt Suchbegriffe vor und entwirft Zusammenfassungen mit Absatz- oder Anspruchsbezug. Jede relevante Aussage wird am Original geprüft. Fehlende Belege bleiben als Lücke markiert.'],
+          ['Ergebnisse einordnen', 'Entwicklung und Patentverantwortliche prüfen die Trefferauswahl. Technische Relevanz, offene Fragen und nächste Prüfschritte werden dokumentiert. Eine rechtliche Freigabe ist ein gesonderter Schritt.'],
+        ]}/>
+      </section>
 
-          <h1 className="font-heading font-bold text-ink mb-4 leading-tight" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.5rem)' }}>
-            Patentrecherche & Prior Art:{' '}
-            <span className="text-magenta-light">Stunden statt Tage, vom Spezialisten ins ganze Team</span>
-          </h1>
+      <section className={s.section} id="ki-integration">
+        <div className={s.split}><div><p className={s.eyebrow}>KI, feste Regeln und Datenhistorie</p><h2>Die KI formuliert. Ihr Team prüft die Belege.</h2></div><div><p>Deterministische Automatisierung hat Vorrang, wo Regeln ausreichen: Dokumentnummern abgleichen, Treffer filtern und Bearbeitungsstände zuordnen. KI unterstützt beim Lesen, bei Begriffsvorschlägen und beim Vergleich technischer Beschreibungen.</p><p className="mt-5">Für Ihren Pilot planen wir die Datenbankanbindung mit Suchprotokoll, Quellenstand und Änderungshistorie. KI-Entwurf und fachlich geprüfte Bewertung müssen unterscheidbar sein. Zugriffsrechte, Aufbewahrung und erlaubte Dienste werden vor dem Einsatz festgelegt.</p></div></div>
+        <figure className="mt-10"><AgentHumanLoop variant="dark" animated={false} className="hidden sm:block w-full max-w-4xl mx-auto h-auto"/>
+          <ol className="sm:hidden space-y-3 text-muted">{['Recherchefrage erfassen', 'Agent sammelt Quellen', 'KI erstellt einen belegten Entwurf', 'Fachperson prüft die technische Einordnung', 'Erkenntnisse mit Prüfstand ablegen'].map((step, i) => <li key={step} className="border-l border-line-strong pl-5 py-2"><span className="font-mono text-dim mr-3">0{i + 1}</span>{step}</li>)}</ol>
+          <figcaption className={s.note}>Zielablauf mit menschlicher Prüfung. Die technische Einordnung in dieser Darstellung ist keine rechtliche Nutzungsfreigabe.</figcaption>
+        </figure>
+      </section>
 
-          <p className="text-muted font-inter leading-relaxed mb-6 text-lg">
-            Automatisierte Analyse über Patentdatenbanken hinweg. Der Recherche-Agent greift per API auf EPA, USPTO, WIPO, Google Patents und weitere Quellen zu, findet relevante Prior Art, vergleicht Claims und liefert strukturierte Übersichten, ohne dass Ingenieure manuell durchsuchen müssen.
-          </p>
+      <section className={s.section + ' ' + s.split}>
+        <div><p className={s.eyebrow}>Stand bei AImation</p><h2>Ein Prototyp für die Vorrecherche.</h2><p>Der interne Ansatz nutzt Perplexity und Claude zur Rechercheunterstützung und Aufbereitung. Der öffentliche Screencast steht noch aus. Welche Datenquellen automatisiert angebunden werden, wird für Ihren Pilot geprüft und umgesetzt.</p><p className="mt-5">Ein wiederkehrender Abgleich veröffentlichter Dokumente ist als Erweiterung denkbar. Er braucht ein gepflegtes Suchprofil und jemanden, der neue Treffer bewertet.</p></div>
+        <div className="max-w-lg"><DemoTile previewSrc="/images/editorial/patent-research.svg" title="Patentrecherche: vom Merkmal zur Fundstelle" badge="Screencast folgt" placeholderNote="Prinzipdarstellung des internen Recherche-Ansatzes. Datenquellen, Schnittstellen und Berichtsumfang werden für Ihren Pilot abgestimmt."/></div>
+      </section>
 
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
-            <Image
-              src="/images/editorial/research.webp"
-              alt="Illustration: Technische Merkmale mehrerer Lagerkonstruktionen werden anhand von Patentzeichnungen verglichen."
-              fill
-              sizes="(max-width: 768px) 92vw, 768px"
-              className="object-cover"
-              priority
-            />
-            <ImageOriginLabel src="/images/editorial/research.webp" />
-          </div>
+      <section className={s.section} id="vergleichsplan">
+        <div className={s.split}><div><p className={s.eyebrow}>Vergleichsplan / noch keine Messergebnisse</p><h2>Prüfaufwand gehört zur Recherchezeit.</h2></div><p>Wir vergleichen dieselbe technische Frage im bisherigen Ablauf und im Pilot. Bekannte relevante Dokumente dienen als Prüfbeispiele. So wird sichtbar, ob der Ansatz Arbeit spart oder nur von der Suche in die Nachkontrolle verlagert.</p></div>
+        <div className="flex flex-col sm:flex-row items-start gap-6 mt-8"><QktTriangle variant="dark" className="w-16 h-16 shrink-0"/><dl className="flex-1 grid md:grid-cols-3 gap-8">{[
+          ['Qualität', 'Werden bekannte relevante Dokumente gefunden? Stimmen die zitierten Textstellen? Welche Treffer sind unpassend?'],
+          ['Kosten', 'Was kosten Datenzugang, Einrichtung, Modellnutzung und fachliche Nachprüfung je Recherche?'],
+          ['Timing', 'Wie lange dauert es bis zur geprüften Trefferauswahl, einschließlich Suchvorbereitung und Korrekturen?'],
+        ].map(([title, text]) => <div key={title}><dt className="font-heading text-xl mb-3">{title}</dt><dd className="text-muted leading-relaxed">{text}</dd></div>)}</dl></div>
+      </section>
 
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            Wochen Konzeptarbeit. Dann die Mail aus der Patentabteilung: Ein Wettbewerber hat genau das bereits geschützt. Projekt zurück auf Null.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            Solche Momente kennt jeder R&amp;D-Leiter. Sie entstehen nicht aus mangelnder Sorgfalt, sondern weil Patentrecherche hochqualifizierte Ingenieure über Tage bindet.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            Das Wissen über Claims und Freiheitsgrade liegt fast ausschließlich beim Patentingenieur. Der Kollege im Design entwickelt im Blindflug: entweder in ein Konkurrenzpatent hinein oder an Freiräumen vorbei, die man hätte nutzen können.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            In unserem PoC haben wir mit Perplexity AI und Claude einen Agenten gebaut, der parallel mehrere Datenbank-APIs abfragt, Claims analysiert und einen Bericht auf Engineering-Niveau liefert. Das Ziel: Recherchen, die bisher einen Tag dauern, in Stunden abzuschließen.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            Die Ergebnisse stehen nicht nur der Patentabteilung zur Verfügung, sondern jedem Ingenieur im Projekt. Was bisher beim Patentingenieur saß, ist jetzt Alltagswerkzeug für das ganze Team.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-8">
-            Zusätzlich kann der Agent definierte Technologiegruppen und Wettbewerber dauerhaft überwachen und neue Anmeldungen früh melden, oft bevor sie in Fachpresse oder Produkten sichtbar werden.
-          </p>
-          <div className="bg-ground border border-line rounded-2xl p-6 mb-8">
-            <p className="text-muted font-inter leading-relaxed italic">
-              Der nächste Schritt wäre ein Chatbot, mit dem Ingenieure direkt mit den Patenten sprechen: Fragen stellen, Claims verstehen, Zusammenhänge erklären lassen, angereichert mit dem technischen Wissen Ihres Unternehmens. Oder ein autonomer Agent, der die komplette Vorrecherche übernimmt und morgens einen Bericht liefert. Beides haben wir in Projekten aufgebaut. Wer das live sehen möchte, kann das im Erstgespräch tun.
-            </p>
-          </div>
-
-          <div className="mb-10">
-            <h2 className="font-heading font-bold text-ink mb-4">So sieht das aus</h2>
-            <div className="max-w-sm">
-              <DemoTile
-                previewSrc="/images/editorial/patent-research.svg"
-                title="Patentrecherche: strukturierter Bericht statt Trefferliste"
-                badge="Demo folgt"
-                placeholderNote="Screencast folgt. Im Erstgespräch zeige ich Ihnen den strukturierten Bericht, den der Recherche-Agent aus einer Patentanfrage erstellt."
-              />
-            </div>
-          </div>
-
-          <div className="flex justify-center mb-10">
-            <AgentHumanLoop variant="dark" className="w-full max-w-2xl h-auto" />
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-6 mb-10">
-            <div className="bg-red-500/10 rounded-2xl p-6 border border-red-500/25">
-              <h2 className="font-heading font-bold text-ink mb-3">Das Problem</h2>
-              <ul className="space-y-2 text-sm font-inter text-muted">
-                <li>• Manuelle Patentrecherche dauert Tage und bindet teure Ingenieurskapazität</li>
-                <li>• Prior Art und relevante Claims werden übersehen oder falsch eingeordnet</li>
-                <li>• Freiheitsgrade bleiben unklar, Design arbeitet im Blindflug</li>
-                <li>• Überblick liegt nur beim Patentingenieur, nicht bei den Entwicklern im Projekt</li>
-                <li>• Wettbewerber-Monitoring und Technologiegruppen-Tracking laufen selten systematisch</li>
-              </ul>
-            </div>
-            <div className="bg-green-500/10 rounded-2xl p-6 border border-green-500/25">
-              <h2 className="font-heading font-bold text-ink mb-3">Die Lösung</h2>
-              <ul className="space-y-2 text-sm font-inter text-muted">
-                <li>• Parallele Abfrage mehrerer Datenbank-APIs: EPA, USPTO, WIPO, Google Patents und weitere</li>
-                <li>• Claim-Analyse und strukturierte Berichte, direkt im Engineering-Alltag weiterverwendbar</li>
-                <li>• Freiheitsgrade werden sichtbar, Gestaltungsspielräume sofort erkennbar</li>
-                <li>• Ergebnisse für das gesamte Team zugänglich, nicht nur für die Patentabteilung</li>
-                <li>• Dauerhaftes Monitoring mit Frühwarnung bei neuen Anmeldungen und Erfindungsmeldungen</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10">
-            <Image
-              src="/images/editorial/patent-detail.svg"
-              alt="Prinzipdarstellung: Technisches Merkmal, belegte Fundstelle und fachliche Einordnung einer Patentrecherche."
-              fill
-              sizes="(max-width: 768px) 92vw, 768px"
-              className="object-contain"
-            />
-          </div>
-
-          <div className="bg-surface rounded-2xl border border-line p-6 mb-10">
-            <h2 className="font-heading font-bold text-ink mb-4">Tech Stack</h2>
-            <div className="flex flex-wrap gap-2">
-              {['Perplexity AI', 'Claude (Anthropic)', 'Patentdatenbanken (EPA, Google Patents)', 'n8n Automation', 'Structured Output'].map((t) => (
-                <span key={t} className="px-3 py-1.5 bg-ground rounded-full text-sm font-inter text-muted border border-line">{t}</span>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-[#071013] rounded-2xl p-6 mb-10 text-white">
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-              <h2 className="font-heading font-bold">Ergebnis im PoC</h2>
-              <QktTriangle variant="dark" className="w-16 h-16 flex-shrink-0" />
-            </div>
-            <div className="grid sm:grid-cols-3 gap-4">
-              {[
-                { metric: 'Stunden', label: 'statt Tage pro Recherche' },
-                { metric: 'strukturiert', label: 'Berichte statt roher Trefferlisten' },
-                { metric: 'laufend', label: 'Wettbewerber-Monitoring möglich' },
-              ].map((r) => (
-                <div key={r.label} className="text-center">
-                  <div className="font-heading font-bold text-magenta-light mb-1" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>{r.metric}</div>
-                  <div className="text-gray-400 font-inter text-sm">{r.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-ground border border-line rounded-2xl p-6 mb-10">
-            <h2 className="font-heading font-bold text-ink mb-3">Ehrliche Einordnung</h2>
-            <p className="text-muted font-inter leading-relaxed">
-              Der PoC läuft bei AImation intern. Was er kann: parallele Abfrage von EPA, USPTO, WIPO und Google Patents, strukturierte Berichte in Stunden statt Tagen. Was er nicht kann: die Bewertung durch einen Patentanwalt ersetzen. Die letzte Einschätzung bleibt beim Menschen.
-            </p>
-          </div>
-
-          <div className="text-center">
-            <p className="text-muted font-inter mb-4">Haben Sie einen ähnlichen Anwendungsfall? Wir schauen gemeinsam, was auf Ihrem Fundament möglich ist.</p>
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-bold text-[#071013]"
-              style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
-            >
-              Kostenloses Erstgespräch buchen
-            </a>
-          </div>
-
-          <div className="mt-10 pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-line text-ink font-heading font-semibold hover:bg-[#071013] hover:text-white transition-all duration-200"
-            >
-              ← Zurück zur Hauptseite
-            </Link>
-            <Link
-              href="/#use-cases"
-              className="text-sm font-inter text-magenta-light hover:underline"
-            >
-              Alle Use Cases ansehen →
-            </Link>
-          </div>
-        </div>
-      </main>
-      <Footer />
-    </>
-  );
+      <section className={s.section + ' ' + s.split} id="grenzen">
+        <div><p className={s.eyebrow}>Die Grenze des Angebots</p><h2>Vorrecherche ist keine Nutzungsfreigabe.</h2></div>
+        <div><p>Eine KI-Trefferliste beantwortet nicht, ob Sie eine Lösung rechtlich nutzen dürfen. Eine Freedom-to-operate-Prüfung berücksichtigt unter anderem Patentansprüche, relevante Länder und den Rechtsstand. Diese Prüfung wird hier nicht angeboten oder ersetzt.</p><p className="mt-5">Auch eine Suche ohne Treffer belegt keine Freiheit von Schutzrechten. Nicht veröffentlichte Anmeldungen sind in öffentlichen Quellen noch nicht sichtbar. Eine vollständige Prior-Art-Recherche kann zudem Quellen außerhalb von Patentdatenbanken erfordern.</p><p className={s.note}>Zur Einordnung: <a className="engineering-text-link" href="https://www.epo.org/en/searching-for-patents/helpful-resources/patent-knowledge-news/epos-global-patent-index-fit-your-fto" target="_blank" rel="noopener noreferrer">EPA zur FTO-Recherche ↗</a> und <a className="engineering-text-link" href="https://www.wipo.int/en/web/patents/faq_patents" target="_blank" rel="noopener noreferrer">WIPO zu Patenten und Veröffentlichung ↗</a>.</p></div>
+      </section>
+    </div>
+  </TopicPage>;
 }

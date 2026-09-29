@@ -15,6 +15,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const t = useTranslations('projectShowcase');
   const statusConfig = STATUS_CONFIG[project.status];
+  const hasDetail = Boolean(project.detailUrl);
 
   const cardContent = (
     <motion.div
@@ -28,7 +29,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     >
       {/* Image Area */}
       <div className="relative w-full aspect-video overflow-hidden bg-raised">
-        {project.detailUrl && project.status === 'completed' && (
+        {hasDetail && (
           <div className="absolute inset-0 z-10 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center pointer-events-none">
             <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-surface backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
               <svg className="w-4 h-4 text-magenta-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,7 +130,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {t(`status.${project.status}`)}
               </span>
             </div>
-            {project.detailUrl && project.status === 'completed' && (
+            {hasDetail && (
               <span className="flex items-center gap-1 text-xs font-medium text-magenta-light group-hover:gap-2 transition-all duration-200">
                 {t('detailsView')}
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,7 +145,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     </motion.div>
   );
 
-  if (project.detailUrl && project.status === 'completed') {
+  if (project.detailUrl) {
     return (
       <Link href={project.detailUrl} className="block h-full">
         {cardContent}

@@ -309,8 +309,8 @@
     "cards": {
       "patent-research": {
         "title": "Patent Research and Prior Art",
-        "description": "Automated analysis of patent databases. Finds relevant prior art, identifies competitor patents and produces structured overviews.",
-        "metrics": "Prior art fully in view before design work begins. Account: quality and timing.",
+        "description": "AI-assisted preliminary research: link technical features to patent sources for expert review. Internal research prototype, not a legal clearance.",
+        "metrics": "The pilot evaluates relevant results, source references and total research effort. No measured customer results yet.",
         "alt": "Compare a technical feature with patent sources and evaluate it."
       },
       "project-review-dashboard": {
@@ -321,14 +321,14 @@
       },
       "email-classification": {
         "title": "Automatically pre-sort technical requests",
-        "description": "Classification of incoming technical requests and change orders. Gathers context from your systems and drafts a reply. Every answered request feeds into the lessons-learned base.",
-        "metrics": "Replies the same day, and every answer becomes secured knowledge. Account: timing and cost.",
+        "description": "Pre-sort technical requests and change orders, link approved sources and prepare a reply draft for expert review. Internal workflow prototype.",
+        "metrics": "The pilot evaluates routing, source quality and effort through approval. No measured customer results yet.",
         "alt": "A request and attachment become a draft for human approval."
       },
       "tech-scouting": {
         "title": "Technology Scouting",
-        "description": "Continuous monitoring of technology trends and innovations. Filters relevant developments out of journals, papers and news and flags what affects your products.",
-        "metrics": "Relevant developments land on your desk weekly, without any search effort. Account: timing and quality.",
+        "description": "Monitor defined technical sources, use AI to pre-structure findings and have experts assess their possible relevance to your product. Internal scouting prototype.",
+        "metrics": "The pilot evaluates source quality, product relevance and effort through expert review. No measured customer results yet.",
         "alt": "Research connects publications to developments relevant to the product."
       },
       "knowledge-graph-management": {
@@ -351,8 +351,8 @@
       },
       "meeting-transcript-analysis": {
         "title": "Meetings without the minutes effort",
-        "description": "Meeting transcripts automatically sorted into to-dos, insights and open points. Stored for semantic search.",
-        "metrics": "To-dos and insights captured before the room empties. Account: cost and timing.",
+        "description": "Use AI to structure approved meeting transcripts into decisions, tasks and open points, with timestamps and human approval. In development at AImation.",
+        "metrics": "The pilot evaluates completeness, transcript evidence and effort through approval. No measured customer results yet.",
         "alt": "A conversation becomes decisions, assigned tasks and open questions."
       },
       "multi-agent-debate": {
@@ -696,7 +696,10 @@
   "footer": {
     "tagline": "More time for what",
     "taglineHighlight": "matters",
-    "subtagline": "Engineering experience. No buzzword bingo.",
+    "subtagline": "AI for technical product development.",
+    "implementationTitle": "How we use AI and automation.",
+    "implementationRules": "Where fixed rules reliably solve a task, deterministic automation takes priority. We integrate AI for specific tasks such as document analysis, risk suggestions or report drafts. Technical review and approval remain with you.",
+    "implementationHistory": "For implementation, we plan database connections and change histories: what changed, when, on what basis and by whom? We agree data sources, access permissions and retention with you. For the applications shown, we distinguish existing functions from planned extensions.",
     "colLeistungen": "Services",
     "linkSchulungen": "Training",
     "linkBeratung": "Consulting",

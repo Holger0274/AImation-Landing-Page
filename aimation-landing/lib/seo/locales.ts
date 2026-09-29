@@ -3,6 +3,9 @@
 export const ENGLISH_PATHS = new Set([
   '/', '/ki-schulungen-mittelstand', '/facts/aimation', '/facts/holger-peschke',
   '/use-cases/excel-powerpoint-berichte',
+  '/ki-produktentwicklung', '/schulungen/microsoft-365-copilot',
+  '/use-cases/variantenmanagement', '/use-cases/skillmatrix-entwicklung',
+  '/use-cases/projektsteuerung-entwicklung',
 ]);
 
 export function basePath(path: string) {

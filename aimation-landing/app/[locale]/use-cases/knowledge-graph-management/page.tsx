@@ -1,228 +1,76 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
-import ImageOriginLabel from '@/components/ui/ImageOriginLabel';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
+import ImageOriginLabel from '@/components/ui/ImageOriginLabel';
 import DemoTile from '@/components/ui/DemoTile';
 import WissenVorherNachher from '@/components/diagrams/WissenVorherNachher';
 import QktTriangle from '@/components/diagrams/QktTriangle';
+import TopicPage, { TopicSteps, topicStyles as s } from '@/components/pages/TopicPage';
+import { pageMetadata } from '@/lib/seo/metadata';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
-const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/erstgespraech';
-
+const PATH = '/use-cases/knowledge-graph-management';
 export const dynamic = 'force-static';
+export const metadata: Metadata = pageMetadata(PATH, 'de', 'Entwicklungswissen mit KI finden | Knowledge Graph | AImation', 'Frühere Entwicklungsentscheidungen mit Quellen nachvollziehen: KI-gestützte Wissenssuche, verknüpfte Prüfberichte und Protokolle. Interner Prototyp und Weg zum Pilot.');
 
-export const metadata: Metadata = {
-  title: { absolute: 'Knowledge Graph Management mit KI | Use Case | AImation' },
-  description: 'Wie AImation Wissen vernetzt: Knowledge Graph mit Obsidian, Claude Code und semantischer Suche. Wissen das lebt, statt in Silos stirbt.',
-  alternates: { canonical: `${siteUrl}/use-cases/knowledge-graph-management` },
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: 'Knowledge Graph Management mit KI | AImation',
-    description: 'Knowledge Graph mit Obsidian, Claude Code und semantischer Suche. Wissen das lebt, statt in Silos stirbt.',
-    url: `${siteUrl}/use-cases/knowledge-graph-management`,
-    type: 'article',
-    locale: 'de_DE',
-    images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
-  },
-};
+const faqs = [
+  { question: 'Brauchen wir dafür immer einen Knowledge Graph?', answer: 'Nein. Wir prüfen zuerst, welche Fragen Ihr Team beantworten muss. Eine Suche mit Quellenbezug kann ausreichen. Ein Knowledge Graph kommt infrage, wenn Beziehungen zwischen Bauteilen, Prüfungen, Änderungen und Entscheidungen selbst wichtig sind.' },
+  { question: 'Kann die KI fehlendes Erfahrungswissen rekonstruieren?', answer: 'Nicht verlässlich. Wissen, das nur in Köpfen steckt, muss zuerst erhoben werden, etwa in fachlich geprüften Interviews oder Übergaben. Die KI darf Lücken nicht durch plausible Behauptungen schließen. Auch vorhandene Quellen können unvollständig oder widersprüchlich sein.' },
+  { question: 'Sind SharePoint und unsere Zugriffsrechte bereits angebunden?', answer: 'Die beschriebene Erprobung arbeitet mit eigenen Notizen und Projektunterlagen bei AImation. Anbindungen an Ihre Systeme, Rechteprüfung und Aktualisierung werden für Ihren Pilot gesondert umgesetzt und getestet. Vertrauliche Inhalte dürfen weder als Treffer noch über eine KI-Antwort an unberechtigte Personen gelangen.' },
+];
 
-export default async function KnowledgeGraphPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function KnowledgeGraphPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  if (locale === 'en') return <GermanOnlyNotice namespace="enUseCaseNotice" href={PATH} />;
 
-  if (locale === 'en') {
-    return <GermanOnlyNotice namespace="enUseCaseNotice" href="/use-cases/knowledge-graph-management" />;
-  }
+  return <TopicPage locale="de" path={PATH} label="KI-Wissensmanagement für die Entwicklung"
+    title="Entwicklungswissen finden." accent="Entscheidungen nachvollziehen."
+    intro="Eine Bauteiländerung ist dokumentiert, ihre Begründung schwer auffindbar. Wir verbinden Entwicklungsunterlagen mit KI-gestützter Suche und nachvollziehbaren Quellen. Ihr Team soll frühere Lösungen und ihre Begründung wiederfinden, bevor es dieselbe Frage erneut bearbeitet."
+    parent={{ href: '/use-cases', label: 'Use Cases' }}
+    facts={['Interner Prototyp mit eigenen Unterlagen', 'KI-Suche mit Quellenbezug', 'Unternehmensanbindung im Pilot']}
+    visual={<figure className={s.preview}><div className="relative overflow-hidden rounded-md"><Image src="/images/editorial/engineering-knowledge.webp" alt="Illustration: Ein Gehäuse ist mit Zeichnung, Prüfbericht und Entwicklungsnotizen verknüpft." width={1280} height={720} sizes="(max-width: 900px) 94vw, 46vw" priority/><ImageOriginLabel src="/images/editorial/engineering-knowledge.webp" /></div><figcaption className="text-sm text-muted leading-relaxed">Bauteil, Prüfung und Entscheidung gehören zusammen. Die Darstellung veranschaulicht das Prinzip.</figcaption></figure>}
+    faqs={faqs} cta="Einen Wissensfall besprechen"
+    closing={{ title: 'Starten wir mit einer Frage aus Ihrem Projekt.', description: 'Wählen Sie eine technische Entscheidung, deren Begründung heute schwer auffindbar ist. Im kostenlosen Erstgespräch klären wir Quellen, Zugriffsrechte und einen abgegrenzten ersten Test. Vertrauliche Unterlagen müssen Sie dafür noch nicht hochladen.' }}
+    related={[{ href: '/use-cases/skillmatrix-entwicklung', label: 'Wissensrisiken im Team erkennen' }, { href: '/use-cases/excel-powerpoint-berichte', label: 'Excel durch Dashboards und Apps ablösen' }, { href: '/ki-schulungen-mittelstand', label: 'KI-Schulung für Ihr Team' }]}>
+    <div className="engineering-wrap">
+      <section className={s.section + ' ' + s.split}>
+        <div><p className={s.eyebrow}>Im Entwicklungsalltag</p><h2>Der Prüfbericht ist da. Die Begründung fehlt.</h2></div>
+        <div><p>Eine Zeichnung liegt im Projektordner, das Versuchsprotokoll in SharePoint und die Begründung einer Änderung in einer Besprechungsnotiz. Das Team findet einzelne Dateien. Welche Fassung zur damaligen Entscheidung gehörte, muss es erst zusammensuchen.</p><p className="mt-5">Bei Übergaben und Einarbeitung fällt das besonders auf. Erfahrungswissen, das noch nicht dokumentiert ist, muss zuerst mit den Fachleuten erhoben werden. Eine KI kann es nicht aus leeren Ordnern holen.</p></div>
+      </section>
 
-  return (
-    <>
-      <Header />
-      <main id="main-content" className="bg-ground pt-32 pb-20">
-        <div className="max-w-3xl mx-auto px-4">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter flex-wrap">
-            <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
-            <span>/</span>
-            <Link href="/#use-cases" className="hover:text-ink transition-colors">Use Cases</Link>
-            <span>/</span>
-            <span className="text-ink font-medium">Knowledge Graph Management</span>
-          </nav>
+      <section className={s.section} id="einblick" aria-labelledby="knowledge-example-title">
+        <div className={s.split}><div><p className={s.eyebrow}>Prinzipdarstellung / kein Kundenfall</p><h2 id="knowledge-example-title">Von der Frage zur belegten Entscheidung.</h2></div><p>Eine Frage zur Bauteiländerung führt zu den zugehörigen Prüfberichten und Freigabeprotokollen. Die KI kann eine Antwort entwerfen. Sie muss dabei die verwendeten Quellen und ihren Stand nennen. Fehlt ein Beleg, bleibt die Aussage offen.</p></div>
+        <figure className={s.plate + ' mt-8'}><Image src="/images/editorial/knowledge-detail.svg" alt="Eine Frage zur Bauteiländerung wird mit Änderungsgrund, Prüfbericht und Freigabeprotokoll verbunden. Illustratives Beispiel." width={960} height={540} sizes="(max-width: 900px) 94vw, 1100px" className="hidden sm:block w-full h-auto"/><ol className="sm:hidden space-y-6">{[
+          ['Die Frage', 'Warum wurde das Bauteil geändert?'],
+          ['Der Prüfbericht', 'Welche Beobachtung hat die Änderung ausgelöst?'],
+          ['Das Freigabeprotokoll', 'Welcher Stand wurde mit welcher Begründung freigegeben?'],
+        ].map(([title, text], i) => <li key={title} className="border-l border-line-strong pl-5"><span className="text-sm text-dim font-mono">0{i + 1}</span><h3 className="mt-2">{title}</h3><p>{text}</p></li>)}</ol><figcaption className="text-sm text-muted leading-relaxed mt-4">Beispiel zur Erläuterung. Keine echte Projektentscheidung und kein Screenshot einer Kundenanwendung.</figcaption></figure>
+      </section>
 
-          <div className="flex flex-wrap gap-2 mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-white text-xs font-heading font-semibold" style={{ backgroundColor: '#7209B7' }}>
-              KNOW · Wissensmanagement
-            </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 text-green-300 text-xs font-heading font-semibold">
-              ✓ Live-Demo im Erstgespräch verfügbar
-            </div>
-          </div>
+      <section className={s.section + ' ' + s.split}><div><p className={s.eyebrow}>So entsteht die Wissensbasis</p><h2>Quellen verbinden. Aussagen prüfbar halten.</h2></div><TopicSteps steps={[
+        ['Quellen und Fragen abgrenzen', 'Mit einem Projekt, freigegebenen Unterlagen und typischen Fragen beginnen. Dokumentstände, fachliche Verantwortung und Zugriffsrechte klären.'],
+        ['Beziehungen aufbauen', 'Bauteile, Anforderungen, Versuche und Entscheidungen über bekannte IDs und feste Regeln zuordnen. KI kann weitere Verbindungen vorschlagen; fachliche Prüfung ist nötig.'],
+        ['Antwort mit Belegen prüfen', 'KI-Suche und Antwortentwurf an konkreten Fragen testen. Fundstellen, Versionsstand und widersprüchliche Angaben müssen sichtbar bleiben.'],
+        ['Änderungen nachführen', 'Neue Dokumentstände, ersetzte Quellen und Freigaben nachvollziehbar pflegen. Für Datenbank, Synchronisation und Historie feste Zuständigkeiten vereinbaren.'],
+      ]}/></section>
 
-          <h1 className="font-heading font-bold text-ink mb-4 leading-tight" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.5rem)' }}>
-            Knowledge Graph Management:{' '}
-            <span className="text-magenta-light">Wissen das lebt, statt in Silos stirbt</span>
-          </h1>
+      <section className={s.section}>
+        <div className={s.split}><div><p className={s.eyebrow}>Von getrennten Ablagen zum Zusammenhang</p><h2>Die Verbindung macht die Unterlagen nutzbar.</h2></div><p>Ein Knowledge Graph hält Beziehungen fest, etwa „Bauteil wurde geprüft in Versuch“ oder „Änderung wurde freigegeben in Protokoll“. Er lohnt sich, wenn Ihr Team solche Zusammenhänge regelmäßig braucht. Für einfachere Fragen kann eine Suche mit Quellenbezug genügen.</p></div>
+        <figure className="mt-8"><WissenVorherNachher variant="dark" animated={false} className="w-full max-w-3xl mx-auto h-auto"/><figcaption className={s.note}>Zielbild möglicher Quellen, keine Liste bereits vorhandener Anbindungen. Welche Systeme tatsächlich angebunden werden, legen wir für Ihren Pilot fest.</figcaption></figure>
+      </section>
 
-          <p className="text-muted font-inter leading-relaxed mb-6 text-lg">
-            Unternehmenswissen semantisch verknüpfen, statt es in Silos sterben zu lassen. Dokumente, Notizen und Protokolle werden nicht nur abgelegt, sondern zusammengebracht. Angereichert mit dem Expertenwissen Ihrer Fachbereiche.
-          </p>
+      <section className={s.section + ' ' + s.split} id="ki-integration"><div><p className={s.eyebrow}>KI, feste Regeln und Historie</p><h2>Rechte werden geprüft. Antworten werden belegt.</h2></div><div><p>Bekannte Dokument-IDs, Versionen und Zugriffsrechte verarbeiten wir nach festen Regeln. Die KI unterstützt bei der inhaltlichen Suche, bei Vorschlägen für Beziehungen und bei Antwortentwürfen. Berechtigungen darf sie nicht selbst festlegen.</p><p className="mt-5">Für den Unternehmenseinsatz planen wir Datenbankanbindung, Dokumenthistorie und Aktualisierung gemeinsam. Eine neue Dokumentfassung darf nicht unbemerkt zur Grundlage einer alten Entscheidung werden. Die Rechteprüfung muss auch abgeleitete Antworten und verknüpfte Informationen erfassen.</p></div></section>
 
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
-            <Image
-              src="/images/editorial/engineering-knowledge.webp"
-              alt="Illustration: Ein Gehäuse ist mit Zeichnung, Prüfbericht und Entwicklungsnotizen verknüpft."
-              fill
-              sizes="(max-width: 768px) 92vw, 768px"
-              className="object-cover"
-              priority
-            />
-            <ImageOriginLabel src="/images/editorial/engineering-knowledge.webp" />
-          </div>
+      <section className={s.section + ' ' + s.split}><div><p className={s.eyebrow}>Stand bei AImation</p><h2>Intern erprobt. Ihr Pilot wird gesondert aufgebaut.</h2><p>Der beschriebene Prototyp entstand aus der eigenen Wissensarbeit mit Obsidian, Claude Code und Projektunterlagen. Der öffentliche Screencast steht noch aus. Für Ihren Bestand werden Datenmodell, Suche, Schnittstellen und Betrieb abgestimmt.</p></div><div className="max-w-lg"><DemoTile previewSrc="/images/editorial/knowledge-graph.svg" title="Wissens-Graph: Antwort mit Quellenbezug" badge="Screencast folgt" placeholderNote="Prinzipdarstellung des internen Prototyps. Im Erstgespräch besprechen wir den Ablauf anhand eigener Projektfragen und Unterlagen. Ihre Unternehmensquellen sind noch nicht angebunden."/></div></section>
 
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            Ein Ingenieur geht in Rente. 35 Jahre Erfahrung, hunderte gelöste Probleme, unzählige Workarounds, die nirgendwo dokumentiert sind. Abschiedsfeier, Blumen, gute Wünsche. Drei Monate später taucht genau das Problem wieder auf, das er vor acht Jahren einmal gelöst hat. Niemand erinnert sich. Das Wissen ist weg.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            Solche Momente sind Alltag im deutschen Mittelstand. Wissen steckt in Köpfen, nicht in Systemen. Und selbst dort, wo es dokumentiert ist, liegt es in Silos: E-Mail-Archive, SharePoint, lokale Ordner, Wiki-Systeme, OneNote-Notizen, Besprechungsprotokolle.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            Das eigentliche Problem ist nicht die Menge. Es ist die fehlende Verbindung. Ein Protokoll aus der Entwicklung, eine E-Mail vom Einkauf, eine Notiz aus dem Service: drei Dokumente, die denselben Sachverhalt betreffen, aber nichts voneinander wissen. Eine klassische Suche findet das Dokument mit den passenden Stichworten. Sie findet nicht den Zusammenhang.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            In diesem PoC habe ich untersucht, wie ein KI-gestützter Knowledge Graph im Unternehmenskontext funktioniert. Die Basis sind eigene Erfahrungen mit Obsidian aus meiner täglichen Wissensarbeit. Das Prinzip: Dokumente, Notizen und Protokolle werden nicht nur abgelegt, sondern semantisch verknüpft. Wissen das früher bei Suchen nicht auftauchte, wird plötzlich sichtbar, weil Verbindungen zwischen Themen automatisch erkannt werden, ähnlich wie in einem Gehirn.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            Der Knowledge Graph lässt sich mit Expertenwissen anreichern: Lastenhefte, technische Richtlinien, Normen, interne Best Practices. So entsteht kein generisches KI-Werkzeug, sondern eines, das die Sprache Ihres Unternehmens spricht.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-8">
-            Die Datenintegration erfolgt schrittweise über bestehende Schnittstellen, typischerweise zu SharePoint, Exchange, Dateiservern und Wiki-Systemen. Rechte und Rollen aus Ihren Quellsystemen bleiben erhalten, damit vertrauliche Inhalte vertraulich bleiben.
-          </p>
-          <div className="bg-ground border border-line rounded-2xl p-6 mb-8">
-            <p className="text-muted font-inter leading-relaxed italic">
-              Was das im Alltag bedeutet: Ein neuer Mitarbeiter stellt eine Frage und bekommt nicht nur das passende Dokument, sondern den Kontext dazu. Wer hat daran gearbeitet, welche Entscheidungen wurden getroffen, welche Probleme sind aufgetaucht. Oder ein Ingenieur fragt nach einer technischen Lösung und das System zeigt ihm, dass ein Kollege im Nachbarwerk vor zwei Jahren daran gearbeitet hat. Wir haben das in einem PoC aufgebaut. Im Erstgespräch zeigen wir, wie das aussieht.
-            </p>
-          </div>
+      <section className={s.section}><div className={s.split}><div><p className={s.eyebrow}>Vergleichsplan / noch keine Messergebnisse</p><h2>Eine gute Antwort hält der Quellenprüfung stand.</h2></div><p>Wir vergleichen dieselben Projektfragen mit der bisherigen Suche und dem Pilot. Fachleute legen die erwarteten Belege fest. Suchzeit allein reicht als Erfolgskriterium nicht: Falsche Antworten, fehlende Quellen und Datenpflege zählen mit.</p></div><div className="flex flex-col sm:flex-row items-start gap-6 mt-8"><QktTriangle variant="dark" className="w-16 h-16 shrink-0"/><dl className="flex-1 grid md:grid-cols-3 gap-8">{[
+        ['Qualität', 'Sind Antwort, Dokumentfassung und Belege fachlich richtig? Werden Widersprüche und Wissenslücken benannt?'],
+        ['Kosten', 'Welcher Aufwand entsteht für Aufbereitung, Pflege, Rechteprüfung und Betrieb? Welche Doppelarbeit entfällt?'],
+        ['Timing', 'Wie lange dauert es bis zur fachlich geprüften Antwort, einschließlich Rückfragen und Kontrolle?'],
+      ].map(([title, text]) => <div key={title}><dt className="font-heading text-xl mb-3">{title}</dt><dd className="text-muted leading-relaxed">{text}</dd></div>)}</dl></div></section>
 
-          <div className="mb-10">
-            <h2 className="font-heading font-bold text-ink mb-4">So sieht das aus</h2>
-            <div className="max-w-sm">
-              <DemoTile
-                previewSrc="/images/editorial/knowledge-graph.svg"
-                title="Wissens-Graph: Frage rein, Antwort mit Quelle raus"
-                badge="Demo folgt"
-                placeholderNote="Screencast folgt. Im Erstgespräch zeige ich Ihnen, wie der Wissens-Graph auf meine eigenen Projektfragen antwortet, mit Quellenangabe."
-              />
-            </div>
-          </div>
-
-          <div className="flex justify-center mb-10">
-            <WissenVorherNachher variant="dark" className="w-full max-w-3xl h-auto" />
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-6 mb-10">
-            <div className="bg-red-500/10 rounded-2xl p-6 border border-red-500/25">
-              <h2 className="font-heading font-bold text-ink mb-3">Das Problem</h2>
-              <ul className="space-y-2 text-sm font-inter text-muted">
-                <li>• Wissen liegt in Silos: E-Mail, SharePoint, Wiki, PDF, OneNote, lokale Ordner</li>
-                <li>• Notizen und Protokolle kennen sich nicht untereinander, es fehlen die Verbindungen</li>
-                <li>• Wenn Mitarbeiter in Rente gehen oder das Unternehmen verlassen, geht ihr Wissen mit</li>
-                <li>• Suche findet Dokumente, aber keine Zusammenhänge und keine Kontexte</li>
-                <li>• Neue Team-Mitglieder brauchen lange, um sich im Wissensbestand zurechtzufinden</li>
-              </ul>
-            </div>
-            <div className="bg-green-500/10 rounded-2xl p-6 border border-green-500/25">
-              <h2 className="font-heading font-bold text-ink mb-3">Die Lösung</h2>
-              <ul className="space-y-2 text-sm font-inter text-muted">
-                <li>• Semantische Verknüpfung von Dokumenten, Notizen und Gesprächsprotokollen</li>
-                <li>• KI erkennt Zusammenhänge automatisch, auch bei unterschiedlicher Wortwahl</li>
-                <li>• Suche liefert relevante Kontexte, nicht nur Treffer, ähnlich dem assoziativen Denken im Gehirn</li>
-                <li>• Anreicherung mit Expertenwissen aus Ihren Fachbereichen und Normen</li>
-                <li>• Wissen bleibt erhalten, auch wenn Mitarbeiter gehen, mit sauberer Rechte- und Rollensteuerung</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10">
-            <Image
-              src="/images/editorial/knowledge-detail.svg"
-              alt="Prinzipdarstellung: Eine Frage zur Bauteiländerung führt zur Antwort mit Prüfbericht und Freigabeprotokoll."
-              fill
-              sizes="(max-width: 768px) 92vw, 768px"
-              className="object-contain"
-            />
-          </div>
-
-          <div className="bg-surface rounded-2xl border border-line p-6 mb-10">
-            <h2 className="font-heading font-bold text-ink mb-4">Tech Stack</h2>
-            <div className="flex flex-wrap gap-2">
-              {['Obsidian', 'Claude Code', 'Knowledge Graph APIs', 'Vektordatenbank', 'Semantic Search'].map((t) => (
-                <span key={t} className="px-3 py-1.5 bg-ground rounded-full text-sm font-inter text-muted border border-line">{t}</span>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-[#071013] rounded-2xl p-6 mb-10 text-white">
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-              <h2 className="font-heading font-bold">Was sich verändert</h2>
-              <QktTriangle variant="dark" className="w-16 h-16 flex-shrink-0" />
-            </div>
-            <div className="grid sm:grid-cols-3 gap-4">
-              {[
-                { metric: 'sichtbar', label: 'Zusammenhänge die bisher verborgen waren' },
-                { metric: 'deutlich', label: 'schnelleres Einarbeiten neuer Kollegen' },
-                { metric: 'erhalten', label: 'Wissen auch wenn Mitarbeiter gehen' },
-              ].map((r) => (
-                <div key={r.label} className="text-center">
-                  <div className="font-heading font-bold text-magenta-light mb-1" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>{r.metric}</div>
-                  <div className="text-gray-400 font-inter text-sm">{r.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-ground border border-line rounded-2xl p-6 mb-10">
-            <h2 className="font-heading font-bold text-ink mb-3">Ehrliche Einordnung</h2>
-            <p className="text-muted font-inter leading-relaxed">
-              Der PoC läuft bei AImation intern mit eigenen Notizen und Projektunterlagen. Was er kann: Dokumente semantisch verknüpfen und Zusammenhänge sichtbar machen, die eine Stichwortsuche übersieht. Was er nicht kann: beurteilen, welche Information im Streitfall rechtlich belastbar ist. Diese Einschätzung bleibt bei den Fachleuten im Unternehmen.
-            </p>
-          </div>
-
-          <div className="text-center">
-            <p className="text-muted font-inter mb-4">Ihr Unternehmenswissen steckt in Silos? Wir schauen gemeinsam, was möglich ist.</p>
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-bold text-[#071013]"
-              style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
-            >
-              Kostenloses Erstgespräch buchen
-            </a>
-          </div>
-
-          <div className="mt-10 pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-line text-ink font-heading font-semibold hover:bg-[#071013] hover:text-white transition-all duration-200"
-            >
-              ← Zurück zur Hauptseite
-            </Link>
-            <Link
-              href="/#use-cases"
-              className="text-sm font-inter text-magenta-light hover:underline"
-            >
-              Alle Use Cases ansehen →
-            </Link>
-          </div>
-        </div>
-      </main>
-      <Footer />
-    </>
-  );
+      <section className={s.section + ' ' + s.split}><div><p className={s.eyebrow}>Für den ersten Test</p><h2>Ein Projekt und nachvollziehbare Quellen reichen als Anfang.</h2></div><ul className={s.list}><li>Typische Fragen zu einer Produktfamilie, einem Entwicklungsprojekt oder einer Übergabe.</li><li>Freigegebene Prüfberichte, Änderungsstände und Protokolle mit verständlichen Bezeichnungen.</li><li>Eine fachlich verantwortliche Person, die Antworten und Belege beurteilen kann.</li><li>Geklärte Zugriffsrechte, erlaubte Datenverarbeitung und Zuständigkeiten für neue Dokumentstände.</li></ul></section>
+    </div>
+  </TopicPage>;
 }

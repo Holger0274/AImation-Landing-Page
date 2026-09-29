@@ -58,10 +58,22 @@ export default function UseCasesOverviewPage() {
       <section className="engineering-wrap pb-8" aria-labelledby="praxisleitfaden-title">
         <div className="border-y border-line py-8">
           <p className="technical-label mb-3">Praxisleitfaden</p>
-          <h2 id="praxisleitfaden-title" className="font-heading text-2xl md:text-3xl mb-4">Excel, PowerPoint und Berichte mit KI vorbereiten</h2>
-          <p className="max-w-3xl text-muted leading-relaxed">Ein konkreter Ablauf für das Projektreview: Daten zusammenführen, Zahlen prüfen, Statusfolien entwerfen und fachlich freigeben. Mit Voraussetzungen und klaren Grenzen.</p>
-          <Link href="/use-cases/excel-powerpoint-berichte" className="engineering-text-link mt-5">Den Berichtsprozess ansehen →</Link>
+          <h2 id="praxisleitfaden-title" className="font-heading text-2xl md:text-3xl mb-4">Excel und PowerPoint durch Dashboards und Apps ablösen</h2>
+          <p className="max-w-3xl text-muted leading-relaxed">Kalkulationstabellen und gewachsene Excel-Tools in Anwendungen mit gemeinsamer Datenbasis überführen. Mit BI-Auswertungen, geprüfter Rechenlogik, gezielter KI-Unterstützung und nachvollziehbarer Historie.</p>
+          <Link href="/use-cases/excel-powerpoint-berichte" className="engineering-text-link mt-5">Den Weg zur Anwendung ansehen →</Link>
         </div>
+      </section>
+      <section className="engineering-wrap py-10" aria-labelledby="anwendungsdemos-title">
+        <p className="technical-label mb-3">Eigene Anwendungen mit Video</p>
+        <h2 id="anwendungsdemos-title" className="font-heading text-2xl md:text-3xl mb-6">Vom Ablauf zum gebauten Werkzeug.</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            ['/use-cases/variantenmanagement', 'VariantHub', 'Technische Varianten und Regeländerungen prüfen. Mit KI entwickelter, regelbasierter Prototyp.'],
+            ['/use-cases/skillmatrix-entwicklung', 'Skillmatrix', 'Kompetenzabdeckung, Wissensrisiken und Transferbedarf im Team betrachten. Demo mit Beispieldaten.'],
+            ['/use-cases/projektsteuerung-entwicklung', 'PM Demonstrator', 'Kapazitäten, Abhängigkeiten und Berichtsentwürfe zusammenführen. Proof of Concept.'],
+          ].map(([href, title, description]) => <article key={href} className="border-t border-line py-6"><h3 className="font-heading text-xl mb-4">{title}</h3><p className="text-muted leading-relaxed">{description}</p><Link href={href} className="engineering-text-link mt-5">Video und Ablauf ansehen →</Link></article>)}
+        </div>
+        <Link href="/ki-produktentwicklung" className="engineering-text-link mt-6">Die Aufgaben in der Produktentwicklung im Überblick →</Link>
       </section>
       <section className="py-16 md:py-24" style={{ backgroundColor: 'transparent' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -14,7 +14,7 @@ Voraussetzung: `2026-07-18_00-master-brief.md` gelesen, Spec 02 umgesetzt (Angeb
 
 Die Seite hat gute Struktur (3 Ebenen, 9 Module), aber keinen Preis, keine Entscheidungshilfe und keinen EU-AI-Act-Bezug. Das Muster der stärksten Seite der Site (`/ki-agenten-unternehmen`: ehrliche Preise, Entscheidungsmatrix) wird übertragen.
 
-**a) Preis nennen.** Neue Zeile bei jeder Modul-Ebene oder als eigener Block: `Inhouse-Schulung: 1.800 EUR pro Tag, unabhängig von der Teilnehmerzahl. Halbtags-Formate ab 990 EUR.` (Beträge in die zentrale Preis-Quelle aus Spec 02 aufnehmen. Falls der Halbtags-Preis nicht gehalten werden soll, nur den Tagessatz nennen; im Abschlussbericht vermerken.)
+**a) Preisregel begründen.** Neue Zeile bei jeder Modul-Ebene oder als eigener Block: `Inhouse-Schulung: Die Inhalte werden aus den konkreten Anwendungsfällen, Rollen und Werkzeugen des Teams zusammengestellt. Nach Abstimmung von Inhalt, Dauer und Format gilt ein Festpreis, unabhängig von der Teilnehmerzahl.` Die zentrale Preis-Quelle aus Spec 02 bleibt verbindlich. Keine abweichenden Tages- oder Halbtagessätze auf einzelnen Seiten hardcoden.
 
 **b) Entscheidungshilfe "Welche Schulung für wen".** Kompakte Matrix-Komponente nach dem Vorbild der Agenten-Seite:
 

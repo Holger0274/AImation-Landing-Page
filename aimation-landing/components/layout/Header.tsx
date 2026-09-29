@@ -18,6 +18,12 @@ export default function Header() {
 
   const leistungenItems = [
     {
+      href: '/ki-produktentwicklung',
+      label: locale === 'en' ? 'Product development' : 'Produktentwicklung',
+      description: locale === 'en' ? 'AI in engineering workflows' : 'KI in Ihren Entwicklungsabläufen',
+      icon: Lightbulb,
+    },
+    {
       href: '/ki-schulungen-mittelstand',
       label: t('schulungen'),
       description: t('schulungenDesc'),

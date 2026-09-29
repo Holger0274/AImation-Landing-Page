@@ -1,0 +1,46 @@
+.flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  row-gap: 12px;
+  margin-top: 38px;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--glass), var(--surface);
+  box-shadow: var(--gloss);
+  list-style: none;
+}
+.step { position: relative; min-width: 0; padding-right: 26px; display: grid; grid-template-rows: subgrid; grid-row: span 4; }
+.step:last-child { padding-right: 0; }
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 19px;
+  left: 49px;
+  right: 12px;
+  border-top: 1px solid var(--line-strong);
+}
+.number {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--muted);
+  font: 13px var(--font-technical);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 12px;
+}
+.step p.label { font: 12px/1.6 var(--font-technical); color: var(--dim); margin: 0; }
+.step h3 { font-size: 20px; text-wrap: balance; margin: 0; }
+.step p { font-size: 15px; }
+@media (max-width: 1000px) {
+  .flow { display: block; }
+  .step { display: block; padding: 0 0 30px 58px; }
+  .step:last-child { padding-bottom: 0; }
+  .number { position: absolute; left: 0; top: 0; margin: 0; }
+  .step:not(:last-child)::after { top: 48px; bottom: 10px; left: 19px; right: auto; border-top: 0; border-left: 1px solid var(--line-strong); }
+  .step p.label { margin-bottom: 6px; }
+  .step h3 { margin-bottom: 12px; }
+}

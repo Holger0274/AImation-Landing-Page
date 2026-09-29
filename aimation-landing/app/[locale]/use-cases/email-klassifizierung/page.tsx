@@ -1,225 +1,92 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
-import ImageOriginLabel from '@/components/ui/ImageOriginLabel';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import GermanOnlyNotice from '@/components/GermanOnlyNotice';
+import ImageOriginLabel from '@/components/ui/ImageOriginLabel';
 import DemoTile from '@/components/ui/DemoTile';
 import AgentHumanLoop from '@/components/diagrams/AgentHumanLoop';
 import QktTriangle from '@/components/diagrams/QktTriangle';
+import TopicPage, { TopicSteps, topicStyles as s } from '@/components/pages/TopicPage';
+import { pageMetadata } from '@/lib/seo/metadata';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
-const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/erstgespraech';
-
+const PATH = '/use-cases/email-klassifizierung';
 export const dynamic = 'force-static';
+export const metadata: Metadata = pageMetadata(PATH, 'de', 'Technische Anfragen mit KI bearbeiten | AImation', 'Technische Kundenanfragen und Änderungsanträge vorsortieren, Kontext zusammenführen und Antwortentwürfe fachlich prüfen. Interner Prototyp für KI und Workflow-Automatisierung.');
 
-export const metadata: Metadata = {
-  title: { absolute: 'E-Mail Klassifizierung mit KI | Use Case | AImation' },
-  description: 'Wie AImation E-Mails automatisch klassifiziert und ans richtige Team routet, mit OpenAI und n8n. Live-Demo im Erstgespräch verfügbar.',
-  alternates: { canonical: `${siteUrl}/use-cases/email-klassifizierung` },
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: 'E-Mail Klassifizierung mit KI | AImation',
-    description: 'E-Mails automatisch klassifizieren und ans richtige Team routen, mit OpenAI und n8n. Live-Demo im Erstgespräch verfügbar.',
-    url: `${siteUrl}/use-cases/email-klassifizierung`,
-    type: 'article',
-    locale: 'de_DE',
-    images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
-  },
-};
+const faqs = [
+  { question: 'Sendet die KI Antworten automatisch an Kunden?', answer: 'Im beschriebenen Ablauf nicht. Die KI bereitet einen Entwurf mit Quellen und offenen Punkten vor. Eine fachlich verantwortliche Person prüft, ändert und versendet die Antwort. Spätere Automatisierungsschritte werden nur für klar abgegrenzte Fälle und mit vereinbarten Freigaberegeln eingerichtet.' },
+  { question: 'Kann das System Outlook, Ticketsystem und PLM verbinden?', answer: 'Diese Anbindungen werden für Ihren Pilot einzeln geprüft. Voraussetzung sind verfügbare Schnittstellen, passende Rechte und ein klares Datenmodell. Der interne Prototyp belegt keine fertige Verbindung zu Ihren Systemen.' },
+  { question: 'Lernt die KI automatisch aus jeder Korrektur?', answer: 'Korrekturen können als geprüfte Beispiele und Lessons Learned gespeichert werden. Daraus entsteht aber nicht automatisch ein verlässliches selbstlernendes System. Wir legen fest, welche Änderungen übernommen werden, wer sie freigibt und wie ältere Stände nachvollziehbar bleiben.' },
+];
 
-export default async function EmailKlassifizierungPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function EmailKlassifizierungPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  if (locale === 'en') return <GermanOnlyNotice namespace="enUseCaseNotice" href={PATH} />;
 
-  if (locale === 'en') {
-    return <GermanOnlyNotice namespace="enUseCaseNotice" href="/use-cases/email-klassifizierung" />;
-  }
+  return <TopicPage locale="de" path={PATH} label="Technische Anfragen mit KI"
+    title="Anfragen richtig einordnen." accent="Antworten fundiert vorbereiten."
+    intro="Eine technische Anfrage kommt mit Zeichnung, Änderungswunsch und einer knappen E-Mail. Wir verbinden Klassifizierung, feste Routing-Regeln und KI-gestützte Kontextsuche. Ihr zuständiger Ingenieur erhält einen vorbereiteten Vorgang und entscheidet selbst, was an den Kunden geht."
+    parent={{ href: '/use-cases', label: 'Use Cases' }}
+    facts={['Interner Workflow-Prototyp', 'Mensch prüft vor dem Versand', 'Systemanbindungen im Pilot']}
+    visual={<figure className={s.preview}><div className="relative overflow-hidden rounded-md"><Image src="/images/editorial/requests.webp" alt="Illustration: Technische Anfragen mit Bauteilzeichnungen warten in einer Eingangsablage." width={1280} height={720} sizes="(max-width: 900px) 94vw, 46vw" priority/><ImageOriginLabel src="/images/editorial/requests.webp"/></div><figcaption className="text-sm text-muted leading-relaxed">Anfrage, Anhang und technischer Kontext gehören in einen Vorgang. Die Illustration zeigt das Prinzip.</figcaption></figure>}
+    faqs={faqs} cta="Ihren Anfrageprozess besprechen"
+    closing={{ title: 'Starten wir mit einer wiederkehrenden Anfrage.', description: 'Im kostenlosen Erstgespräch betrachten wir Eingangskanal, Kategorien, Quellsysteme und Freigabe. Ein anonymisiertes Beispiel genügt. Kundendaten und vertrauliche Zeichnungen müssen Sie dafür nicht hochladen.' }}
+    related={[{ href: '/use-cases/knowledge-graph-management', label: 'Entwicklungswissen mit Quellen verbinden' }, { href: '/use-cases/projektsteuerung-entwicklung', label: 'Projektengpässe früher erkennen' }, { href: '/ki-automatisierung-mittelstand', label: 'KI-Automatisierung für Unternehmen' }]}>
+    <div className="engineering-wrap">
+      <section className={s.section + ' ' + s.split}>
+        <div><p className={s.eyebrow}>Im technischen Posteingang</p><h2>Die E-Mail ist nur der Eingang. Der Vorgang beginnt dahinter.</h2></div>
+        <div><p>Eine Kundenanfrage nennt ein Bauteil, hängt eine Zeichnung an und verweist auf einen alten Versuch. Für eine belastbare Antwort braucht das Team den passenden Projektstand, frühere Absprachen und eine fachliche Zuständigkeit.</p><p className="mt-5">Manuelles Weiterleiten löst diesen Zusammenhang nicht. Der bessere Prüfpunkt lautet: Kommt ein vollständiger, nachvollziehbarer Vorgang bei der richtigen Person an?</p></div>
+      </section>
 
-  return (
-    <>
-      <Header />
-      <main id="main-content" className="bg-ground pt-32 pb-20">
-        <div className="max-w-3xl mx-auto px-4">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter flex-wrap">
-            <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
-            <span>/</span>
-            <Link href="/#use-cases" className="hover:text-ink transition-colors">Use Cases</Link>
-            <span>/</span>
-            <span className="text-ink font-medium">E-Mail Klassifizierung</span>
-          </nav>
+      <section className={s.section} id="einblick" aria-labelledby="request-example-title">
+        <div className={s.split}><div><p className={s.eyebrow}>Prinzipdarstellung / kein Kundenfall</p><h2 id="request-example-title">Aus Eingang und Anhang wird ein prüfbarer Entwurf.</h2></div><p>Die Anfrage wird zunächst als Vorgang erfasst. Regeln ordnen Kunde, Produkt und bekannte Kategorien zu. KI kann Text und Anhang zusammenfassen, passende Quellen vorschlagen und einen Entwurf erstellen. Der Ingenieur prüft Aussage, Stand und Empfänger.</p></div>
+        <figure className={s.plate + ' mt-8'}><Image src="/images/editorial/request-detail.svg" alt="Eine technische Anfrage wird erfasst, mit Kontext vorbereitet und vor der Antwort von einem Menschen freigegeben." width={960} height={540} sizes="(max-width: 900px) 94vw, 1100px" className="hidden sm:block w-full h-auto"/>
+          <ol className="sm:hidden space-y-6">{[
+            ['Eingang', 'E-Mail, Anhang, Absender und Zeitstempel als Vorgang erfassen.'],
+            ['Vorbereitung', 'Kategorie, Produktbezug, Quellen und offene Punkte für den Antwortentwurf zusammenstellen.'],
+            ['Freigabe', 'Fachperson prüft Inhalt, Empfänger und freizugebende Unterlagen vor dem Versand.'],
+          ].map(([title, text], i) => <li key={title} className="border-l border-line-strong pl-5"><span className="text-sm text-dim font-mono">0{i + 1}</span><h3 className="mt-2">{title}</h3><p>{text}</p></li>)}</ol>
+          <figcaption className="text-sm text-muted leading-relaxed mt-4">Beispiel zur Erläuterung. Keine echte Kundenanfrage und kein Screenshot einer Produktivlösung.</figcaption>
+        </figure>
+      </section>
 
-          <div className="flex flex-wrap gap-2 mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-white text-xs font-heading font-semibold" style={{ backgroundColor: '#0077B6' }}>
-              FLOW · Workflow-Automatisierung
-            </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 text-green-300 text-xs font-heading font-semibold">
-              ✓ Live-Demo im Erstgespräch verfügbar
-            </div>
-          </div>
+      <section className={s.section + ' ' + s.split}>
+        <div><p className={s.eyebrow}>Der Ablauf für Ihren Pilot</p><h2>Zuerst Zuständigkeit. Dann Kontext und Entwurf.</h2><p>Wir beginnen mit wenigen Anfragearten und eindeutigen Freigaberegeln. Sonderfälle dürfen sichtbar liegen bleiben, statt unbemerkt falsch bearbeitet zu werden.</p></div>
+        <TopicSteps steps={[
+          ['Eingang und Kategorien abgrenzen', 'Festlegen, welche Postfächer und Anfragearten dazugehören. Pflichtangaben, Anhänge, Ausschlussfälle und verantwortliche Rollen dokumentieren.'],
+          ['Regeln und KI trennen', 'Kunde, Produktnummer, Sperrlisten und bekannte Absender nach festen Regeln prüfen. KI klassifiziert freie Texte und markiert Unsicherheit oder fehlende Angaben.'],
+          ['Kontext belegen', 'Freigegebene Quellen aus CRM, Ticketsystem oder Wissensbasis zum Vorgang zuordnen. Jeder verwendete Stand und jede Fundstelle bleiben sichtbar.'],
+          ['Prüfen und nachführen', 'Fachperson korrigiert Kategorie und Antwortentwurf. Versand, Korrekturgrund und freigegebener Stand fließen nachvollziehbar in die Historie ein.'],
+        ]}/>
+      </section>
 
-          <h1 className="font-heading font-bold text-ink mb-4 leading-tight" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.5rem)' }}>
-            E-Mail Klassifizierung:{' '}
-            <span className="text-magenta-light">automatisch ans richtige Team, vom Flaschenhals zum stillen Helfer im Hintergrund</span>
-          </h1>
+      <section className={s.section} id="ki-integration">
+        <div className={s.split}><div><p className={s.eyebrow}>KI, feste Regeln und Historie</p><h2>Routing folgt Regeln. KI hilft bei Sprache und Kontext.</h2></div><div><p>Deterministische Automatisierung übernimmt, was eindeutig prüfbar ist: Absenderlisten, Produktnummern, Pflichtfelder, Fristen und die Übergabe an definierte Teams. KI unterstützt bei freien Formulierungen, Zusammenfassungen und Antwortentwürfen.</p><p className="mt-5">Für Ihren Pilot planen wir Datenbankanbindung, Statusmodell und Änderungshistorie. Rohmail, Anhänge, KI-Entwurf, menschliche Korrektur und versendete Antwort brauchen unterscheidbare Stände. Rechte und Aufbewahrung werden je Quelle festgelegt.</p></div></div>
+        <figure className="mt-10"><AgentHumanLoop variant="dark" animated={false} className="hidden sm:block w-full max-w-4xl mx-auto h-auto"/>
+          <ol className="sm:hidden space-y-3 text-muted">{['Anfrage und Anhang erfassen', 'Regeln und KI sammeln Kontext', 'Antwortentwurf mit Quellen vorbereiten', 'Ingenieur prüft und gibt frei', 'Geprüften Stand als Lessons Learned ablegen'].map((step, i) => <li key={step} className="border-l border-line-strong pl-5 py-2"><span className="font-mono text-dim mr-3">0{i + 1}</span>{step}</li>)}</ol>
+          <figcaption className={s.note}>Zielablauf mit menschlicher Freigabe. Automatischer Versand ist nicht Bestandteil des gezeigten Prototyps.</figcaption>
+        </figure>
+      </section>
 
-          <p className="text-muted font-inter leading-relaxed mb-6 text-lg">
-            Intelligente Kategorisierung eingehender E-Mails. Die KI sortiert nach Themengebiet, analysiert Inhalte, priorisiert nach Dringlichkeit und routet automatisch an die richtige Stelle, ohne manuelles Sortieren und ohne dass Kundenanfragen liegen bleiben.
-          </p>
+      <section className={s.section + ' ' + s.split}>
+        <div><p className={s.eyebrow}>Stand bei AImation</p><h2>Intern erprobt. Ihre Systeme kommen im Pilot dazu.</h2><p>Der interne Prototyp erprobt Klassifizierung, Kontextaufbereitung und Entwurf. Der öffentliche Screencast steht noch aus. Outlook, Exchange, CRM, Ticketsystem oder PLM sind keine pauschal fertigen Anschlüsse. Verfügbarkeit, Rechte und Datenfluss werden für Ihre Umgebung geprüft.</p></div>
+        <div className="max-w-lg"><DemoTile previewSrc="/images/editorial/email-classification.svg" title="Technische Anfrage: vom Eingang zum geprüften Entwurf" badge="Screencast folgt" placeholderNote="Prinzipdarstellung des internen Workflows. Kategorien, Quellsysteme und Freigabeschritte werden für Ihren Pilot festgelegt. Ihre Unternehmenssysteme sind noch nicht angebunden."/></div>
+      </section>
 
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
-            <Image
-              src="/images/editorial/requests.webp"
-              alt="Illustration: Technische Anfragen mit Bauteilzeichnungen warten in einer Eingangsablage."
-              fill
-              sizes="(max-width: 768px) 92vw, 768px"
-              className="object-cover"
-              priority
-            />
-            <ImageOriginLabel src="/images/editorial/requests.webp" />
-          </div>
+      <section className={s.section} id="vergleichsplan">
+        <div className={s.split}><div><p className={s.eyebrow}>Vergleichsplan / noch keine Messergebnisse</p><h2>Eine schnelle Fehlleitung bleibt eine Fehlleitung.</h2></div><p>Wir testen vorhandene, anonymisierte Anfragen mit bekannter Zuständigkeit und fachlich geprüfter Antwort. Gemessen wird der gesamte Weg bis zur Freigabe. Unsichere Fälle, Nacharbeit und falsch zugeordnete Quellen zählen mit.</p></div>
+        <div className="flex flex-col sm:flex-row items-start gap-6 mt-8"><QktTriangle variant="dark" className="w-16 h-16 shrink-0"/><dl className="flex-1 grid md:grid-cols-3 gap-8">{[
+          ['Qualität', 'Stimmen Kategorie, Zuständigkeit und verwendete Quellen? Werden fehlende Angaben und Unsicherheit sichtbar?'],
+          ['Kosten', 'Wie viel Aufwand entsteht für Einrichtung, Quellenpflege, Prüfung, Korrektur und Betrieb? Welche manuelle Zuordnung entfällt?'],
+          ['Timing', 'Wie lange dauert es vom Eingang bis zum geprüften Entwurf und anschließend bis zur versandfähigen Antwort?'],
+        ].map(([title, text]) => <div key={title}><dt className="font-heading text-xl mb-3">{title}</dt><dd className="text-muted leading-relaxed">{text}</dd></div>)}</dl></div>
+      </section>
 
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            Montagmorgen, halb neun. 80 ungelesene Mails in der zentralen Inbox. Eine Kundenbeschwerde von Freitagnachmittag, die niemand gesehen hat. Eine dringende Angebotsanfrage, die zwischen Newslettern und Rechnungen verschwindet. Und ein Mitarbeiter, der die erste Stunde des Tages damit verbringt, zu sortieren statt zu arbeiten.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            Diesen Anblick kennt jede Firma mit zentraler Inbox. In einem Unternehmen mit hundert Mitarbeitern summieren sich die täglichen Sortier-Minuten schnell auf mehrere Personalstellen im Jahr. Und wenn jemand krank oder im Urlaub ist, wird der Posteingang zum Flaschenhals.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            In unserem PoC haben wir das mit OpenAI und n8n automatisiert. Eingehende Mails werden in Sekunden gelesen, nach Themengebiet sortiert, inhaltlich analysiert und nach Dringlichkeit priorisiert. Anschließend werden sie direkt an das zuständige Team oder Ticketsystem weitergeleitet. Was uns selbst überrascht hat: Die KI klassifiziert zuverlässiger als manuelle Sortierung, weil sie keine schlechten Tage hat und nicht zwischen zwei Terminen nur kurz drüberschaut.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-4">
-            Wichtige Informationen aus E-Mails — etwa Vereinbarungen mit Kunden, technische Details oder Lieferantenauskünfte — lassen sich direkt in den Knowledge Graph überführen. Damit verschwindet Wissen nicht mehr in alten Postfächern, sondern wird Teil des Unternehmensgedächtnisses. Ein Dashboard zeigt zusätzlich Trends und Engpässe und wird so zum Steuerungsinstrument für Führungskräfte.
-          </p>
-          <p className="text-muted font-inter leading-relaxed mb-8">
-            Die Integration erfolgt über bestehende Schnittstellen, typischerweise Microsoft 365, Exchange oder IMAP. Das System lernt mit jeder Korrektur und wird über Monate immer präziser, mit sauberer Rechte- und Rollensteuerung aus Ihren Quellsystemen.
-          </p>
-          <div className="bg-ground border border-line rounded-2xl p-6 mb-8">
-            <p className="text-muted font-inter leading-relaxed italic">
-              Was das konkret bedeutet: Die dringende Angebotsanfrage landet ohne Umweg beim Vertrieb, mit Vorschlag für die Antwort und den passenden Unterlagen aus dem Knowledge Graph. Die Beschwerde geht direkt an den Service, inklusive Hinweis auf den letzten Kontakt mit dem Kunden. Der Newsletter wird stumm archiviert. In einem unserer Projekte haben wir das so aufgebaut. Wer sehen möchte, wie es aussieht, kann das im Erstgespräch tun.
-            </p>
-          </div>
-
-          <div className="mb-10">
-            <h2 className="font-heading font-bold text-ink mb-4">So sieht das aus</h2>
-            <div className="max-w-sm">
-              <DemoTile
-                previewSrc="/images/editorial/email-classification.svg"
-                title="Anfragen-Agent: vom Posteingang zum Antwortentwurf"
-                badge="Demo folgt"
-                placeholderNote="Screencast folgt. Im Erstgespräch zeige ich Ihnen, wie eine eingehende technische Anfrage klassifiziert und ein Antwortentwurf erstellt wird."
-              />
-            </div>
-          </div>
-
-          <div className="flex justify-center mb-10">
-            <AgentHumanLoop variant="dark" className="w-full max-w-2xl h-auto" />
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-6 mb-10">
-            <div className="bg-red-500/10 rounded-2xl p-6 border border-red-500/25">
-              <h2 className="font-heading font-bold text-ink mb-3">Das Problem</h2>
-              <ul className="space-y-2 text-sm font-inter text-muted">
-                <li>• Täglich gehen Stunden mit manueller E-Mail-Sortierung verloren, im Jahr mehrere Personalstellen</li>
-                <li>• Dringende Anfragen gehen zwischen Routine-Mails und Spam unter</li>
-                <li>• E-Mails landen beim falschen Team, Weiterleitungen kosten Zeit und Nerven</li>
-                <li>• Bei Urlaub oder Krankheit wird der Posteingang schnell zum Flaschenhals</li>
-                <li>• Wichtige Informationen aus E-Mails bleiben in Postfächern und gehen dem Unternehmen verloren</li>
-              </ul>
-            </div>
-            <div className="bg-green-500/10 rounded-2xl p-6 border border-green-500/25">
-              <h2 className="font-heading font-bold text-ink mb-3">Die Lösung</h2>
-              <ul className="space-y-2 text-sm font-inter text-muted">
-                <li>• KI sortiert nach Themengebiet, analysiert Inhalte und priorisiert nach Dringlichkeit</li>
-                <li>• Automatisches Routing ans richtige Team oder Ticketsystem, rund um die Uhr</li>
-                <li>• Relevante Informationen werden direkt in den Knowledge Graph überführt</li>
-                <li>• Dashboard für Trends, Engpässe und Workload-Verteilung als Steuerungsinstrument</li>
-                <li>• Integration in Microsoft 365, Exchange oder IMAP, lernfähig und mit sauberer Rechtesteuerung</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10">
-            <Image
-              src="/images/editorial/request-detail.svg"
-              alt="Prinzipdarstellung: Anfrage erfassen, Kontext und Entwurf vorbereiten, durch einen Menschen freigeben."
-              fill
-              sizes="(max-width: 768px) 92vw, 768px"
-              className="object-contain"
-            />
-          </div>
-
-          <div className="bg-surface rounded-2xl border border-line p-6 mb-10">
-            <h2 className="font-heading font-bold text-ink mb-4">Tech Stack</h2>
-            <div className="flex flex-wrap gap-2">
-              {['OpenAI GPT-4', 'n8n Automation', 'Microsoft Outlook', 'Webhook Integration', 'Structured Output'].map((t) => (
-                <span key={t} className="px-3 py-1.5 bg-ground rounded-full text-sm font-inter text-muted border border-line">{t}</span>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-[#071013] rounded-2xl p-6 mb-10 text-white">
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-              <h2 className="font-heading font-bold">Ergebnis im PoC</h2>
-              <QktTriangle variant="dark" className="w-16 h-16 flex-shrink-0" />
-            </div>
-            <div className="grid sm:grid-cols-3 gap-4">
-              {[
-                { metric: '~60%', label: 'weniger manueller Sortieraufwand' },
-                { metric: 'spürbar', label: 'weniger Fehlweiterleitungen' },
-                { metric: 'sofort', label: 'Überblick über Anfrage-Typen' },
-              ].map((r) => (
-                <div key={r.label} className="text-center">
-                  <div className="font-heading font-bold text-magenta-light mb-1" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>{r.metric}</div>
-                  <div className="text-gray-400 font-inter text-sm">{r.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-ground border border-line rounded-2xl p-6 mb-10">
-            <h2 className="font-heading font-bold text-ink mb-3">Ehrliche Einordnung</h2>
-            <p className="text-muted font-inter leading-relaxed">
-              Der PoC läuft bei AImation intern am eigenen Posteingang. Was er kann: E-Mails nach Themengebiet sortieren, Dringlichkeit einschätzen und automatisch weiterleiten. Was er nicht kann: eine fachlich komplexe Kundenanfrage eigenständig beantworten. Die Antwort bleibt Aufgabe des zuständigen Kollegen, der Agent liefert nur den sortierten Ausgangspunkt.
-            </p>
-          </div>
-
-          <div className="text-center">
-            <p className="text-muted font-inter mb-4">Ihr Team beginnt den Tag noch mit Sortieren statt Arbeiten? Das muss nicht so bleiben.</p>
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-heading font-bold text-[#071013]"
-              style={{ background: 'linear-gradient(135deg, #f90093, #ff4ecd)' }}
-            >
-              Kostenloses Erstgespräch buchen
-            </a>
-          </div>
-
-          <div className="mt-10 pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-line text-ink font-heading font-semibold hover:bg-[#071013] hover:text-white transition-all duration-200"
-            >
-              ← Zurück zur Hauptseite
-            </Link>
-            <Link
-              href="/#use-cases"
-              className="text-sm font-inter text-magenta-light hover:underline"
-            >
-              Alle Use Cases ansehen →
-            </Link>
-          </div>
-        </div>
-      </main>
-      <Footer />
-    </>
-  );
+      <section className={s.section + ' ' + s.split}>
+        <div><p className={s.eyebrow}>Für den ersten Test</p><h2>Zwanzig typische Anfragen zeigen mehr als eine allgemeine Demo.</h2></div>
+        <ul className={s.list}><li>Anonymisierte Beispiele aus zwei bis vier wiederkehrenden Anfragearten, einschließlich schwieriger Grenzfälle.</li><li>Bekannte Zuständigkeiten, erlaubte Antwortquellen und die bisherige Bearbeitung je Beispiel.</li><li>Eine fachlich verantwortliche Person, die Kategorie, Quellen und Entwurf beurteilen kann.</li><li>Geklärte Zugriffsrechte, Aufbewahrung und Regeln für Anhänge, personenbezogene Daten und vertrauliche Inhalte.</li></ul>
+      </section>
+    </div>
+  </TopicPage>;
 }

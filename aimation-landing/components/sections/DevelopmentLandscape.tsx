@@ -67,6 +67,7 @@ export default function DevelopmentLandscape() {
         <p className="landscape-catalogue-note">{en ? '12 selected examples from the catalogue, as of September 2026. These are application ideas, not 639 delivered projects. Feasibility depends on your data and process.' : '12 ausgewählte Beispiele aus dem Katalog, Stand September 2026. Das sind Anwendungsideen, keine 639 umgesetzten Projekte. Die Machbarkeit hängt von Ihren Daten und Abläufen ab.'}</p>
       </div>
       <div className="section-footnote"><p>{en ? 'The KI-Landkarte workshop selects and prioritises suitable cases for your business.' : 'Im Workshop KI-Landkarte wählen und priorisieren wir passende Fälle für Ihr Unternehmen.'}</p><Link href="/use-cases" className="engineering-text-link">{en ? 'More detailed use cases' : 'Weitere Use Cases im Detail'}<ArrowUpRight size={17} aria-hidden="true" /></Link></div>
+      <Link href="/ki-produktentwicklung" className="engineering-text-link mt-5">{en ? 'AI in product development: tasks, tools and your starting point' : 'KI in der Produktentwicklung: Aufgaben, Werkzeuge und Ihr Einstieg'}<ArrowUpRight size={17} aria-hidden="true" /></Link>
     </div>
   </section>;
 }

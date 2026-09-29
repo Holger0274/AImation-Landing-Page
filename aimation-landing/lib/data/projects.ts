@@ -10,11 +10,11 @@ export const PROJECTS: Project[] = [
   {
     id: 'patent-research',
     title: 'Patentrecherche und Prior Art',
-    description: 'Automatisierte Analyse von Patentdatenbanken. Findet relevante Prior Art, identifiziert Wettbewerber-Patente und erstellt strukturierte Übersichten.',
+    description: 'KI-gestützte Vorrecherche: technische Merkmale mit Patentfundstellen verbinden und zur fachlichen Prüfung aufbereiten. Interner Recherche-Prototyp, keine rechtliche Nutzungsfreigabe.',
     solutionWorld: 'KNOW',
     status: 'completed',
-    tags: ['Perplexity', 'Claude', 'Patent-APIs'],
-    metrics: 'Prior Art vollständig im Blick, bevor die Konstruktion startet. Konto: Qualität und Timing.',
+    tags: ['Perplexity', 'Claude', 'Quellenbezug'],
+    metrics: 'Im Pilot prüfen wir Trefferqualität, Quellenbelege und den gesamten Rechercheaufwand. Noch keine gemessenen Kundenergebnisse.',
     detailUrl: '/use-cases/patentrecherche-ki',
     image: {
       type: 'image',
@@ -39,11 +39,11 @@ export const PROJECTS: Project[] = [
   {
     id: 'email-classification',
     title: 'Technische Anfragen automatisch vorsortieren',
-    description: 'Klassifizierung eingehender technischer Anfragen und Änderungsanträge. Sammelt Kontext aus Ihren Systemen und legt einen Antwortentwurf vor. Jede beantwortete Anfrage fließt in die Lessons-Learned-Basis.',
+    description: 'Technische Anfragen und Änderungsanträge vorsortieren, freigegebene Quellen zuordnen und einen Antwortentwurf zur fachlichen Prüfung vorbereiten. Interner Workflow-Prototyp.',
     solutionWorld: 'FLOW',
     status: 'completed',
     tags: ['OpenAI', 'n8n', 'Outlook'],
-    metrics: 'Antworten am selben Tag, und jede Antwort wird zu gesichertem Wissen. Konto: Timing und Kosten.',
+    metrics: 'Im Pilot prüfen wir Zuordnung, Quellenqualität und den Aufwand bis zur Freigabe. Noch keine gemessenen Kundenergebnisse.',
     detailUrl: '/use-cases/email-klassifizierung',
     image: {
       type: 'image',
@@ -54,11 +54,12 @@ export const PROJECTS: Project[] = [
   {
     id: 'tech-scouting',
     title: 'Technologie-Scouting',
-    description: 'Kontinuierliches Monitoring von Technologie-Trends und Innovationen. Filtert relevante Entwicklungen aus Fachpublikationen, Papers und News und meldet, was Ihre Produkte betrifft.',
+    description: 'Definierte Fachquellen beobachten, Fundstücke mit KI vorstrukturieren und ihren möglichen Bezug zum eigenen Produkt fachlich bewerten. Interner Scouting-Prototyp.',
     solutionWorld: 'KNOW',
     status: 'completed',
     tags: ['RSS', 'Claude', 'Notion'],
-    metrics: 'Relevante Entwicklungen landen wöchentlich auf Ihrem Tisch, ohne Suchaufwand. Konto: Timing und Qualität.',
+    metrics: 'Im Pilot prüfen wir Quellenqualität, Produktbezug und Aufwand bis zur fachlichen Einordnung. Noch keine gemessenen Kundenergebnisse.',
+    detailUrl: '/use-cases/technologie-scouting',
     image: {
       type: 'image',
       src: '/images/editorial/tech-scouting.svg',
@@ -68,11 +69,11 @@ export const PROJECTS: Project[] = [
   {
     id: 'knowledge-graph-management',
     title: 'Engineering-Wissen vernetzen',
-    description: 'Berichte, Protokolle und Dokumente werden automatisch verschlagwortet, semantisch verknüpft und vernetzt. Jede Frage in Sekunden beantwortet, mit Quellenangabe. Nie mehr Wissen verlieren oder lange suchen.',
+    description: 'Entwicklungsunterlagen mit KI durchsuchen und frühere Entscheidungen anhand ihrer Quellen nachvollziehen. Interner Prototyp mit eigenen Notizen und Projektunterlagen; Unternehmensanbindungen werden im Pilot abgestimmt.',
     solutionWorld: 'KNOW',
     status: 'completed',
     tags: ['Obsidian', 'Claude Code', 'Knowledge Graph'],
-    metrics: 'Jede Antwort in Sekunden auffindbar, mit Quelle. Konto: Timing und Qualität.',
+    metrics: 'Im Pilot prüfen wir Suchzeit, Quellenqualität und Pflegeaufwand. Noch keine gemessenen Kundenergebnisse.',
     detailUrl: '/use-cases/knowledge-graph-management',
     image: {
       type: 'image',
@@ -111,11 +112,12 @@ export const PROJECTS: Project[] = [
   {
     id: 'meeting-transcript-analysis',
     title: 'Besprechungen ohne Protokollaufwand',
-    description: 'Transkripte aus Meetings automatisch in To-Dos, Erkenntnisse und offene Punkte kategorisieren. Speicherung für semantische Suche.',
+    description: 'Freigegebene Meeting-Transkripte mit KI in Entscheidungen, Aufgaben und offene Punkte strukturieren. Mit Zeitbezug und menschlicher Freigabe. Bei AImation im Aufbau.',
     solutionWorld: 'WORK',
     status: 'in-progress',
     tags: ['Transkription', 'Vektordatenbank', 'Kategorisierung'],
-    metrics: 'To-dos und Erkenntnisse sind festgehalten, bevor der Raum leer ist. Konto: Kosten und Timing.',
+    metrics: 'Im Pilot prüfen wir Vollständigkeit, Gesprächsbelege und Aufwand bis zum bestätigten Protokoll. Noch keine gemessenen Kundenergebnisse.',
+    detailUrl: '/use-cases/meeting-transkript-analyse',
     image: {
       type: 'image',
       src: '/images/editorial/meeting-transcript.svg',

@@ -63,8 +63,7 @@ export default function KiAgentenPage() {
             className="text-muted font-inter leading-relaxed mb-10"
             style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}
           >
-            Diese Seite erklärt den Unterschied. Ohne Buzzwords, ohne Hype, mit konkreten Beispielen
-            aus dem Engineering. Damit Sie entscheiden können, ob ein KI-Agent für Ihr Unternehmen
+            Beispiele aus dem Engineering zeigen die Unterschiede. Damit Sie entscheiden können, ob ein KI-Agent für Ihr Unternehmen
             Sinn ergibt. Oder ob eine einfachere Lösung reicht.
           </motion.p>
 
