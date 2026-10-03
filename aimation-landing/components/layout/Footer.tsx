@@ -54,6 +54,11 @@ export default async function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
+                <Link href="/ki-betriebssystem" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  {locale === 'en' ? 'AI operating system' : 'KI-Betriebssystem'}
+                </Link>
+              </li>
+              <li>
                 <Link
                   href="/ki-schulungen-mittelstand"
                   className="text-gray-400 hover:text-white transition-colors text-sm"

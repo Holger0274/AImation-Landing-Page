@@ -76,13 +76,13 @@ for (const route of ['/', '/en']) {
   assert(!page.meta.some((m) => /40%/.test(m.content || '')), 'obsolete metadata claim');
   assert(/product development|Produktentwicklung/.test(page.title), 'home positioning');
 }
-const topicRoutes = ['/ki-produktentwicklung', '/schulungen/microsoft-365-copilot', '/use-cases/variantenmanagement', '/use-cases/skillmatrix-entwicklung', '/use-cases/projektsteuerung-entwicklung', '/use-cases/excel-powerpoint-berichte'];
+const topicRoutes = ['/ki-betriebssystem', '/ki-produktentwicklung', '/schulungen/microsoft-365-copilot', '/use-cases/variantenmanagement', '/use-cases/skillmatrix-entwicklung', '/use-cases/projektsteuerung-entwicklung', '/use-cases/excel-powerpoint-berichte'];
 for (const route of topicRoutes.flatMap(route => [route, '/en' + route])) {
   const page = rendered.get(route);
   assert(page, `${route}: missing from sitemap`);
   assert.equal([...page.html.matchAll(/<h1\b/g)].length, 1, `${route}: h1 count`);
   const faq = page.schemas.find((s) => s['@type'] === 'FAQPage');
-  assert.equal(faq?.mainEntity.length, route.includes('microsoft-365-copilot') ? 4 : 3, `${route}: FAQ count`);
+  assert.equal(faq?.mainEntity.length, route.includes('ki-betriebssystem') ? 5 : route.includes('microsoft-365-copilot') ? 4 : 3, `${route}: FAQ count`);
   const visible = page.html.replace(/<script\b[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, '');
   for (const question of faq.mainEntity) {
     assert(visible.includes(question.name), 'FAQ question is not SSR visible');

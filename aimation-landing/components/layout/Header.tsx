@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, GraduationCap, Lightbulb, Zap, Bot } from 'lucide-react';
+import { Menu, X, ChevronDown, GraduationCap, Lightbulb, Zap, Bot, Database } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 
@@ -17,6 +17,12 @@ export default function Header() {
   const useCasesHref = `${homeHref}#use-cases`;
 
   const leistungenItems = [
+    {
+      href: '/ki-betriebssystem',
+      label: locale === 'en' ? 'AI operating system' : 'KI-Betriebssystem',
+      description: locale === 'en' ? 'Shared data for agents, dashboards and apps' : 'Gemeinsame Daten für Agenten, Dashboards und Apps',
+      icon: Database,
+    },
     {
       href: '/ki-produktentwicklung',
       label: locale === 'en' ? 'Product development' : 'Produktentwicklung',
@@ -162,6 +168,8 @@ export default function Header() {
                       className="relative rounded-2xl overflow-hidden"
                       style={{
                         width: '440px',
+                        maxHeight: 'calc(100dvh - 120px)',
+                        overflowY: 'auto',
                         minWidth: '440px',
                         background: '#0d1b20',
                         border: '1px solid rgba(255,255,255,0.08)',

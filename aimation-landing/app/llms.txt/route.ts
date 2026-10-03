@@ -12,6 +12,7 @@ KI-Beratung, Schulung und Umsetzung für die technische Produktentwicklung im DA
 
 ## Leistungen
 
+- [KI-Betriebssystem für Unternehmen](${siteUrl}/ki-betriebssystem): SharePoint, Dateiserver und Fachsysteme als gemeinsame Datenbasis für Chatbots, Agenten, Dashboards und eigene Apps. Datenmapping, Quellenbezug, Versionen und Berechtigungen werden projektspezifisch geprüft. Technologiepartnerschaft mit U-KNOW.AI.
 - ${PRICING.erstgespraech.label}: ${PRICING.erstgespraech.price}, ${PRICING.erstgespraech.duration}. [Termin vereinbaren](${siteUrl}/#kontakt)
 - [${PRICING.kiLandkarte.label}](${siteUrl}/ki-beratung-kmu): ${PRICING.kiLandkarte.description}, ${PRICING.kiLandkarte.priceLabel}, ${PRICING.kiLandkarte.duration}
 - ${PRICING.pilot.label}: ${PRICING.pilot.description}, ${PRICING.pilot.priceLabel}, ${PRICING.pilot.duration}
