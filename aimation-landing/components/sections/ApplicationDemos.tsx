@@ -111,7 +111,7 @@ function DemoPlayer({ id, name, alt, en }: { id: string; name: string; alt: stri
   );
 }
 
-export default function ApplicationDemos() {
+export default function ApplicationDemos({ compact = false }: { compact?: boolean }) {
   const en = useLocale() === 'en';
   const lang = en ? 'en' : 'de';
   const [active, setActive] = useState(0);
@@ -131,7 +131,7 @@ export default function ApplicationDemos() {
   }
 
   return (
-    <div className={styles.showcase}>
+    <div className={`${styles.showcase} ${compact ? styles.compact : ''}`}>
       <div className={styles.topline}><span>{en ? 'From our own development work' : 'Einblicke in unsere Entwicklungsarbeit'}</span><span>3 {en ? 'demos' : 'Demos'} · {en ? '90 seconds each' : 'je 90 Sekunden'}</span></div>
       <div className={styles.tabs} role="tablist" aria-label={en ? 'Select an application demo' : 'Anwendungsdemo auswählen'}>
         {demos.map((demo, index) => <button key={demo.id} ref={(node) => { tabs.current[index] = node; }} type="button" role="tab" id={`demo-tab-${demo.id}`} aria-controls={`demo-panel-${demo.id}`} aria-selected={active === index} tabIndex={active === index ? 0 : -1} onClick={() => setActive(index)} onKeyDown={(event) => navigateTabs(event, index)} className={styles.tab}>
@@ -144,7 +144,7 @@ export default function ApplicationDemos() {
           {active === index && <DemoPlayer key={demo.id} id={demo.id} name={demo.name} alt={copy.poster} en={en} />}
           <div className={styles.details}>
             <div><span className={styles.status}>{copy.status}</span><h3>{copy.headline}</h3><p>{copy.description}</p></div>
-            <div className={styles.outcomes}><p className={styles.label}>{en ? 'What the demo shows' : 'Das zeigt die Demo'}</p><ul>{copy.features.map((feature, i) => <li key={feature}><span aria-hidden="true">0{i + 1}</span>{feature}</li>)}</ul><button type="button" onClick={openLeadForm} className={styles.contact}>{en ? 'Discuss your application' : 'Ihre Anwendung besprechen'}<ArrowUpRight size={18} aria-hidden="true" /></button></div>
+            <div className={styles.outcomes}>{!compact && <p className={styles.label}>{en ? 'What the demo shows' : 'Das zeigt die Demo'}</p>}{!compact && <ul>{copy.features.map((feature, i) => <li key={feature}><span aria-hidden="true">0{i + 1}</span>{feature}</li>)}</ul>}<button type="button" onClick={openLeadForm} className={styles.contact}>{en ? 'Discuss your application' : 'Ihre Anwendung besprechen'}<ArrowUpRight size={18} aria-hidden="true" /></button></div>
           </div>
           <p id={`demo-note-${demo.id}`} className={styles.note}>{copy.note}<br /><Link href={DEMO_PATHS[demo.id]} className="engineering-text-link mt-3">{en ? `${demo.name}: workflow and prerequisites` : `${demo.name}: Ablauf und Voraussetzungen`} →</Link></p>
         </div>;

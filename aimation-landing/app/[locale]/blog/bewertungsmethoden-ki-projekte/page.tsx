@@ -1,3 +1,4 @@
+import BlogAuthor from '@/components/BlogAuthor';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -121,6 +122,8 @@ export default async function BewertungsmethodenPage({
               <span className="text-magenta-light">Vier Methoden</span>{' '}
               zur Bewertung von KI-Projekten
             </h1>
+
+            <BlogAuthor />
 
             <p className="text-muted font-inter leading-relaxed mb-8" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
               Die RICE-Formel ist ein guter Filter, aber sie hat blinde Flecken. Vier ergänzende Methoden und wann welche passt, erklärt an denselben fünf Projekten aus der Entwicklungsabteilung.

@@ -20,7 +20,7 @@ export const faqs = [
   {
     question: 'Ersetzt das unsere Ingenieure?',
     answer:
-      'Nein. Human in the Loop ist nicht optional: Die letzte Freigabe bleibt immer beim Ingenieur. KI übernimmt die Fleißarbeit, die Ihre Ingenieure vom Entwickeln abhält: Sortieren, Suchen, Zusammenschreiben, nicht die Entscheidungen. Für Gespräche mit dem Betriebsrat stelle ich Unterlagen bereit.',
+      'Nein. Human in the Loop ist nicht optional: Die letzte Freigabe bleibt immer beim Ingenieur. KI übernimmt die Fleißarbeit, die Ihre Ingenieure vom Entwickeln abhält: Sortieren, Suchen, Zusammenschreiben, nicht die Entscheidungen. Für Gespräche mit dem Betriebsrat stellen wir Unterlagen bereit.',
   },
   {
     question: 'Wie schnell sehen wir Ergebnisse?',

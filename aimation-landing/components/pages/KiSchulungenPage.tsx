@@ -56,7 +56,9 @@ export default function KiSchulungenPage() {
         </div>
         <div className="training-course-list">{TRAINING_COURSES.map((course, index) => <article className="training-course" id={`kurs-${course.id}`} key={course.id}>
           <span className="training-number" aria-hidden="true">0{index + 1}</span>
-          <div><p className="technical-label">{course[lang][1]}</p><h3>{course[lang][0]}</h3><p>{course[lang][2]}</p>{course.id === 'copilot' && <Link href="/schulungen/microsoft-365-copilot" className="engineering-text-link mt-4">{l('Copilot: Inhalte und Voraussetzungen', 'Copilot: content and requirements')} →</Link>}</div>
+          <div><h3>{course[lang][0]}</h3><p>{course.outcome[lang]}</p>
+            <details className="training-course-details"><summary>{l('Inhalte und Zielgruppe', 'Content and audience')}<span className="sr-only">: {course[lang][0]}</span><span aria-hidden="true">+</span></summary><div><p className="training-audience">{course[lang][1]}</p><p>{course[lang][2]}</p>{course.id === 'copilot' && <Link href="/schulungen/microsoft-365-copilot" className="engineering-text-link mt-4">{l('Copilot: Inhalte und Voraussetzungen', 'Copilot: content and requirements')} →</Link>}</div></details>
+          </div>
           <div className="training-course-status"><span><Check size={15} aria-hidden="true"/>{l('Lernmaterial vorhanden', 'Learning materials available')}</span><small>{course.modules} {l('Module im Portal', 'portal modules')}</small></div>
         </article>)}</div>
         <aside className="training-planned"><BookOpen size={24} aria-hidden="true"/><div><h3>{l('Weitere Lernreihen in Vorbereitung', 'More learning series in preparation')}</h3><p>{l('Automatisierung, Leadership und KI, Claude Code, KI in der technischen Produktentwicklung, Agentic OS sowie Datenstrukturen. Diese Portal-Reihen sind noch nicht abrufbar. Individuelle Workshop-Themen stimmen wir im Gespräch ab.', 'Automation, leadership and AI, Claude Code, AI in technical product development, Agentic OS and data structures. These portal series are not yet accessible. We discuss individual workshop topics with you.')}</p></div></aside>

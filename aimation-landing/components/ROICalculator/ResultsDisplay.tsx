@@ -211,11 +211,11 @@ export default function ResultsDisplay({ results, inputData, onBookCall, onSendE
               <div className="flex items-center gap-2 mb-2">
                 <Mail className="w-5 h-5 text-magenta-light flex-shrink-0" />
                 <h4 className="text-lg font-bold font-heading text-white">
-                  Ergebnis als PDF erhalten?
+                  Ergebnis per E-Mail erhalten?
                 </h4>
               </div>
               <p className="text-sm text-gray-300 font-body mb-4">
-                Tragen Sie Ihre E-Mail ein, ich schicke Ihnen die Berechnung mit einer kurzen persönlichen Einordnung.
+                Wir senden Ihnen die Berechnung mit Ihren Eingaben per E-Mail. Eine persönliche Einordnung erhalten Sie im Erstgespräch mit Holger Peschke.
               </p>
               <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3">
                 <Input

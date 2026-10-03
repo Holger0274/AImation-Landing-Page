@@ -25,13 +25,14 @@
     "headlineStart": "",
     "headlineHighlight": "Schneller",
     "headlineEnd": " entwickeln. Weil KI Ihrem Team Arbeit abnimmt.",
-    "subline": "Wir gehen rein in Ihre Entwicklung und zeigen genau, wo KI wirklich etwas bringt, auch da, wo das Wissen nur noch in den Köpfen von zwei, drei Leuten steckt. Anfragen sortieren sich selbst, Berichte schreiben sich fast von allein. DSGVO-konform, Verarbeitung in der EU.",
-    "cta": "Kostenloses Erstgespräch",
-    "ctaSecondary": "Was kostet Sie das pro Jahr? ROI berechnen",
+    "subline": "Wir zeigen Ihnen, wo KI in Ihrer Produktentwicklung wirklich Zeit spart: Anfragen vorsortieren, Berichte entwerfen, Erfahrungswissen auffindbar machen.",
+    "cta": "Kostenloses Erstgespräch ({duration}.)",
+    "ctaSecondary": "Zeitpotenzial selbst einschätzen",
     "processLink": "So läuft die Zusammenarbeit",
     "promise": "Im Pilot prüfen wir an einem Prozess, wie viel Bearbeitungszeit Sie sparen. Die Qualität prüfen wir mit.",
-    "ctaMicrocopy": "Kostenlos, 30 Minuten, kein Verkaufsgespräch.",
-    "trustLine": "20+ Jahre Produktentwicklung und Führung in der Industrie · 20.000+ LinkedIn-Follower · DSGVO-first"
+    "ctaMicrocopy": "Unverbindlich. Kein Verkaufsgespräch.",
+    "trustLine": "20+ Jahre Produktentwicklung und Führung in der Industrie · 20.000+ LinkedIn-Follower · DSGVO-first",
+    "privacy": "DSGVO-konform, Verarbeitung in der EU."
   },
   "painPoints": {
     "badge": "",
@@ -47,7 +48,7 @@
     "futureEnd": "",
     "futureStrong": "",
     "futureEndText": "",
-    "roiLink": "Was kostet Sie das pro Jahr? ROI berechnen",
+    "roiLink": "Zeitpotenzial selbst einschätzen",
     "modalClose": "Modal schließen",
     "clickHint": "Ansehen, wie die Lösung aussieht →",
     "anchorBadge": "Der teuerste Schmerz",
@@ -91,8 +92,8 @@
       },
       "competition": {
         "stat": "",
-        "title": "Der Anschluss",
-        "description": "Berichte, Recherche, Dokumentation: Wer diese Vorarbeit mit KI verkürzt, gewinnt Zeit für die Entwicklung. Welche Daten dafür genutzt werden dürfen und wie sie geschützt bleiben, klären wir vor dem Start.",
+        "title": "Entwicklung muss warten",
+        "description": "Berichte, Recherche und Dokumentation füllen den Tag. Die nächste Bauteilvariante, der Versuchsaufbau und die technische Entscheidung bleiben liegen. Für die eigentliche Entwicklung fehlt die Zeit.",
         "statLabel": "",
         "source": ""
       }
@@ -203,7 +204,7 @@
     "flipHintMobile": "Tippen zum Umdrehen",
     "moreInfo": "Mehr erfahren",
     "useCasesButton": "Klicken für Praxis-Beispiele",
-    "practiceExamples": "PRAXIS-BEISPIELE",
+    "practiceExamples": "ANWENDUNGSBEISPIELE",
     "inPractice": "in der Praxis",
     "close": "Schließen ✕",
     "similarProject": "Ähnliches Projekt besprechen",
@@ -264,29 +265,30 @@
       ],
       "beratung": [
         {
-          "title": "AI-Tool-Audit für Maschinenbauer: Schatten-KI aufdecken & Kosten senken",
-          "description": "Systematisches Audit aller KI-Tools im Unternehmen: Welche Tools nutzen Mitarbeiter (ChatGPT, Copilot, andere)? DSGVO-Risiken identifiziert, Lizenzkosten analysiert, Tool-Wildwuchs gestoppt. Konsolidierung auf 3 freigegebene Enterprise-Lösungen mit zentraler Verwaltung.",
-          "result": "Tool-Wildwuchs gestoppt, DSGVO-konforme Lösung mit klarer Kostenkontrolle"
+          "title": "KI-Werkzeuge in der Entwicklung prüfen",
+          "description": "Wir erfassen die eingesetzten Werkzeuge, Lizenzen und Datenflüsse. Gemeinsam mit Ihrer IT prüfen wir, welche Anwendungen für Konstruktionsdaten, Recherchen und Berichte geeignet sind.",
+          "result": "Ergebnis: eine begründete Auswahl und offene Punkte für die Freigabe."
         },
         {
-          "title": "Tool-Auswahl Workshop: Die richtige KI-Plattform für Online-Händler",
-          "description": "2-Tages-Workshop zur Entscheidungsfindung: Microsoft Copilot, Google Workspace AI oder eigenständige Lösung? Requirements definiert, 5 Anbieter verglichen (Kosten, Datenschutz, Integration), klare Empfehlung mit Begründung. Vertragsverhandlung begleitet.",
-          "result": "Entscheidung in 2 Tagen statt monatelanger Grundsatzdiskussion, mit dokumentierter Begründung"
+          "title": "Werkzeuge für ein Entwicklungsteam auswählen",
+          "description": "Wir vergleichen passende Lösungen anhand Ihrer Aufgaben: etwa Berichte in Microsoft 365 erstellen oder Wissen aus freigegebenen Dokumenten finden. Kosten, Datenzugriff und Betriebsmodell gehören zum Vergleich.",
+          "result": "Ergebnis: eine Entscheidungsvorlage mit Anforderungen und nächsten Schritten."
         }
       ],
       "umsetzung": [
         {
-          "title": "Chatbot für technische Dokumentation (Maschinenbau)",
-          "description": "Chatbot durchsucht 5000 Seiten technische Dokumentation und antwortet in 3 Sekunden, mit Quellenangabe. Service-Techniker finden Antworten, ohne Experten zu fragen.",
-          "result": "Service-Techniker finden Antworten selbst, mit Quellenangabe direkt aus der Dokumentation"
+          "title": "Technische Dokumentation durchsuchbar machen",
+          "description": "Ein Assistent sucht in freigegebenen Lastenheften, Prüfberichten und Lessons Learned. Zu seiner Antwort nennt er Fundstellen. Ihr Team prüft Quellen und Versionsstand.",
+          "result": "Im Pilot prüfen wir Suchzeit und Antwortqualität mit Ihren Dokumenten."
         },
         {
-          "title": "E-Mail-Automatisierung mit n8n für Vertriebsteam",
-          "description": "Intelligenter E-Mail-Workflow mit n8n: Eingehende E-Mails werden automatisch analysiert, kategorisiert (Anfrage, Beschwerde, Bestellung), mit CRM-Daten angereichert und an zuständige Mitarbeiter geroutet. Tickets werden automatisch erstellt.",
-          "result": "Jede E-Mail automatisch kategorisiert und geroutet, keine Anfrage bleibt liegen"
+          "title": "Technische Anfragen vorsortieren",
+          "description": "Ein Workflow ordnet eingehende Anfragen nach Bauteil, Projekt und Thema. Fehlende Angaben werden markiert. Der zuständige Mitarbeiter prüft die Zuordnung und gibt die Antwort frei.",
+          "result": "Im Pilot prüfen wir, welche Anfragen zuverlässig zugeordnet werden und wo Rückfragen nötig bleiben."
         }
       ]
-    }
+    },
+    "examplesNote": "Mögliche Abläufe für Ihr Unternehmen. Umfang und Ergebnis vereinbaren wir für Ihr Projekt."
   },
   "projectShowcase": {
     "badge": "Use Cases",
@@ -396,7 +398,7 @@
     "point1": "Ein Prozess, von Ihnen gewählt",
     "point2": "Festpreis 4.900 Euro, Laufzeit 4 Wochen",
     "point3": "Ihre Daten bleiben in der EU, DSGVO-konform",
-    "cta": "Besprechen Sie Ihren Piloten mit mir",
+    "cta": "Besprechen Sie Ihren Piloten mit Holger Peschke",
     "ctaMicrocopy": "Kostenlos, 30 Minuten, kein Verkaufsgespräch."
   },
   "process": {
@@ -413,64 +415,70 @@
       "erstgespraech": {
         "title": "Erstgespräch",
         "subtitle": "30 Minuten, kostenlos",
-        "description": "Sie erzählen, wo der Schuh drückt. Ich sage Ihnen ehrlich, ob KI hilft, und wenn nein, auch das.",
+        "description": "Wir besprechen einen konkreten Ablauf und prüfen, ob KI hilft. Sie bekommen eine ehrliche Einschätzung und einen ersten Schritt.",
         "details": [
           "Wo verliert Ihre Entwicklung Zeit?",
           "Welcher Prozess nervt jede Woche?",
           "Gibt es einen Quick Win?"
         ],
         "duration": "30 Min",
-        "cost": "Kostenlos"
+        "cost": "Kostenlos",
+        "outcome": "Sie wissen, ob KI für Ihren Ablauf sinnvoll ist."
       },
       "analyse": {
         "title": "KI-Landkarte",
         "subtitle": "1 Workshop-Tag",
-        "description": "Ein Workshop-Tag mit Ihrem Team. Ergebnis: 2 bis 3 priorisierte Use Cases mit ROI-Schätzung, intern vorzeigbar. Aus \"wir müssten mal was mit KI machen\" wird ein Plan mit Preisschild.",
+        "description": "Im Workshop prüfen wir Daten und Abläufe. Sie erhalten einen Bericht mit priorisierten Anwendungsfällen und ROI-Schätzungen.",
         "details": [
           "2 bis 3 priorisierte Use Cases",
           "ROI-Schätzung je Use Case",
           "Intern vorzeigbarer Bericht"
         ],
         "duration": "1 Tag + Bericht in 3 bis 5 Tagen",
-        "cost": "Festpreis ab 1.900 EUR"
+        "cost": "Festpreis ab 1.900 EUR",
+        "outcome": "Sie erhalten 2 bis 3 priorisierte Anwendungsfälle mit ROI-Schätzung."
       },
       "konzept": {
         "title": "Pilot",
         "subtitle": "Ein Prozess wird automatisiert",
-        "description": "Wir automatisieren einen Prozess und vergleichen die Bearbeitungszeit vorher und nachher. Gemeinsam prüfen wir die Qualität. Danach entscheiden Sie über den Ausbau.",
+        "description": "Wir automatisieren einen Prozess und vergleichen Zeitaufwand und Qualität. Danach entscheiden Sie über den Ausbau.",
         "details": [
           "Ein Prozess Ihrer Wahl",
           "Festpreis, klarer Zeitrahmen",
           "Definiertes Ergebnis"
         ],
         "duration": "4 Wochen",
-        "cost": "Festpreis 4.900 EUR"
+        "cost": "Festpreis 4.900 EUR",
+        "outcome": "Ein Prozess wird automatisiert. Zeitgewinn und Qualität werden geprüft."
       },
       "umsetzung": {
         "title": "Umsetzung",
         "subtitle": "Agenten-Systeme",
-        "description": "Vom einzelnen Workflow bis zum Multi-Agent-System mit Ihrem Firmenwissen. Die letzte Freigabe bleibt immer bei Ihrem Ingenieur.",
+        "description": "Wir binden die Lösung in Ihre Systeme ein. Vom Workflow bis zum Agenten-System: Die fachliche Freigabe bleibt bei Ihrem Team.",
         "details": [
           "Vom Workflow bis zum Multi-Agent-System",
           "Ihr Firmenwissen im System",
           "Letzte Freigabe bei Ihrem Ingenieur"
         ],
         "duration": "2 bis 12 Wochen",
-        "cost": "ab 5.000 EUR, transparent nach Angebot"
+        "cost": "ab 5.000 EUR, transparent nach Angebot",
+        "outcome": "Ein abgestimmter Ablauf geht in Betrieb. Ihr Team behält die Freigabe."
       },
       "begleitung": {
         "title": "Begleitung",
         "subtitle": "Langfristige Begleitung",
-        "description": "Nach Go-Live bleibe ich Ansprechpartner für Fragen, Anpassungen und neue Ideen.",
+        "description": "Holger Peschke bleibt Ihr Ansprechpartner. Fragen, Anpassungen und neue Ideen stimmen wir nach Bedarf mit Ihnen ab.",
         "details": [
           "Ansprechpartner für Fragen",
           "Anpassungen laufend möglich",
           "Raum für neue Ideen"
         ],
         "duration": "laufend",
-        "cost": "optional"
+        "cost": "optional",
+        "outcome": "Ihre Lösung wird betreut und bei Bedarf angepasst."
       }
-    }
+    },
+    "detailsLabel": "Was passiert hier?"
   },
   "selfBuilt": {
     "headline": "Jedes Versprechen hier habe ich",
@@ -496,9 +504,9 @@
   "socialProof": {
     "headline": "Vertrauen durch",
     "headlineHighlight": "Erfahrung",
-    "toolsHeadline": "Wir arbeiten mit den",
-    "toolsHighlight": "besten Tools",
-    "toolsSubline": "Wir binden uns an keinen Hersteller. Was für Ihren Fall passt, finden wir, weil wir alle relevanten Tools kennen und täglich nutzen. Bei der Auswahl zählt neben der Leistung immer, ob ein Tool DSGVO-konform betrieben werden kann. Im Zweifel gewinnt die EU-taugliche Option.",
+    "toolsHeadline": "Werkzeuge aus unserer",
+    "toolsHighlight": "Praxis",
+    "toolsSubline": "Wir arbeiten unter anderem mit diesen Werkzeugen. Welche davon zu Ihrem Ablauf passen, prüfen wir anhand Ihrer Aufgaben, Daten und vorhandenen Systeme. Zugriffsrechte und Betriebsmodell gehören zur Auswahl.",
     "stats": {
       "linkedin": "LinkedIn-Follower",
       "experience": "Jahre Engineering-Erfahrung",
@@ -506,7 +514,7 @@
     }
   },
   "about": {
-    "overline": "Über uns",
+    "overline": "Mehr über Holger Peschke",
     "headline": "20 Jahre Produktentwicklung.",
     "headlineHighlight": "Kein Theorieberater.",
     "introHeadline": "Zwei Welten in einer Person.",
@@ -538,7 +546,7 @@
       "title": "KI Bundesverband",
       "body": "Holger Peschke ist Mitglied im KI Bundesverband e.V., dem Netzwerk für Unternehmen und Experten im Bereich Künstliche Intelligenz in Deutschland.",
       "link": "Zum KI Bundesverband",
-      "href": "https://ki-bundesverband.de"
+      "href": "https://ki-verband.de/"
     },
     "bko": {
       "kicker": "Mitglied",
@@ -653,7 +661,7 @@
     "subline": "30 Minuten Gespräch. Sie bekommen einen konkreten ersten Schritt, auch wenn wir danach nie zusammenarbeiten.",
     "ctaPrimary": "Kostenloses Erstgespräch buchen",
     "ctaSecondary": "Oder rechnen Sie erst selbst nach",
-    "microcopy1": "Kostenlos, unverbindlich, Antwort von mir persönlich.",
+    "microcopy1": "Kostenlos, unverbindlich. Holger Peschke antwortet persönlich.",
     "microcopy2": "2 Minuten, keine Vorkenntnisse nötig"
   },
   "leadForm": {
@@ -661,7 +669,7 @@
     "closeAriaLabel": "Schließen",
     "headline": "Ihr Weg zum",
     "headlineHighlight": "KI-Erstgespräch",
-    "subline": "Kurz eintragen, Termin wählen, fertig. Antwort kommt von mir persönlich, nicht von einem Vertriebsteam.",
+    "subline": "Kurz eintragen, Termin wählen, fertig. Holger Peschke antwortet Ihnen persönlich.",
     "nameLabel": "Name *",
     "namePlaceholder": "Max Mustermann",
     "emailLabel": "E-Mail-Adresse *",
@@ -678,7 +686,7 @@
     "telefonPlaceholder": "+49 123 456789",
     "herausforderungLabel": "Woran denken Sie gerade? (optional)",
     "herausforderungPlaceholder": "Beschreiben Sie kurz, wobei KI Ihnen helfen könnte (z.B. 'Zu viele manuelle Prozesse in der Auftragsabwicklung' oder 'Wir wollen KI einsetzen, wissen aber nicht wo anfangen')...",
-    "herausforderungHint": "Ein Satz reicht und hilft mir, mich auf unser Gespräch vorzubereiten.",
+    "herausforderungHint": "Ein Satz reicht und hilft Holger Peschke bei der Vorbereitung auf Ihr Gespräch.",
     "datenschutzLabel": "Ich habe die",
     "datenschutzLink": "Datenschutzerklärung",
     "datenschutzEnd": "gelesen und stimme der Verarbeitung meiner Daten zu. *",
@@ -691,7 +699,8 @@
       "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
       "herausforderungMax": "Maximal 500 Zeichen",
       "datenschutzRequired": "Sie müssen der Datenschutzerklärung zustimmen"
-    }
+    },
+    "errorContact": "Sie können uns auch direkt schreiben: "
   },
   "footer": {
     "tagline": "Mehr Zeit für das",
@@ -721,5 +730,16 @@
     "headline": "Blog",
     "readMore": "Weiterlesen",
     "backToBlog": "Zurück zum Blog"
+  },
+  "founderIntro": {
+    "role": "Gründer von AImation",
+    "headlineStart": "Ich bin ",
+    "experience": "20 Jahre habe ich in der Automobilentwicklung gearbeitet und Teams geführt. Heute bringe ich diese Erfahrung in KI-Projekte für technische Unternehmen ein.",
+    "conversation": "Im Erstgespräch schaue ich mit Ihnen auf einen konkreten Ablauf aus Ihrer Entwicklung.",
+    "more": "Mehr über meinen Hintergrund",
+    "imageAlt": "Holger Peschke mit seinem Sohn bei der gemeinsamen Arbeit am Laptop",
+    "imageOrigin": "Originalfoto, mit KI bearbeitet",
+    "imageOriginDetail": "Umgebung, Kleidung und Beleuchtung mit KI verändert.",
+    "linkedin": "20.000+ Follower · Zum Profil"
   }
 }

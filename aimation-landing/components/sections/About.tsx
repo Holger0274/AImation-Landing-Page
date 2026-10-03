@@ -1,7 +1,6 @@
 'use client';
 import { ArrowUpRight } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
-import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 
 export default function About() {
@@ -11,28 +10,10 @@ export default function About() {
     <section id="ueber-mich" className="engineering-section">
       <div className="engineering-wrap">
         <div className="about-layout">
-          <figure className="about-portrait">
-            <div className="relative aspect-square overflow-hidden rounded-lg border border-line">
-              <Image
-                src="/images/about-holger-office-ai-edited-v2.webp"
-                alt={en ? 'Holger Peschke and his son working together at a laptop' : 'Holger Peschke mit seinem Sohn bei der gemeinsamen Arbeit am Laptop'}
-                aria-describedby="about-photo-origin"
-                fill
-                sizes="(max-width: 480px) calc(100vw - 48px), (max-width: 900px) 430px, 440px"
-                className="object-contain"
-              />
-            </div>
-            <figcaption>
-              <strong>Holger Peschke</strong>
-              <span>{en ? 'Founder · AImation' : 'Gründer · AImation'}</span>
-              <span id="about-photo-origin" className="basis-full" title={en ? 'Setting, clothing and lighting altered with AI.' : 'Umgebung, Kleidung und Beleuchtung mit KI verändert.'}>
-                {en ? 'Original photo, edited with AI' : 'Originalfoto, mit KI bearbeitet'}
-              </span>
-            </figcaption>
-          </figure>
           <div className="section-intro">
-            <p className="technical-label">{t('overline')}</p>
             <h2>{t('headline')} <span className="highlight">{t('headlineHighlight')}</span></h2>
+          </div>
+          <div className="section-intro">
             <h3 className="about-subheading">{t('introHeadline')} {t('introHighlight')}</h3>
             <p>{t('introText')}</p>
             {t('mainText') && <p className="mt-5">{t('mainText')}</p>}

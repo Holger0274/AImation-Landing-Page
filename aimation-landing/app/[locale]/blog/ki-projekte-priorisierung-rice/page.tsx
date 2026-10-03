@@ -1,3 +1,4 @@
+import BlogAuthor from '@/components/BlogAuthor';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -78,6 +79,8 @@ export default async function RicePriorisierungPage({
               Warum Ihr spannendstes KI-Projekt{' '}
               <span className="text-magenta-light">nicht zuerst kommt</span>
             </h1>
+
+            <BlogAuthor />
 
             <p className="text-muted font-inter leading-relaxed mb-8" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
               Fünf Ideen liegen auf dem Tisch, das Budget reicht für zwei. Eine einfache Formel aus dem Produktmanagement hilft bei der Entscheidung. Wenn man ihre Grenzen kennt.

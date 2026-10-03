@@ -86,6 +86,17 @@ export const USE_CASE_PRESETS: Record<UseCaseType, Omit<CalculatorInput, 'useCas
 /**
  * Calculate ROI based on corrected formulas
  */
+export const WEEKS_PER_YEAR = 52;
+
+/** Gross value of regained capacity, before project costs or ramp-up. */
+export function calculateAnnualTimeValue(numEmployees: number, weeklyHours: number, hourlyWage: number): number {
+  return calculateWeeklyTimeSavings(numEmployees, weeklyHours) * hourlyWage * WEEKS_PER_YEAR;
+}
+
+export function calculateWeeklyTimeSavings(numEmployees: number, weeklyHours: number): number {
+  return numEmployees * weeklyHours;
+}
+
 export function calculateROI(input: CalculatorInput): ROIResults {
   const {
     weeklyHours,
@@ -98,12 +109,12 @@ export function calculateROI(input: CalculatorInput): ROIResults {
   } = input;
 
   // Formula: produktive_wochen = (zeitraum_monate - anlaufzeit_monate) × (52 / 12)
-  const WEEKS_PER_MONTH = 52 / 12; // 4.333
+  const WEEKS_PER_MONTH = WEEKS_PER_YEAR / 12; // 4.333
   const productiveMonths = timeframMonths - rampUpMonths;
   const productiveWeeks = productiveMonths * WEEKS_PER_MONTH;
 
   // Formula: weeklySavings = stunden_ersparnis_pro_woche × stundensatz × anzahl_mitarbeiter
-  const weeklySavings = weeklyHours * hourlyWage * numEmployees;
+  const weeklySavings = calculateWeeklyTimeSavings(numEmployees, weeklyHours) * hourlyWage;
 
   // Formula: einsparung_gesamt = weeklySavings × produktive_wochen
   const totalSavings = weeklySavings * productiveWeeks;

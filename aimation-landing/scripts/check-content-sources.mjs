@@ -27,7 +27,8 @@ try {
 
   const courses = read(resolve(app, 'lib/data/training.ts'));
   const portal = read(resolve(learning, 'Schulungen/portal.html'));
-  const courseEntries = [...courses.matchAll(/id: '([^']+)', modules: (\d+), de: \['([^']+)'/g)];
+  // Outcomes may appear between the course ID and its module count.
+  const courseEntries = [...courses.matchAll(/id: '([^']+)',(?:(?!\bid:)[\s\S])*?modules: (\d+),\s*de: \['([^']+)'/g)];
   check(courseEntries.length === 6, 'Erwartet werden sechs verfügbare Lernreihen.');
   for (const [, , count, title] of courseEntries) {
     const start = portal.indexOf(`<h4>${title}</h4>`);

@@ -16,6 +16,7 @@ interface ROICalculatorProps {
   isOpen: boolean;
   onClose: () => void;
   calendlyUrl?: string;
+  initialInput?: Pick<CalculatorInput, 'numEmployees' | 'weeklyHours'> & Partial<Pick<CalculatorInput, 'hourlyWage'>>;
 }
 
 interface EmailOptInData {
@@ -28,6 +29,7 @@ interface EmailOptInData {
 export default function ROICalculator({
   isOpen,
   onClose,
+  initialInput,
   calendlyUrl = "https://calendly.com" // Fallback URL
 }: ROICalculatorProps) {
   const [results, setResults] = useState<ROIResults | null>(null);
@@ -107,7 +109,7 @@ export default function ROICalculator({
         </DialogHeader>
 
         {!results ? (
-          <CalculatorSteps onComplete={handleCalculatorComplete} />
+          <CalculatorSteps onComplete={handleCalculatorComplete} initialInput={initialInput} />
         ) : (
           <ResultsDisplay
             results={results}

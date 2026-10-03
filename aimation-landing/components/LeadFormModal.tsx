@@ -279,7 +279,10 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   <p role="alert" className="mt-1 text-sm text-red-300">{errors.datenschutz.message}</p>
                 )}
 
-                {submitError && <p role="alert" className="text-sm text-red-300">{t('errorGeneric')}</p>}
+                {submitError && <div role="alert" className="text-sm text-red-300">
+                  <p>{t('errorGeneric')}</p>
+                  <p className="mt-2 text-muted">{t('errorContact')}<a className="underline underline-offset-4 focus-visible:outline focus-visible:outline-2" href="mailto:info@aimation.de">info@aimation.de</a></p>
+                </div>}
 
                 {/* Submit button */}
                 <button

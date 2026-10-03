@@ -15,7 +15,6 @@ export default function KiLandkarte() {
       <div className="engineering-wrap">
         <SpotlightPanel className="landkarte-panel">
           <div className="section-intro">
-            <p className="technical-label">{en ? 'A clear starting point' : 'Ihr Einstieg'}</p>
             <h2>{t('headline')} <span className="highlight">{t('headlineHighlight')}</span></h2>
             <p>{t('body')}</p>
             <button className="engineering-button mt-8" onClick={openLeadForm}>{t('cta')}<ArrowUpRight size={18} aria-hidden="true" /></button>

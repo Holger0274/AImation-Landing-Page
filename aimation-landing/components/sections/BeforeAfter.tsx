@@ -16,7 +16,7 @@ export default function BeforeAfter() {
     <section className="engineering-section" id="vorher-nachher">
       <div className="engineering-wrap">
         <div className="section-heading-split">
-          <div className="section-intro"><p className="technical-label">{en ? 'Before / after' : 'Vorher / Nachher'}</p><h2>{en ? 'Less preparation.' : 'Weniger Vorarbeit.'}<br/><span className="highlight">{en ? 'More development.' : 'Mehr Entwicklung.'}</span></h2></div>
+          <div className="section-intro"><h2>{en ? 'Less preparation.' : 'Weniger Vorarbeit.'}<br/><span className="highlight">{en ? 'More development.' : 'Mehr Entwicklung.'}</span></h2></div>
           <div className="section-heading-body"><p>{en ? 'AI takes on searching, sorting and drafting. Your team reviews results and makes the decisions. Here is how a process could change.' : 'KI übernimmt Suchen, Sortieren und Entwürfe. Ihr Team prüft die Ergebnisse und trifft die Entscheidungen. So kann sich ein Ablauf verändern.'}</p></div>
         </div>
         <div className="comparison-tabs" role="group" aria-label={en ? 'Choose a use case' : 'Anwendungsfall wählen'}>

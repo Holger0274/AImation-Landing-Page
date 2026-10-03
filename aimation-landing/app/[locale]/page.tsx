@@ -1,14 +1,15 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
+import FounderIntro from '@/components/sections/FounderIntro';
+import EarlyDemos from '@/components/sections/EarlyDemos';
 import PainPoints from '@/components/sections/PainPoints';
+import TimeEstimate from '@/components/sections/TimeEstimate';
 import QktImpact from '@/components/sections/QktImpact';
-import KiLandkarte from '@/components/sections/KiLandkarte';
 import BeforeAfter from '@/components/sections/BeforeAfter';
 import Services from '@/components/sections/Services';
 import DevelopmentLandscape from '@/components/sections/DevelopmentLandscape';
 import Process from '@/components/sections/Process';
-import { PilotSection } from '@/components/sections/PilotSection';
 import SelfBuilt from '@/components/sections/SelfBuilt';
 import EuAiActNotice from '@/components/sections/EuAiActNotice';
 import About from '@/components/sections/About';
@@ -63,14 +64,15 @@ export default async function Home({
       */}
       <FAQPageSchema faqs={faqs} />
       <Header />
-      <main id="main-content">
+      <main id="main-content" className="home-page">
         <Hero />
+        <FounderIntro />
+        <EarlyDemos />
         <PainPoints />
+        <TimeEstimate />
         <QktImpact />
         <Process />
-        <KiLandkarte />
         <BeforeAfter />
-        <PilotSection />
         <Services />
         <DevelopmentLandscape />
         <SelfBuilt />

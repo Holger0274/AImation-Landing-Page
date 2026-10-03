@@ -8,15 +8,15 @@ import PainSchematic from '@/components/visuals/PainSchematic';
 import ImageOriginLabel from '@/components/ui/ImageOriginLabel';
 import { Link } from '@/i18n/navigation';
 
+const knowledgeImage = '/images/editorial/knowledge-loss.webp';
 const compactStatsConfig = [
-  { id: 'reporting', icon: FileSpreadsheet, imagePath: '/images/editorial/reporting-v2.png', imageAlt: 'Illustration: Stapel technischer Berichte auf einem Zeichentisch' },
-  { id: 'knowledge', icon: Brain, imagePath: '/images/editorial/knowledge-loss.webp', imageAlt: 'Illustration: Ein erfahrener Ingenieur geht, während eine Kollegin seine Bauteilnotizen prüft' },
-  { id: 'requests', icon: Clock, imagePath: '/images/editorial/requests-v2.png', imageAlt: 'Illustration: Technische Zeichnung mit markierten Änderungen' },
-  { id: 'searching', icon: AlertTriangle, imagePath: '/images/editorial/searching.webp', imageAlt: 'Illustration: Abweichende Zeichnungsstände in Ordner, Laptop und Papierablage' },
-  { id: 'research', icon: TrendingDown, imagePath: '/images/editorial/research.webp', imageAlt: 'Manuelle Recherche zu Normen und Patenten ist zeitaufwendig und fehleranfällig' },
-  { id: 'competition', icon: TrendingUp, imagePath: '/images/editorial/competition-office-v3.png', imageAlt: 'KI-generierte Beispielszene: Ein Mitarbeiter prüft am Bürobildschirm einen Berichtsentwurf aus einem Dokumenten-Workflow' },
+  { id: 'reporting', icon: FileSpreadsheet },
+  { id: 'knowledge', icon: Brain },
+  { id: 'requests', icon: Clock },
+  { id: 'searching', icon: AlertTriangle },
+  { id: 'research', icon: TrendingDown },
+  { id: 'competition', icon: TrendingUp },
 ] as const;
-
 
 export default function PainPoints() {
   const t = useTranslations('painPoints');
@@ -25,19 +25,19 @@ export default function PainPoints() {
     <section className="engineering-section" id="herausforderungen">
       <div className="engineering-wrap">
         <div className="section-heading-split">
-          <div className="section-intro"><p className="technical-label">{en ? 'The engineering day-to-day' : 'Alltag in der Entwicklung'}</p><h2>{t('headline')} <span className="highlight">{t('headlineHighlight')}</span> {t('headlineEnd')}</h2></div>
-          <div className="section-heading-body"><p>{t('body1')}</p><p>{t('body2')}</p><button className="engineering-text-link mt-4" onClick={() => document.querySelector<HTMLButtonElement>('[data-roi-calculator-trigger]')?.click()}>{t('roiLink')}<ArrowUpRight size={16} aria-hidden="true" /></button></div>
+          <div className="section-intro"><h2>{t('headline')} <span className="highlight">{t('headlineHighlight')}</span> {t('headlineEnd')}</h2></div>
+          <div className="section-heading-body"><p>{t('body1')}</p><p>{t('body2')}</p><a className="engineering-text-link mt-4" href="#zeitpotenzial">{t('roiLink')}<ArrowUpRight size={16} aria-hidden="true" /></a></div>
         </div>
         <blockquote className="pain-routine-quote">
           <p className="pain-routine-quote-line">{t('routineQuote')}</p>
           <p className="pain-routine-quote-context">{t('routineContext')}</p>
         </blockquote>
         <div className="pain-grid">
-          {compactStatsConfig.map(({ id, icon: Icon, imagePath, imageAlt }) => (
+          {compactStatsConfig.map(({ id, icon: Icon }) => (
             <Dialog key={id}>
               <DialogTrigger asChild>
                 <button className={`spot-card pain-card ${id === 'reporting' ? 'pain-card-featured' : ''}`} onPointerMove={trackSpotlight}>
-                  <span className="pain-card-image">{id === 'searching' || id === 'research' ? <PainSchematic type={id}/> : <><Image src={imagePath} alt="" fill sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw" className="object-cover" /><ImageOriginLabel src={imagePath} en={en}/></>}</span>
+                  <span className="pain-card-image">{id !== 'knowledge' ? <PainSchematic type={id}/> : <><Image src={knowledgeImage} alt="" fill sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw" className="object-cover" /><ImageOriginLabel src={knowledgeImage} en={en}/></>}</span>
                   <span className="pain-card-top"><Icon size={22} strokeWidth={1.5} aria-hidden="true" />{id === 'reporting' && <span>{t('reportingBadge')}</span>}<ArrowUpRight size={17} className="pain-card-arrow" aria-hidden="true" /></span>
                   <span className="pain-title">{t(`stats.${id}.title`)}</span>
                   <span className="pain-description">{t(`stats.${id}.description`)}</span>
@@ -46,9 +46,8 @@ export default function PainPoints() {
               </DialogTrigger>
               <DialogContent className="w-[calc(100%-32px)] max-w-3xl p-6 md:p-8">
                 <DialogTitle className="pr-10">{t(`stats.${id}.title`)}</DialogTitle>
-                <div className="relative aspect-[16/9] rounded-lg overflow-hidden">{id === 'searching' || id === 'research' ? <PainSchematic type={id}/> : <><Image src={imagePath} alt={en ? `Illustration: ${t(`stats.${id}.title`)}` : imageAlt} fill sizes="(max-width: 768px) 90vw, 700px" className="object-cover" /><ImageOriginLabel src={imagePath} en={en}/></>}</div>
-                {(id === 'searching' || id === 'research') && <p className="technical-label">{en ? 'Schematic illustration' : 'Schematische Darstellung'}</p>}
-                {id === 'competition' && <p className="text-xs text-dim">{en ? 'Illustrative software interface, not a screenshot of a real product.' : 'Beispielhafte Softwareoberfläche, kein Screenshot eines realen Produkts.'}</p>}
+                <div className="relative aspect-[16/9] rounded-lg overflow-hidden">{id !== 'knowledge' ? <PainSchematic type={id}/> : <><Image src={knowledgeImage} alt={en ? 'Illustration: an experienced engineer leaves while a colleague studies his component notes' : 'Illustration: Ein erfahrener Ingenieur geht, während eine Kollegin seine Bauteilnotizen prüft'} fill sizes="(max-width: 768px) 90vw, 700px" className="object-cover" /><ImageOriginLabel src={knowledgeImage} en={en}/></>}</div>
+                {(id !== 'knowledge') && <p className="technical-label">{en ? 'Schematic example, not a software screenshot' : 'Schematisches Beispiel, kein Software-Screenshot'}</p>}
                 <DialogDescription>{t(`stats.${id}.description`)}</DialogDescription>
                 {t(`stats.${id}.source`) && <p className="text-xs text-dim">{t('quellePrafix')} {t(`stats.${id}.source`)}</p>}
               </DialogContent>

@@ -1,3 +1,4 @@
+import BlogAuthor from '@/components/BlogAuthor';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -137,6 +138,8 @@ export default async function SechsStufenPage({
               Wo steht Ihr Unternehmen bei KI?{' '}
               <span className="text-magenta-light">Die 6 Stufen von Prompting bis autonome Agenten.</span>
             </h1>
+
+            <BlogAuthor />
 
             <p className="text-muted font-inter leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)' }}>
               41% der deutschen Unternehmen setzen KI mittlerweile aktiv ein, im Vorjahr waren es erst 17% ({' '}

@@ -1,3 +1,4 @@
+import BlogAuthor from '@/components/BlogAuthor';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -79,6 +80,8 @@ export default async function SchattenKiPage({
               Schatten-KI in Ihrem Unternehmen: Warum Verbieten nicht funktioniert.{' '}
               <span className="text-magenta-light">Und was stattdessen hilft.</span>
             </h1>
+
+            <BlogAuthor />
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
               <Image

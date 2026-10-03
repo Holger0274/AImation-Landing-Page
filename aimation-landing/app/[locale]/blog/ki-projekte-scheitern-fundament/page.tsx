@@ -1,3 +1,4 @@
+import BlogAuthor from '@/components/BlogAuthor';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -80,6 +81,8 @@ export default async function KiProjekteScheiternPage({
               KI-Projekte scheitern nicht am Modell.{' '}
               <span className="text-magenta-light">Sie scheitern an dem, was darunter liegt.</span>
             </h1>
+
+            <BlogAuthor />
 
             {/* Infografik */}
             <div className="relative w-full rounded-2xl overflow-hidden mb-2" style={{ aspectRatio: '2/3', maxHeight: '520px' }}>

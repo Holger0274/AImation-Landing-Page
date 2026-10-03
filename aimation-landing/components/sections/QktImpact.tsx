@@ -25,7 +25,7 @@ export default function QktImpact() {
           <figcaption>{en ? 'Three connected measures. One development process.' : 'Drei Größen, die zusammenhängen. Ein Entwicklungsprozess.'}</figcaption>
         </figure>
         <div className="qkt-impact-copy">
-          <div className="section-intro"><p className="technical-label">{en ? 'What matters to your development team' : 'Woran Ihre Entwicklung gemessen wird'}</p><h2 id="qkt-heading">{en ? 'Faster development must ' : 'Schneller entwickeln muss sich '}<span className="highlight">{en ? 'pay off.' : 'rechnen.'}</span></h2><p>{en ? 'Time pressure, rework and tight budgets are connected. We assess an AI application against all three measures.' : 'Zeitdruck, Nacharbeit und knappe Budgets hängen zusammen. Deshalb bewerten wir einen KI-Einsatz an allen drei Größen.'}</p></div>
+          <div className="section-intro"><h2 id="qkt-heading">{en ? 'Faster development must ' : 'Schneller entwickeln muss sich '}<span className="highlight">{en ? 'pay off.' : 'rechnen.'}</span></h2><p>{en ? 'Time pressure, rework and tight budgets are connected. We assess an AI application against all three measures.' : 'Zeitdruck, Nacharbeit und knappe Budgets hängen zusammen. Deshalb bewerten wir einen KI-Einsatz an allen drei Größen.'}</p></div>
           <div className="qkt-selector" role="group" aria-label={en ? 'Select quality, cost or timing' : 'Qualität, Kosten oder Timing auswählen'}>
             {dimensions.map((dimension, index) => <button key={dimension.id} aria-pressed={active === index} aria-controls="qkt-impact-detail" onClick={() => setActive(index)}>{dimension[en ? 'en' : 'de'][0]}</button>)}
           </div>

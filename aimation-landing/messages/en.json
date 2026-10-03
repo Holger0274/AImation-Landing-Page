@@ -25,13 +25,14 @@
     "headlineStart": "Develop ",
     "headlineHighlight": "faster",
     "headlineEnd": ". With AI that takes work off your team's hands.",
-    "subline": "We go inside your engineering and show you exactly where AI actually makes a difference, even where knowledge lives only in the heads of two or three people. Requests sort themselves, reports write themselves almost automatically. GDPR-compliant, processed in the EU.",
-    "cta": "Free initial consultation",
-    "ctaSecondary": "What is this costing you per year? Calculate ROI",
+    "subline": "We show you where AI can save time in your product development: triaging requests, drafting reports and making engineering knowledge easier to find.",
+    "cta": "Free initial consultation ({duration})",
+    "ctaSecondary": "Estimate time savings",
     "processLink": "See how we work together",
     "promise": "In the pilot, we measure the time saved on one process. We check the quality too.",
-    "ctaMicrocopy": "Free, 30 minutes, no sales pitch.",
-    "trustLine": "20+ years of product development and leadership in industry · 20,000+ LinkedIn followers · GDPR-first"
+    "ctaMicrocopy": "No obligation. No sales pitch.",
+    "trustLine": "20+ years of product development and leadership in industry · 20,000+ LinkedIn followers · GDPR-first",
+    "privacy": "GDPR-compliant, processed in the EU."
   },
   "painPoints": {
     "badge": "",
@@ -47,7 +48,7 @@
     "futureEnd": "",
     "futureStrong": "",
     "futureEndText": "",
-    "roiLink": "What is this costing you per year? Calculate ROI",
+    "roiLink": "Estimate time savings",
     "modalClose": "Close modal",
     "clickHint": "See what the solution looks like →",
     "anchorBadge": "The costliest pain point",
@@ -91,8 +92,8 @@
       },
       "competition": {
         "stat": "",
-        "title": "Falling behind",
-        "description": "Reports, research, documentation: reducing this groundwork with AI frees up time for engineering. Before starting, we establish which data may be used and how it will be protected.",
+        "title": "Engineering has to wait",
+        "description": "Reports, research and documentation fill the day. The next component variant, test setup and technical decision are left waiting. There is too little time for the engineering work itself.",
         "statLabel": "",
         "source": ""
       }
@@ -203,7 +204,7 @@
     "flipHintMobile": "Tap to flip",
     "moreInfo": "Learn more",
     "useCasesButton": "Click for practice examples",
-    "practiceExamples": "PRACTICAL EXAMPLES",
+    "practiceExamples": "APPLICATION EXAMPLES",
     "inPractice": "in practice",
     "close": "Close ✕",
     "similarProject": "Discuss a similar project",
@@ -264,29 +265,30 @@
       ],
       "beratung": [
         {
-          "title": "AI tool audit for a mechanical engineering firm: uncover shadow AI and cut costs",
-          "description": "Systematic audit of all AI tools in the company. Which tools are employees using (ChatGPT, Copilot, others)? GDPR risks identified, licence costs analysed, tool sprawl stopped. Consolidated to 3 approved enterprise solutions with central management.",
-          "result": "Tool sprawl stopped, a GDPR-compliant setup with clear cost control"
+          "title": "Review AI tools used in engineering",
+          "description": "We record the tools, licences and data flows in use. Together with your IT team, we assess which applications suit design data, research and reporting.",
+          "result": "Outcome: a reasoned selection and open questions for approval."
         },
         {
-          "title": "Tool selection workshop: the right AI platform for an online retailer",
-          "description": "2-day decision workshop. Microsoft Copilot, Google Workspace AI, or a standalone solution? Requirements defined, 5 providers compared (cost, data protection, integration), clear recommendation with rationale. Contract negotiation supported.",
-          "result": "A decision in 2 days instead of months of back-and-forth, with a documented rationale"
+          "title": "Select tools for an engineering team",
+          "description": "We compare suitable solutions against your tasks, such as drafting reports in Microsoft 365 or finding knowledge in approved documents. Cost, data access and operating model are part of the comparison.",
+          "result": "Outcome: a decision brief with requirements and next steps."
         }
       ],
       "umsetzung": [
         {
-          "title": "Chatbot for technical documentation (mechanical engineering)",
-          "description": "Chatbot searches 5,000 pages of technical documentation and responds within 3 seconds, with source references. Service technicians find answers without having to ask an expert.",
-          "result": "Service technicians find answers themselves, with sources straight from the documentation"
+          "title": "Make technical documentation searchable",
+          "description": "An assistant searches approved specifications, test reports and lessons learned. It cites sources for its answers. Your team checks the sources and version.",
+          "result": "In the pilot, we assess search time and answer quality using your documents."
         },
         {
-          "title": "Email automation with n8n for a sales team",
-          "description": "Intelligent email workflow with n8n. Incoming emails are automatically analysed, categorised (enquiry, complaint, order), enriched with CRM data, and routed to the right employee. Tickets are created automatically.",
-          "result": "Every email categorised and routed automatically, no enquiry is left sitting"
+          "title": "Sort technical enquiries",
+          "description": "A workflow sorts incoming enquiries by component, project and topic. Missing information is flagged. The responsible employee checks the assignment and approves the response.",
+          "result": "In the pilot, we assess which enquiries can be assigned reliably and where follow-up questions remain necessary."
         }
       ]
-    }
+    },
+    "examplesNote": "Possible workflows for your company. We agree the scope and expected outcome for your project."
   },
   "projectShowcase": {
     "badge": "Use Cases",
@@ -396,7 +398,7 @@
     "point1": "One process, chosen by you",
     "point2": "Fixed price 4,900 euros, 4-week timeline",
     "point3": "Your data stays in the EU, GDPR-compliant",
-    "cta": "Discuss your pilot with me",
+    "cta": "Discuss your pilot with Holger Peschke",
     "ctaMicrocopy": "Free, 30 minutes, no sales pitch."
   },
   "process": {
@@ -413,64 +415,70 @@
       "erstgespraech": {
         "title": "Initial call",
         "subtitle": "30 minutes, free",
-        "description": "You tell me where the friction is. I tell you honestly whether AI helps, and if not, that too.",
+        "description": "We discuss a specific workflow and assess whether AI can help. You receive an honest assessment and a first step.",
         "details": [
           "Where is your engineering losing time?",
           "Which process is a weekly frustration?",
           "Is there a quick win?"
         ],
         "duration": "30 min",
-        "cost": "Free"
+        "cost": "Free",
+        "outcome": "You know whether AI makes sense for your workflow."
       },
       "analyse": {
         "title": "AI Landscape Map",
         "subtitle": "1 workshop day",
-        "description": "One workshop day with your team. Result: 2 to 3 prioritized use cases with an ROI estimate, ready to present internally. \"We should do something with AI\" becomes a plan with a price tag.",
+        "description": "A workshop with your team. We check data and workflows, prioritize use cases and deliver a report with ROI estimates.",
         "details": [
           "2 to 3 prioritized use cases",
           "ROI estimate per use case",
           "Report you can present internally"
         ],
         "duration": "1 day, report in 3 to 5 days",
-        "cost": "Fixed price from 1,900 EUR"
+        "cost": "Fixed price from 1,900 EUR",
+        "outcome": "You receive 2 to 3 prioritized use cases with ROI estimates."
       },
       "konzept": {
         "title": "Pilot",
         "subtitle": "One process gets automated",
-        "description": "We automate one process and compare the time it takes before and after. We check quality together. Then you decide whether to expand.",
+        "description": "We automate one process and compare time spent and quality. You then decide whether to expand.",
         "details": [
           "One process of your choice",
           "Fixed price, clear timeframe",
           "Defined outcome"
         ],
         "duration": "4 weeks",
-        "cost": "Fixed price 4,900 EUR"
+        "cost": "Fixed price 4,900 EUR",
+        "outcome": "One process is automated. Time saved and quality are checked."
       },
       "umsetzung": {
         "title": "Implementation",
         "subtitle": "Agent systems",
-        "description": "From a single workflow to a multi-agent system built on your company knowledge. Final sign-off always stays with your engineer.",
+        "description": "We connect the solution to your systems. From a workflow to an agent system, technical approval stays with your team.",
         "details": [
           "From workflow to multi-agent system",
           "Your company knowledge, built in",
           "Final sign-off stays with your engineer"
         ],
         "duration": "2 to 12 weeks",
-        "cost": "From 5,000 EUR, transparent by proposal"
+        "cost": "From 5,000 EUR, transparent by proposal",
+        "outcome": "An agreed workflow goes live. Your team retains final approval."
       },
       "begleitung": {
         "title": "Ongoing support",
         "subtitle": "Long-term partnership",
-        "description": "After go-live I remain your contact for questions, adjustments, and new ideas.",
+        "description": "Holger Peschke remains your contact. We agree on questions, adjustments and new ideas as needed.",
         "details": [
           "Direct contact for questions",
           "Adjustments ongoing",
           "Room for new ideas"
         ],
         "duration": "Ongoing",
-        "cost": "Optional"
+        "cost": "Optional",
+        "outcome": "Your solution receives ongoing support and adjustments as needed."
       }
-    }
+    },
+    "detailsLabel": "What happens here?"
   },
   "selfBuilt": {
     "headline": "Every promise here",
@@ -496,9 +504,9 @@
   "socialProof": {
     "headline": "Trust built on",
     "headlineHighlight": "experience",
-    "toolsHeadline": "We work with the",
-    "toolsHighlight": "best tools",
-    "toolsSubline": "We are not tied to any vendor. We find what fits your situation because we know all the relevant tools and use them every day. When choosing, performance always matters, but so does whether a tool can be operated in a GDPR-compliant way. When in doubt, the EU-capable option wins.",
+    "toolsHeadline": "Tools we use in",
+    "toolsHighlight": "practice",
+    "toolsSubline": "These are some of the tools we work with. We assess their suitability against your tasks, data and existing systems. Access rights and the operating model are part of the selection.",
     "stats": {
       "linkedin": "LinkedIn followers",
       "experience": "years of engineering experience",
@@ -506,7 +514,7 @@
     }
   },
   "about": {
-    "overline": "About us",
+    "overline": "More about Holger Peschke",
     "headline": "20 years of product development.",
     "headlineHighlight": "No armchair consultant.",
     "introHeadline": "Two worlds in one person.",
@@ -538,7 +546,7 @@
       "title": "KI Bundesverband",
       "body": "Holger Peschke is a member of KI Bundesverband e.V., the network for companies and experts in artificial intelligence in Germany.",
       "link": "Visit KI Bundesverband",
-      "href": "https://ki-bundesverband.de"
+      "href": "https://ki-verband.de/"
     },
     "bko": {
       "kicker": "Member",
@@ -653,7 +661,7 @@
     "subline": "30-minute conversation. You get a concrete first step, even if we never work together afterwards.",
     "ctaPrimary": "Book a free initial consultation",
     "ctaSecondary": "Or calculate it yourself first",
-    "microcopy1": "Free, no obligation, answer from me personally.",
+    "microcopy1": "Free, no obligation. Holger Peschke replies personally.",
     "microcopy2": "2 minutes, no prior knowledge needed"
   },
   "leadForm": {
@@ -661,7 +669,7 @@
     "closeAriaLabel": "Close",
     "headline": "Your path to a",
     "headlineHighlight": "free AI consultation",
-    "subline": "Fill in a few fields, pick a time, done. Reply comes from me personally, not from a sales team.",
+    "subline": "Fill in a few fields, pick a time, done. Holger Peschke replies to you personally.",
     "nameLabel": "Name *",
     "namePlaceholder": "John Smith",
     "emailLabel": "Email address *",
@@ -678,7 +686,7 @@
     "telefonPlaceholder": "+44 20 1234 5678",
     "herausforderungLabel": "What is on your mind? (optional)",
     "herausforderungPlaceholder": "Briefly describe where AI could help you (e.g. 'Too many manual steps in order processing' or 'We want to use AI but do not know where to start')...",
-    "herausforderungHint": "One sentence is enough, it helps me prepare for our conversation.",
+    "herausforderungHint": "One sentence is enough to help Holger Peschke prepare for your conversation.",
     "datenschutzLabel": "I have read the",
     "datenschutzLink": "privacy policy",
     "datenschutzEnd": "and agree to the processing of my data. *",
@@ -691,7 +699,8 @@
       "emailInvalid": "Please enter a valid email address",
       "herausforderungMax": "Maximum 500 characters",
       "datenschutzRequired": "You must agree to the privacy policy"
-    }
+    },
+    "errorContact": "You can also email us directly: "
   },
   "footer": {
     "tagline": "More time for what",
@@ -731,5 +740,16 @@
     "headline": "Use Cases",
     "notice": "Our use cases are currently available in German only.",
     "cta": "Go to German use case"
+  },
+  "founderIntro": {
+    "role": "Founder of AImation",
+    "headlineStart": "I'm ",
+    "experience": "I spent 20 years working in automotive development and leading teams. Today, I bring that experience to AI projects for engineering businesses.",
+    "conversation": "In our initial consultation, I'll look at a specific workflow from your engineering team with you.",
+    "more": "More about my background",
+    "imageAlt": "Holger Peschke and his son working together at a laptop",
+    "imageOrigin": "Original photo, edited with AI",
+    "imageOriginDetail": "Setting, clothing and lighting altered with AI.",
+    "linkedin": "20,000+ followers · View profile"
   }
 }

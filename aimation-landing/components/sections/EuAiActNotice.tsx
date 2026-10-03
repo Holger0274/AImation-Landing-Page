@@ -9,7 +9,7 @@ export default function EuAiActNotice() {
   const t = useTranslations('euAiAct');
 
   return (
-    <section className="py-12 md:py-16" style={{ backgroundColor: 'transparent' }}>
+    <section className="eu-ai-notice py-12 md:py-16" style={{ backgroundColor: 'transparent' }}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={false}

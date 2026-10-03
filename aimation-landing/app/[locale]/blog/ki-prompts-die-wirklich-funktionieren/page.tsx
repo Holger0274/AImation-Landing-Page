@@ -1,3 +1,4 @@
+import BlogAuthor from '@/components/BlogAuthor';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -128,6 +129,8 @@ export default async function KiPromptsPage({
               KI-Prompts, die wirklich funktionieren:{' '}
               <span className="text-magenta-light">7 Muster für den Arbeitsalltag im Mittelstand</span>
             </h1>
+
+            <BlogAuthor />
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-2">
               <Image

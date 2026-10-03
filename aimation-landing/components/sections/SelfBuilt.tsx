@@ -14,7 +14,6 @@ import { SupabaseIcon } from '@/components/icons/SupabaseIcon';
 import { ObsidianIcon } from '@/components/icons/ObsidianIcon';
 import { useLeadForm } from '@/components/LeadFormProvider';
 import EngineeringProjects from './EngineeringProjects';
-import ApplicationDemos from './ApplicationDemos';
 
 interface ToolPill {
   name: string;
@@ -108,16 +107,9 @@ export default function SelfBuilt() {
           <h2 id="self-built-heading" className="text-3xl md:text-4xl font-heading font-bold mb-5 text-ink leading-tight">
             {en ? 'Built from ' : 'Aus der Entwicklung. '}<span className="gradient-text">{en ? 'experience.' : 'Selbst gebaut.'}</span>
           </h2>
-          <p className="text-muted font-inter leading-relaxed">{en ? 'PM Demonstrator, VariantHub and Skillmatrix: see our own applications at work. Followed by AI tools for root-cause analysis, simulation data and idea evaluation.' : 'PM Demonstrator, VariantHub und Skillmatrix: Sehen Sie unsere eigenen Anwendungen im Einsatz. Dazu KI-Werkzeuge für Ursachenanalyse, Berechnungsdaten und Ideenbewertung.'}</p>
+          <p className="text-muted font-inter leading-relaxed">{en ? 'Explore our AI tools for root-cause analysis, simulation data and idea evaluation. The original screenshots show their current development stages.' : 'Entdecken Sie unsere KI-Werkzeuge für Ursachenanalyse, Berechnungsdaten und Ideenbewertung. Die Original-Screenshots zeigen den jeweiligen Entwicklungsstand.'}</p>
         </motion.div>
 
-        <ApplicationDemos />
-
-        <div className="max-w-2xl mb-8">
-          <p className="text-dim text-sm mb-3">{en ? 'More from our workshop' : 'Weitere Einblicke in unsere Werkstatt'}</p>
-          <p className="text-2xl md:text-3xl font-heading font-medium text-ink mb-4">{en ? 'AI tools for specific engineering tasks.' : 'KI-Werkzeuge für konkrete Entwicklungsaufgaben.'}</p>
-          <p className="text-muted leading-relaxed">{en ? '5Why, FEM Visualizer and our idea agent system show how AI supports analysis and technical decisions. Explore the original screenshots.' : '5Why, FEM-Visualizer und unser Ideen-Agentensystem zeigen, wie KI bei Analysen und fachlichen Entscheidungen unterstützt. Entdecken Sie die Original-Screenshots.'}</p>
-        </div>
         <EngineeringProjects />
 
         <div className="text-center mb-20">

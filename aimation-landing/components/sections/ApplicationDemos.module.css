@@ -49,3 +49,31 @@
   .tab, .playIcon { transition: none; }
   .poster:hover .playIcon, .poster:active .playIcon { transform: none; }
 }
+
+/* The early proof section keeps one recording and its explanation side by side. */
+.compact { margin-bottom: 0; }
+.compact .panel { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: start; }
+.compact .panel[hidden] { display: none; }
+.compact .player { margin: 24px 0 24px 24px; border-radius: 8px; }
+.compact .details { display: block; padding: 24px; }
+.compact .details h3 { font-size: clamp(24px, 2.2vw, 32px); margin: 12px 0; }
+.compact .note { grid-column: 1 / -1; margin-inline: 24px; }
+.compact .playPrompt { font-size: 18px; }
+.compact .playIcon { width: 64px; height: 64px; }
+@media (max-width: 1000px) {
+  .compact .panel { grid-template-columns: minmax(0, 1fr); }
+  .compact .player { margin: 0; border-radius: 11px 11px 0 0; }
+}
+
+/* A central playback affordance distinguishes the recording from a screenshot. */
+.playPrompt { top: 50%; left: 50%; bottom: auto; transform: translate(-50%, -50%); flex-direction: column; gap: 12px; width: max-content; max-width: calc(100% - 32px); text-align: center; font-size: clamp(16px, 2vw, 22px); }
+.playPrompt > span:last-child { padding: 9px 16px; border: 1px solid rgb(250 249 247 / 24%); border-radius: 6px; background: rgb(7 16 19 / 94%); color: #faf9f7; }
+.playPrompt small { color: #faf9f7; font-size: 12px; margin-top: 4px; }
+.playIcon { width: 84px; height: 84px; border: 5px solid #071013; box-shadow: 0 0 0 1px rgb(250 249 247 / 65%), 0 8px 28px rgb(7 16 19 / 45%); }
+.playIcon svg { width: 30px; height: 30px; }
+@media (max-width: 760px) {
+  .playPrompt { gap: 8px; }
+  .playIcon { width: 60px; height: 60px; border-width: 4px; }
+  .playIcon svg { width: 24px; height: 24px; }
+  .playPrompt > span:last-child { padding: 6px 12px; }
+}

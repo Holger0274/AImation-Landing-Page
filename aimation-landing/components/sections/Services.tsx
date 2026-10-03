@@ -28,6 +28,7 @@ export default function Services() {
                 <div className="service-identity"><Icon size={25} strokeWidth={1.4} aria-hidden="true" /><h3>{item.title}</h3><p>{item.subtitle}</p><Link href={href} className="engineering-text-link">{t('moreInfo')}<ArrowUpRight size={16} aria-hidden="true" /></Link></div>
                 <div className="service-description"><p>{item.description}</p><ul>{item.features.map(feature => <li key={feature}>{feature}</li>)}</ul><p className="service-detail">{item.detail}</p>
                   <details className="service-examples"><summary>{t('practiceExamples')}<Plus size={16} aria-hidden="true" /></summary>
+                    <p className="text-dim text-sm">{t('examplesNote')}</p>
                     {item.backFeatures && <ul>{item.backFeatures.map(feature => <li key={feature}>{feature}</li>)}</ul>}
                     <div className="service-example-grid">{examples.map(example => <article key={example.title}><h4>{example.title}</h4><p>{example.description}</p><p className="text-ink">{example.result}</p></article>)}</div>
                     <a href="#kontakt" className="engineering-text-link">{t('similarProject')}<ArrowUpRight size={16} aria-hidden="true" /></a>

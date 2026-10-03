@@ -1,3 +1,4 @@
+import BlogAuthor from '@/components/BlogAuthor';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, ChevronRight } from 'lucide-react';
@@ -79,6 +80,8 @@ export default async function ProzessdokumentationPage({
               Prozessdokumentation ohne Wochen Vorlauf:{' '}
               <span className="text-magenta-light">aus einem Gespräch wird in Stunden eine Verfahrensanweisung</span>
             </h1>
+
+            <BlogAuthor />
 
             <div className="rounded-2xl border border-line bg-surface p-6 md:p-8 mb-2 overflow-x-auto">
               <TranscriptToProcess variant="dark" className="w-full min-w-[560px] h-auto" />

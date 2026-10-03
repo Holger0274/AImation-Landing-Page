@@ -212,6 +212,16 @@ export async function POST(request: NextRequest) {
       html: emailHtml,
     });
 
+    // The provider returns delivery rejections in `error` without throwing.
+    // Do not show a success state or notify the owner when no email was accepted.
+    if (emailResult.error || !emailResult.data?.id) {
+      console.error('ROI email was not accepted by the email provider');
+      return NextResponse.json(
+        { error: 'Die E-Mail konnte nicht versendet werden. Bitte versuchen Sie es erneut.' },
+        { status: 502 }
+      );
+    }
+
     // Also send a copy to the business owner (optional)
     if (process.env.RESEND_TO_EMAIL) {
       await resend.emails.send({

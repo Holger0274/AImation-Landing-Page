@@ -1,3 +1,4 @@
+import BlogAuthor from '@/components/BlogAuthor';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -80,6 +81,8 @@ export default async function KiRoadmapIllusionPage({
               Die KI-Lüge im Mittelstand: Warum der gerade Strich auf der{' '}
               <span className="text-magenta-light">Roadmap eine Illusion ist.</span>
             </h1>
+
+            <BlogAuthor />
 
             <p className="font-inter text-muted mb-8 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
               Die größte Lüge über KI im Mittelstand ist selten das große Versprechen, dass sie alles kann. Meistens ist es der gerade Strich auf der Roadmap.

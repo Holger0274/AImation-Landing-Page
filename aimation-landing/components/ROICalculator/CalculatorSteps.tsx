@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Check, Calculator, Tag } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -20,29 +20,33 @@ import {
 } from "./calculations";
 
 interface CalculatorStepsProps {
+  initialInput?: Pick<CalculatorInput, 'numEmployees' | 'weeklyHours'> & Partial<Pick<CalculatorInput, 'hourlyWage'>>;
   onComplete: (data: CalculatorInput & {
     industry?: string;
   }) => void;
 }
 
-export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
-  const [currentStep, setCurrentStep] = useState(0);
+export default function CalculatorSteps({ onComplete, initialInput }: CalculatorStepsProps) {
+  const [currentStep, setCurrentStep] = useState(initialInput ? 3 : 0);
+  const previousUseCase = useRef<UseCaseType>('custom');
   const [formData, setFormData] = useState({
     industry: "",
     useCase: "custom" as UseCaseType,
     package: "professional" as PackageType,
-    numEmployees: "",
-    hourlyWage: "",
-    weeklyHours: "",
-    setupCost: "",
-    monthlyCost: "",
-    timeframMonths: "",
-    rampUpMonths: "",
+    numEmployees: String(initialInput?.numEmployees ?? USE_CASE_PRESETS.custom.numEmployees),
+    hourlyWage: String(initialInput?.hourlyWage ?? USE_CASE_PRESETS.custom.hourlyWage),
+    weeklyHours: String(initialInput?.weeklyHours ?? USE_CASE_PRESETS.custom.weeklyHours),
+    setupCost: String(USE_CASE_PRESETS.custom.setupCost),
+    monthlyCost: String(USE_CASE_PRESETS.custom.monthlyCost),
+    timeframMonths: String(USE_CASE_PRESETS.custom.timeframMonths),
+    rampUpMonths: String(USE_CASE_PRESETS.custom.rampUpMonths),
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   // When use case changes, prefill values
   useEffect(() => {
+    if (previousUseCase.current === formData.useCase) return;
+    previousUseCase.current = formData.useCase;
     if (formData.useCase) {
       const preset = USE_CASE_PRESETS[formData.useCase];
       setFormData(prev => ({
@@ -88,7 +92,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
 
       case 4: // Hourly wage
         if (!formData.hourlyWage || Number(formData.hourlyWage) < 10) {
-          newErrors.hourlyWage = "Bitte geben Sie einen gültigen Stundenlohn ein (mind. €10)";
+          newErrors.hourlyWage = "Bitte geben Sie einen gültigen internen Stundensatz ein (mind. 10 €)";
         }
         break;
 
@@ -356,17 +360,17 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
           {currentStep === 4 && (
             <div className="py-8">
               <h3 className="text-3xl font-bold font-heading text-white mb-3">
-                Durchschnittlicher <span className="text-magenta-light">Stundenlohn</span>?
+                Interner <span className="text-magenta-light">Stundensatz</span>?
               </h3>
               <p className="text-gray-300 font-body mb-8">
-                Bruttostundenlohn der betroffenen Mitarbeiter in Euro.
+                Kosten je Arbeitsstunde in Euro, einschließlich Arbeitgeberkosten.
               </p>
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg">€</span>
                 <Input
                   type="number"
                   placeholder="z.B. 45"
-                aria-label="Bruttostundenlohn in Euro"
+                aria-label="Interner Stundensatz in Euro"
                   value={formData.hourlyWage}
                   onChange={(e) => setFormData({ ...formData, hourlyWage: e.target.value })}
                   onKeyPress={handleKeyPress}
@@ -374,7 +378,7 @@ export default function CalculatorSteps({ onComplete }: CalculatorStepsProps) {
                   errorMessage={errors.hourlyWage}
                   autoFocus
                   min="10"
-                  max="200"
+                  max="250"
                   className="text-lg pl-10"
                 />
               </div>

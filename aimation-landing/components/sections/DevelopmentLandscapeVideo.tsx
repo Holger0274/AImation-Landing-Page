@@ -27,12 +27,11 @@ export default function DevelopmentLandscapeVideo({ en }: { en: boolean }) {
     <div id="development-landscape-video" className={styles.feature} role="region" aria-labelledby="landscape-video-heading">
       <div className={styles.intro}>
         <div>
-        <p className="technical-label">{en ? 'Pillar 3 / Our own implementation' : 'Säule 3 / Eigene Umsetzung'}</p>
         <h3 id="landscape-video-heading">{en ? 'Find your starting point among ' : 'Finden Sie Ihren Einstieg unter '}{LANDSCAPE_SNAPSHOT.cases}{en ? ' application ideas.' : ' Anwendungsideen.'}</h3>
         </div>
         <p>{en
-          ? `You do not need to bring a ready-made use case. Our Development Landscape covers ${LANDSCAPE_SNAPSHOT.areas} areas, mainly in technical product development and adjacent functions. In 2 minutes 20 seconds, explore the catalogue, our own tools and ways to assess ideas. Together, we check what fits your data and processes.`
-          : `Sie müssen keinen fertigen Use Case mitbringen. Unsere Development Landscape umfasst ${LANDSCAPE_SNAPSHOT.areas} Bereiche, vor allem in der technischen Produktentwicklung und angrenzenden Aufgabenfeldern. In 2 Minuten 20 Sekunden sehen Sie den Katalog, eigene Werkzeuge und die Bewertung von Ideen. Gemeinsam prüfen wir, was zu Ihren Daten und Abläufen passt.`}</p>
+          ? `A tour of ${LANDSCAPE_SNAPSHOT.areas} areas in product development and adjacent functions. See the catalogue, our own tools and how we assess ideas.`
+          : `Ein Rundgang durch ${LANDSCAPE_SNAPSHOT.areas} Bereiche der Produktentwicklung und angrenzender Aufgaben. Sie sehen den Katalog, eigene Werkzeuge und die Bewertung von Ideen.`}</p>
       </div>
       <div className={styles.player}>
         {!started ? (

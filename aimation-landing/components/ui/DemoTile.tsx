@@ -76,7 +76,7 @@ export default function DemoTile({ title, badge, placeholderNote, videoSrc, imag
         ) : (
           !hasAsset && (
             <div className="rounded-lg border border-dashed border-white/30 p-8 text-center text-gray-400 font-inter text-sm">
-              Video folgt. Im Erstgespräch zeige ich Ihnen dieses System live, an echten Daten.
+              Der Screencast folgt. Im Erstgespräch besprechen wir den gezeigten Ansatz und Ihren Anwendungsfall.
             </div>
           )
         )}

@@ -1,15 +1,18 @@
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { Linkedin, Mail } from 'lucide-react';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 export default async function Footer() {
   const t = await getTranslations('footer');
+  const locale = await getLocale();
   const currentYear = new Date().getFullYear();
-  const lastUpdated = new Date('2026-08-09'); // Update dieses Datum bei Content-Änderungen
-  const formattedDate = lastUpdated.toLocaleDateString('de-DE', {
+  const lastUpdatedDate = '2026-10-03'; // Update dieses Datum bei Content-Änderungen
+  const lastUpdated = new Date(`${lastUpdatedDate}T12:00:00Z`);
+  const formattedDate = lastUpdated.toLocaleDateString(locale === 'en' ? 'en-GB' : 'de-DE', {
     year: 'numeric',
     month: 'long',
+    timeZone: 'UTC',
   });
 
   return (
@@ -158,7 +161,7 @@ export default async function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-800">
           {/* Last Updated Signal (SEO Content Freshness) */}
           <p className="text-dim text-xs mb-3 text-center md:text-left">
-            {t('lastUpdated')} {formattedDate}
+            {t('lastUpdated')} <time dateTime={lastUpdatedDate}>{formattedDate}</time>
           </p>
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
