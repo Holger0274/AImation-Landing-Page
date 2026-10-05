@@ -2,6 +2,7 @@ import { setRequestLocale } from 'next-intl/server';
 import TopicPage, { TopicSteps, topicStyles as s } from '@/components/pages/TopicPage';
 import { AI_OS_COPY, AI_OS_PATH } from '@/lib/data/ai-operating-system';
 import { pageMetadata } from '@/lib/seo/metadata';
+import DataFoundation from '@/components/visuals/DataFoundation';
 import styles from './page.module.css';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     </figure>}>
     <div className="engineering-wrap">
       <section className={`${s.section} ${s.split}`} id="einblick"><div><h2>{c.definitionTitle}</h2><p>{c.definition}</p></div><div><p>{c.definitionNext}</p><p className={s.note}>{c.definitionNote}</p></div></section>
+      <DataFoundation en={en} />
       <section className={s.section}><div className={s.split}><h2>{c.sourcesTitle}</h2><p>{c.sourcesText}</p></div><div className={`${s.qkt} ${styles.sourceCards}`}>{c.sources.map(([title, text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}</div></section>
       <section className={s.section} id="datenbasis"><div className={s.split}><h2>{c.mappingTitle}</h2><p>{c.mappingText}</p></div>
         <div className={styles.mapping}><p>{c.mappingExample}</p>{c.mappingRows.map((row, i) => <dl key={i}>{row.map((value, j) => <div key={c.mappingLabels[j]}><dt>{c.mappingLabels[j]}</dt><dd>{value}</dd></div>)}</dl>)}</div><p className={s.note}>{c.mappingNote}</p>
