@@ -19,6 +19,6 @@ export default function middleware(request: NextRequest) {
 export const config = {
   // Exclude: static files, images, favicon, api routes, legal pages
   matcher: [
-    '/((?!_next/static|_next/image|favicon\\.ico|favicon\\.svg|api/|impressum|datenschutz|images/|videos/|logos/|sitemap\\.xml|robots\\.txt|llms\\.txt).*)',
+    '/((?!_next/static|_next/image|favicon\\.ico|favicon\\.svg|api/|impressum|datenschutz|images/|videos/(?:ai2cad|demos)/|logos/|sitemap\\.xml|robots\\.txt|llms\\.txt).*)',
   ],
 };

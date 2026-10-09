@@ -17,7 +17,9 @@ async function get(path, options) {
 const sitemap = await (await get('/sitemap.xml')).text();
 const llms = await (await get('/llms.txt')).text();
 assert(sitemap.includes('xmlns:video='));
-assert.equal((sitemap.match(/<video:video>/g) || []).length, 8);
+const ai2cadEntries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].filter(match => /<loc>[^<]*\/ai2cad\//.test(match[1]));
+assert.equal(ai2cadEntries.length, 8);
+assert(ai2cadEntries.every(match => match[1].includes('<video:video>')));
 for (const locale of ['', '/en']) {
   const home = await (await get(`${locale}/ai2cad`)).text();
   const main = home.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];

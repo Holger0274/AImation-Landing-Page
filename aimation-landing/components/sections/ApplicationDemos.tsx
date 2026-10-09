@@ -9,73 +9,8 @@ import { pauseOtherVideos } from '@/lib/media/playback';
 import styles from './ApplicationDemos.module.css';
 import { Link } from '@/i18n/navigation';
 
-export const DEMO_PATHS = {
-  'pm-demonstrator': '/use-cases/projektsteuerung-entwicklung',
-  varianthub: '/use-cases/variantenmanagement',
-  skillmatrix: '/use-cases/skillmatrix-entwicklung',
-} as const;
-
-// Source descriptions and original recordings: /Videos, September 2026.
-// AI shown in a recording is described as such, not as a production guarantee.
-const demos = [
-  {
-    id: 'pm-demonstrator', name: 'PM Demonstrator',
-    de: {
-      topic: 'Projekte & Kapazitäten', status: 'Proof of Concept',
-      headline: 'Projekte steuern. Den Überblick behalten.',
-      description: 'Arbeitspakete, Termine und Kapazitäten laufen in einem System zusammen. Das Video zeigt, wie daraus begründete Projektampeln und ein Statusbericht entstehen.',
-      features: ['Terminabweichungen und Abhängigkeiten erkennen', 'Engpässe in der Teamplanung nachvollziehen', 'Berichtsentwürfe prüfen und freigeben'],
-      note: 'Im Video: KI-Risiko-Radar und KI-Berichtsentwurf. Gezeigt wird ein Demonstrationsstand mit fiktiven Projektdaten. Funktionsumfang, Anmeldung und Schnittstellen werden für einen Piloten abgestimmt.',
-      poster: 'PM Demonstrator: Projektportfolio mit Statusampeln und hervorgehobenem Lieferverzug',
-    },
-    en: {
-      topic: 'Projects & capacity', status: 'Proof of concept',
-      headline: 'Manage projects. Keep the overview.',
-      description: 'Work packages, schedules and capacity come together in one system. The video shows how they inform explained project indicators and a status report.',
-      features: ['Identify schedule deviations and dependencies', 'Understand bottlenecks in team planning', 'Review and approve draft reports'],
-      note: 'Shown in the video: AI risk radar and AI report drafts. This is a demonstration using fictional project data. Pilot scope, authentication and integrations need to be agreed.',
-      poster: 'PM Demonstrator: project portfolio with status indicators and a highlighted supplier delay',
-    },
-  },
-  {
-    id: 'varianthub', name: 'VariantHub',
-    de: {
-      topic: 'Varianten & Regeln', status: 'Lauffähiger Prototyp',
-      headline: 'Varianten prüfen, bevor Fehler entstehen.',
-      description: 'Welche Kombination ist technisch machbar? VariantHub prüft Merkmale und Regeln, erklärt Ausschlüsse und zeigt die Folgen einer Änderung vor der Freigabe.',
-      features: ['Excel-Variantenlisten einlesen und prüfen', 'Unzulässige Kombinationen mit Begründung erkennen', 'Auswirkungen von Regeländerungen vorab sehen'],
-      note: 'Mit KI entwickelt. Der fachliche Kern prüft deterministisch anhand von Regeln. KI-Regelvorschläge sind als Erweiterung vorgesehen. Das Video zeigt Demodaten.',
-      poster: 'VariantHub: Kreisdiagramm des gültigen Lösungsraums aus Leistung, Einsatzbereich und Schutzart',
-    },
-    en: {
-      topic: 'Variants & rules', status: 'Working prototype',
-      headline: 'Check variants before errors arise.',
-      description: 'Which combination is technically feasible? VariantHub checks features and rules, explains exclusions and shows the impact of a change before approval.',
-      features: ['Import and check Excel variant lists', 'Identify invalid combinations with explanations', 'Preview the impact of rule changes'],
-      note: 'Developed with AI. The core uses deterministic rule checks. AI-generated rule suggestions are a planned extension. The video uses demo data.',
-      poster: 'VariantHub: radial chart of valid combinations of power, application and protection class',
-    },
-  },
-  {
-    id: 'skillmatrix', name: 'Skillmatrix',
-    de: {
-      topic: 'Wissen & Teams', status: 'Demo mit Beispieldaten',
-      headline: 'Wissen sichtbar machen, bevor es fehlt.',
-      description: 'Welche Kompetenzen trägt das Team, und wo hängt Wissen an einzelnen Personen? Die Skillmatrix verbindet Teamübersicht, Wissensrisiken und den Abgleich mit künftigen Anforderungen.',
-      features: ['Kompetenzen nach Team und Standort überblicken', 'Wissenslücken und einzelne Wissensträger erkennen', 'Wissenstransfer und Schulung gezielt planen'],
-      note: 'Mit KI entwickelt. Gezeigt wird das fiktive Unternehmen Musterwerk Mechatronik. Die Auswertungen unterstützen die Kompetenzplanung und sind keine Leistungsbewertung von Personen.',
-      poster: 'Skillmatrix: Verteilung von Entwicklungskapazitäten zwischen Standorten und Produktlinien',
-    },
-    en: {
-      topic: 'Knowledge & teams', status: 'Demo with sample data',
-      headline: 'Make knowledge visible before it is missing.',
-      description: 'Which skills does the team hold, and where does knowledge depend on one person? Skillmatrix connects team coverage, knowledge risks and future requirements.',
-      features: ['See skills by team and location', 'Identify knowledge gaps and single knowledge holders', 'Plan knowledge transfer and targeted training'],
-      note: 'Developed with AI. The demonstration uses the fictional company Musterwerk Mechatronik. These views support skills planning, not individual performance evaluation.',
-      poster: 'Skillmatrix: engineering capacity flows between locations and product lines',
-    },
-  },
-] as const;
+import { APPLICATION_DEMOS as demos, DEMO_PATHS } from '@/lib/data/demo-videos';
+export { DEMO_PATHS } from '@/lib/data/demo-videos';
 
 function DemoPlayer({ id, name, alt, en }: { id: string; name: string; alt: string; en: boolean }) {
   const [started, setStarted] = useState(false);
@@ -146,7 +81,7 @@ export default function ApplicationDemos({ compact = false }: { compact?: boolea
             <div><span className={styles.status}>{copy.status}</span><h3>{copy.headline}</h3><p>{copy.description}</p></div>
             <div className={styles.outcomes}>{!compact && <p className={styles.label}>{en ? 'What the demo shows' : 'Das zeigt die Demo'}</p>}{!compact && <ul>{copy.features.map((feature, i) => <li key={feature}><span aria-hidden="true">0{i + 1}</span>{feature}</li>)}</ul>}<button type="button" onClick={openLeadForm} className={styles.contact}>{en ? 'Discuss your application' : 'Ihre Anwendung besprechen'}<ArrowUpRight size={18} aria-hidden="true" /></button></div>
           </div>
-          <p id={`demo-note-${demo.id}`} className={styles.note}>{copy.note}<br /><Link href={DEMO_PATHS[demo.id]} className="engineering-text-link mt-3">{en ? `${demo.name}: workflow and prerequisites` : `${demo.name}: Ablauf und Voraussetzungen`} →</Link></p>
+          <p id={`demo-note-${demo.id}`} className={styles.note}>{copy.note}<br /><Link href={`/videos/${demo.id}`} className="engineering-text-link mr-6 mt-3">{en ? `${demo.name}: video and description` : `${demo.name}: Video und Beschreibung`} ↗</Link><Link href={DEMO_PATHS[demo.id]} className="engineering-text-link mt-3">{en ? `${demo.name}: workflow and prerequisites` : `${demo.name}: Ablauf und Voraussetzungen`} →</Link></p>
         </div>;
       })}
       <p className={styles.footnote}>{en ? 'Own projects with demo data. The recordings show development stages, not customer references. Videos only load when you press play.' : 'Eigene Projekte mit Demodaten. Die Aufnahmen zeigen Entwicklungsstände, keine Kundenreferenzen. Videos laden erst beim Abspielen.'}</p>
@@ -158,5 +93,5 @@ export default function ApplicationDemos({ compact = false }: { compact?: boolea
 export function ApplicationDemoVideo({ id, en, note }: { id: keyof typeof DEMO_PATHS; en: boolean; note?: string }) {
   const demo = demos.find(item => item.id === id)!;
   const copy = demo[en ? 'en' : 'de'];
-  return <figure><DemoPlayer id={id} name={demo.name} alt={copy.poster} en={en} /><figcaption id={`demo-note-${id}`}>{note ?? copy.note}</figcaption></figure>;
+  return <figure><DemoPlayer id={id} name={demo.name} alt={copy.poster} en={en} /><figcaption id={`demo-note-${id}`}>{note ?? copy.note}<br /><Link href={`/videos/${id}`} className="engineering-text-link mt-3">{en ? 'Open the video on its own page' : 'Video auf eigener Seite öffnen'} ↗</Link></figcaption></figure>;
 }

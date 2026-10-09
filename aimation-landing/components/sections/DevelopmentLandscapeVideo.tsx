@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { ArrowDown, ArrowUpRight, Play } from 'lucide-react';
 import { LANDSCAPE_SNAPSHOT } from '@/lib/data/engineering-landscape';
 import { pauseOtherVideos } from '@/lib/media/playback';
+import { Link } from '@/i18n/navigation';
 import styles from './DevelopmentLandscapeVideo.module.css';
 
 const src = '/videos/demos/development-landscape.mp4';
@@ -50,7 +51,7 @@ export default function DevelopmentLandscapeVideo({ en }: { en: boolean }) {
         <div><strong>{en ? 'Now explore selected examples yourself.' : 'Jetzt ausgewählte Beispiele selbst erkunden.'}</strong><p>{en ? 'Choose a development phase below and explore an application.' : 'Wählen Sie unten eine Entwicklungsphase und schauen Sie sich einen Anwendungsfall an.'}</p></div>
         <a href="#landscape-entdecken" onClick={() => videoRef.current?.pause()}>{en ? 'Explore the map' : 'Landkarte erkunden'}<ArrowDown size={18} aria-hidden="true" /></a>
       </div>
-      <p id="landscape-video-note" className={styles.note}>{en ? `The catalogue contains application ideas, not ${LANDSCAPE_SNAPSHOT.cases} delivered customer projects. The video loads only when you press play.` : `Der Katalog enthält Anwendungsideen, keine ${LANDSCAPE_SNAPSHOT.cases} umgesetzten Kundenprojekte. Das Video lädt erst beim Abspielen.`}</p>
+      <p id="landscape-video-note" className={styles.note}>{en ? `The catalogue contains application ideas, not ${LANDSCAPE_SNAPSHOT.cases} delivered customer projects. The video loads only when you press play.` : `Der Katalog enthält Anwendungsideen, keine ${LANDSCAPE_SNAPSHOT.cases} umgesetzten Kundenprojekte. Das Video lädt erst beim Abspielen.`}<br /><Link href="/videos/development-landscape" className="engineering-text-link mt-3">{en ? 'Development Landscape: video and description' : 'Development Landscape: Video und Beschreibung'} ↗</Link></p>
     </div>
   );
 }
