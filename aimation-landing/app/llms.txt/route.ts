@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { PRICING } from '@/lib/data/pricing';
+import { AI2CAD_CHAPTERS, AI2CAD_PATH } from '@/lib/data/ai2cad';
 
 export const dynamic = 'force-static';
 
@@ -22,6 +23,8 @@ KI-Beratung, Schulung und Umsetzung für die technische Produktentwicklung im DA
 
 ## Use Cases
 
+- [AI2CAD: CAD-Automatisierung mit KI und LLM](${siteUrl}${AI2CAD_PATH}): Ein Large Language Model steuert in vier Entwicklungsdemos ein CAD-System, ohne manuelle Mausklicks im CAD. Es setzt Parameter, modelliert Montageplatte und Welle, schlägt Konstruktionskorrekturen vor und erstellt eine technische Zeichnung. Rückfragen und Freigaben erfolgen im Dialog. Keine generelle CAD-Kompatibilität oder Fertigungsfreigabe zugesichert.
+${AI2CAD_CHAPTERS.map(chapter => `- [AI2CAD ${chapter.number}: ${chapter.de.title}](${siteUrl}${AI2CAD_PATH}/${chapter.slug}): ${chapter.de.description} ${chapter.de.check}`).join('\n')}
 - [KI in der technischen Produktentwicklung](${siteUrl}/ki-produktentwicklung): Aufgaben entlang der Entwicklung, Use-Case-Katalog, Anwendungsdemos und fachliche Prüfschritte.
 - [Microsoft 365 Copilot Schulung](${siteUrl}/schulungen/microsoft-365-copilot): neun Module aus vorhandenen Lernmaterialien, interaktive Lernprobe und Voraussetzungen für ein abgestimmtes Inhouse-Format.
 - [Variantenmanagement mit VariantHub](${siteUrl}/use-cases/variantenmanagement): mit KI entwickelter Prototyp mit deterministischer Regelprüfung. KI-Regelvorschläge sind geplant.

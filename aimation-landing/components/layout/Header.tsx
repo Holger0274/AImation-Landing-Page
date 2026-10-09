@@ -18,6 +18,12 @@ export default function Header() {
 
   const leistungenItems = [
     {
+      href: '/ai2cad',
+      label: 'AI2CAD',
+      description: locale === 'en' ? 'CAD controlled by a language model: four videos' : 'CAD per Sprachmodell steuern: vier Videos',
+      icon: Bot,
+    },
+    {
       href: '/ki-betriebssystem',
       label: locale === 'en' ? 'AI operating system' : 'KI-Betriebssystem',
       description: locale === 'en' ? 'Shared data for agents, dashboards and apps' : 'Gemeinsame Daten für Agenten, Dashboards und Apps',

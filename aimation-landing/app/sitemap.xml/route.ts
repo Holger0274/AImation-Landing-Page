@@ -3,6 +3,7 @@ import { readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { ENGLISH_PATHS, localizedPath } from '@/lib/seo/locales';
 import { SITE_URL } from '@/lib/seo/metadata';
+import { AI2CAD_CHAPTERS, AI2CAD_PATH } from '@/lib/data/ai2cad';
 
 // Discover static public pages at build time. Dynamic routes need explicit enumeration.
 export const dynamic = 'force-static';
@@ -22,17 +23,29 @@ async function discoverPages(directory: string, segments: string[] = []): Promis
 const escapeXml = (value: string) => value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 export async function GET() {
-  const pages = [...new Set(await discoverPages(path.join(process.cwd(), 'app', '[locale]')))].sort();
+  const pages = [...new Set([
+    ...await discoverPages(path.join(process.cwd(), 'app', '[locale]')),
+    ...AI2CAD_CHAPTERS.map(chapter => `${AI2CAD_PATH}/${chapter.slug}`),
+  ])].sort();
   const entries = pages.flatMap((base) => {
     const translated = ENGLISH_PATHS.has(base);
     const alternates = translated
       ? [['de', base], ['en', localizedPath(base, 'en')], ['x-default', base]]
           .map(([language, url]) => '    <xhtml:link rel="alternate" hreflang="' + language + '" href="' + escapeXml(SITE_URL + url) + '"/>').join('\n')
       : '';
-    return (translated ? [base, localizedPath(base, 'en')] : [base]).map((url) =>
-      '  <url>\n    <loc>' + escapeXml(SITE_URL + url) + '</loc>\n' + alternates + '\n  </url>');
+    const chapter = AI2CAD_CHAPTERS.find(item => `${AI2CAD_PATH}/${item.slug}` === base);
+    return (translated ? [base, localizedPath(base, 'en')] : [base]).map((url) => {
+      const copy = chapter?.[url.startsWith('/en/') ? 'en' : 'de'];
+      const video = chapter && copy ? '\n    <video:video>\n' +
+        '      <video:thumbnail_loc>' + escapeXml(`${SITE_URL}/videos/ai2cad/${chapter.id}.webp`) + '</video:thumbnail_loc>\n' +
+        '      <video:title>' + escapeXml(`AI2CAD ${chapter.number}: ${copy.title}`) + '</video:title>\n' +
+        '      <video:description>' + escapeXml(`${copy.description} ${copy.check}`) + '</video:description>\n' +
+        '      <video:content_loc>' + escapeXml(`${SITE_URL}/videos/ai2cad/${chapter.id}.mp4`) + '</video:content_loc>\n' +
+        '      <video:duration>' + chapter.seconds + '</video:duration>\n    </video:video>' : '';
+      return '  <url>\n    <loc>' + escapeXml(SITE_URL + url) + '</loc>\n' + alternates + video + '\n  </url>';
+    });
   });
-  return new NextResponse('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + entries.join('\n') + '\n</urlset>', {
+  return new NextResponse('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n' + entries.join('\n') + '\n</urlset>', {
     headers: { 'Content-Type': 'application/xml; charset=utf-8' },
   });
 }

@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import FounderIntro from '@/components/sections/FounderIntro';
 import EarlyDemos from '@/components/sections/EarlyDemos';
+import AI2CADTeaser from '@/components/ai2cad/AI2CADTeaser';
 import PainPoints from '@/components/sections/PainPoints';
 import TimeEstimate from '@/components/sections/TimeEstimate';
 import QktImpact from '@/components/sections/QktImpact';
@@ -67,6 +68,7 @@ export default async function Home({
       <main id="main-content" className="home-page">
         <Hero />
         <FounderIntro />
+        <AI2CADTeaser locale={locale} />
         <EarlyDemos />
         <PainPoints />
         <TimeEstimate />

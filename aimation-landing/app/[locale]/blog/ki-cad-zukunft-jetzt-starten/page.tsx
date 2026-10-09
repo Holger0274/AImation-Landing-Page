@@ -97,6 +97,13 @@ export default async function KiCadZukunftPage({
         </section>
 
         {/* ── ARTIKEL ── */}
+        <aside className="max-w-3xl mx-auto px-4 mb-12" aria-label="AI2CAD-Demonstration">
+          <Link href="/ai2cad" className="block rounded-xl border border-line-strong bg-surface p-6 hover:border-magenta transition-colors">
+            <p className="font-heading text-xl text-ink mb-3">AI2CAD: Ein CAD-Modell. Null Mausklicks.</p>
+            <p className="text-muted text-sm leading-relaxed">Vier Videos aus der AImation-Entwicklung zeigen, wie ein Large Language Model ein CAD-System steuert: vom Prompt und der Handskizze bis zur technischen Zeichnung.</p>
+            <span className="engineering-text-link mt-4">CAD-Automatisierung mit KI ansehen →</span>
+          </Link>
+        </aside>
         <section className="pb-16 px-4">
           <div className="max-w-3xl mx-auto">
             <div className="font-inter text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>

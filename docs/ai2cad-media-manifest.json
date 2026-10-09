@@ -1,0 +1,602 @@
+{
+  "date": "2026-10-08",
+  "audioRemoved": true,
+  "metadataRemoved": true,
+  "codec": "H.264",
+  "crf": 22,
+  "pixelFormat": "yuv420p",
+  "fastStart": true,
+  "files": [
+    {
+      "source": "KI-x-CAD-Teil-1-Prompt-zum-Bauteil.mp4",
+      "sha256": "b7d48065d3e09d6ceb82561e12e4293d2aa8f5a72cc60b4cd83507c9fa7b2d42",
+      "output": "prompt.mp4",
+      "boxes": [
+        {
+          "x": 127,
+          "y": 293,
+          "w": 172,
+          "h": 44,
+          "color": "0x071013",
+          "start": 0.2,
+          "end": 5.3
+        },
+        {
+          "x": 127,
+          "y": 293,
+          "w": 206,
+          "h": 44,
+          "color": "0x071013",
+          "start": 3.2,
+          "end": 4.3
+        },
+        {
+          "x": 124,
+          "y": 283,
+          "w": 206,
+          "h": 46,
+          "color": "0x071013",
+          "start": 4.7,
+          "end": 5.8
+        },
+        {
+          "x": 1106,
+          "y": 610,
+          "w": 128,
+          "h": 50,
+          "color": "0x071013",
+          "start": 7.7,
+          "end": 10.3
+        },
+        {
+          "x": 148,
+          "y": 286,
+          "w": 450,
+          "h": 76,
+          "color": "0x071013",
+          "start": 10.7,
+          "end": 19.3
+        },
+        {
+          "x": 154,
+          "y": 382,
+          "w": 512,
+          "h": 86,
+          "color": "0x071013",
+          "start": 11.7,
+          "end": 19.3
+        },
+        {
+          "x": 110,
+          "y": 288,
+          "w": 440,
+          "h": 62,
+          "color": "0x071013",
+          "start": 18.7,
+          "end": 19.8
+        },
+        {
+          "x": 110,
+          "y": 391,
+          "w": 514,
+          "h": 79,
+          "color": "0x071013",
+          "start": 18.7,
+          "end": 19.8
+        },
+        {
+          "x": 1201,
+          "y": 92,
+          "w": 93,
+          "h": 46,
+          "color": "0x071013",
+          "start": 19.2,
+          "end": 23.3
+        },
+        {
+          "x": 1602,
+          "y": 341,
+          "w": 151,
+          "h": 54,
+          "color": "0xeeeeec",
+          "start": 19.2,
+          "end": 23.3
+        },
+        {
+          "x": 1746,
+          "y": 673,
+          "w": 82,
+          "h": 41,
+          "color": "0xeeeeec",
+          "start": 19.2,
+          "end": 22.8
+        },
+        {
+          "x": 915,
+          "y": 950,
+          "w": 190,
+          "h": 63,
+          "color": "0x071013",
+          "start": 19.7,
+          "end": 24.8
+        },
+        {
+          "x": 951,
+          "y": 363,
+          "w": 102,
+          "h": 40,
+          "color": "0xeeeeec",
+          "start": 21.2,
+          "end": 24.8
+        },
+        {
+          "x": 1379,
+          "y": 95,
+          "w": 93,
+          "h": 35,
+          "color": "0x071013",
+          "start": 22.7,
+          "end": 24.8
+        },
+        {
+          "x": 540,
+          "y": 434,
+          "w": 92,
+          "h": 40,
+          "color": "0xeeeeec",
+          "start": 22.7,
+          "end": 24.8
+        },
+        {
+          "x": 873,
+          "y": 352,
+          "w": 107,
+          "h": 43,
+          "color": "0xeeeeec",
+          "start": 24.2,
+          "end": 25.3
+        },
+        {
+          "x": 427,
+          "y": 431,
+          "w": 97,
+          "h": 37,
+          "color": "0xeeeeec",
+          "start": 24.2,
+          "end": 25.3
+        },
+        {
+          "x": 728,
+          "y": 330,
+          "w": 124,
+          "h": 46,
+          "color": "0xeeeeec",
+          "start": 24.7,
+          "end": 28.3
+        },
+        {
+          "x": 426,
+          "y": 243,
+          "w": 147,
+          "h": 49,
+          "color": "0xeeeeec",
+          "start": 27.7,
+          "end": 28.8
+        },
+        {
+          "x": 409,
+          "y": 232,
+          "w": 96,
+          "h": 38,
+          "color": "0xeeeeec",
+          "start": 63.2,
+          "end": 66.3
+        },
+        {
+          "x": 409,
+          "y": 349,
+          "w": 96,
+          "h": 41,
+          "color": "0xeeeeec",
+          "start": 63.2,
+          "end": 66.3
+        },
+        {
+          "x": 533,
+          "y": 610,
+          "w": 98,
+          "h": 40,
+          "color": "0xeeeeec",
+          "start": 63.2,
+          "end": 64.8
+        },
+        {
+          "x": 1377,
+          "y": 92,
+          "w": 95,
+          "h": 38,
+          "color": "0x071013",
+          "start": 63.2,
+          "end": 66.8
+        },
+        {
+          "x": 417,
+          "y": 470,
+          "w": 88,
+          "h": 38,
+          "color": "0xeeeeec",
+          "start": 63.7,
+          "end": 66.3
+        },
+        {
+          "x": 452,
+          "y": 612,
+          "w": 90,
+          "h": 37,
+          "color": "0xeeeeec",
+          "start": 64.2,
+          "end": 65.3
+        },
+        {
+          "x": 417,
+          "y": 163,
+          "w": 88,
+          "h": 34,
+          "color": "0xeeeeec",
+          "start": 65.7,
+          "end": 66.8
+        },
+        {
+          "x": 417,
+          "y": 279,
+          "w": 88,
+          "h": 35,
+          "color": "0xeeeeec",
+          "start": 65.7,
+          "end": 66.8
+        },
+        {
+          "x": 417,
+          "y": 396,
+          "w": 88,
+          "h": 38,
+          "color": "0xeeeeec",
+          "start": 65.7,
+          "end": 66.8
+        },
+        {
+          "x": 420,
+          "y": 539,
+          "w": 89,
+          "h": 38,
+          "color": "0xeeeeec",
+          "start": 65.7,
+          "end": 66.8
+        },
+        {
+          "x": 1025,
+          "y": 668,
+          "w": 139,
+          "h": 46,
+          "color": "0x071013",
+          "start": 78.2,
+          "end": 81.8
+        }
+      ],
+      "outputSha256": "80b67d980455aca83feaeb54d4a4d6b704b302cf0087c4130c936e608336f625"
+    },
+    {
+      "source": "KI-x-CAD-Teil-2-Skizze-zum-Bauteil.mp4",
+      "sha256": "478c8309776d9467f2c05ecc24ee56ee8910b36d424dad9e6f4ca303ec12aed7",
+      "output": "skizze.mp4",
+      "boxes": [
+        {
+          "x": 1105,
+          "y": 610,
+          "w": 128,
+          "h": 50,
+          "color": "0x071013",
+          "start": 7.7,
+          "end": 10.3
+        },
+        {
+          "x": 1082,
+          "y": 246,
+          "w": 498,
+          "h": 68,
+          "color": "0x071013",
+          "start": 11.2,
+          "end": 17.3
+        },
+        {
+          "x": 708,
+          "y": 869,
+          "w": 306,
+          "h": 54,
+          "color": "0xeeeeec",
+          "start": 17.2,
+          "end": 19.8
+        },
+        {
+          "x": 709,
+          "y": 727,
+          "w": 306,
+          "h": 50,
+          "color": "0xeeeeec",
+          "start": 19.2,
+          "end": 20.3
+        },
+        {
+          "x": 792,
+          "y": 662,
+          "w": 192,
+          "h": 68,
+          "color": "0xeeeeec",
+          "start": 25.2,
+          "end": 26.3
+        },
+        {
+          "x": 789,
+          "y": 500,
+          "w": 195,
+          "h": 65,
+          "color": "0xeeeeec",
+          "start": 25.7,
+          "end": 26.8
+        },
+        {
+          "x": 789,
+          "y": 152,
+          "w": 193,
+          "h": 62,
+          "color": "0xeeeeec",
+          "start": 26.2,
+          "end": 27.3
+        },
+        {
+          "x": 1336,
+          "y": 318,
+          "w": 197,
+          "h": 68,
+          "color": "0xeeeeec",
+          "start": 26.7,
+          "end": 27.8
+        },
+        {
+          "x": 1334,
+          "y": 205,
+          "w": 199,
+          "h": 70,
+          "color": "0xeeeeec",
+          "start": 27.2,
+          "end": 29.3
+        },
+        {
+          "x": 1319,
+          "y": 446,
+          "w": 196,
+          "h": 68,
+          "color": "0xeeeeec",
+          "start": 40.7,
+          "end": 41.8
+        },
+        {
+          "x": 1320,
+          "y": 365,
+          "w": 197,
+          "h": 69,
+          "color": "0xeeeeec",
+          "start": 41.2,
+          "end": 42.3
+        },
+        {
+          "x": 585,
+          "y": 101,
+          "w": 97,
+          "h": 40,
+          "color": "0xeeeeec",
+          "start": 45.7,
+          "end": 50.3
+        },
+        {
+          "x": 1329,
+          "y": 92,
+          "w": 92,
+          "h": 38,
+          "color": "0x071013",
+          "start": 45.7,
+          "end": 50.3
+        },
+        {
+          "x": 602,
+          "y": 308,
+          "w": 192,
+          "h": 43,
+          "color": "0xeeeeec",
+          "start": 45.7,
+          "end": 50.3
+        },
+        {
+          "x": 539,
+          "y": 381,
+          "w": 92,
+          "h": 40,
+          "color": "0xeeeeec",
+          "start": 47.7,
+          "end": 50.3
+        },
+        {
+          "x": 601,
+          "y": 110,
+          "w": 367,
+          "h": 56,
+          "color": "0xeeeeec",
+          "start": 57.7,
+          "end": 58.8
+        },
+        {
+          "x": 814,
+          "y": 103,
+          "w": 363,
+          "h": 77,
+          "color": "0xeeeeec",
+          "start": 58.2,
+          "end": 61.3
+        },
+        {
+          "x": 444,
+          "y": 246,
+          "w": 154,
+          "h": 76,
+          "color": "0xeeeeec",
+          "start": 58.7,
+          "end": 61.3
+        },
+        {
+          "x": 1019,
+          "y": 671,
+          "w": 131,
+          "h": 43,
+          "color": "0x071013",
+          "start": 78.2,
+          "end": 81.8
+        }
+      ],
+      "outputSha256": "cfb4a4f588b58a0c521fe08385466d6eeed9519319c4be15856d4293a1f21523"
+    },
+    {
+      "source": "KI-x-CAD-Teil-3-Entwurf-zum-Drehteil.mp4",
+      "sha256": "dd939883b1d2f900da4cac0291185339f16ba7a4a9575659d967d84e0669ece2",
+      "output": "drehteil.mp4",
+      "boxes": [
+        {
+          "x": 1105,
+          "y": 612,
+          "w": 128,
+          "h": 54,
+          "color": "0x071013",
+          "start": 8.2,
+          "end": 11.3
+        },
+        {
+          "x": 1204,
+          "y": 95,
+          "w": 91,
+          "h": 38,
+          "color": "0x071013",
+          "start": 20.7,
+          "end": 23.3
+        },
+        {
+          "x": 1465,
+          "y": 135,
+          "w": 99,
+          "h": 37,
+          "color": "0xeeeeec",
+          "start": 20.7,
+          "end": 23.3
+        },
+        {
+          "x": 1421,
+          "y": 947,
+          "w": 204,
+          "h": 70,
+          "color": "0x071013",
+          "start": 21.2,
+          "end": 29.3
+        },
+        {
+          "x": 561,
+          "y": 364,
+          "w": 245,
+          "h": 40,
+          "color": "0xeeeeec",
+          "start": 22.2,
+          "end": 23.3
+        },
+        {
+          "x": 1648,
+          "y": 84,
+          "w": 133,
+          "h": 37,
+          "color": "0x071013",
+          "start": 22.7,
+          "end": 23.8
+        },
+        {
+          "x": 571,
+          "y": 355,
+          "w": 290,
+          "h": 46,
+          "color": "0xeeeeec",
+          "start": 22.7,
+          "end": 23.8
+        },
+        {
+          "x": 569,
+          "y": 342,
+          "w": 372,
+          "h": 60,
+          "color": "0xeeeeec",
+          "start": 23.2,
+          "end": 27.8
+        },
+        {
+          "x": 1155,
+          "y": 417,
+          "w": 147,
+          "h": 57,
+          "color": "0xeeeeec",
+          "start": 23.2,
+          "end": 27.8
+        },
+        {
+          "x": 600,
+          "y": 492,
+          "w": 126,
+          "h": 44,
+          "color": "0xeeeeec",
+          "start": 23.7,
+          "end": 25.3
+        },
+        {
+          "x": 466,
+          "y": 492,
+          "w": 122,
+          "h": 44,
+          "color": "0xeeeeec",
+          "start": 24.7,
+          "end": 25.8
+        },
+        {
+          "x": 412,
+          "y": 492,
+          "w": 119,
+          "h": 44,
+          "color": "0xeeeeec",
+          "start": 25.7,
+          "end": 27.8
+        },
+        {
+          "x": 1019,
+          "y": 632,
+          "w": 130,
+          "h": 54,
+          "color": "0x071013",
+          "start": 108.7,
+          "end": 113.3
+        }
+      ],
+      "outputSha256": "5ab8cd7bf6d2e6f5833b16e9a0394b27f367f1d212d4466cf2107191d6977f36"
+    },
+    {
+      "source": "KI-x-CAD-Teil-4-Bauteil-zur-Zeichnung.mp4",
+      "sha256": "b0617e4f9d51c6aad409457138c0628af6f6d5725c5a375f85247ddaa5e1022e",
+      "output": "zeichnung.mp4",
+      "outputSha256": "d08d074af06cb64060cd58e0ea5e0568d948672ea0affe94ea783efc7c6ee2ad",
+      "revision": 2,
+      "method": "Frame-specific neutral text replacement with background sampled from the same frame; no timed solid boxes.",
+      "replacements": "ai2cad-part4-replacements.json"
+    }
+  ]
+}
