@@ -83,9 +83,10 @@
 .teaserLink { display: inline-flex; align-items: center; gap: 16px; margin-top: 24px; padding-bottom: 5px; border-bottom: 1px solid #f90093; font-size: 15px; font-weight: 600; }
 .teaserMeta { display: block; margin-top: 16px; font-size: 11px; color: var(--muted); }
 .teaserVisual { position: relative; min-width: 0; }
-.teaserVisual img { display: block; width: 100%; height: auto; background: #071013; border: 1px solid var(--line-strong); }
-.teaserPlay { display: flex; align-items: center; justify-content: center; position: absolute; inset: auto 20px 20px auto; width: 54px; height: 54px; border-radius: 50%; background: #071013; color: #faf9f7; transition: transform .2s; }
-.teaser:hover .teaserPlay { transform: scale(1.08); }
+.teaserDrawing { display: block; width: 100%; height: auto; border: 1px solid var(--line-strong); }
+.teaserInset { position: relative; display: block; width: 38%; min-width: 120px; max-width: 200px; margin: -8px -12px 0 auto; padding: 5px; border: 1px solid var(--line-strong); border-radius: 6px; background: #071013; box-shadow: 0 12px 28px #07101380; }
+.teaserInset > img { display: block; width: 100%; height: auto; border-radius: 2px; }
+.teaserInsetLabel { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 9px 2px 4px; color: #faf9f7; font: 500 11px/1.4 var(--font-heading), sans-serif; letter-spacing: .04em; }
 .chapterLink { display: inline-flex; align-items: center; gap: 10px; margin: 0 28px 20px; min-height: 44px; font-size: 13px; color: var(--magenta-light); text-decoration: underline; text-underline-offset: 4px; }
 .chapterIndex { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 22px; }
 .chapterIndex a, .related a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; color: var(--muted); text-decoration: underline; text-underline-offset: 5px; }
@@ -122,7 +123,7 @@
 @media (max-width: 1100px) { .screenGrid { grid-template-columns: minmax(0, 1fr); } .chapterCopy { display: grid; grid-template-columns: 1fr 1fr; column-gap: 36px; } .chapterLabel, .chapterCopy h3 { grid-column: 1 / -1; } .chapterCopy ul { margin-top: 0; } .contactInner { grid-template-columns: 1fr; } .contactInner .primary { justify-self: start; } }
 @media (max-width: 900px) { .heroGrid { grid-template-columns: 1fr; gap: 44px; padding-top: 36px; } .heroCopy h1 { font-size: 88px; } .drawing { max-width: 680px; } .approachGrid { grid-template-columns: 1fr; } .responsibility { grid-template-columns: 1fr; gap: 20px; } }
 @media (max-width: 760px) { .teaser { grid-template-columns: 1fr; gap: 28px; } .route { grid-template-columns: repeat(2, 1fr); gap: 16px 24px; } .route > span { font-size: 13px; } .route svg { display: none; } .tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tabs button { padding: 15px 12px; gap: 9px; font-size: 12px; min-height: 75px; } .tabNumber { font-size: 20px; } .tabs button:nth-child(odd) { border-left: 0; } .chapterCopy { display: block; } .chapterCopy ul { margin-top: 24px; } .reviewNote { grid-template-columns: 1fr; gap: 8px; padding: 20px; } .mediaNote { padding: 16px 20px; } .play { bottom: 12px; left: 12px; padding: 10px 12px; font-size: 12px; gap: 10px; } .play svg { width: 18px; } .parameterExample { padding: 22px; } .parameterExample > div { flex-wrap: wrap; gap: 8px 20px; } .parameterExample strong { font-size: 26px; } }
-@media (prefers-reduced-motion: reduce) { .primary, .tabs button, .teaser, .teaserPlay { transition: none; } .primary:hover, .teaser:hover .teaserPlay { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .primary, .tabs button, .teaser { transition: none; } .primary:hover { transform: none; } }
 
 .femSection { padding-block: 32px 60px; scroll-margin-top: 100px; }
 .femSection h2 { font: 500 clamp(28px, 3vw, 42px)/1.2 var(--font-heading), sans-serif; max-width: 26ch; margin-block: 16px 24px; }
