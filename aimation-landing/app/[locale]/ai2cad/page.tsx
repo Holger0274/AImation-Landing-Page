@@ -6,7 +6,7 @@ import Footer from '@/components/layout/Footer';
 import FemComparison from '@/components/ai2cad/FemComparison';
 import ChapterPlayer from '@/components/ai2cad/ChapterPlayer';
 import { Link } from '@/i18n/navigation';
-import { AI2CAD_CHAPTERS, AI2CAD_PATH, getAI2CADFaqs } from '@/lib/data/ai2cad';
+import { AI2CAD_CHAPTERS, AI2CAD_PATH, AI2CAD_JOURNEY, getAI2CADFaqs } from '@/lib/data/ai2cad';
 import { BreadcrumbSchema, FAQPageSchema } from '@/components/StructuredData';
 import { localizedPath } from '@/lib/seo/locales';
 import { pageMetadata } from '@/lib/seo/metadata';
@@ -54,6 +54,7 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
       <section id="videos" className={styles.videoSection} aria-labelledby="video-heading">
         <div className={styles.wrap}>
           <div className={styles.sectionIntro}><p className={styles.eyebrow}>{en ? 'Five chapters, from geometry to FEM.' : 'Fünf Kapitel, von der Geometrie zur FEM.'}</p><h2 id="video-heading">{en ? 'Watch the ' : 'Schauen Sie der KI beim '}<span className="highlight">{en ? 'modelling.' : 'Konstruieren'}</span>{en ? '' : ' zu.'}</h2><p>{en ? 'Start with the mounting plate or go straight to the shaft. Chapters 2 to 5 follow a hand sketch through modelling, revision, drawing preparation and FEM analysis.' : 'Starten Sie mit der Montageplatte oder springen Sie direkt zur Welle. Kapitel 2 bis 5 führen von der Handskizze über die Modellüberarbeitung und Zeichnung bis zur FEM-Berechnung.'}</p></div>
+          <p className={styles.journeyNote}>{AI2CAD_JOURNEY[en ? 'en' : 'de']}</p>
           <ChapterPlayer en={en} />
           <nav className={styles.chapterIndex} aria-label={en ? 'Direct video links' : 'Direkt zu den einzelnen Videos'}>{AI2CAD_CHAPTERS.map(chapter => <Link key={chapter.id} href={`${AI2CAD_PATH}/${chapter.slug}`}>{chapter.number} · {chapter[en ? 'en' : 'de'].title} ↗</Link>)}</nav>
           <p className={styles.author}>{en ? 'Demonstration by Holger Peschke, AImation. Updated 10 October 2026.' : 'Demonstration von Holger Peschke, AImation. Stand: 10. Oktober 2026.'} <Link href="/facts/holger-peschke">{en ? 'About the author' : 'Zum fachlichen Hintergrund'} →</Link></p>

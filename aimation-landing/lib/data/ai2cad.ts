@@ -1,5 +1,10 @@
 export const AI2CAD_PATH = '/ai2cad';
 
+export const AI2CAD_JOURNEY = {
+  de: 'Die Videoreihe dokumentiert unsere Reise in die KI-gestützte Entwicklung: Einzelne Darstellungen oder Werte können noch fehlerhaft sein und werden Schritt für Schritt geprüft und verbessert.',
+  en: 'This video series documents our journey into AI-assisted engineering: individual visuals or values may still contain errors and are being reviewed and improved step by step.',
+} as const;
+
 // Four CAD recordings supplied on 8 October, followed by the FEM demonstration on 10 October 2026.
 // Website assets are anonymised derivatives, not the two earlier recordings.
 export const AI2CAD_CHAPTERS = [

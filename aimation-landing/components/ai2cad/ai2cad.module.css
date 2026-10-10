@@ -142,3 +142,5 @@
 .femLimit { margin-top: 28px; padding-left: 18px; border-left: 2px solid var(--line-strong); color: var(--dim); font-size: 12px; line-height: 1.8; }
 @media (max-width: 900px) { .femSteps { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 760px) { .tabs button:last-child { grid-column: 1 / -1; } .femInterpretation { grid-template-columns: 1fr; gap: 16px; } .femTable th, .femTable td { padding: 12px; font-size: 12px; } .femSteps { gap: 20px; } }
+
+.journeyNote { max-width: 85ch; margin-bottom: 24px; padding-left: 16px; border-left: 2px solid var(--line-strong); color: var(--muted); font-size: 14px; line-height: 1.8; }

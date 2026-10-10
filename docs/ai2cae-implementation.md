@@ -6,6 +6,8 @@ Die bestehende Startseiten-Kachel wurde um AI2CAE erweitert. Es gibt weiterhin g
 
 Die bestehende Unterseite führt die Reihe bis zur FEM-Berechnung fort. Kapitel 05 heißt „Vom Bauteil zur FEM-Prüfung“. Eine zusätzliche Videoseite unter `/ai2cad/fem-nachweis` enthält den nativen Player, VideoObject-Daten und die Beschreibung. Alle Ergänzungen existieren auf Deutsch und Englisch; die Aufnahme selbst bleibt deutsch.
 
+Auf Wunsch des Auftraggebers steht vor dem Player der gemeinsamen Videoreihe und auf allen fünf Videoseiten ein gemeinsamer Hinweis: Die Reihe dokumentiert eine Entwicklungsreise; einzelne Darstellungen und Werte können noch Fehler enthalten und werden schrittweise geprüft und verbessert. Auch auf Englisch.
+
 ## Inhalt und Einordnung
 
 Grundlage sind das gelieferte Video und die angehängte Erläuterung zur Handrechnung. Die darin enthaltene Frage nach einer PDF-Erweiterung wurde als Quelltext behandelt, nicht als Auftrag. Es wurde kein neuer PDF-Bericht erstellt.
