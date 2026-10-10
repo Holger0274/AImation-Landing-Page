@@ -19,8 +19,8 @@ export default function Header() {
   const leistungenItems = [
     {
       href: '/ai2cad',
-      label: 'AI2CAD',
-      description: locale === 'en' ? 'CAD controlled by a language model: four videos' : 'CAD per Sprachmodell steuern: vier Videos',
+      label: 'AI2CAD / AI2CAE',
+      description: locale === 'en' ? 'From CAD to FEM: five videos controlled by an LLM' : 'Vom CAD zur FEM: fünf Videos mit LLM-Steuerung',
       icon: Bot,
     },
     {

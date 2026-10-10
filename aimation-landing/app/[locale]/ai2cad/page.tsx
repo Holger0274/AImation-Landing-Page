@@ -3,6 +3,7 @@ import { ArrowDown, ArrowUpRight, MoveRight } from 'lucide-react';
 import { setRequestLocale } from 'next-intl/server';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import FemComparison from '@/components/ai2cad/FemComparison';
 import ChapterPlayer from '@/components/ai2cad/ChapterPlayer';
 import { Link } from '@/i18n/navigation';
 import { AI2CAD_CHAPTERS, AI2CAD_PATH, getAI2CADFaqs } from '@/lib/data/ai2cad';
@@ -15,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const en = locale === 'en';
   return pageMetadata(AI2CAD_PATH, locale,
-    en ? 'AI in CAD: LLM-controlled modelling | AI2CAD | AImation' : 'KI im CAD: Modelle per LLM erstellen | AI2CAD | AImation',
-    en ? 'CAD automation for engineering teams: a large language model controls parameters, models and drawings. Four AI2CAD videos, no manual CAD clicks.' : 'CAD-Automatisierung für Konstrukteure und Entwicklungsleiter: Ein LLM steuert Parameter, Modelle und Zeichnungen. Vier AI2CAD-Videos, ohne Mausklicks im CAD.');
+    en ? 'AI2CAD & AI2CAE: CAD and FEM with an LLM | AImation' : 'AI2CAD & AI2CAE: CAD und FEM per LLM | AImation',
+    en ? 'CAD and FEM automation for engineering teams: five videos show LLM-controlled modelling, drawing preparation and analysis with a hand-calculation check.' : 'KI für Konstrukteure und Entwicklungsleiter: Fünf Videos zeigen CAD-Steuerung per LLM, Zeichnungsableitung und FEM-Berechnung mit Vergleich zur Handrechnung.');
 }
 
 export default async function AI2CADPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -34,11 +35,11 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
           <nav className={styles.breadcrumb} aria-label={en ? 'Breadcrumb' : 'Brotkrumennavigation'}><Link href="/">AImation</Link><span aria-hidden="true">/</span><span>AI2CAD</span></nav>
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
-              <p className={styles.eyebrow}>{en ? 'AI in design engineering' : 'KI in der Konstruktion'}</p>
+              <p className={styles.eyebrow}>{en ? 'AI2CAD + AI2CAE · Design and analysis' : 'AI2CAD + AI2CAE · Konstruktion und Berechnung'}</p>
               <h1 id="ai2cad-title">AI<span className="highlight">2</span>CAD<span className="sr-only">: {en ? 'CAD automation with AI and LLMs' : 'CAD-Automatisierung mit KI und LLM'}</span></h1>
               <p className={styles.headline}>{en ? 'Not a single mouse click\nin the CAD system.' : 'Kein einziger Mausklick\nim CAD-System.'}</p>
-              <p className={styles.intro}>{en ? 'A large language model (LLM) controls the CAD system. It sets every parameter, builds the geometry and creates the drawing. You provide instructions and approvals through the conversation.' : 'Ein Large Language Model (LLM) steuert das CAD-System. Es setzt alle Parameter, baut die Geometrie auf und erstellt die Zeichnung. Ihre Vorgaben und Freigaben kommen im Dialog.'}</p>
-              <a href="#videos" className={styles.primary}>{en ? 'Watch the four steps' : 'Die vier Schritte ansehen'}<ArrowDown size={18} aria-hidden="true" /></a>
+              <p className={styles.intro}>{en ? 'A large language model (LLM) controls the CAD system. It sets every parameter, builds the geometry and creates the drawing. You provide instructions and approvals through the conversation. Chapter 5 continues in the CAE system with FEM analysis and a hand-calculation check.' : 'Ein Large Language Model (LLM) steuert das CAD-System. Es setzt alle Parameter, baut die Geometrie auf und erstellt die Zeichnung. Ihre Vorgaben und Freigaben kommen im Dialog. Kapitel 5 führt im CAE-System weiter zur FEM-Berechnung mit Gegenprobe durch eine Handrechnung.'}</p>
+              <a href="#videos" className={styles.primary}>{en ? 'Watch the five chapters' : 'Die fünf Kapitel ansehen'}<ArrowDown size={18} aria-hidden="true" /></a>
             </div>
             <figure className={styles.drawing}>
               <div className={styles.drawingTop}><span>{en ? 'The result, with review tasks' : 'Das Ergebnis, mit Prüfaufgaben'}</span><span>A3 · 2:1</span></div>
@@ -46,18 +47,20 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
               <figcaption>{en ? 'Actual output from the demo. Engineering review remains open.' : 'Tatsächliches Ergebnis der Demo. Die fachliche Prüfung steht noch aus.'}</figcaption>
             </figure>
           </div>
-          <div className={styles.route} aria-label={en ? 'Demonstration workflow' : 'Ablauf der Demonstration'}>{(en ? ['Describe', 'Model', 'Review', 'Draw'] : ['Beschreiben', 'Modellieren', 'Prüfen', 'Zeichnen']).map((step, i) => <span key={step}><small>0{i + 1}</small>{step}{i < 3 && <MoveRight size={22} aria-hidden="true" />}</span>)}</div>
+          <div className={styles.route} aria-label={en ? 'Demonstration workflow' : 'Ablauf der Demonstration'}>{(en ? ['Describe', 'Model', 'Review', 'Draw', 'Analyse'] : ['Beschreiben', 'Modellieren', 'Prüfen', 'Zeichnen', 'Berechnen']).map((step, i) => <span key={step}><small>0{i + 1}</small>{step}{i < 4 && <MoveRight size={22} aria-hidden="true" />}</span>)}</div>
         </div>
       </section>
 
       <section id="videos" className={styles.videoSection} aria-labelledby="video-heading">
         <div className={styles.wrap}>
-          <div className={styles.sectionIntro}><p className={styles.eyebrow}>{en ? 'Four chapters. Real model work.' : 'Vier Kapitel. Echte Arbeit am Modell.'}</p><h2 id="video-heading">{en ? 'Watch the ' : 'Schauen Sie der KI beim '}<span className="highlight">{en ? 'modelling.' : 'Konstruieren'}</span>{en ? '' : ' zu.'}</h2><p>{en ? 'Start with the mounting plate or go straight to the shaft. Chapters 2 to 4 follow a hand sketch through modelling, revision and drawing preparation.' : 'Starten Sie mit der Montageplatte oder springen Sie direkt zur Welle. Kapitel 2 bis 4 führen von der Handskizze über die Modellüberarbeitung bis zur Zeichnung.'}</p></div>
+          <div className={styles.sectionIntro}><p className={styles.eyebrow}>{en ? 'Five chapters, from geometry to FEM.' : 'Fünf Kapitel, von der Geometrie zur FEM.'}</p><h2 id="video-heading">{en ? 'Watch the ' : 'Schauen Sie der KI beim '}<span className="highlight">{en ? 'modelling.' : 'Konstruieren'}</span>{en ? '' : ' zu.'}</h2><p>{en ? 'Start with the mounting plate or go straight to the shaft. Chapters 2 to 5 follow a hand sketch through modelling, revision, drawing preparation and FEM analysis.' : 'Starten Sie mit der Montageplatte oder springen Sie direkt zur Welle. Kapitel 2 bis 5 führen von der Handskizze über die Modellüberarbeitung und Zeichnung bis zur FEM-Berechnung.'}</p></div>
           <ChapterPlayer en={en} />
           <nav className={styles.chapterIndex} aria-label={en ? 'Direct video links' : 'Direkt zu den einzelnen Videos'}>{AI2CAD_CHAPTERS.map(chapter => <Link key={chapter.id} href={`${AI2CAD_PATH}/${chapter.slug}`}>{chapter.number} · {chapter[en ? 'en' : 'de'].title} ↗</Link>)}</nav>
-          <p className={styles.author}>{en ? 'Demonstration by Holger Peschke, AImation. Updated 8 October 2026.' : 'Demonstration von Holger Peschke, AImation. Stand: 8. Oktober 2026.'} <Link href="/facts/holger-peschke">{en ? 'About the author' : 'Zum fachlichen Hintergrund'} →</Link></p>
+          <p className={styles.author}>{en ? 'Demonstration by Holger Peschke, AImation. Updated 10 October 2026.' : 'Demonstration von Holger Peschke, AImation. Stand: 10. Oktober 2026.'} <Link href="/facts/holger-peschke">{en ? 'About the author' : 'Zum fachlichen Hintergrund'} →</Link></p>
         </div>
       </section>
+
+      <div className={styles.wrap}><FemComparison en={en} /></div>
 
       <section className={styles.approach} aria-labelledby="approach-heading">
         <div className={styles.wrap}>

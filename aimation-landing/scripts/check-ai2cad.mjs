@@ -8,6 +8,7 @@ const chapters = [
   ['handskizze-zu-cad', 'skizze', 90],
   ['konstruktion-pruefen', 'drehteil', 122],
   ['technische-zeichnung', 'zeichnung', 140],
+  ['fem-nachweis', 'fem', 151],
 ];
 async function get(path, options) {
   const response = await fetch(new URL(path, base), { signal: AbortSignal.timeout(30000), ...options });
@@ -18,7 +19,7 @@ const sitemap = await (await get('/sitemap.xml')).text();
 const llms = await (await get('/llms.txt')).text();
 assert(sitemap.includes('xmlns:video='));
 const ai2cadEntries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].filter(match => /<loc>[^<]*\/ai2cad\//.test(match[1]));
-assert.equal(ai2cadEntries.length, 8);
+assert.equal(ai2cadEntries.length, chapters.length * 2);
 assert(ai2cadEntries.every(match => match[1].includes('<video:video>')));
 for (const locale of ['', '/en']) {
   const home = await (await get(`${locale}/ai2cad`)).text();
@@ -26,7 +27,7 @@ for (const locale of ['', '/en']) {
   assert(main && /Large Language Model|large language model/.test(main));
   assert(!/FreeCAD|Claude|TechDraw/i.test(main), 'Anonymised page copy');
   assert(home.includes('FAQPage'), 'FAQ schema');
-  assert.equal((main.match(/<details>/g) || []).length, 6, 'SSR FAQ answers');
+  assert.equal((main.match(/<details>/g) || []).length, 7, 'SSR FAQ answers');
   for (const [slug, asset, duration] of chapters) {
     const path = `${locale}/ai2cad/${slug}`;
     assert(home.includes(path), `Visible chapter link: ${path}`);
@@ -38,6 +39,13 @@ for (const locale of ['', '/en']) {
     assert(schema, 'Server-rendered VideoObject');
     assert(schema.contentUrl.endsWith(`/videos/ai2cad/${asset}.mp4`));
     assert.equal(schema.duration, `PT${duration}S`);
+    assert.equal(schema.uploadDate, asset === 'fem' ? '2026-10-10' : '2026-10-08');
+    if (asset === 'fem') {
+      assert(schema.name.startsWith('AI2CAE'));
+      assert(html.includes('CAE-System') || html.includes('CAE system'));
+      assert(html.includes('268,2 MPa') || html.includes('268.2 MPa'));
+      assert(html.includes('id="ai2cae"'));
+    }
     assert(schema.url.endsWith(path));
     const video = html.match(/<video\b[^>]*>/)?.[0];
     assert(video?.includes(`src="/videos/ai2cad/${asset}.mp4"`), 'Video source available without JS or clicks');
@@ -48,4 +56,4 @@ for (const locale of ['', '/en']) {
     console.log(`OK ${path}`);
   }
 }
-console.log('PASS: 8 chapter pages, native video sources, 6 FAQs per locale, video schema, sitemap, llms.txt and media.');
+console.log('PASS: 10 chapter pages, native video sources, 7 FAQs per locale, video schema, sitemap, llms.txt and media.');

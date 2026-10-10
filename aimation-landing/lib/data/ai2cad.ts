@@ -1,10 +1,10 @@
 export const AI2CAD_PATH = '/ai2cad';
 
-// Four current recordings supplied by Holger on 8 October 2026.
+// Four CAD recordings supplied on 8 October, followed by the FEM demonstration on 10 October 2026.
 // Website assets are anonymised derivatives, not the two earlier recordings.
 export const AI2CAD_CHAPTERS = [
   {
-    id: 'prompt', slug: 'prompt-zu-cad', number: '01', duration: '1:30', seconds: 90,
+    id: 'prompt', slug: 'prompt-zu-cad', number: '01', duration: '1:30', seconds: 90, kind: 'AI2CAD', uploadDate: '2026-10-08',
     de: {
       title: 'Vom Prompt zum Bauteil', short: 'Text → Modell',
       description: 'Eine Montageplatte, beschrieben mit Maßen und Bauabschnitten. Das KI-Sprachmodell bedient das angebundene CAD-System und baut die Geometrie Schritt für Schritt auf. Die Maße bleiben anschließend editierbar.',
@@ -21,7 +21,7 @@ export const AI2CAD_CHAPTERS = [
     },
   },
   {
-    id: 'skizze', slug: 'handskizze-zu-cad', number: '02', duration: '1:30', seconds: 90,
+    id: 'skizze', slug: 'handskizze-zu-cad', number: '02', duration: '1:30', seconds: 90, kind: 'AI2CAD', uploadDate: '2026-10-08',
     de: {
       title: 'Von der Skizze zum Modell', short: 'Skizze → Modell',
       description: 'Ein Foto einer Handskizze ist der Ausgangspunkt für eine abgesetzte Welle. Die KI trennt lesbare Maße von abgeleiteten Werten und Annahmen. Vier Rückfragen klären den Entwurf, bevor das Modell entsteht.',
@@ -38,7 +38,7 @@ export const AI2CAD_CHAPTERS = [
     },
   },
   {
-    id: 'drehteil', slug: 'konstruktion-pruefen', number: '03', duration: '2:02', seconds: 122,
+    id: 'drehteil', slug: 'konstruktion-pruefen', number: '03', duration: '2:02', seconds: 122, kind: 'AI2CAD', uploadDate: '2026-10-08',
     de: {
       title: 'Den Entwurf hinterfragen', short: 'Entwurf → Prüfung',
       description: 'Die KI liest Parameter und Geometrie aus und meldet Auffälligkeiten: fehlende Freistiche, scharfe Schultern und offene Funktionsangaben. Daraus folgen Rückfragen, ein Toleranzvorschlag und Änderungen am Modell nach Freigabe.',
@@ -55,7 +55,7 @@ export const AI2CAD_CHAPTERS = [
     },
   },
   {
-    id: 'zeichnung', slug: 'technische-zeichnung', number: '04', duration: '2:20', seconds: 140,
+    id: 'zeichnung', slug: 'technische-zeichnung', number: '04', duration: '2:20', seconds: 140, kind: 'AI2CAD', uploadDate: '2026-10-08',
     de: {
       title: 'Vom Modell zur Zeichnung', short: 'Modell → Zeichnung',
       description: 'Auf einem A3-Blatt entstehen Ansichten, Bemaßungen, Toleranzrahmen und Oberflächenangaben. Die KI betrachtet die Zeichnung als Bild, korrigiert Überlagerungen und hält die verbleibenden Prüfaufgaben fest.',
@@ -71,20 +71,38 @@ export const AI2CAD_CHAPTERS = [
       poster: 'Technical shaft drawing with views, dimensions and enlarged details',
     },
   },
+  {
+    id: 'fem', slug: 'fem-nachweis', number: '05', duration: '2:31', seconds: 151,
+    kind: 'AI2CAE', uploadDate: '2026-10-10',
+    de: {
+      title: 'Vom Bauteil zur FEM-Prüfung', short: 'Modell → FEM',
+      description: 'Auf die Nabe der Welle wirken 1.500 N. Das Large Language Model steuert den Berechnungsablauf im angebundenen CAE-System: Lagerung und Last anlegen, drei Netze berechnen und die Ergebnisse mit einer Handrechnung vergleichen.',
+      features: ['Fest- und Loslager, Werkstoff und Lastfall im Rechenmodell abbilden', 'Netzfeinheiten r/5, r/10 und r/20 vergleichen', 'Lagerkräfte, Verformung und Kerbspannungen auswerten und dokumentieren'],
+      check: 'Gezeigt wird eine linear-elastische, statische Demonstrationsrechnung. Lageridealisierung, lokale Spannungen und Netzkonvergenz brauchen eine fachliche Bewertung. Ermüdung, reale Lagerkontakte und eine Bauteilfreigabe sind damit nicht nachgewiesen.',
+      poster: 'AI2CAE: Verformung der Welle unter 1.500 N mit farbiger FEM-Auswertung',
+    },
+    en: {
+      title: 'From part to FEM analysis', short: 'Model → FEM',
+      description: 'A 1,500 N load acts on the shaft hub. The large language model controls the analysis workflow in the connected CAE system: setting up supports and loads, solving three meshes and comparing the results with a hand calculation.',
+      features: ['Represent locating and floating bearings, material and load case', 'Compare mesh refinements r/5, r/10 and r/20', 'Evaluate and document bearing reactions, deformation and notch stresses'],
+      check: 'This is a linear-elastic, static demonstration analysis. Idealised supports, local stresses and mesh convergence require engineering assessment. Fatigue, actual bearing contacts and part approval are not established.',
+      poster: 'AI2CAE: shaft deformation under a 1,500 N load with a coloured FEM result plot',
+    },
+  },
 ] as const;
-
-export const AI2CAD_DATE = '2026-10-08';
 
 export function getAI2CADFaqs(en: boolean) {
   return en ? [
-    { question: 'What is AI2CAD?', answer: 'AI2CAD is an AImation demonstration of CAD automation using a large language model (LLM). The LLM operates a connected CAD system, creates parametric parts, proposes design corrections and prepares a technical drawing. Four videos show a mounting plate and a stepped shaft.' },
+    { question: 'What does AI2CAE add to AI2CAD?', answer: 'AI2CAD creates and revises the geometry. AI2CAE continues with engineering analysis. In chapter 5, an LLM controls a CAE system to analyse a shaft under a 1,500 N load, compares three mesh refinements and checks reactions, deformation and notch stresses against a hand calculation. The results require engineering review.' },
+    { question: 'What is AI2CAD?', answer: 'AI2CAD is an AImation demonstration of CAD automation using a large language model (LLM). The LLM operates a connected CAD system, creates parametric parts, proposes design corrections and prepares a technical drawing. Five videos show a mounting plate and a stepped shaft. Chapter 5 extends the workflow to AI2CAE: FEM analysis in a CAE system, compared with a hand calculation.' },
     { question: 'Can a language model operate CAD without mouse clicks?', answer: 'In this demonstration, the language model performs the CAD operations through a tool interface. It sets parameters, creates sketches and features, selects views and prepares the drawing. Instructions, questions and approvals are exchanged in conversation. No manual mouse clicks in the CAD system are used for these steps.' },
     { question: 'Can AI turn a hand sketch into an editable CAD model?', answer: 'Chapter 2 shows a photographed hand sketch becoming a parametric shaft with twelve named parameters. The model separates readable dimensions, derived values and assumptions. Missing information is clarified before modelling. A parameter change from 25 to 30 mm changes overall length from 145 to 150 mm.' },
     { question: 'Who is this CAD automation demonstration for?', answer: 'AI2CAD addresses design engineers, product developers and heads of engineering in technical SMEs. Recurring modelling tasks, dimension variants and drawing preparation are possible starting points. The CAD interface, design rules and required review steps must be assessed for each company.' },
     { question: 'Does AI2CAD work with our CAD system?', answer: 'The videos demonstrate one connected CAD system. Transfer depends on the available API or automation interface, permitted tools and data requirements. In an initial conversation, AImation checks your CAD environment and a specific design task. Compatibility with every CAD system is not established.' },
     { question: 'Is the AI-generated drawing ready for manufacturing?', answer: 'The demonstrated drawing still requires engineering review. Chapter 4 identifies a bearing shoulder with insufficient height and relief dimensions that need checking against the relevant standard. A design engineer must approve function, fits, standards and manufacturability before the drawing goes to a supplier.' },
   ] : [
-    { question: 'Was ist AI2CAD?', answer: 'AI2CAD ist eine Demonstration von AImation zur CAD-Automatisierung mit einem Large Language Model (LLM). Das LLM bedient ein angebundenes CAD-System, erstellt parametrische Bauteile, schlägt Konstruktionskorrekturen vor und bereitet eine technische Zeichnung vor. Vier Videos zeigen den Ablauf an einer Montageplatte und einer abgesetzten Welle.' },
+    { question: 'Was ergänzt AI2CAE gegenüber AI2CAD?', answer: 'AI2CAD erstellt und überarbeitet die Geometrie. AI2CAE setzt bei der technischen Berechnung an. In Kapitel 5 steuert ein LLM ein CAE-System, berechnet eine Welle unter 1.500 N, vergleicht drei Netzfeinheiten und stellt Lagerkräfte, Verformung und Kerbspannungen einer Handrechnung gegenüber. Die Ergebnisse brauchen eine fachliche Prüfung.' },
+    { question: 'Was ist AI2CAD?', answer: 'AI2CAD ist eine Demonstration von AImation zur CAD-Automatisierung mit einem Large Language Model (LLM). Das LLM bedient ein angebundenes CAD-System, erstellt parametrische Bauteile, schlägt Konstruktionskorrekturen vor und bereitet eine technische Zeichnung vor. Fünf Videos zeigen den Ablauf an einer Montageplatte und einer abgesetzten Welle. Kapitel 5 erweitert ihn um AI2CAE: eine FEM-Berechnung im CAE-System mit Vergleich zur Handrechnung.' },
     { question: 'Kann ein Large Language Model CAD ohne Mausklicks steuern?', answer: 'In dieser Demonstration führt das LLM die CAD-Arbeitsschritte über eine Werkzeugschnittstelle aus. Es setzt Parameter, erstellt Skizzen und Formelemente, wählt Ansichten und baut die Zeichnung auf. Vorgaben, Rückfragen und Freigaben erfolgen im Dialog. Für diese Schritte gibt es keine manuellen Mausklicks im CAD-System.' },
     { question: 'Kann KI aus einer Handskizze ein editierbares CAD-Modell erstellen?', answer: 'Kapitel 2 zeigt, wie aus einer fotografierten Handskizze eine parametrische Welle mit zwölf benannten Parametern entsteht. Die KI trennt lesbare Maße, abgeleitete Werte und Annahmen. Fehlende Angaben werden vor dem Modellieren geklärt. Eine Parameteränderung von 25 auf 30 mm verändert die Gesamtlänge von 145 auf 150 mm.' },
     { question: 'Für wen ist diese CAD-Automatisierung interessant?', answer: 'AI2CAD richtet sich an Konstrukteure, Produktentwickler und Entwicklungsleiter im technischen Mittelstand. Wiederkehrende Modellieraufgaben, Maßvarianten und Zeichnungsableitungen sind mögliche Ansatzpunkte. Die CAD-Schnittstelle, Konstruktionsregeln und nötigen Prüfschritte müssen für jedes Unternehmen gesondert bewertet werden.' },

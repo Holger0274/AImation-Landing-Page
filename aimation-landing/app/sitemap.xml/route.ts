@@ -42,7 +42,7 @@ export async function GET() {
       const copy = chapter?.[language];
       const demoCopy = demo?.[language];
       const media = chapter && copy ? {
-        asset: `ai2cad/${chapter.id}`, title: `AI2CAD ${chapter.number}: ${copy.title}`,
+        asset: `ai2cad/${chapter.id}`, title: `${chapter.kind} ${chapter.number}: ${copy.title}`,
         description: `${copy.description} ${copy.check}`, seconds: chapter.seconds,
       } : demo && demoCopy ? {
         asset: `demos/${demo.id}`, title: `${demo.name}: ${demoCopy.topic}`,

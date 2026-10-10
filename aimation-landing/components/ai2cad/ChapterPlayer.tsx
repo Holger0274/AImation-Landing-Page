@@ -39,14 +39,15 @@ export default function ChapterPlayer({ en }: { en: boolean }) {
   const [active, setActive] = useState(0);
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
-    const next = event.key === 'ArrowRight' ? (index + 1) % 4 : event.key === 'ArrowLeft' ? (index + 3) % 4 : event.key === 'Home' ? 0 : event.key === 'End' ? 3 : null;
+    const count = AI2CAD_CHAPTERS.length;
+    const next = event.key === 'ArrowRight' ? (index + 1) % count : event.key === 'ArrowLeft' ? (index + count - 1) % count : event.key === 'Home' ? 0 : event.key === 'End' ? count - 1 : null;
     if (next === null) return;
     event.preventDefault();
     setActive(next);
     refs.current[next]?.focus();
   }
   return <div className={styles.cinema}>
-    <div className={styles.tabs} role="tablist" aria-label={en ? 'AI2CAD video chapters' : 'AI2CAD-Videokapitel'}>
+    <div className={styles.tabs} role="tablist" aria-label={en ? 'AI2CAD and AI2CAE video chapters' : 'AI2CAD- und AI2CAE-Videokapitel'}>
       {AI2CAD_CHAPTERS.map((chapter, index) => <button key={chapter.id} type="button" ref={node => { refs.current[index] = node; }} role="tab" id={`ai2cad-tab-${chapter.id}`} aria-controls={`ai2cad-panel-${chapter.id}`} aria-selected={active === index} tabIndex={active === index ? 0 : -1} onClick={() => setActive(index)} onKeyDown={event => navigate(event, index)}>
         <span className={styles.tabNumber}>{chapter.number}</span><span>{chapter[en ? 'en' : 'de'].short}<small><Clock3 size={12} aria-hidden="true" />{chapter.duration}</small></span>
       </button>)}
@@ -56,7 +57,7 @@ export default function ChapterPlayer({ en }: { en: boolean }) {
       return <div key={chapter.id} role="tabpanel" id={`ai2cad-panel-${chapter.id}`} aria-labelledby={`ai2cad-tab-${chapter.id}`} hidden={active !== index} tabIndex={0}>
         <div className={styles.screenGrid}>
           {active === index && <Video key={chapter.id} chapter={chapter} en={en} />}
-          <div className={styles.chapterCopy}><p className={styles.chapterLabel}>{en ? 'Chapter' : 'Kapitel'} {chapter.number} / 04</p><h3>{copy.title}</h3><p>{copy.description}</p><ul>{copy.features.map(feature => <li key={feature}><Check size={16} aria-hidden="true" /><span>{feature}</span></li>)}</ul></div>
+          <div className={styles.chapterCopy}><p className={styles.chapterLabel}>{en ? 'Chapter' : 'Kapitel'} {chapter.number} / {String(AI2CAD_CHAPTERS.length).padStart(2, '0')} · {chapter.kind}</p><h3>{copy.title}</h3><p>{copy.description}</p><ul>{copy.features.map(feature => <li key={feature}><Check size={16} aria-hidden="true" /><span>{feature}</span></li>)}</ul></div>
         </div>
         <p className={styles.reviewNote} id={`ai2cad-check-${chapter.id}`}><strong>{en ? 'Engineering review' : 'Fachliche Einordnung'}</strong>{copy.check}</p>
         <Link className={styles.chapterLink} href={`${AI2CAD_PATH}/${chapter.slug}`}>{en ? 'Open this video on its own page' : 'Dieses Video auf eigener Seite öffnen'}<ArrowUpRight size={16} aria-hidden="true" /></Link>

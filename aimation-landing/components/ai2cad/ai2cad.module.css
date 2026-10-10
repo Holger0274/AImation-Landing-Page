@@ -15,7 +15,7 @@
 .drawingTop { display: flex; justify-content: space-between; gap: 16px; padding-block: 14px; border-top: 1px solid var(--line-strong); color: var(--muted); font-size: 11px; }
 .drawing img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: #ffffff; }
 .drawing figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); margin-top: 12px; }
-.route { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding-block: 24px; border-top: 1px solid var(--line-strong); }
+.route { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; padding-block: 24px; border-top: 1px solid var(--line-strong); }
 .route > span { display: flex; align-items: center; gap: 12px; font: 500 15px/1.5 var(--font-heading), sans-serif; }
 .route small { color: var(--muted); font-size: 11px; }
 .route svg { color: var(--muted); margin-left: auto; }
@@ -25,7 +25,7 @@
 .sectionIntro h2, .approach h2, .contact h2 { font-size: clamp(30px, 3.4vw, 46px); font-weight: 500; line-height: 1.15; margin-block: 16px 20px; }
 .sectionIntro > p:last-child { max-width: 68ch; color: #c3c7c8; line-height: 1.8; font-size: 15px; }
 .cinema { background: var(--glass), var(--surface); box-shadow: var(--gloss); border: 1px solid var(--line-strong); border-radius: 10px; overflow: hidden; }
-.tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #071013; }
+.tabs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); background: #071013; }
 .tabs button { display: flex; align-items: center; gap: 14px; padding: 20px; min-height: 80px; text-align: left; border-bottom: 2px solid #354044; color: #c3c7c8; font: 500 14px/1.5 var(--font-heading), sans-serif; transition: background .2s, color .2s; }
 .tabs button + button { border-left: 1px solid #354044; }
 .tabs button:hover { background: #ffffff0a; }
@@ -83,7 +83,7 @@
 .teaserLink { display: inline-flex; align-items: center; gap: 16px; margin-top: 24px; padding-bottom: 5px; border-bottom: 1px solid #f90093; font-size: 15px; font-weight: 600; }
 .teaserMeta { display: block; margin-top: 16px; font-size: 11px; color: var(--muted); }
 .teaserVisual { position: relative; min-width: 0; }
-.teaserVisual img { display: block; width: 100%; height: auto; background: #ffffff; border: 1px solid #d5d6d7; }
+.teaserVisual img { display: block; width: 100%; height: auto; background: #071013; border: 1px solid var(--line-strong); }
 .teaserPlay { display: flex; align-items: center; justify-content: center; position: absolute; inset: auto 20px 20px auto; width: 54px; height: 54px; border-radius: 50%; background: #071013; color: #faf9f7; transition: transform .2s; }
 .teaser:hover .teaserPlay { transform: scale(1.08); }
 .chapterLink { display: inline-flex; align-items: center; gap: 10px; margin: 0 28px 20px; min-height: 44px; font-size: 13px; color: var(--magenta-light); text-decoration: underline; text-underline-offset: 4px; }
@@ -111,7 +111,7 @@
 .watchDescription p, .watchDescription li { color: var(--muted); font-size: 15px; line-height: 1.85; }
 .watchDescription ul { list-style: disc; padding-left: 22px; margin-block: 20px; }
 .watchDescription .watchReview { margin-top: 24px; padding-left: 18px; border-left: 2px solid var(--line-strong); font-size: 13px; }
-.watchChapters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.watchChapters { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
 .watchChapters a { display: flex; flex-direction: column; gap: 10px; padding: 20px; border: 1px solid var(--line); border-radius: 8px; background: var(--glass), var(--surface); font-size: 14px; line-height: 1.5; }
 .watchChapters a[aria-current='page'], .watchChapters a:hover { border-color: var(--magenta); }
 .watchChapters small { font-size: 11px; color: var(--dim); }
@@ -121,5 +121,24 @@
 @media (max-width: 760px) { .faqGrid { grid-template-columns: 1fr; } .watchChapters { grid-template-columns: repeat(2, minmax(0, 1fr)); } .watchChapters a { padding: 16px; font-size: 13px; } }
 @media (max-width: 1100px) { .screenGrid { grid-template-columns: minmax(0, 1fr); } .chapterCopy { display: grid; grid-template-columns: 1fr 1fr; column-gap: 36px; } .chapterLabel, .chapterCopy h3 { grid-column: 1 / -1; } .chapterCopy ul { margin-top: 0; } .contactInner { grid-template-columns: 1fr; } .contactInner .primary { justify-self: start; } }
 @media (max-width: 900px) { .heroGrid { grid-template-columns: 1fr; gap: 44px; padding-top: 36px; } .heroCopy h1 { font-size: 88px; } .drawing { max-width: 680px; } .approachGrid { grid-template-columns: 1fr; } .responsibility { grid-template-columns: 1fr; gap: 20px; } }
-@media (max-width: 760px) { .teaser { grid-template-columns: 1fr; gap: 28px; } .route { grid-template-columns: repeat(2, 1fr); gap: 16px 24px; } .route > span { font-size: 13px; } .route svg { display: none; } .tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tabs button { padding: 15px 12px; gap: 9px; font-size: 12px; min-height: 75px; } .tabNumber { font-size: 20px; } .tabs button:nth-child(3) { border-left: 0; } .chapterCopy { display: block; } .chapterCopy ul { margin-top: 24px; } .reviewNote { grid-template-columns: 1fr; gap: 8px; padding: 20px; } .mediaNote { padding: 16px 20px; } .play { bottom: 12px; left: 12px; padding: 10px 12px; font-size: 12px; gap: 10px; } .play svg { width: 18px; } .parameterExample { padding: 22px; } .parameterExample > div { flex-wrap: wrap; gap: 8px 20px; } .parameterExample strong { font-size: 26px; } }
+@media (max-width: 760px) { .teaser { grid-template-columns: 1fr; gap: 28px; } .route { grid-template-columns: repeat(2, 1fr); gap: 16px 24px; } .route > span { font-size: 13px; } .route svg { display: none; } .tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tabs button { padding: 15px 12px; gap: 9px; font-size: 12px; min-height: 75px; } .tabNumber { font-size: 20px; } .tabs button:nth-child(odd) { border-left: 0; } .chapterCopy { display: block; } .chapterCopy ul { margin-top: 24px; } .reviewNote { grid-template-columns: 1fr; gap: 8px; padding: 20px; } .mediaNote { padding: 16px 20px; } .play { bottom: 12px; left: 12px; padding: 10px 12px; font-size: 12px; gap: 10px; } .play svg { width: 18px; } .parameterExample { padding: 22px; } .parameterExample > div { flex-wrap: wrap; gap: 8px 20px; } .parameterExample strong { font-size: 26px; } }
 @media (prefers-reduced-motion: reduce) { .primary, .tabs button, .teaser, .teaserPlay { transition: none; } .primary:hover, .teaser:hover .teaserPlay { transform: none; } }
+
+.femSection { padding-block: 32px 60px; scroll-margin-top: 100px; }
+.femSection h2 { font: 500 clamp(28px, 3vw, 42px)/1.2 var(--font-heading), sans-serif; max-width: 26ch; margin-block: 16px 24px; }
+.femIntro { max-width: 78ch; font-size: 16px; line-height: 1.8; color: var(--muted); }
+.femSteps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; margin-block: 36px; counter-reset: fem; }
+.femSteps li { counter-increment: fem; border-top: 1px solid var(--line-strong); padding-top: 16px; }
+.femSteps li::before { content: '0' counter(fem); color: var(--dim); font-size: 12px; }
+.femSection h3 { font: 500 18px/1.4 var(--font-heading), sans-serif; margin-block: 12px; }
+.femSteps p, .femInterpretation p { color: var(--muted); font-size: 14px; line-height: 1.8; }
+.femTableWrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--glass), var(--surface); }
+.femTable { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; line-height: 1.6; }
+.femTable caption { text-align: left; padding: 20px; color: var(--muted); font-size: 12px; }
+.femTable th, .femTable td { padding: 16px 20px; border-top: 1px solid var(--line); }
+.femTable th { font-weight: 500; }
+.femTable td { white-space: nowrap; color: var(--muted); font-variant-numeric: tabular-nums; }
+.femInterpretation { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 28px; }
+.femLimit { margin-top: 28px; padding-left: 18px; border-left: 2px solid var(--line-strong); color: var(--dim); font-size: 12px; line-height: 1.8; }
+@media (max-width: 900px) { .femSteps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) { .tabs button:last-child { grid-column: 1 / -1; } .femInterpretation { grid-template-columns: 1fr; gap: 16px; } .femTable th, .femTable td { padding: 12px; font-size: 12px; } .femSteps { gap: 20px; } }

@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-10",
+  "source": "KI-x-CAD-Teil-5-FEM-Nachweis.mp4",
+  "sourceSha256": "f6b19c540e875eb74884b50cbf56c99cee8ed1b51b026a70dfa9d428882212d7",
+  "output": "/videos/ai2cad/fem.mp4",
+  "outputSha256": "29c9326b74aaaf57f987294e3606ca424a379281d35455ad1b417964d2190800",
+  "durationSeconds": 151,
+  "frames": 4530,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "audioRemoved": true,
+  "metadataRemoved": true,
+  "codec": "H.264",
+  "crf": 22,
+  "pixelFormat": "yuv420p",
+  "fastStart": true,
+  "originalFramesScanned": 4530,
+  "replacementCount": 4237,
+  "replacementMethod": "Frame-specific word replacement using adjacent background pixels; neutral labels CAE, LLM, Netz, Solver, Modell. No persistent black masks.",
+  "verification": {
+    "sampleFrames": 302,
+    "samplesPerSecond": 2,
+    "productNameDetections": 0
+  },
+  "outputBytes": 25904178
+}
