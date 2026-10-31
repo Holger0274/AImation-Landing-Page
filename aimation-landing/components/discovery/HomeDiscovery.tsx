@@ -8,7 +8,6 @@ import { APPLICATION_DEMOS } from '@/lib/data/demo-videos';
 import { QKT_CASES } from '@/lib/data/application-paths';
 import { PRICING } from '@/lib/data/pricing';
 import { pauseOtherVideos } from '@/lib/media/playback';
-import AutodeskMembership from '@/components/AutodeskMembership';
 import styles from './discovery.module.css';
 
 function PreviewVideo({ id, en }: { id: typeof AI2CAD_CHAPTERS[number]['id']; en: boolean }) {
@@ -71,7 +70,6 @@ export default function HomeDiscovery({ en }: { en: boolean }) {
       <div className={styles.sectionHead}><div><p className="technical-label">04 / {en ? 'Working together' : 'Zusammenarbeit'}</p><h2 id="start-heading">{en ? 'Make the next step ' : 'Der nächste Schritt wird '}<span className="highlight">{en ? 'concrete.' : 'konkret.'}</span></h2></div><p>{en ? 'Bring a workflow from your team. We discuss the task, the data and whether a pilot makes sense.' : 'Bringen Sie einen Ablauf aus Ihrem Team mit. Wir besprechen die Aufgabe, die Daten und ob ein Pilot sinnvoll ist.'}</p></div>
       <ol className={styles.steps}><li><span>01</span><h3>{en ? 'First conversation' : 'Erstgespräch'}</h3><p>{en ? 'Free' : 'Kostenlos'} · {PRICING.erstgespraech.duration}</p></li><li><span>02</span><h3>{en ? 'AI roadmap' : 'KI-Landkarte'}</h3><p>{en ? 'From ' : 'Ab '}{money(PRICING.kiLandkarte.priceFrom)}</p></li><li><span>03</span><h3>Pilot</h3><p>{money(PRICING.pilot.price)} · {en ? '4 weeks' : PRICING.pilot.duration}</p></li></ol>
       <div className={styles.footLinks}><Link href="/zusammenarbeit" className="engineering-text-link">{en ? 'Complete process, prices and implementation' : 'Vollständiger Ablauf, Preise und Umsetzung'}<ArrowUpRight size={17} aria-hidden="true" /></Link><Link href="/ki-schulungen-mittelstand" className="engineering-text-link">{en ? 'Book training independently' : 'Schulung unabhängig davon buchen'}<ArrowUpRight size={17} aria-hidden="true" /></Link></div>
-      <div className={styles.membership}><AutodeskMembership en={en} /><Link href="/ueber-holger-peschke#partnerschaften" className="engineering-text-link">{en ? 'All memberships and partnerships' : 'Alle Mitgliedschaften und Partnerschaften'}<ArrowUpRight size={17} aria-hidden="true" /></Link></div>
     </div></section>
   </>;
 }
