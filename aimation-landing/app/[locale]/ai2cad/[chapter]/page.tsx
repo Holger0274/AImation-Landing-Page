@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: { params: Params }) {
   const chapter = AI2CAD_CHAPTERS.find(item => item.slug === slug);
   if (!chapter) notFound();
   const copy = chapter[locale === 'en' ? 'en' : 'de'];
-  const title = `${copy.title} ${locale === 'en' ? 'with AI' : 'mit KI'} | ${chapter.kind} ${chapter.number} | AImation`;
-  const metadata = pageMetadata(`${AI2CAD_PATH}/${chapter.slug}`, locale, title, copy.description);
+  const title = `${copy.title} ${locale === 'en' ? 'with AI' : 'mit KI'} | AImation`;
+  const metadata = pageMetadata(`${AI2CAD_PATH}/${chapter.slug}`, locale, title, copy.metaDescription);
   const image = { url: `${SITE_URL}/videos/ai2cad/${chapter.id}.webp`, width: 1920, height: 1080, alt: copy.poster };
   return { ...metadata, openGraph: { ...metadata.openGraph, images: [image] }, twitter: { ...metadata.twitter, images: [image.url] } };
 }

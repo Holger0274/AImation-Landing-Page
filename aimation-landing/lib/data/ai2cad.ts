@@ -11,14 +11,16 @@ export const AI2CAD_CHAPTERS = [
   {
     id: 'prompt', slug: 'prompt-zu-cad', number: '01', duration: '1:30', seconds: 90, kind: 'AI2CAD', uploadDate: '2026-10-08',
     de: {
-      title: 'Vom Prompt zum Bauteil', short: 'Text → Modell',
+      title: 'CAD-Modell aus Text erstellen', short: 'Text → Modell',
+      metaDescription: 'CAD-Modell aus Text: Ein LLM erstellt eine parametrische Montageplatte mit Bohrungen und Taschen. Video der AImation-Demo, mit editierbaren Maßen.',
       description: 'Eine Montageplatte, beschrieben mit Maßen und Bauabschnitten. Das KI-Sprachmodell bedient das angebundene CAD-System und baut die Geometrie Schritt für Schritt auf. Die Maße bleiben anschließend editierbar.',
       features: ['Grundplatte 180 × 120 × 12 mm mit sieben Modellierschritten', 'Bohrungen, Senkungen, Taschen und Außenradien', 'Maße und Volumen aus der erzeugten Geometrie zurücklesen'],
       check: 'Die Modellprüfung gleicht die Geometrie mit der Vorgabe ab. Belastbarkeit und Eignung für den Einsatz müssen gesondert bewertet werden.',
       poster: 'Parametrische Montageplatte mit Bohrungen und Taschen aus der AI2CAD-Demonstration',
     },
     en: {
-      title: 'From prompt to part', short: 'Text → model',
+      title: 'Create a CAD model from text', short: 'Text → model',
+      metaDescription: 'Text to CAD: an LLM creates a parametric mounting plate with holes and pockets. Watch the AImation demonstration, with dimensions that remain editable.',
       description: 'A mounting plate described through dimensions and modelling steps. The language model operates the connected CAD system and builds the geometry step by step. Dimensions remain editable afterwards.',
       features: ['180 × 120 × 12 mm base plate built in seven modelling steps', 'Holes, counterbores, pockets and corner radii', 'Read dimensions and volume back from the resulting geometry'],
       check: 'The model check compares geometry against the specification. Load capacity and suitability for the intended application require separate assessment.',
@@ -28,14 +30,16 @@ export const AI2CAD_CHAPTERS = [
   {
     id: 'skizze', slug: 'handskizze-zu-cad', number: '02', duration: '1:30', seconds: 90, kind: 'AI2CAD', uploadDate: '2026-10-08',
     de: {
-      title: 'Von der Skizze zum Modell', short: 'Skizze → Modell',
+      title: 'Handskizze in CAD umwandeln', short: 'Skizze → Modell',
+      metaDescription: 'Von der Handskizze zum CAD-Modell: KI erstellt eine parametrische Welle, klärt fehlende Maße und prüft eine Maßänderung. AImation zeigt den Ablauf im Video.',
       description: 'Ein Foto einer Handskizze ist der Ausgangspunkt für eine abgesetzte Welle. Die KI trennt lesbare Maße von abgeleiteten Werten und Annahmen. Vier Rückfragen klären den Entwurf, bevor das Modell entsteht.',
       features: ['Skizzenmaße erkennen und fehlende Angaben benennen', 'Zwölf benannte Parameter mit ihrer Herkunft dokumentieren', 'Maßänderung testen: Die Gesamtlänge folgt dem Parameter'],
       check: 'Fehlende Maße und die vereinfachte Gewindedarstellung werden ausdrücklich abgestimmt. Das Ergebnis ist ein Entwurfsmodell.',
       poster: 'Handskizze und parametrische Welle aus der AI2CAD-Demonstration',
     },
     en: {
-      title: 'From sketch to model', short: 'Sketch → model',
+      title: 'Turn a hand sketch into CAD', short: 'Sketch → model',
+      metaDescription: 'Turn a hand sketch into a parametric CAD shaft: AI clarifies missing dimensions and tests a parameter change. Watch the workflow in this AImation video.',
       description: 'A photograph of a hand sketch becomes the starting point for a stepped shaft. AI separates readable dimensions from derived values and assumptions. Four questions clarify the design before modelling begins.',
       features: ['Read sketch dimensions and identify missing information', 'Document twelve named parameters and their origins', 'Test a dimension change: overall length follows the parameter'],
       check: 'Missing dimensions and the simplified thread representation are explicitly agreed. The result is a design model.',
@@ -45,14 +49,16 @@ export const AI2CAD_CHAPTERS = [
   {
     id: 'drehteil', slug: 'konstruktion-pruefen', number: '03', duration: '2:02', seconds: 122, kind: 'AI2CAD', uploadDate: '2026-10-08',
     de: {
-      title: 'Den Entwurf hinterfragen', short: 'Entwurf → Prüfung',
+      title: 'CAD-Konstruktion prüfen', short: 'Entwurf → Prüfung',
+      metaDescription: 'CAD-Konstruktion mit KI prüfen: Ein LLM erkennt fehlende Freistiche und offene Funktionsangaben an einer Welle. Video mit Rückfragen und Modellkorrekturen.',
       description: 'Die KI liest Parameter und Geometrie aus und meldet Auffälligkeiten: fehlende Freistiche, scharfe Schultern und offene Funktionsangaben. Daraus folgen Rückfragen, ein Toleranzvorschlag und Änderungen am Modell nach Freigabe.',
       features: ['Lagersitze, Lastfall, Werkstoff und Fertigung klären', 'Annahmen und vorgeschlagene Toleranzen begründen', 'Freistiche und eine Einführfase im Modell ergänzen'],
       check: 'In der Demo darf die KI Annahmen vorschlagen. Lagerauswahl, Normbezüge und Funktionsmaße müssen fachlich geprüft werden.',
       poster: 'Abgesetzte Welle mit markierten Schultern und Freistichen aus der AI2CAD-Demonstration',
     },
     en: {
-      title: 'Question the design', short: 'Design → review',
+      title: 'Review a CAD design', short: 'Design → review',
+      metaDescription: 'Review a CAD shaft with AI: an LLM flags missing reliefs and unresolved functional requirements. Watch the questions, proposed tolerances and model changes.',
       description: 'AI reads parameters and geometry and flags issues: missing reliefs, sharp shoulders and unresolved functional requirements. Questions, proposed tolerances and approved model changes follow.',
       features: ['Clarify bearing seats, load case, material and manufacturing', 'Explain assumptions and proposed tolerances', 'Add reliefs and a lead-in chamfer to the model'],
       check: 'The demo allows AI to propose assumptions. Bearing selection, standards references and functional dimensions require engineering review.',
@@ -62,14 +68,16 @@ export const AI2CAD_CHAPTERS = [
   {
     id: 'zeichnung', slug: 'technische-zeichnung', number: '04', duration: '2:20', seconds: 140, kind: 'AI2CAD', uploadDate: '2026-10-08',
     de: {
-      title: 'Vom Modell zur Zeichnung', short: 'Modell → Zeichnung',
+      title: 'Technische Zeichnung erstellen', short: 'Modell → Zeichnung',
+      metaDescription: 'Technische Zeichnung mit KI erstellen: Ansichten, Bemaßung und Toleranzen aus einem CAD-Modell. AImation zeigt den Ablauf und offene Prüfaufgaben im Video.',
       description: 'Auf einem A3-Blatt entstehen Ansichten, Bemaßungen, Toleranzrahmen und Oberflächenangaben. Die KI betrachtet die Zeichnung als Bild, korrigiert Überlagerungen und hält die verbleibenden Prüfaufgaben fest.',
       features: ['Hauptansichten 2:1, Einzelheiten 5:1 und Isometrie', 'Passungen, Bezüge und technische Hinweise eintragen', 'Sichtprüfung wiederholen und Export zur Freigabe vorschlagen'],
       check: 'Offen bleiben in der Demo eine zu niedrige Lagerschulter und der Abgleich einzelner Freistichmaße mit dem Normblatt. Eine Fertigungsfreigabe ist damit nicht belegt.',
       poster: 'Technische Zeichnung der Welle mit Ansichten, Bemaßungen und vergrößerten Einzelheiten',
     },
     en: {
-      title: 'From model to drawing', short: 'Model → drawing',
+      title: 'Create a technical drawing', short: 'Model → drawing',
+      metaDescription: 'Create a technical drawing with AI: views, dimensions and tolerances from a CAD model. Watch the AImation demonstration and see the remaining review tasks.',
       description: 'Views, dimensions, tolerance frames and surface specifications take shape on an A3 sheet. AI examines the drawing as an image, corrects overlapping elements and records the remaining review tasks.',
       features: ['Main views at 2:1, details at 5:1 and an isometric view', 'Add fits, datums and technical notes', 'Repeat visual checks and propose export for approval'],
       check: 'The demo leaves a bearing shoulder with insufficient height and individual relief dimensions to check against the standard. Manufacturing approval has not been demonstrated.',
@@ -80,14 +88,16 @@ export const AI2CAD_CHAPTERS = [
     id: 'fem', slug: 'fem-nachweis', number: '05', duration: '2:31', seconds: 151,
     kind: 'AI2CAE', uploadDate: '2026-10-10',
     de: {
-      title: 'Vom Bauteil zur FEM-Prüfung', short: 'Modell → FEM',
+      title: 'FEM-Berechnung einer Welle', short: 'Modell → FEM',
+      metaDescription: 'FEM-Berechnung mit KI: Ein LLM steuert die Analyse einer Welle unter 1.500 N. Drei Netzfeinheiten und eine Handrechnung im Vergleich. AI2CAE-Demo von AImation.',
       description: 'Auf die Nabe der Welle wirken 1.500 N. Das Large Language Model steuert den Berechnungsablauf im angebundenen CAE-System: Lagerung und Last anlegen, drei Netze berechnen und die Ergebnisse mit einer Handrechnung vergleichen.',
       features: ['Fest- und Loslager, Werkstoff und Lastfall im Rechenmodell abbilden', 'Netzfeinheiten r/5, r/10 und r/20 vergleichen', 'Lagerkräfte, Verformung und Kerbspannungen auswerten und dokumentieren'],
       check: 'Gezeigt wird eine linear-elastische, statische Demonstrationsrechnung. Lageridealisierung, lokale Spannungen und Netzkonvergenz brauchen eine fachliche Bewertung. Ermüdung, reale Lagerkontakte und eine Bauteilfreigabe sind damit nicht nachgewiesen.',
       poster: 'AI2CAE: Verformung der Welle unter 1.500 N mit farbiger FEM-Auswertung',
     },
     en: {
-      title: 'From part to FEM analysis', short: 'Model → FEM',
+      title: 'Run FEM analysis of a shaft', short: 'Model → FEM',
+      metaDescription: 'FEM analysis with AI: an LLM controls a shaft analysis under a 1,500 N load. Compare three mesh refinements and a hand calculation in this AImation demo.',
       description: 'A 1,500 N load acts on the shaft hub. The large language model controls the analysis workflow in the connected CAE system: setting up supports and loads, solving three meshes and comparing the results with a hand calculation.',
       features: ['Represent locating and floating bearings, material and load case', 'Compare mesh refinements r/5, r/10 and r/20', 'Evaluate and document bearing reactions, deformation and notch stresses'],
       check: 'This is a linear-elastic, static demonstration analysis. Idealised supports, local stresses and mesh convergence require engineering assessment. Fatigue, actual bearing contacts and part approval are not established.',

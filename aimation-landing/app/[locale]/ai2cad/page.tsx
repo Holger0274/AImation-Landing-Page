@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const en = locale === 'en';
   return pageMetadata(AI2CAD_PATH, locale,
-    en ? 'AI2CAD & AI2CAE: CAD and FEM with an LLM | AImation' : 'AI2CAD & AI2CAE: CAD und FEM per LLM | AImation',
+    en ? 'CAD automation and FEM with AI | AI2CAD | AImation' : 'CAD-Automatisierung und FEM mit KI | AI2CAD | AImation',
     en ? 'CAD and FEM automation for engineering teams: five videos show LLM-controlled modelling, drawing preparation and analysis with a hand-calculation check.' : 'KI für Konstrukteure und Entwicklungsleiter: Fünf Videos zeigen CAD-Steuerung per LLM, Zeichnungsableitung und FEM-Berechnung mit Vergleich zur Handrechnung.');
 }
 
