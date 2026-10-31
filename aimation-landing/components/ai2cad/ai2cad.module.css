@@ -145,3 +145,39 @@
 @media (max-width: 760px) { .tabs button:last-child { grid-column: 1 / -1; } .femInterpretation { grid-template-columns: 1fr; gap: 16px; } .femTable th, .femTable td { padding: 12px; font-size: 12px; } .femSteps { gap: 20px; } }
 
 .journeyNote { max-width: 85ch; margin-bottom: 24px; padding-left: 16px; border-left: 2px solid var(--line-strong); color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+/* Homepage: choose a real engineering step, then explore its recording. */
+.experienceIntro { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 64px; align-items: end; margin-bottom: 32px; }
+.experienceIntro h2 { font: 500 clamp(32px, 3.8vw, 52px)/1.12 var(--font-heading); letter-spacing: -.04em; margin-top: 16px; max-width: 15ch; }
+.experienceIntro > div > p:not(.eyebrow) { font-size: 15px; line-height: 1.8; color: var(--muted); max-width: 55ch; }
+.experienceMeta { display: block; margin-top: 16px; font: 11px/1.6 var(--font-technical); color: var(--dim); }
+.immersive .tabs { gap: 0; }
+.immersive .tabs button { position: relative; flex-wrap: wrap; align-content: start; padding: 14px; gap: 8px 10px; }
+.chapterThumb { position: relative; display: block; width: 100%; aspect-ratio: 16 / 8; overflow: hidden; border: 1px solid var(--line); border-radius: 4px; margin-bottom: 4px; background: #071013; }
+.chapterThumb img { object-fit: cover; transition: transform .25s; }
+.immersive .tabs button:hover .chapterThumb img { transform: scale(1.04); }
+.immersive .tabNumber { font: 12px/1.8 var(--font-technical); }
+.immersive .tabs button > span:last-child { flex: 1; font-size: 12px; }
+.immersive .tabs button[aria-selected='true'] .chapterThumb { border-color: #ff4ecd; }
+.immersive .screenGrid { grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr); }
+.immersive .chapterCopy { padding: 26px; }
+.immersive .chapterCopy h3 { font-size: 25px; }
+.immersive .chapterCopy ul { margin-top: 20px; gap: 10px; }
+.chapterActions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 8px 28px 20px; }
+.chapterActions .chapterLink { margin: 0; }
+.nextChapter { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 10px 16px; border: 1px solid var(--line-strong); border-radius: 5px; font: 500 13px/1.5 var(--font-heading); color: var(--ink); transition: border-color .2s, background .2s; }
+.nextChapter:hover { border-color: #ff4ecd; background: #ffffff08; }
+.experienceFooter { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 40px; margin-top: 20px; }
+.experienceFooter p { max-width: 60ch; font-size: 12px; line-height: 1.8; color: var(--muted); }
+.experienceFooter a { font-size: 12px; min-height: 44px; }
+@media (max-width: 1100px) { .immersive .screenGrid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) {
+  .experienceIntro { grid-template-columns: 1fr; gap: 20px; }
+  .experienceIntro h2 { max-width: 20ch; }
+  .immersive .tabs { grid-template-columns: repeat(5, minmax(138px, 1fr)); overflow-x: auto; scroll-snap-type: x proximity; }
+  .immersive .tabs button { grid-column: auto; min-width: 0; padding: 12px; scroll-snap-align: start; border-left: 1px solid #354044; }
+  .immersive .tabs button:first-child { border-left: 0; }
+  .immersive .chapterCopy { padding: 22px; }
+  .chapterActions { padding-inline: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .chapterThumb img, .nextChapter { transition: none; } .immersive .tabs button:hover .chapterThumb img { transform: none; } }

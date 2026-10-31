@@ -11,14 +11,15 @@ export default function EarlyDemos() {
       <div className="engineering-wrap">
         <div className="section-heading-split">
           <div className="section-intro">
+            <p className="technical-label mb-4">02 / {en ? 'Applications from our workshop' : 'Anwendungen aus unserer Werkstatt'}</p>
             <h2 id="early-demos-heading">
-              {en ? 'See our applications ' : 'So sehen unsere Anwendungen '}<span className="highlight">{en ? 'at work.' : 'aus.'}</span>
+              {en ? 'Explore what moves your ' : 'Entdecken Sie, was Ihr Team '}<span className="highlight">{en ? 'team.' : 'bewegt.'}</span>
             </h2>
           </div>
           <p className="section-heading-body">
             {en
-              ? 'Start with the PM Demonstrator: project status, capacity and draft reports in one application. Each video shows 90 seconds of our own development work.'
-              : 'Starten Sie mit dem PM Demonstrator: Projektstatus, Kapazitäten und Berichtsentwürfe in einer Anwendung. Jedes Video zeigt 90 Sekunden aus unserer eigenen Entwicklungsarbeit.'}
+              ? 'Project bottlenecks, variant rules or knowledge in your team: choose your topic. Each video takes you into one of our applications for 90 seconds.'
+              : 'Engpässe im Projekt, Regeln für Varianten oder Wissen im Team: Wählen Sie Ihr Thema. Jedes Video führt Sie 90 Sekunden durch eine unserer Anwendungen.'}
           </p>
         </div>
         <ApplicationDemos compact />

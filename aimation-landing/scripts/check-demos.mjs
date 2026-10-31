@@ -11,8 +11,10 @@ for (const route of ['/', '/en']) {
   assert.equal(response.status, 200, `${route}: status`);
   const html = (await response.text()).replace(/<script\b[\s\S]*?<\/script>/g, '');
   assert(html.includes('id="selbst-gebaut"'), 'showcase anchor missing');
-  assert.equal((html.match(/role="tab"/g) || []).length, 3, 'three application tabs');
-  assert.equal((html.match(/role="tabpanel"/g) || []).length, 3, 'three application panels');
+  assert.equal((html.match(/id="demo-tab-/g) || []).length, 3, 'three application tabs');
+  assert.equal((html.match(/id="demo-panel-/g) || []).length, 3, 'three application panels');
+  assert.equal((html.match(/id="ai2cad-tab-/g) || []).length, 5, 'five engineering chapters');
+  assert(html.includes('id="entwicklung-erleben"'), 'engineering experience anchor missing');
   assert(!/<video\b|<source\b/.test(html), 'video media must not mount before a play click');
   for (const id of ['5why', 'fem', 'ideas']) assert(html.includes(`id="werkzeug-${id}"`), `existing example ${id} missing`);
   for (const id of applicationIds) assert(html.includes(`id="demo-tab-${id}"`), `demo ${id} missing`);

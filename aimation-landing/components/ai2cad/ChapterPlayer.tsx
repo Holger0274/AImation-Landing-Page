@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import Image from 'next/image';
-import { ArrowUpRight, Play, Check, Clock3 } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Play, Check, Clock3 } from 'lucide-react';
 import { AI2CAD_CHAPTERS, AI2CAD_PATH } from '@/lib/data/ai2cad';
 import { Link } from '@/i18n/navigation';
 import { pauseOtherVideos } from '@/lib/media/playback';
@@ -35,7 +35,7 @@ function Video({ chapter, en }: { chapter: typeof AI2CAD_CHAPTERS[number]; en: b
   </div>;
 }
 
-export default function ChapterPlayer({ en }: { en: boolean }) {
+export default function ChapterPlayer({ en, immersive = false }: { en: boolean; immersive?: boolean }) {
   const [active, setActive] = useState(0);
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
@@ -46,9 +46,14 @@ export default function ChapterPlayer({ en }: { en: boolean }) {
     setActive(next);
     refs.current[next]?.focus();
   }
-  return <div className={styles.cinema}>
+  function selectChapter(index: number) {
+    setActive(index);
+    refs.current[index]?.focus();
+  }
+  return <div className={`${styles.cinema} ${immersive ? styles.immersive : ''}`}>
     <div className={styles.tabs} role="tablist" aria-label={en ? 'AI2CAD and AI2CAE video chapters' : 'AI2CAD- und AI2CAE-Videokapitel'}>
       {AI2CAD_CHAPTERS.map((chapter, index) => <button key={chapter.id} type="button" ref={node => { refs.current[index] = node; }} role="tab" id={`ai2cad-tab-${chapter.id}`} aria-controls={`ai2cad-panel-${chapter.id}`} aria-selected={active === index} tabIndex={active === index ? 0 : -1} onClick={() => setActive(index)} onKeyDown={event => navigate(event, index)}>
+        {immersive && <span className={styles.chapterThumb}><Image src={`/videos/ai2cad/${chapter.id}.webp`} alt="" fill sizes="(max-width: 760px) 120px, 220px" /></span>}
         <span className={styles.tabNumber}>{chapter.number}</span><span>{chapter[en ? 'en' : 'de'].short}<small><Clock3 size={12} aria-hidden="true" />{chapter.duration}</small></span>
       </button>)}
     </div>
@@ -60,7 +65,11 @@ export default function ChapterPlayer({ en }: { en: boolean }) {
           <div className={styles.chapterCopy}><p className={styles.chapterLabel}>{en ? 'Chapter' : 'Kapitel'} {chapter.number} / {String(AI2CAD_CHAPTERS.length).padStart(2, '0')} · {chapter.kind}</p><h3>{copy.title}</h3><p>{copy.description}</p><ul>{copy.features.map(feature => <li key={feature}><Check size={16} aria-hidden="true" /><span>{feature}</span></li>)}</ul></div>
         </div>
         <p className={styles.reviewNote} id={`ai2cad-check-${chapter.id}`}><strong>{en ? 'Engineering review' : 'Fachliche Einordnung'}</strong>{copy.check}</p>
-        <Link className={styles.chapterLink} href={`${AI2CAD_PATH}/${chapter.slug}`}>{en ? 'Open this video on its own page' : 'Dieses Video auf eigener Seite öffnen'}<ArrowUpRight size={16} aria-hidden="true" /></Link>
+        <div className={styles.chapterActions}>
+          <Link className={styles.chapterLink} href={`${AI2CAD_PATH}/${chapter.slug}`}>{en ? 'Video and technical details' : 'Video und technische Details'}<ArrowUpRight size={16} aria-hidden="true" /></Link>
+          {immersive && index < AI2CAD_CHAPTERS.length - 1 && <button className={styles.nextChapter} type="button" onClick={() => selectChapter(index + 1)}>{en ? 'Next: ' : 'Weiter: '}{AI2CAD_CHAPTERS[index + 1][en ? 'en' : 'de'].short}<ArrowRight size={17} aria-hidden="true" /></button>}
+          {immersive && index === AI2CAD_CHAPTERS.length - 1 && <a className={styles.nextChapter} href="#anwendungsdemos">{en ? 'Discover the applications' : 'Anwendungen entdecken'}<ArrowRight size={17} aria-hidden="true" /></a>}
+        </div>
       </div>;
     })}
     <p className={styles.mediaNote}>{en ? 'Own development demonstration · German on-screen text · Website editions without audio, product names obscured · Videos load on play' : 'Eigene Entwicklungsdemonstration · Website-Fassungen ohne Ton, Produktnamen verdeckt · Videos laden erst beim Abspielen'}</p>
