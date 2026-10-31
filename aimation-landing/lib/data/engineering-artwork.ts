@@ -16,12 +16,12 @@ export function engineeringArtworkSvg(kind: ArticleKey, variant = 0): string {
   </g>`;
   let drawing = '';
   if (kind === 'changes') {
-    drawing = `${text(150,104,'H-204 / REVISION C',17,.7)}${text(150,135,'SCHEMATISCHE DARSTELLUNG',11,.4)}
+    drawing = `${text(150,104,variant === 2 ? 'H-204 / STAND OFFEN' : 'H-204 / REVISION C',17,.7)}${text(150,135,'SCHEMATISCHE DARSTELLUNG',11,.4)}
       <g opacity="${variant === 2 ? '.4' : '1'}">${plate(200,315,true)}${plate(200,170)}
       <path d="M325 480V334M643 480V335M470 315V170" stroke="${blue}" opacity=".45" stroke-dasharray="4 7"/>
       <path d="M300 570l140 73 260-156" stroke="${line}" fill="none" opacity=".6"/>
       <path d="M300 560v22M440 632v22M700 476v22" stroke="${line}" opacity=".6"/>
-      ${variant === 1 ? `<path d="M510 225l135 68-75 45-136-68Z" fill="url(#hatch)" stroke="${blue}" stroke-width="2"/>${text(652,250,'A / B',21)}` : `<ellipse cx="643" cy="335" rx="49" ry="29" stroke="${blue}" fill="none" stroke-width="2"/><path d="M679 314l93-70h100" fill="none" stroke="${blue}"/>${text(779,231,'80 / 84',21)}`}
+      ${variant === 2 ? '' : variant === 1 ? `<path d="M510 225l135 68-75 45-136-68Z" fill="url(#hatch)" stroke="${blue}" stroke-width="2"/>${text(652,250,'A / B',21)}` : `<ellipse cx="643" cy="335" rx="49" ry="29" stroke="${blue}" fill="none" stroke-width="2"/><path d="M679 314l93-70h100" fill="none" stroke="${blue}"/>${text(779,231,'80 / 84',21)}`}
       </g>${variant === 2 ? `<circle cx="500" cy="350" r="62" fill="#071013" stroke="${line}" stroke-dasharray="5 7"/>${text(480,372,'?',60)}${text(360,620,'ZUORDNUNG OFFEN',19)}` : text(155,632,variant === 1 ? 'WERKSTOFFVERGLEICH' : 'GEOMETRIEVERGLEICH',13,.65)}`;
   } else if (kind === 'requirements') {
     const row = variant === 0 ? 0 : variant === 1 ? 1 : 2;
@@ -45,7 +45,7 @@ export function engineeringArtworkSvg(kind: ArticleKey, variant = 0): string {
     const doc = (x: number, y: number, title: string, sub: string, faded = false) => `<g transform="translate(${x} ${y})" opacity="${faded ? '.28' : '1'}"><rect x="10" y="12" width="205" height="164" rx="7" fill="#071013" stroke="${line}" opacity=".35"/><rect width="205" height="164" rx="7" fill="url(#metal)" stroke="${line}"/><path d="M24 25h23l12 12v30H24Z M47 25v14h12" fill="none" stroke="${blue}"/>${text(24,99,title,15)}${text(24,127,sub,12,.6)}<path d="M24 144h90" stroke="${line}" opacity=".3"/></g>`;
     drawing = `<circle cx="515" cy="360" r="241" stroke="${line}" stroke-opacity=".15" fill="none" stroke-dasharray="2 12"/><circle cx="515" cy="360" r="164" stroke="${line}" stroke-opacity=".12" fill="none"/>
       <g fill="none" stroke="${variant===2 ? line : blue}" stroke-width="2" opacity=".65" ${variant>0 ? 'stroke-dasharray="6 8"' : ''}><path d="M300 215h90l125 145M724 215h-89L515 360M320 525h80l115-165M719 527h-88L515 360"/></g>
-      ${doc(95,108,'AA-042','REV. C',variant===2)}${doc(705,108,'V-118','REV. C',variant===2)}${doc(115,470,'H-204',variant===1?'WERKSTOFF A':'REV. C',variant===2)}${doc(699,470,'FUNDSTELLE','QUELLENBEZUG',variant>0)}
+      ${doc(95,108,variant===2?'DOKUMENT':'AA-042',variant===2?'KEIN ZUGRIFF':'REV. C',variant===2)}${doc(705,108,variant===2?'DOKUMENT':'V-118',variant===2?'KEIN ZUGRIFF':'REV. C',variant===2)}${doc(115,470,variant===2?'DOKUMENT':'H-204',variant===2?'KEIN ZUGRIFF':variant===1?'WERKSTOFF A':'REV. C',variant===2)}${doc(699,470,'FUNDSTELLE',variant===2?'NICHT VERFUEGBAR':'QUELLENBEZUG',variant>0)}
       <circle cx="515" cy="360" r="77" fill="#111d22" stroke="${blue}" stroke-opacity=".65" stroke-width="2"/><circle cx="515" cy="360" r="91" fill="none" stroke="${line}" stroke-opacity=".3"/>
       ${variant===2 ? `<path d="M495 353v-17a20 20 0 0 1 40 0v17M488 353h54v43h-54Z" fill="none" stroke="#faf9f7" stroke-width="3"/><circle cx="515" cy="372" r="4" fill="#faf9f7"/>` : variant===1 ? `${text(503,375,'?',44)}` : `${text(480,355,'REV.',17)}${text(503,389,'C',29)}`}
       ${text(373,77,'QUELLEN / KONTEXT',17,.6)}${text(400,665,variant===2?'ZUGRIFF PRUEFEN':variant===1?'WIDERSPRUCH':'BELEGE ZUORDNEN',14,.7)}`;
