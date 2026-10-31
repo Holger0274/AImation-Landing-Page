@@ -135,6 +135,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   </label>
                   <input
                     id="name"
+                    autoComplete="name"
                     type="text"
                     {...register('name')}
                     className="w-full px-4 py-3 border border-line rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all text-ink bg-surface"
@@ -155,6 +156,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   </label>
                   <input
                     id="email"
+                    autoComplete="email"
                     type="email"
                     {...register('email')}
                     className="w-full px-4 py-3 border border-line rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all text-ink bg-surface"
@@ -165,6 +167,36 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   )}
                 </div>
 
+                {/* Herausforderung */}
+                <div>
+                  <label
+                    htmlFor="herausforderung"
+                    className="block text-sm font-medium text-ink mb-2"
+                  >
+                    {t('herausforderungLabel')}
+                  </label>
+                  <textarea
+                    id="herausforderung"
+                    {...register('herausforderung')}
+                    rows={3}
+                    className="w-full px-4 py-3 border border-line rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all resize-none text-ink bg-surface"
+                    placeholder={t('herausforderungPlaceholder')}
+                  />
+                  {errors.herausforderung && (
+                    <p role="alert" className="mt-1 text-sm text-red-300">
+                      {errors.herausforderung.message}
+                    </p>
+                  )}
+                  <p className="mt-1 text-xs text-dim">
+                    {t('herausforderungHint')}
+                  </p>
+                </div>
+
+                <details className="rounded-lg border border-line px-4">
+                  <summary className="min-h-11 py-3 cursor-pointer text-sm text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-magenta-light">
+                    {t('optionalDetails')}
+                  </summary>
+                  <div className="space-y-6 pb-4">
                 {/* Firma */}
                 <div>
                   <label
@@ -175,6 +207,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   </label>
                   <input
                     id="firma"
+                    autoComplete="organization"
                     type="text"
                     {...register('firma')}
                     className="w-full px-4 py-3 border border-line rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all text-ink bg-surface"
@@ -221,6 +254,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                     </label>
                     <input
                       id="telefon"
+                      autoComplete="tel"
                       type="tel"
                       {...register('telefon')}
                       className="w-full px-4 py-3 border border-line rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all text-ink bg-surface"
@@ -229,30 +263,8 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   </div>
                 </div>
 
-                {/* Herausforderung */}
-                <div>
-                  <label
-                    htmlFor="herausforderung"
-                    className="block text-sm font-medium text-ink mb-2"
-                  >
-                    {t('herausforderungLabel')}
-                  </label>
-                  <textarea
-                    id="herausforderung"
-                    {...register('herausforderung')}
-                    rows={4}
-                    className="w-full px-4 py-3 border border-line rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f90093] focus:border-transparent transition-all resize-none text-ink bg-surface"
-                    placeholder={t('herausforderungPlaceholder')}
-                  />
-                  {errors.herausforderung && (
-                    <p role="alert" className="mt-1 text-sm text-red-300">
-                      {errors.herausforderung.message}
-                    </p>
-                  )}
-                  <p className="mt-1 text-xs text-dim">
-                    {t('herausforderungHint')}
-                  </p>
-                </div>
+                  </div>
+                </details>
 
                 {/* Datenschutz */}
                 <div className="flex items-start">

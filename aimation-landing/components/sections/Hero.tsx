@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { PRICING } from '@/lib/data/pricing';
 import { useLeadForm } from '@/components/LeadFormProvider';
 import EngineeringDrawing from '@/components/visuals/EngineeringDrawing';
+import { Link } from '@/i18n/navigation';
 
 export default function Hero() {
   const t = useTranslations('hero');
@@ -23,6 +24,14 @@ export default function Hero() {
             </div>
             <p className="hero-microcopy">{t('ctaMicrocopy')}</p>
             <p className="hero-promise">{t('promise')}</p>
+            <nav className="hero-topics" aria-label={t('topicsLabel')}>
+              <p>{t('topicsLabel')}</p>
+              <ul>
+                <li><Link href="/use-cases/knowledge-graph-management">{t('topicKnowledge')}<ArrowUpRight size={16} aria-hidden="true" /></Link></li>
+                <li><Link href="/ai2cad">{t('topicCad')}<ArrowUpRight size={16} aria-hidden="true" /></Link></li>
+                <li><Link href="/use-cases/projektsteuerung-entwicklung">{t('topicProjects')}<ArrowUpRight size={16} aria-hidden="true" /></Link></li>
+              </ul>
+            </nav>
           </div>
           <EngineeringDrawing />
         </div>

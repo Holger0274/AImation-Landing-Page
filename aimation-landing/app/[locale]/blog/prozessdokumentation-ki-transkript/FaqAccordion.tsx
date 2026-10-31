@@ -3,7 +3,7 @@ import SharedFaqAccordion from '@/components/ui/FaqAccordion';
 export const FAQ_ITEMS = [
   {
     question: 'Wie lange dauert das Gespräch, aus dem der Prozess entsteht?',
-    answer: 'Meistens 30 bis 60 Minuten. Lang genug, damit der Ingenieur den Ablauf einmal komplett durchspricht, kurz genug, dass es sich wie ein normales Gespräch anfühlt und nicht wie eine Prüfung. Bei sehr verzweigten Prozessen mit vielen Ausnahmen braucht es manchmal ein zweites Gespräch dieser Länge.',
+    answer: 'Für das Beispiel planen wir 45 Minuten für das erste Gespräch. Der tatsächliche Umfang hängt vom Prozess und seinen Ausnahmen ab. Weitere Gespräche und die fachliche Prüfung werden nach den offenen Punkten im Entwurf geplant.',
   },
   {
     question: 'Ersetzt das einen Prozessverantwortlichen oder Qualitätsmanager?',
@@ -15,7 +15,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: 'Was, wenn das Gespräch unstrukturiert war oder abgeschweift ist?',
-    answer: 'Dann wird der erste Entwurf entsprechend lückenhafter, und die zweite Runde länger. Ein rotes Faden im Gespräch spart Zeit, ist aber keine Voraussetzung. Ein zweites, gezielteres Interview zu den offenen Punkten holt das meiste wieder auf.',
+    answer: 'Dann wird der erste Entwurf entsprechend lückenhafter, und die zweite Runde länger. Ein roter Faden im Gespräch spart Zeit, ist aber keine Voraussetzung. Ein zweites, gezielteres Interview zu den offenen Punkten holt das meiste wieder auf.',
   },
   {
     question: 'Welche Werkzeuge nutzt AImation dafür?',

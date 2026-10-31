@@ -14,7 +14,7 @@ export const PROJECTS: Project[] = [
     solutionWorld: 'KNOW',
     status: 'completed',
     tags: ['Perplexity', 'Claude', 'Quellenbezug'],
-    metrics: 'Im Pilot prüfen wir Trefferqualität, Quellenbelege und den gesamten Rechercheaufwand. Noch keine gemessenen Kundenergebnisse.',
+    metrics: 'Im Pilot prüfen wir Trefferqualität, Quellenbelege und den gesamten Rechercheaufwand.',
     detailUrl: '/use-cases/patentrecherche-ki',
     image: {
       type: 'image',
@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
     solutionWorld: 'FLOW',
     status: 'completed',
     tags: ['OpenAI', 'n8n', 'Outlook'],
-    metrics: 'Im Pilot prüfen wir Zuordnung, Quellenqualität und den Aufwand bis zur Freigabe. Noch keine gemessenen Kundenergebnisse.',
+    metrics: 'Im Pilot prüfen wir Zuordnung, Quellenqualität und den Aufwand bis zur Freigabe.',
     detailUrl: '/use-cases/email-klassifizierung',
     image: {
       type: 'image',
@@ -58,7 +58,7 @@ export const PROJECTS: Project[] = [
     solutionWorld: 'KNOW',
     status: 'completed',
     tags: ['RSS', 'Claude', 'Notion'],
-    metrics: 'Im Pilot prüfen wir Quellenqualität, Produktbezug und Aufwand bis zur fachlichen Einordnung. Noch keine gemessenen Kundenergebnisse.',
+    metrics: 'Im Pilot prüfen wir Quellenqualität, Produktbezug und Aufwand bis zur fachlichen Einordnung.',
     detailUrl: '/use-cases/technologie-scouting',
     image: {
       type: 'image',
@@ -73,7 +73,7 @@ export const PROJECTS: Project[] = [
     solutionWorld: 'KNOW',
     status: 'completed',
     tags: ['Obsidian', 'Claude Code', 'Knowledge Graph'],
-    metrics: 'Im Pilot prüfen wir Suchzeit, Quellenqualität und Pflegeaufwand. Noch keine gemessenen Kundenergebnisse.',
+    metrics: 'Im Pilot prüfen wir Suchzeit, Quellenqualität und Pflegeaufwand.',
     detailUrl: '/use-cases/knowledge-graph-management',
     image: {
       type: 'image',
@@ -116,7 +116,7 @@ export const PROJECTS: Project[] = [
     solutionWorld: 'WORK',
     status: 'in-progress',
     tags: ['Transkription', 'Vektordatenbank', 'Kategorisierung'],
-    metrics: 'Im Pilot prüfen wir Vollständigkeit, Gesprächsbelege und Aufwand bis zum bestätigten Protokoll. Noch keine gemessenen Kundenergebnisse.',
+    metrics: 'Im Pilot prüfen wir Vollständigkeit, Gesprächsbelege und Aufwand bis zum bestätigten Protokoll.',
     detailUrl: '/use-cases/meeting-transkript-analyse',
     image: {
       type: 'image',

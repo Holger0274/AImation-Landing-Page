@@ -29,8 +29,12 @@
     "cta": "Free initial consultation ({duration})",
     "ctaSecondary": "Estimate time savings",
     "processLink": "See how we work together",
+    "topicsLabel": "Go straight to your task",
+    "topicKnowledge": "Preserve knowledge",
+    "topicCad": "CAD & FEM",
+    "topicProjects": "Manage projects",
     "promise": "In the pilot, we measure the time saved on one process. We check the quality too.",
-    "ctaMicrocopy": "No obligation. No sales pitch.",
+    "ctaMicrocopy": "We discuss your workflow and a useful next step. No obligation.",
     "trustLine": "20+ years of product development and leadership in industry · 20,000+ LinkedIn followers · GDPR-first",
     "privacy": "GDPR-compliant, processed in the EU."
   },
@@ -312,7 +316,7 @@
       "patent-research": {
         "title": "Patent Research and Prior Art",
         "description": "AI-assisted preliminary research: link technical features to patent sources for expert review. Internal research prototype, not a legal clearance.",
-        "metrics": "The pilot evaluates relevant results, source references and total research effort. No measured customer results yet.",
+        "metrics": "The pilot evaluates relevant results, source references and total research effort.",
         "alt": "Compare a technical feature with patent sources and evaluate it."
       },
       "project-review-dashboard": {
@@ -324,19 +328,19 @@
       "email-classification": {
         "title": "Automatically pre-sort technical requests",
         "description": "Pre-sort technical requests and change orders, link approved sources and prepare a reply draft for expert review. Internal workflow prototype.",
-        "metrics": "The pilot evaluates routing, source quality and effort through approval. No measured customer results yet.",
+        "metrics": "The pilot evaluates routing, source quality and effort through approval.",
         "alt": "A request and attachment become a draft for human approval."
       },
       "tech-scouting": {
         "title": "Technology Scouting",
         "description": "Monitor defined technical sources, use AI to pre-structure findings and have experts assess their possible relevance to your product. Internal scouting prototype.",
-        "metrics": "The pilot evaluates source quality, product relevance and effort through expert review. No measured customer results yet.",
+        "metrics": "The pilot evaluates source quality, product relevance and effort through expert review.",
         "alt": "Research connects publications to developments relevant to the product."
       },
       "knowledge-graph-management": {
         "title": "Connect engineering knowledge",
         "description": "Trace earlier decisions through test reports, minutes and technical documents. An internal prototype using our own documents and source references.",
-        "metrics": "The pilot evaluates answer quality, source references and search effort. No measured customer results yet.",
+        "metrics": "The pilot evaluates answer quality, source references and search effort.",
         "alt": "Drawings, test reports and minutes provide an answer with sources."
       },
       "customer-meeting-prep": {
@@ -354,7 +358,7 @@
       "meeting-transcript-analysis": {
         "title": "Meetings without the minutes effort",
         "description": "Use AI to structure approved meeting transcripts into decisions, tasks and open points, with timestamps and human approval. In development at AImation.",
-        "metrics": "The pilot evaluates completeness, transcript evidence and effort through approval. No measured customer results yet.",
+        "metrics": "The pilot evaluates completeness, transcript evidence and effort through approval.",
         "alt": "A conversation becomes decisions, assigned tasks and open questions."
       },
       "multi-agent-debate": {
@@ -665,6 +669,7 @@
     "microcopy2": "2 minutes, no prior knowledge needed"
   },
   "leadForm": {
+    "optionalDetails": "Add company details or a callback number (optional)",
     "ariaLabel": "Book a free initial consultation",
     "closeAriaLabel": "Close",
     "headline": "Your path to a",
@@ -685,7 +690,7 @@
     "telefonLabel": "Phone (optional)",
     "telefonPlaceholder": "+44 20 1234 5678",
     "herausforderungLabel": "What is on your mind? (optional)",
-    "herausforderungPlaceholder": "Briefly describe where AI could help you (e.g. 'Too many manual steps in order processing' or 'We want to use AI but do not know where to start')...",
+    "herausforderungPlaceholder": "For example, find test reports or prepare project reports from Excel.",
     "herausforderungHint": "One sentence is enough to help Holger Peschke prepare for your conversation.",
     "datenschutzLabel": "I have read the",
     "datenschutzLink": "privacy policy",

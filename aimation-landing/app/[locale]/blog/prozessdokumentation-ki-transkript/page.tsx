@@ -16,12 +16,12 @@ const CALENDLY_URL = 'https://calendly.com/holgerpeschke-hp/erstgespraech';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Prozessdokumentation ohne Wochen Vorlauf: Aus einem Gespräch wird eine Verfahrensanweisung | AImation' },
-  description: 'Ein 45-Minuten-Gespräch, KI-gestützt strukturiert, ergibt rund 80 Prozent einer fertigen Verfahrensanweisung. Wie AImation Prozessdokumentation vom Wochen- auf den Stundenmaßstab bringt.',
+  title: { absolute: 'Prozessdokumentation mit KI: Vom Gespräch zum geprüften Entwurf | AImation' },
+  description: 'Ein Beispielablauf für Prozessdokumentation mit KI: Gespräch aufnehmen, Transkript strukturieren, offene Punkte klären und den Entwurf fachlich prüfen.',
   alternates: { canonical: `${siteUrl}/blog/prozessdokumentation-ki-transkript` },
   openGraph: {
-    title: 'Prozessdokumentation ohne Wochen Vorlauf: Aus einem Gespräch wird eine Verfahrensanweisung',
-    description: 'Ein 45-Minuten-Gespräch, KI-gestützt strukturiert, ergibt rund 80 Prozent einer fertigen Verfahrensanweisung.',
+    title: 'Prozessdokumentation mit KI: Vom Gespräch zum geprüften Entwurf',
+    description: 'Aus einem Gespräch entsteht ein Entwurf mit Prozessschritten, Verantwortlichkeiten und offenen Fragen. So läuft die fachliche Prüfung ab.',
     url: `${siteUrl}/blog/prozessdokumentation-ki-transkript`,
     type: 'article',
     locale: 'de_DE',
@@ -45,7 +45,7 @@ export default async function ProzessdokumentationPage({
   return (
     <>
       <BlogPostingSchema
-        headline="Prozessdokumentation ohne Wochen Vorlauf: aus einem Gespräch wird in Stunden eine Verfahrensanweisung"
+        headline="Prozessdokumentation mit KI: Vom Gespräch zum geprüften Entwurf"
         description={metadata.description as string}
         datePublished="2026-08-10"
         url="/blog/prozessdokumentation-ki-transkript"
@@ -77,8 +77,8 @@ export default async function ProzessdokumentationPage({
               className="font-heading font-bold text-ink mb-6 leading-tight"
               style={{ fontSize: 'clamp(1.75rem, 5vw, 2.75rem)' }}
             >
-              Prozessdokumentation ohne Wochen Vorlauf:{' '}
-              <span className="text-magenta-light">aus einem Gespräch wird in Stunden eine Verfahrensanweisung</span>
+              Prozessdokumentation mit KI:{' '}
+              <span className="text-magenta-light">vom Gespräch zum geprüften Entwurf</span>
             </h1>
 
             <BlogAuthor />
@@ -95,13 +95,13 @@ export default async function ProzessdokumentationPage({
             <div className="font-inter text-ink" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.0625rem)', lineHeight: '1.75' }}>
 
               <p className="mb-5">
-                Eine Verfahrensanweisung für eine Wareneingangsprüfung braucht bei den meisten Mittelständlern zwei bis drei Wochen, bis sie als fertiges Dokument vorliegt. Nicht, weil der Ablauf kompliziert wäre. Weil der Ingenieur, der ihn im Kopf hat, in dieser Zeit keinen zusammenhängenden Nachmittag findet, sich hinzusetzen und ihn aufzuschreiben.
+                Eine Wareneingangsprüfung ist eingespielt. Der zuständige Ingenieur kennt die Prüfschritte, die Toleranzen und die Ausnahmen. Für eine schriftliche Verfahrensanweisung fehlt im Alltag trotzdem oft die Zeit. Ein aufgenommenes Fachgespräch kann als Ausgangspunkt für den ersten Entwurf dienen.
               </p>
               <p className="mb-5">
-                Genau diese Lücke haben wir bei einem Kunden vor Kurzem geschlossen, ohne dass jemand eine Zeile selbst getippt hat.
+                Der folgende Beispielablauf zeigt, wie sich Gespräch, Transkript und KI-Strukturierung verbinden lassen. Die Prozessverantwortlichen prüfen die Aussagen und geben das Dokument frei.
               </p>
               <p className="mb-5">
-                Der Ablauf: ein 45-minütiges Gespräch, ein Transkript, mehrere KI-Schritte dazwischen. Am Ende stand ein Dokument, das zu rund 80 Prozent fertig war. Die restlichen 20 Prozent kamen aus einem zweiten, kürzeren Gespräch. Insgesamt: ein Arbeitstag statt drei Wochen.
+                Für das Beispiel planen wir 45 Minuten für das erste Gespräch ein. Aus dem Transkript entsteht ein Entwurf mit Prozessschritten, Verantwortlichkeiten und offenen Fragen. Ein zweites Gespräch klärt die Lücken. Wie viel Nacharbeit nötig ist, hängt vom Prozess und von der Qualität der Aufnahme ab.
               </p>
 
               <hr className="border-line my-8" />
@@ -140,15 +140,15 @@ export default async function ProzessdokumentationPage({
               <hr className="border-line my-8" />
 
               <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
-                Die 80-Prozent-Grenze, ehrlich betrachtet
+                Was vor der Freigabe geprüft werden muss
               </h2>
               <p className="mb-5">
-                80 Prozent ist kein Marketing-Wert, sondern ein Erfahrungswert aus mehreren Durchläufen, und er schwankt mit der Qualität des Gesprächs. Was verlässlich funktioniert und was nicht, lässt sich sauber trennen:
+                Ein gut lesbarer Entwurf kann fachliche Fehler enthalten. Deshalb prüfen wir den Hauptablauf ebenso wie seltene Ausnahmen und Freigaberegeln. Die folgenden drei Bereiche helfen bei der Durchsicht:
               </p>
 
               <div className="grid gap-4 my-8 sm:grid-cols-3">
                 <div className="bg-green-500/10 border border-green-500/25 rounded-xl p-4">
-                  <p className="font-heading font-semibold text-ink mb-2 text-sm">Sitzt im ersten Entwurf</p>
+                  <p className="font-heading font-semibold text-ink mb-2 text-sm">Mit dem Gespräch abgleichen</p>
                   <ul className="text-sm text-muted space-y-1">
                     <li>Hauptablauf in richtiger Reihenfolge</li>
                     <li>Der Standardfall, den man zuerst erzählt</li>
@@ -176,10 +176,10 @@ export default async function ProzessdokumentationPage({
               <hr className="border-line my-8" />
 
               <h2 className="font-heading font-bold text-ink mt-10 mb-4" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)' }}>
-                Die zweite Runde: das fehlende Fünftel
+                Die zweite Runde: offene Punkte klären
               </h2>
               <p className="mb-5">
-                Das zweite Gespräch dauert meistens 15 bis 20 Minuten, nicht noch einmal 45. Es geht ausschließlich um die Liste offener Punkte aus dem ersten Entwurf: „Bei Schritt 4 ist unklar, was passiert, wenn die Messung außerhalb der Toleranz liegt." Der Ingenieur beantwortet gezielt diese Fragen, das Dokument wird aktualisiert, fertig. Wer diesen Schritt überspringt, weil der erste Entwurf schon gut aussieht, handelt sich genau die Fehler ein, die eine Verfahrensanweisung eigentlich verhindern soll.
+                Für das zweite Gespräch werden die offenen Punkte aus dem ersten Entwurf gesammelt: „Bei Schritt 4 ist unklar, was passiert, wenn die Messung außerhalb der Toleranz liegt." Der Ingenieur beantwortet gezielt diese Fragen, der Entwurf wird aktualisiert und anschließend fachlich geprüft. Wer diesen Schritt überspringt, weil der erste Entwurf schon gut aussieht, handelt sich genau die Fehler ein, die eine Verfahrensanweisung eigentlich verhindern soll.
               </p>
 
               <hr className="border-line my-8" />
@@ -188,10 +188,10 @@ export default async function ProzessdokumentationPage({
                 Wo das auf Ihr Zeit- und Kostenkonto einzahlt
               </h2>
               <p className="mb-5">
-                Rechnen Sie die reine Ingenieurzeit zusammen: 45 Minuten erstes Gespräch, 20 Minuten zweites Gespräch, eine halbe Stunde Freigabe am Ende. Keine zwei Stunden teure Fachzeit. Der Rest, Transkription und Strukturierung, läuft im Hintergrund, während der Ingenieur längst wieder an seinem eigentlichen Projekt arbeitet.
+                Eine Beispielrechnung für die Planung: 45 Minuten erstes Gespräch, 20 Minuten Nachfragen und 30 Minuten Durchsicht ergeben 95 Minuten Fachzeit. Hinzu kommen Aufnahmevorbereitung, Transkription, Korrekturen und gegebenenfalls weitere Prüfungen. Das ist eine Planungsannahme. Der tatsächliche Aufwand muss am konkreten Prozess gemessen werden.
               </p>
               <p className="mb-5">
-                Beim klassischen Weg sind es nicht nur mehr Stunden am Dokument selbst, es sind vor allem die zwei bis drei Wochen Kalenderzeit dazwischen, in denen der Prozess weder dokumentiert noch für neue Kollegen nutzbar ist. Auf dem Steuerungsdreieck aus Qualität, Kosten und Timing zahlt das doppelt ein: auf Timing, weil das Dokument Tage statt Wochen braucht, und auf Kosten, weil teure Ingenieurstunden nicht fürs Formatieren draufgehen.
+                Für einen Vergleich erfassen Sie die gesamte Bearbeitungszeit bis zur fachlichen Freigabe, die Zahl der Korrekturen und die Kalenderzeit. Vergleichen Sie diese Werte mit Ihrer bisherigen Dokumentation eines ähnlich komplexen Prozesses. Erst damit lässt sich beurteilen, ob der Ablauf Zeit spart und die nötige Qualität erreicht.
               </p>
 
               <hr className="border-line my-8" />
@@ -200,7 +200,7 @@ export default async function ProzessdokumentationPage({
                 Wo das nicht funktioniert
               </h2>
               <p className="mb-5">
-                Für rein handwerkliche Abläufe, bei denen das Entscheidende ein Handgriff oder ein Gefühl ist, zum Beispiel das richtige Anzugsdrehmoment „nach Erfahrung" statt nach Tabelle, ist ein gesprochenes Interview das falsche Werkzeug. Da hilft ein Video mit Kommentar mehr als jede noch so gute Transkription. Und wer nach dem ersten Entwurf direkt freigibt, statt die zweite Interview-Runde zu machen, spart genau die falschen 20 Prozent Zeit. Das ist keine Ausnahme, das ist der häufigste Fehler, den ich bei diesem Ansatz sehe.
+                Für rein handwerkliche Abläufe, bei denen das Entscheidende ein Handgriff oder ein Gefühl ist, zum Beispiel das richtige Anzugsdrehmoment „nach Erfahrung" statt nach Tabelle, ist ein gesprochenes Interview das falsche Werkzeug. Da hilft ein Video mit Kommentar mehr als jede noch so gute Transkription. Offene Punkte müssen vor der Freigabe geklärt werden. Eine plausible Formulierung ersetzt keinen Nachweis für einen Grenzwert oder einen sicherheitsrelevanten Prüfschritt.
               </p>
 
               <hr className="border-line my-8" />
@@ -221,7 +221,7 @@ export default async function ProzessdokumentationPage({
                 </div>
                 <div className="bg-surface border border-line rounded-xl p-5">
                   <p className="font-heading font-semibold text-ink mb-2">3. Die zweite Runde nicht überspringen</p>
-                  <p className="text-muted text-sm leading-relaxed">Blocken Sie die 20 Minuten für das Nachschärfen von vornherein ein, nicht als optionalen Zusatz. Genau dieser Schritt trennt eine brauchbare Verfahrensanweisung von einer, die nur plausibel klingt.</p>
+                  <p className="text-muted text-sm leading-relaxed">Planen Sie Zeit für die offenen Fragen und die anschließende fachliche Prüfung von Anfang an ein. Genau dieser Schritt trennt eine brauchbare Verfahrensanweisung von einer, die nur plausibel klingt.</p>
                 </div>
               </div>
 
@@ -234,7 +234,7 @@ export default async function ProzessdokumentationPage({
                 Wissen, das nur in einem Kopf existiert, ist immer ein Risiko, nicht erst, wenn jemand kündigt oder in Rente geht. Der Grund, warum es meistens trotzdem nicht aufgeschrieben wird, ist selten Unwille. Es ist schlicht keine Zeit dafür da.
               </p>
               <p className="mb-5">
-                Wenn das Aufschreiben einen Arbeitstag statt drei Wochen kostet, verschiebt sich die Rechnung. Dann ist Dokumentation kein Projekt mehr, das man auf nächstes Quartal schiebt, sondern ein Gespräch, das man diese Woche noch führen kann.
+                Der erste Schritt ist klein: Wählen Sie einen überschaubaren Prozess und vereinbaren Sie ein Gespräch mit der verantwortlichen Person. Am daraus entstehenden Entwurf können Sie prüfen, ob dieser Weg zu Ihrer Dokumentationsarbeit passt.
               </p>
               <p className="mb-5">
                 Wenn Sie wissen möchten, welcher Prozess bei Ihnen als erstes dokumentiert werden sollte und wie ein solches Gespräch bei Ihnen konkret aussehen könnte, sprechen Sie mich an. Das erste Gespräch kostet nichts.

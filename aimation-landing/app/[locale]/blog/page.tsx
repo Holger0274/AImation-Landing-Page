@@ -36,8 +36,8 @@ const breadcrumbs = [
 const ARTICLES = [
   {
     slug: 'prozessdokumentation-ki-transkript',
-    title: 'Prozessdokumentation ohne Wochen Vorlauf: aus einem Gespräch wird in Stunden eine Verfahrensanweisung',
-    excerpt: 'Ein 45-Minuten-Gespräch, KI-gestützt strukturiert, ergibt rund 80 Prozent einer fertigen Verfahrensanweisung. Die restlichen 20 Prozent kommen aus einem zweiten, kürzeren Gespräch. Ein Arbeitstag statt drei Wochen.',
+    title: 'Prozessdokumentation mit KI: Vom Gespräch zum geprüften Entwurf',
+    excerpt: 'Ein Beispielablauf von der Gesprächsaufnahme bis zum geprüften Entwurf: Prozessschritte strukturieren, offene Fragen klären und die Freigabe vorbereiten.',
     tag: 'KI-Umsetzung',
     date: '2026-08-10',
     readingTime: '8 Min.',

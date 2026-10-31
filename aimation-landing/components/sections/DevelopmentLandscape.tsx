@@ -55,9 +55,9 @@ export default function DevelopmentLandscape() {
             <span className="technical-label">{en ? 'Application idea / ' : 'Anwendungsidee / '}{phase[lang]}</span>
             <h3>{item[lang][0]}</h3><p>{item[lang][1]}</p>
             <div className="human-check"><UserCheck size={22} aria-hidden="true"/><div><strong>{en ? 'Your team decides.' : 'Ihr Team entscheidet.'}</strong><p>{item[lang][2]}</p></div></div>
-            <CaseWalkthrough key={item.id} caseId={item.id} en={en}/>
+            <CaseWalkthrough key={`walkthrough-${item.id}`} caseId={item.id} en={en}/>
             <button className="engineering-button landscape-contact" onClick={openLeadForm}>{en ? 'Discuss this for your team' : 'Auf Ihren Ablauf übertragen'}<ArrowUpRight size={17} aria-hidden="true" /></button>
-            <details className="application-resources" key={item.id}>
+            <details className="application-resources" key={`resources-${item.id}`}>
               <summary>{en ? 'Related training and tools' : 'Passende Schulung und Werkzeuge'}<span aria-hidden="true">+</span></summary>
               <div className="application-next">
               {path.project && <div><span className="technical-label">{en ? 'Related tool from our workshop' : 'Verwandtes Werkzeug aus unserer Werkstatt'}</span><a href={`#werkzeug-${path.project}`} className="engineering-text-link">{path.project === '5why' ? (en ? '5Why: explore root-cause analysis' : '5Why: Ursachenanalyse ansehen') : (en ? 'FEM Visualizer: explore simulation data' : 'FEM-Visualizer: Berechnungsdaten ansehen')}<ArrowUpRight size={17} aria-hidden="true"/></a><p>{en ? 'A separate, built application. Not a demonstration of this catalogue case.' : 'Eine eigene, fertig gebaute Anwendung. Keine Vorführung dieses Katalogfalls.'}</p></div>}

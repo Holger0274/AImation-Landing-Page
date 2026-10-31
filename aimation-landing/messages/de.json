@@ -29,8 +29,12 @@
     "cta": "Kostenloses Erstgespräch ({duration}.)",
     "ctaSecondary": "Zeitpotenzial selbst einschätzen",
     "processLink": "So läuft die Zusammenarbeit",
+    "topicsLabel": "Direkt zu Ihrer Aufgabe",
+    "topicKnowledge": "Wissen sichern",
+    "topicCad": "CAD & FEM",
+    "topicProjects": "Projekte steuern",
     "promise": "Im Pilot prüfen wir an einem Prozess, wie viel Bearbeitungszeit Sie sparen. Die Qualität prüfen wir mit.",
-    "ctaMicrocopy": "Unverbindlich. Kein Verkaufsgespräch.",
+    "ctaMicrocopy": "Wir besprechen Ihren Ablauf und einen sinnvollen nächsten Schritt. Unverbindlich.",
     "trustLine": "20+ Jahre Produktentwicklung und Führung in der Industrie · 20.000+ LinkedIn-Follower · DSGVO-first",
     "privacy": "DSGVO-konform, Verarbeitung in der EU."
   },
@@ -312,7 +316,7 @@
       "patent-research": {
         "title": "Patentrecherche und Prior Art",
         "description": "KI-gestützte Vorrecherche: technische Merkmale mit Patentfundstellen verbinden und zur fachlichen Prüfung aufbereiten. Interner Recherche-Prototyp, keine rechtliche Nutzungsfreigabe.",
-        "metrics": "Im Pilot prüfen wir Trefferqualität, Quellenbelege und den gesamten Rechercheaufwand. Noch keine gemessenen Kundenergebnisse.",
+        "metrics": "Im Pilot prüfen wir Trefferqualität, Quellenbelege und den gesamten Rechercheaufwand.",
         "alt": "Technisches Merkmal mit Patentfundstellen vergleichen und fachlich bewerten."
       },
       "project-review-dashboard": {
@@ -324,19 +328,19 @@
       "email-classification": {
         "title": "Technische Anfragen automatisch vorsortieren",
         "description": "Technische Anfragen und Änderungsanträge vorsortieren, freigegebene Quellen zuordnen und einen Antwortentwurf zur fachlichen Prüfung vorbereiten. Interner Workflow-Prototyp.",
-        "metrics": "Im Pilot prüfen wir Zuordnung, Quellenqualität und den Aufwand bis zur Freigabe. Noch keine gemessenen Kundenergebnisse.",
+        "metrics": "Im Pilot prüfen wir Zuordnung, Quellenqualität und den Aufwand bis zur Freigabe.",
         "alt": "Aus einer Anfrage mit Anhang wird ein Antwortentwurf zur menschlichen Freigabe."
       },
       "tech-scouting": {
         "title": "Technologie-Scouting",
         "description": "Definierte Fachquellen beobachten, Fundstücke mit KI vorstrukturieren und ihren möglichen Bezug zum eigenen Produkt fachlich bewerten. Interner Scouting-Prototyp.",
-        "metrics": "Im Pilot prüfen wir Quellenqualität, Produktbezug und Aufwand bis zur fachlichen Einordnung. Noch keine gemessenen Kundenergebnisse.",
+        "metrics": "Im Pilot prüfen wir Quellenqualität, Produktbezug und Aufwand bis zur fachlichen Einordnung.",
         "alt": "Ein Recherche-Radar führt von Fachpublikationen zu relevanten Entwicklungen für das Produkt."
       },
       "knowledge-graph-management": {
         "title": "Engineering-Wissen vernetzen",
         "description": "Frühere Entscheidungen mit Prüfberichten, Protokollen und technischen Dokumenten nachvollziehen. Interner Prototyp mit eigenen Unterlagen und Quellenbezug.",
-        "metrics": "Im Pilot prüfen wir Antwortqualität, Quellenbelege und Suchaufwand. Noch keine gemessenen Kundenergebnisse.",
+        "metrics": "Im Pilot prüfen wir Antwortqualität, Quellenbelege und Suchaufwand.",
         "alt": "Zeichnung, Prüfbericht und Protokoll liefern gemeinsam eine Antwort mit Quelle."
       },
       "customer-meeting-prep": {
@@ -354,7 +358,7 @@
       "meeting-transcript-analysis": {
         "title": "Besprechungen ohne Protokollaufwand",
         "description": "Freigegebene Meeting-Transkripte mit KI in Entscheidungen, Aufgaben und offene Punkte strukturieren. Mit Zeitbezug und menschlicher Freigabe. Bei AImation im Aufbau.",
-        "metrics": "Im Pilot prüfen wir Vollständigkeit, Gesprächsbelege und Aufwand bis zum bestätigten Protokoll. Noch keine gemessenen Kundenergebnisse.",
+        "metrics": "Im Pilot prüfen wir Vollständigkeit, Gesprächsbelege und Aufwand bis zum bestätigten Protokoll.",
         "alt": "Aus einem Gespräch werden Entscheidungen, Aufgaben und offene Fragen."
       },
       "multi-agent-debate": {
@@ -665,6 +669,7 @@
     "microcopy2": "2 Minuten, keine Vorkenntnisse nötig"
   },
   "leadForm": {
+    "optionalDetails": "Firma oder Rückrufnummer ergänzen (optional)",
     "ariaLabel": "Kostenloses Erstgespräch vereinbaren",
     "closeAriaLabel": "Schließen",
     "headline": "Ihr Weg zum",
@@ -685,7 +690,7 @@
     "telefonLabel": "Telefon (optional)",
     "telefonPlaceholder": "+49 123 456789",
     "herausforderungLabel": "Woran denken Sie gerade? (optional)",
-    "herausforderungPlaceholder": "Beschreiben Sie kurz, wobei KI Ihnen helfen könnte (z.B. 'Zu viele manuelle Prozesse in der Auftragsabwicklung' oder 'Wir wollen KI einsetzen, wissen aber nicht wo anfangen')...",
+    "herausforderungPlaceholder": "Z. B. Prüfberichte finden oder Projektberichte aus Excel erstellen.",
     "herausforderungHint": "Ein Satz reicht und hilft Holger Peschke bei der Vorbereitung auf Ihr Gespräch.",
     "datenschutzLabel": "Ich habe die",
     "datenschutzLink": "Datenschutzerklärung",

@@ -8,9 +8,9 @@ interface TranscriptToProcessProps {
 const STEPS: { lines: string[]; icon: LucideIcon; badge?: string; focus?: boolean }[] = [
   { lines: ['Gespräch', 'aufnehmen'], icon: Mic },
   { lines: ['KI strukturiert', 'das Transkript'], icon: Wand2 },
-  { lines: ['Entwurf'], icon: FileText, badge: '≈80%' },
+  { lines: ['Entwurf'], icon: FileText },
   { lines: ['Interview', 'schließt Lücken'], icon: UserCheck, focus: true },
-  { lines: ['Fertiger', 'Prozess'], icon: ClipboardCheck },
+  { lines: ['Fachliche', 'Freigabe'], icon: ClipboardCheck },
 ];
 
 const BOX_W = 116;
@@ -39,9 +39,9 @@ export default function TranscriptToProcess({ variant = 'light', className }: Tr
       viewBox={`0 0 ${svgWidth} ${svgHeight}`}
       className={className}
       role="img"
-      aria-label="Vom Gespräch zum Prozess: Gespräch aufnehmen, KI strukturiert das Transkript, Entwurf mit rund 80 Prozent Abdeckung, Interview schließt die Lücken, fertiger Prozess"
+      aria-label="Vom Gespräch zum Prozess: Gespräch aufnehmen, KI strukturiert das Transkript, Entwurf, Interview klärt offene Fragen, fachliche Freigabe"
     >
-      <title>Vom Gespräch zum fertigen Prozess</title>
+      <title>Vom Gespräch zur fachlichen Freigabe</title>
       <defs>
         <marker id={markerId} markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
           <path d="M0,0 L8,4 L0,8 Z" fill={lineColor} />

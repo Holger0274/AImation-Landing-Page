@@ -11,8 +11,8 @@ export default function DevelopmentEvidence({ en }: { en: boolean }) {
     </h2>
     <p className="font-inter text-sm text-muted leading-relaxed mb-6">
       {en
-        ? 'Holger Peschke documents AImation’s development work in these recordings. AI2CAD and AI2CAE show a mounting plate, a shaft and FEM analysis under a 1,500 N load. The application videos show demonstration data. These are our own development examples; they do not establish measured customer results or approval for production use.'
-        : 'Holger Peschke dokumentiert in diesen Aufnahmen die Entwicklungsarbeit von AImation. AI2CAD und AI2CAE zeigen eine Montageplatte, eine Welle und eine FEM-Berechnung unter 1.500 N. Die Anwendungsvideos arbeiten mit Demonstrationsdaten. Die eigenen Entwicklungsbeispiele belegen keine gemessenen Kundenergebnisse oder Freigabe für den Produktiveinsatz.'}
+        ? 'Holger Peschke documents AImation’s development work in these recordings. AI2CAD and AI2CAE show a mounting plate, a shaft and FEM analysis under a 1,500 N load. The application videos show demonstration data. The recordings document our own development work. The notes below describe the engineering checks needed before production use.'
+        : 'Holger Peschke dokumentiert in diesen Aufnahmen die Entwicklungsarbeit von AImation. AI2CAD und AI2CAE zeigen eine Montageplatte, eine Welle und eine FEM-Berechnung unter 1.500 N. Die Anwendungsvideos arbeiten mit Demonstrationsdaten. Die Aufnahmen dokumentieren unsere eigene Entwicklungsarbeit. Die Hinweise bei jedem Beispiel benennen die fachlichen Prüfungen vor einem Produktiveinsatz.'}
     </p>
     <div className="space-y-6">
       {AI2CAD_CHAPTERS.map(chapter => <article key={chapter.id} className="border-t border-line pt-5">
