@@ -3,6 +3,7 @@ import { ArrowUpRight, Play } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { AI2CAD_PATH, AI2CAD_CHAPTERS } from '@/lib/data/ai2cad';
 import styles from './ai2cad.module.css';
+import AutodeskMembership from '@/components/AutodeskMembership';
 
 export default function AI2CADTeaser({ locale }: { locale: string }) {
   const en = locale === 'en';
@@ -16,6 +17,6 @@ export default function AI2CADTeaser({ locale }: { locale: string }) {
           <span className={styles.teaserInsetLabel}><Play size={12} fill="currentColor" aria-hidden="true" />AI2CAE · FEM</span>
         </span>
       </div>
-    </Link></div>
+    </Link><AutodeskMembership en={en} /></div>
   </section>;
 }

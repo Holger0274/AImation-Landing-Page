@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { ArrowDown, ArrowUpRight, MoveRight } from 'lucide-react';
 import { setRequestLocale } from 'next-intl/server';
 import Header from '@/components/layout/Header';
+import AutodeskMembership from '@/components/AutodeskMembership';
 import Footer from '@/components/layout/Footer';
 import FemComparison from '@/components/ai2cad/FemComparison';
 import ChapterPlayer from '@/components/ai2cad/ChapterPlayer';
@@ -61,7 +62,7 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
         </div>
       </section>
 
-      <div className={styles.wrap}><FemComparison en={en} /></div>
+      <div className={styles.wrap}><AutodeskMembership en={en} /><FemComparison en={en} /></div>
 
       <section className={styles.approach} aria-labelledby="approach-heading">
         <div className={styles.wrap}>

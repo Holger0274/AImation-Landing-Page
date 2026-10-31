@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
+import AutodeskMembership from '@/components/AutodeskMembership';
 import Footer from '@/components/layout/Footer';
 import { EntityPageSchema } from '@/components/StructuredData';
 import { localizedPath } from '@/lib/seo/locales';
@@ -235,6 +236,7 @@ export default async function HolgerPeschkePage({
             <p className="font-inter text-sm text-muted leading-relaxed mb-4">{isEn ? 'AI2CAD and AI2CAE document CAD modelling, drawing preparation and FEM analysis using a language model. The recordings show AImation’s own development work, with open engineering checks. They are not customer references.' : 'AI2CAD und AI2CAE dokumentieren CAD-Modellierung, Zeichnungsableitung und FEM-Berechnung mit einem Sprachmodell. Die Aufnahmen zeigen die eigene Entwicklungsarbeit von AImation mit offenen fachlichen Prüfaufgaben. Es handelt sich nicht um Kundenreferenzen.'}</p>
             <Link href={isEn ? '/en/facts/aimation#entwicklungsbeispiele' : '/facts/aimation#entwicklungsbeispiele'} className="engineering-text-link">{isEn ? 'Recordings, scope and limits of the demonstrations' : 'Aufnahmen, Umfang und Grenzen der Demonstrationen'} →</Link>
           </section>
+          <AutodeskMembership en={isEn} />
           <hr className="border-line my-12" />
 
           {/* FAQ */}

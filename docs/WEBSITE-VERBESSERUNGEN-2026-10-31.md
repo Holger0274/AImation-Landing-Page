@@ -8,13 +8,15 @@
 - Der alte Blogartikel über Prozessdokumentation enthielt eine Kundenprojektbehauptung und eine unbelegte 80-Prozent-Angabe. Nach der ausdrücklichen Auskunft des Inhabers, noch keine Kunden zu haben, ist er als Beispielablauf formuliert. Metadaten, Blogübersicht, FAQ und Diagramm angepasst. Zeitangaben dienen nun ausdrücklich als Planungsbeispiel.
 - Doppelte React-Schlüssel für Walkthrough und Werkzeughinweise in der Development Landscape behoben. Beide Elemente behalten ihre getrennte Identität beim Wechsel des Anwendungsfalls.
 
-## Autodesk: konkrete Platzierung vorbereitet, Teilnahmebezeichnung offen
+## Autodesk Developer Network
 
-Der Inhaber berichtet die Aufnahme in ein Autodesk-Startup-Programm. Die genaue Programmbezeichnung und der aufgenommene Teilnehmer (AImation oder Holger Peschke) sind angefragt. Bis zur Klärung keine Partnerschaft behaupten und kein Partnerlogo veröffentlichen.
+Holger Peschke hat am 31.10.2026 die Bezeichnung „Autodesk Developer Network (ADN)“, Kategorie „Startup“, Mitglied seit 23.10.2026 angegeben. Die vorherige Vermutung „Fusion for startups“ ist damit ersetzt. Die Mitgliedschaft wird entsprechend seiner persönlichen Angabe Holger Peschke zugeordnet; keine separate Unternehmensmitgliedschaft wird behauptet.
 
-Vorgeschlagene Darstellung nach Klärung: ein kurzer Teilnahmehinweis beim AI2CAD-/AI2CAE-Bereich und ein Eintrag im bestehenden Netzwerkbereich mit Label „Startup-Programm“. Unternehmens- oder Personen-Faktenseite entsprechend ergänzen. Formulierung anhand des tatsächlichen Namens, beispielsweise: „AImation ist Teilnehmer im Programm Autodesk Fusion for startups.“ Das ist ein Formulierungsvorschlag, keine bestätigte Programmzuordnung.
+Texthinweis auf der Startseite bei CAD/FEM und im Netzwerkbereich, zusätzlich auf der CAD-Übersichtsseite und der Personen-Faktenseite, jeweils DE/EN. Wortlaut: „Mitglied im Autodesk Developer Network“. Kategorie und Datum kommen aus einer gemeinsamen Konstante. Die ursprüngliche Stammdaten-Verifikation vom Juni wird nicht auf ein neues Datum gesetzt.
 
-[Autodesk Fusion for startups](https://www.autodesk.com/products/fusion-360/startups) beschreibt ein Bewerbungs- und Softwarezugangsprogramm. [Autodesks Co-Branding-Regeln](https://brand.autodesk.com/co-branding/) unterscheiden ausdrücklich berechtigte Partner und Partnerlogos. Die Teilnahme allein wird deshalb nicht als Zertifizierung, Kundenreferenz oder Empfehlung durch Autodesk dargestellt.
+Kein Autodesk-Logo, Partner-Badge, Zertifizierungs- oder Empfehlungsclaim. Die Logo-Anfrage ist laut Inhaber noch als E-Mail-Entwurf vorhanden; diese Änderung liest, bearbeitet oder versendet keine E-Mail.
+
+Die [offizielle ADN-Seite](https://aps.autodesk.com/adn) dient als Link zum Programm, nicht als unabhängiger Beleg für die einzelne Mitgliedschaft. [Autodesks Mitgliedschaftsübersicht](https://aps.autodesk.com/developer/overview/autodesk-developer-network-membership) beschreibt auch die Kategorie für Startup-Entwickler. Die konkrete Mitgliedschaft und das Eintrittsdatum beruhen auf der Auskunft des Inhabers.
 
 ## Prüfung
 
@@ -29,3 +31,9 @@ Vorgeschlagene Darstellung nach Klärung: ein kurzer Teilnahmehinweis beim AI2CA
 2. Die Startseite enthält derzeit 17 Inhaltskomponenten. Mit fünf passenden Testpersonen prüfen, ob sie in 30 Sekunden Angebot, relevantes Beispiel und nächsten Schritt finden. Danach wiederholte Inhalte gezielt zusammenführen, vorhandene Detailinformationen auf den Fachseiten erhalten.
 3. Einen datensparsamen Messplan für Demo-Aufruf, Kontaktformular-Öffnung, erfolgreichen Formularversand und tatsächlich gebuchten Termin aufstellen. Versand und Buchung getrennt zählen; derzeit keine neue Tracking-Software eingerichtet. Zusätzlich Anfragen nach bekannter Herkunft Google, LinkedIn oder Empfehlung zuordnen.
 4. Eigene Entwicklungsbelege weiter ausbauen: pro Video eine konkrete Ausgangsaufgabe, sichtbares Ergebnis und fachliche Prüfschritte. Das funktioniert bereits vor dem ersten Kundenprojekt.
+
+## Veröffentlichung
+
+Commit `0fa020f` auf `main` veröffentlicht. Beide Vercel-Deployments erfolgreich. Der SEO-Check auf `https://www.aimation.de` besteht mit 61 URLs. Neue Einstiege und verkürztes Kontaktformular auch live im Browser bestätigt. Dieser Abschlussstatus wurde nach dem Deployment lokal ergänzt. Der ADN-Hinweis wurde anschließend anhand der nachgereichten Angaben ergänzt; dessen Veröffentlichung wird separat geprüft.
+
+ADN-Prüfung: Startseite, CAD-Übersichtsseite und Personen-Faktenseite jeweils DE/EN bei 390 × 844 geprüft. Alle sechs Seiten ohne horizontalen Überlauf; Datum `2026-10-23`, Kategorie Startup, offizieller Programm-Link und Verzicht auf Logo kontrolliert. Produktionsbuild, Inhaltsprüfung und lokaler SEO-Check mit 61 URLs erfolgreich.

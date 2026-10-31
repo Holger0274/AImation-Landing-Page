@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import AutodeskMembership from '@/components/AutodeskMembership';
 import { useEffect, useRef, useState } from 'react';
 
 const PARTNERS = [
@@ -50,6 +51,7 @@ const PARTNERS = [
 
 export default function Partnership() {
   const t = useTranslations('partnership');
+  const en = useLocale() === 'en';
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -132,6 +134,7 @@ export default function Partnership() {
             ref={carouselRef}
             className="flex items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-2 scrollbar-hide scroll-smooth"
           >
+            <AutodeskMembership en={en} card />
             {PARTNERS.map((partner, index) => (
               <motion.div
                 key={partner.key}
