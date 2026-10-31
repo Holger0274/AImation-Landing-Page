@@ -1,0 +1,21 @@
+.section { padding-block:32px 40px; scroll-margin-top:100px; border-block:1px solid var(--line); background:linear-gradient(110deg,rgba(250,249,247,.025),transparent 70%); }
+.heading { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px 24px; margin-bottom:20px; }
+.heading h2 { font:500 clamp(.95rem,1.3vw,1.1rem)/1.4 var(--font-heading),sans-serif; color:var(--muted); }
+.heading > a { display:inline-flex; gap:8px; align-items:center; min-height:44px; font-size:.8rem; text-decoration:underline; text-underline-offset:4px; }
+.network { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; }
+.member { display:flex; flex-direction:column; gap:12px; padding:8px 24px 12px; border-left:1px solid var(--line); min-width:0; border-radius:3px; transition:background .2s; }
+.member:first-child { padding-left:0; border-left:0; }
+.relationship { font-size:.66rem; font-weight:500; color:var(--muted); letter-spacing:.045em; }
+.brand { display:flex; gap:12px; align-items:center; min-height:50px; }
+.brand h3 { font:500 clamp(.85rem,1.15vw,1rem)/1.35 var(--font-heading),sans-serif; text-wrap:balance; }
+.brand > svg { flex-shrink:0; margin-left:auto; color:var(--muted); }
+.logo,.adn { display:flex; align-items:center; justify-content:center; width:42px; height:42px; flex-shrink:0; }
+.logo img { object-fit:contain; width:38px; height:38px; }
+.adn { font:500 15px/1 var(--font-heading),sans-serif; letter-spacing:-.04em; border:1px solid var(--line-strong); border-radius:5px; }
+.member p { color:var(--muted); font-size:.67rem; line-height:1.6; margin:0; }
+.member:hover { background:rgba(250,249,247,.045); }
+.member:hover h3,.heading>a:hover { text-decoration:underline; text-underline-offset:4px; }
+.section a:focus-visible { outline:2px solid #f90093; outline-offset:4px; }
+@media(max-width:1000px) { .network { grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 0; } .member:nth-child(3) { border-left:0; padding-left:0; } }
+@media(max-width:550px) { .section { padding-block:24px 30px; } .heading { gap:0; margin-bottom:16px; } .heading h2 { max-width:22ch; font-size:1rem; } .member { padding:0 0 0 16px; gap:10px; } .member:nth-child(odd) { padding-right:16px; } .brand { flex-wrap:wrap; align-content:flex-start; gap:10px; min-height:104px; } .brand h3 { flex-basis:100%; font-size:.88rem; } .brand>svg { display:none; } .relationship { font-size:.62rem; } .member p { font-size:.64rem; } }
+@media(prefers-reduced-motion:reduce) { .member { transition:none; } }

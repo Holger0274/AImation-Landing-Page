@@ -13,6 +13,8 @@ async function get(path) {
 let anchors = 0;
 for (const prefix of ['', '/en']) {
   const home = await get(prefix || '/');
+  assert(home.includes('id="partnerschaften"') && home.indexOf('id="partnerschaften"') < home.indexOf('id="founder-heading"'), 'Memberships visible immediately after hero');
+  for (const name of ['Autodesk Developer Network', 'U-KNOW.AI', 'KI Bundesverband', 'Beraterkompetenz Oberfranken']) assert(home.includes(name), `Homepage network: ${name}`);
   assert(home.indexOf('id="founder-heading"') < home.indexOf('id="entwicklung-erleben"'), 'Founder before demos');
   assert(home.indexOf('holger-linkedin-proof-2026-10-03') < home.indexOf('id="entwicklung-erleben"'), 'LinkedIn proof before demos');
   assert(!/<video\b/.test(home), 'No initial homepage video download');

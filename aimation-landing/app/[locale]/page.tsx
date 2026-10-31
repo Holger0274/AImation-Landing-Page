@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import FounderIntro from '@/components/sections/FounderIntro';
+import HomeTrust from '@/components/sections/HomeTrust';
 import ExperienceRoute from '@/components/sections/ExperienceRoute';
 import FAQ from '@/components/sections/FAQ';
 import { getHomeFaqs } from '@/lib/data/faqs';
@@ -58,6 +59,7 @@ export default async function Home({
       <Header />
       <main id="main-content" className="home-page">
         <Hero />
+        <HomeTrust en={locale === 'en'} />
         <FounderIntro />
         <ExperienceRoute en={locale === 'en'} />
         <HomeDiscovery en={locale === 'en'} />

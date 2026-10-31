@@ -14,7 +14,7 @@ export const MOVED_HOME_ANCHORS: Record<string, string> = {
   'development-landscape-video': '/ki-anwendungsfaelle', 'herausforderungen': '/ki-anwendungsfaelle',
   'vorher-nachher': '/ki-anwendungsfaelle', 'zeitpotenzial': '/wirtschaftlichkeit',
   'qualitaet-kosten-timing': '/wirtschaftlichkeit', 'selbst-gebaut': '/entwicklungswerkstatt',
-  'ueber-mich': '/ueber-holger-peschke', 'partnerschaften': '/ueber-holger-peschke',
+  'ueber-mich': '/ueber-holger-peschke',
   'leistungen': '/zusammenarbeit', 'ki-landkarte': '/zusammenarbeit',
 };
 export function movedHomeDestination(hash: string): string | undefined {
