@@ -11,10 +11,9 @@ import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 export default function Header() {
   const t = useTranslations('nav');
   const locale = useLocale();
-  // Anker auf der Startseite muessen das aktuelle Locale-Praefix behalten,
-  // sonst springt man von /en zurueck auf die deutsche Startseite.
-  const homeHref = locale === 'de' ? '/' : `/${locale}`;
-  const useCasesHref = `${homeHref}#use-cases`;
+  // Direct destinations retain the current language.
+  const localePrefix = locale === 'en' ? '/en' : '';
+  const useCasesHref = `${localePrefix}/ki-anwendungsfaelle`;
 
   const leistungenItems = [
     {
@@ -263,7 +262,7 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            <a href={`${homeHref}#prozess`} className="text-sm font-heading font-medium text-ink hover:text-magenta-light transition-colors">
+            <a href={`${localePrefix}/zusammenarbeit`} className="text-sm font-heading font-medium text-ink hover:text-magenta-light transition-colors">
               {t('ablauf')}
             </a>
 
@@ -285,7 +284,7 @@ export default function Header() {
 
             {/* Über uns */}
             <a
-              href={`${homeHref}#ueber-mich`}
+              href={`${localePrefix}/ueber-holger-peschke`}
               className="text-sm font-heading font-medium text-white/70 hover:text-ink transition-colors"
             >
               {t('ueberUns')}
@@ -382,7 +381,7 @@ export default function Header() {
                 </AnimatePresence>
               </div>
 
-              <a href={`${homeHref}#prozess`} onClick={() => setIsMobileMenuOpen(false)} className="text-[15px] font-heading font-semibold text-ink py-3 px-2 hover:text-magenta-light transition-colors">
+              <a href={`${localePrefix}/zusammenarbeit`} onClick={() => setIsMobileMenuOpen(false)} className="text-[15px] font-heading font-semibold text-ink py-3 px-2 hover:text-magenta-light transition-colors">
                 {t('ablauf')}
               </a>
 
@@ -403,7 +402,7 @@ export default function Header() {
               </Link>
 
               <a
-                href={`${homeHref}#ueber-mich`}
+                href={`${localePrefix}/ueber-holger-peschke`}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-[15px] font-heading font-semibold text-ink py-3 px-2 hover:text-magenta-light transition-colors"
               >

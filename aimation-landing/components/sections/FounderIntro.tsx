@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowDown, ArrowUpRight, Linkedin, ZoomIn } from 'lucide-react';
+import { ArrowUpRight, Linkedin, ZoomIn } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import styles from './FounderIntro.module.css';
@@ -33,8 +33,8 @@ export default function FounderIntro() {
           <h2 id="founder-heading">{t('headlineStart')}<span className="highlight">Holger</span> Peschke.</h2>
           <p>{t('experience')}</p>
           <p>{t('conversation')}</p>
-          <a href="#ueber-mich" className={`engineering-text-link ${styles.link}`}>
-            {t('more')}<ArrowDown size={17} aria-hidden="true" />
+          <a href={`${en ? '/en' : ''}/ueber-holger-peschke#ueber-mich`} className={`engineering-text-link ${styles.link}`}>
+            {t('more')}<ArrowUpRight size={17} aria-hidden="true" />
           </a>
           <aside className={styles.linkedin} aria-label={en ? 'Holger Peschke on LinkedIn' : 'Holger Peschke auf LinkedIn'}>
             <div className={styles.proofCopy}>

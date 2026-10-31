@@ -101,7 +101,7 @@ export default async function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/#ueber-mich"
+                  href="/ueber-holger-peschke"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   {t('linkUeberUns')}
@@ -109,7 +109,7 @@ export default async function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#prozess"
+                  href="/zusammenarbeit"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   {t('linkProzess')}

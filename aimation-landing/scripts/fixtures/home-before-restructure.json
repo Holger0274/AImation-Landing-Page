@@ -1,0 +1,42 @@
+{
+  "": {
+    "hero-heading": "9dc7f8e310f5c3e03cb41b4c07388ab193a224a4e07a24c86988126662cdec2c",
+    "founder-heading": "25aa643724cd1f9ef2305f4a1777036716486ebd388e86336d88550eb1fe852e",
+    "entwicklung-erleben": "ce8ea1bf381c8d4110d0ade808c25b1e88ff2df2cb6eb7adc6176672a3b23eed",
+    "anwendungsdemos": "fbd33b7d3f56fa1e1c1ce5f32161eac047942136cb338d5bfa45f4c05805cf41",
+    "herausforderungen": "1d0f5b606e8e1d0e4b68c8fcc23b2e1387b64fd7a7b4eee0da7992def0b97e53",
+    "zeitpotenzial": "2e29e38042cefc509455ae86fefc87e9157f946ec3556a9dbd565a779b1b4277",
+    "qualitaet-kosten-timing": "ea320366e9454cdb05efd53f455d7293a899bfe5539cf69e579d13625ffa8bdf",
+    "prozess": "872b47aa4c7e03a96b5ab58ece2ee940629ba527bf9ea93505907fb7020b39c5",
+    "vorher-nachher": "d9d275ca0633058df4edc5bd6ba92d96de57c647aa8dfb64ad93170d2b314389",
+    "leistungen": "8356599cd0b2d1b89a17c873feb61e526379d22d5b7e662cb229f76bc4d397a2",
+    "use-cases": "d7363cef17d4d490eef96e7ff1e3e24eb8d6f8a0c8da4472340b5d345c5a790d",
+    "selbst-gebaut": "d540c97c8f553b8fa5e82a0a9ad8b36f783efedc35a4a2042c1cb00db65d2631",
+    "eu-ai-notice": "9a5725f1c3ea17cdd8a3543788349e32f27cf6dff8345106a5cd11bfdf96e7ff",
+    "ueber-mich": "da079e9f39d593e17c5c4131d302019616e82fcd57ffd92f4cd700d21132037c",
+    "partnerschaften": "9081e7d3d115ed06217c6dc96f5f06052a3ebf9e34e4313f929bce996309513e",
+    "faq": "9ab59d0108ce4f5944dbd5c955b451ba63441d05f0e5839b9847a09ce7a80b35",
+    "kontakt": "813b36f9bbee2a442c730fe68022b03d6dca9f9f146ec413d9139fedc3701c81",
+    "implementation-principle-title": "bd6c3da84e972ed7d8f58bf426a8d353471227e87d8737428d576053eac562f8"
+  },
+  "/en": {
+    "hero-heading": "9fcd9cc2779a7c9add5734886bcf4b875e3292d93eecafd97a6027fe65a9ca1e",
+    "founder-heading": "204f9a966097e70f31c4ab4bf08a1d4a0ccf19fde0852a6ba511171865777523",
+    "entwicklung-erleben": "53eee78231781aa658a33d5ca906684a1bbab67c0df6bfbd8d834178ab34f790",
+    "anwendungsdemos": "6fb076e9954b409115de67e270684de706374eeb757c0e1a691a192f231b57ba",
+    "herausforderungen": "fdaecaccaa77bbb40e270fcb0affd83e00c48166156ce5ff2515de9b84c67a80",
+    "zeitpotenzial": "5c68995869f074611abd711bfe89b0d3383b6d231c362c8b43d109dc87e47e4a",
+    "qualitaet-kosten-timing": "19221b2c4ca3da1e601a7a587b6804750a7a20be80eff696dac67e4adbee453b",
+    "prozess": "4594aebd02f79a243b30a6a2e14b8465c33caf2a4c3e7857f46dfeda3bba1bac",
+    "vorher-nachher": "0fbd0abed4c378fafc4e61f27c2bbda6a34e2be44c8b305903d36ff68501df6e",
+    "leistungen": "a0af0c761bb3e039882463bc9a7dfcf4c44240ac3c55394c537984a392a46b5a",
+    "use-cases": "295f0732f5075d738b2f6c6f53c19e2d7d460cfb6d8f4488d0064637f9191699",
+    "selbst-gebaut": "488746c668d68dc00d7e335de0a995983c8545374053faaf421fe23935dff528",
+    "eu-ai-notice": "22c5673a80bbd19cc8af1e9a32d8a6f35ebf143001b65e2d364b121e3c844925",
+    "ueber-mich": "56b88a5049e24ce63e73401be5e99ba95a1eed2a2d797c1fd681d7b70437ffda",
+    "partnerschaften": "a8145f3c5b502b5d7671c266fa4a5d1bd69484d5d73c01334bb255e028fab73d",
+    "faq": "684699aedadb033b5dc2135faa037e16806c4f7275e9bc7cd5d5af8fc88f8372",
+    "kontakt": "031e59e4e3a8c64442b1ebfdf9500aef0c812766068ea53d3202f908f702523f",
+    "implementation-principle-title": "ab3151fcbe394fb4da568a0779981741cd4d319b99ff210dd18e2a090a6e836f"
+  }
+}

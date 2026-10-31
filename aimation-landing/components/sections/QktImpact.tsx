@@ -30,7 +30,7 @@ export default function QktImpact() {
             {dimensions.map((dimension, index) => <button key={dimension.id} aria-pressed={active === index} aria-controls="qkt-impact-detail" onClick={() => setActive(index)}>{dimension[en ? 'en' : 'de'][0]}</button>)}
           </div>
           <div className="qkt-impact-detail" id="qkt-impact-detail" aria-live="polite" aria-atomic="true"><h3>{copy[1]}</h3><p>{copy[2]}</p><div className="qkt-measure"><ArrowDownRight size={20} aria-hidden="true"/><div><strong>{en ? 'What we compare in the pilot' : 'Was wir im Pilot vergleichen'}</strong><p>{copy[3]}</p></div></div></div>
-          <a className="engineering-text-link qkt-case-link" href={`#use-case-${QKT_CASES[dimensions[active].id]}`}>{active === 0 ? (en ? 'Walk through a recurring defect' : 'Beispiel Wiederholfehler durchspielen') : active === 1 ? (en ? 'Walk through a test report' : 'Beispiel Prüfbericht durchspielen') : (en ? 'Walk through an unclear requirement' : 'Beispiel unklare Anforderung durchspielen')}<ArrowDownRight size={18} aria-hidden="true"/></a>
+          <a className="engineering-text-link qkt-case-link" href={`${en ? '/en' : ''}/ki-anwendungsfaelle#use-case-${QKT_CASES[dimensions[active].id]}`}>{active === 0 ? (en ? 'Walk through a recurring defect' : 'Beispiel Wiederholfehler durchspielen') : active === 1 ? (en ? 'Walk through a test report' : 'Beispiel Prüfbericht durchspielen') : (en ? 'Walk through an unclear requirement' : 'Beispiel unklare Anforderung durchspielen')}<ArrowDownRight size={18} aria-hidden="true"/></a>
         </div>
       </div>
     </div>

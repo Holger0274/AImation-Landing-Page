@@ -22,6 +22,14 @@ KI-Beratung, Schulung und Umsetzung für die technische Produktentwicklung im DA
 - ${PRICING.begleitung.label}: ${PRICING.begleitung.price}, ${PRICING.begleitung.duration}
 - [${PRICING.schulung.label}](${siteUrl}/ki-schulungen-mittelstand): ${PRICING.schulung.description}, ${PRICING.schulung.priceLabel}
 
+## Vertiefende Einstiege
+
+- [Entwicklungswerkstatt](${siteUrl}/entwicklungswerkstatt): Vollständige CAD-/FEM-Videos, Anwendungsvideos und eigene Werkzeuge. Dokumentierte Entwicklungsstände, keine Kundenergebnisse.
+- [KI-Anwendungsfälle entdecken](${siteUrl}/ki-anwendungsfaelle): Interaktive Landkarte mit zwölf ausgewählten Beispielen, Aufgaben im Entwicklungsalltag und Ablaufvergleiche. Anwendungsideen und fiktive Walkthroughs sind als solche gekennzeichnet.
+- [Wirtschaftlichkeit](${siteUrl}/wirtschaftlichkeit): Zeitpotenzial und ROI mit eigenen Annahmen berechnen, Qualität, Kosten und Timing bewerten. Keine zugesicherten Einsparungen.
+- [Zusammenarbeit](${siteUrl}/zusammenarbeit): Vollständiger Ablauf, Preise, Leistungen und KI-Kompetenz.
+- [Über Holger Peschke](${siteUrl}/ueber-holger-peschke): Persönlicher Hintergrund, Mitgliedschaften und Partnerschaften.
+
 ## Use Cases
 
 - [Belegstatus und dokumentierte Entwicklungsbeispiele](${siteUrl}/facts/aimation#entwicklungsbeispiele): Eigene CAD-/FEM-Aufnahmen und Anwendungsvideos mit Veröffentlichungsdatum, Umfang und Grenzen. Die Demos belegen die gezeigten Abläufe; gemessene Kundenergebnisse, allgemeine CAD-Kompatibilität und eine Fertigungsfreigabe sind damit nicht nachgewiesen. Die Faktenseite trennt diese Aufnahmen vom früheren Portfolioüberblick mit geplanten Anwendungen.

@@ -6,7 +6,7 @@ const videos = [
   ['pm-demonstrator', 90, '/use-cases/projektsteuerung-entwicklung'],
   ['varianthub', 90, '/use-cases/variantenmanagement'],
   ['skillmatrix', 90, '/use-cases/skillmatrix-entwicklung'],
-  ['development-landscape', 140, '/'],
+  ['development-landscape', 140, '/ki-anwendungsfaelle'],
 ];
 async function get(path, options) {
   const response = await fetch(new URL(path, base), { signal: AbortSignal.timeout(30000), ...options });
@@ -21,7 +21,9 @@ for (const locale of ['', '/en']) {
   const home = await (await get(`${locale}/`)).text();
   for (const [id, duration, related] of videos) {
     const path = `${locale}/videos/${id}`;
-    assert(home.includes(`href="${path}"`), `Homepage link: ${path}`);
+    if (id === 'development-landscape') {
+      assert(home.includes(`href="${locale}/ki-anwendungsfaelle"`), 'Homepage discovers landscape page');
+    } else assert(home.includes(`href="${path}"`), `Homepage video link: ${path}`);
     const html = await (await get(path)).text();
     const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
     const schema = scripts.find(item => item['@type'] === 'VideoObject');
@@ -41,7 +43,7 @@ for (const locale of ['', '/en']) {
     const entry = entries.find(match => match[1].includes(`<loc>${schema.url}</loc>`));
     assert(entry?.[1].includes(`<video:content_loc>${schema.contentUrl}</video:content_loc>`));
     assert(llms.includes(`/videos/${id}`));
-    if (related !== '/') assert((await (await get(`${locale}${related}`)).text()).includes(`href="${path}"`));
+    assert((await (await get(`${locale}${related}`)).text()).includes(`href="${path}"`));
     for (const suffix of ['mp4', 'webp']) await get(`/videos/demos/${id}.${suffix}`, { method: 'HEAD' });
     console.log(`OK ${path}`);
   }

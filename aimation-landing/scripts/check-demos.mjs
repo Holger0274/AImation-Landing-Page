@@ -6,7 +6,8 @@ const base = new URL(process.argv[2] || 'http://localhost:3011');
 const applicationIds = ['pm-demonstrator', 'varianthub', 'skillmatrix'];
 const ids = [...applicationIds, 'development-landscape'];
 const get = (path, options = {}) => fetch(new URL(path, base), { redirect: 'manual', signal: AbortSignal.timeout(20000), ...options });
-for (const route of ['/', '/en']) {
+for (const prefix of ['', '/en']) {
+  const route = `${prefix}/entwicklungswerkstatt`;
   const response = await get(route);
   assert.equal(response.status, 200, `${route}: status`);
   const html = (await response.text()).replace(/<script\b[\s\S]*?<\/script>/g, '');
@@ -18,11 +19,12 @@ for (const route of ['/', '/en']) {
   assert(!/<video\b|<source\b/.test(html), 'video media must not mount before a play click');
   for (const id of ['5why', 'fem', 'ideas']) assert(html.includes(`id="werkzeug-${id}"`), `existing example ${id} missing`);
   for (const id of applicationIds) assert(html.includes(`id="demo-tab-${id}"`), `demo ${id} missing`);
-  assert(html.includes('id="development-landscape-video"'), 'landscape video missing');
-  assert(html.includes('id="landscape-entdecken"'), 'interactive landscape anchor missing');
-  assert(html.includes('href="#landscape-entdecken"'), 'video-to-map link missing');
-  assert(html.includes('02:20'), 'landscape duration missing');
-  assert(html.indexOf('id="development-landscape-video"') < html.indexOf('id="landscape-entdecken"'), 'video must precede the interactive map');
+  const landscape = await (await get(`${prefix}/ki-anwendungsfaelle`)).text();
+  assert(landscape.includes('id="development-landscape-video"'), 'landscape video missing');
+  assert(landscape.includes('id="landscape-entdecken"'), 'interactive landscape anchor missing');
+  assert(landscape.includes('href="#landscape-entdecken"'), 'video-to-map link missing');
+  assert(landscape.includes('02:20'), 'landscape duration missing');
+  assert(landscape.indexOf('id="development-landscape-video"') < landscape.indexOf('id="landscape-entdecken"'), 'video must precede the interactive map');
   console.log(`OK ${route}: demos, existing projects, no initial video element`);
 }
 for (const id of ids) {

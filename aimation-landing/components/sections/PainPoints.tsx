@@ -26,7 +26,7 @@ export default function PainPoints() {
       <div className="engineering-wrap">
         <div className="section-heading-split">
           <div className="section-intro"><h2>{t('headline')} <span className="highlight">{t('headlineHighlight')}</span> {t('headlineEnd')}</h2></div>
-          <div className="section-heading-body"><p>{t('body1')}</p><p>{t('body2')}</p><a className="engineering-text-link mt-4" href="#zeitpotenzial">{t('roiLink')}<ArrowUpRight size={16} aria-hidden="true" /></a></div>
+          <div className="section-heading-body"><p>{t('body1')}</p><p>{t('body2')}</p><a className="engineering-text-link mt-4" href={`${en ? '/en' : ''}/wirtschaftlichkeit#zeitpotenzial`}>{t('roiLink')}<ArrowUpRight size={16} aria-hidden="true" /></a></div>
         </div>
         <blockquote className="pain-routine-quote">
           <p className="pain-routine-quote-line">{t('routineQuote')}</p>

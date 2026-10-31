@@ -78,7 +78,7 @@ export const DEMO_VIDEOS = [
   })),
   {
     id: 'development-landscape', name: 'Development Landscape',
-    path: '/videos/development-landscape', related: '/#landscape-entdecken',
+    path: '/videos/development-landscape', related: '/ki-anwendungsfaelle#landscape-entdecken',
     seconds: 140, duration: '2:20', width: 1280, height: 720,
     uploadDate: '2026-09-27',
     de: {

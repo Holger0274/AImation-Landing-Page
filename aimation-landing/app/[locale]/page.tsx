@@ -1,21 +1,10 @@
+import HomeDiscovery from '@/components/discovery/HomeDiscovery';
+import LegacyHomeAnchors from '@/components/discovery/LegacyHomeAnchors';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import FounderIntro from '@/components/sections/FounderIntro';
-import EarlyDemos from '@/components/sections/EarlyDemos';
-import AI2CADTeaser from '@/components/ai2cad/AI2CADTeaser';
 import ExperienceRoute from '@/components/sections/ExperienceRoute';
-import PainPoints from '@/components/sections/PainPoints';
-import TimeEstimate from '@/components/sections/TimeEstimate';
-import QktImpact from '@/components/sections/QktImpact';
-import BeforeAfter from '@/components/sections/BeforeAfter';
-import Services from '@/components/sections/Services';
-import DevelopmentLandscape from '@/components/sections/DevelopmentLandscape';
-import Process from '@/components/sections/Process';
-import SelfBuilt from '@/components/sections/SelfBuilt';
-import EuAiActNotice from '@/components/sections/EuAiActNotice';
-import About from '@/components/sections/About';
-import Partnership from '@/components/sections/Partnership';
 import FAQ from '@/components/sections/FAQ';
 import { getHomeFaqs } from '@/lib/data/faqs';
 import FinalCTA from '@/components/sections/FinalCTA';
@@ -65,24 +54,13 @@ export default async function Home({
         aber das Schema wird serverseitig aus den exportierten faqs-Daten erzeugt.
       */}
       <FAQPageSchema faqs={faqs} />
+      <LegacyHomeAnchors en={locale === 'en'} />
       <Header />
       <main id="main-content" className="home-page">
         <Hero />
         <FounderIntro />
         <ExperienceRoute en={locale === 'en'} />
-        <AI2CADTeaser locale={locale} />
-        <EarlyDemos />
-        <PainPoints />
-        <TimeEstimate />
-        <QktImpact />
-        <Process />
-        <BeforeAfter />
-        <Services />
-        <DevelopmentLandscape />
-        <SelfBuilt />
-        <EuAiActNotice />
-        <About />
-        <Partnership />
+        <HomeDiscovery en={locale === 'en'} />
         <FAQ items={faqs} />
         <FinalCTA />
       </main>

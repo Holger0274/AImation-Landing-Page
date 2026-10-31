@@ -121,7 +121,7 @@ export default function KiUmsetzungPage() {
               Kostenloses Erstgespräch buchen
             </a>
             <Link
-              href="/#use-cases"
+              href="/ki-anwendungsfaelle"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-heading font-semibold border-2 border-line text-ink hover:bg-[#071013] hover:text-white transition-all"
             >
               Use Cases ansehen

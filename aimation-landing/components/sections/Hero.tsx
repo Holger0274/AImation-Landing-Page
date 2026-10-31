@@ -41,7 +41,7 @@ export default function Hero() {
         </div>
         <div className="hero-footline">
           <p>{t('trustLine')}</p>
-          <a className="engineering-text-link" href="#zeitpotenzial">{t('ctaSecondary')}<ArrowUpRight size={16} aria-hidden="true" /></a>
+          <a className="engineering-text-link" href={`${en ? '/en' : ''}/wirtschaftlichkeit#zeitpotenzial`}>{t('ctaSecondary')}<ArrowUpRight size={16} aria-hidden="true" /></a>
         </div>
       </div>
     </section>

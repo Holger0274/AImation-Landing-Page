@@ -45,7 +45,7 @@ for (const entry of entries) {
   assert.equal(canonical.length, 1, `${pathname}: canonical count`);
   assert.equal(normalize(canonical[0].href), pathname, `${pathname}: wrong canonical`);
   const lang = html.match(/<html[^>]*\blang="([^"]+)"/)?.[1];
-  assert.equal(lang, pathname.startsWith('/en') ? 'en' : 'de', `${pathname}: html lang`);
+  assert.equal(lang, /^\/en(?:\/|$)/.test(pathname) ? 'en' : 'de', `${pathname}: html lang`);
   const meta = [...html.matchAll(/<meta\b[^>]*>/g)].map((m) => attrs(m[0]));
   assert(meta.some((m) => m.name === 'description' && m.content?.length > 30), `${pathname}: description`);
   assert(!meta.some((m) => ['robots', 'googlebot'].includes(m.name) && /noindex/.test(m.content)), `${pathname}: noindex`);

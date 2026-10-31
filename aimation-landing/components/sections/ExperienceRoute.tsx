@@ -5,7 +5,7 @@ export default function ExperienceRoute({ en }: { en: boolean }) {
   const stops = [
     { href: '#entwicklung-erleben', title: en ? 'Explore CAD & FEM' : 'CAD & FEM erleben', detail: en ? 'From text to analysis' : 'Vom Text bis zur Berechnung' },
     { href: '#anwendungsdemos', title: en ? 'Discover applications' : 'Anwendungen entdecken', detail: en ? 'Projects, variants, teams' : 'Projekte, Varianten, Teams' },
-    { href: '#landscape-entdecken', title: en ? 'Explore your task' : 'Ihre Aufgabe erkunden', detail: en ? 'Choose an engineering workflow' : 'Einen Entwicklungsablauf wählen' },
+    { href: '#aufgabe-waehlen', title: en ? 'Explore your task' : 'Ihre Aufgabe erkunden', detail: en ? 'Choose an engineering workflow' : 'Einen Entwicklungsablauf wählen' },
     { href: '#prozess', title: en ? 'Plan the next step' : 'Den nächsten Schritt planen', detail: en ? 'Scope, process and prices' : 'Umfang, Ablauf und Preise' },
   ];
   return <nav className={`engineering-wrap ${styles.route}`} aria-label={en ? 'Your route through AImation' : 'Ihr Weg durch AImation'}>
