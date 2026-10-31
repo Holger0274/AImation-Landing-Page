@@ -59,10 +59,10 @@ export default async function Home({
       <Header />
       <main id="main-content" className="home-page">
         <Hero />
-        <HomeTrust en={locale === 'en'} />
         <FounderIntro />
         <ExperienceRoute en={locale === 'en'} />
         <HomeDiscovery en={locale === 'en'} />
+        <HomeTrust en={locale === 'en'} />
         <FAQ items={faqs} />
         <FinalCTA />
       </main>
