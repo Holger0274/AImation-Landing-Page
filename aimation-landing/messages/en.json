@@ -162,14 +162,14 @@
         },
         "after": {
           "title": "After: Knowledge in the system",
-          "gain": "Mistakes do not repeat themselves",
+          "gain": "Earlier decisions become traceable",
           "benefits": [
             "Reports, minutes, and decisions are automatically tagged and linked.",
-            "Every question answered in seconds, with a source reference.",
+            "Draft answers refer to their sources and undergo expert review.",
             "The expert reviews and adds to it, instead of documenting everything themselves.",
-            "Every answered question makes the knowledge base better."
+            "Reviewed answers and corrections can feed back into the knowledge base."
           ],
-          "roi": "Knowledge stays in-house, findable in seconds instead of in people's heads. Account: quality and cost."
+          "roi": "The pilot measures search effort, source quality and necessary rework."
         }
       },
       "research": {
@@ -335,8 +335,8 @@
       },
       "knowledge-graph-management": {
         "title": "Connect engineering knowledge",
-        "description": "Reports, minutes and documents are tagged automatically, linked semantically and networked. Every question answered in seconds, with a source reference. No more lost knowledge or long searches.",
-        "metrics": "Every answer findable in seconds, with source. Account: timing and quality.",
+        "description": "Trace earlier decisions through test reports, minutes and technical documents. An internal prototype using our own documents and source references.",
+        "metrics": "The pilot evaluates answer quality, source references and search effort. No measured customer results yet.",
         "alt": "Drawings, test reports and minutes provide an answer with sources."
       },
       "customer-meeting-prep": {

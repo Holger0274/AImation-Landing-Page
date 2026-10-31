@@ -2,6 +2,12 @@
 // Bei Aktualisierung hier ändern, nicht in den einzelnen Seiten.
 export const FACTS_VERIFIED_DATE = '2026-06-04';
 
+// Identity links belong to the named entity, not to its founder or employer.
+export const ENTITY_PROFILES = {
+  company: 'https://www.linkedin.com/company/aimation-ug',
+  founder: 'https://www.linkedin.com/in/holgerpeschke/',
+} as const;
+
 // Source: existing company facts page. Do not substitute the trade-register
 // entry date for the founding date, or claim a new verification without evidence.
 export const COMPANY_FACTS = {

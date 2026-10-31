@@ -162,14 +162,14 @@
         },
         "after": {
           "title": "Nachher: Wissen im System",
-          "gain": "Fehler wiederholen sich nicht",
+          "gain": "Frühere Entscheidungen werden nachvollziehbar",
           "benefits": [
             "Berichte, Protokolle und Entscheidungen werden automatisch verschlagwortet und vernetzt.",
-            "Jede Frage wird in Sekunden beantwortet, mit Quellenangabe.",
+            "Antwortentwürfe verweisen auf die verwendeten Quellen und werden fachlich geprüft.",
             "Der Experte prüft und ergänzt, statt alles selbst zu dokumentieren.",
-            "Jede beantwortete Frage macht die Wissensbasis besser."
+            "Geprüfte Antworten und Korrekturen können in die Wissensbasis zurückfließen."
           ],
-          "roi": "Wissen bleibt im Haus, auffindbar in Sekunden statt in Köpfen. Konto: Qualität und Kosten."
+          "roi": "Im Pilot werden Suchaufwand, Quellenqualität und nötige Nacharbeit gemessen."
         }
       },
       "research": {
@@ -335,8 +335,8 @@
       },
       "knowledge-graph-management": {
         "title": "Engineering-Wissen vernetzen",
-        "description": "Berichte, Protokolle und Dokumente werden automatisch verschlagwortet, semantisch verknüpft und vernetzt. Jede Frage in Sekunden beantwortet, mit Quellenangabe. Nie mehr Wissen verlieren oder lange suchen.",
-        "metrics": "Jede Antwort in Sekunden auffindbar, mit Quelle. Konto: Timing und Qualität.",
+        "description": "Frühere Entscheidungen mit Prüfberichten, Protokollen und technischen Dokumenten nachvollziehen. Interner Prototyp mit eigenen Unterlagen und Quellenbezug.",
+        "metrics": "Im Pilot prüfen wir Antwortqualität, Quellenbelege und Suchaufwand. Noch keine gemessenen Kundenergebnisse.",
         "alt": "Zeichnung, Prüfbericht und Protokoll liefern gemeinsam eine Antwort mit Quelle."
       },
       "customer-meeting-prep": {

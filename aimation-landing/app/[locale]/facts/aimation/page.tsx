@@ -3,7 +3,10 @@ import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { COMPANY_FACTS, FACTS_VERIFIED_DATE } from '@/lib/config/facts';
+import { COMPANY_FACTS, FACTS_VERIFIED_DATE, ENTITY_PROFILES } from '@/lib/config/facts';
+import DevelopmentEvidence from '@/components/DevelopmentEvidence';
+import { EntityPageSchema } from '@/components/StructuredData';
+import { localizedPath } from '@/lib/seo/locales';
 import { PRICING } from '@/lib/data/pricing';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
@@ -77,6 +80,7 @@ export default async function GroundingPage({
     foundingDate: COMPANY_FACTS.foundingDate,
     founder: {
       '@type': 'Person',
+      '@id': `${siteUrl}/#holger-peschke`,
       name: 'Holger Peschke',
       url: `${siteUrl}/facts/holger-peschke`,
     },
@@ -89,10 +93,7 @@ export default async function GroundingPage({
     },
     email: 'info@aimation.de',
     areaServed: ['DE', 'AT', 'CH'],
-    sameAs: [
-      'https://www.linkedin.com/company/aimation-ug',
-      'https://www.linkedin.com/in/holgerpeschke/',
-    ],
+    sameAs: [ENTITY_PROFILES.company],
     knowsAbout: isEn
       ? [
           'AI automation in product development',
@@ -112,7 +113,7 @@ export default async function GroundingPage({
       ? 'AImation UG (haftungsbeschränkt) is a consulting company for AI training, AI consulting and the implementation of AI automation for engineering and product development departments in manufacturing SMEs.'
       : 'AImation UG (haftungsbeschränkt) ist ein Beratungsunternehmen für KI-Schulung, KI-Beratung und die Umsetzung von KI-Automatisierung in Entwicklungsabteilungen des produzierenden Mittelstands im DACH-Raum.',
     inLanguage: isEn ? 'en' : 'de',
-    dateModified: FACTS_VERIFIED_DATE,
+    mainEntityOfPage: `${siteUrl}${localizedPath('/facts/aimation', locale)}`,
   };
 
   const faqItems = isEn
@@ -188,6 +189,7 @@ export default async function GroundingPage({
 
   return (
     <>
+      <EntityPageSchema siteUrl={siteUrl} path={localizedPath('/facts/aimation', locale)} locale={locale} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }}
@@ -431,15 +433,19 @@ export default async function GroundingPage({
 
           <hr className="border-line my-12" />
 
+          <DevelopmentEvidence en={isEn} />
+
+          <hr className="border-line my-12" />
+
           {/* Anwendungsfälle */}
           <section aria-labelledby="anwendungsfaelle">
             <h2 id="anwendungsfaelle" className="font-heading font-semibold text-ink text-2xl mb-6">
-              {isEn ? 'AImation: Use Cases' : 'AImation: Anwendungsfälle'}
+              {isEn ? 'Earlier portfolio overview' : 'Früherer Portfolioüberblick'}
             </h2>
             <p className="font-inter text-sm text-dim mb-4">
               {isEn
-                ? 'Documented use cases from the AImation portfolio. Status as of June 2026.'
-                : 'Dokumentierte Anwendungsfälle aus dem AImation-Portfolio. Stand: Juni 2026.'}
+                ? 'Portfolio snapshot from June 2026. The linked demonstrations above document the current published examples.'
+                : 'Portfolioüberblick vom Juni 2026. Die verlinkten Demonstrationen oben dokumentieren die aktuell veröffentlichten Beispiele.'}
             </p>
             <ul className="space-y-2 font-inter text-sm text-muted">
               {useCases.map((uc, i) => (

@@ -60,9 +60,24 @@ for (const entry of entries) {
   for (const schema of schemas) {
     if (schema['@type'] === 'Organization' && schema.foundingDate) assert.equal(schema.foundingDate, '2026-02', `${pathname}: inconsistent founding date`);
     if (schema['@type'] === 'Person') assert(!schema.award?.includes('LinkedIn'), 'followers are not an award');
+    if (schema['@type'] === 'Organization' || (Array.isArray(schema['@type']) && schema['@type'].includes('LocalBusiness'))) {
+      assert(!schema.sameAs?.some(url => url.includes('/in/holgerpeschke')), `${pathname}: company must not be equated with its founder`);
+    }
   }
   rendered.set(pathname, { html, links, meta, schemas, title: titles[0][1] });
   console.log(`OK ${pathname}`);
+}
+for (const locale of ['', '/en']) {
+  const company = rendered.get(`${locale}/facts/aimation`);
+  const founder = rendered.get(`${locale}/facts/holger-peschke`);
+  assert(company.schemas.some(schema => schema['@type'] === 'AboutPage' && schema.mainEntity?.['@id']?.endsWith('/#organization')), 'company facts: missing entity-page relationship');
+  assert(founder.schemas.some(schema => schema['@type'] === 'ProfilePage' && schema.mainEntity?.['@id']?.endsWith('/#holger-peschke')), 'founder facts: missing profile relationship');
+  const evidence = company.html.match(/<section id="entwicklungsbeispiele"[\s\S]*?<\/section>/)?.[0];
+  assert(evidence, 'company facts: missing visible development evidence');
+  for (const route of paths.filter(route => route.startsWith(`${locale}/ai2cad/`) || route.startsWith(`${locale}/videos/`))) {
+    assert(evidence.includes(`href="${route}"`), `company facts: missing source ${route}`);
+  }
+  assert(!/Jede Frage in Sekunden|Nie mehr Wissen verlieren/.test(company.html), 'company facts: unsupported outcome claim');
 }
 for (const route of ['/en/ki-beratung-kmu', '/en/use-cases', '/en/blog', '/en/blog/prozessdokumentation-ki-transkript']) {
   const { response } = await get(route + '?ref=seo-check');

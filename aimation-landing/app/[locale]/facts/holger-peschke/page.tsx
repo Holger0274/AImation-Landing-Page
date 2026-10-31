@@ -3,7 +3,9 @@ import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { FACTS_VERIFIED_DATE } from '@/lib/config/facts';
+import { EntityPageSchema } from '@/components/StructuredData';
+import { localizedPath } from '@/lib/seo/locales';
+import { FACTS_VERIFIED_DATE, ENTITY_PROFILES } from '@/lib/config/facts';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aimation.de';
 
@@ -73,11 +75,12 @@ export default async function HolgerPeschkePage({
     jobTitle: isEn ? 'Founder and Managing Director' : 'Gründer und Geschäftsführer',
     worksFor: {
       '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
       name: 'AImation UG (haftungsbeschränkt)',
       url: siteUrl,
     },
     url: `${siteUrl}/facts/holger-peschke`,
-    sameAs: ['https://www.linkedin.com/in/holgerpeschke/'],
+    sameAs: [ENTITY_PROFILES.founder],
     knowsAbout: isEn
       ? [
           'AI automation in product development',
@@ -143,6 +146,7 @@ export default async function HolgerPeschkePage({
 
   return (
     <>
+      <EntityPageSchema siteUrl={siteUrl} path={localizedPath('/facts/holger-peschke', locale)} locale={locale} person />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
@@ -224,6 +228,13 @@ export default async function HolgerPeschkePage({
             </dl>
           </section>
 
+          <hr className="border-line my-12" />
+
+          <section aria-labelledby="development-work">
+            <h2 id="development-work" className="font-heading font-semibold text-ink text-2xl mb-4">{isEn ? 'Development work by Holger Peschke' : 'Entwicklungsarbeit von Holger Peschke'}</h2>
+            <p className="font-inter text-sm text-muted leading-relaxed mb-4">{isEn ? 'AI2CAD and AI2CAE document CAD modelling, drawing preparation and FEM analysis using a language model. The recordings show AImation’s own development work, with open engineering checks. They are not customer references.' : 'AI2CAD und AI2CAE dokumentieren CAD-Modellierung, Zeichnungsableitung und FEM-Berechnung mit einem Sprachmodell. Die Aufnahmen zeigen die eigene Entwicklungsarbeit von AImation mit offenen fachlichen Prüfaufgaben. Es handelt sich nicht um Kundenreferenzen.'}</p>
+            <Link href={isEn ? '/en/facts/aimation#entwicklungsbeispiele' : '/facts/aimation#entwicklungsbeispiele'} className="engineering-text-link">{isEn ? 'Recordings, scope and limits of the demonstrations' : 'Aufnahmen, Umfang und Grenzen der Demonstrationen'} →</Link>
+          </section>
           <hr className="border-line my-12" />
 
           {/* FAQ */}

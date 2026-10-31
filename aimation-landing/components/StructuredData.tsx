@@ -8,10 +8,23 @@
  * Referenz: https://schema.org/
  */
 
-import { COMPANY_FACTS } from '@/lib/config/facts';
+import { COMPANY_FACTS, ENTITY_PROFILES } from '@/lib/config/facts';
 
 interface OrganizationSchemaProps {
   siteUrl?: string;
+}
+
+export function EntityPageSchema({ siteUrl, path, locale, person = false }: { siteUrl: string; path: string; locale: string; person?: boolean }) {
+  const url = `${siteUrl}${path}`;
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': person ? 'ProfilePage' : 'AboutPage',
+    '@id': `${url}#webpage`, url, inLanguage: locale,
+    mainEntity: { '@id': `${siteUrl}/#${person ? 'holger-peschke' : 'organization'}` },
+    isPartOf: { '@id': `${siteUrl}/#website` },
+    publisher: { '@id': `${siteUrl}/#organization` },
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }} />;
 }
 
 /**
@@ -38,6 +51,7 @@ export function OrganizationSchema({ siteUrl = 'https://www.aimation.de' }: Orga
     "description": COMPANY_FACTS.description,
     "slogan": "Mehr Zeit für das Wesentliche",
     "foundingDate": COMPANY_FACTS.foundingDate,
+    "mainEntityOfPage": `${siteUrl}/facts/aimation`,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Sutte 19",
@@ -55,10 +69,7 @@ export function OrganizationSchema({ siteUrl = 'https://www.aimation.de' }: Orga
       ],
       "areaServed": ["DE", "AT", "CH"]
     },
-    "sameAs": [
-      "https://www.linkedin.com/in/holgerpeschke/",
-      "https://www.linkedin.com/company/aimation-ug"
-    ],
+    "sameAs": [ENTITY_PROFILES.company],
     "founder": {
       "@type": "Person",
       "@id": `${siteUrl}/#holger-peschke`,
@@ -66,8 +77,8 @@ export function OrganizationSchema({ siteUrl = 'https://www.aimation.de' }: Orga
       "jobTitle": "Gründer & KI-Berater",
       "description": "20+ Jahre Engineering-Erfahrung in produzierenden Unternehmen. Spezialisiert auf KI-Automatisierung und -Beratung für den Mittelstand. 20.000+ LinkedIn-Follower.",
       "image": `${siteUrl}/images/holger-consulting.png`,
-      "url": `${siteUrl}/#ueber-mich`,
-      "sameAs": ["https://www.linkedin.com/in/holgerpeschke/"],
+      "url": `${siteUrl}/facts/holger-peschke`,
+      "sameAs": [ENTITY_PROFILES.founder],
       "knowsAbout": [
         "Künstliche Intelligenz",
         "Prozessautomatisierung",
@@ -190,10 +201,7 @@ export function LocalBusinessSchema({ siteUrl = 'https://www.aimation.de' }: Org
         }
       ]
     },
-    "sameAs": [
-      "https://www.linkedin.com/company/aimation-ug",
-      "https://www.linkedin.com/in/holgerpeschke/"
-    ]
+    "sameAs": [ENTITY_PROFILES.company]
   };
 
   return (
@@ -329,15 +337,13 @@ export function PersonSchema({ siteUrl = 'https://www.aimation.de' }: Organizati
     "jobTitle": "KI-Berater & Gründer",
     "description": "20+ Jahre Engineering-Erfahrung in produzierenden Unternehmen. Spezialisiert auf KI-Automatisierung und -Beratung für den Mittelstand. 20.000+ LinkedIn-Follower. Gründer von AImation.",
     "image": `${siteUrl}/images/holger-consulting.png`,
-    "url": `${siteUrl}/#ueber-mich`,
+    "url": `${siteUrl}/facts/holger-peschke`,
     "worksFor": {
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
       "name": "AImation"
     },
-    "sameAs": [
-      "https://www.linkedin.com/in/holgerpeschke/"
-    ],
+    "sameAs": [ENTITY_PROFILES.founder],
     "knowsAbout": [
       "Künstliche Intelligenz",
       "Prozessautomatisierung",

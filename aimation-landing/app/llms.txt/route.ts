@@ -24,6 +24,8 @@ KI-Beratung, Schulung und Umsetzung für die technische Produktentwicklung im DA
 
 ## Use Cases
 
+- [Belegstatus und dokumentierte Entwicklungsbeispiele](${siteUrl}/facts/aimation#entwicklungsbeispiele): Eigene CAD-/FEM-Aufnahmen und Anwendungsvideos mit Veröffentlichungsdatum, Umfang und Grenzen. Die Demos belegen die gezeigten Abläufe; gemessene Kundenergebnisse, allgemeine CAD-Kompatibilität und eine Fertigungsfreigabe sind damit nicht nachgewiesen. Die Faktenseite trennt diese Aufnahmen vom früheren Portfolioüberblick mit geplanten Anwendungen.
+
 ${DEMO_VIDEOS.map(video => `- [${video.name}: Video-Demo](${siteUrl}${video.path}): ${video.de.description} ${video.de.note}`).join('\n')}
 - [AI2CAD und AI2CAE: Konstruktion und FEM mit LLM](${siteUrl}${AI2CAD_PATH}): Ein Large Language Model steuert in den CAD-Entwicklungsdemos ein CAD-System, ohne manuelle Mausklicks im CAD. Es setzt Parameter, modelliert Montageplatte und Welle, schlägt Konstruktionskorrekturen vor und erstellt eine technische Zeichnung. Das fünfte Video zeigt AI2CAE: LLM-gesteuerte FEM-Berechnung unter 1.500 N, drei Netzfeinheiten und Vergleich mit der Handrechnung. Rückfragen und Freigaben erfolgen im Dialog. Keine generelle CAD-Kompatibilität oder Fertigungsfreigabe zugesichert.
 ${AI2CAD_CHAPTERS.map(chapter => `- [${chapter.kind} ${chapter.number}: ${chapter.de.title}](${siteUrl}${AI2CAD_PATH}/${chapter.slug}): ${chapter.de.description} ${chapter.de.check}`).join('\n')}
