@@ -34,3 +34,11 @@ Der aktuelle Nutzerauftrag erlaubt das Verfassen der neuen Artikel ausdrücklich
 - Browserprüfung bei 1280 und 390 Pixeln: Anforderungsprüfung aufgeklappt, Quellenwiderspruch und fehlender Zugriff gewechselt, unvollständigen Änderungsantrag geprüft. Kein horizontaler Seitenüberlauf auf den drei mobilen Artikeln.
 - Tastaturbedienung einer Szenarioauswahl geprüft. Kontaktformular geöffnet und ohne Versand mit Escape geschlossen.
 - Individuelles Vorschaubild visuell geprüft. Technische Prüfungen sind keine Aussage über erzielte Rankings oder Anfragen.
+
+## Grafische Überarbeitung am 31. Oktober 2026
+
+Auf ausdrücklichen Wunsch ergänzt: eigene technische Vektormotive hinter den Einstiegen mit dunklen transparenten Verläufen; Zeichnung mit markierter Anforderungs-ID, Dokumentennetz mit Versionskontext und überlagerte Bauteilstände. Die drei Motive werden in den interaktiven Beispielen passend zur Auswahl gewechselt und für die Social-Vorschaubilder wiederverwendet.
+
+Die Illustrationen sind schematisch und enthalten keine realen CAD-Auslegungsdaten. Die zugehörige Bedeutung steht als lesbare Bildunterschrift im HTML. Dekorative Grafiken sind für Screenreader ausgeblendet. Es gibt keine externe Bildquelle oder neue Abhängigkeit. Kurze Übergänge respektieren `prefers-reduced-motion`. Bestehende Artikeltexte, Quellen, URLs und Veröffentlichungsdaten bleiben erhalten.
+
+Validierung der Überarbeitung: Produktionsbuild und Artikelprüfung bestanden; SEO-Prüfung aller 74 URLs bestanden. Desktop mit 1440 Pixeln und Smartphone mit 390 Pixeln geprüft, einschließlich Tastaturwechsel und Rückfragen-Aufklappen. Die Vektorgrafiken laden ohne externe Abrufe. Den vollflächigen Hintergrund gegen die globale Breitenbegrenzung korrigiert; kein horizontaler Seitenüberlauf in den geprüften Ansichten. Neues PNG-Vorschaubild visuell geprüft.

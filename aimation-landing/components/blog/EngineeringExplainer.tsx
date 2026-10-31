@@ -4,6 +4,25 @@ import { useState } from 'react';
 import { ArrowDown, FileText, GitBranch, Search, ShieldCheck, UserCheck } from 'lucide-react';
 import type { ArticleKey } from '@/lib/data/engineering-articles';
 import s from './engineering-article.module.css';
+import EngineeringArtwork from './EngineeringArtwork';
+
+const figureNotes: Record<ArticleKey, { title: string; text: string }[]> = {
+  requirements: [
+    { title: 'Die offene Angabe sichtbar machen.', text: 'Zeichnung und Anforderung gehören zusammen. Die Markierung verweist auf den ausgewählten Prüfausschnitt.' },
+    { title: 'Zwei Vorgaben, eine Rückfrage.', text: 'Die beiden Anforderungs-IDs bleiben gemeinsam sichtbar. Das Fachteam klärt, ob dieselbe Variante gemeint ist.' },
+    { title: 'Den Nachweis zuordnen.', text: 'Die gewählte Anforderung braucht ein überprüfbares Kriterium. Die Zeichnung allein beantwortet diese Frage nicht.' },
+  ],
+  knowledge: [
+    { title: 'Fundstellen mit gemeinsamem Stand.', text: 'Das Netz verbindet Dokumente mit ihrem Versionskontext. Die Originalstellen bleiben die Grundlage der Prüfung.' },
+    { title: 'Die Verbindung bleibt ungeklärt.', text: 'Unterbrochene Linien kennzeichnen die widersprüchliche Quellenlage. Daraus entsteht noch keine eindeutige Antwort.' },
+    { title: 'Der Zugriff begrenzt die Antwort.', text: 'Die Dokumentstruktur wird nur schematisch gezeigt. Aus gesperrten Quellen gelangen keine Inhalte in die Antwort.' },
+  ],
+  changes: [
+    { title: 'Ein anderer Abstand zieht Kreise.', text: 'Überlagerte Stände zeigen die geänderte Schnittstelle. Welche Unterlagen betroffen sind, wird darunter zur Prüfaufgabe.' },
+    { title: 'Gleiche Form, anderer Werkstoff.', text: 'Die schraffierte Fläche markiert den Werkstoffvergleich. Nachweise und Fertigungsablauf müssen fachlich bewertet werden.' },
+    { title: 'Ohne Ausgangsstand bleibt die Zuordnung offen.', text: 'Die ausgeblendete Geometrie zeigt den fehlenden Kontext. Eine vollständige Folgenbewertung ist damit noch nicht möglich.' },
+  ],
+};
 
 const requirements = [
   { label: 'Montage', id: 'LH-017', before: 'Die Halterung muss hohe Temperaturen aushalten und schnell montierbar sein.', marks: ['Temperaturbereich fehlt', 'Einwirkdauer fehlt', 'Montagekriterium fehlt'], question: 'Welcher Temperaturbereich gilt bei welcher Einwirkdauer? Unter welchen Bedingungen und innerhalb welcher Zeit muss die Montage möglich sein?', owner: 'Konstruktion und Auftraggeber stimmen Einsatzbedingungen ab. Montage und Versuch legen das Nachweisverfahren fest.' },
@@ -32,6 +51,10 @@ export default function EngineeringExplainer({ kind }: { kind: ArticleKey }) {
       {options.map((option, index) => <button type="button" key={option.label} aria-pressed={selected === index} aria-controls={itemId} onClick={() => { setSelected(index); setRevealed(false); }}>{option.label}</button>)}
     </div>
     <div id={itemId} className={s.visualBody} aria-live="polite">
+      <figure className={s.figureStage}>
+        <div className={s.figureArt} key={`${kind}-${selected}`}><EngineeringArtwork kind={kind} variant={selected} /></div>
+        <figcaption className={s.figureCaption}><span className={s.nodeLabel}>0{selected + 1} / {options[selected].label}</span><h3>{figureNotes[kind][selected].title}</h3><p>{figureNotes[kind][selected].text}</p><span className={s.figureDisclaimer}>Schematisch, fiktives Beispiel</span></figcaption>
+      </figure>
       {kind === 'requirements' && <>
         <div className={s.document}><span className={s.nodeLabel}><FileText size={17} aria-hidden="true" />Original / {requirements[selected].id}</span><blockquote>{requirements[selected].before}</blockquote><p>Fiktiver Text. Werte und Formulierungen dienen nur dem Beispiel.</p></div>
         <div className={s.connector}><ArrowDown size={24} aria-hidden="true" /><span>Auf offene Angaben prüfen</span></div>
@@ -53,7 +76,7 @@ export default function EngineeringExplainer({ kind }: { kind: ArticleKey }) {
       {kind === 'changes' && <>
         <div className={s.changeRoot}><GitBranch size={26} aria-hidden="true" /><div><span className={s.nodeLabel}>{changes[selected].context}</span><h3>{changes[selected].request}</h3></div></div>
         <div className={s.branchLine} aria-hidden="true" />
-        <div className={s.dependencies}>{changes[selected].nodes.map((node, index) => <div key={node.name}><span className={s.nodeLabel}>0{index + 1} / Prüfpunkt</span><h4>{node.name}</h4><p>{node.source}</p><div>{node.check}</div></div>)}</div>
+        <div className={s.dependencies} key={`dependencies-${selected}`}>{changes[selected].nodes.map((node, index) => <div key={node.name}><span className={s.nodeLabel}>0{index + 1} / Prüfpunkt</span><h4>{node.name}</h4><p>{node.source}</p><div>{node.check}</div></div>)}</div>
         <p className={s.human}><UserCheck size={21} aria-hidden="true" />{selected === 2 ? 'Eine unvollständige Zuordnung bleibt offen. Das System darf keine vollständige Auswirkungsanalyse vortäuschen.' : 'Die Darstellung erzeugt Prüfaufgaben. Konstruktion, Montage und Prüfabteilung bewerten die tatsächlichen Folgen.'}</p>
       </>}
     </div>

@@ -1,14 +1,18 @@
 import { ImageResponse } from 'next/og';
 import type { ArticleKey } from '@/lib/data/engineering-articles';
 import { ENGINEERING_ARTICLES } from '@/lib/data/engineering-articles';
+import { engineeringArtworkUri } from '@/lib/data/engineering-artwork';
 
 export function articleShareImage(kind: ArticleKey) {
   const article = ENGINEERING_ARTICLES.find(item => item.key === kind)!;
-  const steps = kind === 'requirements' ? ['Lastenheft', 'Prüfhinweise', 'Fachliche Klärung'] : kind === 'knowledge' ? ['Quelle', 'Version & Rechte', 'Belegte Antwort'] : ['Änderungsantrag', 'Abhängigkeiten', 'Fachliche Bewertung'];
-  return new ImageResponse(<div style={{ width:'100%',height:'100%',display:'flex',flexDirection:'column',background:'#071013',color:'#faf9f7',padding:'62px 70px',fontFamily:'sans-serif' }}>
-    <div style={{display:'flex',justifyContent:'space-between',fontSize:24,color:'#bbc3c7'}}><span>AImation</span><span>KI in der technischen Produktentwicklung</span></div>
-    <div style={{display:'flex',fontSize:66,fontWeight:700,lineHeight:1.1,letterSpacing:'-2px',marginTop:65,maxWidth:1030}}>{article.shortTitle}</div>
-    <div style={{display:'flex',alignItems:'center',gap:18,marginTop:65}}>{steps.map((step,index)=><div style={{display:'flex',alignItems:'center',gap:18}} key={step}><div style={{display:'flex',flexDirection:'column',border:'1px solid #69767e',borderRadius:12,padding:'22px 25px',minWidth:280}}><span style={{fontSize:16,color:'#aab5bb',marginBottom:12}}>0{index+1}</span><span style={{fontSize:25}}>{step}</span></div>{index<2&&<span style={{fontSize:30,color:'#60afff'}}>→</span>}</div>)}</div>
-    <div style={{display:'flex',fontSize:20,color:'#bbc3c7',marginTop:'auto'}}>Fachartikel mit interaktivem Beispiel · aimation.de/blog</div>
+  return new ImageResponse(<div style={{ width:'100%',height:'100%',display:'flex',flexDirection:'column',background:'#071013',color:'#faf9f7',padding:'55px 65px',fontFamily:'sans-serif',position:'relative' }}>
+    {/* The identical original vector motif ties the card to the article. */}
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    <img src={engineeringArtworkUri(kind)} alt="" width={790} height={569} style={{position:'absolute',right:-125,top:62,opacity:.85}} />
+    <div style={{position:'absolute',inset:0,background:'linear-gradient(90deg, #071013 0%, rgba(7,16,19,0.97) 30%, rgba(7,16,19,0.3) 63%, rgba(7,16,19,0) 100%)'}} />
+    <div style={{display:'flex',justifyContent:'space-between',fontSize:23,color:'#bbc3c7'}}><span>AImation</span><span>Engineering / Praxiswissen</span></div>
+    <div style={{display:'flex',fontSize:17,color:'#bbc3c7',marginTop:85,letterSpacing:1}}>{article.tag}</div>
+    <div style={{display:'flex',fontSize:64,fontWeight:700,lineHeight:1.08,letterSpacing:'-2px',marginTop:24,maxWidth:650}}>{article.shortTitle}</div>
+    <div style={{display:'flex',fontSize:19,color:'#bbc3c7',marginTop:'auto',borderTop:'1px solid #334249',paddingTop:22}}>Mit interaktivem Beispiel · aimation.de/blog</div>
   </div>,{width:1200,height:630});
 }

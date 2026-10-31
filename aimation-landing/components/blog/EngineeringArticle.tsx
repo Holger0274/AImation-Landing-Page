@@ -10,6 +10,7 @@ import { ARTICLE_DATE, ARTICLE_SOURCES, ENGINEERING_ARTICLES, articleReadingMinu
 import { SITE_URL, pageMetadata } from '@/lib/seo/metadata';
 import EngineeringExplainer from './EngineeringExplainer';
 import ArticleContact from './ArticleContact';
+import EngineeringArtwork from './EngineeringArtwork';
 import s from './engineering-article.module.css';
 
 export function engineeringArticleMetadata(article: Article): Metadata {
@@ -31,12 +32,17 @@ export default function EngineeringArticle({ article }: { article: Article }) {
     <main id="main-content" className={s.page}>
       <article>
         <header className={s.hero}>
+          <div className={s.heroAtmosphere} aria-hidden="true"><EngineeringArtwork kind={article.key} className={s.heroArtwork} /></div>
+          <div className={s.heroContent}>
           <nav className={s.breadcrumb} aria-label="Brotkrumennavigation"><Link href="/">Startseite</Link><span aria-hidden="true">/</span><Link href="/blog">Blog</Link><span aria-hidden="true">/</span><span aria-current="page">{article.tag}</span></nav>
           <div className={s.meta}><span>{article.tag}</span><time dateTime={ARTICLE_DATE}>31. Oktober 2026</time><span>{articleReadingMinutes(article)} Min. Lesezeit</span></div>
           <h1>{article.title}</h1>
           <BlogAuthor />
           <p className={s.lead}>{article.lead}</p>
           <p className={s.answer}>{article.answer}</p>
+          <a href="#visual-title" className={s.exploreLink}>Interaktives Beispiel entdecken <span aria-hidden="true">↓</span></a>
+          </div>
+          <span className={s.artworkNote} aria-hidden="true">AImation / {article.tag}<br />Schematische Illustration</span>
         </header>
         <section className={s.visualSection} aria-labelledby="visual-title"><p className="technical-label">Selbst ausprobieren</p><h2 id="visual-title">{article.visualTitle}</h2><p className={s.visualIntro}>{article.visualIntro}</p><EngineeringExplainer kind={article.key} /></section>
         <div className={s.bodyLayout}>
