@@ -7,7 +7,7 @@ Ziel: Die Startseite führt früher in die vorhandene Entwicklungsarbeit. Besuch
 - Interaktiver Einstieg mit Originalansichten von Skizze, Zeichnung und FEM. Die Auswahl zeigt jeweils eine fachliche Kurzbeschreibung. Kein simuliertes CAD-System und keine erfundenen Ergebnisse.
 - Vier direkte Einstiege zu CAD/FEM, Anwendungen, Entwicklungskatalog und Zusammenarbeit.
 - Fünf CAD-/CAE-Kapitel direkt auf der Startseite, mit Bildauswahl, Laufzeiten, technischen Erläuterungen und Weiter-Schaltfläche. Bestehender Kapitelplayer wird wiederverwendet.
-- Anwendungsdemos folgen direkt auf die CAD-Reise. Die persönliche Vorstellung folgt auf die Demonstrationen.
+- Anwendungsdemos folgen direkt auf die CAD-Reise. Nach Nutzerfeedback steht die persönliche Vorstellung wieder direkt unter dem Hero, vor der Erlebnisnavigation und den Demonstrationen: Der Ansprechpartner und seine Erfahrung sollen früh sichtbar sein.
 - Auf schmalen Bildschirmen erscheint die interaktive Vorschau vor den ergänzenden Pilot- und Themenhinweisen.
 - Autodesk-Mitgliedschaft als größere typografische Karte bzw. Banner, mit Startup-Kategorie und bestätigtem Datum. Kein Autodesk-Logo eingebunden.
 - Deutsche und englische Texte umgesetzt. Bestehende URL-Struktur, Preise und Kontaktformulare bleiben erhalten.

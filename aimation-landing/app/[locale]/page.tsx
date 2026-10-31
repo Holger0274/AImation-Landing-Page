@@ -68,10 +68,10 @@ export default async function Home({
       <Header />
       <main id="main-content" className="home-page">
         <Hero />
+        <FounderIntro />
         <ExperienceRoute en={locale === 'en'} />
         <AI2CADTeaser locale={locale} />
         <EarlyDemos />
-        <FounderIntro />
         <PainPoints />
         <TimeEstimate />
         <QktImpact />
