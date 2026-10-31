@@ -1,3 +1,4 @@
+import { ENGINEERING_ARTICLES } from '@/lib/data/engineering-articles';
 import { NextResponse } from 'next/server';
 import { PRICING } from '@/lib/data/pricing';
 import { AI2CAD_CHAPTERS, AI2CAD_PATH } from '@/lib/data/ai2cad';
@@ -49,6 +50,10 @@ ${AI2CAD_CHAPTERS.map(chapter => `- [${chapter.kind} ${chapter.number}: ${chapte
 - [Meeting-Protokolle mit KI](${siteUrl}/use-cases/meeting-transkript-analyse): Freigegebene Transkripte in Entscheidungen, Aufgaben und offene Punkte strukturieren. Bei AImation im Aufbau; Zielsysteme, Datenbank und Änderungshistorie werden im Pilot abgestimmt. Aufgaben und Entscheidungen werden vor der Übergabe menschlich bestätigt.
 - [Entwicklungswissen mit KI finden](${siteUrl}/use-cases/knowledge-graph-management): Frühere Entscheidungen mit Prüfberichten und Protokollen nachvollziehen. Interner Prototyp mit eigenen Unterlagen; Unternehmensanbindung, Rechteprüfung und Datenhistorie werden für den Pilot abgestimmt. Keine garantierten Antwortzeiten.
 - [Alle Use Cases](${siteUrl}/use-cases)
+
+## Fachartikel zur technischen Produktentwicklung
+
+${ENGINEERING_ARTICLES.map(article => `- [${article.title}](${siteUrl}/blog/${article.slug}): ${article.description} Fiktive interaktive Beispiele, fachliche Quellen im Artikel.`).join('\n')}
 
 ## Datenschutz
 
