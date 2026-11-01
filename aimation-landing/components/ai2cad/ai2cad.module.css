@@ -181,3 +181,8 @@
   .chapterActions { padding-inline: 20px; }
 }
 @media (prefers-reduced-motion: reduce) { .chapterThumb img, .nextChapter { transition: none; } .immersive .tabs button:hover .chapterThumb img { transform: none; } }
+
+.extensionEntry { margin-top:20px; color:var(--muted); font-size:14px; line-height:1.7; }
+.extensionEntry a { display:inline-block; min-height:44px; text-decoration:underline; text-underline-offset:5px; }
+.standaloneNote { padding:18px 20px; border-left:2px solid var(--line-strong); background:var(--surface); color:var(--muted); font-size:15px; line-height:1.75; margin-top:20px; }
+.standaloneNote strong { display:block; color:var(--ink); font-weight:500; margin-bottom:6px; }

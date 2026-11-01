@@ -1,5 +1,5 @@
 import { DISCOVERY_PAGES } from '@/lib/data/discovery';
-import { AI2CAD_CHAPTERS, AI2CAD_PATH } from '@/lib/data/ai2cad';
+import { AI2CAD_VIDEOS, AI2CAD_PATH } from '@/lib/data/ai2cad';
 import { DEMO_VIDEOS } from '@/lib/data/demo-videos';
 
 // Only advertise translations whose page content is actually translated.
@@ -8,7 +8,7 @@ export const ENGLISH_PATHS = new Set([
   ...Object.values(DISCOVERY_PAGES).map(page => page.path),
   ...DEMO_VIDEOS.map(video => video.path),
   '/ai2cad',
-  ...AI2CAD_CHAPTERS.map(chapter => `${AI2CAD_PATH}/${chapter.slug}`),
+  ...AI2CAD_VIDEOS.map(chapter => `${AI2CAD_PATH}/${chapter.slug}`),
   '/', '/ki-schulungen-mittelstand', '/facts/aimation', '/facts/holger-peschke',
   '/use-cases/excel-powerpoint-berichte',
   '/ki-produktentwicklung', '/ki-betriebssystem', '/schulungen/microsoft-365-copilot',

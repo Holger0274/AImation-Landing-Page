@@ -18,8 +18,8 @@ export default function Header() {
   const leistungenItems = [
     {
       href: '/ai2cad',
-      label: 'AI2CAD / AI2CAE',
-      description: locale === 'en' ? 'From CAD to FEM: five videos controlled by an LLM' : 'Vom CAD zur FEM: fünf Videos mit LLM-Steuerung',
+      label: 'CAD / CAE / CAM',
+      description: locale === 'en' ? 'Development videos: CAD, FEM, patents and CNC' : 'Entwicklungsvideos: CAD, FEM, Patente und CNC',
       icon: Bot,
     },
     {

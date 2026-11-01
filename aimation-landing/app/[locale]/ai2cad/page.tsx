@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header';
 import AutodeskMembership from '@/components/AutodeskMembership';
 import Footer from '@/components/layout/Footer';
 import FemComparison from '@/components/ai2cad/FemComparison';
+import EngineeringExtensions from '@/components/ai2cad/EngineeringExtensions';
 import ChapterPlayer from '@/components/ai2cad/ChapterPlayer';
 import { Link } from '@/i18n/navigation';
 import { AI2CAD_CHAPTERS, AI2CAD_PATH, AI2CAD_JOURNEY, getAI2CADFaqs } from '@/lib/data/ai2cad';
@@ -17,8 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const en = locale === 'en';
   return pageMetadata(AI2CAD_PATH, locale,
-    en ? 'CAD automation and FEM with AI | AI2CAD | AImation' : 'CAD-Automatisierung und FEM mit KI | AI2CAD | AImation',
-    en ? 'CAD and FEM automation for engineering teams: five videos show LLM-controlled modelling, drawing preparation and analysis with a hand-calculation check.' : 'KI für Konstrukteure und Entwicklungsleiter: Fünf Videos zeigen CAD-Steuerung per LLM, Zeichnungsableitung und FEM-Berechnung mit Vergleich zur Handrechnung.');
+    en ? 'CAD, FEM, patent models and CNC with AI | AImation' : 'CAD, FEM, Patentmodelle und CNC mit KI | AImation',
+    en ? 'Seven development videos: CAD, drawing preparation and FEM, plus standalone examples of patent visualisation in 3D and CNC turning program preparation.' : 'Sieben Entwicklungsvideos: CAD, Zeichnung und FEM sowie eigenständige Beispiele zur Patentvisualisierung in 3D und zur Vorbereitung eines CNC-Drehprogramms.');
 }
 
 export default async function AI2CADPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -41,6 +42,7 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
               <p className={styles.headline}>{en ? 'Not a single mouse click\nin the CAD system.' : 'Kein einziger Mausklick\nim CAD-System.'}</p>
               <p className={styles.intro}>{en ? 'A large language model (LLM) controls the CAD system. It sets every parameter, builds the geometry and creates the drawing. You provide instructions and approvals through the conversation. Chapter 5 continues in the CAE system with FEM analysis and a hand-calculation check.' : 'Ein Large Language Model (LLM) steuert das CAD-System. Es setzt alle Parameter, baut die Geometrie auf und erstellt die Zeichnung. Ihre Vorgaben und Freigaben kommen im Dialog. Kapitel 5 führt im CAE-System weiter zur FEM-Berechnung mit Gegenprobe durch eine Handrechnung.'}</p>
               <a href="#videos" className={styles.primary}>{en ? 'Watch the five chapters' : 'Die fünf Kapitel ansehen'}<ArrowDown size={18} aria-hidden="true" /></a>
+              <p className={styles.extensionEntry}><a href="#weitere-entwicklungsfelder">{en ? 'Continue the series: patent models and CNC, parts 6 and 7' : 'Die Serie geht weiter: Patentmodelle und CNC, Teil 6 und 7'} ↓</a></p>
             </div>
             <figure className={styles.drawing}>
               <div className={styles.drawingTop}><span>{en ? 'The result, with review tasks' : 'Das Ergebnis, mit Prüfaufgaben'}</span><span>A3 · 2:1</span></div>
@@ -61,6 +63,8 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
           <p className={styles.author}>{en ? 'Demonstration by Holger Peschke, AImation. Updated 10 October 2026.' : 'Demonstration von Holger Peschke, AImation. Stand: 10. Oktober 2026.'} <Link href="/facts/holger-peschke">{en ? 'About the author' : 'Zum fachlichen Hintergrund'} →</Link></p>
         </div>
       </section>
+
+      <EngineeringExtensions en={en} />
 
       <div className={styles.wrap}><AutodeskMembership en={en} /><FemComparison en={en} /></div>
 

@@ -3,7 +3,7 @@ import { readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { ENGLISH_PATHS, localizedPath } from '@/lib/seo/locales';
 import { SITE_URL } from '@/lib/seo/metadata';
-import { AI2CAD_CHAPTERS, AI2CAD_PATH } from '@/lib/data/ai2cad';
+import { AI2CAD_VIDEOS, AI2CAD_PATH } from '@/lib/data/ai2cad';
 import { DEMO_VIDEOS } from '@/lib/data/demo-videos';
 
 // Discover static public pages at build time. Dynamic routes need explicit enumeration.
@@ -26,7 +26,7 @@ const escapeXml = (value: string) => value.replace(/&/g, '&amp;').replace(/"/g, 
 export async function GET() {
   const pages = [...new Set([
     ...await discoverPages(path.join(process.cwd(), 'app', '[locale]')),
-    ...AI2CAD_CHAPTERS.map(chapter => `${AI2CAD_PATH}/${chapter.slug}`),
+    ...AI2CAD_VIDEOS.map(chapter => `${AI2CAD_PATH}/${chapter.slug}`),
     ...DEMO_VIDEOS.map(video => video.path),
   ])].sort();
   const entries = pages.flatMap((base) => {
@@ -35,7 +35,7 @@ export async function GET() {
       ? [['de', base], ['en', localizedPath(base, 'en')], ['x-default', base]]
           .map(([language, url]) => '    <xhtml:link rel="alternate" hreflang="' + language + '" href="' + escapeXml(SITE_URL + url) + '"/>').join('\n')
       : '';
-    const chapter = AI2CAD_CHAPTERS.find(item => `${AI2CAD_PATH}/${item.slug}` === base);
+    const chapter = AI2CAD_VIDEOS.find(item => `${AI2CAD_PATH}/${item.slug}` === base);
     const demo = DEMO_VIDEOS.find(item => item.path === base);
     return (translated ? [base, localizedPath(base, 'en')] : [base]).map((url) => {
       const language = url.startsWith('/en/') ? 'en' : 'de';
@@ -43,7 +43,7 @@ export async function GET() {
       const demoCopy = demo?.[language];
       const media = chapter && copy ? {
         asset: `ai2cad/${chapter.id}`, title: `${chapter.kind} ${chapter.number}: ${copy.title}`,
-        description: `${copy.description} ${copy.check}`, seconds: chapter.seconds,
+        description: `${'context' in copy ? copy.context + ' ' : ''}${copy.description} ${copy.check}`, seconds: chapter.seconds,
       } : demo && demoCopy ? {
         asset: `demos/${demo.id}`, title: `${demo.name}: ${demoCopy.topic}`,
         description: `${demoCopy.description} ${demoCopy.note}`, seconds: demo.seconds,

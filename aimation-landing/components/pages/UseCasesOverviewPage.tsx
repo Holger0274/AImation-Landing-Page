@@ -9,7 +9,7 @@ import { PROJECTS } from '@/lib/data/projects';
 import { SolutionWorld, SOLUTION_WORLD_COLORS } from '@/components/sections/ProjectShowcase/types';
 import { useLeadForm } from '@/components/LeadFormProvider';
 import { Link } from '@/i18n/navigation';
-import { AI2CAD_CHAPTERS, AI2CAD_PATH } from '@/lib/data/ai2cad';
+import { AI2CAD_VIDEOS, AI2CAD_PATH } from '@/lib/data/ai2cad';
 
 const SOLUTION_WORLDS: SolutionWorld[] = ['KNOW', 'THINK', 'FLOW', 'WORK'];
 
@@ -63,7 +63,7 @@ export default function UseCasesOverviewPage() {
           <h2 id="cad-demos-title" className="font-heading text-2xl md:text-3xl mb-4">{en ? 'CAD automation and FEM with ' : 'CAD-Automatisierung und FEM mit '}<span className="highlight">{en ? 'AI' : 'KI'}</span></h2>
           <p className="max-w-3xl text-muted leading-relaxed">{en ? 'A mounting plate from text, a shaft from a hand sketch and FEM analysis under a 1,500 N load. These videos show our own development demonstrations, including the remaining engineering checks.' : 'Eine Montageplatte aus Text, eine Welle aus einer Handskizze und eine FEM-Berechnung unter 1.500 N. Die Videos zeigen eigene Entwicklungsdemonstrationen mit den noch offenen fachlichen Prüfaufgaben.'}</p>
           <ul className="grid gap-3 md:grid-cols-2 mt-5">
-            {AI2CAD_CHAPTERS.map(chapter => <li key={chapter.id}><Link href={`${AI2CAD_PATH}/${chapter.slug}`} className="engineering-text-link">{chapter[en ? 'en' : 'de'].title} →</Link></li>)}
+            {AI2CAD_VIDEOS.map(chapter => <li key={chapter.id}><Link href={`${AI2CAD_PATH}/${chapter.slug}`} className="engineering-text-link">{chapter[en ? 'en' : 'de'].title} →</Link></li>)}
           </ul>
           <Link href={AI2CAD_PATH} className="engineering-text-link mt-5">{en ? 'AI2CAD and AI2CAE: workflow and questions' : 'AI2CAD und AI2CAE: Ablauf und Fragen'} →</Link>
         </div>

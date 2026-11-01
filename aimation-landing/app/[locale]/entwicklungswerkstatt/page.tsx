@@ -4,6 +4,7 @@ import { pageMetadata } from '@/lib/seo/metadata';
 import { DISCOVERY_PAGES } from '@/lib/data/discovery';
 import DetailLayout from '@/components/discovery/DetailLayout';
 import AI2CADTeaser from '@/components/ai2cad/AI2CADTeaser';
+import EngineeringExtensions from '@/components/ai2cad/EngineeringExtensions';
 import EarlyDemos from '@/components/sections/EarlyDemos';
 import SelfBuilt from '@/components/sections/SelfBuilt';
 export function generateStaticParams() { return routing.locales.map(locale => ({ locale })); }
@@ -14,8 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params; setRequestLocale(locale);
-  return <DetailLayout page="werkstatt" locale={locale} stops={[{ id: 'entwicklung-erleben', de: 'CAD und FEM', en: 'CAD and FEM' }, { id: 'anwendungsdemos', de: 'Anwendungsvideos', en: 'Application videos' }, { id: 'selbst-gebaut', de: 'Eigene Werkzeuge', en: 'Our tools' }]}>
+  return <DetailLayout page="werkstatt" locale={locale} stops={[{ id: 'entwicklung-erleben', de: 'CAD und FEM', en: 'CAD and FEM' }, { id: 'weitere-entwicklungsfelder', de: 'Patent und CNC', en: 'Patent and CNC' }, { id: 'anwendungsdemos', de: 'Anwendungsvideos', en: 'Application videos' }, { id: 'selbst-gebaut', de: 'Eigene Werkzeuge', en: 'Our tools' }]}>
     <AI2CADTeaser locale={locale} />
+<EngineeringExtensions en={locale === 'en'} />
 <EarlyDemos />
 <SelfBuilt />
   </DetailLayout>;

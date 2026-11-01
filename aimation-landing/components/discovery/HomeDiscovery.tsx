@@ -9,6 +9,7 @@ import { QKT_CASES } from '@/lib/data/application-paths';
 import { PRICING } from '@/lib/data/pricing';
 import { pauseOtherVideos } from '@/lib/media/playback';
 import styles from './discovery.module.css';
+import EngineeringExtensions from '@/components/ai2cad/EngineeringExtensions';
 import TechnicalAtmosphere from '@/components/visuals/TechnicalAtmosphere';
 
 function PreviewVideo({ id, en }: { id: typeof AI2CAD_CHAPTERS[number]['id']; en: boolean }) {
@@ -55,8 +56,9 @@ export default function HomeDiscovery({ en }: { en: boolean }) {
         <PreviewVideo id={chapter.id} en={en} key={chapter.id} />
         <div className={styles.previewCopy} aria-live="polite"><p className="technical-label">{chapter.kind} / {chapter.number}</p><h3>{copy.title}</h3><p>{copy.description}</p><p className={styles.note} id="preview-check">{copy.check}</p><Link href={`${AI2CAD_PATH}/${chapter.slug}`} className="engineering-text-link">{en ? 'Read the complete workflow' : 'Den vollständigen Ablauf ansehen'}<ArrowUpRight size={17} aria-hidden="true" /></Link></div>
       </div>
-      <div className={styles.footLinks}><Link href="/ai2cad" className="engineering-text-link">{en ? 'All five videos and CAD integration' : 'Alle fünf Videos und die CAD-Anbindung'}<ArrowUpRight size={17} aria-hidden="true" /></Link><Link href="/entwicklungswerkstatt#selbst-gebaut" className="engineering-text-link">{en ? 'Explore 5Why, FEM Visualizer and idea evaluation' : '5Why, FEM-Visualizer und Ideenbewertung entdecken'}<ArrowUpRight size={17} aria-hidden="true" /></Link></div>
+      <div className={styles.footLinks}><Link href="/ai2cad" className="engineering-text-link">{en ? 'The five CAD/FEM videos and integration' : 'Die fünf CAD-/FEM-Videos und die CAD-Anbindung'}<ArrowUpRight size={17} aria-hidden="true" /></Link><Link href="/entwicklungswerkstatt#selbst-gebaut" className="engineering-text-link">{en ? 'Explore 5Why, FEM Visualizer and idea evaluation' : '5Why, FEM-Visualizer und Ideenbewertung entdecken'}<ArrowUpRight size={17} aria-hidden="true" /></Link></div>
     </div></section>
+    <EngineeringExtensions en={en} />
     <section id="anwendungsdemos" className={`engineering-section ${styles.appsSection}`} aria-labelledby="apps-heading"><div className="engineering-wrap">
       <div className={styles.sectionHead}><div><p className="technical-label">02 / {en ? 'Applications' : 'Anwendungen'}</p><h2 id="apps-heading">{en ? 'A look inside our ' : 'Ein Blick in unsere '}<span className="highlight">{en ? 'workshop.' : 'Werkstatt.'}</span></h2></div><p>{en ? 'Projects, variants or skills: each 90-second recording shows a specific development stage with example data.' : 'Projekte, Varianten oder Kompetenzen: Jede Aufnahme zeigt in 90 Sekunden einen konkreten Entwicklungsstand mit Beispieldaten.'}</p></div>
       <div className={styles.apps}>{APPLICATION_DEMOS.map((demo, index) => <Link className={styles.app} key={demo.id} href={`/videos/${demo.id}`}><div className={styles.appImage}><Image src={`/videos/demos/${demo.id}.webp`} alt={demo[lang].poster} fill sizes="(max-width: 650px) 90vw, 32vw" /><span>0{index + 1} / 1:30</span></div><div className={styles.appCopy}><span className="technical-label">{demo[lang].status}</span><h3>{demo[lang].topic}<ArrowUpRight size={20} aria-hidden="true" /></h3><p>{demo.name}</p></div></Link>)}</div>
