@@ -1,4 +1,5 @@
 'use client';
+import TechnicalAtmosphere from '@/components/visuals/TechnicalAtmosphere';
 
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
@@ -36,8 +37,8 @@ export default function KiSchulungenPage() {
     ['Zuschnitt', 'Aus den Modulen unserer Lernreihen stellen wir zusammen, was Ihr Team braucht. Ein halber Tag oder mehrere Tage, ein Thema oder mehrere kombiniert. Was passt, wird gemacht.'],
     ['Schulungstag', 'Ihr Team arbeitet an Ihren eigenen Fällen. Wir zeigen live, wie KI sie löst, Schritt für Schritt. Wo KI an Grenzen stößt, sagen wir das offen.'],
   ];
-  return <main id="main-content" className="bg-ground">
-    <section className="training-hero engineering-wrap">
+  return <main id="main-content" className="bg-ground atmosphere-page">
+    <header className="atmosphere-section"><TechnicalAtmosphere motif="documents" /><section className="training-hero engineering-wrap">
       <nav aria-label={l('Brotkrumennavigation', 'Breadcrumb')} className="training-breadcrumb"><Link href="/">{l('Startseite', 'Home')}</Link><ChevronRight size={14} aria-hidden="true"/><span>{l('KI-Schulungen', 'AI training')}</span></nav>
       <div className="section-intro">
         <p className="technical-label">{l('Schulung & Lernmaterial', 'Training & learning materials')}</p>
@@ -47,6 +48,7 @@ export default function KiSchulungenPage() {
         <div className="mt-5"><a href="#lernprobe" className="engineering-text-link">{l('Erst eine Lernprobe ausprobieren', 'Try a learning sample first')} ↓</a></div>
       </div>
     </section>
+    </header>
     <LearningSample />
     <section className="engineering-section" id="lernreihen">
       <div className="engineering-wrap">

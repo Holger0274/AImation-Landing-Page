@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer';
 import { BreadcrumbSchema, FAQPageSchema } from '@/components/StructuredData';
 import { localizedPath } from '@/lib/seo/locales';
 import styles from './TopicPage.module.css';
+import TechnicalAtmosphere from '@/components/visuals/TechnicalAtmosphere';
 
 export type TopicFAQ = { question: string; answer: string };
 export { styles as topicStyles };
@@ -21,6 +22,8 @@ export default function TopicPage({ locale, path, label, title, accent, intro, v
     <FAQPageSchema faqs={faqs} />
     <Header />
     <main id="main-content" className={styles.page}>
+      <header className="atmosphere-section">
+      <TechnicalAtmosphere treatment="section" motif={path === '/ki-produktentwicklung' ? 'assembly' : /projekt|meeting|prozess/.test(path) ? 'workflow' : 'documents'} />
       <div className="engineering-wrap">
         <nav aria-label={en ? 'Breadcrumb' : 'Brotkrumennavigation'} className={styles.breadcrumb}>
           <Link href="/">{en ? 'Home' : 'Startseite'}</Link><span aria-hidden="true">/</span>
@@ -35,6 +38,7 @@ export default function TopicPage({ locale, path, label, title, accent, intro, v
         </section>
         <div className={styles.meta}>{facts.map(fact => <span key={fact}>{fact}</span>)}</div>
       </div>
+      </header>
       {children}
       <div className="engineering-wrap">
         <section className={`${styles.section} ${styles.faq}`} aria-labelledby="topic-faq">

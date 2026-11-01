@@ -580,3 +580,14 @@ footer { border-top: 1px solid var(--line); }
   .process-offer-details { grid-template-columns: 1fr; gap: 0; }
   .home-page .workbench-project { grid-template-columns: 1fr; }
 }
+
+/* Section-specific technical scenes replace the drifting background on these pages.
+   Foreground diagrams stay intact; identity, partners and FAQs use quiet surfaces. */
+main.home-page, main.atmosphere-page { background:var(--ground); }
+.atmosphere-section { position:relative; isolation:isolate; }
+.atmosphere-section .technical-label { color:var(--muted); }
+.atmosphere-section .hero-microcopy, .atmosphere-section .closing-actions > p { color:var(--muted); }
+.atmosphere-service h1 { max-width:32ch; font-weight:500; }
+.atmosphere-service > div > p { max-width:65ch; }
+.atmosphere-service nav { flex-wrap:wrap; }
+.atmosphere-section h1 { overflow-wrap:anywhere; hyphens:auto; }

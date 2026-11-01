@@ -6,6 +6,7 @@ import { useLeadForm } from '@/components/LeadFormProvider';
 import HeroWorkbench from '@/components/visuals/HeroWorkbench';
 import { Link } from '@/i18n/navigation';
 import styles from './Hero.module.css';
+import TechnicalAtmosphere from '@/components/visuals/TechnicalAtmosphere';
 
 export default function Hero() {
   const t = useTranslations('hero');
@@ -13,7 +14,8 @@ export default function Hero() {
   const duration = en ? PRICING.erstgespraech.duration.toLowerCase() : PRICING.erstgespraech.duration;
   const { openLeadForm } = useLeadForm();
   return (
-    <section className="engineering-hero" aria-labelledby="hero-heading">
+    <section className="engineering-hero atmosphere-section" aria-labelledby="hero-heading">
+      <TechnicalAtmosphere motif="assembly" />
       <div className="engineering-wrap">
         <div className={`engineering-hero-grid ${styles.grid}`}>
           <div className={`hero-copy ${styles.copy}`}>

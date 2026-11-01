@@ -1,4 +1,5 @@
 'use client';
+import TechnicalAtmosphere from '@/components/visuals/TechnicalAtmosphere';
 
 import { Link } from '@/i18n/navigation';
 import { motion } from 'framer-motion';
@@ -73,9 +74,10 @@ function FaqAccordion() {
 
 export default function KiUmsetzungPage() {
   return (
-    <main id="main-content" className="bg-ground">
+    <main id="main-content" className="bg-ground atmosphere-page">
       {/* HERO */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4">
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 atmosphere-section atmosphere-service">
+        <TechnicalAtmosphere motif="assembly" />
         <div className="max-w-4xl mx-auto">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-dim mb-6 font-inter">
             <Link href="/" className="hover:text-ink transition-colors">Startseite</Link>
@@ -86,7 +88,7 @@ export default function KiUmsetzungPage() {
             Säule 3: Umsetzung
           </div>
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="font-heading font-bold text-ink mb-6 leading-tight"
@@ -96,7 +98,7 @@ export default function KiUmsetzungPage() {
             <span className="text-magenta-light">Lösungen, die morgen funktionieren</span>
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-muted font-inter leading-relaxed mb-8"
@@ -106,7 +108,7 @@ export default function KiUmsetzungPage() {
             Wir bauen Lösungen, die in Ihrer IT-Umgebung laufen – nicht nur auf Demo-Slides.
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-3"

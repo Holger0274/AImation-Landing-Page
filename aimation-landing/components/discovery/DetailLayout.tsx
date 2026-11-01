@@ -7,6 +7,7 @@ import { DISCOVERY_PAGES, type DiscoveryKey } from '@/lib/data/discovery';
 import { SITE_URL } from '@/lib/seo/metadata';
 import { localizedPath } from '@/lib/seo/locales';
 import styles from './discovery.module.css';
+import TechnicalAtmosphere from '@/components/visuals/TechnicalAtmosphere';
 
 export default function DetailLayout({ page, locale, children, stops }: { page: DiscoveryKey; locale: string; children: ReactNode; stops: { id: string; de: string; en: string }[] }) {
   const en = locale === 'en';
@@ -24,11 +25,14 @@ export default function DetailLayout({ page, locale, children, stops }: { page: 
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }} />
     <Header />
     <main id="main-content" className="home-page">
+      <header className="atmosphere-section">
+        {page !== 'person' && <TechnicalAtmosphere motif={page === 'werkstatt' ? 'assembly' : page === 'anwendungen' ? 'documents' : 'workflow'} />}
       <div className={`engineering-wrap ${styles.detailHero}`}>
         <nav aria-label={en ? 'Breadcrumb' : 'Brotkrumennavigation'} className={styles.breadcrumb}><Link href="/">{en ? 'Home' : 'Startseite'}</Link><span aria-hidden="true">/</span><span aria-current="page">{copy.label}</span></nav>
         <p className="technical-label">AImation / {copy.label}</p><h1>{copy.title}</h1><p className={styles.lead}>{copy.description}</p>
         <nav className={styles.stops} aria-label={en ? 'On this page' : 'Auf dieser Seite'}>{stops.map(stop => <a key={stop.id} href={`#${stop.id}`}>{stop[en ? 'en' : 'de']} <span aria-hidden="true">↓</span></a>)}</nav>
       </div>
+      </header>
       {children}
       <nav className={`engineering-wrap ${styles.related}`} aria-label={en ? 'Continue exploring' : 'Weiter entdecken'}><p className="technical-label">{en ? 'Continue exploring' : 'Weiter entdecken'}</p><div>{Object.entries(DISCOVERY_PAGES).filter(([key]) => key !== page).map(([key, item]) => <Link href={item.path} key={key}>{item[en ? 'en' : 'de'].label} <span aria-hidden="true">↗</span></Link>)}<Link href="/">{en ? 'Back to overview' : 'Zurück zur Übersicht'} <span aria-hidden="true">↗</span></Link></div></nav>
       <FinalCTA />

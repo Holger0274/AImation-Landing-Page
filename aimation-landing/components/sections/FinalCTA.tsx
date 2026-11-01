@@ -1,4 +1,5 @@
 'use client';
+import TechnicalAtmosphere from '@/components/visuals/TechnicalAtmosphere';
 import { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -10,7 +11,8 @@ export default function FinalCTA() {
   const { openLeadForm } = useLeadForm();
   const t = useTranslations('finalCta');
   return (
-    <section id="kontakt" className="engineering-section closing-section">
+    <section id="kontakt" className="engineering-section closing-section atmosphere-section">
+      <TechnicalAtmosphere motif="assembly" treatment="closing" />
       <div className="engineering-wrap closing-layout">
         <div className="section-intro"><h2>{t('headline')} <span className="highlight">{t('headlineHighlight')}</span> {t('headlineEnd')}</h2><p>{t('subline')}</p></div>
         <div className="closing-actions">
