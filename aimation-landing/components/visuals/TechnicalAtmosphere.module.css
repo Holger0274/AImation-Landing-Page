@@ -1,5 +1,5 @@
 .atmosphere { position:absolute; inset:0; z-index:-1; overflow:hidden; pointer-events:none; max-width:none; background:radial-gradient(ellipse at 80% 35%,rgba(96,175,255,.065),transparent 70%),var(--ground,#071013); }
-.atmosphere img { position:absolute; width:max(1250px,115%); height:auto; max-width:none; top:50%; right:-12%; transform:translateY(-50%); opacity:.85; }
+.atmosphere img { position:absolute; width:max(1250px,115%); height:auto; max-width:none; top:50%; right:-12%; transform:translateY(-50%); opacity:var(--atmosphere-image-opacity,.85); }
 .atmosphere::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(7,16,19,.92),rgba(7,16,19,.77) 34%,rgba(7,16,19,.25) 75%,rgba(7,16,19,.25)),linear-gradient(0deg,var(--ground,#071013),transparent 28%,transparent 80%,rgba(4,6,7,.65)); }
 .section img { right:-18%; opacity:.45; width:max(1200px,100%); }
 .section::after { background:linear-gradient(90deg,rgba(7,16,19,.9),rgba(7,16,19,.65)),linear-gradient(0deg,var(--ground,#071013),transparent 35%,var(--ground,#071013)); }
