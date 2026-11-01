@@ -6,7 +6,10 @@ import { VIDEO_ARTICLES } from '@/lib/data/video-articles';
 
 export async function videoArticleShareImage(slug: string) {
   const article = VIDEO_ARTICLES.find(item => item.slug === slug)!;
-  const source = await readFile(path.join(process.cwd(), 'public', article.poster));
+  // Literal paths let Next.js include the two originals in serverless file tracing.
+  const source = slug === 'ki-cnc-drehprogramm-cad-cam'
+    ? await readFile(path.join(process.cwd(), 'public/videos/ai2cad/cnc.webp'))
+    : await readFile(path.join(process.cwd(), 'public/videos/elektrik/kurzschluss.webp'));
   const poster = await sharp(source).resize({ width: 1000 }).png().toBuffer();
   return new ImageResponse(<div style={{ width:'100%',height:'100%',display:'flex',flexDirection:'column',background:'#071013',color:'#faf9f7',padding:'52px 60px',fontFamily:'sans-serif',position:'relative' }}>
     {/* eslint-disable-next-line @next/next/no-img-element */}
