@@ -1,3 +1,4 @@
+import { ELECTRICAL_PATH, ELECTRICAL_VIDEO } from '@/lib/data/electrical-videos';
 import { DISCOVERY_PAGES } from '@/lib/data/discovery';
 import { AI2CAD_VIDEOS, AI2CAD_PATH } from '@/lib/data/ai2cad';
 import { DEMO_VIDEOS } from '@/lib/data/demo-videos';
@@ -7,7 +8,7 @@ import { DEMO_VIDEOS } from '@/lib/data/demo-videos';
 export const ENGLISH_PATHS = new Set([
   ...Object.values(DISCOVERY_PAGES).map(page => page.path),
   ...DEMO_VIDEOS.map(video => video.path),
-  '/ai2cad',
+  '/ai2cad', ELECTRICAL_PATH, ELECTRICAL_VIDEO.path,
   ...AI2CAD_VIDEOS.map(chapter => `${AI2CAD_PATH}/${chapter.slug}`),
   '/', '/ki-schulungen-mittelstand', '/facts/aimation', '/facts/holger-peschke',
   '/use-cases/excel-powerpoint-berichte',

@@ -1,3 +1,4 @@
+import { ELECTRICAL_VIDEO } from '@/lib/data/electrical-videos';
 import { Link } from '@/i18n/navigation';
 import { AI2CAD_VIDEOS, AI2CAD_PATH } from '@/lib/data/ai2cad';
 import { DEMO_VIDEOS } from '@/lib/data/demo-videos';
@@ -21,6 +22,12 @@ export default function DevelopmentEvidence({ en }: { en: boolean }) {
         <p className="font-inter text-sm text-muted leading-relaxed mt-2">{chapter[language].check}</p>
         <p className="text-xs text-dim mt-2">{en ? 'Published' : 'Veröffentlicht'}: <time dateTime={chapter.uploadDate}>{chapter.uploadDate}</time> · {chapter.duration} · {en ? 'Development demonstration' : 'Entwicklungsdemonstration'}</p>
       </article>)}
+      <article className="border-t border-line pt-5">
+        <h3 className="font-heading text-lg mb-2"><Link href={ELECTRICAL_VIDEO.path} className="engineering-text-link">KI × Elektro: {ELECTRICAL_VIDEO[language].title} →</Link></h3>
+        <p className="font-inter text-sm text-muted leading-relaxed">{ELECTRICAL_VIDEO[language].description}</p>
+        <p className="font-inter text-sm text-muted leading-relaxed mt-2">{ELECTRICAL_VIDEO[language].check}</p>
+        <p className="text-xs text-dim mt-2">{en ? 'Published' : 'Veröffentlicht'}: <time dateTime={ELECTRICAL_VIDEO.uploadDate}>{ELECTRICAL_VIDEO.uploadDate}</time> · {ELECTRICAL_VIDEO.duration}</p>
+      </article>
       {DEMO_VIDEOS.map(video => <article key={video.id} className="border-t border-line pt-5">
         <h3 className="font-heading text-lg mb-2"><Link href={video.path} className="engineering-text-link">{video.name}: {video[language].topic} →</Link></h3>
         <p className="font-inter text-sm text-muted leading-relaxed">{video[language].description}</p>

@@ -1,3 +1,4 @@
+import { ELECTRICAL_VIDEO } from '@/lib/data/electrical-videos';
 import { NextResponse } from 'next/server';
 import { readdir } from 'node:fs/promises';
 import path from 'node:path';
@@ -27,7 +28,7 @@ export async function GET() {
   const pages = [...new Set([
     ...await discoverPages(path.join(process.cwd(), 'app', '[locale]')),
     ...AI2CAD_VIDEOS.map(chapter => `${AI2CAD_PATH}/${chapter.slug}`),
-    ...DEMO_VIDEOS.map(video => video.path),
+    ...DEMO_VIDEOS.map(video => video.path), ELECTRICAL_VIDEO.path,
   ])].sort();
   const entries = pages.flatMap((base) => {
     const translated = ENGLISH_PATHS.has(base);
@@ -47,6 +48,9 @@ export async function GET() {
       } : demo && demoCopy ? {
         asset: `demos/${demo.id}`, title: `${demo.name}: ${demoCopy.topic}`,
         description: `${demoCopy.description} ${demoCopy.note}`, seconds: demo.seconds,
+      } : base === ELECTRICAL_VIDEO.path ? {
+        asset: `elektrik/${ELECTRICAL_VIDEO.id}`, title: `KI × Elektro 01: ${ELECTRICAL_VIDEO[language].title}`,
+        description: `${ELECTRICAL_VIDEO[language].description} ${ELECTRICAL_VIDEO[language].check}`, seconds: ELECTRICAL_VIDEO.seconds,
       } : undefined;
       const video = media ? '\n    <video:video>\n' +
         '      <video:thumbnail_loc>' + escapeXml(`${SITE_URL}/videos/${media.asset}.webp`) + '</video:thumbnail_loc>\n' +

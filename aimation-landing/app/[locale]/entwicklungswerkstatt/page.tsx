@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params; setRequestLocale(locale);
-  return <DetailLayout page="werkstatt" locale={locale} stops={[{ id: 'entwicklung-erleben', de: 'CAD und FEM', en: 'CAD and FEM' }, { id: 'weitere-entwicklungsfelder', de: 'Patent und CNC', en: 'Patent and CNC' }, { id: 'anwendungsdemos', de: 'Anwendungsvideos', en: 'Application videos' }, { id: 'selbst-gebaut', de: 'Eigene Werkzeuge', en: 'Our tools' }]}>
+  return <DetailLayout page="werkstatt" locale={locale} stops={[{ id: 'entwicklung-erleben', de: 'CAD und FEM', en: 'CAD and FEM' }, { id: 'weitere-entwicklungsfelder', de: 'Patent, CNC und Elektrik', en: 'Patents, CNC and electrical planning' }, { id: 'anwendungsdemos', de: 'Anwendungsvideos', en: 'Application videos' }, { id: 'selbst-gebaut', de: 'Eigene Werkzeuge', en: 'Our tools' }]}>
     <AI2CADTeaser locale={locale} />
 <EngineeringExtensions en={locale === 'en'} />
 <EarlyDemos />

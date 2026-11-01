@@ -74,7 +74,7 @@ for (const locale of ['', '/en']) {
   assert(founder.schemas.some(schema => schema['@type'] === 'ProfilePage' && schema.mainEntity?.['@id']?.endsWith('/#holger-peschke')), 'founder facts: missing profile relationship');
   const evidence = company.html.match(/<section id="entwicklungsbeispiele"[\s\S]*?<\/section>/)?.[0];
   assert(evidence, 'company facts: missing visible development evidence');
-  for (const route of paths.filter(route => route.startsWith(`${locale}/ai2cad/`) || route.startsWith(`${locale}/videos/`))) {
+  for (const route of paths.filter(route => route.startsWith(`${locale}/ai2cad/`) || route.startsWith(`${locale}/videos/`) || route.startsWith(`${locale}/ki-elektrik/`))) {
     assert(evidence.includes(`href="${route}"`), `company facts: missing source ${route}`);
   }
   assert(!/Jede Frage in Sekunden|Nie mehr Wissen verlieren/.test(company.html), 'company facts: unsupported outcome claim');

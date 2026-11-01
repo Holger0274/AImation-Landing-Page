@@ -1,3 +1,4 @@
+import { ELECTRICAL_VIDEO } from '@/lib/data/electrical-videos';
 import { ENGINEERING_ARTICLES } from '@/lib/data/engineering-articles';
 import { NextResponse } from 'next/server';
 import { PRICING } from '@/lib/data/pricing';
@@ -50,6 +51,11 @@ ${AI2CAD_VIDEOS.map(chapter => `- [${chapter.kind} ${chapter.number}: ${chapter.
 - [Meeting-Protokolle mit KI](${siteUrl}/use-cases/meeting-transkript-analyse): Freigegebene Transkripte in Entscheidungen, Aufgaben und offene Punkte strukturieren. Bei AImation im Aufbau; Zielsysteme, Datenbank und Änderungshistorie werden im Pilot abgestimmt. Aufgaben und Entscheidungen werden vor der Übergabe menschlich bestätigt.
 - [Entwicklungswissen mit KI finden](${siteUrl}/use-cases/knowledge-graph-management): Frühere Entscheidungen mit Prüfberichten und Protokollen nachvollziehen. Interner Prototyp mit eigenen Unterlagen; Unternehmensanbindung, Rechteprüfung und Datenhistorie werden für den Pilot abgestimmt. Keine garantierten Antwortzeiten.
 - [Alle Use Cases](${siteUrl}/use-cases)
+
+## KI × Elektro: eigene Videoreihe
+
+- [Elektroplanung mit KI](${siteUrl}/ki-elektrik): Eigene Reihe neben CAD, FEM und CNC. Teil 1 ist veröffentlicht, weitere Folgen sind geplant.
+- [${ELECTRICAL_VIDEO.de.title}](${siteUrl}${ELECTRICAL_VIDEO.path}): ${ELECTRICAL_VIDEO.de.description} ${ELECTRICAL_VIDEO.de.check} Autor: Holger Peschke. Veröffentlicht: ${ELECTRICAL_VIDEO.uploadDate}. Dauer: ${ELECTRICAL_VIDEO.duration}.
 
 ## Fachartikel zur technischen Produktentwicklung
 
