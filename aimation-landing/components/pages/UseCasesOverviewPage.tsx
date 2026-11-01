@@ -73,6 +73,7 @@ export default function UseCasesOverviewPage() {
           <p className="technical-label mb-3">KI × Elektro · 01</p>
           <h2 id="electrical-demos-title" className="font-heading text-2xl md:text-3xl mb-4">{en ? 'From a brief to an electrical schematic' : 'Vom Auftrag zum elektrischen Schaltplan'}</h2>
           <p className="max-w-3xl text-muted leading-relaxed">{en ? 'A pump motor feeder: the first episode follows the calculation, assumptions, schematic and internal checks. Technical approval remains with a qualified electrical professional.' : 'Ein Motorabgang für eine Pumpe: Die erste Folge zeigt Rechnung, Annahmen, Schaltplan und interne Prüfungen. Die fachliche Freigabe bleibt bei der Elektrofachkraft.'}</p>
+          <Link href="/ki-elektrik/kurzschluss-wendeschuetz" className="engineering-text-link mt-5 mr-6">{en ? 'Part 2: Simulated short-circuit tests' : 'Teil 2: Kurzschlussfälle in der Simulation'} →</Link>
           <Link href="/ki-elektrik/schaltplan-motorabgang" className="engineering-text-link mt-5">{en ? 'Watch the electrical planning video' : 'Das Video zur Elektroplanung ansehen'} →</Link>
         </div>
       </section>

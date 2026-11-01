@@ -1,4 +1,4 @@
-import { ELECTRICAL_VIDEO } from '@/lib/data/electrical-videos';
+import { ELECTRICAL_VIDEOS } from '@/lib/data/electrical-videos';
 import { ENGINEERING_ARTICLES } from '@/lib/data/engineering-articles';
 import { NextResponse } from 'next/server';
 import { PRICING } from '@/lib/data/pricing';
@@ -54,8 +54,8 @@ ${AI2CAD_VIDEOS.map(chapter => `- [${chapter.kind} ${chapter.number}: ${chapter.
 
 ## KI × Elektro: eigene Videoreihe
 
-- [Elektroplanung mit KI](${siteUrl}/ki-elektrik): Eigene Reihe neben CAD, FEM und CNC. Teil 1 ist veröffentlicht, weitere Folgen sind geplant.
-- [${ELECTRICAL_VIDEO.de.title}](${siteUrl}${ELECTRICAL_VIDEO.path}): ${ELECTRICAL_VIDEO.de.description} ${ELECTRICAL_VIDEO.de.check} Autor: Holger Peschke. Veröffentlicht: ${ELECTRICAL_VIDEO.uploadDate}. Dauer: ${ELECTRICAL_VIDEO.duration}.
+- [Elektroplanung mit KI](${siteUrl}/ki-elektrik): Eigene Reihe neben CAD, FEM und CNC. Teil 1 zeigt einen Motorabgang, Teil 2 simulierte Kurzschlussfälle und einen Stern-Dreieck-Entwurf. Weitere Folgen sind geplant.
+${ELECTRICAL_VIDEOS.map(video => `- [KI × Elektro ${video.number}: ${video.de.title}](${siteUrl}${video.path}): ${video.de.description} ${video.de.check} Autor: Holger Peschke. Veröffentlicht: ${video.uploadDate}. Dauer: ${video.duration}.`).join('\n')}
 
 ## Fachartikel zur technischen Produktentwicklung
 

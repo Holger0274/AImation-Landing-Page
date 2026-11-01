@@ -3,7 +3,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { BreadcrumbSchema } from '@/components/StructuredData';
 import WatchVideo from '@/components/ai2cad/WatchVideo';
-import { ELECTRICAL_PATH, ELECTRICAL_VIDEO as video } from '@/lib/data/electrical-videos';
+import { ELECTRICAL_PATH, ELECTRICAL_VIDEO as video, ELECTRICAL_SHORT_CIRCUIT_VIDEO } from '@/lib/data/electrical-videos';
 import { pageMetadata, SITE_URL } from '@/lib/seo/metadata';
 import { localizedPath } from '@/lib/seo/locales';
 import { Link } from '@/i18n/navigation';
@@ -39,8 +39,8 @@ export default async function ElectricalWatchPage({ params }: { params: Params }
       <h1>{en ? 'From a sentence to an ' : 'Vom Satz zum elektrischen '}<span className="highlight">{en ? 'electrical schematic.' : 'Schaltplan.'}</span></h1>
       <p className={styles.watchMeta}>KI × Elektro · {video.duration} · {en ? 'German video with audio' : 'Video mit Ton'} · Holger Peschke / AImation</p>
       <WatchVideo id={video.id} title={copy.title} en={en} directory="elektrik" chapters={copy.chapters} />
-      <div className={styles.watchDescription}><h2>{en ? 'The task becomes a visible circuit' : 'Aus dem Auftrag wird ein sichtbarer Ablauf'}</h2><p>{copy.description}</p><p className={styles.watchReview} id="chapter-review">{copy.check}</p><p className={styles.watchReview}>{en ? 'Published' : 'Veröffentlicht'}: <time dateTime={video.uploadDate}>{en ? '1 November 2026' : '1. November 2026'}</time>. {en ? 'The first episode of a separate electrical engineering series. Further episodes are planned.' : 'Der Auftakt einer eigenen Elektrikreihe. Weitere Folgen sind geplant.'}</p></div>
-      <div className={styles.watchClosing}><Link href="/entwicklungswerkstatt">{en ? 'Explore CAD, FEM and CNC next' : 'Weiter zu CAD, FEM und CNC'} →</Link><a href="#kontakt" className={styles.primary}>{en ? 'Discuss your engineering task' : 'Ihre Entwicklungsaufgabe besprechen'} ↗</a></div>
+      <div className={styles.watchDescription}><h2>{en ? 'The task becomes a visible circuit' : 'Aus dem Auftrag wird ein sichtbarer Ablauf'}</h2><p>{copy.description}</p><p className={styles.watchReview} id="chapter-review">{copy.check}</p><p className={styles.watchReview}>{en ? 'Published' : 'Veröffentlicht'}: <time dateTime={video.uploadDate}>{en ? '1 November 2026' : '1. November 2026'}</time>. {en ? 'The first episode of a separate electrical engineering series. Part 2 explores fault scenarios in a different circuit.' : 'Der Auftakt einer eigenen Elektrikreihe. Teil 2 spielt Fehlerfälle an einer anderen Schaltung durch.'}</p></div>
+      <nav className={styles.watchDescription} aria-label={en ? 'Electrical series' : 'Elektrikreihe'}><Link href={ELECTRICAL_SHORT_CIRCUIT_VIDEO.path} className="engineering-text-link">{en ? 'Continue to part 2: The short-circuit test' : 'Weiter zu Teil 2: Der Kurzschluss-Test'} →</Link></nav><div className={styles.watchClosing}><Link href="/entwicklungswerkstatt">{en ? 'Explore CAD, FEM and CNC next' : 'Weiter zu CAD, FEM und CNC'} →</Link><a href="#kontakt" className={styles.primary}>{en ? 'Discuss your engineering task' : 'Ihre Entwicklungsaufgabe besprechen'} ↗</a></div>
     </div></main><Footer />
   </>;
 }

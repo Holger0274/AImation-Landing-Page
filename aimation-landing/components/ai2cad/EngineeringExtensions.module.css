@@ -20,3 +20,6 @@
 .electrical .copy > p { color:var(--muted); line-height:1.75; font-size:15px; }
 .seriesLink { display:inline-flex; align-items:center; min-height:44px; margin-top:16px; font-size:14px; text-decoration:underline; text-decoration-color:var(--magenta); text-underline-offset:5px; }
 @media(max-width:900px) { .electrical { grid-template-columns:1fr; } }
+
+.electricalSeries { scroll-margin-top:100px; margin-top:40px; padding-top:40px; border-top:1px solid var(--line-strong); }
+.electricalSeries .copy > p { color:var(--muted); line-height:1.75; font-size:15px; }
