@@ -1,4 +1,5 @@
 import { ELECTRICAL_VIDEOS } from '@/lib/data/electrical-videos';
+import { VIDEO_ARTICLES } from '@/lib/data/video-articles';
 import { ENGINEERING_ARTICLES } from '@/lib/data/engineering-articles';
 import { NextResponse } from 'next/server';
 import { PRICING } from '@/lib/data/pricing';
@@ -59,6 +60,7 @@ ${ELECTRICAL_VIDEOS.map(video => `- [KI × Elektro ${video.number}: ${video.de.t
 
 ## Fachartikel zur technischen Produktentwicklung
 
+${VIDEO_ARTICLES.map(article => `- [${article.title}](${siteUrl}/blog/${article.slug}): ${article.description} Eigene Video-Demonstrationen, Quellen und Grenzen im Artikel.`).join('\n')}
 ${ENGINEERING_ARTICLES.map(article => `- [${article.title}](${siteUrl}/blog/${article.slug}): ${article.description} Fiktive interaktive Beispiele, fachliche Quellen im Artikel.`).join('\n')}
 
 ## Datenschutz

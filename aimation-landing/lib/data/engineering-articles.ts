@@ -1,12 +1,18 @@
 export type ArticleKey = 'requirements' | 'knowledge' | 'changes';
 export interface EngineeringArticle {
   key: ArticleKey; slug: string; title: string; shortTitle: string; tag: string; description: string;
+  date?: string;
   lead: string; answer: string; visualTitle: string; visualIntro: string;
   sections: { id: string; title: string; paragraphs: { text: string; source?: string }[]; table?: { headers: string[]; rows: string[][] } }[];
   faqs: { question: string; answer: string }[]; sources: string[]; related: { label: string; href: string }[];
 }
 export const ARTICLE_DATE = '2026-10-31';
 export const ARTICLE_SOURCES: Record<string, { label: string; url: string }> = {
+  'autodesk-post': { label: 'Autodesk: Post process a manufacturing operation', url: 'https://help.autodesk.com/view/fusion360/ENU/?contextId=MFG-POST-PROCESS-OPERATIONS' },
+  'eplan-checks': { label: 'EPLAN: Checking Projects', url: 'https://www.eplan.help/en-US/Infoportal/Content/Plattform/2027/Content/htm/msgmanagementgui_h_prueflauf.htm' },
+  'aimation-cnc': { label: 'AImation: Ein CNC-Drehprogramm vorbereiten (Video)', url: 'https://www.aimation.de/ai2cad/cnc-drehprogramm' },
+  'aimation-motor': { label: 'AImation: Vom Satz zum Schaltplan (Video)', url: 'https://www.aimation.de/ki-elektrik/schaltplan-motorabgang' },
+  'aimation-kurzschluss': { label: 'AImation: Die Schaltung im Kurzschluss-Test (Video)', url: 'https://www.aimation.de/ki-elektrik/kurzschluss-wendeschuetz' },
   "nasa-requirements": {
     "label": "NASA: How to Write a Good Requirement",
     "url": "https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/"
@@ -506,7 +512,7 @@ export const ENGINEERING_ARTICLES: EngineeringArticle[] = [
     ]
   }
 ];
-export function articleReadingMinutes(article: EngineeringArticle) {
+export function articleReadingMinutes(article: Pick<EngineeringArticle, 'lead' | 'answer' | 'sections' | 'faqs'>) {
   const words = [article.lead, article.answer, ...article.sections.flatMap(s => [s.title, ...s.paragraphs.map(p => p.text), ...(s.table?.rows.flat() ?? [])]), ...article.faqs.flatMap(f => [f.question, f.answer])].join(' ').split(/\s+/).length;
   return Math.max(1, Math.ceil(words / 180));
 }

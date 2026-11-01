@@ -131,3 +131,29 @@
 @media(max-width:950px) { .heroContent { max-width:680px; } .heroArtwork { right:-22%; top:85px; opacity:.65; } .heroAtmosphere:after { background:linear-gradient(90deg,rgba(7,16,19,.95),rgba(7,16,19,.7) 55%,rgba(7,16,19,.25)),linear-gradient(0deg,var(--ground,#071013),transparent 70%); } .artworkNote { display:none; } .figureStage { gap:1rem; } .figureCaption { padding-right:.5rem; } }
 @media(max-width:650px) { .hero { padding-bottom:2rem; } .heroAtmosphere { inset:64px -20px 0; } .heroArtwork { width:650px; max-width:none; right:-330px; top:0; opacity:.52; } .heroAtmosphere:after { background:linear-gradient(90deg,rgba(7,16,19,.94),rgba(7,16,19,.76) 62%,rgba(7,16,19,.5)),linear-gradient(0deg,var(--ground,#071013) 5%,transparent 85%); } .hero h1 { font-size:clamp(2rem,7.6vw,2.9rem); } .figureStage { grid-template-columns:1fr; gap:0; } .figureArt img { max-height:260px; } .figureCaption { padding:0 .25rem 1.5rem; } .figureCaption h3 { font-size:1.4rem; } .figureCaption p { font-size:.85rem; } .figureDisclaimer { margin-top:.7rem; } }
 @media(prefers-reduced-motion:reduce) { .figureArt,.dependencies > div { animation:none; } .options button,.exploreLink span { transition:none; } .exploreLink:hover span { transform:none; } }
+
+/* Video essays: original demo stills and progressively disclosed review steps. */
+.videoJourney { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:2rem; padding:1.5rem; align-items:start; }
+.videoJourney figure { margin:0; min-width:0; }
+.videoPreview { display:block; overflow:hidden; border:1px solid rgba(250,249,247,.2); border-radius:8px; }
+.videoPreview img { width:100%; height:auto; display:block; }
+.videoPreview > span { display:flex; gap:.7rem; align-items:center; padding:1rem; min-height:48px; font-size:.85rem; line-height:1.5; background:rgba(250,249,247,.06); }
+.videoPreview:hover > span { color:#ff4ecd; }
+.videoPreview svg { flex-shrink:0; }
+.videoJourney figcaption { font-size:.75rem; line-height:1.6; color:var(--text-muted,#b6bec2); margin-top:.8rem; }
+.journeySteps { min-width:0; }
+.journeySteps details { border-bottom:1px solid rgba(250,249,247,.18); }
+.journeySteps details:first-child { border-top:1px solid rgba(250,249,247,.18); }
+.journeySteps summary { display:flex; align-items:center; gap:.8rem; cursor:pointer; padding:1.1rem 0; min-height:52px; font-family:'Space Grotesk',sans-serif; font-size:1rem; list-style:none; }
+.journeySteps summary::-webkit-details-marker { display:none; }
+.journeySteps summary:focus-visible { outline:2px solid #f90093; outline-offset:3px; }
+.stepToggle { margin-left:auto; font-size:1.3rem; }
+.journeySteps details[open] .stepToggle { transform:rotate(45deg); }
+.journeySteps details > div { padding:0 0 1.4rem; }
+.journeySteps p { font-size:.9rem; line-height:1.7; color:var(--text-muted,#b6bec2); margin-bottom:1rem; }
+.stepReview { padding:.8rem 1rem; border-left:2px solid #60afff; background:rgba(250,249,247,.035); }
+.stepReview strong { display:block; font-size:.75rem; color:#faf9f7; margin-bottom:.4rem; font-weight:500; }
+.journeySteps a { display:flex; align-items:center; gap:.5rem; font-size:.85rem; min-height:44px; text-decoration:underline; text-underline-offset:4px; }
+.journeySteps a svg { flex-shrink:0; }
+@media(max-width:950px) { .videoJourney { grid-template-columns:1fr; gap:1.5rem; } }
+@media(max-width:650px) { .videoJourney { padding:1rem; } }
