@@ -1,4 +1,5 @@
 import React from 'react';
+import AnalyticsPreference from '@/components/analytics/AnalyticsPreference';
 
 export const metadata = {
   title: { absolute: 'Datenschutzerklärung | AImation' },
@@ -169,49 +170,29 @@ export default function DatenschutzPage() {
               <strong>Weitere Informationen:</strong> Details zu Calendlys Datenschutzpraktiken finden Sie in der <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer" className="text-magenta-light hover:underline">Datenschutzerklärung von Calendly</a>.
             </p>
 
-            <h3 className="text-xl font-semibold text-soft-black mb-2 mt-6">
-              2.6 Website-Analyse (Plausible Analytics)
+            <h3 id="website-statistik" className="text-xl font-semibold text-soft-black mb-2 mt-6">
+              2.6 Website-Analyse mit Umami
             </h3>
             <p className="text-soft-black leading-relaxed mb-4">
-              Wir nutzen Plausible Analytics, einen datenschutzfreundlichen Website-Analyse-Dienst, um die Nutzung unserer Website zu verstehen und zu verbessern.
+              Wir nutzen Umami Cloud von Umami Software, Inc., 28 Geary St, Suite 650 #243, San Francisco, Kalifornien, USA. Für unsere Website ist die EU-Region ausgewählt. Die Statistik zeigt uns, welche Inhalte besucht werden und welche Wege zu einer Kontaktaufnahme führen.
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Besonderheiten von Plausible:</strong>
-            </p>
-            <ul className="list-disc pl-6 mb-4 text-soft-black">
-              <li>Keine Cookies oder lokale Speicherung auf Ihrem Gerät</li>
-              <li>Keine personenbezogenen Daten werden erhoben</li>
-              <li>Keine Tracking über mehrere Websites hinweg</li>
-              <li>Daten werden nach 24 Stunden vollständig anonymisiert</li>
-              <li>IP-Adressen werden nur in gehashter Form für maximal 24 Stunden gespeichert</li>
-            </ul>
-            <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Erhobene Daten (aggregiert):</strong>
-            </p>
-            <ul className="list-disc pl-6 mb-4 text-soft-black">
-              <li>Aufgerufene Seiten</li>
-              <li>Verweisende Website (Referrer)</li>
-              <li>Verwendeter Browser und Gerättyp</li>
-              <li>Ungefährer Standort (nur Land, nicht Stadt oder genauer)</li>
-              <li>Besuchsdauer und Interaktionsmuster (aggregiert)</li>
-            </ul>
-            <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Zweck:</strong> Verbesserung der Website-Nutzererfahrung, Verständnis der Besuchermuster, technische Optimierung
+              Erfasst werden Seitenaufrufe, verweisende Websites, gekennzeichnete Kampagnenlinks, Browser, Sprache, Bildschirmgröße und ungefährer Standort sowie Videostarts, Videoenden und Kontaktaktionen. Wir übertragen keine Eingaben aus Kontaktformularen, Namen oder E-Mail-Adressen als Statistikdaten. Sitzungsaufzeichnungen und Heatmaps sind nicht aktiviert.
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (unser berechtigtes Interesse an der statistischen Auswertung des Nutzerverhaltens zu Optimierungszwecken)
+              Die Statistik setzt keine Analyse-Cookies und verwendet keine von uns vergebenen Nutzerkennungen. Umami verarbeitet die IP-Adresse vorübergehend zur Übertragung, zur Bildung einer Besucherkennung und zur Ableitung des ungefähren Standorts. IP-Adressen werden laut Anbieter nicht als Feld der Analysedatensätze gespeichert; technische Betriebs- und Sicherheitsprotokolle sind davon getrennt. Eine geräteübergreifende Zuordnung nehmen wir nicht vor.
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Keine Einwilligung erforderlich:</strong> Da Plausible keine personenbezogenen Daten nach der Anonymisierung speichert und keine Cookies verwendet, ist nach der Rechtsprechung deutscher Datenschutzbehörden keine explizite Cookie-Einwilligung erforderlich.
+              Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der statistischen Auswertung unserer Inhalte und Kontaktwege. Sie können der Erfassung für diesen Browser über die folgende Schaltfläche widersprechen. Dafür wird ausschließlich Ihre Entscheidung lokal im Browser gespeichert, bis Sie diese zurücksetzen oder den Browserspeicher löschen. Die Browsersignale Do Not Track und Global Privacy Control werden ebenfalls berücksichtigt.
+            </p>
+            <AnalyticsPreference />
+            <p className="text-soft-black leading-relaxed mb-4">
+              Im verwendeten Hobby-Tarif beträgt die Aufbewahrungsdauer der Analysedaten sechs Monate. Umamis Auftragsverarbeitungsvereinbarung ist Bestandteil des Nutzungsvertrags. Trotz gewählter EU-Region können der US-Anbieter und seine Unterauftragnehmer Daten etwa für Betrieb und Support außerhalb der EU verarbeiten. Für entsprechende Drittlandübermittlungen sieht die Vereinbarung unter anderem EU-Standardvertragsklauseln vor.
             </p>
             <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Datenverarbeitung:</strong> Plausible Analytics OÜ, Västriku tn 2, 50403, Tartu, Estland (EU). Die Datenverarbeitung erfolgt ausschließlich innerhalb der EU.
-            </p>
-            <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Speicherdauer:</strong> Aggregierte Statistiken werden unbegrenzt gespeichert, enthalten aber keine personenbezogenen Daten mehr.
-            </p>
-            <p className="text-soft-black leading-relaxed mb-4">
-              <strong>Weitere Informationen:</strong> <a href="https://plausible.io/data-policy" target="_blank" rel="noopener noreferrer" className="text-magenta-light hover:underline">Plausible Data Policy</a>
+              Weitere Informationen: <a href="https://umami.is/privacy" target="_blank" rel="noopener noreferrer" className="text-magenta-light hover:underline">Umami-Datenschutzerklärung</a>,{' '}
+              <a href="https://umami.is/dpa" target="_blank" rel="noopener noreferrer" className="text-magenta-light hover:underline">Auftragsverarbeitungsvereinbarung</a> und{' '}
+              <a href="https://umami.is/subprocessors" target="_blank" rel="noopener noreferrer" className="text-magenta-light hover:underline">Unterauftragnehmer</a>.
             </p>
           </section>
 
@@ -382,6 +363,7 @@ export default function DatenschutzPage() {
               <strong>Konkrete Drittlandübermittlungen:</strong>
             </p>
             <ul className="list-disc pl-6 mb-4 text-soft-black">
+              <li><strong>Umami Software, Inc. (USA):</strong> Website-Statistik mit gewählter EU-Region; mögliche Drittlandverarbeitung für Betrieb und Support gemäß der in Abschnitt 2.6 verlinkten Auftragsverarbeitungsvereinbarung.</li>
               <li><strong>Vercel (USA):</strong> Hosting-Anbieter, Übermittlung auf Grundlage von EU-Standardvertragsklauseln</li>
               <li><strong>Calendly (USA):</strong> Terminbuchungssystem, Übermittlung auf Grundlage von EU-Standardvertragsklauseln und EU-US Data Privacy Framework</li>
             </ul>

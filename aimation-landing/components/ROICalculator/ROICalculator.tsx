@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from '@/lib/analytics';
 import {
   Dialog,
   DialogContent,
@@ -87,6 +88,7 @@ export default function ROICalculator({
 
   const handleBookCall = () => {
     // Open Calendly in new tab
+    void trackEvent('booking-click', { location: 'roi-calculator' });
     window.open(calendlyUrl, '_blank');
   };
 

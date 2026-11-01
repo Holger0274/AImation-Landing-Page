@@ -3,6 +3,7 @@ import { headers } from 'next/headers';
 import './globals.css';
 import './engineering.css';
 import EngineeringBackdrop from '@/components/visuals/EngineeringBackdrop';
+import UmamiAnalytics from '@/components/analytics/UmamiAnalytics';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -44,6 +45,7 @@ export default async function RootLayout({
       >
         {children}
         <EngineeringBackdrop />
+        <UmamiAnalytics />
       </body>
     </html>
   );

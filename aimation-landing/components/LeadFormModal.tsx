@@ -7,6 +7,7 @@ import * as z from 'zod';
 import * as Dialog from '@radix-ui/react-dialog';
 import { X, Loader2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { trackEvent } from '@/lib/analytics';
 
 const leadFormSchema = z.object({
   name: z.string().min(1, 'Name ist erforderlich'),
@@ -59,6 +60,9 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
       if (!response.ok) {
         throw new Error('Fehler beim Senden der Daten');
       }
+
+      // Only a successful API response counts; never send the form fields.
+      await trackEvent('contact-submit');
 
       // Reset form
       reset();

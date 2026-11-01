@@ -3,6 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
 import LeadFormModal from '@/components/LeadFormModal';
 import { MotionConfig } from 'framer-motion';
+import { trackEvent } from '@/lib/analytics';
 
 interface LeadFormContextValue {
   openLeadForm: () => void;
@@ -27,19 +28,22 @@ export function useLeadForm() {
 export default function LeadFormProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openLeadForm = useCallback(() => setIsOpen(true), []);
+  const openLeadForm = useCallback(() => {
+    void trackEvent('contact-open');
+    setIsOpen(true);
+  }, []);
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       const anchor = (e.target as HTMLElement)?.closest?.('a[href$="#kontakt"]');
       if (anchor) {
         e.preventDefault();
-        setIsOpen(true);
+        openLeadForm();
       }
     }
     document.addEventListener('click', handleClick);
     return () => document.removeEventListener('click', handleClick);
-  }, []);
+  }, [openLeadForm]);
 
   return (
     <LeadFormContext.Provider value={{ openLeadForm }}>
