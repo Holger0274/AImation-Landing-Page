@@ -41,7 +41,7 @@ for (const locale of ['', '/en']) {
     assert(schema, 'Server-rendered VideoObject');
     assert(schema.contentUrl.endsWith(`/videos/ai2cad/${asset}.mp4`));
     assert.equal(schema.duration, `PT${duration}S`);
-    assert.equal(schema.uploadDate, ['patent','cnc'].includes(asset) ? '2026-11-01' : asset === 'fem' ? '2026-10-10' : '2026-10-08');
+    assert.equal(schema.uploadDate, ['patent','cnc'].includes(asset) ? '2026-11-01T00:00:00+01:00' : asset === 'fem' ? '2026-10-10T00:00:00+02:00' : '2026-10-08T00:00:00+02:00');
     if (asset === 'fem') {
       assert(schema.name.startsWith('AI2CAE'));
       assert(html.includes('CAE-System') || html.includes('CAE system'));

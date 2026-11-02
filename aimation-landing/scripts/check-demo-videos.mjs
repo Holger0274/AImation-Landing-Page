@@ -30,7 +30,7 @@ for (const locale of ['', '/en']) {
     assert(schema, 'SSR VideoObject');
     assert.equal(schema.duration, `PT${duration}S`);
     assert.equal(schema.inLanguage, 'de');
-    assert.equal(schema.uploadDate, '2026-09-27');
+    assert.equal(schema.uploadDate, '2026-09-27T00:00:00+02:00');
     assert(schema.url.endsWith(path));
     assert(schema.contentUrl.endsWith(`/videos/demos/${id}.mp4`));
     assert(html.includes(`<link rel="canonical" href="${schema.url}"`));

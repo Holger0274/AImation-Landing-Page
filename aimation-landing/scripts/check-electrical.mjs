@@ -21,7 +21,7 @@ for (const locale of ['', '/en']) {
   const html = await (await get(locale + path)).text();
   const schema = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1])).find(item => item['@type'] === 'VideoObject');
   assert.equal(schema.duration, 'PT112S');
-  assert.equal(schema.uploadDate, '2026-11-01');
+  assert.equal(schema.uploadDate, '2026-11-01T00:00:00+01:00');
   assert(schema.url.endsWith(locale + path));
   assert.equal(schema.inLanguage, 'de');
   assert.equal(schema.hasPart.length, chapters);

@@ -1,3 +1,4 @@
+import { videoUploadDate } from '@/lib/seo/video-date';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import Header from '@/components/layout/Header';
@@ -39,7 +40,7 @@ export default async function DemoVideoPage({ params }: { params: Params }) {
     name: `${video.name}: ${copy.topic}`, description: `${copy.description} ${copy.note}`,
     thumbnailUrl: `${SITE_URL}/videos/demos/${video.id}.webp`,
     contentUrl: `${SITE_URL}/videos/demos/${video.id}.mp4`,
-    uploadDate: video.uploadDate, duration: `PT${video.seconds}S`, inLanguage: 'de',
+    uploadDate: videoUploadDate(video.uploadDate), duration: `PT${video.seconds}S`, inLanguage: 'de',
     url, mainEntityOfPage: url,
     creator: { '@id': `${SITE_URL}/#holger-peschke` },
     publisher: { '@id': `${SITE_URL}/#organization` },

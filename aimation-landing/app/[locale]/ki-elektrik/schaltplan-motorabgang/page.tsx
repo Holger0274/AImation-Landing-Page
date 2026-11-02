@@ -1,3 +1,4 @@
+import { videoUploadDate } from '@/lib/seo/video-date';
 import { setRequestLocale } from 'next-intl/server';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -27,7 +28,7 @@ export default async function ElectricalWatchPage({ params }: { params: Params }
     '@context': 'https://schema.org', '@type': 'VideoObject', '@id': `${url}#video`,
     name: `KI × Elektro 01: ${copy.title}`, description: `${copy.description} ${copy.check}`,
     thumbnailUrl: `${SITE_URL}/videos/elektrik/${video.id}.webp`, contentUrl: `${SITE_URL}/videos/elektrik/${video.id}.mp4`,
-    uploadDate: video.uploadDate, duration: `PT${video.seconds}S`, inLanguage: 'de', url, mainEntityOfPage: url,
+    uploadDate: videoUploadDate(video.uploadDate), duration: `PT${video.seconds}S`, inLanguage: 'de', url, mainEntityOfPage: url,
     creator: { '@id': `${SITE_URL}/#holger-peschke` }, publisher: { '@id': `${SITE_URL}/#organization` },
     hasPart: copy.chapters.map((chapter, index) => ({ '@type': 'Clip', name: chapter.title, startOffset: chapter.seconds, endOffset: copy.chapters[index + 1]?.seconds ?? video.seconds, url: `${url}?t=${chapter.seconds}#video` })),
   };
