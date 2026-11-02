@@ -24,6 +24,14 @@ Alle vier VideoObject-Erzeuger verwenden nun `lib/seo/video-date.ts`. Bestehende
 
 Produktionsbuild inklusive Typprüfung und die drei Video-Prüfskripte gegen den lokalen Produktionsserver bestanden. Zusätzlich wurden Sommerzeit, Winterzeit, Zeitumstellungstage und unveränderte Übernahme genauer Zeitstempel geprüft.
 
+## Nach Veröffentlichung bestätigt
+
+Commit `2bd9cec` wurde erfolgreich über Vercel veröffentlicht. Alle drei Video-Prüfskripte bestehen anschließend auch gegen `https://www.aimation.de` (26 Video-Seiten).
+
+Der erneute Google-Live-Test um 18:55 bestätigt erfolgreichen Crawl um 18:55:35, Indexierbarkeit, erkanntes Video und einen gültigen VideoObject-Eintrag ohne die beiden bisherigen Warnungen.
+
+Der neue Artikel `/blog/ki-produktentwicklung-lastenheft-cad-fertigung` ist bei der URL-Prüfung ebenfalls noch nicht indexiert. Google hat den heute gestellten Indexierungsantrag bestätigt und die URL der bevorzugten Crawling-Warteschlange hinzugefügt. Dies ist keine Bestätigung einer bereits erfolgten Indexierung.
+
 ## Nicht durch diese Prüfung belegt
 
 - Vollständige Google-/Bing-Indexierung, Suchpositionen oder Erwähnungen durch KI-Suchdienste.
