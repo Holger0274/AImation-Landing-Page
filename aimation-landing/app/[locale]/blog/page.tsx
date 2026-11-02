@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { PRODUCT_DEVELOPMENT_ARTICLE } from '@/lib/data/product-development-article';
 import { VIDEO_ARTICLES } from '@/lib/data/video-articles';
 import { ENGINEERING_ARTICLES, ARTICLE_DATE, articleReadingMinutes } from '@/lib/data/engineering-articles';
 import type { Metadata } from 'next';
@@ -37,7 +38,7 @@ const breadcrumbs = [
 ];
 
 const ARTICLES = [
-  ...[...VIDEO_ARTICLES, ...ENGINEERING_ARTICLES].map(article => ({
+  ...[PRODUCT_DEVELOPMENT_ARTICLE, ...VIDEO_ARTICLES, ...ENGINEERING_ARTICLES].map(article => ({
     slug: article.slug, title: article.title, excerpt: article.description,
     tag: article.tag, date: article.date ?? ARTICLE_DATE, readingTime: `${articleReadingMinutes(article)} Min.`,
     relatedPillar: { label: 'KI in der Produktentwicklung', href: '/ki-produktentwicklung' },
@@ -169,7 +170,8 @@ export default async function BlogOverviewPage({
             <p className="text-muted font-inter leading-relaxed max-w-2xl" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
               Keine Hochglanzbroschüren. Keine Theorie-Vorträge. Artikel, die Sie morgen anwenden können. Mit ehrlichen Einschätzungen, was KI kann und was nicht.
             </p>
-            <nav aria-label="Neue Artikel mit Videos" className="flex flex-wrap gap-3 mt-7">
+            <nav aria-label="Neue Fachartikel" className="flex flex-wrap gap-3 mt-7">
+              <Link href={`/blog/${PRODUCT_DEVELOPMENT_ARTICLE.slug}`} className="engineering-text-link text-sm">KI in der Produktentwicklung: Die Zusammenhänge <ArrowRight size={16} aria-hidden="true" /></Link>
               {VIDEO_ARTICLES.map(article => <Link key={article.slug} href={`/blog/${article.slug}`} className="engineering-text-link text-sm">{article.tag}: Artikel mit Video <ArrowRight size={16} aria-hidden="true" /></Link>)}
             </nav>
           </div>
@@ -183,7 +185,7 @@ export default async function BlogOverviewPage({
                 key={article.slug}
                 className="bg-surface rounded-2xl border border-line p-6 md:p-8 hover:border-[#f90093] hover:shadow-md transition-all duration-200 group"
               >
-                {[...VIDEO_ARTICLES, ...ENGINEERING_ARTICLES].some(item => item.slug === article.slug) && <Link href={`/blog/${article.slug}`} className="block relative aspect-[1200/630] rounded-xl overflow-hidden mb-6" tabIndex={-1} aria-hidden="true"><Image src={`/blog/${article.slug}/opengraph-image`} alt="" fill sizes="(max-width: 768px) 90vw, 800px" unoptimized /></Link>}
+                {[PRODUCT_DEVELOPMENT_ARTICLE, ...VIDEO_ARTICLES, ...ENGINEERING_ARTICLES].some(item => item.slug === article.slug) && <Link href={`/blog/${article.slug}`} className="block relative aspect-[1200/630] rounded-xl overflow-hidden mb-6" tabIndex={-1} aria-hidden="true"><Image src={`/blog/${article.slug}/opengraph-image`} alt="" fill sizes="(max-width: 768px) 90vw, 800px" unoptimized /></Link>}
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className="inline-flex items-center px-3 py-1 rounded-full bg-ground border border-line text-xs font-heading font-semibold text-ink">
                     {article.tag}

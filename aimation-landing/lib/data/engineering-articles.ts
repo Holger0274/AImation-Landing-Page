@@ -3,7 +3,7 @@ export interface EngineeringArticle {
   key: ArticleKey; slug: string; title: string; shortTitle: string; tag: string; description: string;
   date?: string;
   lead: string; answer: string; visualTitle: string; visualIntro: string;
-  sections: { id: string; title: string; paragraphs: { text: string; source?: string }[]; table?: { headers: string[]; rows: string[][] } }[];
+  sections: { id: string; title: string; paragraphs: { text: string; source?: string }[]; links?: { label: string; href: string }[]; table?: { headers: string[]; rows: string[][] } }[];
   faqs: { question: string; answer: string }[]; sources: string[]; related: { label: string; href: string }[];
 }
 export const ARTICLE_DATE = '2026-10-31';

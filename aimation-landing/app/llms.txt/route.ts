@@ -1,3 +1,4 @@
+import { PRODUCT_DEVELOPMENT_ARTICLE } from '@/lib/data/product-development-article';
 import { ELECTRICAL_VIDEOS } from '@/lib/data/electrical-videos';
 import { VIDEO_ARTICLES } from '@/lib/data/video-articles';
 import { ENGINEERING_ARTICLES } from '@/lib/data/engineering-articles';
@@ -59,6 +60,8 @@ ${AI2CAD_VIDEOS.map(chapter => `- [${chapter.kind} ${chapter.number}: ${chapter.
 ${ELECTRICAL_VIDEOS.map(video => `- [KI × Elektro ${video.number}: ${video.de.title}](${siteUrl}${video.path}): ${video.de.description} ${video.de.check} Autor: Holger Peschke. Veröffentlicht: ${video.uploadDate}. Dauer: ${video.duration}.`).join('\n')}
 
 ## Fachartikel zur technischen Produktentwicklung
+
+- [${PRODUCT_DEVELOPMENT_ARTICLE.title}](${siteUrl}/blog/${PRODUCT_DEVELOPMENT_ARTICLE.slug}): ${PRODUCT_DEVELOPMENT_ARTICLE.description} Redaktionelle Einordnung; eigenständige Demonstrationen, kein durchgehendes Kundenprojekt.
 
 ${VIDEO_ARTICLES.map(article => `- [${article.title}](${siteUrl}/blog/${article.slug}): ${article.description} Eigene Video-Demonstrationen, Quellen und Grenzen im Artikel.`).join('\n')}
 ${ENGINEERING_ARTICLES.map(article => `- [${article.title}](${siteUrl}/blog/${article.slug}): ${article.description} Fiktive interaktive Beispiele, fachliche Quellen im Artikel.`).join('\n')}
