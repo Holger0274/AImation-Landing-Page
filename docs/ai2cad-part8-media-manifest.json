@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-11",
+  "source": "/Users/holgerpeschke/Claude Projekte/Nate Herk/Hyperframes Studen Kit/video-projects/ki-cad-teil8-baugruppe/renders/KI-x-CAD-Teil-8-Zeichnung-zur-Baugruppe-v1.mp4",
+  "sourceSha256": "7918e373e4906217ef12146d41a79614ab3c23bc8e3c156eed414370353795c3",
+  "sourceBytes": 47367346,
+  "output": "aimation-landing/public/videos/ai2cad/baugruppe.mp4",
+  "outputSha256": "cb9ccfe48f71ce4b3bc190992e70f337b177d53c9f1b64658982965c8195f49a",
+  "outputBytes": 12977612,
+  "poster": "aimation-landing/public/videos/ai2cad/baugruppe.webp",
+  "posterTimestampSeconds": 79,
+  "videoSeconds": 90,
+  "method": "H.264 CRF 22, medium, yuv420p; AAC 160k; faststart; metadata removed. Original picture and audio retained; source unchanged. Poster extracted from source at 79 seconds and encoded as WebP quality 88.",
+  "inspection": "Contact sheet at six-second intervals, source title overlays and production timeline inspected; original component preparation is distinguished from the assembly task. No claim of full-frame or audio transcription review."
+}

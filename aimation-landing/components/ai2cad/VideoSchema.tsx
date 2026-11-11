@@ -13,6 +13,11 @@ export default function VideoSchema({ chapter, locale }: { chapter: typeof AI2CA
     contentUrl: `${SITE_URL}/videos/ai2cad/${chapter.id}.mp4`,
     uploadDate: videoUploadDate(chapter.uploadDate), duration: `PT${chapter.seconds}S`, inLanguage: 'de',
     url, mainEntityOfPage: url,
+    ...('chapters' in copy ? { hasPart: copy.chapters.map((moment, index) => ({
+      '@type': 'Clip', name: moment.title, startOffset: moment.seconds,
+      endOffset: copy.chapters[index + 1]?.seconds ?? chapter.seconds,
+      url: `${url}?t=${moment.seconds}#video`,
+    })) } : {}),
     creator: { '@id': `${SITE_URL}/#holger-peschke` },
     publisher: { '@id': `${SITE_URL}/#organization` },
   };

@@ -11,6 +11,8 @@ const chapters = [
   ['fem-nachweis', 'fem', 151],
   ['patent-zu-3d', 'patent', 162],
   ['cnc-drehprogramm', 'cnc', 142],
+  ['zeichnung-zu-baugruppe', 'baugruppe', 90],
+  ['baugruppe-zu-montageanleitung', 'montageanleitung', 90],
 ];
 async function get(path, options) {
   const response = await fetch(new URL(path, base), { signal: AbortSignal.timeout(30000), ...options });
@@ -29,7 +31,10 @@ for (const locale of ['', '/en']) {
   assert(main && /Large Language Model|large language model/.test(main));
   assert(!/FreeCAD|Claude|TechDraw/i.test(main), 'Anonymised page copy');
   assert(home.includes('FAQPage'), 'FAQ schema');
-  assert.equal((main.match(/<details>/g) || []).length, 8, 'SSR FAQ answers');
+  assert(main.includes('id="agentisches-entwicklungssystem"'));
+  assert(main.includes('Ein agentisches') || main.includes('An agentic'));
+  assert(llms.includes('#agentisches-entwicklungssystem'));
+  assert.equal((main.match(/<details>/g) || []).length, 11, 'SSR FAQ answers');
   for (const [slug, asset, duration] of chapters) {
     const path = `${locale}/ai2cad/${slug}`;
     assert(home.includes(path), `Visible chapter link: ${path}`);
@@ -41,17 +46,35 @@ for (const locale of ['', '/en']) {
     assert(schema, 'Server-rendered VideoObject');
     assert(schema.contentUrl.endsWith(`/videos/ai2cad/${asset}.mp4`));
     assert.equal(schema.duration, `PT${duration}S`);
-    assert.equal(schema.uploadDate, ['patent','cnc'].includes(asset) ? '2026-11-01T00:00:00+01:00' : asset === 'fem' ? '2026-10-10T00:00:00+02:00' : '2026-10-08T00:00:00+02:00');
+    assert.equal(schema.uploadDate, ['baugruppe', 'montageanleitung'].includes(asset) ? '2026-11-11T00:00:00+01:00' : ['patent','cnc'].includes(asset) ? '2026-11-01T00:00:00+01:00' : asset === 'fem' ? '2026-10-10T00:00:00+02:00' : '2026-10-08T00:00:00+02:00');
     if (asset === 'fem') {
       assert(schema.name.startsWith('AI2CAE'));
       assert(html.includes('CAE-System') || html.includes('CAE system'));
       assert(html.includes('268,2 MPa') || html.includes('268.2 MPa'));
       assert(html.includes('id="ai2cae"'));
     }
-    if (['patent', 'cnc'].includes(asset)) {
+    if (['patent', 'cnc', 'baugruppe'].includes(asset)) {
       assert(html.includes('Video mit Ton') || html.includes('German video with audio'));
       assert(html.includes('eigenständiges') || html.includes('standalone'));
       if (asset === 'cnc') assert(schema.name.startsWith('AI2CAM'));
+    }
+    if (['baugruppe', 'montageanleitung'].includes(asset)) {
+      assert.equal(schema.hasPart.length, 5);
+      for (const [index, clip] of schema.hasPart.entries()) {
+        assert(clip.url.endsWith(`${path}?t=${clip.startOffset}#video`));
+        assert(clip.endOffset > clip.startOffset && clip.endOffset <= duration);
+        assert.equal(clip.endOffset, schema.hasPart[index + 1]?.startOffset ?? duration);
+        assert(html.includes(`?t=${clip.startOffset}#video`), 'Visible chapter link');
+      }
+      assert(!html.includes('In Arbeit') && !html.includes('In production'), 'No obsolete preview');
+      const relatedSlug = asset === 'baugruppe' ? 'baugruppe-zu-montageanleitung' : 'zeichnung-zu-baugruppe';
+      assert(html.includes(`href="${locale}/ai2cad/${relatedSlug}"`), 'Connected parts link to each other');
+      if (asset === 'montageanleitung') {
+        assert(html.includes('Video mit Ton') || html.includes('German video with audio'));
+        assert(html.includes('Fortsetzung von Teil 8') || html.includes('Continues part 8'));
+        assert(html.includes('Passfeder') || html.includes('parallel key'));
+        assert(html.includes('nicht freigegeben') || html.includes('not approved'));
+      }
     }
     assert(schema.url.endsWith(path));
     const video = html.match(/<video\b[^>]*>/)?.[0];
@@ -66,8 +89,9 @@ for (const locale of ['', '/en']) {
 for (const locale of ['', '/en']) {
   for (const route of ['', '/entwicklungswerkstatt']) {
     const html = await (await get(`${locale}${route || '/'}`)).text();
-    for (const slug of ['patent-zu-3d', 'cnc-drehprogramm']) assert(html.includes(`${locale}/ai2cad/${slug}`), `Discovery link: ${locale}${route}/${slug}`);
+    for (const slug of ['patent-zu-3d', 'cnc-drehprogramm', 'zeichnung-zu-baugruppe', 'baugruppe-zu-montageanleitung']) assert(html.includes(`${locale}/ai2cad/${slug}`), `Discovery link: ${locale}${route}/${slug}`);
     assert(html.includes('id="weitere-entwicklungsfelder"'));
   }
 }
-console.log('PASS: 14 video pages, independent examples on home/workshop, native sources, 8 FAQs per locale, schema, sitemap, llms.txt and media.');
+assert(sitemap.includes('/ai2cad/baugruppe-zu-montageanleitung'), 'Part 9 in sitemap');
+console.log('PASS: 18 video pages, discovery on home/workshop, native sources, 11 FAQs per locale, chapter clips, schema, sitemap, llms.txt and media.');

@@ -3,17 +3,30 @@ import { ArrowUpRight, Play } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { ELECTRICAL_VIDEO, ELECTRICAL_SHORT_CIRCUIT_VIDEO as nextVideo } from '@/lib/data/electrical-videos';
 import { ENGINEERING_EXTENSIONS } from '@/lib/data/engineering-extensions';
+import { ASSEMBLY_VIDEO } from '@/lib/data/assembly-video';
+import AssemblyPreview from './AssemblyPreview';
 import styles from './EngineeringExtensions.module.css';
 
-export default function EngineeringExtensions({ en }: { en: boolean }) {
+export default function EngineeringExtensions({ en, showAssembly = true }: { en: boolean; showAssembly?: boolean }) {
   const lang = en ? 'en' : 'de';
+  const assembly = ASSEMBLY_VIDEO[lang];
   return <section id="weitere-entwicklungsfelder" className={`engineering-section ${styles.section}`} aria-labelledby="extensions-heading">
     <div className="engineering-wrap">
+      {showAssembly && <div className={styles.latest}>
+        <article className={styles.featured}>
+          <Link href={`/ai2cad/${ASSEMBLY_VIDEO.slug}`} className={styles.media} aria-label={`${assembly.title}: ${en ? 'watch part 8' : 'Teil 8 ansehen'}`}>
+            <Image src={`/videos/ai2cad/${ASSEMBLY_VIDEO.id}.webp`} alt={assembly.poster} width={1920} height={1080} sizes="(max-width: 900px) 90vw, 55vw" />
+            <span className={styles.play}><Play size={16} aria-hidden="true" />{en ? 'Watch part 8' : 'Teil 8 ansehen'}<span>{ASSEMBLY_VIDEO.duration}</span></span>
+          </Link>
+          <div className={styles.copy}><p className="technical-label">{en ? 'Agentic engineering · Parts 8 + 9' : 'Agentisches Entwicklungssystem · Teil 8 + 9'}</p><h2>{en ? 'A drawing becomes an ' : 'Aus einer Zeichnung wird eine '}<span className="highlight">{en ? 'assembly.' : 'Baugruppe.'}</span></h2><p>{assembly.teaser}</p><Link href={`/ai2cad/${ASSEMBLY_VIDEO.slug}`} className={styles.seriesLink}>{en ? 'Follow the assembly process' : 'Den Zusammenbau verfolgen'} →</Link></div>
+        </article>
+        <AssemblyPreview en={en} />
+      </div>}
       <div className={styles.heading}>
         <div><p className="technical-label">{en ? 'Explore further after CAD and FEM' : 'Nach CAD und FEM weiterentdecken'}</p><h2 id="extensions-heading">{en ? 'Choose your next ' : 'Wählen Sie Ihren nächsten '}<span className="highlight">{en ? 'step.' : 'Einblick.'}</span></h2></div>
         <p>{en ? 'Understand a patent, prepare a CNC program or follow an electrical schematic taking shape. Each example opens a separate development task with its own starting point.' : 'Ein Patent verstehen, ein CNC-Programm vorbereiten oder einen Schaltplan entstehen sehen. Jedes Beispiel öffnet eine eigene Entwicklungsaufgabe mit einem eigenen Ausgangspunkt.'}</p>
       </div>
-      <div className={styles.grid}>{ENGINEERING_EXTENSIONS.map(video => <article key={video.id} className={styles.card}>
+      <div className={styles.grid}>{ENGINEERING_EXTENSIONS.filter(video => !['baugruppe', 'montageanleitung'].includes(video.id)).map(video => <article key={video.id} className={styles.card}>
         <Link href={`/ai2cad/${video.slug}`} className={styles.media} aria-label={`${video[lang].title}: ${en ? 'watch video' : 'Video ansehen'} (${video.duration})`}>
           <Image src={`/videos/ai2cad/${video.id}.webp`} alt={video[lang].poster} width={1920} height={1080} sizes="(max-width: 700px) 90vw, 45vw" />
           <span className={styles.play}><Play size={16} aria-hidden="true" />{en ? 'Watch video' : 'Video ansehen'}<span>{video.duration}</span></span>

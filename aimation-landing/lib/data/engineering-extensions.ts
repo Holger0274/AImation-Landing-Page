@@ -1,3 +1,6 @@
+import { ASSEMBLY_INSTRUCTIONS_VIDEO } from './assembly-instructions-video';
+import { ASSEMBLY_VIDEO } from './assembly-video';
+
 // Independent demonstrations. New disciplines can be added without extending
 // the original mounting-plate / shaft workflow or claiming a shared workpiece.
 export const ENGINEERING_EXTENSIONS = [
@@ -51,4 +54,6 @@ export const ENGINEERING_EXTENSIONS = [
       poster: 'Turned part with stock and two labelled setups from the CNC demonstration video',
     },
   },
+  ASSEMBLY_VIDEO,
+  ASSEMBLY_INSTRUCTIONS_VIDEO,
 ] as const;

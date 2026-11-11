@@ -1,11 +1,14 @@
 import Image from 'next/image';
-import { ArrowDown, ArrowUpRight, MoveRight } from 'lucide-react';
+import { ArrowUpRight, MoveRight, Play } from 'lucide-react';
 import { setRequestLocale } from 'next-intl/server';
 import Header from '@/components/layout/Header';
 import AutodeskMembership from '@/components/AutodeskMembership';
 import Footer from '@/components/layout/Footer';
 import FemComparison from '@/components/ai2cad/FemComparison';
 import EngineeringExtensions from '@/components/ai2cad/EngineeringExtensions';
+import AgenticEngineering from '@/components/ai2cad/AgenticEngineering';
+import AssemblyPreview from '@/components/ai2cad/AssemblyPreview';
+import { ASSEMBLY_VIDEO } from '@/lib/data/assembly-video';
 import ChapterPlayer from '@/components/ai2cad/ChapterPlayer';
 import { Link } from '@/i18n/navigation';
 import { AI2CAD_CHAPTERS, AI2CAD_PATH, AI2CAD_JOURNEY, getAI2CADFaqs } from '@/lib/data/ai2cad';
@@ -18,8 +21,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const en = locale === 'en';
   return pageMetadata(AI2CAD_PATH, locale,
-    en ? 'CAD, FEM, patent models and CNC with AI | AImation' : 'CAD, FEM, Patentmodelle und CNC mit KI | AImation',
-    en ? 'Seven development videos: CAD, drawing preparation and FEM, plus standalone examples of patent visualisation in 3D and CNC turning program preparation.' : 'Sieben Entwicklungsvideos: CAD, Zeichnung und FEM sowie eigenständige Beispiele zur Patentvisualisierung in 3D und zur Vorbereitung eines CNC-Drehprogramms.');
+    en ? 'Agentic engineering system: AI2CAD | AImation' : 'Agentisches Entwicklungssystem: AI2CAD | AImation',
+    en ? 'Agentic engineering system: AI agents for concepts, detailed design, drawings, FEM and assembly instructions. Explore nine AImation demonstrations.' : 'Agentisches Entwicklungssystem: KI-Agenten für Konzepte, Detailkonstruktion, Zeichnungen, FEM und Montageanleitungen. Neun Demos von AImation ansehen.');
 }
 
 export default async function AI2CADPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -27,6 +30,7 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
   setRequestLocale(locale);
   const en = locale === 'en';
   const faqs = getAI2CADFaqs(en);
+  const assembly = ASSEMBLY_VIDEO[en ? 'en' : 'de'];
   return <>
     <BreadcrumbSchema items={[{ name: 'AImation', url: localizedPath('/', locale) }, { name: 'AI2CAD', url: localizedPath(AI2CAD_PATH, locale) }]} />
     <FAQPageSchema faqs={faqs} />
@@ -37,22 +41,29 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
           <nav className={styles.breadcrumb} aria-label={en ? 'Breadcrumb' : 'Brotkrumennavigation'}><Link href="/">AImation</Link><span aria-hidden="true">/</span><span>AI2CAD</span></nav>
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
-              <p className={styles.eyebrow}>{en ? 'AI2CAD + AI2CAE · Design and analysis' : 'AI2CAD + AI2CAE · Konstruktion und Berechnung'}</p>
+              <p className={styles.eyebrow}>{en ? 'Agentic engineering system · Nine videos' : 'Agentisches Entwicklungssystem · Neun Videos'}</p>
               <h1 id="ai2cad-title">AI<span className="highlight">2</span>CAD<span className="sr-only">: {en ? 'CAD automation with AI and LLMs' : 'CAD-Automatisierung mit KI und LLM'}</span></h1>
-              <p className={styles.headline}>{en ? 'Not a single mouse click\nin the CAD system.' : 'Kein einziger Mausklick\nim CAD-System.'}</p>
-              <p className={styles.intro}>{en ? 'A large language model (LLM) controls the CAD system. It sets every parameter, builds the geometry and creates the drawing. You provide instructions and approvals through the conversation. Chapter 5 continues in the CAE system with FEM analysis and a hand-calculation check.' : 'Ein Large Language Model (LLM) steuert das CAD-System. Es setzt alle Parameter, baut die Geometrie auf und erstellt die Zeichnung. Ihre Vorgaben und Freigaben kommen im Dialog. Kapitel 5 führt im CAE-System weiter zur FEM-Berechnung mit Gegenprobe durch eine Handrechnung.'}</p>
-              <a href="#videos" className={styles.primary}>{en ? 'Watch the five chapters' : 'Die fünf Kapitel ansehen'}<ArrowDown size={18} aria-hidden="true" /></a>
-              <p className={styles.extensionEntry}><a href="#weitere-entwicklungsfelder">{en ? 'Continue the series: patent models and CNC, parts 6 and 7' : 'Die Serie geht weiter: Patentmodelle und CNC, Teil 6 und 7'} ↓</a></p>
+              <p className={styles.headline}>{en ? 'From the drawing\nto assembly instructions.' : 'Von der Zeichnung\nbis zur Montageanleitung.'}</p>
+              <p className={styles.intro}>{en ? 'A large language model (LLM) operates the CAD system. The series began with individual parts. Part 8 brings 31 parts together in one assembly. Part 9 turns that model into illustrated assembly instructions with 14 steps. You provide instructions and approvals through the conversation.' : 'Ein Large Language Model (LLM) bedient das CAD-System. Die Serie begann mit einzelnen Bauteilen. In Teil 8 kommen 31 Teile zu einer Baugruppe zusammen. Teil 9 macht daraus eine bebilderte Montageanleitung mit 14 Schritten. Ihre Vorgaben und Freigaben kommen im Dialog.'}</p>
+              <Link href={`${AI2CAD_PATH}/${ASSEMBLY_VIDEO.slug}`} className={styles.primary}>{en ? 'Watch part 8' : 'Teil 8 ansehen'}<Play size={18} aria-hidden="true" /><span>{ASSEMBLY_VIDEO.duration}</span></Link>
+              <p className={styles.extensionEntry}><a href="#videos">{en ? 'Start with parts 1 to 5: from geometry to FEM' : 'Mit Teil 1 bis 5 starten: von der Geometrie zur FEM'} ↓</a></p>
             </div>
             <figure className={styles.drawing}>
-              <div className={styles.drawingTop}><span>{en ? 'The result, with review tasks' : 'Das Ergebnis, mit Prüfaufgaben'}</span><span>A3 · 2:1</span></div>
-              <Image src="/videos/ai2cad/welle-zeichnung.webp" alt={en ? 'Drawing of the demonstrated shaft with main views, relief details and dimensional tolerances' : 'Zeichnung der gezeigten Welle mit Hauptansichten, Freistichdetails und Maßtoleranzen'} width={1335} height={943} priority sizes="(max-width: 900px) 92vw, 740px" />
-              <figcaption>{en ? 'Actual output from the demo. Engineering review remains open.' : 'Tatsächliches Ergebnis der Demo. Die fachliche Prüfung steht noch aus.'}</figcaption>
+              <div className={styles.drawingTop}><span>{en ? 'Part 8 · Drawing → assembly' : 'Teil 8 · Zeichnung → Baugruppe'}</span><span>15 {en ? 'positions' : 'Positionen'} · 31 {en ? 'parts' : 'Teile'}</span></div>
+              <Link href={`${AI2CAD_PATH}/${ASSEMBLY_VIDEO.slug}`} aria-label={en ? 'Watch the assembly demonstration' : 'Baugruppen-Demonstration ansehen'}><Image src={`/videos/ai2cad/${ASSEMBLY_VIDEO.id}.webp`} alt={assembly.poster} width={1920} height={1080} priority sizes="(max-width: 900px) 92vw, 740px" /></Link>
+              <figcaption>{en ? 'Exploded view from the video. Three bolted connections remain open for visual inspection.' : 'Explosionsdarstellung aus dem Video. Drei Verschraubungen bleiben zur Sichtprüfung offen.'}</figcaption>
             </figure>
           </div>
-          <div className={styles.route} aria-label={en ? 'Demonstration workflow' : 'Ablauf der Demonstration'}>{(en ? ['Describe', 'Model', 'Review', 'Draw', 'Analyse'] : ['Beschreiben', 'Modellieren', 'Prüfen', 'Zeichnen', 'Berechnen']).map((step, i) => <span key={step}><small>0{i + 1}</small>{step}{i < 4 && <MoveRight size={22} aria-hidden="true" />}</span>)}</div>
+          <nav className={styles.seriesRoute} aria-label={en ? 'Explore the series' : 'Die Serie entdecken'}>
+            <a href="#videos"><small>{en ? '01 to 05' : '01 bis 05'}</small><span>{en ? 'From part to FEM' : 'Vom Bauteil zur FEM'}</span><MoveRight size={20} aria-hidden="true" /></a>
+            <a href="#weitere-entwicklungsfelder"><small>06 / 07</small><span>{en ? 'Patent models and CNC' : 'Patentmodelle und CNC'}</span><MoveRight size={20} aria-hidden="true" /></a>
+            <Link href={`${AI2CAD_PATH}/${ASSEMBLY_VIDEO.slug}`}><small>08</small><span>{en ? 'From drawing to assembly' : 'Von der Zeichnung zur Baugruppe'}</span><MoveRight size={20} aria-hidden="true" /></Link>
+          </nav>
+          <AssemblyPreview en={en} />
         </div>
       </section>
+
+      <AgenticEngineering en={en} />
 
       <section id="videos" className={styles.videoSection} aria-labelledby="video-heading">
         <div className={styles.wrap}>
@@ -60,11 +71,11 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
           <p className={styles.journeyNote}>{AI2CAD_JOURNEY[en ? 'en' : 'de']}</p>
           <ChapterPlayer en={en} />
           <nav className={styles.chapterIndex} aria-label={en ? 'Direct video links' : 'Direkt zu den einzelnen Videos'}>{AI2CAD_CHAPTERS.map(chapter => <Link key={chapter.id} href={`${AI2CAD_PATH}/${chapter.slug}`}>{chapter.number} · {chapter[en ? 'en' : 'de'].title} ↗</Link>)}</nav>
-          <p className={styles.author}>{en ? 'Demonstration by Holger Peschke, AImation. Updated 10 October 2026.' : 'Demonstration von Holger Peschke, AImation. Stand: 10. Oktober 2026.'} <Link href="/facts/holger-peschke">{en ? 'About the author' : 'Zum fachlichen Hintergrund'} →</Link></p>
+          <p className={styles.author}>{en ? 'Demonstration by Holger Peschke, AImation. Updated 11 November 2026.' : 'Demonstration von Holger Peschke, AImation. Stand: 11. November 2026.'} <Link href="/facts/holger-peschke">{en ? 'About the author' : 'Zum fachlichen Hintergrund'} →</Link></p>
         </div>
       </section>
 
-      <EngineeringExtensions en={en} />
+      <EngineeringExtensions en={en} showAssembly={false} />
 
       <div className={styles.wrap}><AutodeskMembership en={en} /><FemComparison en={en} /></div>
 

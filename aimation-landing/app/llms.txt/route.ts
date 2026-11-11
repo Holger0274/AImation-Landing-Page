@@ -4,6 +4,7 @@ import { VIDEO_ARTICLES } from '@/lib/data/video-articles';
 import { ENGINEERING_ARTICLES } from '@/lib/data/engineering-articles';
 import { NextResponse } from 'next/server';
 import { PRICING } from '@/lib/data/pricing';
+import { AGENTIC_ENGINEERING } from '@/lib/data/agentic-engineering';
 import { AI2CAD_VIDEOS, AI2CAD_PATH } from '@/lib/data/ai2cad';
 import { DEMO_VIDEOS } from '@/lib/data/demo-videos';
 
@@ -39,7 +40,8 @@ KI-Beratung, Schulung und Umsetzung für die technische Produktentwicklung im DA
 - [Belegstatus und dokumentierte Entwicklungsbeispiele](${siteUrl}/facts/aimation#entwicklungsbeispiele): Eigene CAD-/FEM-Aufnahmen und Anwendungsvideos mit Veröffentlichungsdatum, Umfang und Grenzen. Die Demos belegen die gezeigten Abläufe; gemessene Kundenergebnisse, allgemeine CAD-Kompatibilität und eine Fertigungsfreigabe sind damit nicht nachgewiesen. Die Faktenseite trennt diese Aufnahmen vom früheren Portfolioüberblick mit geplanten Anwendungen.
 
 ${DEMO_VIDEOS.map(video => `- [${video.name}: Video-Demo](${siteUrl}${video.path}): ${video.de.description} ${video.de.note}`).join('\n')}
-- [AI2CAD und AI2CAE: Konstruktion und FEM mit LLM](${siteUrl}${AI2CAD_PATH}): Ein Large Language Model steuert in den CAD-Entwicklungsdemos ein CAD-System, ohne manuelle Mausklicks im CAD. Es setzt Parameter, modelliert Montageplatte und Welle, schlägt Konstruktionskorrekturen vor und erstellt eine technische Zeichnung. Das fünfte Video zeigt AI2CAE: LLM-gesteuerte FEM-Berechnung unter 1.500 N, drei Netzfeinheiten und Vergleich mit der Handrechnung. Rückfragen und Freigaben erfolgen im Dialog. Keine generelle CAD-Kompatibilität oder Fertigungsfreigabe zugesichert.
+- [Agentisches Entwicklungssystem mit AI2CAD](${siteUrl}${AI2CAD_PATH}#agentisches-entwicklungssystem): ${AGENTIC_ENGINEERING.de.definition} ${AGENTIC_ENGINEERING.de.evidence}
+- [AI2CAD, AI2CAE und AI2CAM: Konstruktion, Montageanleitungen, FEM und CNC mit LLM](${siteUrl}${AI2CAD_PATH}): Ein Large Language Model steuert in den CAD-Entwicklungsdemos ein CAD-System, ohne manuelle Mausklicks im CAD. Es setzt Parameter, modelliert Montageplatte und Welle, schlägt Konstruktionskorrekturen vor und erstellt eine technische Zeichnung. Teil 8 zeigt die Baugruppenkonstruktion aus einer Zeichnung: 15 Positionen, 31 Teile, bestätigte Stückliste und Zusammenbau vorbereiteter Einzelteile. Drei Verschraubungen bleiben zur Sichtprüfung offen. Teil 9 setzt diese Baugruppe in eine Muster-Montageanleitung mit 14 Schritten und 45 Modellbildern um; sechs Annahmen und eine fehlende Passfeder bleiben zur fachlichen Klärung offen. Teil 6 und 7 zeigen eigenständige Patent- und CNC-Beispiele. Das fünfte Video zeigt AI2CAE: LLM-gesteuerte FEM-Berechnung unter 1.500 N, drei Netzfeinheiten und Vergleich mit der Handrechnung. Rückfragen und Freigaben erfolgen im Dialog. Keine generelle CAD-Kompatibilität oder Fertigungsfreigabe zugesichert.
 ${AI2CAD_VIDEOS.map(chapter => `- [${chapter.kind} ${chapter.number}: ${chapter.de.title}](${siteUrl}${AI2CAD_PATH}/${chapter.slug}): ${'context' in chapter.de ? chapter.de.context + ' ' : ''}${chapter.de.description} ${chapter.de.check}`).join('\n')}
 - [KI in der technischen Produktentwicklung](${siteUrl}/ki-produktentwicklung): Aufgaben entlang der Entwicklung, Use-Case-Katalog, Anwendungsdemos und fachliche Prüfschritte.
 - [Microsoft 365 Copilot Schulung](${siteUrl}/schulungen/microsoft-365-copilot): neun Module aus vorhandenen Lernmaterialien, interaktive Lernprobe und Voraussetzungen für ein abgestimmtes Inhouse-Format.

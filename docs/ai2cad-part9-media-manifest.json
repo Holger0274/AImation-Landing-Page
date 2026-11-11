@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-11",
+  "source": "/Users/holgerpeschke/Claude Projekte/Nate Herk/Hyperframes Studen Kit/video-projects/ki-cad-teil9-montageanleitung/renders/KI-x-CAD-Teil-9-Baugruppe-zur-Montageanleitung-v1.mp4",
+  "sourceSha256": "4804fd40943f79ac11fdceb9cf5fb21b72d7f23aacef1d3611d8acb1fda03f7c",
+  "sourceBytes": 41901331,
+  "output": "aimation-landing/public/videos/ai2cad/montageanleitung.mp4",
+  "outputSha256": "d382b69befa77c05c0c6f4f2feba7ec9336160a1c204b519456dc17a9c0ffe48",
+  "outputBytes": 13695189,
+  "poster": "aimation-landing/public/videos/ai2cad/montageanleitung.webp",
+  "posterTimestampSeconds": 60,
+  "videoSeconds": 90,
+  "method": "H.264 CRF 22, medium, yuv420p; AAC 160k; faststart; metadata removed. Original picture and audio retained; source unchanged. Poster extracted at 60 seconds and encoded as WebP quality 88.",
+  "inspection": "Contact sheet at six-second intervals, source title overlays and production timeline inspected. Not a complete audio transcription or frame-by-frame review."
+}
