@@ -43,7 +43,9 @@ for (const entry of entries) {
   const links = [...html.matchAll(/<link\b[^>]*>/g)].map((m) => attrs(m[0]));
   const canonical = links.filter((link) => link.rel === 'canonical');
   assert.equal(canonical.length, 1, `${pathname}: canonical count`);
-  assert.equal(normalize(canonical[0].href), pathname, `${pathname}: wrong canonical`);
+  assert.equal(new URL(canonical[0].href).href, new URL(entry.loc).href, `${pathname}: wrong canonical origin, path or parameters`);
+  const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1] || '';
+  assert.match(head, /<link\b[^>]*rel="canonical"/, `${pathname}: canonical missing from initial head`);
   const lang = html.match(/<html[^>]*\blang="([^"]+)"/)?.[1];
   assert.equal(lang, /^\/en(?:\/|$)/.test(pathname) ? 'en' : 'de', `${pathname}: html lang`);
   const meta = [...html.matchAll(/<meta\b[^>]*>/g)].map((m) => attrs(m[0]));

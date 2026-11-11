@@ -6,6 +6,10 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Emit canonicals in the initial <head>, including video timestamp URLs.
+  // GSC missed the canonical for ?t=96; raw HTML had it in the body.
+  // Metadata comes from local data, with no remote lookup.
+  htmlLimitedBots: /.*/,
   // OG image handlers read these originals at runtime. Keep the file list narrow:
   // the full video library must not be bundled into serverless functions.
   outputFileTracingIncludes: {
