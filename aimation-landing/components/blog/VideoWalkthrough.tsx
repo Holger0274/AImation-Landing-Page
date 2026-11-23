@@ -22,7 +22,7 @@ export default function VideoWalkthrough({ article }: { article: VideoArticle })
           </details>
         </li>)}
       </ol>
-      <footer><span>Originalbilder aus Holger Peschkes Versuch</span>
+      <footer><span>Originalbilder aus der CAD-Demo</span>
         <Link href={article.videoHref}><Play size={15} aria-hidden="true" />{article.videoLabel}</Link>
       </footer>
     </div>;

@@ -7,7 +7,7 @@ export const MOBILE_CAD_ARTICLE: VideoArticle = {
   slug: 'cad-am-handy-workstation', date: '2026-11-23', tag: 'Mobiles CAD',
   title: 'Was vom CAD-Arbeitsplatz aufs Handy wandert',
   shortTitle: 'CAD am Handy oder an der Workstation?',
-  description: 'Wie verändert KI den CAD-Arbeitsplatz? Holger Peschke zeigt an einer Wellenskizze, was am Handy gelingt und welche Prüfung an der Workstation bleibt.',
+  description: 'Aus einer Wellenskizze wird ein CAD-Modell. Der Versuch zeigt, welche Schritte am Handy gelingen und was an der Workstation geprüft wird.',
   lead: 'Um 19:12 Uhr schicke ich das Foto einer Wellenskizze ab. Um 19:16 Uhr öffne ich auf demselben Handy die 3D-Ansicht. Im Chat liegt auch die STEP-Datei. Für diesen ersten Entwurf habe ich mich kein einziges Mal an einen CAD-Arbeitsplatz gesetzt.',
   answer: 'Ich erwarte, dass mehr Konstruktionsarbeit dort beginnt, wo jemand das Bauteil vor sich hat. Das Handy nimmt die Skizze auf und zeigt das Ergebnis. In meinem Versuch läuft das CAD-System auf dem eigenen Server. Für die Prüfung der Passungen würde ich mich wieder an die Workstation setzen.',
   visualTitle: 'Die vier Minuten zwischen Papier und Modell',
