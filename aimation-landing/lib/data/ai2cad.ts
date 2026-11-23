@@ -93,6 +93,13 @@ export const AI2CAD_CHAPTERS = [
       features: ['Hauptansichten 2:1, Einzelheiten 5:1 und Isometrie', 'Passungen, Bezüge und technische Hinweise eintragen', 'Sichtprüfung wiederholen und Export zur Freigabe vorschlagen'],
       check: 'Offen bleiben in der Demo eine zu niedrige Lagerschulter und der Abgleich einzelner Freistichmaße mit dem Normblatt. Eine Fertigungsfreigabe ist damit nicht belegt.',
       poster: 'Technische Zeichnung der Welle mit Ansichten, Bemaßungen und vergrößerten Einzelheiten',
+      chapters: [
+        { seconds: 0, title: 'Die Zeichnung anlegen', text: 'Vom Auftrag zum ersten Blatt in FreeCAD.' },
+        { seconds: 65, title: 'Die Ansichten auf dem A3-Blatt', text: 'Stirnansicht, Längsansicht und Isometrie zeigen die Lage der Welle.' },
+        { seconds: 72, title: 'Den Lagersitz bemaßen', text: 'Am linken Sitz stehen Nenndurchmesser, Toleranzklasse und Abmaße.' },
+        { seconds: 84, title: 'Die Bezüge zuordnen', text: 'Die Toleranzrahmen der Welle verweisen auf den gemeinsamen Bezug A-B.' },
+        { seconds: 94, title: 'Die Freistiche im Detail', text: 'Die Einzelheiten X, Y und Z zeigen die Übergänge im Maßstab 5:1.' },
+      ],
     },
     en: {
       title: 'Create a technical drawing', short: 'Model → drawing',
@@ -101,6 +108,13 @@ export const AI2CAD_CHAPTERS = [
       features: ['Main views at 2:1, details at 5:1 and an isometric view', 'Add fits, datums and technical notes', 'Repeat visual checks and propose export for approval'],
       check: 'The demo leaves a bearing shoulder with insufficient height and individual relief dimensions to check against the standard. Manufacturing approval has not been demonstrated.',
       poster: 'Technical shaft drawing with views, dimensions and enlarged details',
+      chapters: [
+        { seconds: 0, title: 'Set up the drawing', text: 'From the initial request to a drawing sheet in FreeCAD.' },
+        { seconds: 65, title: 'Place the views', text: 'End, longitudinal and isometric views show the shaft on the A3 sheet.' },
+        { seconds: 72, title: 'Dimension the bearing seat', text: 'The left seat carries its nominal diameter, tolerance class and deviations.' },
+        { seconds: 84, title: 'Read the datum references', text: 'The tolerance frames refer to common datum A-B.' },
+        { seconds: 94, title: 'Inspect the reliefs', text: 'Details X, Y and Z show the transitions at a scale of 5:1.' },
+      ],
     },
   },
   {

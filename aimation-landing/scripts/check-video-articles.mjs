@@ -7,16 +7,17 @@ async function get(path) {
 }
 const [overview, sitemap, llms] = await Promise.all(['/blog','/sitemap.xml','/llms.txt'].map(async p => (await get(p)).text()));
 const cases = [
-  {slug:'cad-am-handy-workstation', date:'2026-11-23', watches:['/ai2cad/handskizze-zu-cad'], source:'https://cad.onshape.com/help/Content/PartStudio/part_studios.htm'},
+  {slug:'zeichnungsableitung-3d-modell-technische-zeichnung', date:'2026-11-23', steps:4, watches:['/ai2cad/technische-zeichnung'], source:'https://cad.onshape.com/help/Content/Drawing/projected_view.htm'},
+  {slug:'cad-am-handy-workstation', steps:4, date:'2026-11-23', watches:['/ai2cad/handskizze-zu-cad'], source:'https://cad.onshape.com/help/Content/PartStudio/part_studios.htm'},
   {slug:'ki-cnc-drehprogramm-cad-cam', watches:['/ai2cad/cnc-drehprogramm'], source:'https://help.autodesk.com/view/fusion360/ENU/?contextId=MFG-POST-PROCESS-OPERATIONS'},
   {slug:'ki-schaltplan-erstellen-pruefen', watches:['/ki-elektrik/schaltplan-motorabgang','/ki-elektrik/kurzschluss-wendeschuetz'], source:'https://www.eplan.help/en-US/Infoportal/Content/Plattform/2027/Content/htm/msgmanagementgui_h_prueflauf.htm'},
 ];
-for (const {slug,watches,source,date='2026-11-01'} of cases) {
+for (const {slug,watches,source,steps=3,date='2026-11-01'} of cases) {
   const path = `/blog/${slug}`;
   const html = await (await get(path)).text();
   const visible = html.replace(/<script\b[\s\S]*?<\/script>/g,'');
   assert.equal((visible.match(/<h1\b/g)||[]).length,1);
-  assert.equal((visible.match(/<details\b/g)||[]).length,slug === 'cad-am-handy-workstation' ? 4 : 3,'Native accessible process steps');
+  assert.equal((visible.match(/<details\b/g)||[]).length,steps,'Native accessible process steps');
   assert(visible.includes(`href="${source}"`),'Primary source is linked');
   assert(!/—|–/.test(visible.replace(/<[^>]*>/g,'')),'No em dash');
   const schemas = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
@@ -56,4 +57,4 @@ for (const {slug,watches,source,date='2026-11-01'} of cases) {
   console.log(`OK ${path}: sources, SEO, share image, SSR, video chapter links and backlinks`);
 }
 assert(overview.indexOf('href="/blog/ki-cnc-drehprogramm-cad-cam"') < overview.indexOf('href="/blog/ki-schaltplan-erstellen-pruefen"'),'CAD/CAM first');
-console.log('PASS: three video articles discoverable, linked and technically complete.');
+console.log('PASS: four video articles discoverable, linked and technically complete.');

@@ -8,6 +8,9 @@ export interface EngineeringArticle {
 }
 export const ARTICLE_DATE = '2026-10-31';
 export const ARTICLE_SOURCES: Record<string, { label: string; url: string }> = {
+  'aimation-drawing': { label: 'AImation: Technische Zeichnung der Welle (Originalfilm)', url: 'https://www.aimation.de/ai2cad/technische-zeichnung' },
+  'onshape-projection': { label: 'Onshape: Ansichten auf dem Zeichnungsblatt projizieren', url: 'https://cad.onshape.com/help/Content/Drawing/projected_view.htm' },
+  'onshape-drawing-dimensions': { label: 'Onshape: Maßbezüge und Toleranzangaben', url: 'https://cad.onshape.com/help/Content/Drawing/drawing_dimensions.htm' },
   'fusion-mobile': { label: 'Autodesk Support zur mobilen Fusion-App', url: 'https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Cannot-create-3D-model-in-Fusion-360-mobile-application.html' },
   'onshape-mobile': { label: 'Onshape-Hilfe zu Part Studios auf iOS und Android', url: 'https://cad.onshape.com/help/Content/PartStudio/part_studios.htm' },
   'autodesk-post': { label: 'Autodesk: Post process a manufacturing operation', url: 'https://help.autodesk.com/view/fusion360/ENU/?contextId=MFG-POST-PROCESS-OPERATIONS' },

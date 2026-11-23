@@ -8,13 +8,13 @@ import s from './engineering-article.module.css';
 export default function VideoWalkthrough({ article }: { article: VideoArticle }) {
   if (article.steps.every(step => step.frame)) {
     return <div className={flow.film}>
-      <ol className={flow.stations} aria-label="Vom Skizzenfoto zur STEP-Datei">
+      <ol className={flow.stations} aria-labelledby="visual-title">
         {article.steps.map((step, index) => <li key={step.label}>
           <details open={index === 0}>
             <summary>
               <span className={flow.station}>{step.frame!.station}</span>
               <span className={flow.still}><Image
-                src={`/videos/ai2cad/skizze-${step.frame!.image}.webp`}
+                src={step.frame!.image}
                 alt={step.frame!.alt} fill sizes="(max-width: 680px) 150px, 260px" /></span>
               <span className={flow.label}>{step.label}<span aria-hidden="true" className={flow.toggle}>+</span></span>
             </summary>

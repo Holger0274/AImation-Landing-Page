@@ -1,3 +1,4 @@
+import { DRAWING_ARTICLE } from './drawing-article';
 import { MOBILE_CAD_ARTICLE } from './mobile-cad-article';
 import type { EngineeringArticle } from './engineering-articles';
 
@@ -12,6 +13,7 @@ export interface VideoArticle extends Omit<EngineeringArticle, 'key'> {
 }
 
 export const VIDEO_ARTICLES: VideoArticle[] = [
+  DRAWING_ARTICLE,
   MOBILE_CAD_ARTICLE,
   {
     slug: 'ki-cnc-drehprogramm-cad-cam', date: '2026-11-01',

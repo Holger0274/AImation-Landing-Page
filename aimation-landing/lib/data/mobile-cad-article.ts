@@ -16,10 +16,10 @@ export const MOBILE_CAD_ARTICLE: VideoArticle = {
   videoHref: film, videoLabel: `Handy-Demo ansehen · ${SKETCH_VIDEO.duration} Min.`,
   sourceNote: 'Die Uhrzeiten und das Bauteil stammen aus meinem eigenen AI2CAD-Versuch. Die Herstellerquellen beschreiben andere mobile Arbeitsweisen. Die Einschätzung zur künftigen Rolle der Workstation ist meine Schlussfolgerung.',
   steps: [
-    { label: 'Skizze senden', frame: { image: 'papier', alt: 'Handskizze der abgesetzten Welle mit Maßen und zwei Nuten', station: '19:12 · Handy' }, result: 'Ich fotografiere die bemaßte Handskizze und schicke sie dem CAD-Agenten im Chat.', review: 'Kann man auf Ihrem Foto erkennen, auf welche Schulter sich ein Längenmaß bezieht?', href: film, linkLabel: 'Die Skizze im Film ansehen' },
-    { label: 'Maße bestätigen', frame: { image: 'masse', alt: 'Vom Agenten markierte Maße in der Handskizze', station: 'Rückfrage im Chat' }, result: 'Der Agent liest die Maße. Wo die Vorlage mehrere Lesarten zulässt, fragt er nach. Ich bestätige die Maßliste im Chat.', review: 'Wer kann bei Ihrem Bauteil verbindlich sagen, welche Lesart stimmt?', href: film+'?t=46#video', linkLabel: 'Zur Bestätigung bei 0:46' },
-    { label: 'Welle modellieren', frame: { image: 'modell', alt: 'CAD-Modell der Welle mit Absätzen und Passfedernuten', station: 'CAD-Server' }, result: 'Der Agent baut die Welle im angebundenen CAD-System aus den bestätigten Maßen auf.', review: 'Stimmen die Absätze und Nuten mit der Skizze überein?', href: film+'?t=54#video', linkLabel: 'Zur Modellierung bei 0:54' },
-    { label: '3D-Modell öffnen', frame: { image: 'handy', alt: 'Zurückgesendete 3D-Ansicht auf dem Handy', station: '19:16 · Handy' }, result: 'Auf meinem Handy kommen die 3D-Ansicht und die STEP-Datei an.', review: 'Welche Entscheidung können Sie schon anhand der 3D-Ansicht treffen?', href: film+'?t=82#video', linkLabel: 'Zur Rückgabe bei 1:22' },
+    { label: 'Skizze senden', frame: { image: '/videos/ai2cad/skizze-papier.webp', alt: 'Handskizze der abgesetzten Welle mit Maßen und zwei Nuten', station: '19:12 · Handy' }, result: 'Ich fotografiere die bemaßte Handskizze und schicke sie dem CAD-Agenten im Chat.', review: 'Kann man auf Ihrem Foto erkennen, auf welche Schulter sich ein Längenmaß bezieht?', href: film, linkLabel: 'Die Skizze im Film ansehen' },
+    { label: 'Maße bestätigen', frame: { image: '/videos/ai2cad/skizze-masse.webp', alt: 'Vom Agenten markierte Maße in der Handskizze', station: 'Rückfrage im Chat' }, result: 'Der Agent liest die Maße. Wo die Vorlage mehrere Lesarten zulässt, fragt er nach. Ich bestätige die Maßliste im Chat.', review: 'Wer kann bei Ihrem Bauteil verbindlich sagen, welche Lesart stimmt?', href: film+'?t=46#video', linkLabel: 'Zur Bestätigung bei 0:46' },
+    { label: 'Welle modellieren', frame: { image: '/videos/ai2cad/skizze-modell.webp', alt: 'CAD-Modell der Welle mit Absätzen und Passfedernuten', station: 'CAD-Server' }, result: 'Der Agent baut die Welle im angebundenen CAD-System aus den bestätigten Maßen auf.', review: 'Stimmen die Absätze und Nuten mit der Skizze überein?', href: film+'?t=54#video', linkLabel: 'Zur Modellierung bei 0:54' },
+    { label: '3D-Modell öffnen', frame: { image: '/videos/ai2cad/skizze-handy.webp', alt: 'Zurückgesendete 3D-Ansicht auf dem Handy', station: '19:16 · Handy' }, result: 'Auf meinem Handy kommen die 3D-Ansicht und die STEP-Datei an.', review: 'Welche Entscheidung können Sie schon anhand der 3D-Ansicht treffen?', href: film+'?t=82#video', linkLabel: 'Zur Rückgabe bei 1:22' },
   ],
   sections: [
     { id: 'vor-ort', title: 'Die erste Rückfrage gehört ans Bauteil', paragraphs: [
@@ -48,6 +48,7 @@ export const MOBILE_CAD_ARTICLE: VideoArticle = {
   sources: ['fusion-mobile', 'onshape-mobile'],
   related: [
     { label: 'Die Wellenskizze und das Ergebnis im Film ansehen', href: film },
+    { label: 'Wie aus dem 3D-Modell eine technische Zeichnung wird', href: '/blog/zeichnungsableitung-3d-modell-technische-zeichnung' },
     { label: 'Weitere Versuche zur CAD-Automatisierung', href: AI2CAD_PATH },
     { label: 'KI in die technische Produktentwicklung einbinden', href: '/ki-produktentwicklung' },
   ],
