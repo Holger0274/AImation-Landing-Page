@@ -1,13 +1,9 @@
 import { ImageResponse } from 'next/og';
-import { readFile } from 'node:fs/promises';
-import path from 'node:path';
 import sharp from 'sharp';
 import { VIDEO_ARTICLES } from '@/lib/data/video-articles';
 
-export async function videoArticleShareImage(slug: string) {
+export async function videoArticleShareImage(slug: string, source: Buffer) {
   const article = VIDEO_ARTICLES.find(item => item.slug === slug)!;
-  // Trace only the poster declared for this route in next.config.js.
-  const source = await readFile(/* webpackIgnore: true */ path.join(process.cwd(), 'public', article.poster));
   const poster = await sharp(source).resize({ width: 1000 }).png().toBuffer();
   return new ImageResponse(<div style={{ width:'100%',height:'100%',display:'flex',flexDirection:'column',background:'#071013',color:'#faf9f7',padding:'52px 60px',fontFamily:'sans-serif',position:'relative' }}>
     {/* eslint-disable-next-line @next/next/no-img-element */}
