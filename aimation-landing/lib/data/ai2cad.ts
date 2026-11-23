@@ -31,22 +31,38 @@ export const AI2CAD_CHAPTERS = [
     },
   },
   {
-    id: 'skizze', slug: 'handskizze-zu-cad', number: '02', duration: '1:30', seconds: 90, kind: 'AI2CAD', uploadDate: '2026-10-08',
+    id: 'skizze', slug: 'handskizze-zu-cad', number: '02', duration: '1:50', seconds: 110, kind: 'AI2CAD', uploadDate: '2026-11-23', hasAudio: true,
     de: {
-      title: 'Handskizze in CAD umwandeln', short: 'Skizze → Modell',
-      metaDescription: 'Von der Handskizze zum CAD-Modell: KI erstellt eine parametrische Welle, klärt fehlende Maße und prüft eine Maßänderung. AImation zeigt den Ablauf im Video.',
-      description: 'Ein Foto einer Handskizze ist der Ausgangspunkt für eine abgesetzte Welle. Die KI trennt lesbare Maße von abgeleiteten Werten und Annahmen. Vier Rückfragen klären den Entwurf, bevor das Modell entsteht.',
-      features: ['Skizzenmaße erkennen und fehlende Angaben benennen', 'Zwölf benannte Parameter mit ihrer Herkunft dokumentieren', 'Maßänderung testen: Die Gesamtlänge folgt dem Parameter'],
-      check: 'Fehlende Maße und die vereinfachte Gewindedarstellung werden ausdrücklich abgestimmt. Das Ergebnis ist ein Entwurfsmodell.',
-      poster: 'Handskizze und parametrische Welle aus der AI2CAD-Demonstration',
+      title: 'Vom Handyfoto zum CAD-Modell', short: 'Handyfoto → CAD',
+      searchTitle: 'Handskizze mit KI in ein CAD-Modell umwandeln',
+      metaDescription: 'Vom Skizzenfoto zur STEP-Datei: Im Video liest ein CAD-Agent die Maße einer Welle, fragt bei Bedarf nach und liefert das 3D-Modell zurück aufs Handy.',
+      description: 'Holger Peschke fotografiert die Handskizze einer Welle. Der CAD-Agent liest die Maße aus dem Foto und fragt im Chat nach, wo eine Angabe fehlt. Sobald die Maßliste bestätigt ist, modelliert der Agent die Welle auf dem eigenen Server. Die 3D-Ansicht und die STEP-Datei kommen auf demselben Handy an.',
+      features: ['Auf der Skizze die Wellenabsätze und die beiden Passfedernuten erkennen', 'Offene Maße im Chat klären und die Maßliste vor dem Modellieren bestätigen', 'Die Welle am Handy in 3D ansehen und die STEP-Datei für die weitere CAD-Arbeit übernehmen'],
+      check: 'Die STEP-Datei enthält die Geometrie der Welle mit ihren Absätzen und beiden Passfedernuten. Ein CAD-System mit STEP-Import kann diese Geometrie öffnen. Passungen, Toleranzen und offene Kantenangaben müssen vor der Fertigung geklärt werden.',
+      poster: 'Links der Chat mit dem CAD-Agenten auf dem Handy, rechts die modellierte Welle mit zwei Passfedernuten',
+      chapters: [
+        { seconds: 0, title: 'Die Handskizze fotografieren', text: 'Ein Foto und ein Auftrag im Chat reichen für den Start.' },
+        { seconds: 28, title: 'Die Maße auslesen', text: 'Der Agent markiert Maße in der Skizze und fragt bei unklaren Angaben nach.' },
+        { seconds: 46, title: 'Die Maßliste bestätigen', text: 'Holger prüft die erfassten Maße und gibt sie im Chat frei.' },
+        { seconds: 54, title: 'Die Welle modellieren', text: 'Auf dem Server entsteht die Welle mit ihren Absätzen und Nuten.' },
+        { seconds: 82, title: 'Das Ergebnis am Handy öffnen', text: 'Im Chat kommen Vorschau und STEP-Datei an. Offene Zeichnungsangaben bleiben sichtbar.' },
+      ],
     },
     en: {
-      title: 'Turn a hand sketch into CAD', short: 'Sketch → model',
-      metaDescription: 'Turn a hand sketch into a parametric CAD shaft: AI clarifies missing dimensions and tests a parameter change. Watch the workflow in this AImation video.',
-      description: 'A photograph of a hand sketch becomes the starting point for a stepped shaft. AI separates readable dimensions from derived values and assumptions. Four questions clarify the design before modelling begins.',
-      features: ['Read sketch dimensions and identify missing information', 'Document twelve named parameters and their origins', 'Test a dimension change: overall length follows the parameter'],
-      check: 'Missing dimensions and the simplified thread representation are explicitly agreed. The result is a design model.',
-      poster: 'Hand sketch and parametric shaft from the AI2CAD demonstration',
+      title: 'From phone photo to CAD model', short: 'Phone photo → CAD',
+      searchTitle: 'Turn a hand sketch into a CAD model with AI',
+      metaDescription: 'From a sketch photo to a STEP file: watch a CAD agent read shaft dimensions, ask about missing details and return the 3D model to the same phone.',
+      description: 'Holger Peschke photographs a hand sketch of a shaft. The CAD agent reads the dimensions from the photo and asks about missing details in the chat. Once the dimensions are confirmed, the agent models the shaft on his own server. The 3D view and STEP file arrive back on the same phone.',
+      features: ['Identify the shaft shoulders and two keyways in the sketch', 'Clarify open dimensions in the chat and confirm the list before modelling', 'View the shaft in 3D on the phone and use the STEP file for further CAD work'],
+      check: 'The STEP file contains the geometry of the stepped shaft and its two keyways. A CAD system with STEP import can open that geometry. Fits, tolerances and unresolved edge details need engineering review before manufacturing.',
+      poster: 'Phone chat with the CAD agent on the left and the modelled shaft with two keyways on the right',
+      chapters: [
+        { seconds: 0, title: 'Photograph the sketch', text: 'The workflow starts with a photo and a request in the chat.' },
+        { seconds: 28, title: 'Read the dimensions', text: 'The agent marks dimensions on the sketch and asks about unclear details.' },
+        { seconds: 46, title: 'Confirm the dimension list', text: 'Holger checks the recorded dimensions and approves them in the chat.' },
+        { seconds: 54, title: 'Model the shaft', text: 'The server builds the stepped shaft and its keyways.' },
+        { seconds: 82, title: 'Open the result on the phone', text: 'The preview and STEP file arrive in the chat, alongside the unresolved drawing details.' },
+      ],
     },
   },
   {
@@ -109,6 +125,8 @@ export const AI2CAD_CHAPTERS = [
   },
 ] as const;
 
+export const SKETCH_VIDEO = AI2CAD_CHAPTERS.find(chapter => chapter.id === 'skizze')!;
+
 export function getAI2CADFaqs(en: boolean) {
   const system = AGENTIC_ENGINEERING[en ? 'en' : 'de'];
   const systemFaq = { question: system.question, answer: `${system.definition} ${system.evidence}` };
@@ -116,11 +134,11 @@ export function getAI2CADFaqs(en: boolean) {
     systemFaq,
     { question: 'Can AI create assembly instructions from a CAD model?', answer: 'Part 9 uses the assembly from part 8 to create draft instructions with 14 steps, three sections and 45 images from the model. Tools, inspection points and insertion paths are documented. Six values are labelled as assumptions, and a missing parallel key is reported. The instructions are not approved; specifications and practical assembly must be reviewed before use.' },
     { question: 'Can AI create a CAD assembly from a drawing?', answer: 'Part 8 shows an AI agent reading an assembly drawing, proposing a bill of materials with 15 positions and 31 parts, and assembling the prepared components in CAD after confirmation. The individual components were previously modelled with AI and checked. The video’s report marks 7 of 8 checks as passed; three bolted connections still need visual inspection. Engineering approval remains a separate step.' },
-    { question: 'Do parts 6 and 7 continue the same part?', answer: 'No. Part 6 visualises a patent in 3D. Part 7 introduces a standalone CNC turning example, including program preparation and simulation. They use separate starting points and parts; neither continues the shaft workflow from parts 2 to 5.' },
+    { question: 'Do parts 6 and 7 continue the same part?', answer: 'No. Part 6 visualises a patent in 3D. Part 7 introduces a standalone CNC turning example, including program preparation and simulation. They use separate starting points and parts; neither continues the shaft workflow from parts 3 to 5.' },
     { question: 'What does AI2CAE add to AI2CAD?', answer: 'AI2CAD creates and revises the geometry. AI2CAE continues with engineering analysis. In chapter 5, an LLM controls a CAE system to analyse a shaft under a 1,500 N load, compares three mesh refinements and checks reactions, deformation and notch stresses against a hand calculation. The results require engineering review.' },
     { question: 'What is AI2CAD?', answer: 'AI2CAD is an AImation demonstration of CAD automation using a large language model (LLM). The LLM operates a connected CAD system, creates parametric parts, proposes design corrections and prepares a technical drawing. The first five videos show a mounting plate and a stepped shaft. Chapter 5 extends the workflow to AI2CAE: FEM analysis in a CAE system, compared with a hand calculation. Parts 6 and 7 add standalone examples of patent visualisation and CNC turning program preparation. Part 8 demonstrates creating an assembly from a drawing, and part 9 turns that assembly into illustrated assembly instructions. The series contains nine videos.' },
     { question: 'Can a language model operate CAD without mouse clicks?', answer: 'In this demonstration, the language model performs the CAD operations through a tool interface. It sets parameters, creates sketches and features, selects views and prepares the drawing. Instructions, questions and approvals are exchanged in conversation. No manual mouse clicks in the CAD system are used for these steps.' },
-    { question: 'Can AI turn a hand sketch into an editable CAD model?', answer: 'Chapter 2 shows a photographed hand sketch becoming a parametric shaft with twelve named parameters. The model separates readable dimensions, derived values and assumptions. Missing information is clarified before modelling. A parameter change from 25 to 30 mm changes overall length from 145 to 150 mm.' },
+    { question: 'Can I send a hand sketch from my phone and get a STEP file back?', answer: 'Yes. In chapter 2, Holger Peschke sends a photo of a shaft sketch to the CAD agent and confirms the dimensions in the chat. The agent builds the model on his own server and returns a 3D view and a STEP file to the phone. The video shows about four minutes between sending the photo and receiving the result.' },
     { question: 'Who is this CAD automation demonstration for?', answer: 'AI2CAD addresses design engineers, product developers and heads of engineering in technical SMEs. Recurring modelling tasks, dimension variants and drawing preparation are possible starting points. The CAD interface, design rules and required review steps must be assessed for each company.' },
     { question: 'Does AI2CAD work with our CAD system?', answer: 'The videos demonstrate one connected CAD system. Transfer depends on the available API or automation interface, permitted tools and data requirements. In an initial conversation, AImation checks your CAD environment and a specific design task. Compatibility with every CAD system is not established.' },
     { question: 'Is the AI-generated drawing ready for manufacturing?', answer: 'The demonstrated drawing still requires engineering review. Chapter 4 identifies a bearing shoulder with insufficient height and relief dimensions that need checking against the relevant standard. A design engineer must approve function, fits, standards and manufacturability before the drawing goes to a supplier.' },
@@ -128,11 +146,11 @@ export function getAI2CADFaqs(en: boolean) {
     systemFaq,
     { question: 'Kann KI aus einem CAD-Modell eine Montageanleitung erstellen?', answer: 'Teil 9 erstellt aus der Baugruppe aus Teil 8 eine Musteranleitung mit 14 Schritten, drei Abschnitten und 45 Bildern aus dem Modell. Werkzeuge, Prüfpunkte und Fügewege werden dokumentiert. Sechs Werte sind als Annahmen markiert, eine fehlende Passfeder wird gemeldet. Die Anleitung ist nicht freigegeben; Angaben und praktische Montage müssen vor dem Einsatz geprüft werden.' },
     { question: 'Kann KI aus einer Zeichnung eine CAD-Baugruppe erstellen?', answer: 'Teil 8 zeigt, wie ein KI-Agent eine Baugruppenzeichnung liest, eine Stückliste mit 15 Positionen und 31 Teilen vorschlägt und nach Bestätigung die vorbereiteten Einzelteile im CAD zusammensetzt. Die Einzelteile wurden zuvor mit KI modelliert und geprüft. Der Prüfbericht im Video meldet 7 von 8 Prüfpunkten als bestanden; drei Verschraubungen brauchen noch eine Sichtprüfung. Die fachliche Freigabe bleibt ein eigener Schritt.' },
-    { question: 'Führen Teil 6 und 7 dasselbe Bauteil weiter?', answer: 'Nein. Teil 6 macht eine Patentschrift als 3D-Modell sichtbar. Teil 7 zeigt ein eigenständiges CNC-Drehbeispiel mit Programmvorbereitung und Simulation. Beide haben eigene Ausgangspunkte und Bauteile. Sie setzen die Welle aus Teil 2 bis 5 nicht fort.' },
+    { question: 'Führen Teil 6 und 7 dasselbe Bauteil weiter?', answer: 'Nein. Teil 6 macht eine Patentschrift als 3D-Modell sichtbar. Teil 7 zeigt ein eigenständiges CNC-Drehbeispiel mit Programmvorbereitung und Simulation. Beide haben eigene Ausgangspunkte und Bauteile. Sie setzen die Welle aus Teil 3 bis 5 nicht fort.' },
     { question: 'Was ergänzt AI2CAE gegenüber AI2CAD?', answer: 'AI2CAD erstellt und überarbeitet die Geometrie. AI2CAE setzt bei der technischen Berechnung an. In Kapitel 5 steuert ein LLM ein CAE-System, berechnet eine Welle unter 1.500 N, vergleicht drei Netzfeinheiten und stellt Lagerkräfte, Verformung und Kerbspannungen einer Handrechnung gegenüber. Die Ergebnisse brauchen eine fachliche Prüfung.' },
     { question: 'Was ist AI2CAD?', answer: 'AI2CAD ist eine Demonstration von AImation zur CAD-Automatisierung mit einem Large Language Model (LLM). Das LLM bedient ein angebundenes CAD-System, erstellt parametrische Bauteile, schlägt Konstruktionskorrekturen vor und bereitet eine technische Zeichnung vor. Die ersten fünf Videos zeigen den Ablauf an einer Montageplatte und einer abgesetzten Welle. Kapitel 5 erweitert ihn um AI2CAE: eine FEM-Berechnung im CAE-System mit Vergleich zur Handrechnung. Teil 6 und 7 ergänzen eigenständige Beispiele zur Patentvisualisierung und zur Vorbereitung eines CNC-Drehprogramms. Teil 8 zeigt den Weg von der Zeichnung zur Baugruppe. Teil 9 erstellt daraus eine bebilderte Montageanleitung. Damit umfasst die Reihe neun Videos.' },
     { question: 'Kann ein Large Language Model CAD ohne Mausklicks steuern?', answer: 'In dieser Demonstration führt das LLM die CAD-Arbeitsschritte über eine Werkzeugschnittstelle aus. Es setzt Parameter, erstellt Skizzen und Formelemente, wählt Ansichten und baut die Zeichnung auf. Vorgaben, Rückfragen und Freigaben erfolgen im Dialog. Für diese Schritte gibt es keine manuellen Mausklicks im CAD-System.' },
-    { question: 'Kann KI aus einer Handskizze ein editierbares CAD-Modell erstellen?', answer: 'Kapitel 2 zeigt, wie aus einer fotografierten Handskizze eine parametrische Welle mit zwölf benannten Parametern entsteht. Die KI trennt lesbare Maße, abgeleitete Werte und Annahmen. Fehlende Angaben werden vor dem Modellieren geklärt. Eine Parameteränderung von 25 auf 30 mm verändert die Gesamtlänge von 145 auf 150 mm.' },
+    { question: 'Wie wird aus einer Handskizze auf dem Handy eine STEP-Datei?', answer: 'In Kapitel 2 schickt Holger Peschke ein Foto der Wellenskizze an den CAD-Agenten und bestätigt die Maße im Chat. Der Agent baut das Modell auf dem eigenen Server. Die 3D-Ansicht und die STEP-Datei kommen zurück aufs Handy. Im gezeigten Versuch liegen rund vier Minuten zwischen Foto und Ergebnis.' },
     { question: 'Für wen ist diese CAD-Automatisierung interessant?', answer: 'AI2CAD richtet sich an Konstrukteure, Produktentwickler und Entwicklungsleiter im technischen Mittelstand. Wiederkehrende Modellieraufgaben, Maßvarianten und Zeichnungsableitungen sind mögliche Ansatzpunkte. Die CAD-Schnittstelle, Konstruktionsregeln und nötigen Prüfschritte müssen für jedes Unternehmen gesondert bewertet werden.' },
     { question: 'Funktioniert AI2CAD mit unserem CAD-System?', answer: 'Die Videos zeigen ein konkret angebundenes CAD-System. Die Übertragung hängt von dessen API oder Automatisierungsschnittstelle, den erlaubten Werkzeugen und den Datenvorgaben ab. Im Erstgespräch prüft AImation Ihre CAD-Umgebung und eine konkrete Konstruktionsaufgabe. Eine Anbindung an jedes CAD-System ist damit nicht belegt.' },
     { question: 'Ist die KI-generierte Zeichnung sofort fertigungsreif?', answer: 'Die gezeigte Zeichnung braucht noch eine fachliche Prüfung. In Kapitel 4 werden eine zu niedrige Lagerschulter und mit dem Normblatt abzugleichende Freistichmaße benannt. Konstrukteure müssen Funktion, Passungen, Normen und Fertigbarkeit freigeben, bevor die Zeichnung an einen Lieferanten geht.' },

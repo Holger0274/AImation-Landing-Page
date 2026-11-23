@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { PRODUCT_DEVELOPMENT_ARTICLE } from '@/lib/data/product-development-article';
+import { MOBILE_CAD_ARTICLE } from '@/lib/data/mobile-cad-article';
 import { VIDEO_ARTICLES } from '@/lib/data/video-articles';
 import { ENGINEERING_ARTICLES, ARTICLE_DATE, articleReadingMinutes } from '@/lib/data/engineering-articles';
 import type { Metadata } from 'next';
@@ -124,7 +125,7 @@ const ARTICLES = [
     readingTime: '7 Min.',
     relatedPillar: { label: 'KI-Schulungen', href: '/ki-schulungen-mittelstand' },
   },
-];
+].sort((a, b) => b.date.localeCompare(a.date));
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -172,7 +173,7 @@ export default async function BlogOverviewPage({
             </p>
             <nav aria-label="Neue Fachartikel" className="flex flex-wrap gap-3 mt-7">
               <Link href={`/blog/${PRODUCT_DEVELOPMENT_ARTICLE.slug}`} className="engineering-text-link text-sm">KI in der Produktentwicklung: Die Zusammenhänge <ArrowRight size={16} aria-hidden="true" /></Link>
-              {VIDEO_ARTICLES.map(article => <Link key={article.slug} href={`/blog/${article.slug}`} className="engineering-text-link text-sm">{article.tag}: Artikel mit Video <ArrowRight size={16} aria-hidden="true" /></Link>)}
+              {VIDEO_ARTICLES.map(article => <Link key={article.slug} href={`/blog/${article.slug}${article.slug === MOBILE_CAD_ARTICLE.slug ? '#visual-title' : ''}`} className="engineering-text-link text-sm">{article.slug === MOBILE_CAD_ARTICLE.slug ? 'Vom Skizzenfoto zur STEP-Datei' : article.shortTitle} <ArrowRight size={16} aria-hidden="true" /></Link>)}
             </nav>
           </div>
         </section>

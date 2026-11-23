@@ -21,22 +21,11 @@
     "dropdownCta": "Erstgespräch →"
   },
   "hero": {
-    "badge": "KI · Produktentwicklung · Mittelstand",
     "headlineStart": "",
     "headlineHighlight": "Schneller",
-    "headlineEnd": " entwickeln. Weil KI Ihrem Team Arbeit abnimmt.",
-    "subline": "Wir zeigen Ihnen, wo KI in Ihrer Produktentwicklung wirklich Zeit spart: Anfragen vorsortieren, Berichte entwerfen, Erfahrungswissen auffindbar machen.",
-    "cta": "Kostenloses Erstgespräch ({duration}.)",
-    "ctaSecondary": "Zeitpotenzial selbst einschätzen",
-    "processLink": "So läuft die Zusammenarbeit",
-    "topicsLabel": "Direkt zu Ihrer Aufgabe",
-    "topicKnowledge": "Wissen sichern",
-    "topicCad": "CAD & FEM",
-    "topicProjects": "Projekte steuern",
-    "promise": "Im Pilot prüfen wir an einem Prozess, wie viel Bearbeitungszeit Sie sparen. Die Qualität prüfen wir mit.",
-    "ctaMicrocopy": "Wir besprechen Ihren Ablauf und einen sinnvollen nächsten Schritt. Unverbindlich.",
-    "trustLine": "20+ Jahre Produktentwicklung und Führung in der Industrie · 20.000+ LinkedIn-Follower · DSGVO-first",
-    "privacy": "DSGVO-konform, Verarbeitung in der EU."
+    "headlineEnd": " entwickeln mit KI.",
+    "subline": "Wir bringen KI in die Werkzeuge, die Sie in der technischen Produktentwicklung schon nutzen.",
+    "cta": "Kostenloses Erstgespräch"
   },
   "painPoints": {
     "badge": "",

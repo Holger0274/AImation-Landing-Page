@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import Image from 'next/image';
 import { ArrowUpRight, ArrowRight, Play, Check, Clock3 } from 'lucide-react';
-import { AI2CAD_CHAPTERS, AI2CAD_PATH } from '@/lib/data/ai2cad';
+import { AI2CAD_CHAPTERS, AI2CAD_PATH, SKETCH_VIDEO } from '@/lib/data/ai2cad';
 import { Link } from '@/i18n/navigation';
 import { pauseOtherVideos } from '@/lib/media/playback';
 import styles from './ai2cad.module.css';
@@ -36,7 +36,7 @@ function Video({ chapter, en }: { chapter: typeof AI2CAD_CHAPTERS[number]; en: b
 }
 
 export default function ChapterPlayer({ en, immersive = false }: { en: boolean; immersive?: boolean }) {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(AI2CAD_CHAPTERS.indexOf(SKETCH_VIDEO));
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
     const count = AI2CAD_CHAPTERS.length;
@@ -72,6 +72,8 @@ export default function ChapterPlayer({ en, immersive = false }: { en: boolean; 
         </div>
       </div>;
     })}
-    <p className={styles.mediaNote}>{en ? 'Own development demonstration · German on-screen text · Website editions without audio, product names obscured · Videos load on play' : 'Eigene Entwicklungsdemonstration · Website-Fassungen ohne Ton, Produktnamen verdeckt · Videos laden erst beim Abspielen'}</p>
+    <p className={styles.mediaNote}>{'hasAudio' in AI2CAD_CHAPTERS[active]
+      ? (en ? 'German video with audio' : 'Video mit Ton')
+      : (en ? 'German on-screen text, without audio' : 'Video ohne Ton')}{en ? ' · Loads on play' : ' · Lädt erst beim Abspielen'}</p>
   </div>;
 }

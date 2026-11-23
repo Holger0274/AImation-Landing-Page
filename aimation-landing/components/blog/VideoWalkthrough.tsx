@@ -2,9 +2,31 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Play, ArrowUpRight } from 'lucide-react';
 import type { VideoArticle } from '@/lib/data/video-articles';
+import flow from './FilmProcess.module.css';
 import s from './engineering-article.module.css';
 
 export default function VideoWalkthrough({ article }: { article: VideoArticle }) {
+  if (article.steps.every(step => step.frame)) {
+    return <div className={flow.film}>
+      <ol className={flow.stations} aria-label="Vom Skizzenfoto zur STEP-Datei">
+        {article.steps.map((step, index) => <li key={step.label}>
+          <details open={index === 0}>
+            <summary>
+              <span className={flow.station}>{step.frame!.station}</span>
+              <span className={flow.still}><Image
+                src={`/videos/ai2cad/skizze-${step.frame!.image}.webp`}
+                alt={step.frame!.alt} fill sizes="(max-width: 680px) 150px, 260px" /></span>
+              <span className={flow.label}>{step.label}<span aria-hidden="true" className={flow.toggle}>+</span></span>
+            </summary>
+            <div className={flow.note}><p>{step.result}</p><Link href={step.href}>{step.linkLabel}<ArrowUpRight size={15} aria-hidden="true" /></Link></div>
+          </details>
+        </li>)}
+      </ol>
+      <footer><span>Originalbilder aus Holger Peschkes Versuch</span>
+        <Link href={article.videoHref}><Play size={15} aria-hidden="true" />{article.videoLabel}</Link>
+      </footer>
+    </div>;
+  }
   return <div className={s.explainer}>
     <div className={s.consoleHeader}><span>AImation / {article.tag}</span><span>Eigene Video-Demonstration</span></div>
     <div className={s.videoJourney}>

@@ -21,22 +21,11 @@
     "dropdownCta": "Book a call →"
   },
   "hero": {
-    "badge": "AI · Product Development · SME",
     "headlineStart": "Develop ",
     "headlineHighlight": "faster",
-    "headlineEnd": ". With AI that takes work off your team's hands.",
-    "subline": "We show you where AI can save time in your product development: triaging requests, drafting reports and making engineering knowledge easier to find.",
-    "cta": "Free initial consultation ({duration})",
-    "ctaSecondary": "Estimate time savings",
-    "processLink": "See how we work together",
-    "topicsLabel": "Go straight to your task",
-    "topicKnowledge": "Preserve knowledge",
-    "topicCad": "CAD & FEM",
-    "topicProjects": "Manage projects",
-    "promise": "In the pilot, we measure the time saved on one process. We check the quality too.",
-    "ctaMicrocopy": "We discuss your workflow and a useful next step. No obligation.",
-    "trustLine": "20+ years of product development and leadership in industry · 20,000+ LinkedIn followers · GDPR-first",
-    "privacy": "GDPR-compliant, processed in the EU."
+    "headlineEnd": " with AI.",
+    "subline": "We bring AI into the tools you already use for product engineering.",
+    "cta": "Free initial consultation"
   },
   "painPoints": {
     "badge": "",

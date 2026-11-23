@@ -15,7 +15,7 @@ export default function AI2CADTeaser({ locale }: { locale: string }) {
           <h2 id="ai2cad-teaser-heading">{en ? 'An idea becomes ' : 'Aus einer Idee wird '}<span className="highlight">{en ? 'geometry.' : 'Geometrie.'}</span></h2>
         </div>
         <div>
-          <p>{en ? 'Follow a mounting plate and a shaft through our development work. Choose a step and see how a language model operates CAD and CAE.' : 'Begleiten Sie eine Montageplatte und eine Welle durch unsere Entwicklungsarbeit. Wählen Sie einen Schritt und sehen Sie, wie ein Sprachmodell CAD und CAE bedient.'}</p>
+          <p>{en ? 'Start with a photo of a sketch. See the 3D view and STEP file return to the phone, or choose another CAD or FEM example.' : 'Starten Sie mit dem Handyfoto einer Skizze. Sehen Sie, wie die 3D-Ansicht und die STEP-Datei zurück aufs Handy kommen, oder wählen Sie ein anderes CAD- oder FEM-Beispiel.'}</p>
           <span className={styles.experienceMeta}>{AI2CAD_CHAPTERS.length} {en ? 'videos · Choose your starting point' : 'Videos · Ihr Einstieg ist frei wählbar'}</span>
         </div>
       </div>

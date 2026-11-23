@@ -22,10 +22,11 @@ export async function generateMetadata({ params }: { params: Params }) {
   const chapter = AI2CAD_VIDEOS.find(item => item.slug === slug);
   if (!chapter) notFound();
   const copy = chapter[locale === 'en' ? 'en' : 'de'];
-  const title = `${copy.title} ${locale === 'en' ? 'with AI' : 'mit KI'} | AImation`;
+  const subject = 'searchTitle' in copy ? copy.searchTitle : `${copy.title} ${locale === 'en' ? 'with AI' : 'mit KI'}`;
+  const title = `${subject} | AImation`;
   const metadata = pageMetadata(`${AI2CAD_PATH}/${chapter.slug}`, locale, title, copy.metaDescription);
   const image = { url: `${SITE_URL}/videos/ai2cad/${chapter.id}.webp`, width: 1920, height: 1080, alt: copy.poster };
-  return { ...metadata, openGraph: { ...metadata.openGraph, images: [image] }, twitter: { ...metadata.twitter, images: [image.url] } };
+  return { ...metadata, openGraph: { ...metadata.openGraph, type: 'video.other' as const, videos: [{ url: `${SITE_URL}/videos/ai2cad/${chapter.id}.mp4`, type: 'video/mp4' }], images: [image] }, twitter: { ...metadata.twitter, images: [image.url] } };
 }
 
 export default async function ChapterPage({ params }: { params: Params }) {
@@ -35,6 +36,7 @@ export default async function ChapterPage({ params }: { params: Params }) {
   if (!chapter) notFound();
   const en = locale === 'en';
   const copy = chapter[en ? 'en' : 'de'];
+  const isSketch = chapter.id === 'skizze';
   const extension = 'field' in chapter ? chapter : null;
   const extensionCopy = extension?.[en ? 'en' : 'de'];
   const path = `${AI2CAD_PATH}/${chapter.slug}`;
@@ -46,16 +48,23 @@ export default async function ChapterPage({ params }: { params: Params }) {
       <div className={styles.watchWrap}>
         <nav className={styles.breadcrumb} aria-label={en ? 'Breadcrumb' : 'Brotkrumennavigation'}><Link href={AI2CAD_PATH}>AI2CAD</Link><span aria-hidden="true">/</span><span aria-current="page">{en ? 'Chapter' : 'Kapitel'} {chapter.number}</span></nav>
         <h1>{copy.title} <span className="highlight">{en ? 'with AI.' : 'mit KI.'}</span></h1>
-        <p className={styles.watchMeta}>{chapter.kind} · {chapter.duration} · {extension ? (en ? 'German video with audio' : 'Video mit Ton') : (en ? 'Video in German, without audio' : 'Video ohne Ton')} · AImation / Holger Peschke</p>
+        <p className={styles.watchMeta}>{chapter.kind} · {chapter.duration} · {(extension || 'hasAudio' in chapter) ? (en ? 'German video with audio' : 'Video mit Ton') : (en ? 'Video in German, without audio' : 'Video ohne Ton')} · AImation / <Link href="/facts/holger-peschke" className="underline underline-offset-4">Holger Peschke</Link></p>
         {extension && <p className={styles.watchMeta}>{extension.field[en ? 'en' : 'de']} · {chapter.id === 'montageanleitung' ? (en ? 'Continues part 8' : 'Fortsetzung von Teil 8') : (en ? 'Standalone example' : 'Eigenständiges Beispiel')}</p>}
-        {!extension && <p className={styles.journeyNote}>{AI2CAD_JOURNEY[en ? 'en' : 'de']}</p>}
+        {isSketch && <p className={styles.filmLead}>{en ? 'In this test, the sketch leaves the phone at 19:12. The 3D view and STEP file arrive in the same chat at 19:16.' : 'Im gezeigten Versuch geht die Handskizze um 19:12 Uhr per Handy raus. Um 19:16 Uhr liegen die 3D-Ansicht und die STEP-Datei im selben Chat.'}</p>}
+        {!isSketch && !extension && <p className={styles.journeyNote}>{AI2CAD_JOURNEY[en ? 'en' : 'de']}</p>}
         <WatchVideo id={chapter.id} title={copy.title} en={en} chapters={'chapters' in copy ? copy.chapters : undefined} />
-        <div className={styles.watchDescription}>{extensionCopy && <p className={styles.standaloneNote}>{extensionCopy.context}</p>}<h2>{extension ? (en ? 'What the video demonstrates' : 'Was das Video zeigt') : chapter.kind === 'AI2CAE' ? (en ? 'How the LLM controls the CAE workflow' : 'Wie das LLM den CAE-Ablauf steuert') : (en ? 'What the LLM does in the CAD system' : 'Was das LLM im CAD-System übernimmt')}</h2><p>{copy.description}</p><ul>{copy.features.map(feature => <li key={feature}>{feature}</li>)}</ul>{!extension && <p>{chapter.kind === 'AI2CAE' ? (en ? 'The LLM coordinates the modelling, calculation and evaluation steps. The CAE system solves the numerical model; engineering review assesses the assumptions and results.' : 'Das LLM steuert Modellaufbau, Berechnung und Auswertung. Das CAE-System löst das numerische Modell; die fachliche Prüfung bewertet Annahmen und Ergebnisse.') : en ? 'The language model performs the shown CAD operations. Instructions and approvals come through the conversation, without manual mouse clicks in the CAD system.' : 'Das Large Language Model führt die gezeigten CAD-Arbeitsschritte aus. Vorgaben und Freigaben erfolgen im Dialog, ohne manuelle Mausklicks im CAD-System.'}</p>}<p id="chapter-review" className={styles.watchReview}>{copy.check}</p></div>
+        {isSketch && <aside className={styles.sketchInvitation}>
+          <div><h2>{en ? 'Bring a sketch of your part.' : 'Bringen Sie Ihre eigene Skizze mit.'}</h2>
+          <p>{en ? 'In a free initial call, we use your sketch to discuss where AI could help and which interfaces your existing CAD system offers.' : 'Im kostenlosen Erstgespräch klären wir an Ihrer Skizze, wo KI helfen kann und welche Schnittstellen Ihr vorhandenes CAD-System dafür bietet.'}</p></div>
+          <a href="#kontakt" className={styles.primary}>{en ? 'Discuss my sketch' : 'Meine Skizze besprechen'}</a>
+        </aside>}
+        <div className={styles.watchDescription}>{extensionCopy && <p className={styles.standaloneNote}>{extensionCopy.context}</p>}<h2>{isSketch ? (en ? 'How does a hand sketch become a CAD model?' : 'Wie wird aus einer Handskizze ein CAD-Modell?') : extension ? (en ? 'What the video demonstrates' : 'Was das Video zeigt') : chapter.kind === 'AI2CAE' ? (en ? 'How the LLM controls the CAE workflow' : 'Wie das LLM den CAE-Ablauf steuert') : (en ? 'What the LLM does in the CAD system' : 'Was das LLM im CAD-System übernimmt')}</h2><p>{copy.description}</p><ul>{copy.features.map(feature => <li key={feature}>{feature}</li>)}</ul>{!isSketch && !extension && <p>{chapter.kind === 'AI2CAE' ? (en ? 'The LLM coordinates the modelling, calculation and evaluation steps. The CAE system solves the numerical model; engineering review assesses the assumptions and results.' : 'Das LLM steuert Modellaufbau, Berechnung und Auswertung. Das CAE-System löst das numerische Modell; die fachliche Prüfung bewertet Annahmen und Ergebnisse.') : en ? 'The language model performs the shown CAD operations. Instructions and approvals come through the conversation, without manual mouse clicks in the CAD system.' : 'Das Large Language Model führt die gezeigten CAD-Arbeitsschritte aus. Vorgaben und Freigaben erfolgen im Dialog, ohne manuelle Mausklicks im CAD-System.'}</p>}{isSketch && <h3 className="font-heading text-lg font-semibold mt-6">{en ? 'What does the STEP file contain?' : 'Was enthält die STEP-Datei?'}</h3>}<p id="chapter-review" className={styles.watchReview}>{copy.check}</p></div>
+        {!en && isSketch && <p className={styles.watchDescription}><Link href="/blog/cad-am-handy-workstation" className="engineering-text-link">Zum Fachbeitrag: Was vom CAD-Arbeitsplatz aufs Handy wandert →</Link></p>}
         {!en && chapter.id === 'cnc' && <aside className={styles.watchDescription} aria-label="Fachartikel zum Video"><h2>Von der Demo zur Fertigungsvorbereitung</h2><p>Der Artikel ordnet Aufspannungen, Simulation und NC-Ausgabe ein. Mit Prüffragen und einem Vorschlag, wie Ihr Team den Nutzen untersuchen kann.</p><Link href="/blog/ki-cnc-drehprogramm-cad-cam" className="engineering-text-link">Vom CAD-Modell zum CNC-Drehprogramm →</Link></aside>}
         {chapter.kind === 'AI2CAE' && <FemComparison en={en} />}
         {['baugruppe', 'montageanleitung'].includes(chapter.id) && <AssemblyPreview en={en} previous={chapter.id === 'montageanleitung'} />}
         <nav className={styles.watchChapters} aria-label={en ? 'All videos in the series' : 'Alle Videos der Serie'}>{AI2CAD_VIDEOS.map(item => <Link key={item.id} href={`${AI2CAD_PATH}/${item.slug}`} aria-current={item.id === chapter.id ? 'page' : undefined}><small>{item.number} · {item.duration}{'field' in item ? ` · ${item.field[en ? 'en' : 'de']}` : ''}</small>{item[en ? 'en' : 'de'].title}<span aria-hidden="true">↗</span></Link>)}</nav>
-        <div className={styles.watchClosing}><Link href={AI2CAD_PATH}>{en ? 'AI2CAD: overview and questions' : 'AI2CAD: Überblick und Fragen'} →</Link><a href="#kontakt" className={styles.primary}>{extension ? (en ? 'Discuss your development task' : 'Ihre Entwicklungsaufgabe besprechen') : (en ? 'Discuss your CAD workflow' : 'Ihren CAD-Ablauf besprechen')} ↗</a></div>
+        <div className={styles.watchClosing}><Link href={AI2CAD_PATH}>{en ? 'AI2CAD: overview and questions' : 'AI2CAD: Überblick und Fragen'} →</Link>{!isSketch && <a href="#kontakt" className={styles.primary}>{extension ? (en ? 'Discuss your development task' : 'Ihre Entwicklungsaufgabe besprechen') : (en ? 'Discuss your CAD workflow' : 'Ihren CAD-Ablauf besprechen')} ↗</a>}</div>
       </div>
     </main><Footer />
   </>;

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { ArrowUpRight, Play } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { AI2CAD_CHAPTERS, AI2CAD_PATH } from '@/lib/data/ai2cad';
+import { AI2CAD_CHAPTERS, AI2CAD_PATH, SKETCH_VIDEO } from '@/lib/data/ai2cad';
 import { APPLICATION_DEMOS } from '@/lib/data/demo-videos';
 import { QKT_CASES } from '@/lib/data/application-paths';
 import { PRICING } from '@/lib/data/pricing';
@@ -42,7 +42,7 @@ const tasks = [
 
 export default function HomeDiscovery({ en }: { en: boolean }) {
   const lang = en ? 'en' : 'de';
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(AI2CAD_CHAPTERS.indexOf(SKETCH_VIDEO));
   const [taskIndex, setTaskIndex] = useState(0);
   const chapter = AI2CAD_CHAPTERS[active];
   const copy = chapter[lang];
@@ -50,7 +50,7 @@ export default function HomeDiscovery({ en }: { en: boolean }) {
   const money = (value: number) => new Intl.NumberFormat(en ? 'en-GB' : 'de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
   return <>
     <section id="entwicklung-erleben" className="engineering-section atmosphere-section" aria-labelledby="discovery-heading"><TechnicalAtmosphere motif="assembly" treatment="section" /><div className="engineering-wrap">
-      <div className={styles.sectionHead}><div><p className="technical-label">01 / AI2CAD + AI2CAE</p><h2 id="discovery-heading">{en ? 'An idea becomes ' : 'Aus einer Idee wird '}<span className="highlight">{en ? 'geometry.' : 'Geometrie.'}</span></h2></div><p>{en ? 'Choose a step. Watch AI operate CAD and FEM in our own development recordings.' : 'Wählen Sie einen Schritt. Sehen Sie in unseren eigenen Entwicklungsaufnahmen, wie KI CAD und FEM bedient.'}</p></div>
+      <div className={styles.sectionHead}><div><p className="technical-label">01 / AI2CAD + AI2CAE</p><h2 id="discovery-heading">{en ? 'CAD starts with a ' : 'CAD beginnt mit einem '}<span className="highlight">{en ? 'phone photo.' : 'Handyfoto.'}</span></h2></div><p>{en ? 'Watch a sketch of a shaft become a 3D model in the chat. The other videos show modelling, drawing preparation and FEM analysis.' : 'Sehen Sie, wie aus einer Skizze im Chat eine Welle mit zwei Passfedernuten entsteht. Die weiteren Videos zeigen die Arbeit im CAD und die FEM-Berechnung.'}</p></div>
       <div className={styles.chapterChoices} role="group" aria-label={en ? 'Choose a development step' : 'Entwicklungsschritt wählen'}>{AI2CAD_CHAPTERS.map((item, index) => <button key={item.id} type="button" aria-pressed={index === active} aria-controls="chapter-preview" onClick={() => setActive(index)}><span>{item.number}</span>{item[lang].short}</button>)}</div>
       <div className={styles.preview} id="chapter-preview">
         <PreviewVideo id={chapter.id} en={en} key={chapter.id} />
@@ -62,7 +62,10 @@ export default function HomeDiscovery({ en }: { en: boolean }) {
     <section id="anwendungsdemos" className={`engineering-section ${styles.appsSection}`} aria-labelledby="apps-heading"><div className="engineering-wrap">
       <div className={styles.sectionHead}><div><p className="technical-label">02 / {en ? 'Applications' : 'Anwendungen'}</p><h2 id="apps-heading">{en ? 'A look inside our ' : 'Ein Blick in unsere '}<span className="highlight">{en ? 'workshop.' : 'Werkstatt.'}</span></h2></div><p>{en ? 'Projects, variants or skills: each 90-second recording shows a specific development stage with example data.' : 'Projekte, Varianten oder Kompetenzen: Jede Aufnahme zeigt in 90 Sekunden einen konkreten Entwicklungsstand mit Beispieldaten.'}</p></div>
       <div className={styles.apps}>{APPLICATION_DEMOS.map((demo, index) => <Link className={styles.app} key={demo.id} href={`/videos/${demo.id}`}><div className={styles.appImage}><Image src={`/videos/demos/${demo.id}.webp`} alt={demo[lang].poster} fill sizes="(max-width: 650px) 90vw, 32vw" /><span>0{index + 1} / 1:30</span></div><div className={styles.appCopy}><span className="technical-label">{demo[lang].status}</span><h3>{demo[lang].topic}<ArrowUpRight size={20} aria-hidden="true" /></h3><p>{demo.name}</p></div></Link>)}</div>
-      <Link href="/entwicklungswerkstatt" className="engineering-text-link">{en ? 'Enter the complete workshop' : 'Die vollständige Entwicklungswerkstatt öffnen'}<ArrowUpRight size={17} aria-hidden="true" /></Link>
+      <div className={styles.footLinks}>
+        <Link href="/use-cases/projektsteuerung-entwicklung" className="engineering-text-link">{en ? 'Project tracking in engineering' : 'Projektsteuerung in der Entwicklung'}<ArrowUpRight size={17} aria-hidden="true" /></Link>
+        <Link href="/entwicklungswerkstatt" className="engineering-text-link">{en ? 'Enter the complete workshop' : 'Die vollständige Entwicklungswerkstatt öffnen'}<ArrowUpRight size={17} aria-hidden="true" /></Link>
+      </div>
     </div></section>
     <section id="aufgabe-waehlen" className="engineering-section atmosphere-section" aria-labelledby="task-heading"><TechnicalAtmosphere motif="documents" treatment="section" /><div className="engineering-wrap">
       <div className={styles.sectionHead}><div><p className="technical-label">03 / {en ? 'Your workflow' : 'Ihr Ablauf'}</p><h2 id="task-heading">{en ? 'Start with your ' : 'Beginnen Sie bei Ihrer '}<span className="highlight">{en ? 'task.' : 'Aufgabe.'}</span></h2></div><p>{en ? 'Explore an example before discussing implementation. These walkthroughs use fictional data.' : 'Spielen Sie ein Beispiel durch, bevor wir über die Umsetzung sprechen. Die Abläufe verwenden fiktive Daten.'}</p></div>

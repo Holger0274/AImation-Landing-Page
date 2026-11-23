@@ -1,3 +1,4 @@
+import { MOBILE_CAD_ARTICLE } from './mobile-cad-article';
 import type { EngineeringArticle } from './engineering-articles';
 
 export interface VideoArticle extends Omit<EngineeringArticle, 'key'> {
@@ -7,10 +8,11 @@ export interface VideoArticle extends Omit<EngineeringArticle, 'key'> {
   videoHref: string;
   videoLabel: string;
   sourceNote: string;
-  steps: { label: string; result: string; review: string; href: string; linkLabel: string }[];
+  steps: { label: string; result: string; review: string; href: string; linkLabel: string; frame?: { image: string; alt: string; station: string } }[];
 }
 
 export const VIDEO_ARTICLES: VideoArticle[] = [
+  MOBILE_CAD_ARTICLE,
   {
     slug: 'ki-cnc-drehprogramm-cad-cam', date: '2026-11-01',
     title: 'Vom CAD-Modell zum CNC-Drehprogramm: Was KI vorbereiten kann',

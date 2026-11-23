@@ -98,10 +98,10 @@ export default async function KiCadZukunftPage({
 
         {/* ── ARTIKEL ── */}
         <aside className="max-w-3xl mx-auto px-4 mb-12" aria-label="AI2CAD-Demonstration">
-          <Link href="/ai2cad" className="block rounded-xl border border-line-strong bg-surface p-6 hover:border-magenta transition-colors">
-            <p className="font-heading text-xl text-ink mb-3">AI2CAD: Ein CAD-Modell. Null Mausklicks.</p>
-            <p className="text-muted text-sm leading-relaxed">Vier Videos aus der AImation-Entwicklung zeigen, wie ein Large Language Model ein CAD-System steuert: vom Prompt und der Handskizze bis zur technischen Zeichnung.</p>
-            <span className="engineering-text-link mt-4">CAD-Automatisierung mit KI ansehen →</span>
+          <Link href="/ai2cad/handskizze-zu-cad" className="block rounded-xl border border-line-strong bg-surface p-6 hover:border-magenta transition-colors">
+            <p className="font-heading text-xl text-ink mb-3">Wie aus einer Handskizze eine STEP-Datei wird</p>
+            <p className="text-muted text-sm leading-relaxed">Ich fotografiere die Skizze einer Welle und schicke sie per Handy an den CAD-Agenten. Im Film sehen Sie, welche Maße ich bestätigen musste und was als 3D-Modell im Chat zurückkam.</p>
+            <span className="engineering-text-link mt-4">Video zur Handskizze im CAD ansehen →</span>
           </Link>
         </aside>
         <section className="pb-16 px-4">

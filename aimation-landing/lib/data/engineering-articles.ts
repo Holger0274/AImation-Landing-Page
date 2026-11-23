@@ -8,6 +8,8 @@ export interface EngineeringArticle {
 }
 export const ARTICLE_DATE = '2026-10-31';
 export const ARTICLE_SOURCES: Record<string, { label: string; url: string }> = {
+  'fusion-mobile': { label: 'Autodesk Support zur mobilen Fusion-App', url: 'https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Cannot-create-3D-model-in-Fusion-360-mobile-application.html' },
+  'onshape-mobile': { label: 'Onshape-Hilfe zu Part Studios auf iOS und Android', url: 'https://cad.onshape.com/help/Content/PartStudio/part_studios.htm' },
   'autodesk-post': { label: 'Autodesk: Post process a manufacturing operation', url: 'https://help.autodesk.com/view/fusion360/ENU/?contextId=MFG-POST-PROCESS-OPERATIONS' },
   'eplan-checks': { label: 'EPLAN: Checking Projects', url: 'https://www.eplan.help/en-US/Infoportal/Content/Plattform/2027/Content/htm/msgmanagementgui_h_prueflauf.htm' },
   'aimation-cnc': { label: 'AImation: Ein CNC-Drehprogramm vorbereiten (Video)', url: 'https://www.aimation.de/ai2cad/cnc-drehprogramm' },

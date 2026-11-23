@@ -13,6 +13,7 @@ const nextConfig = {
   // OG image handlers read these originals at runtime. Keep the file list narrow:
   // the full video library must not be bundled into serverless functions.
   outputFileTracingIncludes: {
+    '/*/blog/cad-am-handy-workstation/opengraph-image': ['public/videos/ai2cad/skizze.webp'],
     '/*/blog/ki-cnc-drehprogramm-cad-cam/opengraph-image': ['public/videos/ai2cad/cnc.webp'],
     '/*/blog/ki-schaltplan-erstellen-pruefen/opengraph-image': ['public/videos/elektrik/kurzschluss.webp'],
   },

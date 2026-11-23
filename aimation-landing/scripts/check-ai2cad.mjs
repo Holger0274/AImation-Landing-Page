@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 const base = process.argv[2] || 'http://localhost:3010';
 const chapters = [
   ['prompt-zu-cad', 'prompt', 90],
-  ['handskizze-zu-cad', 'skizze', 90],
+  ['handskizze-zu-cad', 'skizze', 110],
   ['konstruktion-pruefen', 'drehteil', 122],
   ['technische-zeichnung', 'zeichnung', 140],
   ['fem-nachweis', 'fem', 151],
@@ -46,7 +46,7 @@ for (const locale of ['', '/en']) {
     assert(schema, 'Server-rendered VideoObject');
     assert(schema.contentUrl.endsWith(`/videos/ai2cad/${asset}.mp4`));
     assert.equal(schema.duration, `PT${duration}S`);
-    assert.equal(schema.uploadDate, ['baugruppe', 'montageanleitung'].includes(asset) ? '2026-11-11T00:00:00+01:00' : ['patent','cnc'].includes(asset) ? '2026-11-01T00:00:00+01:00' : asset === 'fem' ? '2026-10-10T00:00:00+02:00' : '2026-10-08T00:00:00+02:00');
+    assert.equal(schema.uploadDate, asset === 'skizze' ? '2026-11-23T00:00:00+01:00' : ['baugruppe', 'montageanleitung'].includes(asset) ? '2026-11-11T00:00:00+01:00' : ['patent','cnc'].includes(asset) ? '2026-11-01T00:00:00+01:00' : asset === 'fem' ? '2026-10-10T00:00:00+02:00' : '2026-10-08T00:00:00+02:00');
     if (asset === 'fem') {
       assert(schema.name.startsWith('AI2CAE'));
       assert(html.includes('CAE-System') || html.includes('CAE system'));
@@ -58,7 +58,12 @@ for (const locale of ['', '/en']) {
       assert(html.includes('eigenständiges') || html.includes('standalone'));
       if (asset === 'cnc') assert(schema.name.startsWith('AI2CAM'));
     }
-    if (['baugruppe', 'montageanleitung'].includes(asset)) {
+    if (asset === 'skizze') {
+      assert(html.includes('Video mit Ton') || html.includes('German video with audio'));
+      assert(schema.description.includes('STEP') && llms.includes('STEP'));
+      assert.deepEqual(schema.hasPart.map(clip => clip.startOffset), [0, 28, 46, 54, 82]);
+    }
+    if (['skizze', 'baugruppe', 'montageanleitung'].includes(asset)) {
       assert.equal(schema.hasPart.length, 5);
       for (const [index, clip] of schema.hasPart.entries()) {
         assert(clip.url.endsWith(`${path}?t=${clip.startOffset}#video`));
@@ -67,6 +72,8 @@ for (const locale of ['', '/en']) {
         assert(html.includes(`?t=${clip.startOffset}#video`), 'Visible chapter link');
       }
       assert(!html.includes('In Arbeit') && !html.includes('In production'), 'No obsolete preview');
+    }
+    if (['baugruppe', 'montageanleitung'].includes(asset)) {
       const relatedSlug = asset === 'baugruppe' ? 'baugruppe-zu-montageanleitung' : 'zeichnung-zu-baugruppe';
       assert(html.includes(`href="${locale}/ai2cad/${relatedSlug}"`), 'Connected parts link to each other');
       if (asset === 'montageanleitung') {

@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { ArrowUpRight, MoveRight, Play } from 'lucide-react';
+import SketchFilm from '@/components/ai2cad/SketchFilm';
+import { ArrowUpRight, MoveRight } from 'lucide-react';
 import { setRequestLocale } from 'next-intl/server';
 import Header from '@/components/layout/Header';
 import AutodeskMembership from '@/components/AutodeskMembership';
@@ -30,7 +30,6 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
   setRequestLocale(locale);
   const en = locale === 'en';
   const faqs = getAI2CADFaqs(en);
-  const assembly = ASSEMBLY_VIDEO[en ? 'en' : 'de'];
   return <>
     <BreadcrumbSchema items={[{ name: 'AImation', url: localizedPath('/', locale) }, { name: 'AI2CAD', url: localizedPath(AI2CAD_PATH, locale) }]} />
     <FAQPageSchema faqs={faqs} />
@@ -43,16 +42,11 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
             <div className={styles.heroCopy}>
               <p className={styles.eyebrow}>{en ? 'Agentic engineering system · Nine videos' : 'Agentisches Entwicklungssystem · Neun Videos'}</p>
               <h1 id="ai2cad-title">AI<span className="highlight">2</span>CAD<span className="sr-only">: {en ? 'CAD automation with AI and LLMs' : 'CAD-Automatisierung mit KI und LLM'}</span></h1>
-              <p className={styles.headline}>{en ? 'From the drawing\nto assembly instructions.' : 'Von der Zeichnung\nbis zur Montageanleitung.'}</p>
-              <p className={styles.intro}>{en ? 'A large language model (LLM) operates the CAD system. The series began with individual parts. Part 8 brings 31 parts together in one assembly. Part 9 turns that model into illustrated assembly instructions with 14 steps. You provide instructions and approvals through the conversation.' : 'Ein Large Language Model (LLM) bedient das CAD-System. Die Serie begann mit einzelnen Bauteilen. In Teil 8 kommen 31 Teile zu einer Baugruppe zusammen. Teil 9 macht daraus eine bebilderte Montageanleitung mit 14 Schritten. Ihre Vorgaben und Freigaben kommen im Dialog.'}</p>
-              <Link href={`${AI2CAD_PATH}/${ASSEMBLY_VIDEO.slug}`} className={styles.primary}>{en ? 'Watch part 8' : 'Teil 8 ansehen'}<Play size={18} aria-hidden="true" /><span>{ASSEMBLY_VIDEO.duration}</span></Link>
-              <p className={styles.extensionEntry}><a href="#videos">{en ? 'Start with parts 1 to 5: from geometry to FEM' : 'Mit Teil 1 bis 5 starten: von der Geometrie zur FEM'} ↓</a></p>
+              <p className={styles.headline}>{en ? 'From a hand sketch to a STEP file by chat.' : 'Per Chat von der Handskizze zur STEP-Datei.'}</p>
+              <p className={styles.intro}>{en ? 'Holger sends a sketch from his phone. The AI agent asks about unclear dimensions, then builds the shaft in the connected CAD system. Four minutes later, the 3D view and STEP file arrive on the same phone.' : 'Holger schickt eine Skizze per Handy. Der KI-Agent fragt bei unklaren Maßen nach und modelliert die Welle im angebundenen CAD-System. Vier Minuten später kommen die 3D-Ansicht und die STEP-Datei auf demselben Handy an.'}</p>
+              <a className="engineering-text-link" href="#videos">{en ? 'Explore the CAD and FEM chapters' : 'Alle CAD- und FEM-Kapitel entdecken'} ↓</a>
             </div>
-            <figure className={styles.drawing}>
-              <div className={styles.drawingTop}><span>{en ? 'Part 8 · Drawing → assembly' : 'Teil 8 · Zeichnung → Baugruppe'}</span><span>15 {en ? 'positions' : 'Positionen'} · 31 {en ? 'parts' : 'Teile'}</span></div>
-              <Link href={`${AI2CAD_PATH}/${ASSEMBLY_VIDEO.slug}`} aria-label={en ? 'Watch the assembly demonstration' : 'Baugruppen-Demonstration ansehen'}><Image src={`/videos/ai2cad/${ASSEMBLY_VIDEO.id}.webp`} alt={assembly.poster} width={1920} height={1080} priority sizes="(max-width: 900px) 92vw, 740px" /></Link>
-              <figcaption>{en ? 'Exploded view from the video. Three bolted connections remain open for visual inspection.' : 'Explosionsdarstellung aus dem Video. Drei Verschraubungen bleiben zur Sichtprüfung offen.'}</figcaption>
-            </figure>
+            <SketchFilm en={en} />
           </div>
           <nav className={styles.seriesRoute} aria-label={en ? 'Explore the series' : 'Die Serie entdecken'}>
             <a href="#videos"><small>{en ? '01 to 05' : '01 bis 05'}</small><span>{en ? 'From part to FEM' : 'Vom Bauteil zur FEM'}</span><MoveRight size={20} aria-hidden="true" /></a>
@@ -67,11 +61,11 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
 
       <section id="videos" className={styles.videoSection} aria-labelledby="video-heading">
         <div className={styles.wrap}>
-          <div className={styles.sectionIntro}><p className={styles.eyebrow}>{en ? 'Five chapters, from geometry to FEM.' : 'Fünf Kapitel, von der Geometrie zur FEM.'}</p><h2 id="video-heading">{en ? 'Watch the ' : 'Schauen Sie der KI beim '}<span className="highlight">{en ? 'modelling.' : 'Konstruieren'}</span>{en ? '' : ' zu.'}</h2><p>{en ? 'Start with the mounting plate or go straight to the shaft. Chapters 2 to 5 follow a hand sketch through modelling, revision, drawing preparation and FEM analysis.' : 'Starten Sie mit der Montageplatte oder springen Sie direkt zur Welle. Kapitel 2 bis 5 führen von der Handskizze über die Modellüberarbeitung und Zeichnung bis zur FEM-Berechnung.'}</p></div>
+          <div className={styles.sectionIntro}><p className={styles.eyebrow}>{en ? 'Five chapters, from geometry to FEM.' : 'Fünf Kapitel, von der Geometrie zur FEM.'}</p><h2 id="video-heading">{en ? 'Watch the ' : 'Schauen Sie der KI beim '}<span className="highlight">{en ? 'modelling.' : 'Konstruieren'}</span>{en ? '' : ' zu.'}</h2><p>{en ? 'Chapter 1 starts with a mounting plate. Chapter 2 follows a sketch sent by phone through to the STEP file. Chapters 3 to 5 show design review, drawing preparation and FEM analysis on a shaft.' : 'Kapitel 1 beginnt mit einer Montageplatte. Kapitel 2 führt vom Handyfoto einer Skizze bis zur STEP-Datei. Kapitel 3 bis 5 zeigen an einer Welle die Konstruktionsprüfung, die Zeichnung und die FEM-Berechnung.'}</p></div>
           <p className={styles.journeyNote}>{AI2CAD_JOURNEY[en ? 'en' : 'de']}</p>
           <ChapterPlayer en={en} />
           <nav className={styles.chapterIndex} aria-label={en ? 'Direct video links' : 'Direkt zu den einzelnen Videos'}>{AI2CAD_CHAPTERS.map(chapter => <Link key={chapter.id} href={`${AI2CAD_PATH}/${chapter.slug}`}>{chapter.number} · {chapter[en ? 'en' : 'de'].title} ↗</Link>)}</nav>
-          <p className={styles.author}>{en ? 'Demonstration by Holger Peschke, AImation. Updated 11 November 2026.' : 'Demonstration von Holger Peschke, AImation. Stand: 11. November 2026.'} <Link href="/facts/holger-peschke">{en ? 'About the author' : 'Zum fachlichen Hintergrund'} →</Link></p>
+          <p className={styles.author}>{en ? 'Demonstration by Holger Peschke, AImation. Updated 23 November 2026.' : 'Demonstration von Holger Peschke, AImation. Stand: 23. November 2026.'} <Link href="/facts/holger-peschke">{en ? 'About the author' : 'Zum fachlichen Hintergrund'} →</Link></p>
         </div>
       </section>
 
@@ -81,7 +75,7 @@ export default async function AI2CADPage({ params }: { params: Promise<{ locale:
 
       <section className={styles.approach} aria-labelledby="approach-heading">
         <div className={styles.wrap}>
-          <div className={styles.approachGrid}><div><h2 id="approach-heading">{en ? 'Every parameter.\nControlled by the ' : 'Jeder Parameter.\nGesteuert vom '}<span className="highlight">LLM.</span></h2><p>{en ? 'The language model operates the CAD system through a tool interface. In the demonstration, it carries out the CAD operations: creating sketches, setting dimensions, building features, selecting views and laying out the drawing. No manual CAD clicks are needed for these steps.' : 'Das Large Language Model bedient das CAD-System über eine Werkzeugschnittstelle. In der Demonstration führt es die CAD-Arbeitsschritte aus: Skizzen anlegen, Maße setzen, Formelemente aufbauen, Ansichten wählen und die Zeichnung aufbauen. Dafür erfolgt kein manueller Mausklick im CAD.'}</p><p className={styles.editableNote}>{en ? 'The resulting model remains parametric and editable. Questions and engineering approvals happen in the conversation.' : 'Das entstandene Modell bleibt parametrisch und editierbar. Rückfragen und fachliche Freigaben erfolgen im Dialog.'}</p></div><div className={styles.parameterExample}><span>{en ? 'Parameter test from chapter 2' : 'Parametertest aus Kapitel 2'}</span><div><span>{en ? 'Threaded section' : 'Gewindezapfen'}</span><strong>25 <MoveRight aria-hidden="true" size={22} /> 30 <small>mm</small></strong></div><div><span>{en ? 'Overall length follows' : 'Gesamtlänge folgt'}</span><strong>145 <MoveRight aria-hidden="true" size={22} /> 150 <small>mm</small></strong></div><p>{en ? 'Changed by the LLM, tested and reset to the original value.' : 'Vom LLM geändert, getestet und auf den Ausgangswert zurückgesetzt.'}</p></div></div>
+          <div className={styles.approachGrid}><div><h2 id="approach-heading">{en ? 'Every parameter.\nControlled by the ' : 'Jeder Parameter.\nGesteuert vom '}<span className="highlight">LLM.</span></h2><p>{en ? 'The language model operates the CAD system through a tool interface. In the demonstration, it carries out the CAD operations: creating sketches, setting dimensions, building features, selecting views and laying out the drawing. No manual CAD clicks are needed for these steps.' : 'Das Large Language Model bedient das CAD-System über eine Werkzeugschnittstelle. In der Demonstration führt es die CAD-Arbeitsschritte aus: Skizzen anlegen, Maße setzen, Formelemente aufbauen, Ansichten wählen und die Zeichnung aufbauen. Dafür erfolgt kein manueller Mausklick im CAD.'}</p><p className={styles.editableNote}>{en ? 'The resulting model remains parametric and editable. Questions and engineering approvals happen in the conversation.' : 'Das entstandene Modell bleibt parametrisch und editierbar. Rückfragen und fachliche Freigaben erfolgen im Dialog.'}</p></div><div className={styles.parameterExample}><span>{en ? 'Chapter 2 · Time in the chat' : 'Kapitel 2 · Uhrzeit im Chat'}</span><div><span>{en ? 'Photo sent' : 'Foto gesendet'}</span><strong>19:12</strong></div><div><span>{en ? 'Preview and STEP file received' : 'Vorschau und STEP-Datei erhalten'}</span><strong>19:16</strong></div><p>{en ? 'About four minutes for the shaft shown in this demonstration.' : 'Rund vier Minuten für die Welle im gezeigten Versuch.'}</p></div></div>
           <div className={styles.responsibility}>
             <h3>{en ? 'Approval needs engineering judgment.' : 'Die Freigabe braucht Ihren Sachverstand.'}</h3>
             <p>{en ? 'The recordings show an AImation development demonstration. AI proposes dimensions, tolerances and corrections. A design engineer checks function, standards and manufacturability before approving a drawing.' : 'Die Aufnahmen zeigen eine Entwicklungsdemonstration von AImation. Die KI schlägt Maße, Toleranzen und Korrekturen vor. Konstrukteure prüfen Funktion, Normen und Fertigbarkeit, bevor sie eine Zeichnung freigeben.'}</p>
